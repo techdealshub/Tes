@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<title>Featured Reviews</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#050f2a;
+    font-family:Arial,sans-serif;
+    padding:20px;
+}
+
+.featured-reviews-grid{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+/* CARD */
+
+.featured-card{
+
+    display:grid;
+    align-items:center;
+    gap:16px;
+
+    background:linear-gradient(
+        135deg,
+        #08142f,
+        #0d1c43
+    );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:12px;
+
+    overflow:hidden;
+
+    transition:.35s;
+}
+
+.featured-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:#3b82f6;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.35),
+    0 0 30px rgba(59,130,246,.18);
+}
+
+/* IMAGE */
+
+.featured-image{
+
+    position:relative;
+
+    width:300px;
+    height:130px;
+    flex-shrink:0;
+}
+
+.featured-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:18px;
+}
+
+.brand{
+
+    position:absolute;
+    top:8px;
+    left:8px;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    font-size:.7rem;
+    font-weight:700;
+
+    padding:5px 10px;
+
+    border-radius:999px;
+}
+
+/* CONTENT */
+
+.featured-content{
+
+    flex:1;
+
+    min-width:0;
+}
+
+.featured-top{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:12px;
+}
+
+.time{
+
+    color:#94a3b8;
+
+    font-size:.85rem;
+}
+
+.rating{
+
+    width:58px;
+    height:58px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #60a5fa
+    );
+
+    color:#fff;
+
+    font-size:1.1rem;
+    font-weight:800;
+
+    box-shadow:
+    0 0 25px rgba(59,130,246,.45);
+}
+
+.featured-content h3{
+
+    color:#fff;
+
+    font-size:1.25rem;
+    line-height:1.35;
+
+    margin-bottom:10px;
+
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+.featured-content p{
+
+    color:#94a3b8;
+
+    font-size:.92rem;
+    line-height:1.5;
+
+    margin-bottom:14px;
+
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+/* TAGS */
+
+.featured-tags{
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.featured-tags span{
+
+    padding:6px 10px;
+
+    border-radius:999px;
+
+    background:rgba(59,130,246,.12);
+
+    border:1px solid rgba(59,130,246,.25);
+
+    color:#60a5fa;
+
+    font-size:.75rem;
+    font-weight:600;
+}
+
+@media(max-width:768px){
+
+    .featured-image{
+        width:120px;
+        height:120px;
+    }
+
+    .featured-content h3{
+        font-size:1.05rem;
+    }
+
+    .rating{
+        width:52px;
+        height:52px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="featured-reviews-grid">
+
+    <!-- CARD 1 -->
+
+    <div class="featured-card">
+
+        <div class="featured-image">
+            <img src="pixel10pro.jpg" alt="">
+            <span class="brand">Google</span>
+        </div>
+
+        <div class="featured-content">
+
+            <div class="featured-top">
+                <span class="time">
+                    <i class="fa-regular fa-clock"></i>
+                    8 hours ago
+                </span>
+
+                <div class="rating">9.1</div>
+            </div>
+
+            <h3>
+                Google Pixel 10 Pro Review:
+                AI Features Done Right
+            </h3>
+
+            <p>
+                Outstanding camera performance and smart AI tools.
+            </p>
+
+            <div class="featured-tags">
+                <span>AI</span>
+                <span>Camera</span>
+                <span>Android</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 2 -->
+
+    <div class="featured-card">
+
+        <div class="featured-image">
+            <img src="iphone17.jpg" alt="">
+            <span class="brand">Apple</span>
+        </div>
+
+        <div class="featured-content">
+
+            <div class="featured-top">
+                <span class="time">
+                    <i class="fa-regular fa-clock"></i>
+                    3 days ago
+                </span>
+
+                <div class="rating">8.9</div>
+            </div>
+
+            <h3>
+                iPhone 17 Air Review:
+                Apple's Slimmest Smartphone Ever
+            </h3>
+
+            <p>
+                Premium design with excellent performance and battery life.
+            </p>
+
+            <div class="featured-tags">
+                <span>iOS</span>
+                <span>Apple</span>
+                <span>Flagship</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 3 -->
+
+    <div class="featured-card">
+
+        <div class="featured-image">
+            <img src="s26.jpg" alt="">
+            <span class="brand">Samsung</span>
+        </div>
+
+        <div class="featured-content">
+
+            <div class="featured-top">
+                <span class="time">
+                    <i class="fa-regular fa-clock"></i>
+                    1 day ago
+                </span>
+
+                <div class="rating">9.4</div>
+            </div>
+
+            <h3>
+                Galaxy S26 Ultra Review:
+                The Android King Returns
+            </h3>
+
+            <p>
+                Fantastic display, huge battery and powerful cameras.
+            </p>
+
+            <div class="featured-tags">
+                <span>Ultra</span>
+                <span>200MP</span>
+                <span>AI</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 4 -->
+
+    <div class="featured-card">
+
+        <div class="featured-image">
+            <img src="xiaomi16.jpg" alt="">
+            <span class="brand">Xiaomi</span>
+        </div>
+
+        <div class="featured-content">
+
+            <div class="featured-top">
+                <span class="time">
+                    <i class="fa-regular fa-clock"></i>
+                    5 hours ago
+                </span>
+
+                <div class="rating">9.3</div>
+            </div>
+
+            <h3>
+                Xiaomi 16 Ultra Review:
+                Camera Beast
+            </h3>
+
+            <p>
+                Leica cameras, fast charging and flagship performance.
+            </p>
+
+            <div class="featured-tags">
+                <span>Leica</span>
+                <span>Camera</span>
+                <span>120W</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

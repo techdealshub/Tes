@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>iPhone 17 Pro Max</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
+rel="stylesheet">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<style>
+.*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+:root{
+--bg:#050b1f;
+--card:#0d1b2a;
+--border:#1e293b;
+--primary:#3b82f6;
+--text:#ffffff;
+--muted:#94a3b8;
+}
+
+html,body{
+background:var(--bg);
+color:var(--text);
+font-family:'Roboto',sans-serif;
+scroll-behavior:smooth;
+}
+
+.header{
+position:sticky;
+top:0;
+z-index:999;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 10px;
+background:#08111f;
+border-bottom:1px solid var(--border);
+}
+
+.sections-nav{
+position:sticky;
+top:60px;
+z-index:998;
+
+display:flex;
+gap:10px;
+overflow-x:auto;
+
+padding:12px 10px;
+
+background:#08111f;
+border-bottom:1px solid #1e293b;
+
+scrollbar-width:none;
+}
+
+.sections-nav::-webkit-scrollbar{
+display:none;
+}
+
+.sections-nav a{
+white-space:nowrap;
+
+padding:10px 16px;
+
+background:#111827;
+border:1px solid #1e293b;
+border-radius:999px;
+
+text-decoration:none;
+color:#fff;
+
+font-size:13px;
+font-weight:600;
+
+transition:.3s;
+}
+
+.sections-nav a:hover{
+background:#3b82f6;
+border-color:#3b82f6;
+}
+
+main{
+padding:15px;
+padding-top:0px;
+}
+.page-title{
+padding:0px 15px;
+}
+
+.page-title h1{
+font-size:25px;
+font-weight:700;
+margin-bottom:8px;
+}
+
+.page-title span{
+font-size:15px;
+color:#94a3b8;
+line-height:1.6;
+}
+section{
+margin-bottom:18px;
+}
+
+#hero,
+#quick-specs,
+#pros-cons,
+#full-specifications,
+#gallery,
+#benchmarks,
+#comparisons,
+#alternatives,
+#news,
+#price-tracking,
+#where-to-buy,
+#user-reviews,
+#faq,
+#related-phones{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:20px;
+padding:20px;
+min-height:120px;
+}
+
+#hero{
+background:#0d1b2a;
+border-radius:20px;
+padding:0px;
+border-radius:16px 16px 0 0;
+}
+
+.phone-image{
+aspect-ratio:4/3;
+background:#08111f;
+border-radius:16px 16px 0 0;
+overflow:hidden;
+}
+
+.phone-image img{
+width:100%;
+height:100%;
+object-fit:contain;
+display:block;
+}
+
+#quick-specs{
+min-height:180px;
+padding: 7px;
+border-radius: 0 0 16px 16px;
+margin-top:-18px;
+}
+.quick-specs{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+
+}
+
+.spec{
+background:#111827;
+padding:5px;
+border-radius: 0 0 16px 16px;
+text-align:center;
+}
+
+.spec i{
+font-size:19px;
+color:#3b82f6;
+margin-bottom:5px;
+display:block;
+}
+
+.spec strong{
+display:block;
+font-size:12px;
+margin-bottom:4px;
+}
+
+.spec span{
+color:#94a3b8;
+font-size:11px;
+}
+
+#pros-cons{
+display:flex;
+flex-direction:column;
+gap:10px;
+margin:10px 0;
+}
+
+#pros,
+#cons{
+background:#0d1b2a;
+padding:10px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+#pros h2{
+color:#22c55e;
+margin-bottom:5px;
+}
+
+#cons h2{
+color:#ef4444;
+margin-bottom:15px;
+}
+
+#pros ul,
+#cons ul{
+list-style:none;
+}
+
+#pros li,
+#cons li{
+padding:8px;
+margin-bottom:0px;
+background:#111827;
+border-radius:12px;
+}
+
+#full-specifications{
+background:#0d1b2a;
+border-radius:20px;
+padding:20px;
+margin-top:20px;
+}
+
+#full-specifications h2{
+font-size:22px;
+margin-bottom:20px;
+}
+
+#full-specifications section{
+background:#111827;
+border:1px solid rgba(255,255,255,.05);
+border-radius:16px;
+padding:16px;
+margin-bottom:14px;
+}
+
+#full-specifications h3{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:17px;
+margin-bottom:15px;
+color:#fff;
+}
+
+#full-specifications h3 i{
+color:#3b82f6;
+font-size:18px;
+}
+
+#full-specifications p{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 0;
+border-bottom:1px solid rgba(255,255,255,.05);
+font-size:14px;
+}
+
+#full-specifications p:last-child{
+border-bottom:none;
+}
+
+#full-specifications strong{
+color:#94a3b8;
+font-weight:500;
+}
+
+#full-specifications p span{
+font-weight:600;
+color:#fff;
+}
+
+#gallery{
+background:#0d1b2a;
+padding:20px;
+border-radius:20px;
+margin-top:20px;
+}
+
+#gallery h2{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:15px;
+}
+
+#gallery h2 i{
+color:#3b82f6;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+}
+
+.gallery-grid img{
+width:100%;
+aspect-ratio:1/1;
+object-fit:cover;
+border-radius:14px;
+background:#111827;
+transition:.3s;
+}
+
+.gallery-grid img:hover{
+transform:scale(1.03);
+}
+
+#benchmarks{
+background:#0d1b2a;
+padding:20px;
+border-radius:20px;
+margin-top:20px;
+}
+
+#benchmarks h2{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:15px;
+}
+
+#benchmarks h2 i{
+color:#3b82f6;
+}
+
+.benchmark-card{
+background:#111827;
+border-radius:16px;
+overflow:hidden;
+}
+
+.benchmark-row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 16px;
+border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.benchmark-row:last-child{
+border-bottom:none;
+}
+
+.benchmark-row span{
+color:#94a3b8;
+font-size:14px;
+}
+
+.benchmark-row strong{
+font-size:15px;
+}
+
+#comparisons{
+background:#0d1b2a;
+padding:20px;
+border-radius:20px;
+margin-top:20px;
+}
+
+#comparisons h2{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:15px;
+}
+
+#comparisons h2 i{
+color:#3b82f6;
+}
+
+.comparison-list{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.comparison-card{
+display:flex;
+align-items:center;
+gap:12px;
+padding:16px;
+background:#111827;
+border-radius:14px;
+text-decoration:none;
+color:#fff;
+transition:.3s;
+}
+
+.comparison-card:hover{
+transform:translateY(-2px);
+background:#172033;
+}
+
+.comparison-card i{
+color:#3b82f6;
+font-size:18px;
+}
+
+#alternatives{
+background:#0d1b2a;
+padding:20px;
+border-radius:20px;
+margin-top:20px;
+}
+
+#alternatives h2{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:15px;
+}
+
+#alternatives h2 i{
+color:#3b82f6;
+}
+
+.alternative-list{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.alternative-card{
+display:flex;
+align-items:center;
+gap:12px;
+padding:16px;
+background:#111827;
+border-radius:14px;
+text-decoration:none;
+color:#fff;
+transition:.3s;
+}
+
+.alternative-card:hover{
+background:#172033;
+transform:translateY(-2px);
+}
+
+.alternative-card i{
+color:#3b82f6;
+}
+
+#news{
+background:#0d1b2a;
+padding:20px;
+border-radius:20px;
+margin-top:20px;
+}
+
+#news h2{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:15px;
+}
+
+#news h2 i{
+color:#3b82f6;
+}
+
+.news-list{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.news-card{
+background:#111827;
+padding:16px;
+border-radius:14px;
+}
+
+.news-card h3{
+font-size:15px;
+margin-bottom:8px;
+}
+
+.news-card p{
+font-size:13px;
+color:#94a3b8;
+line-height:1.5;
+margin-bottom:10px;
+}
+
+.news-card span{
+font-size:12px;
+color:#64748b;
+}
+
+#price-tracking{
+background:#0d1b2a;
+padding:20px;
+border-radius:20px;
+margin-top:20px;
+}
+
+#price-tracking h2{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:15px;
+}
+
+#price-tracking h2 i{
+color:#3b82f6;
+}
+
+.price-card{
+background:#111827;
+border-radius:16px;
+overflow:hidden;
+}
+
+.price-row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px;
+border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.price-row:last-child{
+border-bottom:none;
+}
+
+.price-row span{
+color:#94a3b8;
+}
+
+.price-row strong{
+font-size:15px;
+font-weight:600;
+}
+
+#where-to-buy{
+background:#0d1b2a;
+padding:20px;
+border-radius:20px;
+margin-top:20px;
+}
+
+#where-to-buy h2{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:15px;
+}
+
+#where-to-buy h2 i{
+color:#3b82f6;
+}
+
+.store-list{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.store-card{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:16px;
+background:#111827;
+border-radius:14px;
+text-decoration:none;
+color:#fff;
+transition:.3s;
+}
+
+.store-card:hover{
+background:#172033;
+}
+
+.store-card span{
+flex:1;
+margin-left:12px;
+}
+
+.store-card .fa-chevron-right{
+color:#64748b;
+}
+
+#user-reviews{
+background:#0d1b2a;
+padding:20px;
+border-radius:20px;
+margin-top:20px;
+}
+
+#user-reviews h2{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:15px;
+}
+
+#user-reviews h2 i{
+color:#facc15;
+}
+
+.review-summary{
+display:flex;
+align-items:center;
+gap:15px;
+background:#111827;
+padding:15px;
+border-radius:16px;
+margin-bottom:15px;
+}
+
+.rating-score{
+width:70px;
+height:70px;
+border-radius:50%;
+background:#3b82f6;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:24px;
+font-weight:700;
+}
+
+.rating-info{
+display:flex;
+flex-direction:column;
+}
+
+.rating-info span{
+color:#94a3b8;
+font-size:13px;
+}
+
+.review-list{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.review-card{
+background:#111827;
+padding:15px;
+border-radius:14px;
+}
+
+.review-header{
+display:flex;
+justify-content:space-between;
+margin-bottom:10px;
+}
+
+.review-header span{
+color:#facc15;
+}
+
+.review-card p{
+color:#cbd5e1;
+line-height:1.6;
+font-size:14px;
+}
+
+#faq{
+background:#0d1b2a;
+padding:20px;
+border-radius:20px;
+margin-top:20px;
+}
+
+#faq h2{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:15px;
+}
+
+#faq h2 i{
+color:#3b82f6;
+}
+
+.faq-item{
+background:#111827;
+padding:16px;
+border-radius:14px;
+margin-bottom:12px;
+}
+
+.faq-item h3{
+font-size:15px;
+margin-bottom:8px;
+}
+
+.faq-item p{
+font-size:14px;
+color:#94a3b8;
+line-height:1.6;
+}
+
+#related-phones{
+min-height:220px;
+}
+
+footer{
+height:100px;
+background:#08111f;
+border-top:1px solid var(--border);
+margin-top:20px;
+}
+#related-phones{
+background:#0d1b2a;
+padding:20px;
+border-radius:20px;
+margin-top:20px;
+}
+
+#related-phones h2{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:15px;
+}
+
+#related-phones h2 i{
+color:#3b82f6;
+}
+
+.related-list{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.phone-card{
+display:flex;
+align-items:center;
+gap:15px;
+padding:12px;
+background:#111827;
+border-radius:14px;
+text-decoration:none;
+color:#fff;
+transition:.3s;
+}
+
+.phone-card:hover{
+background:#172033;
+}
+
+.phone-card img{
+width:70px;
+height:70px;
+object-fit:contain;
+background:#0b1220;
+border-radius:12px;
+padding:8px;
+}
+
+.phone-card h3{
+font-size:15px;
+margin-bottom:4px;
+}
+
+.phone-card span{
+font-size:13px;
+color:#94a3b8;
+}
+@media (max-width:768px){
+
+#pros-cons{
+grid-template-columns:1fr;
+}
+
+}
+/* =========================
+   DESKTOP MODE
+========================= */
+
+@media (min-width:980px){
+
+.main{
+max-width:1400px;
+margin:auto;
+padding:20px;
+}
+
+/* Hero + Quick Specs */
+
+.hero-wrapper{
+display:grid;
+grid-template-columns:500px 1fr;
+gap:20px;
+align-items:start;
+}
+
+#hero{
+margin-bottom:0;
+}
+
+#quick-specs{
+margin-top:0;
+height:100%;
+border-radius:20px;
+padding:20px;
+}
+
+.quick-specs{
+grid-template-columns:repeat(3,1fr);
+height:100%;
+}
+
+/* Pros Cons */
+
+#pros-cons{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+/* Full Specifications */
+
+#full-specifications{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+#full-specifications h2{
+grid-column:1/-1;
+margin-bottom:0;
+}
+
+/* Gallery */
+
+.gallery-grid{
+grid-template-columns:
+repeat(3,1fr);
+}
+
+/* Comparisons */
+
+.comparison-list{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+}
+
+/* Alternatives */
+
+.alternative-list{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+}
+
+/* News */
+
+.news-list{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+}
+
+/* Buy */
+
+.store-list{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+}
+
+/* Reviews */
+
+.review-list{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+}
+
+/* Related Phones */
+
+.related-list{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+<nav class="sections-nav">
+
+<a href="#hero">Overview</a>
+
+<a href="#full-specifications">Specs</a>
+
+<a href="#pros-cons">Pros & Cons</a>
+
+<a href="#gallery">Gallery</a>
+
+<a href="#benchmarks">Benchmarks</a>
+
+<a href="#comparisons">Comparisons</a>
+
+<a href="#alternatives">Alternatives</a>
+
+<a href="#news">News</a>
+
+<a href="#price-tracking">Prices</a>
+
+<a href="#where-to-buy">Buy</a>
+
+<a href="#user-reviews">Reviews</a>
+
+<a href="#faq">FAQ</a>
+
+<a href="#related-phones">Related</a>
+
+</nav>
+</header>
+
+<main>
+<section class="page-title">
+
+    <h1>{{PHONE_NAME}}</h1>
+
+    <span>Specifications</span>
+
+</section>
+<div class="hero-wrapper">
+<section id="hero">
+
+    <div class="phone-image">
+
+        <img src="{{PHONE_IMAGE}}" alt="{{PHONE_NAME}}">
+
+    </div>
+
+</section>
+
+<section id="quick-specs">
+  <div class="quick-specs">
+
+    <div class="spec">
+        <i class="fa-solid fa-mobile-screen"></i>
+        <strong>{{DISPLAY}}</strong>
+        <span>Display</span>
+    </div>
+
+    <div class="spec">
+        <i class="fa-solid fa-expand"></i>
+        <strong>{{PIXELS}}</strong>
+        <span>Pixels</span>
+    </div>
+
+    <div class="spec">
+        <i class="fa-solid fa-camera"></i>
+        <strong>{{CAMERA}}</strong>
+        <span>Camera</span>
+    </div>
+
+    <div class="spec">
+        <i class="fa-solid fa-video"></i>
+        <strong>{{VIDEO}}</strong>
+        <span>Video</span>
+    </div>
+
+    <div class="spec">
+        <i class="fa-solid fa-memory"></i>
+        <strong>{{RAM}}</strong>
+        <span>RAM</span>
+    </div>
+
+    <div class="spec">
+        <i class="fa-solid fa-microchip"></i>
+        <strong>{{CHIPSET}}</strong>
+        <span>Chipset</span>
+    </div>
+
+    <div class="spec">
+        <i class="fa-solid fa-battery-full"></i>
+        <strong>{{BATTERY}}</strong>
+        <span>Battery</span>
+    </div>
+
+    <div class="spec">
+        <i class="fa-solid fa-hard-drive"></i>
+        <strong>{{STORAGE}}</strong>
+        <span>Storage</span>
+    </div>
+
+    <div class="spec">
+        <i class="fa-solid fa-wifi"></i>
+        <strong>{{NETWORK}}</strong>
+        <span>Network</span>
+    </div>
+
+  </div>
+</section>
+</div>
+<section id="full-specifications">
+
+<h2>Full Specifications</h2>
+
+<section id="general">
+<h3><i class="fa-solid fa-circle-info"></i> General</h3>
+
+<p><strong>Brand:</strong> {{BRAND}}</p>
+<p><strong>Model:</strong> {{MODEL}}</p>
+<p><strong>Status:</strong> {{STATUS}}</p>
+<p><strong>Release Date:</strong> {{RELEASE_DATE}}</p>
+
+</section>
+
+<section id="body">
+<h3><i class="fa-solid fa-mobile"></i> Body</h3>
+
+<p><strong>Dimensions:</strong> {{DIMENSIONS}}</p>
+<p><strong>Weight:</strong> {{WEIGHT}}</p>
+<p><strong>Build:</strong> {{BUILD}}</p>
+<p><strong>Water Resistance:</strong> {{WATER_RESISTANCE}}</p>
+
+</section>
+
+<section id="display">
+<h3><i class="fa-solid fa-mobile-screen"></i> Display</h3>
+
+<p><strong>Type:</strong> {{DISPLAY_TYPE}}</p>
+<p><strong>Size:</strong> {{DISPLAY_SIZE}}</p>
+<p><strong>Resolution:</strong> {{DISPLAY_RESOLUTION}}</p>
+<p><strong>Refresh Rate:</strong> {{DISPLAY_REFRESH_RATE}}</p>
+
+</section>
+
+<section id="performance">
+<h3><i class="fa-solid fa-microchip"></i> Performance</h3>
+
+<p><strong>Chipset:</strong> {{PROS}}</p>
+<p><strong>CPU:</strong> {{CPU}}</p>
+<p><strong>GPU:</strong> {{GPU}}</p>
+
+</section>
+
+<section id="memory">
+<h3><i class="fa-solid fa-hard-drive"></i> Memory</h3>
+
+<p><strong>RAM:</strong> {{RAM}}</p>
+<p><strong>Storage:</strong> {{STORAGE}}</p>
+<p><strong>Card Slot:</strong> {{CARD_SLOT}}</p>
+
+</section>
+
+<section id="main-camera">
+<h3><i class="fa-solid fa-camera"></i> Main Camera</h3>
+
+<p><strong>Main:</strong> {{MAIN_CAMERA}}</p>
+<p><strong>Ultra Wide:</strong> {{ULTRA_WIDE_CAMERA}}</p>
+<p><strong>Telephoto:</strong> {{TELEPHOTO_CAMERA}}</p>
+<p><strong>Video:</strong> {{MAIN_CAMERA_VIDEO}}</p>
+
+</section>
+
+<section id="selfie-camera">
+<h3><i class="fa-solid fa-camera-rotate"></i> Selfie Camera</h3>
+
+<p><strong>Resolution:</strong> {{SELFIE_CAMERA}}</p>
+<p><strong>Video:</strong> {{SELFIE_VIDEO}}</p>
+
+</section>
+
+<section id="battery">
+<h3><i class="fa-solid fa-battery-full"></i> Battery</h3>
+
+<p><strong>Capacity:</strong> {{BATTERY_CAPACITY}}</p>
+<p><strong>Wired Charging:</strong> {{WIRED_CHARGING}}</p>
+<p><strong>Wireless Charging:</strong> {{WIRELESS_CHARGING}}</p>
+
+</section>
+
+<section id="network">
+<h3><i class="fa-solid fa-signal"></i> Network</h3>
+
+<p><strong>2G:</strong> {{NETWORK_2G}}</p>
+<p><strong>3G:</strong> {{NETWORK_3G}}</p>
+<p><strong>4G:</strong> {{NETWORK_4G}}</p>
+<p><strong>5G:</strong> {{NETWORK_5G}}</p>
+
+</section>
+
+<section id="sim">
+<h3><i class="fa-solid fa-sim-card"></i> SIM</h3>
+
+<p><strong>Type:</strong> {{SIM_TYPE}}</p>
+<p><strong>Dual SIM:</strong> {{DUAL_SIM}}</p>
+
+</section>
+
+<section id="connectivity">
+<h3><i class="fa-solid fa-wifi"></i> Connectivity</h3>
+
+<p><strong>Wi-Fi:</strong> {{WIFI}}</p>
+<p><strong>Bluetooth:</strong> {{BLUETOOTH}}</p>
+<p><strong>NFC:</strong> {{NFC}}</p>
+<p><strong>USB:</strong> {{USB}}</p>
+
+</section>
+
+<section id="audio">
+<h3><i class="fa-solid fa-volume-high"></i> Audio</h3>
+
+<p><strong>Speakers:</strong> {{SPEAKERS}}</p>
+<p><strong>3.5mm Jack:</strong> {{JACK_3_5MM}}</p>
+
+</section>
+
+<section id="features">
+<h3><i class="fa-solid fa-star"></i> Features</h3>
+
+<p><strong>Face ID:</strong> {{FACE_ID}}</p>
+<p><strong>Emergency SOS:</strong> {{EMERGENCY_SOS}}</p>
+<p><strong>Apple Intelligence:</strong> {{APPLE_INTELLIGENCE}}</p>
+
+</section>
+
+<section id="sensors">
+
+<h3>
+<i class="fa-solid fa-compass"></i>
+Sensors
+</h3>
+
+<p>
+<strong>Face ID</strong>
+<span>{{FACE_ID_SENSOR}}</span>
+</p>
+
+<p>
+<strong>Accelerometer</strong>
+<span>{{ACCELEROMETER}}</span>
+</p>
+
+<p>
+<strong>Gyroscope</strong>
+<span>{{GYROSCOPE}}</span>
+</p>
+
+<p>
+<strong>Barometer</strong>
+<span>{{BAROMETER}}</span>
+</p>
+
+<p>
+<strong>Compass</strong>
+<span>{{COMPASS}}</span>
+</p>
+
+</section>
+
+</section>
+
+<section id="pros-cons">
+
+    <section id="pros">
+
+        <h2>
+            <i class="fa-solid fa-circle-check"></i>
+            Pros
+        </h2>
+
+        <ul>
+            <li>{{PRO_1}}</li>
+            <li>{{PRO_2}}</li>
+            <li>{{PRO_3}}</li>
+            <li>{{PRO_4}}</li>
+            <li>{{PRO_5}}</li>
+            <li>{{PRO_6}}</li>
+        </ul>
+
+    </section>
+
+    <section id="cons">
+
+        <h2>
+            <i class="fa-solid fa-circle-xmark"></i>
+            Cons
+        </h2>
+
+        <ul>
+            <li>{{CON_1}}</li>
+            <li>{{CON_2}}</li>
+            <li>{{CON_3}}</li>
+            <li>{{CON_4}}</li>
+            <li>{{CON_5}}</li>
+        </ul>
+
+    </section>
+
+</section>
+
+<section id="gallery">
+
+    <h2>
+        <i class="fa-solid fa-images"></i>
+        Gallery
+    </h2>
+
+    <div class="gallery-grid">
+
+        <img src="{{GALLERY_IMAGE_1}}" alt="Front View">
+
+        <img src="{{GALLERY_IMAGE_2}}" alt="Back View">
+
+        <img src="{{GALLERY_IMAGE_3}}" alt="Side View">
+
+        <img src="{{GALLERY_IMAGE_4}}" alt="Camera Module">
+
+        <img src="{{GALLERY_IMAGE_5}}" alt="Display">
+
+        <img src="{{GALLERY_IMAGE_6}}" alt="Colors">
+
+    </div>
+
+</section>
+
+<section id="benchmarks">
+
+    <h2>
+        <i class="fa-solid fa-gauge-high"></i>
+        Benchmarks
+    </h2>
+
+    <div class="benchmark-card">
+
+        <div class="benchmark-row">
+            <span>AnTuTu</span>
+            <strong>{{ANTUTU}}</strong>
+        </div>
+
+        <div class="benchmark-row">
+            <span>Geekbench Single-Core</span>
+            <strong>{{GEEKBENCH_SINGLE_CORE}}</strong>
+        </div>
+
+        <div class="benchmark-row">
+            <span>Geekbench Multi-Core</span>
+            <strong>{{GEEKBENCH_MULTI_CORE}}</strong>
+        </div>
+
+        <div class="benchmark-row">
+            <span>3DMark Wild Life</span>
+            <strong>{{THREEDMARK_WILD_LIFE}}</strong>
+        </div>
+
+        <div class="benchmark-row">
+            <span>PCMark Battery</span>
+            <strong>{{PCMARK_BATTERY}}</strong>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="comparisons">
+
+    <h2>
+        <i class="fa-solid fa-scale-balanced"></i>
+        Comparisons
+    </h2>
+
+    <div class="comparison-list">
+
+        <a href="{{COMPARISON_LINK_1}}" class="comparison-card">
+            <i class="fa-solid fa-mobile-screen"></i>
+            {{COMPARISON_1}}
+        </a>
+
+        <a href="{{COMPARISON_LINK_2}}" class="comparison-card">
+            <i class="fa-solid fa-mobile-screen"></i>
+            {{COMPARISON_2}}
+        </a>
+
+        <a href="{{COMPARISON_LINK_3}}" class="comparison-card">
+            <i class="fa-solid fa-mobile-screen"></i>
+            {{COMPARISON_3}}
+        </a>
+
+        <a href="{{COMPARISON_LINK_4}}" class="comparison-card">
+            <i class="fa-solid fa-mobile-screen"></i>
+            {{COMPARISON_4}}
+        </a>
+
+    </div>
+
+</section>
+
+<section id="alternatives">
+
+    <h2>
+        <i class="fa-solid fa-arrows-left-right"></i>
+        Alternatives
+    </h2>
+
+    <div class="alternative-list">
+
+        <a href="{{ALTERNATIVE_LINK_1}}" class="alternative-card">
+            <i class="fa-solid fa-mobile-screen"></i>
+            {{ALTERNATIVE_1}}
+        </a>
+
+        <a href="{{ALTERNATIVE_LINK_2}}" class="alternative-card">
+            <i class="fa-solid fa-mobile-screen"></i>
+            {{ALTERNATIVE_2}}
+        </a>
+
+        <a href="{{ALTERNATIVE_LINK_3}}" class="alternative-card">
+            <i class="fa-solid fa-mobile-screen"></i>
+            {{ALTERNATIVE_3}}
+        </a>
+
+        <a href="{{ALTERNATIVE_LINK_4}}" class="alternative-card">
+            <i class="fa-solid fa-mobile-screen"></i>
+            {{ALTERNATIVE_4}}
+        </a>
+
+    </div>
+
+</section>
+
+<section id="news">
+
+    <h2>
+        <i class="fa-solid fa-newspaper"></i>
+        News
+    </h2>
+
+    <div class="news-list">
+
+        <article class="news-card">
+            <h3>{{NEWS_TITLE_1}}</h3>
+            <p>{{NEWS_DESCRIPTION_1}}</p>
+            <span>{{NEWS_DATE_1}}</span>
+        </article>
+
+        <article class="news-card">
+            <h3>{{NEWS_TITLE_2}}</h3>
+            <p>{{NEWS_DESCRIPTION_2}}</p>
+            <span>{{NEWS_DATE_2}}</span>
+        </article>
+
+        <article class="news-card">
+            <h3>{{NEWS_TITLE_3}}</h3>
+            <p>{{NEWS_DESCRIPTION_3}}</p>
+            <span>{{NEWS_DATE_3}}</span>
+        </article>
+
+    </div>
+
+</section>
+
+<section id="price-tracking">
+
+    <h2>
+        <i class="fa-solid fa-chart-line"></i>
+        Price Tracking
+    </h2>
+
+    <div class="price-card">
+
+        <div class="price-row">
+            <span>Current Price</span>
+            <strong>{{CURRENT_PRICE}}</strong>
+        </div>
+
+        <div class="price-row">
+            <span>Lowest Price</span>
+            <strong>{{LOWEST_PRICE}}</strong>
+        </div>
+
+        <div class="price-row">
+            <span>Highest Price</span>
+            <strong>{{HIGHEST_PRICE}}</strong>
+        </div>
+
+        <div class="price-row">
+            <span>Last Updated</span>
+            <strong>{{LAST_UPDATED}}</strong>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="price-tracking">
+
+    <h2>
+        <i class="fa-solid fa-chart-line"></i>
+        Price Tracking
+    </h2>
+
+    <div class="price-card">
+
+        <div class="price-row">
+            <span>Current Price</span>
+            <strong>{{CURRENT_PRICE}}</strong>
+        </div>
+
+        <div class="price-row">
+            <span>Lowest Price</span>
+            <strong>{{LOWEST_PRICE}}</strong>
+        </div>
+
+        <div class="price-row">
+            <span>Highest Price</span>
+            <strong>{{HIGHEST_PRICE}}</strong>
+        </div>
+
+        <div class="price-row">
+            <span>Last Updated</span>
+            <strong>{{LAST_UPDATED}}</strong>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="where-to-buy">
+
+    <h2>
+        <i class="fa-solid fa-cart-shopping"></i>
+        Where To Buy
+    </h2>
+
+    <div class="store-list">
+
+        <a href="{{STORE_LINK_1}}" class="store-card">
+            <i class="fa-brands fa-apple"></i>
+            <span>{{STORE_NAME_1}}</span>
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
+
+        <a href="{{STORE_LINK_2}}" class="store-card">
+            <i class="fa-brands fa-amazon"></i>
+            <span>{{STORE_NAME_2}}</span>
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
+
+        <a href="{{STORE_LINK_3}}" class="store-card">
+            <i class="fa-solid fa-store"></i>
+            <span>{{STORE_NAME_3}}</span>
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
+
+        <a href="{{STORE_LINK_4}}" class="store-card">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>{{STORE_NAME_4}}</span>
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+<section id="user-reviews">
+
+    <h2>
+        <i class="fa-solid fa-star"></i>
+        User Reviews
+    </h2>
+
+    <div class="review-summary">
+
+        <div class="rating-score">
+            {{RATING_SCORE}}
+        </div>
+
+        <div class="rating-info">
+            <strong>{{RATING_TEXT}}</strong>
+            <span>{{TOTAL_REVIEWS}}</span>
+        </div>
+
+    </div>
+
+    <div class="review-list">
+
+        <div class="review-card">
+
+            <div class="review-header">
+                <strong>{{REVIEWER_1}}</strong>
+                <span>{{REVIEW_STARS_1}}</span>
+            </div>
+
+            <p>{{REVIEW_TEXT_1}}</p>
+
+        </div>
+
+        <div class="review-card">
+
+            <div class="review-header">
+                <strong>{{REVIEWER_2}}</strong>
+                <span>{{REVIEW_STARS_2}}</span>
+            </div>
+
+            <p>{{REVIEW_TEXT_2}}</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="faq">
+
+    <h2>
+        <i class="fa-solid fa-circle-question"></i>
+        FAQ
+    </h2>
+
+    <div class="faq-item">
+        <h3>{{FAQ_QUESTION_1}}</h3>
+        <p>{{FAQ_ANSWER_1}}</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>{{FAQ_QUESTION_2}}</h3>
+        <p>{{FAQ_ANSWER_2}}</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>{{FAQ_QUESTION_3}}</h3>
+        <p>{{FAQ_ANSWER_3}}</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>{{FAQ_QUESTION_4}}</h3>
+        <p>{{FAQ_ANSWER_4}}</p>
+    </div>
+
+</section>
+
+<section id="related-phones">
+
+    <h2>
+        <i class="fa-solid fa-mobile-screen"></i>
+        Related Phones
+    </h2>
+
+    <div class="related-list">
+
+        <a href="{{RELATED_PHONE_LINK_1}}" class="phone-card">
+
+            <img src="{{RELATED_PHONE_IMAGE_1}}" alt="{{RELATED_PHONE_NAME_1}}">
+
+            <div>
+                <h3>{{RELATED_PHONE_NAME_1}}</h3>
+                <span>{{RELATED_PHONE_BRAND_1}}</span>
+            </div>
+
+        </a>
+
+        <a href="{{RELATED_PHONE_LINK_2}}" class="phone-card">
+
+            <img src="{{RELATED_PHONE_IMAGE_2}}" alt="{{RELATED_PHONE_NAME_2}}">
+
+            <div>
+                <h3>{{RELATED_PHONE_NAME_2}}</h3>
+                <span>{{RELATED_PHONE_BRAND_2}}</span>
+            </div>
+
+        </a>
+
+        <a href="{{RELATED_PHONE_LINK_3}}" class="phone-card">
+
+            <img src="{{RELATED_PHONE_IMAGE_3}}" alt="{{RELATED_PHONE_NAME_3}}">
+
+            <div>
+                <h3>{{RELATED_PHONE_NAME_3}}</h3>
+                <span>{{RELATED_PHONE_BRAND_3}}</span>
+            </div>
+
+        </a>
+
+        <a href="{{RELATED_PHONE_LINK_4}}" class="phone-card">
+
+            <img src="{{RELATED_PHONE_IMAGE_4}}" alt="{{RELATED_PHONE_NAME_4}}">
+
+            <div>
+                <h3>{{RELATED_PHONE_NAME_4}}</h3>
+                <span>{{RELATED_PHONE_BRAND_4}}</span>
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer></footer>
+
+</body>
+</html>

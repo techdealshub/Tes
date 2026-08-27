@@ -1,0 +1,3826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phone A vs Phone B Comparison</title>
+<style>
+/* ================= COMPARISON MENU ================= */
+/* ================= HEADER ================= */
+
+header{
+
+background:var(--card);
+
+border:1px solid var(--border);
+
+border-radius:18px;
+
+padding:5px 5px;
+
+margin-bottom:5px;
+
+display:grid;
+
+align-items:center;
+
+justify-content:space-between;
+
+max-height: 70px;
+flex-direction:column;
+
+align-items:stretch;
+
+}
+
+
+.logo{
+
+font-size:24px;
+
+font-weight:700;
+
+color:var(--primary);
+
+cursor:pointer;
+
+white-space:nowrap;
+
+}
+
+
+nav{
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+}
+header img{
+  position: absolute;
+  width: 120px;
+  top: 0px;
+  align-content: center;
+}
+
+nav a{
+
+text-decoration:none;
+
+color:var(--muted);
+
+font-size:15px;
+
+font-weight:500;
+
+transition:.3s;
+
+}
+
+
+nav a:hover{
+
+color:var(--primary);
+
+}
+
+
+.search{
+
+background:var(--inner);
+
+border:1px solid var(--border);
+
+border-radius:12px;
+
+padding:10px 15px;
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+min-width:220px;
+
+}
+
+
+.search input{
+
+background:transparent;
+
+border:none;
+
+outline:none;
+
+color:var(--text);
+
+width:100%;
+
+font-size:14px;
+
+}
+
+
+.search input::placeholder{
+
+color:var(--muted);
+
+}
+
+
+.search i{
+
+color:var(--primary);
+
+cursor:pointer;
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+header{
+
+flex-direction:column;
+
+align-items:stretch;
+
+}
+
+
+nav{
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+
+.search{
+
+width:100%;
+
+min-width:auto;
+
+}
+
+}
+
+.comparison-menu{
+
+background:var(--card);
+
+border:1px solid var(--border);
+
+border-radius:18px;
+
+padding:10px 18px;
+
+display:flex;
+
+gap:12px;
+
+overflow-x:auto;
+
+position:sticky;
+
+top:5px;
+
+z-index:20;
+
+margin-bottom:25px;
+
+}
+
+
+
+.comparison-menu::-webkit-scrollbar{
+
+height:5px;
+
+}
+
+
+
+.comparison-menu a{
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+white-space:nowrap;
+
+text-decoration:none;
+
+color:var(--muted);
+
+background:var(--inner);
+
+padding:10px 18px;
+
+border-radius:25px;
+
+font-size:14px;
+
+transition:.3s;
+
+}
+
+
+
+.comparison-menu a:hover{
+
+background:var(--primary);
+
+color:white;
+
+}
+
+
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+
+
+section[id]{
+
+scroll-margin-top:90px;
+
+}
+  :root{
+
+--bg:#050816;
+--card:#0d1729;
+--inner:#111827;
+--border:#1e293b;
+--primary:#3b82f6;
+--secondary:#2563eb;
+--text:#ffffff;
+--muted:#94a3b8;
+--success:#22c55e;
+--warning:#facc15;
+
+}
+
+
+*{
+
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:Arial,Helvetica,sans-serif;
+
+}
+
+
+
+body{
+
+background:var(--bg);
+color:var(--text);
+padding:20px;
+
+}
+
+
+
+img{
+max-width:100%
+
+}
+
+
+
+h1,h2,h3{
+
+color:white;
+
+}
+
+
+
+.container,
+.comparison-page{
+
+max-width:1150px;
+margin:auto;
+
+}
+
+
+
+
+/* ================= HEADER ================= */
+
+
+header{
+
+height:70px;
+background:var(--card);
+border:1px solid var(--border);
+border-radius:18px;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+padding:0 25px;
+
+margin-bottom:25px;
+
+}
+
+
+.logo{
+
+font-size:24px;
+font-weight:bold;
+
+}
+
+
+
+nav{
+
+display:flex;
+gap:20px;
+
+}
+
+
+
+.search{
+
+background:var(--inner);
+padding:10px 20px;
+border-radius:12px;
+
+}
+
+
+
+
+/* ================= BREADCRUMB ================= */
+
+
+.breadcrumb{
+
+display:flex;
+align-items:center;
+gap:8px;
+
+font-size:14px;
+color:var(--muted);
+
+margin-bottom:20px;
+
+}
+
+
+.breadcrumb a{
+
+color:var(--muted);
+text-decoration:none;
+
+}
+
+
+.breadcrumb a:hover{
+
+color:var(--primary);
+
+}
+
+
+
+/* ================= HERO ================= */
+
+.comparison-hero{
+
+background:var(--card);
+border:1px solid var(--border);
+
+border-radius:25px;
+
+padding:40px;
+
+text-align:center;
+
+}
+
+
+.comparison-hero h1{
+
+font-size:40px;
+
+line-height:1.3;
+
+margin-bottom:15px;
+
+}
+
+
+.description{
+
+max-width:800px;
+
+margin:0 auto 35px;
+
+color:var(--muted);
+
+line-height:1.8;
+
+}
+
+
+/* ================= PHONES ================= */
+
+.comparison-phones{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:50px;
+
+margin-bottom:35px;
+
+}
+
+
+.phone{
+
+background:var(--inner);
+
+border:1px solid var(--border);
+
+border-radius:20px;
+
+padding:25px;
+
+min-width:280px;
+
+transition:.3s;
+
+}
+
+
+.phone:hover{
+
+transform:translateY(-5px);
+
+border-color:var(--primary);
+
+}
+
+
+.phone img{
+
+width:220px;
+
+height:220px;
+
+object-fit:contain;
+
+display:block;
+
+margin:auto;
+
+}
+
+
+.phone h2{
+
+font-size:22px;
+
+margin-top:15px;
+
+margin-bottom:10px;
+
+}
+
+
+.release-date,
+.price{
+
+display:block;
+
+color:var(--muted);
+
+margin-top:8px;
+
+font-size:14px;
+
+}
+
+
+.release-date i,
+.price i{
+
+color:var(--primary);
+
+margin-right:8px;
+
+}
+
+
+/* ================= VS ================= */
+
+.vs{
+
+font-size:42px;
+
+font-weight:700;
+
+color:var(--primary);
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+
+.vs i{
+
+font-size:28px;
+
+}
+
+
+/* ================= SCORES ================= */
+
+.rating-summary{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:20px;
+
+margin-top:20px;
+
+}
+
+
+.score{
+
+background:var(--inner);
+
+border:1px solid var(--border);
+
+border-radius:18px;
+
+padding:25px;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:10px;
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+
+.score:hover{
+
+border-color:var(--primary);
+
+transform:translateY(-3px);
+
+}
+
+
+.score i{
+
+font-size:28px;
+
+color:var(--primary);
+
+}
+
+
+.score h3{
+
+font-size:16px;
+
+margin:0;
+
+}
+
+
+.score strong{
+
+font-size:20px;
+
+font-weight:700;
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+.rating-summary{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+
+@media(max-width:768px){
+
+.comparison-phones{
+
+flex-direction:column;
+
+gap:25px;
+
+}
+
+
+.phone{
+
+width:100%;
+
+min-width:auto;
+
+}
+
+
+.comparison-hero h1{
+
+font-size:28px;
+
+}
+
+
+.phone img{
+
+width:180px;
+
+height:180px;
+
+}
+
+}
+/* ================= HERO ================= */
+
+
+.comparison-hero{
+
+background:var(--card);
+border:1px solid var(--border);
+
+border-radius:25px;
+
+padding:40px;
+
+text-align:center;
+
+}
+
+
+
+.comparison-hero h1{
+
+font-size:38px;
+margin-bottom:15px;
+
+}
+
+
+
+.description{
+
+color:var(--muted);
+margin-bottom:35px;
+
+}
+
+
+
+
+.comparison-phones{
+
+display:flex;
+justify-content:center;
+align-items:center;
+gap:60px;
+
+}
+
+
+
+.phone{
+
+background:var(--inner);
+
+padding:25px;
+
+border-radius:20px;
+
+min-width:250px;
+
+}
+
+
+
+.phone img{
+
+height:220px;
+object-fit:contain;
+
+}
+
+
+
+.phone h2{
+
+margin-top:15px;
+
+}
+
+
+
+.phone span{
+
+display:block;
+color:var(--muted);
+margin-top:8px;
+
+}
+
+
+
+.vs{
+
+font-size:45px;
+font-weight:bold;
+color:var(--primary);
+
+}
+
+
+
+.winner-card{
+
+background:linear-gradient(
+135deg,
+#102442,
+#182f56
+);
+
+text-align:center;
+
+padding:40px;
+
+border-radius:20px;
+
+}
+
+
+.winner-card i{
+
+font-size:60px;
+
+color:var(--warning);
+
+margin-bottom:15px;
+
+}
+
+
+.winner-card h2{
+
+margin-bottom:15px;
+
+}
+
+
+.winner-card p{
+
+max-width:700px;
+
+margin:auto;
+
+color:var(--muted);
+
+line-height:1.8;
+
+}
+
+
+.quick-specs td i{
+
+color:var(--primary);
+
+margin-right:10px;
+
+width:20px;
+
+}
+.quick-specs td:first-child{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+font-weight:600;
+
+color:var(--muted);
+
+}
+
+
+.quick-specs table{
+
+width:100%;
+
+overflow:hidden;
+
+border-radius:15px;
+
+}
+
+
+.quick-specs th{
+
+background:var(--inner);
+
+font-size:16px;
+
+}
+
+
+.quick-specs tr:hover{
+
+background:rgba(59,130,246,.08);
+
+}
+
+/* ================= SCORES ================= */
+
+
+.rating-summary{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+margin-top:35px;
+
+flex-wrap:wrap;
+
+}
+
+.score{
+
+background:var(--inner);
+
+border:1px solid var(--border);
+
+padding:20px 35px;
+
+border-radius:18px;
+
+font-size:18px;
+
+}
+
+
+.table-wrapper{
+
+overflow-x:auto;
+
+-webkit-overflow-scrolling:touch;
+
+}
+
+
+.quick-specs table{
+
+min-width:700px;
+
+}
+
+
+/* ================= SECTIONS ================= */
+
+
+section{
+
+margin-top:25px;
+
+}
+
+
+
+.winner-section,
+.quick-specs,
+.design-section,
+.display-section,
+.performance-section,
+.camera-section,
+.battery-section,
+.software-section,
+.connectivity-section,
+.audio-section,
+.security-section,
+.pros-cons-section,
+.price-section,
+.reviews-section,
+.faq-section,
+.related-section,
+.news-section{
+
+
+background:var(--card);
+
+border:1px solid var(--border);
+
+border-radius:22px;
+
+padding:30px;
+
+}
+
+
+
+
+section h2{
+
+font-size:25px;
+
+margin-bottom:25px;
+
+}
+
+
+
+section h2::before{
+
+content:"";
+
+display:inline-block;
+
+width:5px;
+
+height:25px;
+
+background:var(--primary);
+
+border-radius:10px;
+
+margin-right:12px;
+
+}
+
+
+
+
+/* ================= WINNER ================= */
+
+
+.winner-card{
+
+background:#102442;
+
+border-radius:20px;
+
+padding:35px;
+
+text-align:center;
+
+}
+
+
+
+.winner-card i{
+
+font-size:50px;
+
+color:var(--warning);
+
+}
+
+
+
+
+/* ================= TABLE ================= */
+.scroll-hint{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:8px;
+
+margin-bottom:15px;
+
+font-size:13px;
+
+color:var(--muted);
+
+animation:pulse 1.5s infinite;
+
+}
+
+@keyframes pulse{
+
+0%{opacity:.4;}
+
+50%{opacity:1;}
+
+100%{opacity:.4;}
+
+}
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+
+
+th,
+td{
+
+padding:16px;
+
+border-bottom:1px solid var(--border);
+
+text-align:center;
+
+}
+
+
+
+th{
+
+color:var(--primary);
+
+}
+
+
+
+td:first-child{
+
+color:var(--muted);
+
+font-weight:bold;
+
+}
+
+
+.design-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:20px;
+
+margin-bottom:20px;
+
+}
+
+.design-grid > div{
+
+background:var(--inner);
+
+padding:25px;
+
+border-radius:18px;
+
+border:1px solid var(--border);
+
+}
+
+.design-grid h3{
+
+margin-bottom:15px;
+
+color:var(--primary);
+
+}
+
+.design-grid ul{
+
+padding-left:20px;
+
+}
+
+.design-grid li{
+
+margin-bottom:10px;
+
+color:var(--muted);
+
+}
+
+.design-details{
+
+background:var(--inner);
+
+padding:25px;
+
+border-radius:18px;
+
+line-height:1.8;
+
+color:var(--muted);
+
+}
+.comparison-content{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:20px;
+
+margin-bottom:20px;
+
+}
+
+.display-card{
+
+background:var(--inner);
+
+padding:25px;
+
+border-radius:18px;
+
+border:1px solid var(--border);
+
+}
+
+.display-card h3{
+
+color:var(--primary);
+
+margin-bottom:15px;
+
+}
+
+.display-card ul{
+
+padding-left:20px;
+
+}
+
+.display-card li{
+
+margin-bottom:10px;
+
+color:var(--muted);
+
+}
+
+.display-summary{
+
+background:var(--inner);
+
+padding:25px;
+
+border-radius:18px;
+
+line-height:1.8;
+
+}
+
+.display-summary strong{
+
+display:block;
+
+margin-bottom:10px;
+
+color:var(--success);
+
+}
+.benchmark,
+.gaming-test{
+
+background:var(--inner);
+
+padding:25px;
+
+border-radius:18px;
+
+margin-bottom:20px;
+
+}
+
+.benchmark h3,
+.gaming-test h3{
+
+color:var(--primary);
+
+margin-bottom:15px;
+
+}
+
+.benchmark table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+.benchmark td{
+
+padding:12px;
+
+border-bottom:1px solid var(--border);
+
+}
+
+.gaming-test ul{
+
+padding-left:20px;
+
+}
+
+.gaming-test li{
+
+margin-bottom:12px;
+
+color:var(--muted);
+
+line-height:1.6;
+
+}
+
+.performance-winner{
+
+margin-top:20px;
+
+padding:15px;
+
+background:#102442;
+
+border:1px solid var(--primary);
+
+border-radius:12px;
+
+font-weight:700;
+
+text-align:center;
+
+color:white;
+
+}
+.benchmark{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+}
+
+.benchmark table{
+    min-width:700px;
+}
+.benchmark::-webkit-scrollbar{
+    height:8px;
+}
+
+.benchmark::-webkit-scrollbar-track{
+    background:#111827;
+    border-radius:20px;
+}
+
+.benchmark::-webkit-scrollbar-thumb{
+    background:var(--primary);
+    border-radius:20px;
+}
+.benchmark table{
+    width:100%;
+    table-layout:fixed;
+}
+
+.benchmark td:first-child{
+    width:40%;
+    text-align:left;
+}
+
+.benchmark td:nth-child(2),
+.benchmark td:nth-child(3){
+    width:30%;
+    text-align:center;
+}
+.camera-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.camera-grid div{
+    background:var(--inner);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:25px;
+}
+
+.camera-grid i{
+    font-size:28px;
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.camera-grid h3{
+    margin-bottom:15px;
+}
+
+.camera-grid p{
+    color:var(--muted);
+    line-height:1.7;
+    margin-bottom:10px;
+}
+
+.camera-score{
+    margin-top:25px;
+}
+
+.score-row{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-top:15px;
+}
+
+.score-row span{
+    width:150px;
+}
+
+.score-row .progress{
+    flex:1;
+}
+
+.score-row strong{
+    min-width:40px;
+    text-align:right;
+}
+.battery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.battery-card{
+    background:var(--inner);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:25px;
+}
+
+.battery-card i{
+    font-size:28px;
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.battery-card h3{
+    margin-bottom:15px;
+    color:white;
+}
+
+.battery-card p{
+    color:var(--muted);
+    line-height:1.8;
+    margin-bottom:8px;
+}
+.software-content{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.software-card{
+    background:var(--inner);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:25px;
+}
+
+.software-card i{
+    font-size:28px;
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.software-card h3{
+    margin-bottom:15px;
+    color:white;
+}
+
+.software-card p{
+    color:var(--muted);
+    line-height:1.8;
+    margin-bottom:10px;
+}
+@media(max-width:768px){
+
+.comparison-content{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+/* ================= GRIDS ================= */
+
+
+.design-grid,
+.camera-grid,
+.related-grid,
+.news-grid,
+.battery-grid,
+.pros-cons-section,
+.grid{
+
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:20px;
+
+}
+
+
+
+
+.design-grid div,
+.camera-grid div,
+.related-grid div,
+.news-grid div,
+.battery-grid div,
+.pros-cons-section div,
+.comparison-content,
+.benchmark,
+.gaming-test{
+
+
+background:var(--inner);
+
+border-radius:18px;
+
+padding:25px;
+
+}
+
+
+
+
+
+/* ================= CAMERA SCORE ================= */
+
+
+.camera-score{
+
+margin-top:20px;
+
+background:var(--inner);
+
+padding:20px;
+
+border-radius:18px;
+
+}
+
+
+
+
+/* ================= PROGRESS ================= */
+
+
+.progress{
+
+height:10px;
+
+background:#1e293b;
+
+border-radius:20px;
+
+overflow:hidden;
+
+}
+
+
+
+.progress span{
+
+display:block;
+
+height:100%;
+
+background:var(--primary);
+
+}
+
+
+
+
+
+/* ================= BUY BUTTON ================= */
+
+
+.buy-buttons{
+
+display:flex;
+
+gap:15px;
+
+}
+
+
+
+.buy-buttons a{
+
+background:var(--primary);
+
+color:white;
+
+padding:12px 25px;
+
+border-radius:12px;
+
+text-decoration:none;
+
+}
+
+
+
+
+/* ================= FAQ ================= */
+
+
+.faq-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+
+
+.question,
+.answer{
+
+
+background:var(--inner);
+
+padding:20px;
+
+border-radius:15px;
+
+}
+
+
+
+
+
+/* ================= FOOTER ================= */
+
+
+footer{
+
+margin-top:40px;
+
+background:var(--card);
+
+border:1px solid var(--border);
+
+border-radius:20px;
+
+padding:30px;
+
+text-align:center;
+
+color:var(--muted);
+
+}
+
+
+/* ================= CONNECTIVITY ================= */
+
+.connectivity-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.connectivity-card{
+    background:var(--inner);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:25px;
+}
+
+.connectivity-card i{
+    font-size:28px;
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.connectivity-card h3{
+    margin-bottom:15px;
+    color:white;
+}
+
+.connectivity-card p{
+    color:var(--muted);
+    line-height:1.8;
+    margin-bottom:10px;
+}
+
+.connectivity-winner{
+    margin-top:20px;
+    padding:15px;
+    background:#102442;
+    border:1px solid var(--primary);
+    border-radius:12px;
+    font-weight:700;
+    text-align:center;
+    color:white;
+}
+/* ================= AUDIO ================= */
+
+.audio-content{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.audio-card{
+    background:var(--inner);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:25px;
+}
+
+.audio-card i{
+    font-size:28px;
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.audio-card h3{
+    margin-bottom:15px;
+    color:white;
+}
+
+.audio-card p{
+    color:var(--muted);
+    line-height:1.8;
+    margin-bottom:10px;
+}
+
+.audio-winner{
+    margin-top:20px;
+    padding:15px;
+    background:#102442;
+    border:1px solid var(--primary);
+    border-radius:12px;
+    font-weight:700;
+    text-align:center;
+    color:white;
+}
+/* ================= PROS & CONS ================= */
+
+.pros-cons-section{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.pros-card,
+.cons-card{
+    background:var(--inner);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:25px;
+}
+
+.pros-card{
+    border-left:4px solid var(--success);
+}
+
+.cons-card{
+    border-left:4px solid #ef4444;
+}
+
+.pros-card h2,
+.cons-card h2{
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+.pros-card ul,
+.cons-card ul{
+    list-style:none;
+    padding:0;
+}
+
+.pros-card li,
+.cons-card li{
+    color:var(--muted);
+    padding:12px 0;
+    border-bottom:1px solid var(--border);
+    line-height:1.6;
+}
+
+.pros-card li:last-child,
+.cons-card li:last-child{
+    border-bottom:none;
+}
+
+.pros-card li::before{
+    content:"✓";
+    color:var(--success);
+    font-weight:bold;
+    margin-right:10px;
+}
+
+.cons-card li::before{
+    content:"✕";
+    color:#ef4444;
+    font-weight:bold;
+    margin-right:10px;
+}
+/* ================= PRICE ================= */
+
+.price-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.price-card{
+    background:var(--inner);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:30px;
+    text-align:center;
+    transition:.3s;
+}
+
+.price-card:hover{
+    border-color:var(--primary);
+    transform:translateY(-3px);
+}
+
+.price-card i{
+    font-size:32px;
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.price-card h3{
+    margin-bottom:15px;
+}
+
+.price-value{
+    font-size:32px;
+    font-weight:700;
+    color:var(--success);
+    margin-bottom:15px;
+}
+
+.price-card p{
+    color:var(--muted);
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.buy-btn{
+    display:inline-block;
+    background:var(--primary);
+    color:#fff;
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.buy-btn:hover{
+    background:var(--secondary);
+}
+/* ================= REVIEWS ================= */
+
+.rating-overview{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:30px;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+}
+
+.rating-score{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:var(--inner);
+    border:1px solid var(--border);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.rating-score span{
+    font-size:36px;
+    font-weight:700;
+    color:var(--primary);
+}
+
+.rating-score small{
+    color:var(--muted);
+    margin-top:5px;
+}
+
+.rating-stars{
+    text-align:center;
+}
+
+.rating-stars i{
+    color:var(--warning);
+    font-size:24px;
+    margin:0 2px;
+}
+
+.rating-stars p{
+    margin-top:10px;
+    color:var(--muted);
+}
+
+.comments{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.review-card{
+    background:var(--inner);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:25px;
+}
+
+.review-card h3{
+    margin-bottom:10px;
+}
+
+.review-card .stars{
+    color:var(--warning);
+    font-size:18px;
+    margin-bottom:15px;
+}
+
+.review-card p{
+    color:var(--muted);
+    line-height:1.8;
+}
+/* ================= FAQ ================= */
+
+.faq-list{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.faq-item{
+    background:var(--inner);
+    border:1px solid var(--border);
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.question{
+    padding:20px;
+    font-weight:700;
+    color:white;
+    cursor:pointer;
+    position:relative;
+}
+
+.question::after{
+    content:"+";
+    position:absolute;
+    right:20px;
+    top:50%;
+    transform:translateY(-50%);
+    color:var(--primary);
+    font-size:22px;
+}
+
+.answer{
+    padding:0 20px 20px;
+    color:var(--muted);
+    line-height:1.8;
+}
+/* ================= RELATED COMPARISONS ================= */
+
+.related-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+}
+
+.related-card{
+    background:var(--inner);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:25px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.related-card:hover{
+    border-color:var(--primary);
+    transform:translateY(-3px);
+}
+
+.related-card i{
+    font-size:28px;
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.related-card h3{
+    color:white;
+    font-size:18px;
+    margin-bottom:10px;
+    line-height:1.5;
+}
+
+.related-card p{
+    color:var(--muted);
+    line-height:1.7;
+}
+/* ================= NEWS ================= */
+
+.news-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.news-card{
+    background:var(--inner);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:25px;
+    transition:.3s;
+}
+
+.news-card:hover{
+    border-color:var(--primary);
+    transform:translateY(-3px);
+}
+
+.news-date{
+    color:var(--primary);
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.news-date i{
+    margin-right:8px;
+}
+
+.news-card h3{
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:15px;
+}
+
+.news-card p{
+    color:var(--muted);
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.news-card a{
+    color:var(--primary);
+    text-decoration:none;
+    font-weight:600;
+}
+
+.news-card a:hover{
+    text-decoration:underline;
+}
+@media(max-width:768px){
+
+    .rating-overview{
+        flex-direction:column;
+    }
+
+}
+@media(max-width:768px){
+    .pros-cons-section{
+        grid-template-columns:1fr;
+    }
+}
+@media(max-width:768px){
+    .audio-content{
+        grid-template-columns:1fr;
+    }
+}
+/* Mobile */
+@media(max-width:768px){
+
+    .connectivity-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+
+@media(max-width:900px){
+
+
+.comparison-phones{
+
+gap:20px;
+
+}
+
+
+
+.phone{
+
+min-width:160px;
+
+}
+
+
+
+.phone img{
+
+height:150px;
+
+}
+
+
+.design-grid,
+.camera-grid,
+.related-grid,
+.news-grid,
+.battery-grid,
+.pros-cons-section,
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+body{
+
+padding:12px;
+
+}
+
+
+
+.comparison-hero{
+
+padding:20px;
+
+}
+
+
+
+.comparison-hero h1{
+
+font-size:26px;
+
+}
+
+
+
+.comparison-phones{
+
+flex-direction:column;
+
+}
+
+
+
+.vs{
+
+font-size:30px;
+
+}
+
+
+
+.rating-summary{
+
+flex-direction:column;
+
+}
+
+
+
+.score{
+
+width:100%;
+
+}
+
+
+
+header{
+
+flex-direction:column;
+
+height:auto;
+
+gap:15px;
+
+padding:20px;
+
+}
+
+
+
+}
+/* ================= FOOTER ================= */
+
+/* ================= FOOTER ================= */
+
+footer{
+    margin-top:40px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:24px;
+    overflow:hidden;
+}
+
+/* Top */
+
+.footer-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    padding:40px;
+    border-bottom:1px solid var(--border);
+}
+
+.footer-brand{
+    flex:1;
+}
+
+.footer-brand h2{
+    font-size:32px;
+    margin-bottom:15px;
+    color:var(--primary);
+}
+
+.footer-brand p{
+    max-width:600px;
+    color:var(--muted);
+    line-height:1.8;
+}
+
+.footer-newsletter{
+    min-width:350px;
+}
+
+.footer-newsletter h3{
+    margin-bottom:15px;
+}
+
+.footer-newsletter form{
+    display:flex;
+    gap:10px;
+}
+
+.footer-newsletter input{
+    flex:1;
+    background:var(--inner);
+    border:1px solid var(--border);
+    color:var(--text);
+    padding:14px 18px;
+    border-radius:12px;
+    outline:none;
+}
+
+.footer-newsletter button{
+    background:var(--primary);
+    color:#fff;
+    border:none;
+    padding:14px 22px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.footer-newsletter button:hover{
+    background:var(--secondary);
+}
+
+/* Links */
+
+.footer-links{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    padding:40px;
+    border-bottom:1px solid var(--border);
+}
+
+.footer-links h4{
+    margin-bottom:18px;
+    color:#fff;
+}
+
+.footer-links a{
+    display:block;
+    color:var(--muted);
+    text-decoration:none;
+    margin-bottom:12px;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:var(--primary);
+    transform:translateX(5px);
+}
+
+/* Stats */
+
+.footer-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    text-align:center;
+    padding:30px 40px;
+    border-bottom:1px solid var(--border);
+}
+
+.footer-stats strong{
+    display:block;
+    font-size:28px;
+    color:var(--primary);
+    margin-bottom:8px;
+}
+
+.footer-stats span{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* Bottom */
+
+.footer-bottom{
+    padding:25px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.footer-bottom p{
+    color:var(--muted);
+}
+
+.socials{
+    display:flex;
+    gap:12px;
+}
+
+.socials a{
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--inner);
+    border:1px solid var(--border);
+    border-radius:50%;
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.socials a:hover{
+    background:var(--primary);
+    border-color:var(--primary);
+    transform:translateY(-3px);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px){
+
+    .footer-top{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .footer-newsletter{
+        width:100%;
+        min-width:auto;
+    }
+
+    .footer-links{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-stats{
+        grid-template-columns:repeat(2,1fr);
+        gap:25px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .footer-top,
+    .footer-links,
+    .footer-stats,
+    .footer-bottom{
+        padding:25px;
+    }
+
+    .footer-links{
+        grid-template-columns:1fr;
+    }
+
+    .footer-stats{
+        grid-template-columns:1fr;
+    }
+
+    .footer-bottom{
+        flex-direction:column-reverse;
+        gap:20px;
+        text-align:center;
+    }
+
+    .footer-newsletter form{
+        flex-direction:column;
+    }
+
+    .footer-newsletter button{
+        width:100%;
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .footer-social{
+        flex-wrap:wrap;
+    }
+
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- Header -->
+<header>
+
+    <div class="logo">
+        <img src="techdealshub.png">
+    </div>
+
+
+ 
+
+
+
+</header>
+
+<!-- Comparison Navigation -->
+
+<!-- Comparison Navigation -->
+
+
+
+
+
+<main class="comparison-page">
+
+<div class="comparison-menu">
+
+
+<a href="#quick-specs">
+<i class="fa-solid fa-list"></i>
+Specs
+</a>
+
+
+<a href="#design">
+<i class="fa-solid fa-mobile-screen"></i>
+Design
+</a>
+
+
+<a href="#display">
+<i class="fa-solid fa-display"></i>
+Display
+</a>
+
+
+<a href="#performance">
+<i class="fa-solid fa-gauge-high"></i>
+Performance
+</a>
+
+
+<a href="#camera">
+<i class="fa-solid fa-camera"></i>
+Camera
+</a>
+
+
+<a href="#battery">
+<i class="fa-solid fa-battery-full"></i>
+Battery
+</a>
+
+
+<a href="#software">
+<i class="fa-solid fa-code"></i>
+Software
+</a>
+
+
+<a href="#connectivity">
+<i class="fa-solid fa-wifi"></i>
+Connectivity
+</a>
+
+
+<a href="#audio">
+<i class="fa-solid fa-volume-high"></i>
+Audio
+</a>
+
+
+<a href="#security">
+<i class="fa-solid fa-shield-halved"></i>
+Security
+</a>
+
+
+<a href="#pros-cons">
+<i class="fa-solid fa-scale-balanced"></i>
+Pros & Cons
+</a>
+
+
+<a href="#price">
+<i class="fa-solid fa-tag"></i>
+Price
+</a>
+
+
+<a href="#reviews">
+<i class="fa-solid fa-star"></i>
+Reviews
+</a>
+
+
+<a href="#faq">
+<i class="fa-solid fa-circle-question"></i>
+FAQ
+</a>
+
+
+<a href="#news">
+<i class="fa-solid fa-newspaper"></i>
+News
+</a>
+
+
+</div>
+
+
+
+
+<!-- Breadcrumb -->
+
+<!-- Breadcrumb -->
+<section class="breadcrumb">
+
+    <a href="/">Home</a>
+
+    <span>/</span>
+
+    <a href="/comparisons">Comparisons</a>
+
+    <span>/</span>
+
+    <span>Galaxy S26 Ultra vs iPhone 17 Pro Max</span>
+
+</section>
+
+
+<!-- Hero Comparison -->
+<section class="comparison-hero">
+
+    <h1>
+        Samsung Galaxy S26 Ultra vs Apple iPhone 17 Pro Max
+    </h1>
+
+    <p class="description">
+        Compare Samsung Galaxy S26 Ultra and Apple iPhone 17 Pro Max in terms of design, display, performance, camera, battery life, software features and price.
+    </p>
+
+    <div class="comparison-phones">
+
+        <div class="phone phone-a">
+
+            <img src="images/galaxy-s26-ultra.webp"
+                 alt="Samsung Galaxy S26 Ultra">
+
+            <h2>Samsung Galaxy S26 Ultra</h2>
+
+            <span class="release-date">
+                <i class="fa-solid fa-calendar"></i>
+                January 2026
+            </span>
+
+            <span class="price">
+                <i class="fa-solid fa-tag"></i>
+                Starting at $1,299
+            </span>
+
+        </div>
+
+
+        <div class="vs">
+            <i class="fa-solid fa-bolt"></i>
+            VS
+        </div>
+
+
+        <div class="phone phone-b">
+
+            <img src="images/iphone-17-pro-max.webp"
+                 alt="Apple iPhone 17 Pro Max">
+
+            <h2>Apple iPhone 17 Pro Max</h2>
+
+            <span class="release-date">
+                <i class="fa-solid fa-calendar"></i>
+                September 2025
+            </span>
+
+            <span class="price">
+                <i class="fa-solid fa-tag"></i>
+                Starting at $1,199
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="rating-summary">
+
+        <div class="score">
+
+            <i class="fa-solid fa-star"></i>
+
+            <h3>Overall Score</h3>
+
+            <strong>9.5 / 10</strong>
+
+        </div>
+
+
+        <div class="score">
+
+            <i class="fa-solid fa-camera"></i>
+
+            <h3>Camera Winner</h3>
+
+            <strong>Galaxy S26 Ultra</strong>
+
+        </div>
+
+
+        <div class="score">
+
+            <i class="fa-solid fa-battery-full"></i>
+
+            <h3>Battery Winner</h3>
+
+            <strong>iPhone 17 Pro Max</strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Winner -->
+<!-- Winner -->
+
+<section class="winner-section">
+
+    <div class="winner-card">
+
+        <i class="fa-solid fa-trophy"></i>
+
+        <h2>
+            Overall Winner: Samsung Galaxy S26 Ultra
+        </h2>
+
+        <p>
+            The Galaxy S26 Ultra offers a better camera system,
+            larger battery, faster charging and more versatile
+            zoom capabilities, making it the best overall choice
+            for most users.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- Quick Specs -->
+
+<section id="quick-specs" class="quick-specs">
+
+    <h2>
+        Quick Comparison
+    </h2>
+    <div class="scroll-hint">
+
+<i class="fa-solid fa-arrows-left-right"></i>
+
+Swipe to view more
+
+</div>
+<div class="table-wrapper">
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Specification</th>
+
+                <th>Galaxy S26 Ultra</th>
+
+                <th>iPhone 17 Pro Max</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+
+                <td>
+                    <i class="fa-solid fa-display"></i>
+                    Display
+                </td>
+
+                <td>6.9" AMOLED 144Hz</td>
+
+                <td>6.9" OLED 120Hz</td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    <i class="fa-solid fa-microchip"></i>
+                    Processor
+                </td>
+
+                <td>Snapdragon 8 Elite Gen 2</td>
+
+                <td>Apple A19 Pro</td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    <i class="fa-solid fa-memory"></i>
+                    RAM
+                </td>
+
+                <td>16GB</td>
+
+                <td>12GB</td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    <i class="fa-solid fa-hard-drive"></i>
+                    Storage
+                </td>
+
+                <td>256GB / 512GB / 1TB</td>
+
+                <td>256GB / 512GB / 1TB</td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    <i class="fa-solid fa-camera"></i>
+                    Camera
+                </td>
+
+                <td>200MP + 50MP + 50MP</td>
+
+                <td>48MP + 48MP + 12MP</td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    <i class="fa-solid fa-battery-full"></i>
+                    Battery
+                </td>
+
+                <td>5500mAh</td>
+
+                <td>5000mAh</td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    <i class="fa-solid fa-tag"></i>
+                    Price
+                </td>
+
+                <td>$1299</td>
+
+                <td>$1199</td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+    </div>
+
+</section>
+
+
+<!-- Design -->
+<section id="design" class="design-section">
+
+    <h2>Design</h2>
+
+    <div class="design-grid">
+
+        <div>
+
+            <h3>Samsung Galaxy S26 Ultra</h3>
+
+            <ul>
+                <li>Titanium frame</li>
+                <li>Flat AMOLED display</li>
+                <li>Built-in S Pen</li>
+                <li>IP68 water resistance</li>
+                <li>Weight: 233g</li>
+            </ul>
+
+        </div>
+
+        <div>
+
+            <h3>Apple iPhone 17 Pro Max</h3>
+
+            <ul>
+                <li>Titanium frame</li>
+                <li>Dynamic Island</li>
+                <li>Premium matte glass</li>
+                <li>IP68 water resistance</li>
+                <li>Weight: 227g</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="design-details">
+
+        <p>
+            Both phones use premium titanium frames and offer excellent build quality.
+            The Galaxy S26 Ultra provides a built-in S Pen and sharper industrial design,
+            while the iPhone 17 Pro Max focuses on simplicity, comfort and Apple's signature aesthetics.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Display -->
+<section id="display" class="display-section">
+
+    <h2>Display</h2>
+
+    <div class="comparison-content">
+
+        <div class="display-card">
+
+            <h3>Samsung Galaxy S26 Ultra</h3>
+
+            <ul>
+                <li>6.9-inch Dynamic AMOLED 2X</li>
+                <li>3120 × 1440 Resolution</li>
+                <li>144Hz Refresh Rate</li>
+                <li>HDR10+ Support</li>
+                <li>Up to 3000 nits Brightness</li>
+            </ul>
+
+        </div>
+
+        <div class="display-card">
+
+            <h3>Apple iPhone 17 Pro Max</h3>
+
+            <ul>
+                <li>6.9-inch LTPO OLED</li>
+                <li>2868 × 1320 Resolution</li>
+                <li>120Hz ProMotion</li>
+                <li>HDR Support</li>
+                <li>Up to 2500 nits Brightness</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="display-summary">
+
+        <strong>Display Winner: Samsung Galaxy S26 Ultra</strong>
+
+        <p>
+            Both smartphones feature premium OLED panels with excellent color accuracy and brightness.
+            The Galaxy S26 Ultra takes the lead with its higher resolution and 144Hz refresh rate,
+            providing a smoother and sharper viewing experience.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Performance -->
+<section id="performance" class="performance-section">
+
+    <h2>Performance</h2>
+
+    <div class="benchmark">
+
+        <h3>Benchmark Scores</h3>
+
+        <table>
+
+            <tr>
+                <td>AnTuTu Score</td>
+                <td>3,150,000</td>
+                <td>2,950,000</td>
+            </tr>
+
+            <tr>
+                <td>Geekbench Single-Core</td>
+                <td>3400</td>
+                <td>4200</td>
+            </tr>
+
+            <tr>
+                <td>Geekbench Multi-Core</td>
+                <td>11200</td>
+                <td>10500</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="gaming-test">
+
+        <h3>Gaming Performance</h3>
+
+        <ul>
+
+            <li>
+                Galaxy S26 Ultra:
+                Stable 120 FPS in most competitive games.
+            </li>
+
+            <li>
+                iPhone 17 Pro Max:
+                Excellent optimization and smooth gameplay.
+            </li>
+
+            <li>
+                Thermal Management:
+                Galaxy stays cooler during long gaming sessions.
+            </li>
+
+        </ul>
+
+        <div class="performance-winner">
+
+            🏆 Winner: Samsung Galaxy S26 Ultra
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Camera -->
+<section id="camera" class="camera-section">
+
+    <h2>Camera</h2>
+
+    <div class="camera-grid">
+
+        <div class="main-camera">
+
+            <i class="fa-solid fa-camera"></i>
+
+            <h3>Main Camera</h3>
+
+            <p><strong>Galaxy S26 Ultra:</strong> 200MP OIS</p>
+
+            <p><strong>iPhone 17 Pro Max:</strong> 48MP OIS</p>
+
+            <p>
+                Samsung captures more detail while Apple delivers more natural colors.
+            </p>
+
+        </div>
+
+        <div class="ultrawide">
+
+            <i class="fa-solid fa-expand"></i>
+
+            <h3>Ultra-Wide</h3>
+
+            <p><strong>Galaxy S26 Ultra:</strong> 50MP</p>
+
+            <p><strong>iPhone 17 Pro Max:</strong> 48MP</p>
+
+            <p>
+                Both provide excellent landscape photography with wide dynamic range.
+            </p>
+
+        </div>
+
+        <div class="telephoto">
+
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+
+            <h3>Zoom Camera</h3>
+
+            <p><strong>Galaxy S26 Ultra:</strong> 5x Optical Zoom</p>
+
+            <p><strong>iPhone 17 Pro Max:</strong> 5x Optical Zoom</p>
+
+            <p>
+                Samsung maintains better detail at extreme zoom levels.
+            </p>
+
+        </div>
+
+        <div class="selfie">
+
+            <i class="fa-solid fa-user"></i>
+
+            <h3>Selfie Camera</h3>
+
+            <p><strong>Galaxy S26 Ultra:</strong> 12MP</p>
+
+            <p><strong>iPhone 17 Pro Max:</strong> 12MP</p>
+
+            <p>
+                Apple produces more consistent skin tones and video quality.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="camera-score">
+
+        <h3>Camera Scores</h3>
+
+        <div class="score-row">
+
+            <span>Galaxy S26 Ultra</span>
+
+            <div class="progress">
+                <span style="width:96%"></span>
+            </div>
+
+            <strong>96</strong>
+
+        </div>
+
+        <div class="score-row">
+
+            <span>iPhone 17 Pro Max</span>
+
+            <div class="progress">
+                <span style="width:93%"></span>
+            </div>
+
+            <strong>93</strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Battery -->
+<section id="battery" class="battery-section">
+
+    <h2>Battery</h2>
+
+    <div class="battery-grid">
+
+        <div class="battery-card">
+
+            <i class="fa-solid fa-battery-full"></i>
+
+            <h3>Battery Capacity</h3>
+
+            <p><strong>Galaxy S26 Ultra:</strong> 5500mAh</p>
+
+            <p><strong>iPhone 17 Pro Max:</strong> 5000mAh</p>
+
+        </div>
+
+        <div class="battery-card">
+
+            <i class="fa-solid fa-bolt"></i>
+
+            <h3>Fast Charging</h3>
+
+            <p><strong>Galaxy S26 Ultra:</strong> 65W</p>
+
+            <p><strong>iPhone 17 Pro Max:</strong> 40W</p>
+
+        </div>
+
+        <div class="battery-card">
+
+            <i class="fa-solid fa-wifi"></i>
+
+            <h3>Wireless Charging</h3>
+
+            <p><strong>Galaxy S26 Ultra:</strong> 25W</p>
+
+            <p><strong>iPhone 17 Pro Max:</strong> MagSafe 25W</p>
+
+        </div>
+
+        <div class="battery-card">
+
+            <i class="fa-solid fa-clock"></i>
+
+            <h3>Battery Life</h3>
+
+            <p>
+                Both phones easily last a full day, while the iPhone is slightly more efficient.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Software -->
+<section id="software" class="software-section">
+
+    <h2>Software</h2>
+
+    <div class="software-content">
+
+        <div class="software-card">
+
+            <i class="fa-solid fa-mobile-screen"></i>
+
+            <h3>Operating System</h3>
+
+            <p>
+                <strong>Galaxy S26 Ultra:</strong>
+                Android 16 with One UI 8
+            </p>
+
+            <p>
+                <strong>iPhone 17 Pro Max:</strong>
+                iOS 26
+            </p>
+
+        </div>
+
+        <div class="software-card">
+
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+            <h3>AI Features</h3>
+
+            <p>
+                Samsung offers Galaxy AI tools for translation,
+                writing assistance and photo editing.
+            </p>
+
+            <p>
+                Apple provides Apple Intelligence with deep
+                system integration and productivity features.
+            </p>
+
+        </div>
+
+        <div class="software-card">
+
+            <i class="fa-solid fa-arrow-rotate-right"></i>
+
+            <h3>Software Updates</h3>
+
+            <p>
+                Samsung promises up to 7 years of Android updates.
+            </p>
+
+            <p>
+                Apple typically delivers software support
+                for 6–7 years.
+            </p>
+
+        </div>
+
+        <div class="software-card">
+
+            <i class="fa-solid fa-user-check"></i>
+
+            <h3>User Experience</h3>
+
+            <p>
+                One UI offers extensive customization while
+                iOS focuses on simplicity and ecosystem integration.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Connectivity -->
+<section id="connectivity" class="connectivity-section">
+
+    <h2>Connectivity</h2>
+
+    <div class="software-content">
+
+        <div class="software-card">
+            <i class="fa-solid fa-wifi"></i>
+            <h3>Galaxy S26 Ultra</h3>
+            <p><strong>Wi-Fi:</strong> Wi-Fi 7</p>
+            <p><strong>Bluetooth:</strong> 5.4</p>
+            <p><strong>USB:</strong> USB-C 3.2</p>
+            <p><strong>Cellular:</strong> 5G SA/NSA</p>
+            <p><strong>NFC:</strong> Supported</p>
+        </div>
+
+        <div class="software-card">
+            <i class="fa-solid fa-signal"></i>
+            <h3>iPhone 17 Pro Max</h3>
+            <p><strong>Wi-Fi:</strong> Wi-Fi 7</p>
+            <p><strong>Bluetooth:</strong> 5.4</p>
+            <p><strong>USB:</strong> USB-C</p>
+            <p><strong>Cellular:</strong> 5G</p>
+            <p><strong>NFC:</strong> Supported</p>
+        </div>
+
+    </div>
+
+    <div class="performance-winner">
+        Connectivity Winner: Tie — Both phones offer flagship-level
+        connectivity with Wi-Fi 7, Bluetooth 5.4, 5G support and NFC.
+    </div>
+
+</section>
+
+
+<!-- Audio -->
+<section id="audio" class="audio-section">
+
+    <h2>Audio</h2>
+
+    <div class="audio-content">
+
+        <div class="audio-card">
+            <i class="fa-solid fa-volume-high"></i>
+            <h3>Galaxy S26 Ultra</h3>
+            <p><strong>Speakers:</strong> Stereo speakers tuned by AKG</p>
+            <p><strong>Dolby Atmos:</strong> Supported</p>
+            <p><strong>3.5mm Jack:</strong> No</p>
+            <p><strong>Audio Quality:</strong> Rich sound with strong bass and high volume output.</p>
+        </div>
+
+        <div class="audio-card">
+            <i class="fa-solid fa-music"></i>
+            <h3>iPhone 17 Pro Max</h3>
+            <p><strong>Speakers:</strong> Stereo speakers</p>
+            <p><strong>Spatial Audio:</strong> Supported</p>
+            <p><strong>3.5mm Jack:</strong> No</p>
+            <p><strong>Audio Quality:</strong> Excellent clarity and balanced sound profile.</p>
+        </div>
+
+    </div>
+
+    <div class="audio-winner">
+        Audio Winner: iPhone 17 Pro Max — Slightly better speaker balance and spatial audio experience.
+    </div>
+
+</section>
+
+
+<!-- Security -->
+<section id="security" class="security-section">
+
+    <h2>Security</h2>
+
+    <div class="security-content">
+
+        <div class="security-card">
+            <i class="fa-solid fa-fingerprint"></i>
+            <h3>Galaxy S26 Ultra</h3>
+            <p><strong>Fingerprint Sensor:</strong> Ultrasonic under-display</p>
+            <p><strong>Face Unlock:</strong> Supported</p>
+            <p><strong>Security Platform:</strong> Samsung Knox</p>
+            <p><strong>Updates:</strong> Long-term security updates</p>
+        </div>
+
+        <div class="security-card">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>iPhone 17 Pro Max</h3>
+            <p><strong>Face ID:</strong> Advanced 3D facial recognition</p>
+            <p><strong>Fingerprint Sensor:</strong> Not available</p>
+            <p><strong>Security Platform:</strong> Secure Enclave</p>
+            <p><strong>Updates:</strong> Industry-leading security support</p>
+        </div>
+
+    </div>
+
+    <div class="security-winner">
+        Security Winner: iPhone 17 Pro Max — Face ID and Apple's security ecosystem provide excellent protection and privacy.
+    </div>
+
+</section>
+
+<!-- Pros & Cons -->
+<section id="pros-cons" class="pros-cons-section">
+
+    <div class="pros-card">
+        <h2>Galaxy S26 Ultra Pros</h2>
+        <ul>
+            <li>Excellent camera zoom capabilities</li>
+            <li>Large high-resolution AMOLED display</li>
+            <li>Fast charging support</li>
+            <li>S Pen functionality</li>
+            <li>Highly customizable software</li>
+        </ul>
+    </div>
+
+    <div class="cons-card">
+        <h2>Galaxy S26 Ultra Cons</h2>
+        <ul>
+            <li>Premium price tag</li>
+            <li>Large and heavy design</li>
+            <li>No headphone jack</li>
+            <li>Charging adapter sold separately</li>
+        </ul>
+    </div>
+
+    <div class="pros-card">
+        <h2>iPhone 17 Pro Max Pros</h2>
+        <ul>
+            <li>Excellent performance</li>
+            <li>Outstanding battery life</li>
+            <li>Long software support</li>
+            <li>Premium build quality</li>
+            <li>Strong Apple ecosystem</li>
+        </ul>
+    </div>
+
+    <div class="cons-card">
+        <h2>iPhone 17 Pro Max Cons</h2>
+        <ul>
+            <li>Limited customization options</li>
+            <li>Slower charging than rivals</li>
+            <li>High repair costs</li>
+            <li>Expensive accessories</li>
+        </ul>
+    </div>
+
+</section>
+
+
+<!-- Price -->
+<section id="price" class="price-section">
+
+    <h2>Price Comparison</h2>
+
+    <div class="price-grid">
+
+        <div class="price-card">
+
+            <i class="fa-solid fa-tag"></i>
+
+            <h3>Galaxy S26 Ultra</h3>
+
+            <div class="price-value">$1,299</div>
+
+            <p>Starting price for the base storage variant.</p>
+
+            <a href="#" class="buy-btn">
+                Buy Galaxy S26 Ultra
+            </a>
+
+        </div>
+
+        <div class="price-card">
+
+            <i class="fa-solid fa-tag"></i>
+
+            <h3>iPhone 17 Pro Max</h3>
+
+            <div class="price-value">$1,199</div>
+
+            <p>Starting price for the base storage variant.</p>
+
+            <a href="#" class="buy-btn">
+                Buy iPhone 17 Pro Max
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="reviews-section">
+
+    <h2>User Reviews</h2>
+
+    <div class="rating-overview">
+
+        <div class="rating-score">
+            <span>4.8</span>
+            <small>Average Rating</small>
+        </div>
+
+        <div class="rating-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+            <p>Based on 2,500+ user reviews</p>
+        </div>
+
+    </div>
+
+    <div class="comments">
+
+        <div class="review-card">
+            <h3>Ahmed K.</h3>
+            <div class="stars">
+                ★★★★★
+            </div>
+            <p>
+                The Galaxy S26 Ultra has an incredible camera and battery life.
+                One of the best Android phones I've used.
+            </p>
+        </div>
+
+        <div class="review-card">
+            <h3>Sarah M.</h3>
+            <div class="stars">
+                ★★★★★
+            </div>
+            <p>
+                The iPhone 17 Pro Max feels premium and delivers outstanding
+                performance with excellent software support.
+            </p>
+        </div>
+
+        <div class="review-card">
+            <h3>David R.</h3>
+            <div class="stars">
+                ★★★★☆
+            </div>
+            <p>
+                Both phones are excellent. The choice mainly depends on whether
+                you prefer Android or iOS.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FAQ -->
+<section id="faq" class="faq-section">
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-list">
+
+        <div class="faq-item">
+            <div class="question">
+                Which phone has the better camera?
+            </div>
+            <div class="answer">
+                The Galaxy S26 Ultra offers more versatile zoom capabilities and a more advanced camera system overall.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question">
+                Which phone has better battery life?
+            </div>
+            <div class="answer">
+                The iPhone 17 Pro Max delivers slightly better battery endurance in most real-world tests.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question">
+                Which phone is better for gaming?
+            </div>
+            <div class="answer">
+                Both devices are excellent for gaming, but the Galaxy S26 Ultra may offer better thermal management and display flexibility.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question">
+                Which phone provides longer software support?
+            </div>
+            <div class="answer">
+                Apple traditionally provides longer software support, although Samsung has significantly improved its update policy.
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Related Comparisons -->
+<section id="related" class="related-section">
+
+    <h2>Related Comparisons</h2>
+
+    <div class="related-grid">
+
+        <a href="#" class="related-card">
+            <i class="fa-solid fa-mobile-screen"></i>
+            <h3>Galaxy S26 Ultra vs Pixel 11 Pro</h3>
+            <p>Compare Samsung's flagship with Google's latest premium smartphone.</p>
+        </a>
+
+        <a href="#" class="related-card">
+            <i class="fa-solid fa-mobile-screen"></i>
+            <h3>iPhone 17 Pro Max vs Pixel 11 Pro</h3>
+            <p>See how Apple's flagship stacks up against Google's best device.</p>
+        </a>
+
+        <a href="#" class="related-card">
+            <i class="fa-solid fa-mobile-screen"></i>
+            <h3>Galaxy S26 Ultra vs OnePlus 15 Pro</h3>
+            <p>Compare display, performance, cameras and battery life.</p>
+        </a>
+
+        <a href="#" class="related-card">
+            <i class="fa-solid fa-mobile-screen"></i>
+            <h3>iPhone 17 Pro Max vs Galaxy Z Fold 8</h3>
+            <p>Traditional flagship versus foldable powerhouse comparison.</p>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- Latest News -->
+<section id="news" class="news-section">
+
+    <h2>Latest News</h2>
+
+    <div class="news-grid">
+
+        <article class="news-card">
+
+            <div class="news-date">
+                <i class="fa-solid fa-calendar"></i>
+                July 2026
+            </div>
+
+            <h3>
+                Samsung Galaxy S26 Ultra Sets New Camera Benchmark
+            </h3>
+
+            <p>
+                Samsung's latest flagship continues to impress with advanced
+                AI photography features and improved zoom performance.
+            </p>
+
+            <a href="#">Read More</a>
+
+        </article>
+
+        <article class="news-card">
+
+            <div class="news-date">
+                <i class="fa-solid fa-calendar"></i>
+                June 2026
+            </div>
+
+            <h3>
+                iPhone 17 Pro Max Dominates Battery Endurance Tests
+            </h3>
+
+            <p>
+                Independent testing shows Apple's flagship delivering
+                exceptional battery life under heavy daily usage.
+            </p>
+
+            <a href="#">Read More</a>
+
+        </article>
+
+        <article class="news-card">
+
+            <div class="news-date">
+                <i class="fa-solid fa-calendar"></i>
+                May 2026
+            </div>
+
+            <h3>
+                Flagship Smartphone Market Becomes More Competitive
+            </h3>
+
+            <p>
+                Samsung, Apple, Google and OnePlus continue to push innovation
+                in cameras, AI features and performance.
+            </p>
+
+            <a href="#">Read More</a>
+
+        </article>
+
+    </div>
+
+</section>
+</main>
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+
+<footer>
+
+    <div class="footer-top">
+
+        <div class="footer-brand">
+
+            <h2>TechDealsHub</h2>
+
+            <p>
+                Compare smartphones, discover the latest tech news,
+                explore detailed specifications and find the best device
+                for your needs.
+            </p>
+
+        </div>
+
+        <div class="footer-newsletter">
+
+            <h3>Stay Updated</h3>
+
+            <form>
+                <input type="email" placeholder="Enter your email">
+                <button type="submit">Subscribe</button>
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="footer-links">
+
+        <div>
+            <h4>Phones</h4>
+            <a href="#">Samsung Phones</a>
+            <a href="#">Apple iPhones</a>
+            <a href="#">Google Pixel</a>
+            <a href="#">OnePlus</a>
+        </div>
+
+        <div>
+            <h4>Comparisons</h4>
+            <a href="#">Flagship Comparisons</a>
+            <a href="#">Camera Comparisons</a>
+            <a href="#">Battery Comparisons</a>
+            <a href="#">Gaming Phones</a>
+        </div>
+
+        <div>
+            <h4>Resources</h4>
+            <a href="#">Phone Finder</a>
+            <a href="#">Buying Guides</a>
+            <a href="#">Reviews</a>
+            <a href="#">News</a>
+        </div>
+
+        <div>
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+        </div>
+
+    </div>
+
+    <div class="footer-stats">
+
+        <div>
+            <strong>10K+</strong>
+            <span>Comparisons</span>
+        </div>
+
+        <div>
+            <strong>500+</strong>
+            <span>Devices</span>
+        </div>
+
+        <div>
+            <strong>1M+</strong>
+            <span>Monthly Readers</span>
+        </div>
+
+        <div>
+            <strong>24/7</strong>
+            <span>Updates</span>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <div class="socials">
+
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+
+        </div>
+
+        <p>
+            © 2026 TechDealsHub — All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+document.querySelectorAll('.comparison-menu a').forEach(link => {
+
+    link.addEventListener('click', function(e) {
+
+        e.preventDefault();
+
+        const target = document.querySelector(
+            this.getAttribute('href')
+        );
+
+        if(target){
+
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+
+        }
+
+    });
+
+});
+
+</script>
+</body>
+
+</html>

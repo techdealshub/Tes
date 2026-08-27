@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phones</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#070b16;
+    padding:0px;
+}
+.header{
+    position:fixed;
+    top:0;
+    width: 100%;
+    z-index:100;
+    background:#0d1120;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    box-sizing:border-box;
+    
+}
+
+.topbar{
+    
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 18px;
+}
+
+.logo{
+     width:57px;
+    height:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+.logo img{
+    align-self:flex-start;
+     max-width:100%;
+     height:100%;
+     margin-top: 2px;
+    transform: scale(2.5);
+}
+.menu-btn,
+.actions button{
+    background:none;
+    border:none;
+    color:#fff;
+    font-size:1.5rem;
+    cursor:pointer;
+}
+
+
+
+
+
+.sidebar{
+    position:fixed;
+    left:-280px;
+    width:280px;
+    height:100vh;
+    background:rgba(15,15,25,0.385);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border-right:1px solid rgba(255,255,255,.08);
+    transition:left .3s ease;
+    z-index:1001;
+    padding-top:20px;
+    margin-top: -1px;
+}
+
+.sidebar.active{
+    left:0;
+}
+
+.sidebar a{
+    display:block;
+    padding:18px 24px;
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    font-size: 18px;
+}
+.sidebar a .flish{
+  position: absolute;
+    margin-top: 7px;
+    left: 120px;
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+.overlay{
+    position:fixed;
+    margin-top: 62px;
+    inset:0;
+    background:rgba(0,0,0,.25);
+    backdrop-filter:blur(4px);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+    z-index:1000;
+}
+
+.overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+.social-links{
+    position: absolute;
+    bottom:60px;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    background:#070b16;
+    padding: 15px 15px;
+}
+
+.social-links a{
+    width: 18px;
+    height: 18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:rgba(255,255,255,.06);
+    color:#fff;
+    text-decoration:none;
+    font-size:18px;
+    transition:.3s;
+    padding: 18px 18px;
+}
+
+.social-links a:hover{
+    background:#ff7a00;
+    transform:translateY(-1px);
+    padding:18px 18px;
+}
+.container{
+  margin-top: 62px;
+  width: 100%;
+  padding: 15px;
+}
+.phones-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin:15px 0 25px;
+}
+
+.breadcrumb{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    color:#94a3b8;
+    font-size:.95rem;
+}
+
+.breadcrumb a{
+    color:#3b82f6;
+    text-decoration:none;
+}
+
+.breadcrumb span:last-child{
+    color:#fff;
+    font-weight:600;
+}
+
+.phones-count{
+    color:#94a3b8;
+    font-size:.9rem;
+    font-weight:600;
+}
+
+/* Title */
+
+
+/* Search */
+
+.search-box{
+    position:relative;
+    margin-bottom:20px;
+}
+
+.search-row{
+    display:flex;
+    margin-bottom:20px;
+}
+
+.search-box{
+    position:relative;
+    flex:1;
+}
+
+.search-box input{
+    width:100%;
+    height:45px;
+    padding:0 45px 0 15px;
+    border:none;
+    outline:none;
+    border-radius:0 14px 14px 0;
+    background:#0c1427;
+    color:#fff;
+}
+
+.search-box i{
+    position:absolute;
+    right:10px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#94a3b8;
+    padding: 11px;
+}
+
+.brand-dropdown{
+    position:relative;
+    width:90px;
+}
+
+.brand-btn{
+    width:100%;
+    height:45px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 14px;
+
+    background:#0c1427;
+    color:#fff;
+
+    border:none;
+    border-radius:14px 0px 0px 14px;
+    border-right: 0.5px groove #ffffff47;
+    cursor:pointer;
+}
+
+.brand-menu{
+    position:absolute;
+    top:50px;
+    left:0;
+   
+    width:180px;
+    background:#0c1427;
+
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:14px;
+
+    overflow:hidden;
+    max-height:500px;
+    overflow-y:auto;
+  display: none;
+
+    z-index:100;
+}
+.brand-menu::-webkit-scrollbar{
+    width:8px;
+}
+
+.brand-menu::-webkit-scrollbar-track{
+    background:#0c1427;
+}
+
+.brand-menu::-webkit-scrollbar-thumb{
+    background:#2563eb;
+    border-radius:20px;
+}
+
+.brand-menu::-webkit-scrollbar-thumb:hover{
+    background:#3b82f6;
+}
+
+.brand-menu.show{
+    display:block;
+}
+
+.brand-item{
+    padding:12px 15px;
+    color:#fff;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.brand-item:hover{
+    background:#111b33;
+}
+/* Phone List */
+
+.phone-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.phone-card{
+    display:flex;
+    align-items:center;
+    gap:25px;
+
+    background:#0c1427;
+    border:1px solid rgba(255,255,255,.05);
+    border-radius:0px 14px 14px 0px;
+
+    padding:0;
+    padding-right: 12px;
+    text-decoration:none;
+
+    transition:.25s;
+}
+
+.phone-card:hover{
+    transform:translateY(-2px);
+    border-color:rgba(59,130,246,.35);
+}
+
+.phone-card img{
+    width:67px;
+    height:100px;
+    object-fit:contain;
+    flex-shrink:0;
+}
+
+.phone-info{
+    flex:1;
+}
+
+.phone-info h3{
+    color:#fff;
+    font-size:1rem;
+    margin-bottom:6px;
+}
+
+.brand{
+    color:#94a3b8;
+    font-size:.85rem;
+    display:block;
+    margin-bottom:8px;
+}
+
+.phone-meta{
+    display:flex;
+    gap:8px;
+    font-size:.85rem;
+}
+
+.phone-meta span{
+    display:flex;
+    align-items:center;
+    gap:5px;
+
+    padding:5px 5px;
+
+    border-radius:20px;
+
+    background:#111b33;
+    color:#8ab4ff;
+
+    font-size:.75rem;
+    font-weight:600;
+}
+
+.phone-meta i{
+    font-size:.7rem;
+}
+
+.arrow{
+    color:#94a3b8;
+}
+
+/* No Result */
+
+.no-result{
+    display:none;
+    text-align:center;
+    color:#94a3b8;
+    margin-top:20px;
+}
+.pagination{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin:30px 0;
+}
+
+.pagination a{
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:#0f172a;
+    color:#fff;
+
+    text-decoration:none;
+    font-weight:700;
+
+    transition:.2s;
+}
+
+.pagination a:hover{
+    background:#1e293b;
+}
+
+.pagination a.active{
+    background:#2563eb;
+}
+.footer{
+    margin-top:50px;
+    background:#0b1220;
+    border-top:1px solid rgba(255,255,255,.06);
+    padding:40px 20px 25px;
+}
+
+.footer-top{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:30px;
+}
+
+.footer-brand h2{
+    color:#fff;
+    margin-bottom:10px;
+}
+
+.footer-brand p{
+    color:#94a3b8;
+    line-height:1.7;
+}
+
+.footer-links h3{
+    color:#fff;
+    margin-bottom:15px;
+}
+
+.footer-links a{
+    display:block;
+    color:#94a3b8;
+    text-decoration:none;
+    margin-bottom:10px;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:#3b82f6;
+}
+
+.footer-social{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    margin:35px 0;
+}
+
+.footer-social a{
+    width:45px;
+    height:45px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#111827;
+    color:#fff;
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.footer-social a:hover{
+    transform:translateY(-3px);
+    background:#2563eb;
+}
+
+.footer-bottom{
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.05);
+    padding-top:20px;
+}
+
+.footer-bottom p{
+    color:#64748b;
+    font-size:.9rem;
+}
+</style>
+</head>
+<body>
+  <header class="header">
+    <div class="topbar">
+        <button class="menu-btn" id="menu-btn">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+        <a href="#" class="logo">
+            <img src="techdealshub.png">
+        </a>
+    </div>
+</header>
+<div class="overlay" id="overlay"></div>
+
+<div class="sidebar" id="sidebar">
+    <a href="#">Trending <span class="flish"></span></a>
+    <a href="#"> News <span class="flish"></span></a>
+    <a href="#"> Phones <span class="flish"></span></a>
+    <a href="#">Reviews <span class="flish"></span></a>
+    <div class="social-links">
+    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    <a href="#"><i class="fa-brands fa-telegram"></i></a>
+</div>
+</div>
+<div class="container">
+<div class="phones-header">
+
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Phones</span>
+    </div>
+
+    <div class="phones-count">
+        14 Phones
+    </div>
+
+</div>
+
+<div class="search-row">
+       <div class="brand-dropdown">
+
+    <button class="brand-btn" id="brandBtn">
+        Brand
+        <i class="fa-solid fa-chevron-down"></i>
+    </button>
+
+    <div class="brand-menu" id="brandMenu">
+
+        <div class="brand-item">All Brands</div>
+<div class="brand-item">Apple</div>
+<div class="brand-item">Samsung</div>
+<div class="brand-item">Google</div>
+<div class="brand-item">Xiaomi</div>
+<div class="brand-item">OnePlus</div>
+<div class="brand-item">Nothing</div>
+<div class="brand-item">Honor</div>
+<div class="brand-item">Oppo</div>
+<div class="brand-item">Vivo</div>
+
+<div class="brand-item">Realme</div>
+<div class="brand-item">Huawei</div>
+<div class="brand-item">Motorola</div>
+<div class="brand-item">Sony</div>
+<div class="brand-item">Asus</div>
+<div class="brand-item">Nokia</div>
+<div class="brand-item">Lenovo</div>
+<div class="brand-item">ZTE</div>
+<div class="brand-item">Redmi</div>
+<div class="brand-item">POCO</div>
+<div class="brand-item">iQOO</div>
+<div class="brand-item">Meizu</div>
+<div class="brand-item">Tecno</div>
+<div class="brand-item">Infinix</div>
+<div class="brand-item">Blackview</div>
+<div class="brand-item">Doogee</div>
+<div class="brand-item">Cubot</div>
+<div class="brand-item">Fairphone</div>
+<div class="brand-item">ROG Phone</div>
+<div class="brand-item">Black Shark</div>
+
+    </div>
+
+</div>
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search smartphones...">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+</div>
+
+<div class="phone-list" id="phoneList">
+
+    <a href="#" class="phone-card">
+        <img src="apple/iphone17pm.png">
+
+        <div class="phone-info">
+            <h3>iPhone 17 Pro Max</h3>
+
+            <span class="brand">Apple</span>
+
+            <div class="phone-meta">
+                <span>
+                    <i class="fa-regular fa-calendar"></i>
+                    Sep 2025
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-hashtag"></i>
+                    A3525
+                </span>
+            </div>
+        </div>
+
+        <i class="fa-solid fa-chevron-right arrow"></i>
+    </a>
+
+    <a href="#" class="phone-card">
+        <img src="s26ultra.png">
+
+        <div class="phone-info">
+            <h3>Galaxy S26 Ultra</h3>
+
+            <span class="brand">Samsung</span>
+
+            <div class="phone-meta">
+                <span>
+                    <i class="fa-regular fa-calendar"></i>
+                    Jan 2026
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-hashtag"></i>
+                    SM-S269B
+                </span>
+            </div>
+        </div>
+
+        <i class="fa-solid fa-chevron-right arrow"></i>
+    </a>
+
+    <a href="#" class="phone-card">
+        <img src="xiaomi15ultra.png">
+
+        <div class="phone-info">
+            <h3>Xiaomi 15 Ultra</h3>
+
+            <span class="brand">Xiaomi</span>
+
+            <div class="phone-meta">
+                <span>
+                    <i class="fa-regular fa-calendar"></i>
+                    Feb 2025
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-hashtag"></i>
+                    25010PN30G
+                </span>
+            </div>
+        </div>
+
+        <i class="fa-solid fa-chevron-right arrow"></i>
+    </a>
+
+    <a href="#" class="phone-card">
+        <img src="pixel10pro.png">
+
+        <div class="phone-info">
+            <h3>Google Pixel 10 Pro</h3>
+
+            <span class="brand">Google</span>
+
+            <div class="phone-meta">
+                <span>
+                    <i class="fa-regular fa-calendar"></i>
+                    Oct 2025
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-hashtag"></i>
+                    GP10PRO
+                </span>
+            </div>
+        </div>
+
+        <i class="fa-solid fa-chevron-right arrow"></i>
+    </a>
+    <a href="#" class="phone-card">
+    <img src="iphone17air.png">
+    <div class="phone-info">
+        <h3>iPhone 17 Air</h3>
+        <span class="brand">Apple</span>
+        <div class="phone-meta">
+            <span><i class="fa-regular fa-calendar"></i> Sep 2025</span>
+            <span><i class="fa-solid fa-hashtag"></i> A3510</span>
+        </div>
+    </div>
+    <i class="fa-solid fa-chevron-right arrow"></i>
+</a>
+
+<a href="#" class="phone-card">
+    <img src="s26plus.png">
+    <div class="phone-info">
+        <h3>Galaxy S26 Plus</h3>
+        <span class="brand">Samsung</span>
+        <div class="phone-meta">
+            <span><i class="fa-regular fa-calendar"></i> Jan 2026</span>
+            <span><i class="fa-solid fa-hashtag"></i> SM-S266B</span>
+        </div>
+    </div>
+    <i class="fa-solid fa-chevron-right arrow"></i>
+</a>
+
+<a href="#" class="phone-card">
+    <img src="oneplus14.png">
+    <div class="phone-info">
+        <h3>OnePlus 14</h3>
+        <span class="brand">OnePlus</span>
+        <div class="phone-meta">
+            <span><i class="fa-regular fa-calendar"></i> Nov 2025</span>
+            <span><i class="fa-solid fa-hashtag"></i> OP14</span>
+        </div>
+    </div>
+    <i class="fa-solid fa-chevron-right arrow"></i>
+</a>
+
+<a href="#" class="phone-card">
+    <img src="nothing3.png">
+    <div class="phone-info">
+        <h3>Nothing Phone 3</h3>
+        <span class="brand">Nothing</span>
+        <div class="phone-meta">
+            <span><i class="fa-regular fa-calendar"></i> Jul 2025</span>
+            <span><i class="fa-solid fa-hashtag"></i> A024</span>
+        </div>
+    </div>
+    <i class="fa-solid fa-chevron-right arrow"></i>
+</a>
+
+<a href="#" class="phone-card">
+    <img src="vivox300pro.png">
+    <div class="phone-info">
+        <h3>Vivo X300 Pro</h3>
+        <span class="brand">Vivo</span>
+        <div class="phone-meta">
+            <span><i class="fa-regular fa-calendar"></i> Oct 2025</span>
+            <span><i class="fa-solid fa-hashtag"></i> V2412</span>
+        </div>
+    </div>
+    <i class="fa-solid fa-chevron-right arrow"></i>
+</a>
+
+<a href="#" class="phone-card">
+    <img src="oppofindx9.png">
+    <div class="phone-info">
+        <h3>Oppo Find X9 Pro</h3>
+        <span class="brand">Oppo</span>
+        <div class="phone-meta">
+            <span><i class="fa-regular fa-calendar"></i> Sep 2025</span>
+            <span><i class="fa-solid fa-hashtag"></i> CPH2891</span>
+        </div>
+    </div>
+    <i class="fa-solid fa-chevron-right arrow"></i>
+</a>
+
+<a href="#" class="phone-card">
+    <img src="realmegt8pro.png">
+    <div class="phone-info">
+        <h3>Realme GT 8 Pro</h3>
+        <span class="brand">Realme</span>
+        <div class="phone-meta">
+            <span><i class="fa-regular fa-calendar"></i> Dec 2025</span>
+            <span><i class="fa-solid fa-hashtag"></i> RMX7001</span>
+        </div>
+    </div>
+    <i class="fa-solid fa-chevron-right arrow"></i>
+</a>
+
+<a href="#" class="phone-card">
+    <img src="honormagic8pro.png">
+    <div class="phone-info">
+        <h3>Honor Magic 8 Pro</h3>
+        <span class="brand">Honor</span>
+        <div class="phone-meta">
+            <span><i class="fa-regular fa-calendar"></i> Oct 2025</span>
+            <span><i class="fa-solid fa-hashtag"></i> HN-M8P</span>
+        </div>
+    </div>
+    <i class="fa-solid fa-chevron-right arrow"></i>
+</a>
+
+<a href="#" class="phone-card">
+    <img src="sonyxperia1vii.png">
+    <div class="phone-info">
+        <h3>Sony Xperia 1 VII</h3>
+        <span class="brand">Sony</span>
+        <div class="phone-meta">
+            <span><i class="fa-regular fa-calendar"></i> May 2025</span>
+            <span><i class="fa-solid fa-hashtag"></i> XQ-EC72</span>
+        </div>
+    </div>
+    <i class="fa-solid fa-chevron-right arrow"></i>
+</a>
+
+<a href="#" class="phone-card">
+    <img src="motorolaedge60ultra.png">
+    <div class="phone-info">
+        <h3>Motorola Edge 60 Ultra</h3>
+        <span class="brand">Motorola</span>
+        <div class="phone-meta">
+            <span><i class="fa-regular fa-calendar"></i> Aug 2025</span>
+            <span><i class="fa-solid fa-hashtag"></i> XT2561</span>
+        </div>
+    </div>
+    <i class="fa-solid fa-chevron-right arrow"></i>
+</a>
+
+</div>
+
+<p class="no-result" id="noResult">
+    No phones found.
+</p>
+<div class="pagination" id="pagination">
+    <a href="#" class="active">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+</div>
+</div>
+<footer class="footer">
+
+    <div class="footer-top">
+
+        <div class="footer-brand">
+            <h2>Tech Deals Hub</h2>
+
+            <p>
+                Your trusted source for smartphone news,
+                reviews, comparisons and tech updates.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+
+            <a href="#">Home</a>
+            <a href="#">Latest News</a>
+            <a href="#">Reviews</a>
+            <a href="#">Comparisons</a>
+        </div>
+
+        <div class="footer-links">
+            <h3>Brands</h3>
+
+            <a href="#">Apple</a>
+            <a href="#">Samsung</a>
+            <a href="#">Google</a>
+            <a href="#">Xiaomi</a>
+        </div>
+
+        <div class="footer-links">
+            <h3>Legal</h3>
+
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+        </div>
+
+    </div>
+
+    <div class="footer-social">
+
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+
+        <a href="#"><i class="fa-brands fa-telegram"></i></a>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Tech Deals Hub. All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+<script>
+  const menuBtn = document.querySelector('.menu-btn');
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('overlay');
+
+menuBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+});
+overlay.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+});
+const searchInput = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".phone-card");
+const noResult = document.getElementById("noResult");
+
+searchInput.addEventListener("input", function(){
+
+    const value = this.value.toLowerCase().trim();
+    let visibleCards = 0;
+
+    cards.forEach(card => {
+
+        const text = card.textContent.toLowerCase();
+
+        if(text.includes(value)){
+            card.style.display = "flex";
+            visibleCards++;
+        }else{
+            card.style.display = "none";
+        }
+
+    });
+
+    noResult.style.display =
+        visibleCards === 0 ? "block" : "none";
+       
+});
+const brandBtn = document.getElementById("brandBtn");
+const brandMenu = document.getElementById("brandMenu");
+
+brandBtn.addEventListener("click", () => {
+    brandMenu.classList.toggle("show");
+});
+
+document.querySelectorAll(".brand-item").forEach(item => {
+
+    item.addEventListener("click", () => {
+
+        const selectedBrand = item.textContent.trim();
+
+        brandBtn.innerHTML =
+            selectedBrand +
+            ' <i class="fa-solid fa-chevron-down"></i>';
+
+        brandMenu.classList.remove("show");
+
+        document.querySelectorAll(".phone-card").forEach(card => {
+
+            const cardBrand =
+    card.querySelector(".brand")
+        .textContent
+        .trim();
+
+            if (
+                selectedBrand === "All Brands" ||
+                cardBrand === selectedBrand
+            ) {
+                card.style.display = "flex";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    });
+
+});
+
+document.addEventListener("click", function(e){
+
+    if(
+        !brandBtn.contains(e.target) &&
+        !brandMenu.contains(e.target)
+    ){
+        brandMenu.classList.remove("show");
+    }
+function updatePagination() {
+
+    const cards = document.querySelectorAll(".phone-card");
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+        if (window.getComputedStyle(card).display !== "none") {
+            visibleCount++;
+        }
+    });
+
+    const pagination = document.getElementById("pagination");
+
+    if (visibleCount < 14 ) {
+        pagination.style.display = "none";
+    } else {
+        pagination.style.display = "flex";
+    }
+}
+updatePagination();
+});
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phone Comparisons</title>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<style>
+  /* =========================
+   PHONE COMPARISONS PAGE
+========================= */
+:root{
+    --bg:#070b16;
+    --card:#0d1427;
+    --card-hover:#131d36;
+    --border:#1e293b;
+    --primary:#fff;
+    --text:#ffffff;
+    --muted:#94a3b8;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:Arial,sans-serif;
+}
+
+main{
+    width:min(1300px,95%);
+    margin:auto;
+    padding:20px 0;
+}
+
+section{
+    margin-bottom:25px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:25px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:20px;
+    font-size:26px;
+    font-weight:700;
+}
+
+.section-title i{
+    color:var(--primary);
+}
+
+.card-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+    gap:18px;
+}
+
+.card{
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:16px;
+    padding:20px;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    border-color:var(--primary);
+    box-shadow:0 10px 25px rgba(139,92,246,.15);
+}
+
+.card h3{
+    font-size:18px;
+    margin-bottom:10px;
+    line-height:1.5;
+}
+
+.card p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.7;
+}
+
+.card-link{
+    text-decoration:none;
+    color:inherit;
+    display:block;
+    
+}
+
+.finder-box{
+    background:#111827;
+    border-radius:16px;
+    padding:30px;
+    text-align:center;
+    border:1px dashed rgba(255,255,255,.15);
+}
+
+.finder-box input{
+    width:100%;
+    max-width:450px;
+    padding:14px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:#1a2235;
+    color:#fff;
+}
+
+.finder-box button{
+    margin-top:15px;
+    padding:12px 25px;
+    border:none;
+    border-radius:12px;
+    background:var(--primary);
+    color:#fff;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.finder-box button:hover{
+    opacity:.9;
+}
+
+@media(max-width:768px){
+
+    .section-title{
+        font-size:22px;
+    }
+
+    .card-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+.read-more{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:15px;
+    color: #fff;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.read-more:hover{
+    color:#fff;
+}
+.fa-solid{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:5px 5px;
+
+    background:linear-gradient(
+        135deg,
+        #3b82f6,
+        #0040a8
+    );
+
+    color:#fff;
+    font-size:14px;
+    font-weight:600;
+
+    border-radius:4px;
+}
+.section-description{
+    color:#94a3b8;
+    margin-bottom:20px;
+    font-size:15px;
+}
+.section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:right;
+    margin-bottom:0px;
+}
+
+.view-all{
+    color:#60a5fa;
+    text-decoration:none;
+    font-weight:400;
+    display:flex;
+    align-items:right;
+    gap:6px;
+}
+#performance-comparisons .section-title:first-child{
+    white-space: nowrap;
+    font-size: 22px;
+}
+#comparison-finder .finder-box{
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:16px;
+    padding:30px;
+    text-align:center;
+}
+
+#comparison-finder .finder-box h3{
+    margin-bottom:20px;
+    font-size:22px;
+    color:#fff;
+}
+
+#comparison-finder .finder-box input{
+    width:100%;
+    max-width:500px;
+    padding:14px 18px;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:12px;
+    background:#1a2235;
+    color:#fff;
+    font-size:15px;
+    outline:none;
+    transition:.3s;
+}
+
+#comparison-finder .finder-box input:focus{
+    border-color:#3b82f6;
+    box-shadow:0 0 0 3px rgba(59,130,246,.15);
+}
+
+#comparison-finder .finder-box button{
+    margin-top:16px;
+    padding:14px 24px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(
+        135deg,
+        #3b82f6,
+        #0040a8
+    );
+    color:#fff;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#comparison-finder .finder-box button:hover{
+    transform:translateY(-2px);
+    opacity:.95;
+}
+
+#comparison-finder .finder-box button i{
+    margin-right:8px;
+}
+
+@media (max-width:768px){
+
+    #comparison-finder .finder-box{
+        padding:20px;
+    }
+
+    #comparison-finder .finder-box h3{
+        font-size:18px;
+    }
+
+    #comparison-finder .finder-box button,
+    #comparison-finder .finder-box input{
+        width:100%;
+    }
+
+}
+.see-all{
+    position: relative;
+    text-align:right;
+    top: 0px;
+    padding: 0;
+    margin-top:0px;
+    margin-bottom:35px;
+}
+
+.see-all a{
+    
+    text-decoration:none;
+    font-weight:700;
+    font-size:16px;
+    background: linear-gradient(
+        135deg,
+        #3b82f6,
+        #06b6d4
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.see-all a:hover{
+    text-decoration:underline;
+}
+</style>
+</head>
+<body>
+
+<!-- Featured Comparisons -->
+<section id="featured-comparisons">
+
+    <h2 class="section-title">
+        <i class="fa-solid fa-star"></i>
+        Featured Comparisons
+    </h2>
+
+    <div class="card-grid">
+
+        <a href="s26-ultra-vs-iphone-17-pro-max.html" class="card-link">
+            <article class="card">
+                <h3>Galaxy S26 Ultra vs iPhone 17 Pro Max</h3>
+                <p>
+                    Complete comparison of camera, battery,
+                    performance and display.
+                </p>
+                <a href="s26-ultra-vs-iphone-17-pro-max.html" class="read-more">
+                   Read Comparison
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+               </a>
+            </article>
+        </a>
+
+        <a href="pixel-10-pro-vs-xiaomi-16-ultra.html" class="card-link">
+            <article class="card">
+                <h3>Pixel 10 Pro vs Xiaomi 16 Ultra</h3>
+                <p>
+                    Which flagship offers the best camera experience?
+                </p>
+                <a href="s26-ultra-vs-iphone-17-pro-max.html" class="read-more">
+    Read Comparison
+    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+</a>
+            </article>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- Latest Comparisons -->
+<section id="latest-comparisons">
+
+    <h2 class="section-title">
+        <i class="fa-solid fa-clock"></i>
+        Latest Comparisons
+    </h2>
+
+    <div class="card-grid">
+
+        <a href="comparisons/s26-ultra-vs-iphone17promax.html" class="card-link">
+            <article class="card">
+                <h3>Galaxy S26 Ultra vs iPhone 17 Pro Max</h3>
+                <p>
+                    Camera, battery, display and performance comparison.
+                </p>
+                <i class="fa-solid fa-arrows-rotate"></i>
+            </article>
+        </a>
+
+        <a href="comparisons/pixel10pro-vs-xiaomi16ultra.html" class="card-link">
+            <article class="card">
+                <h3>Pixel 10 Pro vs Xiaomi 16 Ultra</h3>
+                <p>
+                    Which flagship offers the best camera experience?
+                </p>
+                <i class="fa-solid fa-arrows-rotate"></i>
+            </article>
+        </a>
+
+        <a href="comparisons/oneplus14pro-vs-nothingphone4.html" class="card-link">
+            <article class="card">
+                <h3>OnePlus 14 Pro vs Nothing Phone 4</h3>
+                <p>
+                    Design, software and value for money compared.
+                </p>
+                <i class="fa-solid fa-arrows-rotate"></i>
+                
+            </article>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- Trending Comparisons -->
+<section id="trending-comparisons">
+
+    <h2 class="section-title">
+        <i class="fa-solid fa-fire"></i>
+        Trending Comparisons
+    </h2>
+
+    <p class="section-description">
+        The most viewed and discussed smartphone comparisons right now.
+    </p>
+
+    <div class="card-grid">
+
+        <a href="comparisons/s26-ultra-vs-iphone17promax.html" class="card-link">
+            <article class="card">
+                <h3>Galaxy S26 Ultra vs iPhone 17 Pro Max</h3>
+                <p>Camera, battery, performance and display comparison.</p>
+                <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i>
+            </article>
+        </a>
+
+        <a href="comparisons/pixel10pro-vs-xiaomi16ultra.html" class="card-link">
+            <article class="card">
+                <h3>Pixel 10 Pro vs Xiaomi 16 Ultra</h3>
+                <p>Which flagship delivers the better camera experience?</p>
+                <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i>
+            </article>
+        </a>
+
+        <a href="comparisons/oneplus14pro-vs-nothingphone4.html" class="card-link">
+            <article class="card">
+                <h3>OnePlus 14 Pro vs Nothing Phone 4</h3>
+                <p>Design, software and value-for-money comparison.</p>
+                <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i>
+            </article>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- Flagship Comparisons -->
+<section id="flagship-comparisons">
+ <a href="flag_ships.html" class="card-link">
+    <h2 class="section-title">
+        <i class="fa-solid fa-crown"></i>
+        Flagship Comparisons
+    </h2>
+
+    <p class="section-description">
+        Compare the most powerful flagship smartphones, including cameras,
+        performance, battery life, display quality, and premium features.
+    </p>
+     <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i>
+    <div class="card-grid"></div>
+    </a>
+</section>
+
+
+<!-- Mid Range Comparisons -->
+<section id="midrange-comparisons">
+
+    <h2 class="section-title">
+        <i class="fa-solid fa-mobile-screen"></i>
+        Mid-Range Comparisons
+    </h2>
+
+    <div class="card-grid">
+      <div class="card-grid">
+
+    <a href="comparisons/galaxy-a57-vs-redmi-note15.html" class="card-link">
+        <article class="card">
+            <h3>Galaxy A57 vs Redmi Note 15</h3>
+            <p>Mid-range smartphone comparison.</p>
+             <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i>
+        </article>
+    </a>
+
+    <a href="comparisons/poco-x8-pro-vs-nothing-phone3a.html" class="card-link">
+        <article class="card">
+            <h3>POCO X8 Pro vs Nothing Phone 3a</h3>
+            <p>Performance and value comparison.</p>
+             <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i>
+        </article>
+    </a>
+
+</div>
+    </div>
+
+</section>
+
+
+<!-- Budget Comparisons -->
+<section id="budget-comparisons">
+
+    <h2 class="section-title">
+        <i class="fa-solid fa-wallet"></i>
+        Budget Comparisons
+    </h2>
+
+    <div class="card-grid">
+      <div class="card-grid">
+
+    <a href="comparisons/redmi-note15-vs-galaxy-a26.html" class="card-link">
+        <article class="card">
+            <h3>Redmi Note 15 vs Galaxy A26</h3>
+            <p>Best budget phone for battery life and daily use.</p>
+            <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i>
+        </article>
+    </a>
+
+    <a href="comparisons/poco-m8-pro-vs-realme-15.html" class="card-link">
+        <article class="card">
+            <h3>POCO M8 Pro vs Realme 15</h3>
+            <p>Performance and value-for-money comparison.</p>
+            <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i>
+        </article>
+    </a>
+
+    <a href="comparisons/redmi-14c-vs-galaxy-a16.html" class="card-link">
+        <article class="card">
+            <h3>Redmi 14C vs Galaxy A16</h3>
+            <p>Affordable smartphones compared side by side.</p>
+            <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i>
+        </article>
+    </a>
+
+</div>
+    </div>
+
+</section>
+
+
+<!-- Camera Comparisons -->
+<section id="camera-comparisons">
+
+    <h2 class="section-title">
+        <i class="fa-solid fa-camera"></i>
+        Camera Comparisons
+    </h2>
+
+
+    <div class="card-grid">
+
+        <a href="comparisons/s26-ultra-vs-iphone17promax-camera.html" class="card-link">
+            <article class="card">
+                <h3>Galaxy S26 Ultra vs iPhone 17 Pro Max Camera</h3>
+                <p>
+                    Compare zoom, portrait mode, video quality and night photography.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="comparisons/pixel10pro-vs-xiaomi16ultra-camera.html" class="card-link">
+            <article class="card">
+                <h3>Pixel 10 Pro vs Xiaomi 16 Ultra Camera</h3>
+                <p>
+                    Which phone captures the best photos in real-world scenarios?
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="comparisons/vivo-x-ultra-vs-oppo-find-x-camera.html" class="card-link">
+            <article class="card">
+                <h3>Vivo X Ultra vs OPPO Find X Camera</h3>
+                <p>
+                    Detailed comparison of flagship camera systems and image processing.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- Battery Comparisons -->
+<section id="battery-comparisons">
+
+    <h2 class="section-title">
+        <i class="fa-solid fa-battery-full"></i>
+        Battery Comparisons
+    </h2>
+
+    <p class="section-description">
+        Compare battery life, charging speed, standby performance,
+        and real-world endurance across smartphones.
+    </p>
+
+    <div class="card-grid">
+
+        <a href="comparisons/s26-ultra-vs-iphone17promax-battery.html" class="card-link">
+            <article class="card">
+                <h3>Galaxy S26 Ultra vs iPhone 17 Pro Max Battery</h3>
+                <p>
+                    Screen-on time, charging speed, and daily battery performance.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="comparisons/xiaomi16ultra-vs-oneplus14pro-battery.html" class="card-link">
+            <article class="card">
+                <h3>Xiaomi 16 Ultra vs OnePlus 14 Pro Battery</h3>
+                <p>
+                    Compare charging technologies and battery endurance.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="comparisons/pixel10pro-vs-vivoxultra-battery.html" class="card-link">
+            <article class="card">
+                <h3>Pixel 10 Pro vs Vivo X Ultra Battery</h3>
+                <p>
+                    Real-world battery drain and charging comparison.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- Performance Comparisons -->
+<section id="performance-comparisons">
+
+    <h2 class="section-title">
+        <i class="fa-solid fa-microchip"></i>
+        Performance Comparisons
+    </h2>
+
+    <p class="section-description">
+        Compare benchmark scores, chipset power, gaming FPS,
+        thermal performance, and multitasking speed.
+    </p>
+
+    <div class="card-grid">
+
+        <a href="comparisons/galaxy-s26-ultra-vs-iphone-18-pro-max-performance.html" class="card-link">
+            <article class="card">
+                <h3>Galaxy S26 Ultra vs iPhone 18 Pro Max Performance</h3>
+                <p>
+                    Snapdragon vs Apple chipset performance,
+                    gaming and benchmark comparison.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="comparisons/pixel-11-pro-vs-xiaomi-15-ultra-performance.html" class="card-link">
+            <article class="card">
+                <h3>Pixel 11 Pro vs Xiaomi 15 Ultra Performance</h3>
+                <p>
+                    Compare AI processing, thermal control,
+                    and real-world speed tests.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="comparisons/oneplus-14-pro-vs-galaxy-s25-ultra-performance.html" class="card-link">
+            <article class="card">
+                <h3>OnePlus 14 Pro vs Galaxy S25 Ultra Performance</h3>
+                <p>
+                    Gaming FPS, sustained performance,
+                    and multitasking comparison.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- Gaming Comparisons -->
+<section id="gaming-comparisons">
+
+    <h2 class="section-title">
+        <i class="fa-solid fa-gamepad"></i>
+        Gaming Comparisons
+    </h2>
+
+    <p class="section-description">
+        Compare gaming performance, FPS stability, thermal management,
+        battery drain, and graphics quality in popular mobile games.
+    </p>
+
+    <div class="card-grid">
+
+        <a href="comparisons/galaxy-s26-ultra-vs-iphone-18-pro-max-gaming.html" class="card-link">
+            <article class="card">
+                <h3>Galaxy S26 Ultra vs iPhone 18 Pro Max Gaming</h3>
+                <p>
+                    FPS, graphics settings, thermal control,
+                    and battery consumption comparison.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="comparisons/redmagic-11-vs-rog-phone-10.html" class="card-link">
+            <article class="card">
+                <h3>RedMagic 11 vs ROG Phone 10</h3>
+                <p>
+                    Ultimate gaming phones compared in PUBG,
+                    Call of Duty Mobile, and Genshin Impact.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="comparisons/oneplus-14-pro-vs-xiaomi-16-ultra-gaming.html" class="card-link">
+            <article class="card">
+                <h3>OnePlus 14 Pro vs Xiaomi 16 Ultra Gaming</h3>
+                <p>
+                    Gaming benchmarks, frame rates,
+                    and sustained performance comparison.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- Android vs iPhone -->
+<section id="android-vs-iphone">
+
+    <h2 class="section-title">
+        <i class="fa-solid fa-code-compare"></i>
+        Android vs iPhone
+    </h2>
+
+    <p class="section-description">
+        Compare Android and iPhone across performance, cameras,
+        battery life, software experience, customization, and value.
+    </p>
+
+    <div class="card-grid">
+
+        <a href="android-vs-iphone-2026.html" class="card-link">
+            <article class="card">
+                <h3>Android vs iPhone 2026</h3>
+                <p>
+                    Complete comparison of ecosystem, software,
+                    performance, and user experience.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="galaxy-s26-ultra-vs-iphone-18-pro-max.html" class="card-link">
+            <article class="card">
+                <h3>Galaxy S26 Ultra vs iPhone 18 Pro Max</h3>
+                <p>
+                    The ultimate Android vs iPhone flagship comparison.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="pixel-11-pro-vs-iphone-18.html" class="card-link">
+            <article class="card">
+                <h3>Pixel 11 Pro vs iPhone 18</h3>
+                <p>
+                    Compare AI features, cameras,
+                    software updates, and performance.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- Samsung Comparisons -->
+<section id="samsung-comparisons">
+
+    <h2 class="section-title">
+        <i class="fa-solid fa-mobile"></i>
+        Samsung Comparisons
+    </h2>
+
+    <p class="section-description">
+        Compare Samsung Galaxy smartphones across cameras,
+        performance, battery life, display quality, and features.
+    </p>
+
+    <div class="card-grid">
+
+        <a href="galaxy-s26-ultra-vs-galaxy-s26-plus.html" class="card-link">
+            <article class="card">
+                <h3>Galaxy S26 Ultra vs Galaxy S26 Plus</h3>
+                <p>
+                    Compare cameras, display, battery life,
+                    and flagship features.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="galaxy-s26-ultra-vs-galaxy-z-fold8.html" class="card-link">
+            <article class="card">
+                <h3>Galaxy S26 Ultra vs Galaxy Z Fold 8</h3>
+                <p>
+                    Traditional flagship versus Samsung's premium foldable.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="galaxy-a57-vs-galaxy-a37.html" class="card-link">
+            <article class="card">
+                <h3>Galaxy A57 vs Galaxy A37</h3>
+                <p>
+                    Mid-range Samsung phones compared for value and performance.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- Apple Comparisons -->
+<section id="apple-comparisons">
+
+    <h2 class="section-title">
+        <i class="fa-brands fa-apple"></i>
+        Apple Comparisons
+    </h2>
+
+    <p class="section-description">
+        Compare iPhone models across cameras, performance,
+        battery life, display quality, and software features.
+    </p>
+
+    <div class="card-grid">
+
+        <a href="iphone-18-pro-max-vs-iphone-18-pro.html" class="card-link">
+            <article class="card">
+                <h3>iPhone 18 Pro Max vs iPhone 18 Pro</h3>
+                <p>
+                    Compare cameras, battery life,
+                    display size, and premium features.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="iphone-18-vs-iphone-17.html" class="card-link">
+            <article class="card">
+                <h3>iPhone 18 vs iPhone 17</h3>
+                <p>
+                    See what's new in performance,
+                    cameras, and software experience.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="iphone-18-pro-max-vs-iphone-17-pro-max.html" class="card-link">
+            <article class="card">
+                <h3>iPhone 18 Pro Max vs iPhone 17 Pro Max</h3>
+                <p>
+                    Compare Apple's latest flagship
+                    with its predecessor.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- Xiaomi Comparisons -->
+<section id="xiaomi-comparisons">
+
+    <h2 class="section-title">
+        <i class="fa-solid fa-mobile-screen-button"></i>
+        Xiaomi Comparisons
+    </h2>
+
+    <p class="section-description">
+        Compare Xiaomi smartphones across cameras, performance,
+        battery life, charging speed, and value for money.
+    </p>
+
+    <div class="card-grid">
+
+        <a href="xiaomi-16-ultra-vs-xiaomi-16-pro.html" class="card-link">
+            <article class="card">
+                <h3>Xiaomi 16 Ultra vs Xiaomi 16 Pro</h3>
+                <p>
+                    Compare flagship cameras, display quality,
+                    battery life, and premium features.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="xiaomi-16-ultra-vs-redmi-k90-pro.html" class="card-link">
+            <article class="card">
+                <h3>Xiaomi 16 Ultra vs Redmi K90 Pro</h3>
+                <p>
+                    Premium flagship versus performance-focused smartphone.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="redmi-note-15-pro-vs-poco-x8-pro.html" class="card-link">
+            <article class="card">
+                <h3>Redmi Note 15 Pro vs POCO X8 Pro</h3>
+                <p>
+                    Compare performance, cameras,
+                    battery life, and overall value.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- Google Pixel Comparisons -->
+<section id="pixel-comparisons">
+
+    <h2 class="section-title">
+        <i class="fa-brands fa-google"></i>
+        Google Comparisons
+    </h2>
+
+    <p class="section-description">
+        Compare Google Pixel smartphones across cameras, AI features,
+        software experience, battery life, and performance.
+    </p>
+
+    <div class="card-grid">
+
+        <a href="pixel-11-pro-vs-pixel-11.html" class="card-link">
+            <article class="card">
+                <h3>Pixel 11 Pro vs Pixel 11</h3>
+                <p>
+                    Compare cameras, display quality,
+                    battery life, and AI features.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="pixel-11-pro-vs-galaxy-s26-ultra.html" class="card-link">
+            <article class="card">
+                <h3>Pixel 11 Pro vs Galaxy S26 Ultra</h3>
+                <p>
+                    Google's AI-powered flagship versus Samsung's best.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="pixel-11-pro-vs-iphone-18-pro.html" class="card-link">
+            <article class="card">
+                <h3>Pixel 11 Pro vs iPhone 18 Pro</h3>
+                <p>
+                    Compare cameras, software experience,
+                    performance, and ecosystem.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- OnePlus Comparisons -->
+<section id="oneplus-comparisons">
+
+    <h2 class="section-title">
+        <i class="fa-solid fa-plus"></i>
+        OnePlus Comparisons
+    </h2>
+
+    <p class="section-description">
+        Compare OnePlus smartphones across performance, battery life,
+        charging speed, cameras, and software experience.
+    </p>
+
+    <div class="card-grid">
+
+        <a href="oneplus-14-pro-vs-oneplus-14.html" class="card-link">
+            <article class="card">
+                <h3>OnePlus 14 Pro vs OnePlus 14</h3>
+                <p>
+                    Compare cameras, display quality,
+                    battery life, and premium features.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="oneplus-14-pro-vs-galaxy-s26-ultra.html" class="card-link">
+            <article class="card">
+                <h3>OnePlus 14 Pro vs Galaxy S26 Ultra</h3>
+                <p>
+                    Flagship comparison focusing on performance,
+                    cameras, and charging technology.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="oneplus-14-pro-vs-xiaomi-16-ultra.html" class="card-link">
+            <article class="card">
+                <h3>OnePlus 14 Pro vs Xiaomi 16 Ultra</h3>
+                <p>
+                    Compare flagship hardware, battery endurance,
+                    and camera performance.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- Editor's Choice -->
+<section id="editors-choice">
+
+    <h2 class="section-title">
+        <i class="fa-solid fa-award"></i>
+        Editor's Choice
+    </h2>
+
+    <p class="section-description">
+        Handpicked smartphone comparisons and reviews recommended
+        by our editors based on performance, cameras, battery life,
+        and overall user experience.
+    </p>
+
+    <div class="card-grid">
+
+        <a href="galaxy-s26-ultra-vs-iphone-18-pro-max.html" class="card-link">
+            <article class="card">
+                <h3>Galaxy S26 Ultra vs iPhone 18 Pro Max</h3>
+                <p>
+                    Our top flagship comparison featuring the best
+                    Android and iPhone smartphones.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="pixel-11-pro-vs-xiaomi-16-ultra.html" class="card-link">
+            <article class="card">
+                <h3>Pixel 11 Pro vs Xiaomi 16 Ultra</h3>
+                <p>
+                    A camera-focused showdown between two of the
+                    best photography smartphones.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="oneplus-14-pro-vs-galaxy-s26-ultra.html" class="card-link">
+            <article class="card">
+                <h3>OnePlus 14 Pro vs Galaxy S26 Ultra</h3>
+                <p>
+                    Premium flagship battle covering performance,
+                    battery life, and display quality.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- Best Rankings -->
+<section id="best-rankings">
+
+    <h2 class="section-title">
+        <i class="fa-solid fa-ranking-star"></i>
+        Best Phone Rankings
+    </h2>
+
+    <p class="section-description">
+        Explore our rankings of the best smartphones based on
+        camera quality, battery life, performance, gaming,
+        value for money, and overall user experience.
+    </p>
+
+    <div class="card-grid">
+
+        <a href="best-flagship-phones.html" class="card-link">
+            <article class="card">
+                <h3>Best Flagship Phones</h3>
+                <p>
+                    The most powerful premium smartphones with
+                    top-tier cameras, displays, and performance.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="best-camera-phones.html" class="card-link">
+            <article class="card">
+                <h3>Best Camera Phones</h3>
+                <p>
+                    Our top picks for photography, zoom,
+                    portrait shots, and video recording.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="best-battery-life-phones.html" class="card-link">
+            <article class="card">
+                <h3>Best Battery Life Phones</h3>
+                <p>
+                    Smartphones with the longest battery life
+                    and fastest charging technologies.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="best-gaming-phones.html" class="card-link">
+            <article class="card">
+                <h3>Best Gaming Phones</h3>
+                <p>
+                    High-performance smartphones optimized for
+                    gaming, cooling, and smooth frame rates.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="best-mid-range-phones.html" class="card-link">
+            <article class="card">
+                <h3>Best Mid-Range Phones</h3>
+                <p>
+                    Excellent smartphones that balance features,
+                    performance, and affordability.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+        <a href="best-budget-phones.html" class="card-link">
+            <article class="card">
+                <h3>Best Budget Phones</h3>
+                <p>
+                    Affordable devices offering great value
+                    for everyday use and entertainment.
+                </p>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </article>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- Comparison Finder -->
+<section id="comparison-finder">
+
+    <h2 class="section-title">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        Comparison Finder
+    </h2>
+
+    <p class="section-description">
+        Find the perfect smartphone comparison by searching for
+        specific models, brands, or categories.
+    </p>
+
+    <div class="finder-box">
+
+        <h3>Find a Comparison</h3>
+
+        <input
+            type="text"
+            placeholder="Search for phones (e.g. Galaxy S26 Ultra)"
+        >
+
+        <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            Search Comparisons
+        </button>
+
+    </div>
+
+</section>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+    // Search
+    const input = document.querySelector('#comparison-finder input');
+    const button = document.querySelector('#comparison-finder button');
+
+    function searchComparison() {
+        const search = input.value.trim().toLowerCase();
+
+        const link = [...document.querySelectorAll('.card-link')]
+            .find(a =>
+                a.querySelector('h3')
+                    ?.textContent
+                    .toLowerCase()
+                    .includes(search)
+            );
+
+        if (link) {
+            window.location.href = link.href;
+        } else {
+            alert('Comparison not found');
+        }
+    }
+
+    button?.addEventListener('click', searchComparison);
+
+    input?.addEventListener('keydown', e => {
+        if (e.key === 'Enter') {
+            searchComparison();
+        }
+    });
+
+    // See All Links
+    document.querySelectorAll('section').forEach((section, index) => {
+
+
+        const titleElement = section.querySelector('h2');
+        if (!titleElement) return;
+
+        const title = titleElement.innerText.trim();
+
+        const seeAll = document.createElement('div');
+        const link = document.createElement('a');
+
+        seeAll.classList.add('see-all');
+
+        link.textContent = `View All ${title} →`;
+
+        link.href =
+            title
+                .toLowerCase()
+                .replace(/\s+/g, '-')
+                .replace(/[^\w-]/g, '') +
+            '.html';
+
+        seeAll.appendChild(link);
+
+        section.insertBefore(seeAll, section.firstElementChild);
+    });
+
+});
+</script>
+</body>
+</html>

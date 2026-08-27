@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CSS Value Tester - calc()</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #050505;
+    --panel: #0d0d0d;
+    --panel2: #111;
+    --border: rgba(255,255,255,.08);
+    --text: #fff;
+    --muted: #999;
+    --orange: #ff5e00;
+    --green: #20c77a;
+    --red: #ff4d4d;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+    border-bottom: 1px solid var(--border);
+    background: #090909;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 19px;
+}
+
+.app {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    min-height: calc(100vh - 60px);
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    background: #080808;
+    border-right: 1px solid var(--border);
+    padding: 16px;
+}
+
+.group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: #ccc;
+}
+
+select,
+input,
+button {
+    width: 100%;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    color: white;
+    border-radius: 8px;
+    padding: 11px 12px;
+    outline: none;
+}
+
+select:focus,
+input:focus {
+    border-color: var(--orange);
+}
+
+/* =========================
+   VALUE INPUT
+========================= */
+
+.value-box {
+    position: relative;
+}
+
+#value {
+    font-family: Consolas, monospace;
+    font-size: 13px;
+}
+
+/* =========================
+   RANGE
+========================= */
+
+.range-row {
+    display: grid;
+    grid-template-columns: 1fr 90px;
+    gap: 8px;
+}
+
+input[type="range"] {
+    padding: 0;
+    accent-color: var(--orange);
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+    margin-top: 9px;
+    padding: 9px 10px;
+    border-radius: 7px;
+    font-size: 12px;
+}
+
+.valid {
+    background: rgba(32,199,122,.12);
+    color: var(--green);
+    border: 1px solid rgba(32,199,122,.2);
+}
+
+.invalid {
+    background: rgba(255,77,77,.12);
+    color: var(--red);
+    border: 1px solid rgba(255,77,77,.2);
+}
+
+/* =========================
+   EXAMPLES
+========================= */
+
+.examples {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.example {
+    padding: 9px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: #121212;
+    color: #ccc;
+    font-family: Consolas, monospace;
+    font-size: 12px;
+    cursor: pointer;
+    word-break: break-all;
+}
+
+.example:hover {
+    border-color: var(--orange);
+    color: white;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.main {
+    padding: 18px;
+}
+
+.preview-container {
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background-color: #181818;
+
+    background-image:
+        linear-gradient(45deg, #111 25%, transparent 25%),
+        linear-gradient(-45deg, #111 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #111 75%),
+        linear-gradient(-45deg, transparent 75%, #111 75%);
+
+    background-size: 30px 30px;
+
+    background-position:
+        0 0,
+        0 15px,
+        15px -15px,
+        -15px 0;
+}
+
+.preview-label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+
+    font-size: 11px;
+    color: #777;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   TEST AREA
+========================= */
+
+#testArea {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+#testDiv {
+    position: absolute;
+
+    width: 120px;
+    height: 80px;
+
+    left: 50px;
+    top: 80px;
+
+    background: var(--orange);
+
+    border: 3px solid white;
+    border-radius: 8px;
+
+    transition: .08s linear;
+}
+
+/* =========================
+   INFO
+========================= */
+
+.info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+
+    margin-top: 14px;
+}
+
+.card {
+    padding: 14px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.code {
+    font-family: Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    word-break: break-all;
+    color: #ddd;
+}
+
+.hint {
+    margin-top: 10px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .app {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .info {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-container {
+        height: 400px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>CSS Value Tester — calc()</h1>
+</header>
+
+<div class="app">
+
+<!-- =========================================
+     SIDEBAR
+========================================= -->
+
+<aside class="sidebar">
+
+    <div class="group">
+
+        <label for="property">
+            CSS Property
+        </label>
+
+        <select id="property">
+
+            <option value="left">left</option>
+            <option value="right">right</option>
+
+            <option value="top">top</option>
+            <option value="bottom">bottom</option>
+
+            <option value="inset">inset</option>
+
+            <option value="width">width</option>
+            <option value="height">height</option>
+
+            <option value="margin-left">
+                margin-left
+            </option>
+
+            <option value="margin-right">
+                margin-right
+            </option>
+
+            <option value="margin-top">
+                margin-top
+            </option>
+
+            <option value="margin-bottom">
+                margin-bottom
+            </option>
+
+            <option value="padding-left">
+                padding-left
+            </option>
+
+            <option value="padding-right">
+                padding-right
+            </option>
+
+            <option value="padding-top">
+                padding-top
+            </option>
+
+            <option value="padding-bottom">
+                padding-bottom
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- =====================================
+         MANUAL VALUE
+    ====================================== -->
+
+    <div class="group">
+
+        <label for="value">
+            Value
+        </label>
+
+        <div class="value-box">
+
+            <input
+                id="value"
+                type="text"
+                spellcheck="false"
+                autocomplete="off"
+                value="calc(100% - 50px - 60px)"
+            >
+
+        </div>
+
+        <div
+            id="status"
+            class="status valid"
+        >
+            Valid CSS value
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         RANGE
+    ====================================== -->
+
+    <div class="group">
+
+        <label>
+            Quick px Control
+        </label>
+
+        <div class="range-row">
+
+            <input
+                id="range"
+                type="range"
+                min="-500"
+                max="1000"
+                value="50"
+            >
+
+            <input
+                id="rangeNumber"
+                type="number"
+                value="50"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         CALC EXAMPLES
+    ====================================== -->
+
+    <div class="group">
+
+        <label>
+            calc() Examples
+        </label>
+
+        <div class="examples">
+
+            <div class="example">
+                calc(100% - 50px - 60px)
+            </div>
+
+            <div class="example">
+                calc(50% + 20px + 10px)
+            </div>
+
+            <div class="example">
+                calc(100% - 2rem + 30px - 5px)
+            </div>
+
+            <div class="example">
+                calc(100vw / 3)
+            </div>
+
+            <div class="example">
+                calc((100% - 40px) / 2)
+            </div>
+
+            <div class="example">
+                calc(50% + 2rem - 10px)
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="hint">
+
+        يمكنك كتابة أي قيمة CSS صحيحة.
+        <br><br>
+
+        calc() لا تحتوي على عدد محدد من العمليات.
+
+        <br><br>
+
+        أمثلة:
+
+        <br>
+
+        + إضافة
+
+        <br>
+
+        - طرح
+
+        <br>
+
+        * ضرب
+
+        <br>
+
+        / قسمة
+
+    </div>
+
+</aside>
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main class="main">
+
+    <div class="preview-container">
+
+        <div class="preview-label">
+            LIVE PREVIEW
+        </div>
+
+        <div id="testArea">
+
+            <div id="testDiv"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         INFORMATION
+    ====================================== -->
+
+    <div class="info">
+
+        <div class="card">
+
+            <label>
+                Applied CSS
+            </label>
+
+            <div
+                id="output"
+                class="code"
+            >
+                left: calc(100% - 50px - 60px);
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <label>
+                Computed Value
+            </label>
+
+            <div
+                id="computed"
+                class="code"
+            >
+                —
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+</div>
+
+
+<script>
+
+/* =========================================
+   ELEMENTS
+========================================= */
+
+const property =
+    document.getElementById("property");
+
+const value =
+    document.getElementById("value");
+
+const range =
+    document.getElementById("range");
+
+const rangeNumber =
+    document.getElementById("rangeNumber");
+
+const testDiv =
+    document.getElementById("testDiv");
+
+const output =
+    document.getElementById("output");
+
+const computed =
+    document.getElementById("computed");
+
+const status =
+    document.getElementById("status");
+
+
+/* =========================================
+   APPLY CSS VALUE
+========================================= */
+
+function validateAndApply() {
+
+    const prop =
+        property.value;
+
+    const val =
+        value.value.trim();
+
+
+    /*
+       Remove previous property
+    */
+
+    testDiv.style.removeProperty(prop);
+
+
+    /*
+       Empty value
+    */
+
+    if (!val) {
+
+        status.textContent =
+            "Empty value";
+
+        status.className =
+            "status invalid";
+
+        output.textContent =
+            prop + ": ;";
+
+        computed.textContent =
+            "—";
+
+        return;
+    }
+
+
+    /*
+       Apply the value using the
+       browser's native CSS parser.
+    */
+
+    testDiv.style.setProperty(
+        prop,
+        val
+    );
+
+
+    /*
+       Check whether the browser
+       accepted the value.
+    */
+
+    const accepted =
+        testDiv.style
+            .getPropertyValue(prop)
+            .trim() !== "";
+
+
+    /*
+       Invalid
+    */
+
+    if (!accepted) {
+
+        status.textContent =
+            "Invalid CSS value";
+
+        status.className =
+            "status invalid";
+
+        output.textContent =
+            prop + ": " + val + ";";
+
+        computed.textContent =
+            "Invalid";
+
+        return;
+    }
+
+
+    /*
+       Valid
+    */
+
+    status.textContent =
+        "Valid CSS value";
+
+    status.className =
+        "status valid";
+
+
+    output.textContent =
+        prop + ": " + val + ";";
+
+
+    /*
+       Get browser computed value
+    */
+
+    computed.textContent =
+        getComputedStyle(testDiv)
+            .getPropertyValue(prop);
+}
+
+
+/* =========================================
+   MANUAL INPUT
+========================================= */
+
+value.addEventListener(
+    "input",
+    validateAndApply
+);
+
+
+/* =========================================
+   PROPERTY CHANGE
+========================================= */
+
+property.addEventListener(
+    "change",
+    validateAndApply
+);
+
+
+/* =========================================
+   RANGE
+========================================= */
+
+range.addEventListener(
+    "input",
+    function () {
+
+        rangeNumber.value =
+            range.value;
+
+        value.value =
+            range.value + "px";
+
+        validateAndApply();
+    }
+);
+
+
+/* =========================================
+   RANGE NUMBER
+========================================= */
+
+rangeNumber.addEventListener(
+    "input",
+    function () {
+
+        range.value =
+            rangeNumber.value;
+
+        value.value =
+            rangeNumber.value + "px";
+
+        validateAndApply();
+    }
+);
+
+
+/* =========================================
+   EXAMPLES
+========================================= */
+
+document
+    .querySelectorAll(".example")
+    .forEach(function (example) {
+
+        example.addEventListener(
+            "click",
+            function () {
+
+                value.value =
+                    example.textContent.trim();
+
+                validateAndApply();
+
+            }
+        );
+
+    });
+
+
+/* =========================================
+   INITIAL TEST
+========================================= */
+
+validateAndApply();
+
+</script>
+
+</body>
+</html>

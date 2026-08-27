@@ -1,0 +1,4035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,initial-scale=1">
+
+<title>CSS Function Exhaustive Finder</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    padding:20px;
+
+    background:#050816;
+    color:#f8fafc;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+.container{
+    width:100%;
+    max-width:1100px;
+    margin:auto;
+}
+
+h1{
+    font-size:24px;
+    margin:0 0 18px;
+}
+
+.panel{
+    background:#0d1729;
+    border:1px solid #1e293b;
+    border-radius:14px;
+    padding:16px;
+    margin-bottom:14px;
+}
+
+button,
+.fileButton{
+    display:inline-block;
+
+    border:0;
+    border-radius:9px;
+
+    padding:12px 16px;
+    margin:3px;
+
+    background:#2563eb;
+    color:white;
+
+    font-size:15px;
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+button.stop{
+    background:#dc2626;
+}
+
+button.save{
+    background:#059669;
+}
+
+button.clear{
+    background:#475569;
+}
+
+button.export{
+    background:#0891b2;
+}
+
+button:disabled{
+    opacity:.45;
+}
+
+input[type="text"]{
+    width:100%;
+
+    padding:13px;
+
+    background:#020617;
+    color:#f8fafc;
+
+    border:1px solid #334155;
+    border-radius:9px;
+
+    outline:none;
+}
+
+#file{
+    display:none;
+}
+
+.stats{
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(145px,1fr)
+        );
+
+    gap:7px;
+
+    margin-top:12px;
+}
+
+.stat{
+    padding:10px;
+
+    background:#020617;
+
+    border:1px solid #1e293b;
+
+    border-radius:8px;
+}
+
+.stat small{
+    display:block;
+
+    color:#64748b;
+
+    font-size:11px;
+}
+
+.stat b{
+    display:block;
+
+    margin-top:4px;
+
+    font-size:17px;
+}
+
+#message{
+    margin-top:10px;
+
+    color:#38bdf8;
+
+    white-space:pre-wrap;
+}
+
+#status{
+    margin-top:8px;
+
+    color:#cbd5e1;
+
+    white-space:pre-wrap;
+
+    line-height:1.6;
+}
+
+#results{
+    max-height:65vh;
+
+    overflow:auto;
+}
+
+.result{
+    padding:8px 10px;
+
+    margin-bottom:3px;
+
+    background:#071525;
+
+    border-left:3px solid #22c55e;
+
+    font-family:monospace;
+
+    font-size:14px;
+
+    word-break:break-word;
+}
+
+.result.first{
+    background:#092b1b;
+
+    border-left:4px solid #4ade80;
+
+    color:#4ade80;
+
+    font-weight:bold;
+}
+
+.empty{
+    padding:20px;
+
+    color:#64748b;
+
+    text-align:center;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>
+CSS Function Exhaustive Finder 1–5
+</h1>
+
+<div class="panel">
+
+<label
+    class="fileButton"
+    for="file"
+>
+LOAD all-css.json
+</label>
+
+<input
+    id="file"
+    type="file"
+    accept=".json,application/json"
+>
+
+<button id="start">
+START
+</button>
+
+<button
+    id="stop"
+    class="stop"
+>
+STOP
+</button>
+
+<button
+    id="save"
+    class="save"
+>
+SAVE
+</button>
+
+<button
+    id="clear"
+    class="clear"
+>
+CLEAR
+</button>
+
+<button
+    id="exportFunctions"
+    class="export"
+>
+EXPORT FUNCTIONS
+</button>
+
+<button
+    id="exportTrue"
+    class="export"
+>
+EXPORT TRUE
+</button>
+
+<div id="message">
+Waiting for all-css.json
+</div>
+
+</div>
+
+<div class="panel">
+
+<input
+    type="text"
+    id="filter"
+    placeholder="Filter results..."
+>
+
+</div>
+
+<div class="panel">
+
+<div class="stats">
+
+<div class="stat">
+<small>PROPERTIES</small>
+<b id="propertiesCount">0</b>
+</div>
+
+<div class="stat">
+<small>FUNCTION ENTRIES</small>
+<b id="functionEntries">0</b>
+</div>
+
+<div class="stat">
+<small>UNIQUE FUNCTIONS</small>
+<b id="uniqueFunctions">0</b>
+</div>
+
+<div class="stat">
+<small>TESTED</small>
+<b id="tested">0</b>
+</div>
+
+<div class="stat">
+<small>TRUE</small>
+<b id="trueCount">0</b>
+</div>
+
+<div class="stat">
+<small>DISCOVERED</small>
+<b id="discovered">0</b>
+</div>
+
+<div class="stat">
+<small>PROPERTY INDEX</small>
+<b id="propertyIndex">0</b>
+</div>
+
+<div class="stat">
+<small>FUNCTION INDEX</small>
+<b id="functionIndex">0</b>
+</div>
+
+</div>
+
+<div id="status">
+READY
+</div>
+
+</div>
+
+<div class="panel">
+
+<div id="results">
+
+<div class="empty">
+No results yet
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* =====================================================
+   GLOBAL DATA
+===================================================== */
+
+let data = null;
+
+let properties = [];
+
+let functionEntries = [];
+
+let functions = [];
+
+let running = false;
+
+let tested = 0;
+
+let trueCount = 0;
+
+let propertyIndex = 0;
+
+let functionIndex = 0;
+
+let discovered = new Map();
+
+let testedKeys = new Set();
+
+let trueResults = [];
+
+let currentProperty = "";
+
+let currentFunction = "";
+
+let currentValue = "";
+
+let phase = "";
+
+let saveTimer = null;
+
+
+/* =====================================================
+   DOM
+===================================================== */
+
+const fileInput =
+    document.getElementById(
+        "file"
+    );
+
+const startButton =
+    document.getElementById(
+        "start"
+    );
+
+const stopButton =
+    document.getElementById(
+        "stop"
+    );
+
+const saveButton =
+    document.getElementById(
+        "save"
+    );
+
+const clearButton =
+    document.getElementById(
+        "clear"
+    );
+
+const exportFunctionsButton =
+    document.getElementById(
+        "exportFunctions"
+    );
+
+const exportTrueButton =
+    document.getElementById(
+        "exportTrue"
+    );
+
+const filterInput =
+    document.getElementById(
+        "filter"
+    );
+
+const message =
+    document.getElementById(
+        "message"
+    );
+
+const status =
+    document.getElementById(
+        "status"
+    );
+
+const results =
+    document.getElementById(
+        "results"
+    );
+
+
+/* =====================================================
+   NUMBER FORMAT
+===================================================== */
+
+function fmt(n){
+
+    return Number(n)
+        .toLocaleString();
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function updateStatus(){
+
+    document.getElementById(
+        "propertiesCount"
+    ).textContent =
+        fmt(properties.length);
+
+
+    document.getElementById(
+        "functionEntries"
+    ).textContent =
+        fmt(functionEntries.length);
+
+
+    document.getElementById(
+        "uniqueFunctions"
+    ).textContent =
+        fmt(functions.length);
+
+
+    document.getElementById(
+        "tested"
+    ).textContent =
+        fmt(tested);
+
+
+    document.getElementById(
+        "trueCount"
+    ).textContent =
+        fmt(trueCount);
+
+
+    document.getElementById(
+        "discovered"
+    ).textContent =
+        fmt(discovered.size);
+
+
+    document.getElementById(
+        "propertyIndex"
+    ).textContent =
+        fmt(propertyIndex);
+
+
+    document.getElementById(
+        "functionIndex"
+    ).textContent =
+        fmt(functionIndex);
+
+
+    status.textContent =
+        [
+            phase || "READY",
+
+            running
+                ? "RUNNING"
+                : "STOPPED",
+
+            currentProperty
+                ? "PROPERTY: " +
+                  currentProperty
+                : "",
+
+            currentFunction
+                ? "FUNCTION: " +
+                  currentFunction +
+                  "()"
+                : "",
+
+            currentValue
+                ? "VALUE: " +
+                  currentValue
+                : ""
+        ]
+        .filter(Boolean)
+        .join(" | ");
+
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+function setMessage(text){
+
+    message.textContent =
+        text;
+
+}
+
+
+/* =====================================================
+   NORMALIZE FUNCTION
+===================================================== */
+
+function normalizeFunctionName(
+    value
+){
+
+    if(
+        typeof value !==
+        "string"
+    ){
+
+        return null;
+
+    }
+
+
+    let name =
+        value.trim();
+
+
+    if(
+        name.endsWith("()")
+    ){
+
+        name =
+            name.slice(
+                0,
+                -2
+            );
+
+    }
+
+
+    const match =
+        name.match(
+            /^[a-zA-Z_][a-zA-Z0-9_-]*$/
+        );
+
+
+    if(!match){
+
+        return null;
+
+    }
+
+
+    return name.toLowerCase();
+
+}
+
+
+/* =====================================================
+   DEEP FUNCTION SCAN
+===================================================== */
+
+function scanFunctions(
+    value,
+    set
+){
+
+    if(
+        typeof value ===
+        "string"
+    ){
+
+        const regex =
+            /([a-zA-Z_][a-zA-Z0-9_-]*)\s*\(/g;
+
+
+        let match;
+
+
+        while(
+            (
+                match =
+                regex.exec(value)
+            ) !== null
+        ){
+
+            const name =
+                normalizeFunctionName(
+                    match[1]
+                );
+
+
+            if(name){
+
+                set.add(name);
+
+            }
+
+        }
+
+
+        return;
+
+    }
+
+
+    if(
+        Array.isArray(value)
+    ){
+
+        for(
+            const item
+            of value
+        ){
+
+            scanFunctions(
+                item,
+                set
+            );
+
+        }
+
+        return;
+
+    }
+
+
+    if(
+        value &&
+        typeof value ===
+        "object"
+    ){
+
+        for(
+            const [
+                key,
+                val
+            ]
+            of Object.entries(value)
+        ){
+
+            scanFunctions(
+                key,
+                set
+            );
+
+            scanFunctions(
+                val,
+                set
+            );
+
+        }
+
+    }
+
+}
+
+
+/* =====================================================
+   EXTRACT FUNCTIONS
+===================================================== */
+
+function extractFunctions(){
+
+    const set =
+        new Set();
+
+
+    functionEntries =
+        Array.isArray(
+            data.functions
+        )
+        ? data.functions
+        : [];
+
+
+    for(
+        const item
+        of functionEntries
+    ){
+
+        let name = null;
+
+
+        if(
+            typeof item ===
+            "string"
+        ){
+
+            name =
+                item;
+
+        }
+        else if(
+            item &&
+            typeof item ===
+            "object"
+        ){
+
+            name =
+                item.name ||
+                item.function ||
+                item.id;
+
+        }
+
+
+        name =
+            normalizeFunctionName(
+                name
+            );
+
+
+        if(name){
+
+            set.add(name);
+
+        }
+
+    }
+
+
+    scanFunctions(
+        data,
+        set
+    );
+
+
+    functions =
+        Array.from(set)
+            .sort(
+                (a,b) =>
+                    a.localeCompare(b)
+            );
+
+}
+
+
+/* =====================================================
+   EXTRACT PROPERTIES
+===================================================== */
+
+function extractProperties(){
+
+    const map =
+        new Map();
+
+
+    const list =
+        Array.isArray(
+            data.properties
+        )
+        ? data.properties
+        : [];
+
+
+    for(
+        const item
+        of list
+    ){
+
+        let name = "";
+
+        let syntax = "";
+
+
+        if(
+            typeof item ===
+            "string"
+        ){
+
+            name =
+                item;
+
+        }
+        else if(
+            item &&
+            typeof item ===
+            "object"
+        ){
+
+            name =
+                item.name ||
+                item.property ||
+                item.id ||
+                "";
+
+            syntax =
+                typeof item.syntax ===
+                "string"
+                    ? item.syntax
+                    : "";
+
+        }
+
+
+        if(
+            !name
+        ){
+
+            continue;
+
+        }
+
+
+        const key =
+            name.toLowerCase();
+
+
+        if(
+            !map.has(key)
+        ){
+
+            map.set(
+                key,
+                {
+                    name,
+                    syntax
+                }
+            );
+
+        }
+
+    }
+
+
+    properties =
+        Array.from(
+            map.values()
+        );
+
+}
+
+
+/* =====================================================
+   INITIALIZE DATA
+===================================================== */
+
+function initializeData(){
+
+    if(!data){
+
+        setMessage(
+            "Please load all-css.json first."
+        );
+
+        return false;
+
+    }
+
+
+    extractProperties();
+
+    extractFunctions();
+
+
+    discovered =
+        new Map();
+
+
+    testedKeys =
+        new Set();
+
+
+    trueResults =
+        [];
+
+
+    tested =
+        0;
+
+    trueCount =
+        0;
+
+
+    propertyIndex =
+        0;
+
+    functionIndex =
+        0;
+
+
+    currentProperty =
+        "";
+
+    currentFunction =
+        "";
+
+    currentValue =
+        "";
+
+
+    phase =
+        "INITIALIZED";
+
+
+    updateStatus();
+
+
+    setMessage(
+        "Loaded successfully."
+    );
+
+
+    return true;
+
+}
+
+
+/* =====================================================
+   FILE LOADER
+===================================================== */
+
+fileInput.addEventListener(
+    "change",
+    async function(){
+
+        const file =
+            this.files &&
+            this.files[0];
+
+
+        if(!file){
+
+            return;
+
+        }
+
+
+        try{
+
+            setMessage(
+                "Loading all-css.json..."
+            );
+
+
+            const text =
+                await file.text();
+
+
+            data =
+                JSON.parse(text);
+
+
+            initializeData();
+
+
+            setMessage(
+                "all-css.json loaded."
+            );
+
+        }
+        catch(error){
+
+            console.error(
+                error
+            );
+
+
+            setMessage(
+                "ERROR: " +
+                error.message
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   END PART 1
+===================================================== */
+  
+/* =====================================================
+   PART 2
+   VALUE GENERATOR
+===================================================== */
+
+
+/* =====================================================
+   BASIC VALUES
+===================================================== */
+
+const basicValues = [
+
+    "auto",
+
+    "none",
+
+    "normal",
+
+    "inherit",
+
+    "initial",
+
+    "unset",
+
+    "revert",
+
+    "revert-layer",
+
+    "0",
+
+    "1",
+
+    "1px",
+
+    "1%",
+
+    "1em",
+
+    "1rem",
+
+    "1vh",
+
+    "1vw",
+
+    "1ch",
+
+    "1ex",
+
+    "1lh",
+
+    "100%",
+
+    "100px"
+
+];
+
+
+/* =====================================================
+   NUMERIC VALUES
+===================================================== */
+
+const numericValues = [
+
+    "0",
+
+    "1",
+
+    "-1",
+
+    "0px",
+
+    "1px",
+
+    "2px",
+
+    "10px",
+
+    "100px",
+
+    "1%",
+
+    "10%",
+
+    "100%",
+
+    "1em",
+
+    "1rem",
+
+    "1vh",
+
+    "1vw",
+
+    "1ch",
+
+    "1ex",
+
+    "1lh",
+
+    "1dvh",
+
+    "1dvw",
+
+    "1svh",
+
+    "1svw",
+
+    "1lvh",
+
+    "1lvw"
+
+];
+
+
+/* =====================================================
+   CALC VALUES
+===================================================== */
+
+const calcValues = [
+
+    "1px",
+
+    "1%",
+
+    "1em",
+
+    "1rem",
+
+    "1vh",
+
+    "1vw",
+
+    "1ch",
+
+    "1ex",
+
+    "1lh",
+
+    "1px + 1px",
+
+    "1px - 1px",
+
+    "1px * 2",
+
+    "2 * 1px",
+
+    "1px / 2",
+
+    "1% + 1%",
+
+    "1px + 1%",
+
+    "1em + 1rem"
+
+];
+
+
+/* =====================================================
+   LIST VALUES
+===================================================== */
+
+const listValues = [
+
+    "1px,1px",
+
+    "1%,1%",
+
+    "1em,1em",
+
+    "1rem,1rem",
+
+    "1px,1%",
+
+    "1%,1px",
+
+    "1px,1px,1px",
+
+    "1%,1%,1%",
+
+    "1px,1%,1px"
+
+];
+
+
+/* =====================================================
+   ENV VALUES
+===================================================== */
+
+const envValues = [
+
+    "auto",
+
+    "none",
+
+    "auto,1px",
+
+    "auto,none",
+
+    "none,auto",
+
+    "auto,1px,1px"
+
+];
+
+
+/* =====================================================
+   ATTR VALUES
+===================================================== */
+
+const attrValues = [
+
+    "auto",
+
+    "none",
+
+    "auto,1px",
+
+    "auto,none",
+
+    "none,auto",
+
+    "auto,1px,1px"
+
+];
+
+
+/* =====================================================
+   SPECIAL VALUES
+===================================================== */
+
+const specialValues = [
+
+    "--x",
+
+    "width",
+
+    "height",
+
+    "block",
+
+    "inline",
+
+    "auto",
+
+    "size",
+
+    "100px"
+
+];
+
+
+/* =====================================================
+   FUNCTION-SPECIFIC ARGUMENTS
+===================================================== */
+
+const functionArguments = {
+
+    "calc":
+        calcValues,
+
+    "min":
+        [
+            ...numericValues,
+            ...calcValues,
+            ...listValues
+        ],
+
+    "max":
+        [
+            ...numericValues,
+            ...calcValues,
+            ...listValues
+        ],
+
+    "clamp":
+        [
+            "1px,1px,1px",
+            "1%,1%,1%",
+            "1px,1%,1px"
+        ],
+
+    "mod":
+        listValues,
+
+    "rem":
+        listValues,
+
+    "hypot":
+        [
+            ...numericValues,
+            ...calcValues,
+            ...listValues
+        ],
+
+    "round":
+        listValues,
+
+    "abs":
+        [
+            ...numericValues,
+            ...calcValues
+        ],
+
+    "sqrt":
+        [
+            ...numericValues,
+            ...calcValues
+        ],
+
+    "attr":
+        attrValues,
+
+    "env":
+        envValues,
+
+    "var":
+        [
+            "--x",
+
+            "--value",
+
+            "--test",
+
+            "--width"
+        ],
+
+    "anchor":
+        [
+            "width",
+
+            "height",
+
+            "top",
+
+            "left",
+
+            "right",
+
+            "bottom"
+        ],
+
+    "anchor-size":
+        [
+            "width",
+
+            "height",
+
+            "block",
+
+            "inline",
+
+            "self-block",
+
+            "self-inline"
+
+        ],
+
+    "calc-size":
+        [
+            "auto,size",
+
+            "auto,size + 1px",
+
+            "max-content,size",
+
+            "min-content,size",
+
+            "fit-content,size"
+        ],
+
+    "fit-content":
+        [
+            "100px",
+
+            "100%",
+
+            "10em",
+
+            "10rem"
+        ],
+
+    "repeat":
+        [
+            "2,1fr",
+
+            "3,1fr",
+
+            "auto-fit,100px",
+
+            "auto-fill,100px"
+        ],
+
+    "minmax":
+        [
+            "100px,1fr",
+
+            "0,1fr",
+
+            "100px,200px",
+
+            "auto,1fr"
+        ]
+
+};
+
+
+/* =====================================================
+   DEFAULT FUNCTION ARGUMENTS
+===================================================== */
+
+const defaultFunctionValues = [
+
+    ...basicValues,
+
+    ...numericValues,
+
+    ...calcValues,
+
+    ...listValues
+
+];
+
+
+/* =====================================================
+   GET FUNCTION ARGUMENTS
+===================================================== */
+
+function getFunctionArguments(
+    name
+){
+
+    if(
+        functionArguments[name]
+    ){
+
+        return functionArguments[name];
+
+    }
+
+
+    return defaultFunctionValues;
+
+}
+
+
+/* =====================================================
+   MAKE FUNCTION VALUE
+===================================================== */
+
+function makeFunctionValue(
+    name,
+    argument
+){
+
+    return (
+        name +
+        "(" +
+        argument +
+        ")"
+    );
+
+}
+
+
+/* =====================================================
+   SPECIAL FUNCTIONS
+===================================================== */
+
+function generateSpecialValues(
+    name
+){
+
+    const values =
+        getFunctionArguments(
+            name
+        );
+
+
+    const output =
+        [];
+
+
+    for(
+        const value
+        of values
+    ){
+
+        output.push(
+            makeFunctionValue(
+                name,
+                value
+            )
+        );
+
+    }
+
+
+    return output;
+
+}
+
+
+/* =====================================================
+   PROPERTY SYNTAX FUNCTION EXTRACTION
+===================================================== */
+
+function functionsFromSyntax(
+    syntax
+){
+
+    const set =
+        new Set();
+
+
+    if(
+        typeof syntax !==
+        "string"
+    ){
+
+        return set;
+
+    }
+
+
+    const regex =
+        /([a-zA-Z_][a-zA-Z0-9_-]*)\s*\(/g;
+
+
+    let match;
+
+
+    while(
+        (
+            match =
+            regex.exec(syntax)
+        ) !== null
+    ){
+
+        const name =
+            normalizeFunctionName(
+                match[1]
+            );
+
+
+        if(name){
+
+            set.add(name);
+
+        }
+
+    }
+
+
+    return set;
+
+}
+
+
+/* =====================================================
+   FUNCTIONS RELEVANT TO PROPERTY
+===================================================== */
+
+function getRelevantFunctions(
+    property
+){
+
+    const set =
+        new Set();
+
+
+    const syntax =
+        property.syntax || "";
+
+
+    const syntaxFunctions =
+        functionsFromSyntax(
+            syntax
+        );
+
+
+    for(
+        const name
+        of syntaxFunctions
+    ){
+
+        set.add(name);
+
+    }
+
+
+    /*
+       If the property syntax does not
+       explicitly mention a function,
+       still test the known CSS functions.
+
+       This is important because many
+       specifications use types such as:
+
+       <length>
+       <length-percentage>
+       <color>
+       <image>
+       <transform-function>
+
+       instead of writing every function
+       directly.
+    */
+
+
+    for(
+        const name
+        of functions
+    ){
+
+        if(
+            syntax
+                .toLowerCase()
+                .includes(
+                    name.toLowerCase()
+                )
+        ){
+
+            set.add(name);
+
+        }
+
+    }
+
+
+    /*
+       Generic functions that are useful
+       across many CSS properties.
+    */
+
+    const generic = [
+
+        "calc",
+
+        "min",
+
+        "max",
+
+        "clamp",
+
+        "var",
+
+        "attr",
+
+        "env",
+
+        "calc-size",
+
+        "anchor-size",
+
+        "fit-content"
+
+    ];
+
+
+    for(
+        const name
+        of generic
+    ){
+
+        if(
+            functions.includes(name)
+        ){
+
+            set.add(name);
+
+        }
+
+    }
+
+
+    return Array.from(
+        set
+    );
+
+}
+
+
+/* =====================================================
+   CREATE TEST VALUES
+===================================================== */
+
+function generateValues(
+    property
+){
+
+    const values =
+        [];
+
+
+    const relevant =
+        getRelevantFunctions(
+            property
+        );
+
+
+    /*
+       First put function values.
+       This makes the search visibly
+       diverse instead of testing the
+       same function thousands of times.
+    */
+
+    for(
+        const name
+        of relevant
+    ){
+
+        const functionValues =
+            generateSpecialValues(
+                name
+            );
+
+
+        for(
+            const value
+            of functionValues
+        ){
+
+            values.push(
+                value
+            );
+
+        }
+
+    }
+
+
+    /*
+       Then add basic values.
+    */
+
+    for(
+        const value
+        of basicValues
+    ){
+
+        values.push(
+            value
+        );
+
+    }
+
+
+    /*
+       Remove duplicates.
+    */
+
+    return Array.from(
+        new Set(values)
+    );
+
+}
+
+
+/* =====================================================
+   TEST ELEMENT
+===================================================== */
+
+let testElement =
+    null;
+
+
+function createTestElement(){
+
+    if(
+        testElement &&
+        testElement.isConnected
+    ){
+
+        return testElement;
+
+    }
+
+
+    testElement =
+        document.createElement(
+            "div"
+        );
+
+
+    testElement.id =
+        "__css_function_test__";
+
+
+    testElement.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    testElement.style.cssText = [
+
+        "position:absolute",
+
+        "left:-100000px",
+
+        "top:-100000px",
+
+        "width:100px",
+
+        "height:100px",
+
+        "padding:0",
+
+        "margin:0",
+
+        "border:0",
+
+        "display:block",
+
+        "visibility:hidden"
+
+    ].join(";");
+
+
+    document.body.appendChild(
+        testElement
+    );
+
+
+    return testElement;
+
+}
+
+
+/* =====================================================
+   CSS.SUPPORTS TEST
+===================================================== */
+
+function supportsValue(
+    property,
+    value
+){
+
+    try{
+
+        return CSS.supports(
+            property.name,
+            value
+        );
+
+    }
+    catch(error){
+
+        return false;
+
+    }
+
+}
+
+
+/* =====================================================
+   SECOND VALIDATION
+===================================================== */
+
+function computedValidation(
+    property,
+    value
+){
+
+    try{
+
+        const element =
+            createTestElement();
+
+
+        element.style.removeProperty(
+            property.name
+        );
+
+
+        element.style.setProperty(
+            property.name,
+            value
+        );
+
+
+        const stored =
+            element.style.getPropertyValue(
+                property.name
+            );
+
+
+        return (
+            stored !== ""
+        );
+
+    }
+    catch(error){
+
+        return false;
+
+    }
+
+}
+
+
+/* =====================================================
+   UNIQUE TEST KEY
+===================================================== */
+
+function makeTestKey(
+    property,
+    value
+){
+
+    return (
+        property.name +
+        "\x00" +
+        value
+    );
+
+}
+
+
+/* =====================================================
+   ADD RESULT
+===================================================== */
+
+function addResult(
+    property,
+    value,
+    functionName
+){
+
+    const key =
+        makeTestKey(
+            property,
+            value
+        );
+
+
+    if(
+        discovered.has(key)
+    ){
+
+        return;
+
+    }
+
+
+    const result = {
+
+        property:
+            property.name,
+
+        value,
+
+        function:
+            functionName,
+
+        text:
+            property.name +
+            ": " +
+            value +
+            " → TRUE"
+
+    };
+
+
+    discovered.set(
+        key,
+        result
+    );
+
+
+    trueResults.push(
+        result
+    );
+
+
+    trueCount++;
+
+
+    /*
+       New discoveries are inserted
+       at the beginning of the list.
+    */
+
+    renderResult(
+        result,
+        true
+    );
+
+}
+
+
+/* =====================================================
+   RENDER RESULT
+===================================================== */
+
+function renderResult(
+    result,
+    first
+){
+
+    const div =
+        document.createElement(
+            "div"
+        );
+
+
+    div.className =
+        "result" +
+        (
+            first
+                ? " first"
+                : ""
+        );
+
+
+    div.dataset.text =
+        result.text.toLowerCase();
+
+
+    div.textContent =
+        result.text;
+
+
+    if(
+        results.firstChild &&
+        !results.firstChild.classList.contains(
+            "empty"
+        )
+    ){
+
+        results.insertBefore(
+            div,
+            results.firstChild
+        );
+
+    }
+    else{
+
+        results.innerHTML =
+            "";
+
+        results.appendChild(
+            div
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   FILTER RESULTS
+===================================================== */
+
+filterInput.addEventListener(
+    "input",
+    function(){
+
+        const query =
+            this.value
+                .trim()
+                .toLowerCase();
+
+
+        const items =
+            results.querySelectorAll(
+                ".result"
+            );
+
+
+        for(
+            const item
+            of items
+        ){
+
+            item.style.display =
+                !query ||
+                item.dataset.text.includes(
+                    query
+                )
+                    ? ""
+                    : "none";
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   SAVE STATE OBJECT
+===================================================== */
+
+function getSaveState(){
+
+    return {
+
+        tested,
+
+        trueCount,
+
+        propertyIndex,
+
+        functionIndex,
+
+        currentProperty,
+
+        currentFunction,
+
+        currentValue,
+
+        phase,
+
+        properties,
+
+        functions,
+
+        trueResults
+
+    };
+
+}
+
+
+/* =====================================================
+   SAVE STATE
+===================================================== */
+
+function saveState(){
+
+    try{
+
+        const state =
+            getSaveState();
+
+
+        localStorage.setItem(
+            "cssFunctionFinderState",
+            JSON.stringify(
+                state
+            )
+        );
+
+
+        setMessage(
+            "Progress saved."
+        );
+
+    }
+    catch(error){
+
+        setMessage(
+            "SAVE ERROR: " +
+            error.message
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   AUTO SAVE
+===================================================== */
+
+function autoSave(){
+
+    if(
+        saveTimer
+    ){
+
+        clearTimeout(
+            saveTimer
+        );
+
+    }
+
+
+    saveTimer =
+        setTimeout(
+            saveState,
+            500
+        );
+
+}
+
+
+/* =====================================================
+   RESTORE STATE
+===================================================== */
+
+function restoreState(){
+
+    try{
+
+        const raw =
+            localStorage.getItem(
+                "cssFunctionFinderState"
+            );
+
+
+        if(!raw){
+
+            return false;
+
+        }
+
+
+        const state =
+            JSON.parse(raw);
+
+
+        if(
+            !state ||
+            !Array.isArray(
+                state.properties
+            ) ||
+            !Array.isArray(
+                state.functions
+            )
+        ){
+
+            return false;
+
+        }
+
+
+        properties =
+            state.properties;
+
+        functions =
+            state.functions;
+
+
+        tested =
+            state.tested || 0;
+
+        trueCount =
+            state.trueCount || 0;
+
+
+        propertyIndex =
+            state.propertyIndex || 0;
+
+        functionIndex =
+            state.functionIndex || 0;
+
+
+        currentProperty =
+            state.currentProperty || "";
+
+        currentFunction =
+            state.currentFunction || "";
+
+        currentValue =
+            state.currentValue || "";
+
+        phase =
+            state.phase ||
+            "RESTORED";
+
+
+        discovered =
+            new Map();
+
+        trueResults =
+            Array.isArray(
+                state.trueResults
+            )
+                ? state.trueResults
+                : [];
+
+
+        for(
+            const result
+            of trueResults
+        ){
+
+            const key =
+                result.property +
+                "\x00" +
+                result.value;
+
+
+            discovered.set(
+                key,
+                result
+            );
+
+        }
+
+
+        updateStatus();
+
+
+        results.innerHTML =
+            "";
+
+
+        for(
+            const result
+            of trueResults
+        ){
+
+            renderResult(
+                result,
+                false
+            );
+
+        }
+
+
+        setMessage(
+            "Previous progress restored."
+        );
+
+
+        return true;
+
+    }
+    catch(error){
+
+        console.error(
+            error
+        );
+
+
+        return false;
+
+    }
+
+}
+
+
+/* =====================================================
+   END PART 2
+===================================================== */
+
+  /* =====================================================
+   PART 3
+   SEARCH ENGINE
+===================================================== */
+
+
+/* =====================================================
+   TEST ONE VALUE
+===================================================== */
+
+function testOne(
+    property,
+    value,
+    functionName
+){
+
+    const key =
+        makeTestKey(
+            property,
+            value
+        );
+
+
+    if(
+        testedKeys.has(key)
+    ){
+
+        return false;
+
+    }
+
+
+    testedKeys.add(key);
+
+    tested++;
+
+
+    currentProperty =
+        property.name;
+
+    currentFunction =
+        functionName || "";
+
+    currentValue =
+        value;
+
+
+    /*
+       First check CSS.supports().
+    */
+
+    let supported =
+        supportsValue(
+            property,
+            value
+        );
+
+
+    if(!supported){
+
+        return false;
+
+    }
+
+
+    /*
+       Second check:
+
+       Put the value on a real
+       CSSStyleDeclaration.
+
+       This avoids counting values
+       that CSS.supports() accepts
+       but that cannot actually be
+       assigned to the property.
+    */
+
+    const valid =
+        computedValidation(
+            property,
+            value
+        );
+
+
+    if(!valid){
+
+        return false;
+
+    }
+
+
+    addResult(
+        property,
+        value,
+        functionName
+    );
+
+
+    return true;
+
+}
+
+
+/* =====================================================
+   TEST FUNCTION VALUES
+===================================================== */
+
+function testFunction(
+    property,
+    functionName
+){
+
+    const values =
+        generateSpecialValues(
+            functionName
+        );
+
+
+    for(
+        const value
+        of values
+    ){
+
+        if(!running){
+
+            return;
+
+        }
+
+
+        testOne(
+            property,
+            value,
+            functionName
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   TEST ALL FUNCTIONS FOR PROPERTY
+===================================================== */
+
+function testPropertyFunctions(
+    property
+){
+
+    const relevant =
+        getRelevantFunctions(
+            property
+        );
+
+
+    for(
+        let i = 0;
+        i < relevant.length;
+        i++
+    ){
+
+        if(!running){
+
+            return;
+
+        }
+
+
+        functionIndex =
+            i;
+
+
+        currentFunction =
+            relevant[i];
+
+
+        testFunction(
+            property,
+            relevant[i]
+        );
+
+
+        updateStatus();
+
+    }
+
+}
+
+
+/* =====================================================
+   TEST BASIC VALUES
+===================================================== */
+
+function testBasicValues(
+    property
+){
+
+    for(
+        const value
+        of basicValues
+    ){
+
+        if(!running){
+
+            return;
+
+        }
+
+
+        testOne(
+            property,
+            value,
+            ""
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   TEST PROPERTY
+===================================================== */
+
+function testProperty(
+    property
+){
+
+    currentProperty =
+        property.name;
+
+
+    functionIndex =
+        0;
+
+
+    /*
+       --------------------------------------------------
+       PHASE 1
+
+       Known/general values.
+       --------------------------------------------------
+    */
+
+    phase =
+        "PHASE 1: BASIC VALUES";
+
+
+    testBasicValues(
+        property
+    );
+
+
+    if(!running){
+
+        return;
+
+    }
+
+
+    /*
+       --------------------------------------------------
+       PHASE 2
+
+       Functions known from all-css.json
+       and functions appearing in syntax.
+       --------------------------------------------------
+    */
+
+    phase =
+        "PHASE 2: KNOWN FUNCTIONS";
+
+
+    testPropertyFunctions(
+        property
+    );
+
+
+    if(!running){
+
+        return;
+
+    }
+
+
+    /*
+       --------------------------------------------------
+       PHASE 3
+
+       Extra function forms.
+
+       These are important because a function
+       may be valid even when the property
+       syntax references an abstract CSS type.
+       --------------------------------------------------
+    */
+
+    phase =
+        "PHASE 3: GENERIC FUNCTIONS";
+
+
+    const genericFunctions = [
+
+        "calc",
+
+        "min",
+
+        "max",
+
+        "clamp",
+
+        "var",
+
+        "attr",
+
+        "env",
+
+        "calc-size",
+
+        "anchor-size",
+
+        "fit-content",
+
+        "minmax",
+
+        "repeat"
+
+    ];
+
+
+    for(
+        const name
+        of genericFunctions
+    ){
+
+        if(!running){
+
+            return;
+
+        }
+
+
+        if(
+            !functions.includes(
+                name
+            )
+        ){
+
+            continue;
+
+        }
+
+
+        testFunction(
+            property,
+            name
+        );
+
+    }
+
+
+    /*
+       --------------------------------------------------
+       PHASE 4
+
+       Functions detected directly in the
+       property's syntax.
+       --------------------------------------------------
+    */
+
+    phase =
+        "PHASE 4: SYNTAX FUNCTIONS";
+
+
+    const syntaxFunctions =
+        functionsFromSyntax(
+            property.syntax || ""
+        );
+
+
+    for(
+        const name
+        of syntaxFunctions
+    ){
+
+        if(!running){
+
+            return;
+
+        }
+
+
+        testFunction(
+            property,
+            name
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   NEXT PROPERTY
+===================================================== */
+
+function nextProperty(){
+
+    if(!running){
+
+        return false;
+
+    }
+
+
+    if(
+        propertyIndex >=
+        properties.length
+    ){
+
+        return false;
+
+    }
+
+
+    const property =
+        properties[
+            propertyIndex
+        ];
+
+
+    if(
+        !property ||
+        !property.name
+    ){
+
+        propertyIndex++;
+
+        return true;
+
+    }
+
+
+    testProperty(
+        property
+    );
+
+
+    propertyIndex++;
+
+
+    functionIndex =
+        0;
+
+
+    autoSave();
+
+
+    updateStatus();
+
+
+    return true;
+
+}
+
+
+/* =====================================================
+   SEARCH LOOP
+===================================================== */
+
+async function searchLoop(){
+
+    phase =
+        "SEARCHING";
+
+
+    updateStatus();
+
+
+    /*
+       Small asynchronous pauses are important
+       on Android.
+
+       Without them, the browser can become
+       completely frozen during a huge search.
+    */
+
+    let batch =
+        0;
+
+
+    while(
+        running &&
+        propertyIndex <
+        properties.length
+    ){
+
+        nextProperty();
+
+
+        batch++;
+
+
+        /*
+           Give the browser time to paint
+           the counters and results.
+        */
+
+        if(
+            batch >= 2
+        ){
+
+            batch =
+                0;
+
+
+            await new Promise(
+                resolve =>
+                    setTimeout(
+                        resolve,
+                        0
+                    )
+            );
+
+        }
+
+
+        /*
+           Save periodically.
+        */
+
+        if(
+            tested % 500 === 0
+        ){
+
+            autoSave();
+
+        }
+
+    }
+
+
+    if(
+        running &&
+        propertyIndex >=
+        properties.length
+    ){
+
+        finishSearch();
+
+    }
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+async function start(){
+
+    if(running){
+
+        return;
+
+    }
+
+
+    if(
+        !data &&
+        properties.length === 0
+    ){
+
+        setMessage(
+            "Load all-css.json first."
+        );
+
+        return;
+
+    }
+
+
+    /*
+       If data exists but properties have
+       not been initialized yet.
+    */
+
+    if(
+        properties.length === 0 &&
+        data
+    ){
+
+        initializeData();
+
+    }
+
+
+    running =
+        true;
+
+
+    phase =
+        "SEARCHING";
+
+
+    setMessage(
+        "Search started..."
+    );
+
+
+    updateStatus();
+
+
+    await searchLoop();
+
+}
+
+
+/* =====================================================
+   STOP
+===================================================== */
+
+function stop(){
+
+    if(!running){
+
+        return;
+
+    }
+
+
+    running =
+        false;
+
+
+    phase =
+        "STOPPED";
+
+
+    autoSave();
+
+
+    setMessage(
+        "Search stopped. Progress saved."
+    );
+
+
+    updateStatus();
+
+}
+
+
+/* =====================================================
+   FINISH
+===================================================== */
+
+function finishSearch(){
+
+    running =
+        false;
+
+
+    phase =
+        "FINISHED";
+
+
+    currentProperty =
+        "";
+
+    currentFunction =
+        "";
+
+    currentValue =
+        "";
+
+
+    saveState();
+
+
+    setMessage(
+        "Search completed."
+    );
+
+
+    updateStatus();
+
+}
+
+
+/* =====================================================
+   CLEAR RESULTS
+===================================================== */
+
+function clearResults(){
+
+    if(running){
+
+        return;
+
+    }
+
+
+    results.innerHTML =
+        '<div class="empty">' +
+        'No results yet' +
+        '</div>';
+
+
+    trueResults =
+        [];
+
+
+    discovered =
+        new Map();
+
+
+    testedKeys =
+        new Set();
+
+
+    tested =
+        0;
+
+
+    trueCount =
+        0;
+
+
+    propertyIndex =
+        0;
+
+
+    functionIndex =
+        0;
+
+
+    currentProperty =
+        "";
+
+    currentFunction =
+        "";
+
+    currentValue =
+        "";
+
+
+    phase =
+        "CLEARED";
+
+
+    localStorage.removeItem(
+        "cssFunctionFinderState"
+    );
+
+
+    updateStatus();
+
+
+    setMessage(
+        "Results and progress cleared."
+    );
+
+}
+
+
+/* =====================================================
+   REBUILD RESULT LIST
+===================================================== */
+
+function rebuildResults(){
+
+    results.innerHTML =
+        "";
+
+
+    if(
+        trueResults.length === 0
+    ){
+
+        results.innerHTML =
+            '<div class="empty">' +
+            'No TRUE results' +
+            '</div>';
+
+        return;
+
+    }
+
+
+    for(
+        let i = 0;
+        i < trueResults.length;
+        i++
+    ){
+
+        renderResult(
+            trueResults[i],
+            i === 0
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   SORT TRUE RESULTS
+===================================================== */
+
+function sortTrueResults(){
+
+    trueResults.sort(
+        (
+            a,
+            b
+        ) => {
+
+            /*
+               Newest discoveries first.
+            */
+
+            return 0;
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   EXPORT JSON
+===================================================== */
+
+function downloadJSON(
+    filename,
+    object
+){
+
+    const blob =
+        new Blob(
+            [
+                JSON.stringify(
+                    object,
+                    null,
+                    2
+                )
+            ],
+            {
+                type:
+                    "application/json"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(
+            blob
+        );
+
+
+    const a =
+        document.createElement(
+            "a"
+        );
+
+
+    a.href =
+        url;
+
+
+    a.download =
+        filename;
+
+
+    document.body.appendChild(
+        a
+    );
+
+
+    a.click();
+
+
+    a.remove();
+
+
+    setTimeout(
+        () =>
+            URL.revokeObjectURL(
+                url
+            ),
+        1000
+    );
+
+}
+
+
+/* =====================================================
+   EXPORT ALL FUNCTIONS
+===================================================== */
+
+function exportFunctions(){
+
+    downloadJSON(
+        "css-functions.json",
+        functions
+    );
+
+
+    setMessage(
+        "Exported " +
+        functions.length +
+        " unique functions."
+    );
+
+}
+
+
+/* =====================================================
+   EXPORT TRUE RESULTS
+===================================================== */
+
+function exportTrue(){
+
+    downloadJSON(
+        "css-true-results.json",
+        trueResults
+    );
+
+
+    setMessage(
+        "Exported " +
+        trueResults.length +
+        " TRUE results."
+    );
+
+}
+
+
+/* =====================================================
+   EXPORT DISCOVERED FUNCTIONS
+===================================================== */
+
+function exportDiscoveredFunctions(){
+
+    const set =
+        new Set();
+
+
+    for(
+        const result
+        of trueResults
+    ){
+
+        if(
+            result.function
+        ){
+
+            set.add(
+                result.function
+            );
+
+        }
+
+    }
+
+
+    const list =
+        Array.from(
+            set
+        ).sort();
+
+
+    downloadJSON(
+        "discovered-css-functions.json",
+        list
+    );
+
+
+    setMessage(
+        "Discovered functions: " +
+        list.length
+    );
+
+}
+
+
+/* =====================================================
+   BUTTON EVENTS
+===================================================== */
+
+startButton.addEventListener(
+    "click",
+    start
+);
+
+
+stopButton.addEventListener(
+    "click",
+    stop
+);
+
+
+saveButton.addEventListener(
+    "click",
+    saveState
+);
+
+
+clearButton.addEventListener(
+    "click",
+    clearResults
+);
+
+
+exportFunctionsButton.addEventListener(
+    "click",
+    exportFunctions
+);
+
+
+exportTrueButton.addEventListener(
+    "click",
+    exportTrue
+);
+
+
+/* =====================================================
+   KEYBOARD SHORTCUT
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key ===
+            "Escape"
+        ){
+
+            stop();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   INITIAL STATUS
+===================================================== */
+
+updateStatus();
+
+
+/* =====================================================
+   END PART 3
+===================================================== */
+  /* =====================================================
+   PART 4
+   RESTORE / SAVE / FINALIZATION
+===================================================== */
+
+
+/* =====================================================
+   RESTORE AFTER PAGE LOAD
+===================================================== */
+
+function tryRestore(){
+
+    /*
+       لا نستعيد الحالة إلا إذا كانت
+       محفوظة فعلًا.
+    */
+
+    const restored =
+        restoreState();
+
+
+    if(!restored){
+
+        phase =
+            "READY";
+
+
+        updateStatus();
+
+
+        return;
+
+    }
+
+
+    /*
+       إذا تم تحميل all-css.json سابقًا
+       من نفس الصفحة، يمكن المتابعة.
+    */
+
+    if(data){
+
+        setMessage(
+            "Previous search restored."
+        );
+
+    }
+    else{
+
+        setMessage(
+            "Previous progress found. " +
+            "Load all-css.json to continue."
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CONTINUE SEARCH
+===================================================== */
+
+async function continueSearch(){
+
+    if(running){
+
+        return;
+
+    }
+
+
+    /*
+       يجب أن تكون properties موجودة.
+    */
+
+    if(
+        properties.length === 0
+    ){
+
+        if(
+            data
+        ){
+
+            initializeData();
+
+        }
+        else{
+
+            setMessage(
+                "Load all-css.json first."
+            );
+
+            return;
+
+        }
+
+    }
+
+
+    /*
+       إذا وصلنا للنهاية فلا يوجد شيء
+       آخر لاختباره.
+    */
+
+    if(
+        propertyIndex >=
+        properties.length
+    ){
+
+        finishSearch();
+
+        return;
+
+    }
+
+
+    running =
+        true;
+
+
+    phase =
+        "CONTINUING";
+
+
+    setMessage(
+        "Continuing previous search..."
+    );
+
+
+    updateStatus();
+
+
+    await searchLoop();
+
+}
+
+
+/* =====================================================
+   LOAD JSON WITHOUT FILE INPUT
+===================================================== */
+
+async function loadJSONText(
+    text
+){
+
+    try{
+
+        const parsed =
+            JSON.parse(text);
+
+
+        data =
+            parsed;
+
+
+        initializeData();
+
+
+        return true;
+
+    }
+    catch(error){
+
+        console.error(
+            error
+        );
+
+
+        setMessage(
+            "JSON ERROR: " +
+            error.message
+        );
+
+
+        return false;
+
+    }
+
+}
+
+
+/* =====================================================
+   HANDLE DATA STRUCTURE
+===================================================== */
+
+function inspectData(){
+
+    if(!data){
+
+        return;
+
+    }
+
+
+    console.log(
+        "================================"
+    );
+
+
+    console.log(
+        "PROPERTIES TYPE:",
+        Array.isArray(
+            data.properties
+        )
+            ? "ARRAY"
+            : typeof data.properties
+    );
+
+
+    console.log(
+        "PROPERTIES COUNT:",
+        Array.isArray(
+            data.properties
+        )
+            ? data.properties.length
+            : 0
+    );
+
+
+    console.log(
+        "FUNCTIONS TYPE:",
+        Array.isArray(
+            data.functions
+        )
+            ? "ARRAY"
+            : typeof data.functions
+    );
+
+
+    console.log(
+        "FUNCTIONS COUNT:",
+        Array.isArray(
+            data.functions
+        )
+            ? data.functions.length
+            : 0
+    );
+
+
+    console.log(
+        "================================"
+    );
+
+
+    console.log(
+        "UNIQUE FUNCTIONS:",
+        functions.length
+    );
+
+
+    console.log(
+        "================================"
+    );
+
+}
+
+
+/* =====================================================
+   SHOW FIRST PROPERTIES
+===================================================== */
+
+function inspectProperties(){
+
+    const limit =
+        Math.min(
+            20,
+            properties.length
+        );
+
+
+    for(
+        let i = 0;
+        i < limit;
+        i++
+    ){
+
+        const item =
+            properties[i];
+
+
+        console.log(
+            i,
+            "NAME:",
+            item.name,
+            "SYNTAX:",
+            item.syntax
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   SHOW FUNCTIONS
+===================================================== */
+
+function inspectFunctions(){
+
+    console.log(
+        "================================"
+    );
+
+
+    console.log(
+        "FUNCTIONS:"
+    );
+
+
+    for(
+        const name
+        of functions
+    ){
+
+        console.log(
+            name + "()"
+        );
+
+    }
+
+
+    console.log(
+        "================================"
+    );
+
+}
+
+
+/* =====================================================
+   DEBUG DATA
+===================================================== */
+
+function debugData(){
+
+    inspectData();
+
+    inspectProperties();
+
+    inspectFunctions();
+
+}
+
+
+/* =====================================================
+   PERIODIC SAVE
+===================================================== */
+
+let periodicSaveTimer =
+    null;
+
+
+function startPeriodicSave(){
+
+    if(
+        periodicSaveTimer
+    ){
+
+        clearInterval(
+            periodicSaveTimer
+        );
+
+    }
+
+
+    periodicSaveTimer =
+        setInterval(
+            function(){
+
+                if(
+                    running
+                ){
+
+                    saveState();
+
+                }
+
+            },
+            5000
+        );
+
+}
+
+
+/* =====================================================
+   STOP PERIODIC SAVE
+===================================================== */
+
+function stopPeriodicSave(){
+
+    if(
+        periodicSaveTimer
+    ){
+
+        clearInterval(
+            periodicSaveTimer
+        );
+
+        periodicSaveTimer =
+            null;
+
+    }
+
+}
+
+
+/* =====================================================
+   PAGE VISIBILITY
+===================================================== */
+
+document.addEventListener(
+    "visibilitychange",
+    function(){
+
+        /*
+           عندما يخرج المستخدم من الصفحة
+           نحفظ التقدم فورًا.
+
+           هذا مهم جدًا على الهاتف لأن
+           Android قد يقتل الصفحة في الخلفية.
+        */
+
+        if(
+            document.hidden
+        ){
+
+            if(
+                running ||
+                properties.length > 0
+            ){
+
+                saveState();
+
+            }
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   PAGE BEFORE UNLOAD
+===================================================== */
+
+window.addEventListener(
+    "beforeunload",
+    function(){
+
+        if(
+            running ||
+            properties.length > 0
+        ){
+
+            saveState();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   START BUTTON WRAPPER
+===================================================== */
+
+async function startSearch(){
+
+    if(running){
+
+        return;
+
+    }
+
+
+    /*
+       إذا كانت لدينا حالة محفوظة
+       وتم تحميل الملف، نكمل منها.
+    */
+
+    if(
+        properties.length > 0 &&
+        propertyIndex <
+        properties.length
+    ){
+
+        await continueSearch();
+
+        return;
+
+    }
+
+
+    /*
+       بحث جديد.
+    */
+
+    if(
+        !data
+    ){
+
+        setMessage(
+            "Load all-css.json first."
+        );
+
+        return;
+
+    }
+
+
+    initializeData();
+
+
+    await start();
+
+}
+
+
+/* =====================================================
+   REPLACE START EVENT
+===================================================== */
+
+startButton.onclick =
+    startSearch;
+
+
+/* =====================================================
+   INITIALIZE PERIODIC SAVE
+===================================================== */
+
+startPeriodicSave();
+
+
+/* =====================================================
+   RESTORE SAVED DATA
+===================================================== */
+
+tryRestore();
+
+
+/* =====================================================
+   DEBUG COMMANDS
+===================================================== */
+
+window.cssFinder = {
+
+    start: startSearch,
+
+    stop,
+
+    save:
+        saveState,
+
+    clear:
+        clearResults,
+
+    restore:
+        restoreState,
+
+    inspect:
+        debugData,
+
+    exportFunctions,
+
+    exportTrue,
+
+    exportDiscoveredFunctions
+
+};
+
+
+/* =====================================================
+   FINAL MESSAGE
+===================================================== */
+
+console.log(
+    "================================"
+);
+
+
+console.log(
+    "CSS Function Exhaustive Finder"
+);
+
+
+console.log(
+    "READY"
+);
+
+
+console.log(
+    "Load all-css.json and press START."
+);
+
+
+console.log(
+    "================================"
+);
+
+
+/* =====================================================
+   CLOSE SCRIPT
+===================================================== */
+
+</script>
+
+</body>
+
+</html>

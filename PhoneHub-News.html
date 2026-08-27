@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PhoneHub News</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{
+--bg:#071226;--card:#0d1b34;--card2:#122446;--blue:#3b82f6;--orange:#f48120;--text:#fff;--muted:#94a3b8;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:var(--bg);color:var(--text)}
+.container{width:92%;max-width:1400px;margin:auto}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font-size:28px;font-weight:800}
+.badge{padding:8px 14px;border-radius:999px;background:rgba(244,129,32,.15);border:1px solid rgba(244,129,32,.3);color:var(--orange)}
+.hero{position:relative;height:500px;border-radius:25px;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover}
+.overlay{position:absolute;inset:0;background:linear-gradient(transparent,rgba(0,0,0,.9));display:flex;flex-direction:column;justify-content:end;padding:30px}
+.overlay h1{font-size:42px}
+.ticker{margin:20px 0;background:#111827;padding:15px;border-radius:15px;overflow:hidden}
+marquee{color:#cbd5e1}
+.section{margin:40px 0}
+.section h2{margin-bottom:20px;color:#fff}
+.section h2 i{color:var(--orange)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.card{background:linear-gradient(145deg,var(--card),var(--card2));border-radius:20px;overflow:hidden;transition:.3s}
+.card:hover{transform:translateY(-5px)}
+.card img{width:100%;height:220px;object-fit:cover}
+.content{padding:18px}
+.content p{color:var(--muted);margin-top:10px}
+.list-item,.compare,.comment,.spec{background:var(--card);padding:15px;border-radius:15px;margin-bottom:10px}
+.brands,.tags{display:flex;flex-wrap:wrap;gap:10px}
+.brands span,.tags span{background:var(--card);padding:10px 16px;border-radius:999px}
+.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="logo"><i class="fa-solid fa-mobile-screen"></i> PhoneHub News</div>
+<div class="badge"><i class="fa-brands fa-cloudflare"></i> Verified</div>
+</header>
+
+<section class="hero">
+<img src="https://picsum.photos/1400/800" alt="">
+<div class="overlay">
+<div class="badge">🔥 Breaking News</div>
+<h1>iPhone 17 Pro Max Introduces New AI Features</h1>
+</div>
+</section>
+
+<div class="ticker">
+<marquee>Galaxy S26 Ultra Leak • Android 17 Released • Xiaomi 16 Ultra Launch Event • Pixel 10 Pro Benchmarks</marquee>
+</div>
+
+<section class="section">
+<h2> Latest News</h2>
+<div class="grid">
+<div class="card"><img src="https://picsum.photos/500/300?1"><div class="content"><h3>Galaxy S26 Ultra Leak</h3><p>New camera details emerge.</p></div></div>
+<div class="card"><img src="https://picsum.photos/500/300?2"><div class="content"><h3>Pixel 10 Pro</h3><p>Benchmark results leaked.</p></div></div>
+</div>
+</section>
+
+<section class="section">
+<h2> Leaks & Rumors</h2>
+<div class="list-item">OnePlus 15 Pro Battery Leak</div>
+<div class="list-item">iPhone Fold Display Rumor</div>
+</section>
+
+<section class="section">
+<h2> Software Updates</h2>
+<div class="list-item">Android 17 Beta</div>
+<div class="list-item">iOS 27 Developer Preview</div>
+</section>
+
+<section class="section">
+<h2> Trending News</h2>
+<div class="list-item">#1 iPhone 17 Pro Max</div>
+<div class="list-item">#2 Galaxy S26 Ultra</div>
+</section>
+
+<section class="section">
+<h2> Editor's Picks</h2>
+<div class="list-item">Best Camera Phone 2026</div>
+</section>
+
+<section class="section">
+<h2> Brand News</h2>
+<div class="brands"><span>Apple</span><span>Samsung</span><span>Xiaomi</span><span>Google</span><span>Honor</span><span>OnePlus</span></div>
+</section>
+
+<section class="section">
+<h2> Related Comparisons</h2>
+<div class="compare">iPhone 17 Pro Max vs Galaxy S26 Ultra</div>
+<div class="compare">Pixel 10 Pro vs Xiaomi 16 Ultra</div>
+</section>
+
+<section class="section">
+<h2> Quick Specs</h2>
+<div class="specs">
+<div class="spec">A19 Pro</div>
+<div class="spec">48MP Camera</div>
+<div class="spec">5000mAh</div>
+<div class="spec">6.9 OLED</div>
+</div>
+</section>
+
+<section class="section">
+<h2> Community Reactions</h2>
+<div class="comment">Amazing camera upgrade!</div>
+<div class="comment">Battery looks promising.</div>
+</section>
+
+<section class="section">
+<h2> Tags</h2>
+<div class="tags"><span>Apple</span><span>Samsung</span><span>Android</span><span>AI</span></div>
+</section>
+</div>
+
+<script>
+setInterval(()=>{
+document.querySelector('.badge').style.opacity =
+document.querySelector('.badge').style.opacity==='0.7'?'1':'0.7';
+},1000);
+</script>
+</body>
+</html>

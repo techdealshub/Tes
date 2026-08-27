@@ -1,0 +1,195 @@
+<!-- قسم الواجهة الترحيبية البسيط للمجلة التقنية - Minimal Tech Hero -->
+<section class="minimal-hero">
+    
+    <!-- الصورة الكبيرة مدمجة كخلفية هادئة تحت النص [1] -->
+    <div class="hero-backdrop">
+        <img src="smartphones.png" alt="Tech Background" class="backdrop-img">
+        <div class="hero-overlay"></div>
+    </div>
+
+    <div class="custom-container hero-inner">
+        <!-- المحتوى النصي المباشر -->
+        <div class="hero-center-content">
+            <span class="hero-tag">Tech Insights</span>
+            <h1 class="hero-title">The Smartphone Triad: iPhone, Samsung, and Xiaomi</h1>
+            <p class="hero-description">An independent analysis of ecosystem control, hardware innovation, and global mobile architecture.</p>
+            
+            <!-- مربع بحث بسيط ونظيف [1] -->
+            <div class="hero-search-box">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" placeholder="Search articles, reviews, or devices...">
+                <button class="search-submit">Search</button>
+            </div>
+        </div>
+    </div>
+    
+</section>
+<style>
+  /* استيراد خط نظيف ومريح للعين */
+@import url('https://googleapis.com');
+
+:root {
+    --bg: #050816;
+    --card: #0d1729;
+    --border: #1e293b;
+    --primary: #3b82f6;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
+.custom-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   تنسيق الـ Hero البسيط والمستقل (Minimal Tech Hero)
+   ========================================================================== */
+.minimal-hero {
+    position: relative;
+    padding: 120px 0;
+    text-align: center; /* تمركز العناصر في المنتصف تلقائياً */
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+    background-color: var(--bg);
+}
+
+/* ضبط خلفية الصورة الكبيرة المدمجة [1] */
+.hero-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.backdrop-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.15; /* تقليل الشفافية لجعل الصورة خلفية هادئة وغير مزعجة للعين */
+}
+
+/* طبقة داكنة ناعمة لضمان وضوح النص فوق الصورة */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(5, 8, 22, 0.4) 0%, rgba(5, 8, 22, 1) 100%);
+}
+
+/* محتوى النص المرفوع فوق الخلفية */
+.hero-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-center-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-tag {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--primary);
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.hero-title {
+    font-size: 46px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.2;
+    color: var(--text-main);
+    margin-bottom: 16px;
+}
+
+.hero-description {
+    font-size: 18px;
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* مربع البحث البسيط والنظيف جداً [1] */
+.hero-search-box {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    padding: 6px 6px 6px 18px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 550px;
+    margin: 0 auto; /* تمركز مربع البحث في المنتصف */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: border-color 0.2s;
+}
+
+.hero-search-box:focus-within {
+    border-color: var(--primary);
+}
+
+.search-icon {
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+.hero-search-box input {
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 14px;
+    width: 100%;
+    outline: none;
+}
+
+.hero-search-box input::placeholder {
+    color: var(--text-muted);
+}
+
+.search-submit {
+    background-color: var(--primary);
+    color: #ffffff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.search-submit:hover {
+    opacity: 0.9;
+}
+
+/* التوافق الذكي التام مع الهواتف الذكية */
+@media (max-width: 768px) {
+    .minimal-hero {
+        padding: 80px 0;
+    }
+    
+    .hero-title {
+        font-size: 32px;
+        letter-spacing: -0.5px;
+    }
+    
+    .hero-description {
+        font-size: 15px;
+    }
+    
+    .hero-search-box {
+        padding: 6px 6px 6px 14px;
+    }
+}
+
+</style>

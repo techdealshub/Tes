@@ -1,0 +1,1078 @@
+[
+  {
+    "name": "-webkit-image-set()",
+    "href": "https://drafts.csswg.org/css-images-4/#funcdef--webkit-image-set",
+    "syntax": "",
+    "for": []
+  },
+  {
+    "name": "abs()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-abs",
+    "syntax": "abs( <calc-sum> )",
+    "for": []
+  },
+  {
+    "name": "acos()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-acos",
+    "syntax": "acos( <calc-sum> )",
+    "for": []
+  },
+  {
+    "name": "alpha()",
+    "href": "https://drafts.csswg.org/css-color-5/#funcdef-alpha",
+    "syntax": "alpha([from <color>] [ / [<alpha-value> | none] ]? )",
+    "for": []
+  },
+  {
+    "name": "anchor-size()",
+    "href": "https://drafts.csswg.org/css-anchor-position-1/#funcdef-anchor-size",
+    "syntax": "anchor-size( [ <anchor-name> || <anchor-size> ]? , <length-percentage>? )",
+    "for": []
+  },
+  {
+    "name": "anchor()",
+    "href": "https://drafts.csswg.org/css-anchor-position-1/#funcdef-anchor",
+    "syntax": "anchor( <anchor-name>? && <anchor-side>, <length-percentage>? )",
+    "for": []
+  },
+  {
+    "name": "asin()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-asin",
+    "syntax": "asin( <calc-sum> )",
+    "for": []
+  },
+  {
+    "name": "atan()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-atan",
+    "syntax": "atan( <calc-sum> )",
+    "for": []
+  },
+  {
+    "name": "atan2()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-atan2",
+    "syntax": "atan2( <calc-sum>, <calc-sum> )",
+    "for": []
+  },
+  {
+    "name": "attr()",
+    "href": "https://drafts.csswg.org/css-values-5/#funcdef-attr",
+    "syntax": "attr( <attr-name> <attr-type>? , <declaration-value>?)",
+    "for": []
+  },
+  {
+    "name": "blur()",
+    "href": "https://drafts.csswg.org/filter-effects-1/#funcdef-filter-blur",
+    "syntax": "blur( <length>? )",
+    "for": [
+      "filter"
+    ]
+  },
+  {
+    "name": "brightness()",
+    "href": "https://drafts.csswg.org/filter-effects-1/#funcdef-filter-brightness",
+    "syntax": "brightness( [ <number> | <percentage> ]? )",
+    "for": [
+      "filter"
+    ]
+  },
+  {
+    "name": "calc-interpolate()",
+    "href": "https://drafts.csswg.org/css-values-5/#funcdef-calc-interpolate",
+    "syntax": "calc-interpolate( [ <progress-source> && [ by <easing-function> ]? && <easing-function>? ] , <input-position>{1,2} : <calc-sum> , [ <easing-function>? , <input-position>{1,2} : <calc-sum> ]#? )",
+    "for": []
+  },
+  {
+    "name": "calc-mix()",
+    "href": "https://drafts.csswg.org/css-values-5/#funcdef-calc-mix",
+    "syntax": "calc-mix( [ <calc-sum> <percentage [0,100]>? ]# )",
+    "for": []
+  },
+  {
+    "name": "calc-size()",
+    "href": "https://drafts.csswg.org/css-values-5/#funcdef-calc-size",
+    "syntax": "calc-size( <calc-size-basis>, <calc-sum> )",
+    "for": []
+  },
+  {
+    "name": "calc()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-calc",
+    "syntax": "calc( <calc-sum> )",
+    "for": []
+  },
+  {
+    "name": "circle()",
+    "href": "https://drafts.csswg.org/css-shapes-1/#funcdef-basic-shape-circle",
+    "syntax": "circle( <radial-size>? [ at <position> ]? )",
+    "for": [
+      "<basic-shape>"
+    ]
+  },
+  {
+    "name": "clamp()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-clamp",
+    "syntax": "clamp( [ <calc-sum> | none ], <calc-sum>, [ <calc-sum> | none ] )",
+    "for": []
+  },
+  {
+    "name": "color-interpolate()",
+    "href": "https://drafts.csswg.org/css-values-5/#funcdef-color-interpolate",
+    "syntax": "color-interpolate( [ <progress-source> && [ by <easing-function> ]? && <easing-function>? && <color-interpolation-method>? ] , <input-position>{1,2} : <color>, [ [ <easing-function> || <color-interpolation-method> ]?, <input-position>{1,2} : <color> ]#? )",
+    "for": []
+  },
+  {
+    "name": "color-layers()",
+    "href": "https://drafts.csswg.org/css-color-6/#funcdef-color-layers",
+    "syntax": "color-layers([ <blend-mode>, ]? <color># )",
+    "for": []
+  },
+  {
+    "name": "color-mix()",
+    "href": "https://drafts.csswg.org/css-color-5/#funcdef-color-mix",
+    "syntax": "color-mix( <color-interpolation-method>? , [ <color> && <percentage [0,100]>? ]#)",
+    "for": []
+  },
+  {
+    "name": "color()",
+    "href": "https://drafts.csswg.org/css-color-5/#funcdef-color",
+    "syntax": "color( [from <color>]? <colorspace-params> [ / [ <alpha-value> | none ] ]? )",
+    "for": []
+  },
+  {
+    "name": "conic-gradient()",
+    "href": "https://drafts.csswg.org/css-images-4/#funcdef-conic-gradient",
+    "syntax": "conic-gradient( [ <conic-gradient-syntax> ] )",
+    "for": []
+  },
+  {
+    "name": "content()",
+    "href": "https://drafts.csswg.org/css-content-3/#funcdef-content",
+    "syntax": "content( [ text | before | after | first-letter | marker ]? )",
+    "for": []
+  },
+  {
+    "name": "contrast-color()",
+    "href": "https://drafts.csswg.org/css-color-6/#funcdef-contrast-color",
+    "syntax": "contrast-color( [ [ <color> && [ tbd-fg | tbd-bg ] && <target-contrast>? ] | [ <color> && [ tbd-fg | tbd-bg ] && <target-contrast>, <color># ] ] )",
+    "for": []
+  },
+  {
+    "name": "contrast()",
+    "href": "https://drafts.csswg.org/filter-effects-1/#funcdef-filter-contrast",
+    "syntax": "contrast( [ <number> | <percentage> ]? )",
+    "for": [
+      "filter"
+    ]
+  },
+  {
+    "name": "control-value()",
+    "href": "https://drafts.csswg.org/css-forms-1/#funcdef-control-value",
+    "syntax": "control-value( <type>? )",
+    "for": []
+  },
+  {
+    "name": "cos()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-cos",
+    "syntax": "cos( <calc-sum> )",
+    "for": []
+  },
+  {
+    "name": "counter()",
+    "href": "https://drafts.csswg.org/css-lists-3/#funcdef-counter",
+    "syntax": "counter( <counter-name>, <counter-style>? )",
+    "for": []
+  },
+  {
+    "name": "counters()",
+    "href": "https://drafts.csswg.org/css-lists-3/#funcdef-counters",
+    "syntax": "counters( <counter-name>, <string>, <counter-style>? )",
+    "for": []
+  },
+  {
+    "name": "cross-fade()",
+    "href": "https://drafts.csswg.org/css-images-4/#funcdef-cross-fade",
+    "syntax": "cross-fade( <cf-image># )",
+    "for": []
+  },
+  {
+    "name": "cross-origin()",
+    "href": "https://drafts.csswg.org/css-values-5/#funcdef-request-url-modifier-cross-origin",
+    "syntax": "",
+    "for": [
+      "<request-url-modifier>"
+    ]
+  },
+  {
+    "name": "cubic-bezier()",
+    "href": "https://drafts.csswg.org/css-easing-2/#funcdef-cubic-bezier",
+    "syntax": "cubic-bezier( [ <number [0,1]>, <number> ]#{2} )",
+    "for": []
+  },
+  {
+    "name": "device-cmyk()",
+    "href": "https://drafts.csswg.org/css-color-5/#funcdef-device-cmyk",
+    "syntax": "<legacy-device-cmyk-syntax> | <modern-device-cmyk-syntax>",
+    "for": []
+  },
+  {
+    "name": "drop-shadow()",
+    "href": "https://drafts.csswg.org/filter-effects-1/#funcdef-filter-drop-shadow",
+    "syntax": "drop-shadow( [ <color>? && <length>{2,3} ] )",
+    "for": [
+      "filter"
+    ]
+  },
+  {
+    "name": "dynamic-range-limit-mix()",
+    "href": "https://drafts.csswg.org/css-color-hdr-1/#funcdef-dynamic-range-limit-mix",
+    "syntax": "dynamic-range-limit-mix( [ <'dynamic-range-limit'> && <percentage [0,100]> ]#{2,} )",
+    "for": []
+  },
+  {
+    "name": "element()",
+    "href": "https://drafts.csswg.org/css-images-4/#funcdef-element",
+    "syntax": "element( <id-selector> )",
+    "for": []
+  },
+  {
+    "name": "ellipse()",
+    "href": "https://drafts.csswg.org/css-shapes-1/#funcdef-basic-shape-ellipse",
+    "syntax": "ellipse( <radial-size>? [ at <position> ]? )",
+    "for": [
+      "<basic-shape>"
+    ]
+  },
+  {
+    "name": "env()",
+    "href": "https://drafts.csswg.org/css-env-1/#funcdef-env",
+    "syntax": "env( <custom-ident> <integer [0,∞]>*, <declaration-value>? )",
+    "for": []
+  },
+  {
+    "name": "exp()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-exp",
+    "syntax": "exp( <calc-sum> )",
+    "for": []
+  },
+  {
+    "name": "fade()",
+    "href": "https://drafts.csswg.org/css-overflow-4/#funcdef-text-overflow-fade",
+    "syntax": "fade( [ <length-percentage> ] )",
+    "for": [
+      "text-overflow"
+    ]
+  },
+  {
+    "name": "filter()",
+    "href": "https://drafts.csswg.org/filter-effects-1/#funcdef-filter",
+    "syntax": "filter( [ <image> | <string> ], <filter-value-list> )",
+    "for": []
+  },
+  {
+    "name": "first-valid()",
+    "href": "https://drafts.csswg.org/css-values-5/#funcdef-first-valid",
+    "syntax": "first-valid( <declaration-value># )",
+    "for": []
+  },
+  {
+    "name": "fit-content()",
+    "href": "https://drafts.csswg.org/css-grid-2/#funcdef-grid-template-columns-fit-content",
+    "syntax": "fit-content( <length-percentage> )",
+    "for": [
+      "grid-template-columns",
+      "grid-template-rows"
+    ]
+  },
+  {
+    "name": "fit-content()",
+    "href": "https://drafts.csswg.org/css-sizing-3/#funcdef-width-fit-content",
+    "syntax": "fit-content(<length-percentage [0,∞]>)",
+    "for": [
+      "height",
+      "max-height",
+      "max-width",
+      "min-height",
+      "min-width",
+      "width"
+    ]
+  },
+  {
+    "name": "grayscale()",
+    "href": "https://drafts.csswg.org/filter-effects-1/#funcdef-filter-grayscale",
+    "syntax": "grayscale( [ <number> | <percentage> ]? )",
+    "for": [
+      "filter"
+    ]
+  },
+  {
+    "name": "hdr-color()",
+    "href": "https://drafts.csswg.org/css-color-hdr-1/#funcdef-hdr-color",
+    "syntax": "color-hdr([ <color> && <number [0,∞]>? ]#{2})",
+    "for": []
+  },
+  {
+    "name": "hsl()",
+    "href": "https://drafts.csswg.org/css-color-4/#funcdef-hsl",
+    "syntax": "[ <legacy-hsl-syntax> | <modern-hsl-syntax> ]",
+    "for": []
+  },
+  {
+    "name": "hsla()",
+    "href": "https://drafts.csswg.org/css-color-4/#funcdef-hsla",
+    "syntax": "[ <legacy-hsla-syntax> | <modern-hsla-syntax> ]",
+    "for": []
+  },
+  {
+    "name": "hue-rotate()",
+    "href": "https://drafts.csswg.org/filter-effects-1/#funcdef-filter-hue-rotate",
+    "syntax": "hue-rotate( [ <angle> | <zero> ]? )",
+    "for": [
+      "filter"
+    ]
+  },
+  {
+    "name": "hwb()",
+    "href": "https://drafts.csswg.org/css-color-5/#funcdef-hwb",
+    "syntax": "hwb([from <color>]? [<hue> | none] [<percentage> | <number> | none] [<percentage> | <number> | none] [ / [<alpha-value> | none] ]? )",
+    "for": []
+  },
+  {
+    "name": "hypot()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-hypot",
+    "syntax": "hypot( <calc-sum># )",
+    "for": []
+  },
+  {
+    "name": "ictcp()",
+    "href": "https://drafts.csswg.org/css-color-hdr-1/#funcdef-ictcp",
+    "syntax": "ictcp([from <color>]? [<percentage> | <number> | none] [<percentage> | <number> | none] [<percentage> | <number> | none] [ / [<alpha-value> | none] ]? )",
+    "for": []
+  },
+  {
+    "name": "ident()",
+    "href": "https://drafts.csswg.org/css-values-5/#funcdef-ident",
+    "syntax": "ident( <ident-arg>+ )",
+    "for": []
+  },
+  {
+    "name": "if()",
+    "href": "https://drafts.csswg.org/css-values-5/#funcdef-if",
+    "syntax": "if( [ <if-branch> ; ]* <if-branch> ;? )",
+    "for": []
+  },
+  {
+    "name": "image-set()",
+    "href": "https://drafts.csswg.org/css-images-4/#funcdef-image-set",
+    "syntax": "image-set( <image-set-option># )",
+    "for": []
+  },
+  {
+    "name": "image()",
+    "href": "https://drafts.csswg.org/css-images-5/#funcdef-image",
+    "syntax": "image( <image-tags>? [ <image-src>? , <color>? ]! )",
+    "for": []
+  },
+  {
+    "name": "inherit()",
+    "href": "https://drafts.csswg.org/css-values-5/#funcdef-inherit",
+    "syntax": "inherit( <custom-property-name>, <declaration-value>? )",
+    "for": []
+  },
+  {
+    "name": "inset()",
+    "href": "https://drafts.csswg.org/css-shapes-1/#funcdef-basic-shape-inset",
+    "syntax": "inset( <length-percentage>{1,4} [ round <'border-radius'> ]? )",
+    "for": [
+      "<basic-shape>"
+    ]
+  },
+  {
+    "name": "integrity()",
+    "href": "https://drafts.csswg.org/css-values-5/#funcdef-request-url-modifier-integrity",
+    "syntax": "",
+    "for": [
+      "<request-url-modifier>"
+    ]
+  },
+  {
+    "name": "interpolate()",
+    "href": "https://drafts.csswg.org/css-values-5/#funcdef-interpolate",
+    "syntax": "interpolate( [ <progress-source> && [ by <easing-function> ]? && <easing-function>? ] , <input-position>{1,2} : <whole-value>, [ <easing-function>?, <input-position>{1,2} : <whole-value> ]#? ) | interpolate( <progress-source> && [ by <easing-function> ]? && <easing-function>? of <keyframes-name> )",
+    "for": []
+  },
+  {
+    "name": "invert()",
+    "href": "https://drafts.csswg.org/filter-effects-1/#funcdef-filter-invert",
+    "syntax": "invert( [ <number> | <percentage> ]? )",
+    "for": [
+      "filter"
+    ]
+  },
+  {
+    "name": "jzazbz()",
+    "href": "https://drafts.csswg.org/css-color-hdr-1/#funcdef-jzazbz",
+    "syntax": "jzazbz([from <color>]? [<percentage> | <number> | none] [<percentage> | <number> | none] [<percentage> | <number> | none] [ / [<alpha-value> | none] ]? )",
+    "for": []
+  },
+  {
+    "name": "jzczhz()",
+    "href": "https://drafts.csswg.org/css-color-hdr-1/#funcdef-jzczhz",
+    "syntax": "jzczhz([from <color>]? [<percentage> | <number> | none] [<percentage> | <number> | none] [<hue> | none] [ / [<alpha-value> | none] ]? )",
+    "for": []
+  },
+  {
+    "name": "lab()",
+    "href": "https://drafts.csswg.org/css-color-5/#funcdef-lab",
+    "syntax": "lab([from <color>]? [<percentage> | <number> | none] [<percentage> | <number> | none] [<percentage> | <number> | none] [ / [<alpha-value> | none] ]? )",
+    "for": []
+  },
+  {
+    "name": "lch()",
+    "href": "https://drafts.csswg.org/css-color-5/#funcdef-lch",
+    "syntax": "lch([from <color>]? [<percentage> | <number> | none] [<percentage> | <number> | none] [<hue> | none] [ / [<alpha-value> | none] ]? )",
+    "for": []
+  },
+  {
+    "name": "leader()",
+    "href": "https://drafts.csswg.org/css-content-3/#funcdef-leader",
+    "syntax": "leader( <leader-type> )",
+    "for": []
+  },
+  {
+    "name": "light-dark()",
+    "href": "https://drafts.csswg.org/css-color-5/#funcdef-light-dark",
+    "syntax": "<light-dark-color> | <light-dark-image>",
+    "for": []
+  },
+  {
+    "name": "linear-gradient()",
+    "href": "https://drafts.csswg.org/css-images-3/#funcdef-linear-gradient",
+    "syntax": "linear-gradient( [ <linear-gradient-syntax> ] )",
+    "for": []
+  },
+  {
+    "name": "linear()",
+    "href": "https://drafts.csswg.org/css-easing-2/#funcdef-linear",
+    "syntax": "linear( [ <number> && <percentage>{0,2} ]# )",
+    "for": []
+  },
+  {
+    "name": "log()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-log",
+    "syntax": "log( <calc-sum>, <calc-sum>? )",
+    "for": []
+  },
+  {
+    "name": "matrix()",
+    "href": "https://drafts.csswg.org/css-transforms-1/#funcdef-transform-matrix",
+    "syntax": "matrix( <number>#{6} )",
+    "for": [
+      "transform"
+    ]
+  },
+  {
+    "name": "matrix3d()",
+    "href": "https://drafts.csswg.org/css-transforms-2/#funcdef-matrix3d",
+    "syntax": "matrix3d( <number>#{16} )",
+    "for": []
+  },
+  {
+    "name": "max()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-max",
+    "syntax": "max( <calc-sum># )",
+    "for": []
+  },
+  {
+    "name": "media()",
+    "href": "https://drafts.csswg.org/css-conditional-5/#funcdef-media",
+    "syntax": "media( [ <mf-plain> | <mf-boolean> | <mf-range> ] )",
+    "for": []
+  },
+  {
+    "name": "min()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-min",
+    "syntax": "min( <calc-sum># )",
+    "for": []
+  },
+  {
+    "name": "minmax()",
+    "href": "https://drafts.csswg.org/css-grid-2/#funcdef-grid-template-columns-minmax",
+    "syntax": "minmax(min, max)",
+    "for": [
+      "grid-template-columns",
+      "grid-template-rows"
+    ]
+  },
+  {
+    "name": "mod()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-mod",
+    "syntax": "mod( <calc-sum>, <calc-sum> )",
+    "for": []
+  },
+  {
+    "name": "oklab()",
+    "href": "https://drafts.csswg.org/css-color-5/#funcdef-oklab",
+    "syntax": "oklab([from <color>]? [<percentage> | <number> | none] [<percentage> | <number> | none] [<percentage> | <number> | none] [ / [<alpha-value> | none] ]? )",
+    "for": []
+  },
+  {
+    "name": "oklch()",
+    "href": "https://drafts.csswg.org/css-color-5/#funcdef-oklch",
+    "syntax": "oklch([from <color>]? [<percentage> | <number> | none] [<percentage> | <number> | none] [<hue> | none] [ / [<alpha-value> | none] ]? )",
+    "for": []
+  },
+  {
+    "name": "opacity()",
+    "href": "https://drafts.csswg.org/filter-effects-1/#funcdef-filter-opacity",
+    "syntax": "opacity( [ <number> | <percentage> ]? )",
+    "for": [
+      "filter"
+    ]
+  },
+  {
+    "name": "paint()",
+    "href": "https://drafts.css-houdini.org/css-paint-api-1/#funcdef-paint",
+    "syntax": "paint( <ident>, <declaration-value>? )",
+    "for": []
+  },
+  {
+    "name": "palette-mix()",
+    "href": "https://drafts.csswg.org/css-fonts-4/#funcdef-palette-mix",
+    "syntax": "palette-mix(<color-interpolation-method> , [ [normal | light | dark | <palette-identifier> | <palette-mix()> ] && <percentage [0,100]>? ]#{2})",
+    "for": []
+  },
+  {
+    "name": "param()",
+    "href": "https://drafts.csswg.org/css-link-params-1/#funcdef-param",
+    "syntax": "param( <dashed-ident> , <declaration-value>? )",
+    "for": []
+  },
+  {
+    "name": "path()",
+    "href": "https://drafts.csswg.org/css-shapes-1/#funcdef-basic-shape-path",
+    "syntax": "path( <'fill-rule'>? , <string> )",
+    "for": [
+      "<basic-shape>"
+    ]
+  },
+  {
+    "name": "perspective()",
+    "href": "https://drafts.csswg.org/css-transforms-2/#funcdef-perspective",
+    "syntax": "perspective( [ <length [0,∞]> | none ] )",
+    "for": []
+  },
+  {
+    "name": "pointer()",
+    "href": "https://drafts.csswg.org/pointer-animations-1/#funcdef-pointer",
+    "syntax": "pointer( [ <pointer-source> || <pointer-axis> ]? )",
+    "for": []
+  },
+  {
+    "name": "polygon()",
+    "href": "https://drafts.csswg.org/css-shapes-1/#funcdef-basic-shape-polygon",
+    "syntax": "polygon( <'fill-rule'>? [ round <length> ]? , [<length-percentage> <length-percentage>]# )",
+    "for": [
+      "<basic-shape>"
+    ]
+  },
+  {
+    "name": "pow()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-pow",
+    "syntax": "pow( <calc-sum>, <calc-sum> )",
+    "for": []
+  },
+  {
+    "name": "progress()",
+    "href": "https://drafts.csswg.org/css-values-5/#funcdef-progress",
+    "syntax": "progress(no-clamp? <calc-sum>, <calc-sum>, <calc-sum>)",
+    "for": []
+  },
+  {
+    "name": "radial-gradient()",
+    "href": "https://drafts.csswg.org/css-images-3/#funcdef-radial-gradient",
+    "syntax": "radial-gradient( [ <radial-gradient-syntax> ] )",
+    "for": []
+  },
+  {
+    "name": "random-item()",
+    "href": "https://drafts.csswg.org/css-values-5/#funcdef-random-item",
+    "syntax": "random-item( <random-key> , [ <declaration-value>? ]# )",
+    "for": []
+  },
+  {
+    "name": "random()",
+    "href": "https://drafts.csswg.org/css-values-5/#funcdef-random",
+    "syntax": "random( <random-key>? , <calc-sum>, <calc-sum>, <calc-sum>? )",
+    "for": []
+  },
+  {
+    "name": "ray()",
+    "href": "https://drafts.csswg.org/motion-1/#funcdef-ray",
+    "syntax": "ray( <angle> && <ray-size>? && contain? && [at <position>]? )",
+    "for": []
+  },
+  {
+    "name": "rect()",
+    "href": "https://drafts.csswg.org/css-shapes-1/#funcdef-basic-shape-rect",
+    "syntax": "rect( [ <length-percentage> | auto ]{4} [ round <'border-radius'> ]? )",
+    "for": [
+      "<basic-shape>"
+    ]
+  },
+  {
+    "name": "rect()",
+    "href": "https://drafts.csswg.org/css-masking-1/#funcdef-clip-rect",
+    "syntax": "rect( <top>, <right>, <bottom>, <left> )",
+    "for": [
+      "clip"
+    ]
+  },
+  {
+    "name": "referrer-policy()",
+    "href": "https://drafts.csswg.org/css-values-5/#funcdef-request-url-modifier-referrer-policy",
+    "syntax": "",
+    "for": [
+      "<request-url-modifier>"
+    ]
+  },
+  {
+    "name": "rem()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-rem",
+    "syntax": "rem( <calc-sum>, <calc-sum> )",
+    "for": []
+  },
+  {
+    "name": "repeat()",
+    "href": "https://drafts.csswg.org/css-gaps-1/#funcdef-repeat-line-color-repeat",
+    "syntax": "",
+    "for": [
+      "<auto-repeat-line-color>",
+      "<auto-repeat-line-style>",
+      "<auto-repeat-line-width>",
+      "<repeat-line-color>",
+      "<repeat-line-style>",
+      "<repeat-line-width>"
+    ]
+  },
+  {
+    "name": "repeat()",
+    "href": "https://drafts.csswg.org/css-grid-2/#funcdef-track-repeat-repeat",
+    "syntax": "",
+    "for": [
+      "<auto-repeat>",
+      "<fixed-repeat>",
+      "<track-repeat>"
+    ]
+  },
+  {
+    "name": "repeating-conic-gradient()",
+    "href": "https://drafts.csswg.org/css-images-4/#funcdef-repeating-conic-gradient",
+    "syntax": "repeating-conic-gradient( [ <conic-gradient-syntax> ] )",
+    "for": []
+  },
+  {
+    "name": "repeating-linear-gradient()",
+    "href": "https://drafts.csswg.org/css-images-4/#funcdef-repeating-linear-gradient",
+    "syntax": "repeating-linear-gradient( [ <linear-gradient-syntax> ] )",
+    "for": []
+  },
+  {
+    "name": "repeating-radial-gradient()",
+    "href": "https://drafts.csswg.org/css-images-4/#funcdef-repeating-radial-gradient",
+    "syntax": "repeating-radial-gradient( [ <radial-gradient-syntax> ] )",
+    "for": []
+  },
+  {
+    "name": "rgb()",
+    "href": "https://drafts.csswg.org/css-color-4/#funcdef-rgb",
+    "syntax": "[ <legacy-rgb-syntax> | <modern-rgb-syntax> ]",
+    "for": []
+  },
+  {
+    "name": "rgba()",
+    "href": "https://drafts.csswg.org/css-color-4/#funcdef-rgba",
+    "syntax": "[ <legacy-rgba-syntax> | <modern-rgba-syntax> ]",
+    "for": []
+  },
+  {
+    "name": "rotate()",
+    "href": "https://drafts.csswg.org/css-transforms-1/#funcdef-transform-rotate",
+    "syntax": "rotate( [ <angle> | <zero> ] )",
+    "for": [
+      "transform"
+    ]
+  },
+  {
+    "name": "rotate3d()",
+    "href": "https://drafts.csswg.org/css-transforms-2/#funcdef-rotate3d",
+    "syntax": "rotate3d( <number> , <number> , <number> , [ <angle> | <zero> ] )",
+    "for": []
+  },
+  {
+    "name": "rotateX()",
+    "href": "https://drafts.csswg.org/css-transforms-2/#funcdef-rotatex",
+    "syntax": "rotateX( [ <angle> | <zero> ] )",
+    "for": []
+  },
+  {
+    "name": "rotateY()",
+    "href": "https://drafts.csswg.org/css-transforms-2/#funcdef-rotatey",
+    "syntax": "rotateY( [ <angle> | <zero> ] )",
+    "for": []
+  },
+  {
+    "name": "rotateZ()",
+    "href": "https://drafts.csswg.org/css-transforms-2/#funcdef-rotatez",
+    "syntax": "rotateZ( [ <angle> | <zero> ] )",
+    "for": []
+  },
+  {
+    "name": "round()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-round",
+    "syntax": "round( <rounding-strategy>?, <calc-sum>, <calc-sum>? )",
+    "for": []
+  },
+  {
+    "name": "running()",
+    "href": "https://drafts.csswg.org/css-gcpm-3/#funcdef-running",
+    "syntax": "running( <custom-ident> )",
+    "for": []
+  },
+  {
+    "name": "saturate()",
+    "href": "https://drafts.csswg.org/filter-effects-1/#funcdef-filter-saturate",
+    "syntax": "saturate( [ <number> | <percentage> ]? )",
+    "for": [
+      "filter"
+    ]
+  },
+  {
+    "name": "scale()",
+    "href": "https://drafts.csswg.org/css-transforms-2/#funcdef-scale",
+    "syntax": "scale( [ <number> | <percentage> ]#{1,2} )",
+    "for": []
+  },
+  {
+    "name": "scale()",
+    "href": "https://drafts.csswg.org/css-transforms-1/#funcdef-transform-scale",
+    "syntax": "scale( <number> , <number>? )",
+    "for": [
+      "transform"
+    ]
+  },
+  {
+    "name": "scale3d()",
+    "href": "https://drafts.csswg.org/css-transforms-2/#funcdef-scale3d",
+    "syntax": "scale3d( [ <number> | <percentage> ]#{3} )",
+    "for": []
+  },
+  {
+    "name": "scaleX()",
+    "href": "https://drafts.csswg.org/css-transforms-2/#funcdef-scalex",
+    "syntax": "scaleX( [ <number> | <percentage> ] )",
+    "for": []
+  },
+  {
+    "name": "scaleX()",
+    "href": "https://drafts.csswg.org/css-transforms-1/#funcdef-transform-scalex",
+    "syntax": "scaleX( <number> )",
+    "for": [
+      "transform"
+    ]
+  },
+  {
+    "name": "scaleY()",
+    "href": "https://drafts.csswg.org/css-transforms-2/#funcdef-scaley",
+    "syntax": "scaleY( [ <number> | <percentage> ] )",
+    "for": []
+  },
+  {
+    "name": "scaleY()",
+    "href": "https://drafts.csswg.org/css-transforms-1/#funcdef-transform-scaley",
+    "syntax": "scaleY( <number> )",
+    "for": [
+      "transform"
+    ]
+  },
+  {
+    "name": "scaleZ()",
+    "href": "https://drafts.csswg.org/css-transforms-2/#funcdef-scalez",
+    "syntax": "scaleZ( [ <number> | <percentage> ] )",
+    "for": []
+  },
+  {
+    "name": "scroll()",
+    "href": "https://drafts.csswg.org/scroll-animations-1/#funcdef-scroll",
+    "syntax": "scroll( [ <scroller> || <axis> ]? )",
+    "for": []
+  },
+  {
+    "name": "sepia()",
+    "href": "https://drafts.csswg.org/filter-effects-1/#funcdef-filter-sepia",
+    "syntax": "sepia( [ <number> | <percentage> ]? )",
+    "for": [
+      "filter"
+    ]
+  },
+  {
+    "name": "shape()",
+    "href": "https://drafts.csswg.org/css-shapes-1/#funcdef-basic-shape-shape",
+    "syntax": "shape( <'fill-rule'>? from <position> , <shape-command># )",
+    "for": [
+      "<basic-shape>"
+    ]
+  },
+  {
+    "name": "sibling-count()",
+    "href": "https://drafts.csswg.org/css-values-5/#funcdef-sibling-count",
+    "syntax": "",
+    "for": []
+  },
+  {
+    "name": "sibling-index()",
+    "href": "https://drafts.csswg.org/css-values-5/#funcdef-sibling-index",
+    "syntax": "",
+    "for": []
+  },
+  {
+    "name": "sign()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-sign",
+    "syntax": "sign( <calc-sum> )",
+    "for": []
+  },
+  {
+    "name": "sin()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-sin",
+    "syntax": "sin( <calc-sum> )",
+    "for": []
+  },
+  {
+    "name": "skew()",
+    "href": "https://drafts.csswg.org/css-transforms-1/#funcdef-transform-skew",
+    "syntax": "skew( [ <angle> | <zero> ] , [ <angle> | <zero> ]? )",
+    "for": [
+      "transform"
+    ]
+  },
+  {
+    "name": "skewX()",
+    "href": "https://drafts.csswg.org/css-transforms-1/#funcdef-transform-skewx",
+    "syntax": "skewX( [ <angle> | <zero> ] )",
+    "for": [
+      "transform"
+    ]
+  },
+  {
+    "name": "skewY()",
+    "href": "https://drafts.csswg.org/css-transforms-1/#funcdef-transform-skewy",
+    "syntax": "skewY( [ <angle> | <zero> ] )",
+    "for": [
+      "transform"
+    ]
+  },
+  {
+    "name": "snap-block()",
+    "href": "https://drafts.csswg.org/css-page-floats-3/#funcdef-float-snap-block",
+    "syntax": "snap-block( <length> , [ start | end | near ]? )",
+    "for": [
+      "float"
+    ]
+  },
+  {
+    "name": "snap-inline()",
+    "href": "https://drafts.csswg.org/css-page-floats-3/#funcdef-float-snap-inline",
+    "syntax": "snap-inline( <length> , [ left | right | near ]? )",
+    "for": [
+      "float"
+    ]
+  },
+  {
+    "name": "sqrt()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-sqrt",
+    "syntax": "sqrt( <calc-sum> )",
+    "for": []
+  },
+  {
+    "name": "src()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-src",
+    "syntax": "src( <string> <url-modifier>* )",
+    "for": []
+  },
+  {
+    "name": "steps()",
+    "href": "https://drafts.csswg.org/css-easing-2/#funcdef-steps",
+    "syntax": "steps( <integer>, <step-position>?)",
+    "for": []
+  },
+  {
+    "name": "string()",
+    "href": "https://drafts.csswg.org/css-content-3/#funcdef-string",
+    "syntax": "string( <custom-ident> , [ first | start | last | first-except ]? )",
+    "for": []
+  },
+  {
+    "name": "stripes()",
+    "href": "https://drafts.csswg.org/css-images-4/#funcdef-stripes",
+    "syntax": "stripes( <color-stripe># )",
+    "for": []
+  },
+  {
+    "name": "superellipse()",
+    "href": "https://drafts.csswg.org/css-borders-4/#funcdef-superellipse",
+    "syntax": "superellipse(<number> | infinity | -infinity)",
+    "for": []
+  },
+  {
+    "name": "supports()",
+    "href": "https://drafts.csswg.org/css-conditional-5/#funcdef-supports",
+    "syntax": "supports( <declaration> )",
+    "for": []
+  },
+  {
+    "name": "symbols()",
+    "href": "https://drafts.csswg.org/css-counter-styles-3/#funcdef-symbols",
+    "syntax": "symbols( <symbols-type>? [ <string> | <image> ]+ )",
+    "for": []
+  },
+  {
+    "name": "tan()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-tan",
+    "syntax": "tan( <calc-sum> )",
+    "for": []
+  },
+  {
+    "name": "target-counter()",
+    "href": "https://drafts.csswg.org/css-content-3/#funcdef-target-counter",
+    "syntax": "target-counter( [ <string> | <url> ] , <custom-ident> , <counter-style>? )",
+    "for": []
+  },
+  {
+    "name": "target-counters()",
+    "href": "https://drafts.csswg.org/css-content-3/#funcdef-target-counters",
+    "syntax": "target-counters( [ <string> | <url> ] , <custom-ident> , <string> , <counter-style>? )",
+    "for": []
+  },
+  {
+    "name": "target-text()",
+    "href": "https://drafts.csswg.org/css-content-3/#target-text-function",
+    "syntax": "target-text( [ <string> | <url> ] , [ content | before | after | first-letter ]? )",
+    "for": []
+  },
+  {
+    "name": "toggle()",
+    "href": "https://drafts.csswg.org/css-values-5/#funcdef-toggle",
+    "syntax": "toggle( <whole-value># )",
+    "for": []
+  },
+  {
+    "name": "transform-interpolate()",
+    "href": "https://drafts.csswg.org/css-values-5/#funcdef-transform-interpolate",
+    "syntax": "transform-interpolate( [ <progress-source> && [ by <easing-function> ]? && <easing-function>? ], <input-position>{1,2} : <transform-list>, [ <easing-function>?, <input-position>{1,2} : <transform-list> ]#? )",
+    "for": []
+  },
+  {
+    "name": "transform-mix()",
+    "href": "https://drafts.csswg.org/css-values-5/#funcdef-transform-mix",
+    "syntax": "transform-mix( [ <transform-list> && <percentage [0,100]> ]# )",
+    "for": []
+  },
+  {
+    "name": "translate()",
+    "href": "https://drafts.csswg.org/css-transforms-1/#funcdef-transform-translate",
+    "syntax": "translate( <length-percentage> , <length-percentage>? )",
+    "for": [
+      "transform"
+    ]
+  },
+  {
+    "name": "translate3d()",
+    "href": "https://drafts.csswg.org/css-transforms-2/#funcdef-translate3d",
+    "syntax": "translate3d( <length-percentage> , <length-percentage> , <length> )",
+    "for": []
+  },
+  {
+    "name": "translateX()",
+    "href": "https://drafts.csswg.org/css-transforms-1/#funcdef-transform-translatex",
+    "syntax": "translateX( <length-percentage> )",
+    "for": [
+      "transform"
+    ]
+  },
+  {
+    "name": "translateY()",
+    "href": "https://drafts.csswg.org/css-transforms-1/#funcdef-transform-translatey",
+    "syntax": "translateY( <length-percentage> )",
+    "for": [
+      "transform"
+    ]
+  },
+  {
+    "name": "translateZ()",
+    "href": "https://drafts.csswg.org/css-transforms-2/#funcdef-translatez",
+    "syntax": "translateZ( <length> )",
+    "for": []
+  },
+  {
+    "name": "type()",
+    "href": "https://drafts.csswg.org/css-mixins-1/#funcdef-function-type",
+    "syntax": "type( <syntax> )",
+    "for": [
+      "@function"
+    ]
+  },
+  {
+    "name": "type()",
+    "href": "https://drafts.csswg.org/css-values-5/#funcdef-attr-type",
+    "syntax": "type( <syntax> )",
+    "for": [
+      "attr()"
+    ]
+  },
+  {
+    "name": "type()",
+    "href": "https://drafts.csswg.org/css-images-4/#funcdef-image-set-type",
+    "syntax": "type( <string> )",
+    "for": [
+      "image-set()"
+    ]
+  },
+  {
+    "name": "url-pattern()",
+    "href": "https://drafts.csswg.org/css-navigation-1/#funcdef-url-pattern",
+    "syntax": "url-pattern( <string> )",
+    "for": []
+  },
+  {
+    "name": "url()",
+    "href": "https://drafts.csswg.org/css-values-4/#funcdef-url",
+    "syntax": "url( <string> <url-modifier>* ) | <url-token>",
+    "for": []
+  },
+  {
+    "name": "var()",
+    "href": "https://drafts.csswg.org/css-variables-2/#funcdef-var",
+    "syntax": "var( <custom-property-name> , <declaration-value>? )",
+    "for": []
+  },
+  {
+    "name": "view()",
+    "href": "https://drafts.csswg.org/scroll-animations-1/#funcdef-view",
+    "syntax": "view( [ <axis> || <'view-timeline-inset'> ]? )",
+    "for": []
+  },
+  {
+    "name": "wcag2()",
+    "href": "https://drafts.csswg.org/css-color-6/#funcdef-contrast-color-wcag2",
+    "syntax": "",
+    "for": [
+      "contrast-color()"
+    ]
+  },
+  {
+    "name": "xywh()",
+    "href": "https://drafts.csswg.org/css-shapes-1/#funcdef-basic-shape-xywh",
+    "syntax": "xywh( <length-percentage>{2} <length-percentage [0,∞]>{2} [ round <'border-radius'> ]? )",
+    "for": [
+      "<basic-shape>"
+    ]
+  }
+]

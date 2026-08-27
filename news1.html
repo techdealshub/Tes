@@ -1,0 +1,2274 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Tech News | Latest Technology News</title><link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"><style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#060912;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root{
+    --bg:#060912;
+    --panel:#0b1220;
+    --panel-2:#0f1728;
+    --blue:#3b82f6;
+    --blue-dark:#2563eb;
+    --text:#ffffff;
+    --muted:#8b9bb3;
+    --muted-2:#60708a;
+    --border:rgba(255,255,255,.07);
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.news-page{
+    width:100%;
+    max-width:1450px;
+    margin:auto;
+    padding:28px 20px 60px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.news-heading{
+    margin-bottom:24px;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+
+    color:var(--blue);
+
+    font-size:11px;
+    font-weight:900;
+
+    letter-spacing:1.7px;
+    text-transform:uppercase;
+
+    margin-bottom:8px;
+}
+
+.eyebrow i{
+    font-size:9px;
+}
+
+.news-heading h1{
+    font-size:clamp(2.2rem,5vw,4rem);
+    line-height:1.05;
+    letter-spacing:-1.5px;
+
+    margin-bottom:12px;
+}
+
+.news-heading p{
+    max-width:720px;
+
+    color:var(--muted);
+
+    font-size:15px;
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   CATEGORY NAV
+========================================================= */
+
+.news-categories-wrapper{
+    position:relative;
+    margin-bottom:18px;
+}
+
+.news-categories{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    overflow-x:auto;
+
+    padding:4px 2px 10px;
+
+    scrollbar-width:none;
+}
+
+.news-categories::-webkit-scrollbar{
+    display:none;
+}
+
+.news-category{
+    flex-shrink:0;
+
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+
+    padding:10px 16px;
+
+    border:1px solid var(--border);
+    border-radius:30px;
+
+    background:var(--panel);
+
+    color:#aebbd0;
+
+    font-size:13px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+}
+
+.news-category:hover{
+    color:#fff;
+    background:var(--panel-2);
+    border-color:rgba(59,130,246,.35);
+
+    transform:translateY(-1px);
+}
+
+.news-category.active{
+    color:#fff;
+    background:var(--blue-dark);
+    border-color:var(--blue-dark);
+}
+
+
+/* =========================================================
+   TRENDING BAR
+========================================================= */
+
+.trending{
+    display:flex;
+    align-items:center;
+
+    width:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(59,130,246,.09),
+            rgba(59,130,246,.025)
+        );
+
+    border:1px solid rgba(59,130,246,.14);
+
+    border-radius:14px;
+
+    margin-bottom:30px;
+
+    overflow:hidden;
+}
+
+.trending-label{
+    position:relative;
+    z-index:3;
+
+    flex-shrink:0;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    min-height:48px;
+
+    padding:0 16px;
+
+    background:#0c1526;
+
+    border-right:1px solid var(--border);
+
+    color:#fff;
+
+    font-size:12px;
+    font-weight:900;
+
+    text-transform:uppercase;
+    letter-spacing:.8px;
+}
+
+.trending-label i{
+    color:#3b82f6;
+}
+
+.trending-window{
+    position:relative;
+
+    flex:1;
+
+    overflow:hidden;
+
+    min-width:0;
+}
+
+.trending-track{
+    display:flex;
+    align-items:center;
+
+    width:max-content;
+
+    animation:trendingMove 32s linear infinite;
+}
+
+.trending-track:hover{
+    animation-play-state:paused;
+}
+
+.trending-group{
+    display:flex;
+    align-items:center;
+}
+
+.trending-item{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    padding:0 22px;
+
+    color:#9baac0;
+
+    text-decoration:none;
+
+    font-size:13px;
+    font-weight:600;
+
+    white-space:nowrap;
+}
+
+.trending-item::before{
+    content:"";
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+    background:var(--blue);
+}
+
+.trending-item:hover{
+    color:#fff;
+}
+
+@keyframes trendingMove{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}
+
+
+/* =========================================================
+   FEATURED
+========================================================= */
+
+.featured-news{
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1.35fr)
+        minmax(340px,1fr);
+
+    min-height:430px;
+
+    background:var(--panel);
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    margin-bottom:38px;
+
+    transition:border-color .3s ease;
+}
+
+.featured-news:hover{
+    border-color:rgba(59,130,246,.25);
+}
+
+.featured-image{
+    position:relative;
+
+    min-height:430px;
+
+    overflow:hidden;
+}
+
+.featured-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:transform .7s ease;
+}
+
+.featured-news:hover .featured-image img{
+    transform:scale(1.05);
+}
+
+.featured-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.7),
+            rgba(0,0,0,.05) 65%
+        );
+}
+
+.featured-badge{
+    position:absolute;
+
+    top:18px;
+    left:18px;
+
+    display:flex;
+    align-items:center;
+    gap:7px;
+
+    padding:7px 11px;
+
+    border-radius:7px;
+
+    background:rgba(6,9,18,.85);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    backdrop-filter:blur(10px);
+
+    color:#fff;
+
+    font-size:10px;
+    font-weight:900;
+
+    letter-spacing:.7px;
+    text-transform:uppercase;
+}
+
+.featured-badge i{
+    color:#3b82f6;
+}
+
+.featured-content{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    padding:42px;
+}
+
+.featured-tag{
+    width:max-content;
+
+    padding:6px 10px;
+
+    border-radius:6px;
+
+    background:rgba(59,130,246,.12);
+
+    border:1px solid rgba(59,130,246,.22);
+
+    color:#60a5fa;
+
+    font-size:10px;
+    font-weight:900;
+
+    letter-spacing:.8px;
+    text-transform:uppercase;
+
+    margin-bottom:15px;
+}
+
+.featured-content h2{
+    max-width:650px;
+
+    font-size:clamp(1.65rem,3vw,2.65rem);
+
+    line-height:1.18;
+
+    letter-spacing:-.7px;
+
+    margin-bottom:15px;
+}
+
+.featured-content p{
+    max-width:620px;
+
+    color:var(--muted);
+
+    font-size:14px;
+    line-height:1.75;
+
+    margin-bottom:22px;
+}
+
+.featured-meta{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+
+    color:var(--muted-2);
+
+    font-size:12px;
+}
+
+.featured-meta span{
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.featured-meta .source{
+    color:#60a5fa;
+    font-weight:800;
+}
+
+.featured-meta i{
+    font-size:11px;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.section-header{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:17px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+
+.section-title h2{
+    font-size:1.45rem;
+    line-height:1.2;
+}
+
+.section-title i{
+    color:var(--blue);
+    font-size:15px;
+}
+
+.section-header > span{
+    color:var(--muted-2);
+    font-size:12px;
+}
+
+
+/* =========================================================
+   NEWS GRID
+========================================================= */
+
+.news-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:18px;
+
+    margin-bottom:42px;
+}
+
+
+/* =========================================================
+   NEWS CARD
+========================================================= */
+
+.news-card{
+    background:var(--panel);
+
+    border:1px solid var(--border);
+
+    border-radius:17px;
+
+    overflow:hidden;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.news-card:hover{
+    transform:translateY(-5px);
+
+    border-color:rgba(59,130,246,.3);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.22);
+}
+
+.news-card-image{
+    position:relative;
+
+    width:100%;
+    height:205px;
+
+    overflow:hidden;
+}
+
+.news-card-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:transform .55s ease;
+}
+
+.news-card:hover .news-card-image img{
+    transform:scale(1.06);
+}
+
+.news-card-category{
+    position:absolute;
+
+    top:12px;
+    left:12px;
+
+    padding:6px 9px;
+
+    border-radius:6px;
+
+    background:rgba(6,9,18,.82);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(9px);
+
+    color:#fff;
+
+    font-size:9px;
+    font-weight:900;
+
+    letter-spacing:.6px;
+    text-transform:uppercase;
+}
+
+.news-card-content{
+    padding:17px;
+}
+
+.news-card-content h3{
+    font-size:1.05rem;
+    line-height:1.42;
+
+    letter-spacing:-.15px;
+
+    margin-bottom:9px;
+}
+
+.news-card-content p{
+    color:var(--muted);
+
+    font-size:12.5px;
+    line-height:1.6;
+
+    margin-bottom:16px;
+}
+
+.card-meta{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    color:var(--muted-2);
+
+    font-size:10.5px;
+}
+
+.card-meta .category{
+    color:#60a5fa;
+    font-weight:800;
+}
+
+
+/* =========================================================
+   LOWER CONTENT
+========================================================= */
+
+.lower-layout{
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1.5fr)
+        minmax(280px,.75fr);
+
+    gap:25px;
+
+    margin-bottom:40px;
+}
+
+
+/* =========================================================
+   LATEST NEWS
+========================================================= */
+
+.latest-news{
+    display:flex;
+    flex-direction:column;
+
+    gap:11px;
+}
+
+.latest-card{
+    display:flex;
+    align-items:center;
+
+    gap:14px;
+
+    padding:10px;
+
+    background:var(--panel);
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease;
+}
+
+.latest-card:hover{
+    transform:translateX(3px);
+    border-color:rgba(59,130,246,.28);
+}
+
+.latest-image{
+    width:150px;
+    height:100px;
+
+    flex-shrink:0;
+
+    overflow:hidden;
+
+    border-radius:9px;
+}
+
+.latest-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:transform .45s ease;
+}
+
+.latest-card:hover .latest-image img{
+    transform:scale(1.06);
+}
+
+.latest-content{
+    min-width:0;
+}
+
+.latest-content h3{
+    font-size:.94rem;
+    line-height:1.4;
+
+    margin-bottom:7px;
+}
+
+.latest-content p{
+    color:var(--muted);
+
+    font-size:11.5px;
+    line-height:1.5;
+
+    margin-bottom:7px;
+}
+
+.latest-time{
+    color:var(--muted-2);
+    font-size:10.5px;
+}
+
+
+/* =========================================================
+   MOST READ
+========================================================= */
+
+.most-read{
+    background:var(--panel);
+
+    border:1px solid var(--border);
+
+    border-radius:17px;
+
+    padding:17px;
+}
+
+.read-list{
+    display:flex;
+    flex-direction:column;
+}
+
+.read-item{
+    display:grid;
+
+    grid-template-columns:
+        35px
+        70px
+        1fr;
+
+    align-items:center;
+
+    gap:11px;
+
+    padding:12px 0;
+
+    border-bottom:1px solid var(--border);
+}
+
+.read-item:last-child{
+    border-bottom:0;
+}
+
+.read-number{
+    color:#26334a;
+
+    font-size:24px;
+    font-weight:900;
+}
+
+.read-image{
+    width:70px;
+    height:58px;
+
+    border-radius:7px;
+
+    overflow:hidden;
+}
+
+.read-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.read-content h3{
+    font-size:.82rem;
+    line-height:1.4;
+
+    margin-bottom:5px;
+}
+
+.read-content span{
+    color:var(--muted-2);
+
+    font-size:9.5px;
+}
+
+
+/* =========================================================
+   NEWS STREAM
+========================================================= */
+
+.stream-section{
+    margin-bottom:40px;
+}
+
+.news-stream{
+    display:flex;
+    flex-direction:column;
+
+    gap:12px;
+}
+
+.stream-item{
+    display:grid;
+
+    grid-template-columns:
+        220px
+        minmax(0,1fr)
+        auto;
+
+    gap:18px;
+
+    align-items:center;
+
+    padding:10px;
+
+    background:var(--panel);
+
+    border:1px solid var(--border);
+
+    border-radius:15px;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease;
+}
+
+.stream-item:hover{
+    transform:translateY(-2px);
+    border-color:rgba(59,130,246,.28);
+}
+
+.stream-image{
+    width:220px;
+    height:125px;
+
+    overflow:hidden;
+
+    border-radius:9px;
+}
+
+.stream-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:transform .45s ease;
+}
+
+.stream-item:hover .stream-image img{
+    transform:scale(1.05);
+}
+
+.stream-content h3{
+    font-size:1rem;
+    line-height:1.4;
+
+    margin-bottom:7px;
+}
+
+.stream-content p{
+    color:var(--muted);
+
+    font-size:12px;
+    line-height:1.5;
+
+    margin-bottom:8px;
+}
+
+.stream-category{
+    color:#60a5fa;
+
+    font-size:10px;
+    font-weight:900;
+
+    text-transform:uppercase;
+}
+
+.stream-time{
+    color:var(--muted-2);
+
+    font-size:10.5px;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.pagination{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:7px;
+
+    margin-top:25px;
+}
+
+.pagination button{
+    width:38px;
+    height:38px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid var(--border);
+
+    border-radius:9px;
+
+    background:var(--panel);
+
+    color:#9aa9bf;
+
+    cursor:pointer;
+
+    font-size:12px;
+    font-weight:800;
+
+    transition:.25s ease;
+}
+
+.pagination button:hover{
+    background:var(--panel-2);
+    color:#fff;
+}
+
+.pagination button.active{
+    background:var(--blue-dark);
+    border-color:var(--blue-dark);
+    color:#fff;
+}
+
+
+/* =========================================================
+   NO RESULTS
+========================================================= */
+
+.no-results{
+    display:none;
+
+    text-align:center;
+
+    padding:55px 20px;
+
+    background:var(--panel);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    color:var(--muted);
+}
+
+.no-results i{
+    display:block;
+
+    color:var(--muted-2);
+
+    font-size:30px;
+
+    margin-bottom:12px;
+}
+
+.no-results h3{
+    color:#fff;
+    margin-bottom:5px;
+}
+
+
+/* =========================================================
+   HIDDEN FILTER STATE
+========================================================= */
+
+.news-item.filtered-hidden{
+    display:none !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE 1100
+========================================================= */
+
+@media(max-width:1100px){
+
+    .featured-news{
+        grid-template-columns:1fr;
+    }
+
+    .featured-image{
+        min-height:340px;
+        height:340px;
+    }
+
+    .featured-content{
+        padding:30px;
+    }
+
+    .news-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .lower-layout{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE 700
+========================================================= */
+
+@media(max-width:700px){
+
+    .news-page{
+        padding:20px 12px 45px;
+    }
+
+    .news-heading{
+        margin-bottom:19px;
+    }
+
+    .news-heading h1{
+        font-size:2.25rem;
+    }
+
+    .news-heading p{
+        font-size:13px;
+    }
+
+    .news-categories{
+        margin-right:-12px;
+        padding-right:12px;
+    }
+
+    .trending{
+        margin-left:-12px;
+        margin-right:-12px;
+
+        border-radius:0;
+        border-left:0;
+        border-right:0;
+    }
+
+    .trending-label{
+        padding:0 12px;
+    }
+
+    .trending-item{
+        padding:0 16px;
+    }
+
+    .featured-news{
+        border-radius:16px;
+    }
+
+    .featured-image{
+        height:235px;
+        min-height:235px;
+    }
+
+    .featured-content{
+        padding:22px;
+    }
+
+    .featured-content h2{
+        font-size:1.5rem;
+    }
+
+    .featured-content p{
+        font-size:12.5px;
+    }
+
+    .news-grid{
+        grid-template-columns:1fr;
+        gap:14px;
+    }
+
+    .news-card-image{
+        height:210px;
+    }
+
+    .latest-image{
+        width:105px;
+        height:82px;
+    }
+
+    .latest-content h3{
+        font-size:.86rem;
+    }
+
+    .latest-content p{
+        display:none;
+    }
+
+    .stream-item{
+        grid-template-columns:1fr;
+        gap:11px;
+    }
+
+    .stream-image{
+        width:100%;
+        height:190px;
+    }
+
+    .stream-content{
+        padding:0 3px 5px;
+    }
+
+    .stream-time{
+        display:none;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE 430
+========================================================= */
+
+@media(max-width:430px){
+
+    .news-heading h1{
+        font-size:2rem;
+    }
+
+    .featured-image{
+        height:205px;
+        min-height:205px;
+    }
+
+    .featured-content{
+        padding:19px;
+    }
+
+    .featured-content h2{
+        font-size:1.3rem;
+    }
+
+    .featured-content p{
+        font-size:12px;
+        line-height:1.6;
+    }
+
+    .featured-meta{
+        gap:9px;
+    }
+
+    .news-card-image{
+        height:195px;
+    }
+
+    .latest-card{
+        padding:8px;
+    }
+
+    .latest-image{
+        width:92px;
+        height:75px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    html{
+        scroll-behavior:auto;
+    }
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+    }
+
+}
+
+</style></head><body><main class="news-page"><!-- =====================================================
+     HEADER
+===================================================== --><section class="news-heading"><span class="eyebrow">
+    <i class="fa-solid fa-bolt"></i>
+    Technology News
+</span>
+
+<h1>
+    Latest Tech News
+</h1>
+
+<p>
+    Stay ahead with the latest technology stories,
+    smartphone launches, AI breakthroughs, software
+    updates and the biggest news shaping the tech world.
+</p>
+
+</section><!-- =====================================================
+     CATEGORIES
+===================================================== --><nav class="news-categories-wrapper"><div class="news-categories">
+
+    <button class="news-category active"
+    data-filter="all">
+        All News
+    </button>
+
+    <button class="news-category"
+    data-filter="mobile">
+        <i class="fa-solid fa-mobile-screen"></i>
+        Mobile
+    </button>
+
+    <button class="news-category"
+    data-filter="apple">
+        Apple
+    </button>
+
+    <button class="news-category"
+    data-filter="samsung">
+        Samsung
+    </button>
+
+    <button class="news-category"
+    data-filter="android">
+        Android
+    </button>
+
+    <button class="news-category"
+    data-filter="google">
+        Google
+    </button>
+
+    <button class="news-category"
+    data-filter="xiaomi">
+        Xiaomi
+    </button>
+
+    <button class="news-category"
+    data-filter="ai">
+        AI
+    </button>
+
+    <button class="news-category"
+    data-filter="security">
+        Security
+    </button>
+
+    <button class="news-category"
+    data-filter="software">
+        Software
+    </button>
+
+</div>
+
+</nav><!-- =====================================================
+     TRENDING
+===================================================== --><section class="trending"><div class="trending-label">
+
+    <i class="fa-solid fa-fire"></i>
+
+    Trending
+
+</div>
+
+
+<div class="trending-window">
+
+    <div class="trending-track">
+
+
+        <div class="trending-group">
+
+            <a href="#" class="trending-item">
+                iPhone 18 Pro Max
+            </a>
+
+            <a href="#" class="trending-item">
+                Samsung Galaxy
+            </a>
+
+            <a href="#" class="trending-item">
+                New AI Technology
+            </a>
+
+            <a href="#" class="trending-item">
+                Android Updates
+            </a>
+
+            <a href="#" class="trending-item">
+                Google Pixel
+            </a>
+
+            <a href="#" class="trending-item">
+                Snapdragon
+            </a>
+
+            <a href="#" class="trending-item">
+                Xiaomi Ultra
+            </a>
+
+        </div>
+
+
+        <!-- DUPLICATE FOR SEAMLESS LOOP -->
+
+        <div class="trending-group">
+
+            <a href="#" class="trending-item">
+                iPhone 18 Pro Max
+            </a>
+
+            <a href="#" class="trending-item">
+                Samsung Galaxy
+            </a>
+
+            <a href="#" class="trending-item">
+                New AI Technology
+            </a>
+
+            <a href="#" class="trending-item">
+                Android Updates
+            </a>
+
+            <a href="#" class="trending-item">
+                Google Pixel
+            </a>
+
+            <a href="#" class="trending-item">
+                Snapdragon
+            </a>
+
+            <a href="#" class="trending-item">
+                Xiaomi Ultra
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section><!-- =====================================================
+     FEATURED NEWS
+===================================================== --><section class="featured-news news-item"
+data-category="apple"><div class="featured-image">
+
+    <img
+        src="applenews.png"
+        alt="Apple technology news">
+
+    <div class="featured-overlay"></div>
+
+    <div class="featured-badge">
+
+        <i class="fa-solid fa-bolt"></i>
+
+        Breaking News
+
+    </div>
+
+</div>
+
+
+<div class="featured-content">
+
+    <span class="featured-tag">
+        Featured Story
+    </span>
+
+    <h2>
+        Apple Pushes The Future Of
+        Smartphone Technology
+    </h2>
+
+    <p>
+        The latest developments from Apple are
+        bringing new possibilities to smartphones,
+        artificial intelligence, performance and
+        everyday digital experiences.
+    </p>
+
+    <div class="featured-meta">
+
+        <span class="source">
+            Apple
+        </span>
+
+        <span>
+            <i class="fa-regular fa-clock"></i>
+            2 hours ago
+        </span>
+
+        <span>
+            <i class="fa-regular fa-eye"></i>
+            12.4K views
+        </span>
+
+    </div>
+
+</div>
+
+</section><!-- =====================================================
+     LATEST HEADLINES
+===================================================== --><div class="section-header"><div class="section-title">
+
+    <i class="fa-solid fa-newspaper"></i>
+
+    <h2>
+        Latest Headlines
+    </h2>
+
+</div>
+
+<span>
+    Updated recently
+</span>
+
+</div><section class="news-grid"><!-- CARD 1 --><article class="news-card news-item"
+data-category="samsung"><div class="news-card-image">
+
+    <img
+        src="news1.jpg"
+        alt="Samsung Galaxy news">
+
+    <span class="news-card-category">
+        Samsung
+    </span>
+
+</div>
+
+<div class="news-card-content">
+
+    <h3>
+        Samsung Expands Galaxy AI
+        Across More Devices
+    </h3>
+
+    <p>
+        Samsung continues expanding its AI
+        experience across the Galaxy ecosystem.
+    </p>
+
+    <div class="card-meta">
+
+        <span class="category">
+            Samsung
+        </span>
+
+        <span>
+            1 hour ago
+        </span>
+
+    </div>
+
+</div>
+
+</article><!-- CARD 2 --><article class="news-card news-item"
+data-category="google"><div class="news-card-image">
+
+    <img
+        src="news2.jpg"
+        alt="Google Android news">
+
+    <span class="news-card-category">
+        Google
+    </span>
+
+</div>
+
+<div class="news-card-content">
+
+    <h3>
+        Google Introduces New Android
+        Security Improvements
+    </h3>
+
+    <p>
+        New Android improvements focus on privacy,
+        security and overall device performance.
+    </p>
+
+    <div class="card-meta">
+
+        <span class="category">
+            Android
+        </span>
+
+        <span>
+            3 hours ago
+        </span>
+
+    </div>
+
+</div>
+
+</article><!-- CARD 3 --><article class="news-card news-item"
+data-category="mobile"><div class="news-card-image">
+
+    <img
+        src="news3.jpg"
+        alt="Snapdragon mobile platform">
+
+    <span class="news-card-category">
+        Mobile
+    </span>
+
+</div>
+
+<div class="news-card-content">
+
+    <h3>
+        Qualcomm Pushes Mobile Performance
+        To The Next Level
+    </h3>
+
+    <p>
+        A new generation of mobile hardware aims
+        to deliver better performance and efficiency.
+    </p>
+
+    <div class="card-meta">
+
+        <span class="category">
+            Mobile
+        </span>
+
+        <span>
+            5 hours ago
+        </span>
+
+    </div>
+
+</div>
+
+</article><!-- CARD 4 --><article class="news-card news-item"
+data-category="xiaomi"><div class="news-card-image">
+
+    <img
+        src="news4.jpg"
+        alt="Xiaomi technology news">
+
+    <span class="news-card-category">
+        Xiaomi
+    </span>
+
+</div>
+
+<div class="news-card-content">
+
+    <h3>
+        Xiaomi Pushes Faster Charging
+        Technology Forward
+    </h3>
+
+    <p>
+        New charging technology could make
+        future smartphones even more convenient.
+    </p>
+
+    <div class="card-meta">
+
+        <span class="category">
+            Xiaomi
+        </span>
+
+        <span>
+            8 hours ago
+        </span>
+
+    </div>
+
+</div>
+
+</article><!-- CARD 5 --><article class="news-card news-item"
+data-category="ai"><div class="news-card-image">
+
+    <img
+        src="news5.jpg"
+        alt="Artificial intelligence news">
+
+    <span class="news-card-category">
+        AI
+    </span>
+
+</div>
+
+<div class="news-card-content">
+
+    <h3>
+        AI Technology Makes Digital
+        Conversations More Natural
+    </h3>
+
+    <p>
+        New AI systems are changing how people
+        communicate and interact with technology.
+    </p>
+
+    <div class="card-meta">
+
+        <span class="category">
+            AI
+        </span>
+
+        <span>
+            12 hours ago
+        </span>
+
+    </div>
+
+</div>
+
+</article><!-- CARD 6 --><article class="news-card news-item"
+data-category="security"><div class="news-card-image">
+
+    <img
+        src="news6.jpg"
+        alt="Cyber security technology">
+
+    <span class="news-card-category">
+        Security
+    </span>
+
+</div>
+
+<div class="news-card-content">
+
+    <h3>
+        New Security Tools Help Protect
+        Smartphones From Threats
+    </h3>
+
+    <p>
+        Modern security systems are becoming more
+        powerful against new digital threats.
+    </p>
+
+    <div class="card-meta">
+
+        <span class="category">
+            Security
+        </span>
+
+        <span>
+            15 hours ago
+        </span>
+
+    </div>
+
+</div>
+
+</article></section><!-- =====================================================
+     NO RESULTS
+===================================================== --><div class="no-results"><i class="fa-regular fa-newspaper"></i>
+
+<h3>
+    No News Found
+</h3>
+
+<p>
+    There are no articles in this category yet.
+</p>
+
+</div><!-- =====================================================
+     LATEST + MOST READ
+===================================================== --><section class="lower-layout"><!-- LATEST -->
+
+<div>
+
+    <div class="section-header">
+
+        <div class="section-title">
+
+            <i class="fa-solid fa-clock"></i>
+
+            <h2>
+                Latest News
+            </h2>
+
+        </div>
+
+        <span>
+            Fresh stories
+        </span>
+
+    </div>
+
+
+    <div class="latest-news">
+
+
+        <article class="latest-card">
+
+            <div class="latest-image">
+
+                <img
+                    src="latest1.jpg"
+                    alt="Smartphone technology">
+
+            </div>
+
+            <div class="latest-content">
+
+                <h3>
+                    Smartphone makers prepare
+                    for another major technology shift
+                </h3>
+
+                <p>
+                    The mobile industry continues
+                    evolving at a rapid pace.
+                </p>
+
+                <span class="latest-time">
+                    25 minutes ago
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <article class="latest-card">
+
+            <div class="latest-image">
+
+                <img
+                    src="latest2.jpg"
+                    alt="Artificial intelligence">
+
+            </div>
+
+            <div class="latest-content">
+
+                <h3>
+                    AI becomes a bigger part
+                    of everyday smartphone features
+                </h3>
+
+                <p>
+                    Developers are adding smarter
+                    tools directly to mobile devices.
+                </p>
+
+                <span class="latest-time">
+                    42 minutes ago
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <article class="latest-card">
+
+            <div class="latest-image">
+
+                <img
+                    src="latest3.jpg"
+                    alt="Android technology">
+
+            </div>
+
+            <div class="latest-content">
+
+                <h3>
+                    Android ecosystem receives
+                    another wave of improvements
+                </h3>
+
+                <p>
+                    New updates bring changes to
+                    performance and user experience.
+                </p>
+
+                <span class="latest-time">
+                    1 hour ago
+                </span>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</div>
+
+
+<!-- MOST READ -->
+
+<aside class="most-read">
+
+    <div class="section-header">
+
+        <div class="section-title">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <h2>
+                Most Read
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="read-list">
+
+
+        <article class="read-item">
+
+            <span class="read-number">
+                01
+            </span>
+
+            <div class="read-image">
+
+                <img
+                    src="popular1.jpg"
+                    alt="Popular tech story">
+
+            </div>
+
+            <div class="read-content">
+
+                <h3>
+                    The biggest smartphone
+                    trends right now
+                </h3>
+
+                <span>
+                    24.8K views
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <article class="read-item">
+
+            <span class="read-number">
+                02
+            </span>
+
+            <div class="read-image">
+
+                <img
+                    src="popular2.jpg"
+                    alt="Popular AI story">
+
+            </div>
+
+            <div class="read-content">
+
+                <h3>
+                    AI technology changing
+                    the mobile industry
+                </h3>
+
+                <span>
+                    19.6K views
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <article class="read-item">
+
+            <span class="read-number">
+                03
+            </span>
+
+            <div class="read-image">
+
+                <img
+                    src="popular3.jpg"
+                    alt="Popular Android story">
+
+            </div>
+
+            <div class="read-content">
+
+                <h3>
+                    What is coming next
+                    for Android
+                </h3>
+
+                <span>
+                    17.2K views
+                </span>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</aside>
+
+</section><!-- =====================================================
+     NEWS STREAM
+===================================================== --><section class="stream-section"><div class="section-header">
+
+    <div class="section-title">
+
+        <i class="fa-solid fa-list"></i>
+
+        <h2>
+            More Technology News
+        </h2>
+
+    </div>
+
+    <span>
+        More stories
+    </span>
+
+</div>
+
+
+<div class="news-stream">
+
+
+    <article class="stream-item">
+
+        <div class="stream-image">
+
+            <img
+                src="stream1.jpg"
+                alt="Apple news">
+
+        </div>
+
+        <div class="stream-content">
+
+            <span class="stream-category">
+                Apple
+            </span>
+
+            <h3>
+                Apple's next generation of devices
+                continues to attract global attention
+            </h3>
+
+            <p>
+                New developments could bring major
+                improvements across Apple's hardware
+                and software ecosystem.
+            </p>
+
+        </div>
+
+        <span class="stream-time">
+            Today
+        </span>
+
+    </article>
+
+
+    <article class="stream-item">
+
+        <div class="stream-image">
+
+            <img
+                src="stream2.jpg"
+                alt="Samsung news">
+
+        </div>
+
+        <div class="stream-content">
+
+            <span class="stream-category">
+                Samsung
+            </span>
+
+            <h3>
+                Galaxy devices continue receiving
+                new software and AI capabilities
+            </h3>
+
+            <p>
+                Samsung is expanding the capabilities
+                available across its latest devices.
+            </p>
+
+        </div>
+
+        <span class="stream-time">
+            Today
+        </span>
+
+    </article>
+
+
+    <article class="stream-item">
+
+        <div class="stream-image">
+
+            <img
+                src="stream3.jpg"
+                alt="AI technology">
+
+        </div>
+
+        <div class="stream-content">
+
+            <span class="stream-category">
+                AI
+            </span>
+
+            <h3>
+                The rapid growth of AI is reshaping
+                the technology industry
+            </h3>
+
+            <p>
+                Artificial intelligence continues
+                influencing products, services and
+                digital experiences.
+            </p>
+
+        </div>
+
+        <span class="stream-time">
+            Yesterday
+        </span>
+
+    </article>
+
+
+</div>
+
+
+<!-- PAGINATION -->
+
+<div class="pagination">
+
+    <button aria-label="Previous">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <button class="active">
+        1
+    </button>
+
+    <button>
+        2
+    </button>
+
+    <button>
+        3
+    </button>
+
+    <button>
+        4
+    </button>
+
+    <button aria-label="Next">
+        <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+</div>
+
+</section></main><script>
+
+/* =========================================================
+   CATEGORY FILTER
+========================================================= */
+
+const categoryButtons =
+    document.querySelectorAll(".news-category");
+
+const newsItems =
+    document.querySelectorAll(".news-item");
+
+const noResults =
+    document.querySelector(".no-results");
+
+
+categoryButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const filter =
+            button.dataset.filter;
+
+
+        categoryButtons.forEach(item => {
+
+            item.classList.remove("active");
+
+        });
+
+
+        button.classList.add("active");
+
+
+        let visibleCount = 0;
+
+
+        newsItems.forEach(item => {
+
+            const category =
+                item.dataset.category;
+
+
+            if(
+                filter === "all" ||
+                category === filter
+            ){
+
+                item.classList.remove(
+                    "filtered-hidden"
+                );
+
+                visibleCount++;
+
+            }else{
+
+                item.classList.add(
+                    "filtered-hidden"
+                );
+
+            }
+
+        });
+
+
+        noResults.style.display =
+            visibleCount === 0
+                ? "block"
+                : "none";
+
+
+        window.scrollTo({
+
+            top:0,
+
+            behavior:"smooth"
+
+        });
+
+    });
+
+});
+
+
+/* =========================================================
+   TRENDING TOUCH SUPPORT
+========================================================= */
+
+const trendingWindow =
+    document.querySelector(".trending-window");
+
+let startX = 0;
+let startScroll = 0;
+
+
+trendingWindow.addEventListener(
+    "touchstart",
+    event => {
+
+        startX =
+            event.touches[0].pageX;
+
+        startScroll =
+            trendingWindow.scrollLeft;
+
+    },
+    {passive:true}
+);
+
+
+trendingWindow.addEventListener(
+    "touchmove",
+    event => {
+
+        const currentX =
+            event.touches[0].pageX;
+
+        const distance =
+            startX - currentX;
+
+        trendingWindow.scrollLeft =
+            startScroll + distance;
+
+    },
+    {passive:true}
+);
+
+
+/* =========================================================
+   PAGINATION DEMO
+========================================================= */
+
+const paginationButtons =
+    document.querySelectorAll(
+        ".pagination button"
+    );
+
+
+paginationButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        if(
+            button.innerText.trim() !== ""
+        ){
+
+            paginationButtons.forEach(item => {
+
+                item.classList.remove("active");
+
+            });
+
+            button.classList.add("active");
+
+        }
+
+    });
+
+});
+
+</script></body>
+</html>

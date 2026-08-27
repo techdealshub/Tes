@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Comparison Card</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+:root{
+    --bg:#050816;
+    --card:#0d1729;
+    --border:#1e293b;
+    --primary:#3b82f6;
+    --text:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:var(--bg);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+.comparison-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(350px,1fr));
+    gap: 25px;
+}
+/* Card */
+
+.comparison-card{
+    width:100%;
+    max-width:420px;
+
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    overflow:hidden;
+   margin-bottom: 20px;
+    transition:.3s;
+    display:flex;
+    flex-direction:column;
+
+    height:100%;
+
+}
+
+.comparison-card:hover{
+    transform:translateY(-6px);
+    border-color:var(--primary);
+    box-shadow:0 15px 35px rgba(59,130,246,.15);
+}
+
+/* Top Bar */
+
+.card-top{
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:14px 18px;
+}
+
+.badge{
+    color:#fff;
+    font-size:13px;
+    font-weight:700;
+}
+
+.badge i{
+    margin-right:6px;
+}
+
+.views{
+    color:#fff;
+    font-size:13px;
+}
+
+/* Phones */
+
+.phones{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+
+    padding:25px 20px;
+}
+
+.phone{
+    text-align:center;
+}
+
+.phone img{
+    width:105px;
+    height:125px;
+    object-fit:contain;
+}
+
+.phone p{
+    margin-top:10px;
+    color:#fff;
+    font-size:14px;
+    font-weight:600;
+}
+
+/* VS Circle */
+
+.vs{
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    background:#111827;
+
+    border:2px solid var(--primary);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:var(--primary);
+    font-weight:800;
+    font-size:15px;
+}
+
+/* Content */
+
+.content{
+    padding:0 25px 25px;
+}
+
+.content h2{
+    color:#fff;
+    text-align:center;
+    font-size:22px;
+    line-height:1.4;
+    margin-bottom:12px;
+}
+
+.content p{
+    color:rgba(255,255,255,.8);
+    text-align:center;
+    line-height:1.7;
+    font-size:14px;
+
+    margin-bottom:20px;
+}
+
+/* Specs */
+
+.specs{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+
+    margin-bottom:25px;
+}
+
+.specs span{
+    background:#111827;
+    border:1px solid var(--border);
+
+    color:#fff;
+
+    padding:8px 12px;
+    border-radius:30px;
+
+    font-size:12px;
+}
+
+.specs i{
+    color:var(--primary);
+    margin-right:5px;
+}
+
+/* Button */
+
+.button{
+    display:block;
+
+    text-align:center;
+    text-decoration:none;
+
+    background:var(--primary);
+    color:#fff;
+
+    padding:14px;
+
+    border-radius:14px;
+
+    font-size:14px;
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.button:hover{
+    background:#2563eb;
+}
+
+.button i{
+    margin-left:8px;
+}
+
+/* Mobile */
+
+@media(max-width:480px){
+
+    .content h2{
+        font-size:19px;
+    }
+
+    .phone img{
+        width:90px;
+        height:110px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+<div class="comparison-grid">
+
+    <!-- Trending -->
+
+    <div class="comparison-card">
+        <div class="card-top">
+            <div class="badge">
+                <i class="fa-solid fa-fire"></i>
+                Trending
+            </div>
+
+            <div class="views">
+                <i class="fa-solid fa-eye"></i>
+                24.5K Views
+            </div>
+        </div>
+
+        <div class="phones">
+            <div class="phone">
+                <img src="s26.png">
+                <p>Galaxy S26 Ultra</p>
+            </div>
+
+            <div class="vs">VS</div>
+
+            <div class="phone">
+                <img src="iphone17.png">
+                <p>iPhone 17 Pro Max</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>Galaxy S26 Ultra vs iPhone 17 Pro Max</h2>
+
+            <p>
+                Complete comparison of camera, battery,
+                display and performance.
+            </p>
+
+            <a href="#" class="button">
+                View Full Comparison
+            </a>
+        </div>
+    </div>
+
+    <!-- Latest -->
+
+    <div class="comparison-card">
+        <div class="card-top">
+            <div class="badge">
+                <i class="fa-solid fa-clock"></i>
+                Latest
+            </div>
+
+            <div class="views">
+                <i class="fa-solid fa-eye"></i>
+                18K Views
+            </div>
+        </div>
+
+        <div class="phones">
+            <div class="phone">
+                <img src="pixel10.png">
+                <p>Pixel 10 Pro</p>
+            </div>
+
+            <div class="vs">VS</div>
+
+            <div class="phone">
+                <img src="xiaomi16.png">
+                <p>Xiaomi 16 Ultra</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>Pixel 10 Pro vs Xiaomi 16 Ultra</h2>
+
+            <p>
+                Latest flagship camera and AI comparison.
+            </p>
+
+            <a href="#" class="button">
+                View Full Comparison
+            </a>
+        </div>
+    </div>
+
+    <!-- Popular -->
+
+    <div class="comparison-card">
+        <div class="card-top">
+            <div class="badge">
+                <i class="fa-solid fa-star"></i>
+                Popular
+            </div>
+
+            <div class="views">
+                <i class="fa-solid fa-eye"></i>
+                31K Views
+            </div>
+        </div>
+
+        <div class="phones">
+            <div class="phone">
+                <img src="oneplus14.png">
+                <p>OnePlus 14</p>
+            </div>
+
+            <div class="vs">VS</div>
+
+            <div class="phone">
+                <img src="s26.png">
+                <p>Galaxy S26</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>OnePlus 14 vs Galaxy S26</h2>
+
+            <p>
+                Popular Android flagship comparison.
+            </p>
+
+            <a href="#" class="button">
+                View Full Comparison
+            </a>
+        </div>
+    </div>
+
+    <!-- Latest News -->
+
+    <div class="comparison-card">
+        <div class="card-top">
+            <div class="badge">
+                <i class="fa-solid fa-newspaper"></i>
+                Latest News
+            </div>
+
+            <div class="views">
+                <i class="fa-solid fa-eye"></i>
+                12K Views
+            </div>
+        </div>
+
+        <div class="phones">
+            <div class="phone">
+                <img src="fold8.png">
+                <p>Galaxy Z Fold 8</p>
+            </div>
+
+            <div class="vs">VS</div>
+
+            <div class="phone">
+                <img src="iphone17.png">
+                <p>iPhone 17 Pro Max</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>Galaxy Z Fold 8 vs iPhone 17 Pro Max</h2>
+
+            <p>
+                New comparison based on latest leaks.
+            </p>
+
+            <a href="#" class="button">
+                View Full Comparison
+            </a>
+        </div>
+    </div>
+
+    <!-- Editor Choice -->
+
+    <div class="comparison-card">
+        <div class="card-top">
+            <div class="badge">
+                <i class="fa-solid fa-crown"></i>
+                Editor Choice
+            </div>
+
+            <div class="views">
+                <i class="fa-solid fa-eye"></i>
+                9K Views
+            </div>
+        </div>
+
+        <div class="phones">
+            <div class="phone">
+                <img src="iphone17.png">
+                <p>iPhone 17 Pro Max</p>
+            </div>
+
+            <div class="vs">VS</div>
+
+            <div class="phone">
+                <img src="pixel10.png">
+                <p>Pixel 10 Pro</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>iPhone 17 Pro Max vs Pixel 10 Pro</h2>
+
+            <p>
+                Editor's favorite flagship comparison.
+            </p>
+
+            <a href="#" class="button">
+                View Full Comparison
+            </a>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

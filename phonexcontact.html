@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us | PHONEX</title>
+
+<style>
+
+:root{
+    --bg:#050505;
+    --card:#0d0d0d;
+    --orange:#ff6500;
+    --gray:#aaa;
+    --border:rgba(255,255,255,.08);
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+
+body{
+
+    background:
+    radial-gradient(circle at top right,rgba(255,101,0,.15),transparent 450px),
+    var(--bg);
+
+    color:white;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+
+
+.container{
+
+    max-width:1100px;
+    margin:auto;
+    padding:50px 10px;
+
+}
+
+
+/* Logo */
+
+.logo{
+
+    text-align:center;
+    font-size:55px;
+    font-weight:900;
+    letter-spacing:-3px;
+    margin-bottom:45px;
+
+}
+
+.logo a{
+  text-decoration: none;
+  color: #fff;
+}
+.logo span{
+
+    color:var(--orange);
+
+}
+
+
+
+/* Header */
+
+.hero{
+
+    text-align:center;
+    margin-bottom:40px;
+
+}
+
+
+.hero h1{
+
+    font-size:42px;
+    margin-bottom:15px;
+
+}
+
+
+.hero h1 span{
+
+    color:var(--orange);
+
+}
+
+
+.hero p{
+
+    color:#888;
+    font-size:17px;
+
+}
+
+
+
+/* Contact Box */
+
+.contact-box{
+
+    background:linear-gradient(145deg,#111,#080808);
+    border:1px solid var(--border);
+    border-radius:30px;
+    padding:45px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+
+}
+
+
+
+.info h2,
+.form h2{
+
+    color:var(--orange);
+    margin-bottom:20px;
+
+}
+
+
+.info p{
+
+    color:#aaa;
+    line-height:1.8;
+    margin-bottom:20px;
+
+}
+
+
+
+.contact-item{
+
+    background:#111;
+    border:1px solid var(--border);
+    padding:18px;
+    border-radius:15px;
+    margin-bottom:15px;
+
+}
+
+
+.contact-item span{
+
+    color:var(--orange);
+    font-weight:bold;
+
+}
+
+
+
+/* Form */
+
+input,
+textarea{
+
+    width:100%;
+    background:#080808;
+    border:1px solid var(--border);
+    color:white;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:15px;
+    outline:none;
+
+}
+
+
+textarea{
+
+    height:130px;
+    resize:none;
+
+}
+
+
+button{
+
+    width:100%;
+    padding:15px;
+    border:0;
+    border-radius:50px;
+    background:var(--orange);
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+
+}
+
+
+button:hover{
+
+    background:white;
+    color:black;
+
+}
+
+
+
+/* Footer */
+
+footer{
+    text-align:center;
+    color:#555;
+    margin-bottom: 40px;
+    
+}
+
+        .social-media { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; }
+        .social-media a { color: white; font-size: 1.1rem; width: 35px; height: 35px; background: #151515; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+
+@media(max-width:800px){
+
+.contact-box{
+
+grid-template-columns:1fr;
+
+}
+
+.hero h1{
+
+font-size:32px;
+
+}
+
+
+.logo{
+
+font-size:42px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<div class="logo">
+<a href="https://techdealshub.online">
+PHON<span>EX</span>
+</a>
+</div>
+
+
+
+<div class="hero">
+
+<h1>
+Contact <span>Us</span>
+</h1>
+
+<p>
+Have questions, suggestions, or business inquiries?
+We would love to hear from you.
+</p>
+
+</div>
+
+
+
+
+<div class="contact-box">
+
+
+<div class="info">
+
+
+<h2>Get In Touch</h2>
+
+
+<p>
+If you have any questions about smartphones, website content,
+partnerships, or business opportunities, feel free to contact us.
+</p>
+
+
+
+<div class="contact-item">
+<span>Email:</span><br>
+contact@phonex.com
+</div>
+
+
+<div class="contact-item">
+<span>Website:</span><br>
+www.phonex.com
+</div>
+
+
+<div class="contact-item">
+<span>Response Time:</span><br>
+We usually reply within 24-48 hours.
+</div>
+
+
+</div>
+
+
+
+
+<div class="form">
+
+
+<h2>Send Message</h2>
+
+
+<form>
+
+
+<input type="text" placeholder="Your Name">
+
+
+<input type="email" placeholder="Your Email">
+
+
+<textarea placeholder="Your Message"></textarea>
+
+
+<button>
+Send Message
+</button>
+
+
+</form>
+
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+<footer>
+
+© 2026 PHONEX - Smartphone Technology Hub
+
+</footer>
+<div class="social-media">
+    <div class="social-media">
+    <a href="https://www.facebook.com/techdealshubndr"><img src="face.png" alt="Facebook" style="width:35px; height:35px;"></a>
+    <a href="https://www.youtube.com/@techdealshubndr"><img src="youtube_1.png" alt="YouTube" style="width:34px; height:34px;"></a>
+    <a href="https://www.instagram.com/techdealshubonline?igsh=OTRtNnhndTN1Mnl1"><img src="insta.png" alt="Instagram" style="width:33px; height:33px;"></a>
+    <a href="https://www.tiktok.com/@techdealshubonline" style=""><img src="tiktok.png" alt="TokTok" style="width:41px; height:41px;"></a>
+</div>
+</div>
+</body>
+</html>

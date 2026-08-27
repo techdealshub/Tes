@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+<title>CSS Grid Property Analyzer</title>
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;padding:30px;
+background:#050816;color:white;
+font-family:Arial,sans-serif
+}
+  .parent{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+grid-template-rows:100px 100px 100px;
+grid-template-areas:
+"a b c"
+"d e f"
+"g h i";
+grid-template:
+"a b c" 100px
+"d e f" 100px
+"g h i" 100px
+/1fr 1fr 1fr;
+grid-auto-flow:row;
+grid-auto-columns:150px;
+grid-auto-rows:100px;
+grid:
+"a b c" 100px
+"d e f" 100px
+"g h i" 100px
+/1fr 1fr 1fr;
+justify-content:center;
+justify-items:center;
+align-content:center;
+align-items:center;
+place-content:center;
+place-items:center;
+gap:20px 30px;
+row-gap:20px;
+column-gap:30px;
+  }
+  .child{
+grid-column:1/3;
+grid-column-start:1;
+grid-column-end:3;
+grid-row:1/3;
+grid-row-start:1;
+grid-row-end:3;
+grid-area:a;
+justify-self:center;
+align-self:center;
+place-self:center;
+}
+.child-a{grid-area:a}
+.child-b{grid-area:b}
+.child-c{grid-area:c}
+.child-d{grid-area:d}
+.child-e{grid-area:e}
+.child-f{grid-area:f}
+.child-g{grid-area:g}
+.child-h{grid-area:h}
+.child-b{grid-column:2/3}
+.child-c{
+grid-column-start:3;
+grid-column-end:4;
+}
+.child-d{grid-row:2/3}
+.child-e{
+grid-row-start:2;
+grid-row-end:3;
+}
+.child-f{justify-self:center}
+.child-g{align-self:center}
+.child-h{place-self:center}
+.container{
+width:700px;
+max-width:100%;
+margin:30px auto;
+}
+  .main-button,
+.display-button{
+width:100%;
+padding:15px;
+background:#172554;
+color:white;
+border:1px solid #334155;
+border-radius:12px;
+font-size:18px;
+cursor:pointer;
+text-align:left;
+}
+.display-options{
+display:none;
+margin-top:10px;
+gap:8px;
+flex-direction:column;
+}
+.display-button{
+background:#0f172a;
+border-radius:10px;
+}
+.display-button:hover{
+background:#1e293b;
+}
+  .properties{
+display:none;
+margin-top:10px;
+padding:15px;
+background:#020617;
+border:1px solid #1e293b;
+border-radius:10px;
+}
+.property-title{
+margin-bottom:12px;
+font-size:18px;
+font-weight:bold;
+}
+.summary{
+padding:12px;
+margin-bottom:12px;
+background:#111827;
+border-radius:8px;
+line-height:1.9;
+}
+.property{
+padding:12px;
+margin-bottom:7px;
+background:#0f172a;
+border-radius:8px;
+font-family:monospace;
+font-size:15px;
+word-break:break-word;
+}
+.property.strong{
+border-left:5px solid #22c55e;
+}
+.property.weak{
+border-left:5px solid #f59e0b;
+}
+.property.none{
+border-left:5px solid #ef4444;
+}
+.property.waiting{
+border-left:5px solid #f59e0b;
+}
+.property.item{
+border-left:5px solid #3b82f6;
+}
+.property.default{
+border-left:5px solid #94a3b8;
+}
+.property.invalid{
+border-left:5px solid #ef4444;
+}
+.property-score{
+float:right;
+font-family:Arial,sans-serif;
+font-weight:bold;
+}
+.score-reason{
+margin-top:5px;
+font-family:Arial,sans-serif;
+font-size:13px;
+opacity:.85;
+}
+.status{
+margin-top:7px;
+font-family:Arial,sans-serif;
+font-size:13px;
+opacity:.85;
+line-height:1.7;
+}
+.green{color:#22c55e}
+.yellow{color:#f59e0b}
+.red{color:#ef4444}
+</style>
+</head>
+  <body>
+
+<div class="parent">
+
+<div class="child child-a">A</div>
+<div class="child child-b">B</div>
+<div class="child child-c">C</div>
+<div class="child child-d">D</div>
+<div class="child child-e">E</div>
+<div class="child child-f">F</div>
+<div class="child child-g">G</div>
+<div class="child child-h">H</div>
+
+</div>
+
+<div class="container">
+
+<button class="main-button"
+id="displayButton">
+display
+</button>
+  <div class="display-options"
+id="displayOptions">
+
+<button class="display-button"
+data-display="flex">
+flex
+</button>
+
+<button class="display-button"
+data-display="inline-flex">
+inline-flex
+</button>
+
+<button class="display-button"
+data-display="grid">
+grid
+</button>
+
+<button class="display-button"
+data-display="inline-grid">
+inline-grid
+</button>
+
+  </div>
+  <div class="properties"
+id="properties"></div>
+
+</div>
+
+<script>
+
+/* =========================================
+   CSS DATABASE
+========================================= */
+
+let cssDatabase=null;
+
+fetch("./all-css.json")
+.then(response=>{
+if(!response.ok)
+throw new Error("all-css.json not found");
+return response.json();
+})
+.then(data=>{
+cssDatabase=data;
+console.log("CSS Database Loaded");
+})
+.catch(error=>{
+console.error("CSS Database Error:",error);
+});
+function getGridProperties(){
+
+if(!cssDatabase ||
+!cssDatabase.properties)
+return [];
+
+return Object.keys(
+cssDatabase.properties
+).filter(property=>{
+
+return(
+property==="grid" ||
+property.startsWith("grid-")
+);
+
+});
+
+}
+function getFlexProperties(){
+
+if(!cssDatabase ||
+!cssDatabase.properties)
+return [];
+
+return Object.keys(
+cssDatabase.properties
+).filter(property=>{
+
+return(
+property.startsWith("flex") ||
+property==="order" ||
+property==="justify-content" ||
+property==="justify-items" ||
+property==="justify-self"
+);
+
+});
+
+}
+function isCommonLayoutProperty(p){
+
+return(
+p==="align-content" ||
+p==="align-items" ||
+p==="align-self" ||
+p==="place-content" ||
+p==="place-items" ||
+p==="place-self" ||
+p==="gap" ||
+p==="row-gap" ||
+p==="column-gap"
+);
+
+}
+  function getGridProperties(){
+
+if(!cssDatabase?.properties)
+return [];
+
+return Object.keys(
+cssDatabase.properties
+).filter(p=>
+p==="grid" ||
+p.startsWith("grid-") ||
+isCommonLayoutProperty(p) ||
+p==="justify-content" ||
+p==="justify-items" ||
+p==="justify-self"
+);
+
+  }
+function getFlexProperties(){
+
+if(!cssDatabase?.properties)
+return [];
+
+return Object.keys(
+cssDatabase.properties
+).filter(p=>
+p.startsWith("flex") ||
+p==="order" ||
+p==="justify-content" ||
+p==="justify-items" ||
+p==="justify-self" ||
+isCommonLayoutProperty(p)
+);
+
+}
+  function getPropertyData(property){
+
+if(!cssDatabase ||
+!cssDatabase.properties)
+return null;
+
+return cssDatabase.properties[property]
+||null;
+
+}
+
+function getPropertySyntax(property){
+
+const data=getPropertyData(property);
+
+return data
+?data.syntax||null
+:null;
+
+}
+</script>
+</body>
+  </html>
+  
+  

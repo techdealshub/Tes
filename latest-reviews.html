@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Reviews Page Structure</title>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<style>
+:root{
+    --bg:#070b16;
+    --card:#0d1427;
+    --card-hover:#131d36;
+    --border:#1e293b;
+    --primary:#3b82f6;
+    --text:#ffffff;
+    --muted:#94a3b8;
+    --success:#22c55e;
+    --danger:#ef4444;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:Arial,sans-serif;
+    line-height:1.6;
+}
+/* Navigation Sections */
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#08111f;
+    border-bottom:1px solid #1e293b;
+}
+
+.nav-menu{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    overflow-x:auto;
+    overflow-y:hidden;
+
+    padding:10px;
+
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+}
+
+.nav-menu::-webkit-scrollbar{
+    display:none;
+}
+
+.nav-menu a{
+    white-space:nowrap;
+
+    padding:8px 15px;
+
+    background:#111827;
+    border:1px solid #1e293b;
+    border-radius:999px;
+
+    color:#fff;
+    text-decoration:none;
+
+    font-size:13px;
+    font-weight:600;
+
+    transition:.3s ease;
+}
+
+.nav-menu a:hover{
+    background:#3b82f6;
+    border-color:#3b82f6;
+    transform:translateY(-2px);
+}
+
+.nav-menu a.active{
+    background:#3b82f6;
+    border-color:#3b82f6;
+}
+
+/* Smooth Scroll */
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* Desktop */
+
+@media (min-width:992px){
+
+    .nav-menu{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+}
+
+main{
+    width:min(1300px,95%);
+    margin:auto;
+    padding:20px 0;
+}
+
+/* Sections */
+
+section{
+    margin-bottom:20px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:20px;
+}
+
+section h2{
+    font-size:22px;
+    margin-bottom:20px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+section h2 i{
+    color:var(--primary);
+}
+
+/* Hero */
+
+#hero{
+    padding:0;
+    overflow:hidden;
+}
+
+.hero-image{
+    height:350px;
+    background:#08111f;
+}
+
+.hero-image img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.hero-content{
+    padding:25px;
+}
+
+.hero-content h1{
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+.hero-content p{
+    color:var(--muted);
+}
+.featured-section{
+    max-width:1200px;
+    margin:20px auto;
+    padding:20px;
+}
+
+.section-header h2{
+    font-size:28px;
+    margin-bottom:8px;
+}
+
+.section-header p{
+    color:#a9a9a9;
+    margin-bottom:25px;
+}
+
+
+/* GRID */
+.featured-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:20px;
+}
+
+
+/* MAIN CARD */
+.featured-main{
+    border-radius:16px;
+    overflow:hidden;
+    border:1px solid #eee;
+}
+.featured-main,
+.featured-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+}
+.featured-main img{
+    width:100%;
+    aspect-ratio:16/9;
+    object-fit:cover;
+}
+
+.featured-main .content{
+    padding:20px;
+}
+
+.badge{
+    display:inline-block;
+    background:#0066ff;
+    color:white;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:13px;
+}
+
+
+.featured-main h3{
+    font-size:24px;
+    margin:15px 0 10px;
+}
+
+.featured-main p{
+    color:#a9a9a9;
+    line-height:1.6;
+}
+
+
+.featured-main a,
+.featured-card a{
+    display:inline-block;
+    margin-top:15px;
+    color:#0066ff;
+    text-decoration:none;
+    font-weight:600;
+}
+
+
+/* SIDE CARDS */
+.featured-side{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+
+.featured-card{
+    padding:18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius:14px;
+}
+
+
+.featured-card h4{
+    font-size:18px;
+    margin:0 0 8px;
+}
+
+
+.featured-card p{
+    color:#a9a9a9;
+    font-size:14px;
+}
+
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .featured-grid{
+        grid-template-columns:1fr;
+    }
+
+    .featured-main h3{
+        font-size:21px;
+    }
+
+}
+/* Quick Specs */
+.cloudflare-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:10px 18px;
+
+    background:linear-gradient(
+        135deg,
+        #3b82f6 0%,
+        #0040a8 100%
+    );
+
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+
+    border-radius:999px;
+
+    box-shadow:
+        0 6px 20px rgba(243,128,32,.35);
+
+    letter-spacing:.5px;
+}
+
+.cloudflare-badge::before{
+    content:"☁";
+    font-size:16px;
+}
+.card-link{
+    display:block;
+    text-decoration:none;
+    color:inherit;
+}
+
+.card-link .card{
+    cursor:pointer;
+    height:100%;
+}
+
+.card-link:hover .card{
+    transform:translateY(-4px);
+}
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:25px;
+}
+
+.section-icon{
+    width:48px;
+    height:48px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:linear-gradient(
+        135deg,
+        #f38020,
+        #faae40
+    );
+
+    box-shadow:
+        0 10px 25px rgba(243,128,32,.25);
+
+    flex-shrink:0;
+}
+
+.section-icon i{
+    color:#fff;
+    font-size:22px;
+}
+.spec-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:15px;
+}
+.card-link{
+    text-decoration:none;
+    color:inherit;
+    display:block;
+}
+#flagships .section-title i{
+    color:#facc15;
+}
+.card-link .card{
+    height:100%;
+    cursor:pointer;
+}
+#budget .section-title i{
+    color:#22c55e;
+}
+
+.card-link:hover .card{
+    background:var(--card-hover);
+    transform:translateY(-3px);
+}
+#comparisons .section-title i{
+    color:#8b5cf6;
+}
+#comparisons .card h3{
+    line-height:1.5;
+    font-size:18px;
+}
+#editors-choice .card h3{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:18px;
+}
+
+.card-icon{
+    color:#facc15;
+    font-size:16px;
+}
+
+#editors-choice .card{
+    border:1px solid rgba(250,204,21,.15);
+    transition:.3s ease;
+}
+
+#editors-choice .card:hover{
+    border-color:#facc15;
+    box-shadow:0 10px 25px rgba(250,204,21,.12);
+}
+.spec-card{
+    background:#111827;
+    padding:15px;
+    border-radius:16px;
+    text-align:center;
+}
+
+.spec-card i{
+    font-size:22px;
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+.spec-card strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.spec-card span{
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* Verdict */
+
+.score-box{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#2563eb,#60a5fa);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+/* Pros Cons */
+
+.pros-cons{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.box{
+    background:#111827;
+    border-radius:16px;
+    padding:18px;
+}
+
+.box ul{
+    list-style:none;
+}
+
+.box li{
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:8px;
+}
+
+.pros li{
+    background:rgba(34,197,94,.1);
+}
+
+.cons li{
+    background:rgba(239,68,68,.1);
+}
+
+/* Cards */
+
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:15px;
+}
+
+.card{
+  position:relative;
+    cursor:pointer;
+    background:#111827;
+    border-radius:16px;
+    padding:18px;
+    transition:.3s;
+}
+
+.card-link-icon{
+    position:absolute;
+    top:12px;
+    right:12px;
+
+    color:#60a5fa;
+    font-size:14px;
+
+    opacity:.7;
+    transition:.3s;
+}
+
+.card:hover .card-link-icon{
+    opacity:1;
+    transform:translate(3px,-3px);
+}
+
+.card:hover{
+    background:var(--card-hover);
+    transform:translateY(-3px);
+}
+.card p{
+    color:rgba(255,255,255,0.542);
+}
+/* Gallery */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:12px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:14px;
+    aspect-ratio:1/1;
+    object-fit:cover;
+}
+
+/* Specifications */
+
+.spec-table{
+    display:grid;
+    gap:12px;
+}
+
+.spec-row{
+    display:flex;
+    justify-content:space-between;
+    padding:14px;
+    background:#111827;
+    border-radius:12px;
+}
+
+.spec-row span{
+    color:var(--muted);
+}
+
+/* Reviews */
+
+.review{
+    background:#111827;
+    border-radius:14px;
+    padding:15px;
+    margin-bottom:12px;
+}
+
+.review-header{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+}
+
+.stars{
+    color:#facc15;
+}
+
+/* Store Buttons */
+
+.store-btn{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px;
+    background:#111827;
+    border-radius:14px;
+    text-decoration:none;
+    color:#fff;
+    transition:.3s;
+}
+
+.store-btn:hover{
+    background:#172033;
+}
+
+/* Footer */
+
+footer{
+    background:#08111f;
+    border-top:1px solid var(--border);
+    padding:40px 20px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.footer-box{
+    background:#111827;
+    padding:20px;
+    border-radius:14px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .pros-cons{
+        grid-template-columns:1fr;
+    }
+
+    .hero-content h1{
+        font-size:1.5rem;
+    }
+
+}
+.footer-box h3{
+    margin-bottom:15px;
+    font-size:18px;
+}
+
+.footer-box p{
+    color:#cbd5e1;
+}
+
+.footer-box a{
+    display:block;
+    color:#94a3b8;
+    text-decoration:none;
+    margin-bottom:10px;
+    transition:.3s;
+}
+
+.footer-box a:hover{
+    color:#60a5fa;
+}
+
+.social-links{
+    display:flex;
+    gap:15px;
+}
+
+.social-links a{
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#151d29;
+    border-radius:12px;
+
+    font-size:18px;
+}
+
+.social-links a:hover{
+    background:#3b82f6;
+    color:#fff;
+}
+
+.footer-bottom{
+    margin-top:30px;
+    padding-top:20px;
+
+    text-align:center;
+    color:#fff;
+
+    border-top:1px solid rgba(255,255,255,.08);
+}
+.see-all{
+    position: relative;
+    text-align:right;
+    top: 0px;
+    padding: 0;
+    margin-top:-10px;
+    margin-bottom:20px;
+}
+
+.see-all a{
+    
+    text-decoration:none;
+    font-weight:700;
+    font-size:16px;
+    background: linear-gradient(
+        135deg,
+        #3b82f6,
+        #06b6d4
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.see-all a:hover{
+    text-decoration:underline;
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+
+
+    <nav class="nav-menu">
+
+<a href="#" class="nav-link" data-target="featured">Featured</a>
+<a href="#" class="nav-link" data-target="latest">Latest Reviews</a>
+<a href="#" class="nav-link" data-target="flagships">Flagships</a>
+<a href="#" class="nav-link" data-target="budget">Budget Phones</a>
+<a href="#" class="nav-link" data-target="comparisons">Comparisons</a>
+<a href="#" class="nav-link" data-target="editors-choice">Editor's Choice</a>
+
+    </nav>
+
+</header>
+
+<main>
+
+    <!-- HERO -->
+<section id="featured" class="featured-section">
+
+    <div class="section-header">
+        <h2>Latest Reviews</h2>
+        <p>Our top smartphone reviews and recommendations.</p>
+    </div>
+
+    <div class="featured-grid">
+
+        <article class="featured-main">
+            <img src="samsungs26uh.png" alt="Featured Phone">
+            <div class="content">
+                <span class="badge">Editor's Choice</span>
+                <h3>Samsung Galaxy S26 Ultra Review</h3>
+                <p>
+                    A premium flagship with outstanding cameras,
+                    excellent battery life, and top-tier performance.
+                </p>
+                <a href="#">Read Review</a>
+            </div>
+        </article>
+
+        <div class="featured-side">
+
+            <article class="featured-card">
+                <h4>iPhone 18 Pro Max Review</h4>
+                <p>Apple's most powerful smartphone yet.</p>
+                <a href="#">Read Review</a>
+            </article>
+
+            <article class="featured-card">
+                <h4>Google Pixel 11 Pro Review</h4>
+                <p>Exceptional photography and AI features.</p>
+                <a href="#">Read Review</a>
+            </article>
+
+            <article class="featured-card">
+                <h4>Xiaomi 17 Ultra Review</h4>
+                <p>Flagship specs at a competitive price.</p>
+                <a href="#">Read Review</a>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="latest">
+   
+<h2 class="section-title">
+    <span class="section-icon">
+        <i class="fa-brands fa-cloudflare"></i>
+    </span>
+    Latest Reviews
+</h2>
+    <div class="card-grid">
+
+       <div class="card-grid">
+
+    <a href="oneplus-15-review.html" class="card-link">
+        <article class="card">
+            <h3>OnePlus 15 Review</h3>
+            <p>
+                Fast performance, smooth software,
+                and impressive battery life.
+            </p>
+        </article>
+    </a>
+
+    <a href="nothing-phone-4-review.html" class="card-link">
+        <article class="card">
+            <h3>Nothing Phone (4) Review</h3>
+            <p>
+                Unique design with a clean Android experience.
+            </p>
+        </article>
+    </a>
+
+    <a href="motorola-edge-70-ultra-review.html" class="card-link">
+        <article class="card">
+            <h3>Motorola Edge 70 Ultra</h3>
+            <p>
+                Strong cameras and premium build quality.
+            </p>
+        </article>
+    </a>
+
+</div>
+    </div>
+
+</section>
+
+<section id="flagships">
+
+    <h2 class="section-title">
+        <i class="fa-solid fa-crown"></i>
+        Flagship Phones
+    </h2>
+
+    <div class="card-grid">
+
+        <a href="samsung-galaxy-s26-ultra-review.html" class="card-link">
+            <article class="card">
+                <h3>Samsung Galaxy S26 Ultra</h3>
+                <p>
+                    Premium cameras, powerful performance,
+                    and excellent battery life.
+                </p>
+            </article>
+        </a>
+
+        <a href="iphone-18-pro-max-review.html" class="card-link">
+            <article class="card">
+                <h3>iPhone 18 Pro Max</h3>
+                <p>
+                    Apple's most advanced smartphone with
+                    top-tier performance.
+                </p>
+            </article>
+        </a>
+
+        <a href="google-pixel-11-pro-review.html" class="card-link">
+            <article class="card">
+                <h3>Google Pixel 11 Pro</h3>
+                <p>
+                    Exceptional photography and AI-powered features.
+                </p>
+            </article>
+        </a>
+
+    </div>
+
+</section>
+
+<section id="budget">
+
+    <h2 class="section-title">
+        <i class="fa-solid fa-wallet"></i>
+        Budget Phones
+    </h2>
+
+    <div class="card-grid">
+
+        <a href="redmi-note-15-review.html" class="card-link">
+            <article class="card">
+                <h3>Redmi Note 15</h3>
+                <p>
+                    Excellent value with a large battery
+                    and smooth display.
+                </p>
+            </article>
+        </a>
+
+        <a href="samsung-galaxy-a57-review.html" class="card-link">
+            <article class="card">
+                <h3>Samsung Galaxy A57</h3>
+                <p>
+                    Reliable performance and long software support.
+                </p>
+            </article>
+        </a>
+
+        <a href="poco-x8-pro-review.html" class="card-link">
+            <article class="card">
+                <h3>POCO X8 Pro</h3>
+                <p>
+                    Powerful hardware at an affordable price.
+                </p>
+            </article>
+        </a>
+
+    </div>
+
+</section>
+<section id="comparisons">
+
+    <h2 class="section-title">
+        <i class="fa-solid fa-code-compare"></i>
+        Phone Comparisons
+    </h2>
+
+    <div class="card-grid">
+
+        <a href="s26-ultra-vs-iphone-18-pro-max.html" class="card-link">
+            <article class="card">
+                <h3>Galaxy S26 Ultra vs iPhone 18 Pro Max</h3>
+                <p>
+                    Camera, performance, battery life,
+                    and ecosystem comparison.
+                </p>
+            </article>
+        </a>
+
+        <a href="pixel-11-pro-vs-xiaomi-17-ultra.html" class="card-link">
+            <article class="card">
+                <h3>Pixel 11 Pro vs Xiaomi 17 Ultra</h3>
+                <p>
+                    Which flagship delivers the best camera experience?
+                </p>
+            </article>
+        </a>
+
+        <a href="nothing-phone-4-vs-oneplus-15.html" class="card-link">
+            <article class="card">
+                <h3>Nothing Phone (4) vs OnePlus 15</h3>
+                <p>
+                    Design, software, and overall value compared.
+                </p>
+            </article>
+        </a>
+
+    </div>
+
+</section>
+
+<section id="editors-choice">
+
+    <h2 class="section-title">
+        <i class="fa-solid fa-award"></i>
+        Editor's Choice
+    </h2>
+
+    <div class="card-grid">
+
+        <a href="samsung-galaxy-s26-ultra-review.html" class="card-link">
+            <article class="card">
+                <h3>
+                    <i class="fa-solid fa-trophy card-icon"></i>
+                    Samsung Galaxy S26 Ultra
+                </h3>
+                <p>
+                    The best overall smartphone with exceptional cameras,
+                    battery life, and premium features.
+                </p>
+            </article>
+        </a>
+
+        <a href="google-pixel-11-pro-review.html" class="card-link">
+            <article class="card">
+                <h3>
+                    <i class="fa-solid fa-camera card-icon"></i>
+                    Google Pixel 11 Pro
+                </h3>
+                <p>
+                    Our top recommendation for photography enthusiasts.
+                </p>
+            </article>
+        </a>
+
+        <a href="poco-x8-pro-review.html" class="card-link">
+            <article class="card">
+                <h3>
+                    <i class="fa-solid fa-coins card-icon"></i>
+                    POCO X8 Pro
+                </h3>
+                <p>
+                    The best value-for-money smartphone of the year.
+                </p>
+            </article>
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div class="footer-box">
+            <h3>PhoneReviews</h3>
+            <p>
+                Independent smartphone reviews,
+                comparisons, buying guides,
+                and expert recommendations.
+            </p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+
+            <a href="#featured">Featured Reviews</a>
+            <a href="#latest">Latest Reviews</a>
+            <a href="#flagships">Flagships</a>
+            <a href="#budget">Budget Phones</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Brands</h3>
+
+            <a href="#">Samsung</a>
+            <a href="#">Apple</a>
+            <a href="#">Google</a>
+            <a href="#">Xiaomi</a>
+            <a href="#">OnePlus</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Follow Us</h3>
+
+            <div class="social-links">
+
+                <a href="#">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 PhoneReviews. All rights reserved.
+    </div>
+
+</footer>
+<script>
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const target = document.getElementById(
+            this.dataset.target
+        );
+
+        target?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+});
+document.querySelectorAll('.card-link .card').forEach(card => {
+
+    const icon = document.createElement('i');
+    icon.className = 'fa-solid fa-arrow-up-right-from-square card-link-icon';
+
+    card.prepend(icon);
+
+});
+document.querySelectorAll('section').forEach((section, index) => {
+  if (index === 0) return;
+    const seeAll = document.createElement('div');
+    const seeAllChild = document.createElement('a');
+    seeAll.classList.add('see-all');
+    seeAllChild.textContent = 'View All ' + section.querySelector('h2').innerText+'→';
+   const title = section.querySelector('h2').innerText;
+
+seeAllChild.href =
+    title
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/[^\w-]/g, '') +
+    '.html';
+     seeAll.appendChild(seeAllChild);
+    section.insertBefore(seeAll, section.firstElementChild);
+});
+
+</script>
+</body>
+</html>

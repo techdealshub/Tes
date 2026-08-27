@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSS Values Builder</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:14px;background:#050816;color:#f8fafc;font-family:Arial,sans-serif}
+.panel{background:#0d1729;border:1px solid #1e293b;border-radius:10px;padding:12px;margin-bottom:12px}
+button,input{font:inherit}
+button{border:0;border-radius:8px;padding:9px 12px;margin:3px;background:#2563eb;color:#fff}
+button:disabled{opacity:.45}
+input[type=file]{width:100%;margin-bottom:8px}
+input[type=number]{width:90px}
+#status,#current,#syntax{white-space:pre-wrap;word-break:break-word;line-height:1.45}
+.bar{height:8px;background:#111c31;border-radius:8px;overflow:hidden;margin-top:8px}
+#bar{height:100%;width:0;background:#2563eb}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}
+.stat{background:#111c31;border-radius:8px;padding:8px}
+.stat b{display:block;font-size:18px}
+#results{display:flex;flex-direction:column;gap:5px}
+.row{border-radius:7px;padding:8px;border:1px solid #334155;word-break:break-word}
+.original{background:#fff;color:#000;border-color:#cbd5e1}
+.added{background:#111827;color:#f8fafc}
+.small{font-size:12px;opacity:.75;margin-top:3px}
+.legend span{display:inline-block;padding:5px 8px;border-radius:5px;margin:3px}
+.legend .w{background:#fff;color:#000}
+.legend .d{background:#111827;color:#fff}
+.ok{color:#22c55e}.warn{color:#f59e0b}
+</style>
+</head>
+<body>
+
+<h2>CSS Values Builder — all-css.json</h2>
+
+<div class="panel">
+<input id="file" type="file" accept=".json,application/json">
+<br>
+<button id="load">تحميل JSON</button>
+<button id="start" disabled>START</button>
+<button id="stop" disabled>STOP</button>
+<button id="export" disabled>تصدير JSON</button>
+</div>
+
+<div class="panel">
+<b>توليد الأرقام:</b><br><br>
+الحد:
+<input id="max" type="number" min="1" max="1000" value="10">
+<br><br>
+الوحدات:
+<div id="units"></div>
+</div>
+
+<div class="panel">
+<div id="status">اختر all-css.json</div>
+<div class="bar"><div id="bar"></div></div>
+</div>
+
+<div class="panel">
+<b>Property:</b>
+<div id="current">-</div>
+<br>
+<b>Syntax:</b>
+<div id="syntax">-</div>
+</div>
+
+<div class="panel">
+<div class="stats">
+<div class="stat"><b id="pc">0</b>Properties</div>
+<div class="stat"><b id="vc">0</b>Original values</div>
+<div class="stat"><b id="ac">0</b>Added values</div>
+<div class="stat"><b id="tc">0</b>CSS.supports tests</div>
+<div class="stat"><b id="ok">0</b>TRUE</div>
+<div class="stat"><b id="fn">0</b>Functions</div>
+<div class="stat"><b id="num">0</b>Numeric</div>
+</div>
+<br>
+<div class="legend">
+<span class="w">أبيض = قيمة أصلية من JSON</span>
+<span class="d">غامق = قيمة إضافية أثبتها CSS.supports</span>
+</div>
+</div>
+
+<div id="results"></div>
+
+<script>
+"use strict";
+
+/* =========================================================
+   UI
+========================================================= */
+const $=id=>document.getElementById(id);
+const file=$("file"), load=$("load"), start=$("start"), stop=$("stop"), exp=$("export");
+const status=$("status"), current=$("current"), syntaxBox=$("syntax"), resultsBox=$("results"), bar=$("bar");
+
+const UNITS=["px","pt","pc","in","cm","mm","Q","em","rem","ex","ch","vw","vh","vmin","vmax","vi","vb","%","fr","deg","rad","grad","turn","ms","s","Hz","kHz","dpi","dpcm","dppx"];
+$("units").innerHTML=UNITS.map(u=>`<label style="margin-left:8px"><input class="unit" type="checkbox" value="${u}" ${["px","em","rem","vw","vh","%"].includes(u)?"checked":""}>${u}</label>`).join(" ");
+
+/* =========================================================
+   STATE
+========================================================= */
+let data=null;
+let props=[];
+let defs={};
+let running=false;
+let stopRequested=false;
+let tests=0;
+let trueCount=0;
+let addedCount=0;
+let functionCount=0;
+let numericCount=0;
+let output=[];
+
+/* =========================================================
+   HELPERS
+========================================================= */
+function norm(v){return String(v??"").replace(/\s+/g," ").trim()}
+function esc(v){return String(v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+function tick(){return new Promise(r=>setTimeout(r,0))}
+function setStatus(x){status.textContent=x;console.log(x)}
+function propertyName(x){return typeof x==="string" && /^-?[A-Za-z][A-Za-z0-9_-]*$/.test(x) && !x.startsWith("--")}
+
+/* =========================================================
+   WALK
+========================================================= */
+function walk(x,fn,seen=new WeakSet()){
+    if(!x||typeof x!=="object"||seen.has(x))return;
+    seen.add(x);
+    fn(x);
+    if(Array.isArray(x)){for(const v of x)walk(v,fn,seen);return}
+    for(const k of Object.keys(x))walk(x[k],fn,seen);
+}
+
+/* =========================================================
+   FIND PROPERTY DEFINITIONS
+   Supports:
+   properties:[{name,syntax,...}]
+   properties:{width:{syntax,...}}
+========================================================= */
+function loadProperties(){
+    props=[]; defs={};
+    const p=data?.properties;
+    if(Array.isArray(p)){
+        for(const item of p){
+            if(!item||typeof item!=="object")continue;
+            const name=norm(item.name);
+            if(propertyName(name)&&!defs[name]){
+                defs[name]=item;
+                props.push(name);
+            }
+        }
+    }else if(p&&typeof p==="object"){
+        for(const [name,item] of Object.entries(p)){
+            if(!propertyName(name))continue;
+            defs[name]=(item&&typeof item==="object")?{...item,name}:{name,syntax:String(item??"")};
+            props.push(name);
+        }
+    }
+    props=[...new Set(props)].sort();
+    $("pc").textContent=props.length;
+    return props.length;
+}
+
+function getSyntax(name){
+    const d=defs[name];
+    if(!d)return "";
+    if(typeof d==="string")return norm(d);
+    return norm(d.syntax||d.value||"");
+}
+
+/* =========================================================
+   EXTRACT ORIGINAL VALUES FROM A PROPERTY DEFINITION
+   We deliberately preserve values already present in JSON.
+========================================================= */
+function originalValues(def){
+    const out=new Set();
+    if(!def||typeof def!=="object")return out;
+
+    const keys=["values","value","keywords","initial","default","allowedValues"];
+    for(const key of keys){
+        const v=def[key];
+        if(typeof v==="string"){
+            for(const s of splitValues(v)) if(isUsefulOriginal(s))out.add(s);
+        }else if(Array.isArray(v)){
+            for(const a of v){
+                if(typeof a==="string"){
+                    for(const s of splitValues(a)) if(isUsefulOriginal(s))out.add(s);
+                }else if(a&&typeof a==="object"){
+                    for(const k of ["name","value","keyword"]){
+                        if(typeof a[k]==="string"){
+                            for(const s of splitValues(a[k])) if(isUsefulOriginal(s))out.add(s);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* Some all-css files keep examples/values deeper in the property object. */
+    walk(def,obj=>{
+        for(const [k,v] of Object.entries(obj)){
+            if(!["values","value","keywords","initial","default","allowedValues","examples"].includes(k))continue;
+            if(typeof v==="string"){
+                for(const s of splitValues(v)) if(isUsefulOriginal(s))out.add(s);
+            }
+        }
+    });
+
+    return out;
+}
+
+function splitValues(s){
+    s=norm(s);
+    if(!s)return [];
+    /* Do not split inside functions or brackets. */
+    const out=[], re=/\s*,\s*/g;
+    let depth=0,start=0;
+    for(let i=0;i<s.length;i++){
+        const c=s[i];
+        if(c==="("||c==="["||c==="{")depth++;
+        else if(c===")"||c==="]"||c==="}")depth=Math.max(0,depth-1);
+        else if(c==="|"&&depth===0){
+            const x=norm(s.slice(start,i)); if(x)out.push(x); start=i+1;
+        }else if(c===","&&depth===0){
+            const x=norm(s.slice(start,i)); if(x)out.push(x); start=i+1;
+        }
+    }
+    const last=norm(s.slice(start)); if(last)out.push(last);
+    return out;
+}
+
+function isUsefulOriginal(s){
+    if(!s||s.length>300)return false;
+    if(/^<[^>]+>$/.test(s))return false;
+    if(/^\[.*\]$/.test(s))return false;
+    if(/^[A-Za-z-]+\s*\.$/.test(s))return false;
+    return true;
+}
+
+/* =========================================================
+   TYPES
+========================================================= */
+function typesOf(syntax){
+    return new Set((syntax.match(/<[^>]+>/g)||[]).map(x=>x.toLowerCase()));
+}
+function has(t,...names){return names.some(x=>t.has(x))}
+function units(){
+    return [...document.querySelectorAll(".unit:checked")].map(x=>x.value);
+}
+
+/* =========================================================
+   GENERATE NUMERIC VALUES ACCORDING TO SYNTAX TYPES
+========================================================= */
+function numericValues(types){
+    const out=new Set();
+    const max=Math.max(1,Number($("max").value)||10);
+    const us=units();
+
+    const length=has(types,"<length>","<length-percentage>","<dimension>");
+    const percent=has(types,"<percentage>","<length-percentage>");
+    const number=has(types,"<number>","<number-token>");
+    const integer=has(types,"<integer>");
+    const angle=has(types,"<angle>");
+    const time=has(types,"<time>");
+    const resolution=has(types,"<resolution>");
+    const flex=has(types,"<flex>");
+
+    if(length){
+        for(const u of us.filter(x=>x!=="%")){
+            for(let n=0;n<=max;n++)out.add(n+u);
+            for(let n=1;n<=max;n++)out.add("-"+n+u);
+        }
+    }
+    if(percent){
+        for(let n=0;n<=max;n++)out.add(n+"%");
+        for(let n=1;n<=max;n++)out.add("-"+n+"%");
+    }
+    if(number){
+        for(let n=0;n<=max;n++)out.add(String(n));
+        for(let n=1;n<=max;n++)out.add("-"+n);
+        ["0.1","0.25","0.5","0.75","1.5","2.5","-0.1","-0.25","-0.5"].forEach(x=>out.add(x));
+    }
+    if(integer){
+        for(let n=0;n<=max;n++)out.add(String(n));
+        for(let n=1;n<=max;n++)out.add("-"+n);
+    }
+    if(angle){
+        for(const u of ["deg","rad","grad","turn"]){
+            for(let n=0;n<=max;n++)out.add(n+u);
+            for(let n=1;n<=max;n++)out.add("-"+n+u);
+        }
+    }
+    if(time){
+        for(const u of ["ms","s"]){
+            for(let n=0;n<=max;n++)out.add(n+u);
+        }
+    }
+    if(resolution){
+        for(const u of ["dpi","dpcm","dppx"]){
+            for(let n=0;n<=max;n++)out.add(n+u);
+        }
+    }
+    if(flex){
+        for(let n=1;n<=max;n++)out.add(n+"fr");
+    }
+    if(has(types,"<alpha-value>","<opacity-value>")){
+        for(let i=0;i<=10;i++)out.add(String(i/10));
+    }
+
+    return out;
+}
+
+/* =========================================================
+   FUNCTIONS
+   Generate functions relevant to the property's types.
+   Also harvest function names found anywhere in JSON.
+========================================================= */
+function functionValues(types){
+    const out=new Set();
+
+    const length=has(types,"<length>","<length-percentage>","<dimension>");
+    const percent=has(types,"<percentage>","<length-percentage>");
+    const number=has(types,"<number>","<integer>","<number-token>");
+    const angle=has(types,"<angle>");
+    const time=has(types,"<time>");
+    const color=has(types,"<color>","<color-base>");
+
+    if(length||percent||number||angle||time){
+        out.add("calc(1px + 1px)");
+        out.add("calc(100px - 20px)");
+        out.add("calc(50% + 10px)");
+    }
+    if(length||percent){
+        out.add("min(100px,50%)");
+        out.add("max(100px,50%)");
+        out.add("clamp(10px,50%,300px)");
+        out.add("fit-content(100px)");
+        out.add("fit-content(50%)");
+        out.add("calc-size(auto,size)");
+        out.add("calc-size(min-content,size)");
+        out.add("calc-size(max-content,size)");
+        out.add("calc-size(auto,size + 10px)");
+    }
+    if(number){
+        out.add("min(1,2)");
+        out.add("max(1,2)");
+        out.add("clamp(0,0.5,1)");
+    }
+    if(angle)out.add("calc(45deg + 10deg)");
+    if(time)out.add("calc(1s + 100ms)");
+    if(color){
+        out.add("rgb(0 0 0)");
+        out.add("rgb(255 0 0)");
+        out.add("rgba(0,0,0,.5)");
+        out.add("hsl(0 100% 50%)");
+        out.add("hwb(0 0% 0%)");
+        out.add("lab(50% 0 0)");
+        out.add("oklab(50% 0 0)");
+        out.add("lch(50% 0 0)");
+        out.add("oklch(50% 0 0)");
+        out.add("color(srgb 1 0 0)");
+    }
+
+    /* Find actual function expressions in JSON and try their names
+       with safe representative arguments. */
+    const names=new Set();
+    walk(data,obj=>{
+        for(const v of Object.values(obj)){
+            if(typeof v!=="string")continue;
+            const m=v.match(/[A-Za-z][A-Za-z0-9-]*\s*\(/g)||[];
+            for(const x of m)names.add(x.replace(/\s*\($/,"").toLowerCase());
+        }
+    });
+
+    const templates={
+        calc:"calc(1px + 1px)",
+        min:"min(100px,50%)",
+        max:"max(100px,50%)",
+        clamp:"clamp(10px,50%,300px)",
+        "fit-content":"fit-content(100px)",
+        "calc-size":"calc-size(auto,size)",
+        rgb:"rgb(255 0 0)",
+        rgba:"rgba(255,0,0,.5)",
+        hsl:"hsl(0 100% 50%)",
+        hsla:"hsla(0,100%,50%,.5)",
+        hwb:"hwb(0 0% 0%)",
+        lab:"lab(50% 0 0)",
+        lch:"lch(50% 0 0)",
+        oklab:"oklab(50% 0 0)",
+        oklch:"oklch(50% 0 0)",
+        color:"color(srgb 1 0 0)",
+        "linear-gradient":"linear-gradient(red,blue)",
+        "radial-gradient":"radial-gradient(red,blue)",
+        "conic-gradient":"conic-gradient(red,blue)",
+        "repeating-linear-gradient":"repeating-linear-gradient(red,blue)",
+        "repeating-radial-gradient":"repeating-radial-gradient(red,blue)"
+    };
+
+    for(const n of names){
+        if(templates[n] && (
+            (["calc","min","max","clamp","fit-content","calc-size"].includes(n)&&(length||percent||number||angle||time)) ||
+            (["rgb","rgba","hsl","hsla","hwb","lab","lch","oklab","oklch","color"].includes(n)&&color) ||
+            n.includes("gradient")
+        ))out.add(templates[n]);
+    }
+
+    return out;
+}
+
+/* =========================================================
+   KEYWORDS FROM SYNTAX
+========================================================= */
+function syntaxKeywords(syntax){
+    const out=new Set();
+    let s=syntax.replace(/<[^>]+>/g," ");
+    s=s.replace(/[A-Za-z-]+\([^)]*\)/g," ");
+    const words=s.match(/(?<![-\w])[A-Za-z][A-Za-z0-9-]*(?![-\w])/g)||[];
+    for(const w of words){
+        if(!["none"].includes(w))out.add(w);
+    }
+    return out;
+}
+
+/* =========================================================
+   ALL ORIGINAL STRINGS AS FALLBACK
+   Only strings actually found in the property's own object.
+========================================================= */
+function propertyOriginal(property){
+    const base=originalValues(defs[property]);
+    const syntax=getSyntax(property);
+
+    /* Syntax keywords are also original grammar values. */
+    for(const x of syntaxKeywords(syntax))base.add(x);
+
+    /* CSS globals are legitimate original/global values. */
+    ["initial","inherit","unset","revert","revert-layer"].forEach(x=>base.add(x));
+
+    return base;
+}
+
+/* =========================================================
+   CANDIDATES FOR ONE PROPERTY
+========================================================= */
+function candidates(property){
+    const syntax=getSyntax(property);
+    const types=typesOf(syntax);
+
+    const original=propertyOriginal(property);
+    const generatedNumeric=numericValues(types);
+    const generatedFunctions=functionValues(types);
+
+    const candidates=new Map();
+
+    for(const v of original)candidates.set(v,"original");
+    for(const v of generatedNumeric)if(!candidates.has(v))candidates.set(v,"numeric");
+    for(const v of generatedFunctions)if(!candidates.has(v))candidates.set(v,"function");
+
+    return {candidates,original,types};
+}
+
+/* =========================================================
+   TEST
+========================================================= */
+function testSupport(property,value){
+    tests++;
+    try{return CSS.supports(property,value)}catch(e){return false}
+}
+
+/* =========================================================
+   DISPLAY RESULT
+========================================================= */
+function show(property,value,kind){
+    const div=document.createElement("div");
+    div.className="row "+(kind==="original"?"original":"added");
+    div.innerHTML=
+        `<b>${esc(property)}</b> : ${esc(value)}
+         <div class="small">${kind==="original"?"ORIGINAL — موجودة في JSON":"ADDED — أثبتها CSS.supports = TRUE"}</div>`;
+    resultsBox.appendChild(div);
+}
+
+/* =========================================================
+   START
+========================================================= */
+async function run(){
+    if(running)return;
+    if(!data){setStatus("حمّل all-css.json أولًا.");return}
+    if(!props.length){setStatus("لم أجد properties.");return}
+
+    running=true; stopRequested=false;
+    start.disabled=true; stop.disabled=false; exp.disabled=true;
+    tests=0;trueCount=0;addedCount=0;functionCount=0;numericCount=0;output=[];
+    resultsBox.innerHTML="";
+
+    const totalEstimate=props.reduce((n,p)=>n+candidates(p).candidates.size,0);
+    let processed=0;
+
+    for(let i=0;i<props.length;i++){
+        if(stopRequested)break;
+
+        const property=props[i];
+        const syntax=getSyntax(property);
+        current.textContent=`${i+1} / ${props.length} → ${property}`;
+        syntaxBox.textContent=syntax||"No syntax";
+
+        const pack=candidates(property);
+
+        let propertyOutput={
+            property,
+            syntax,
+            original:[],
+            added:[]
+        };
+
+        for(const [value,kind] of pack.candidates){
+            if(stopRequested)break;
+
+            const ok=testSupport(property,value);
+            processed++;
+
+            if(ok){
+                trueCount++;
+
+                if(kind==="original"){
+                    propertyOutput.original.push(value);
+                    show(property,value,"original");
+                }else{
+                    propertyOutput.added.push({
+                        value,
+                        type:kind
+                    });
+                    addedCount++;
+                    if(kind==="function")functionCount++;
+                    if(kind==="numeric")numericCount++;
+                    show(property,value,kind);
+                }
+            }
+
+            if(processed%50===0){
+                const pct=totalEstimate?Math.min(100,processed/totalEstimate*100):0;
+                bar.style.width=pct+"%";
+                $("tc").textContent=tests;
+                $("ok").textContent=trueCount;
+                $("ac").textContent=addedCount;
+                $("fn").textContent=functionCount;
+                $("num").textContent=numericCount;
+                $("vc").textContent=pack.original.size;
+
+                setStatus(
+                    `RUNNING\n\nProperty: ${i+1} / ${props.length}\n`+
+                    `${property}\n\nTests: ${tests}\nTRUE: ${trueCount}\nAdded: ${addedCount}`
+                );
+                await tick();
+            }
+        }
+
+        output.push(propertyOutput);
+        await tick();
+    }
+
+    bar.style.width="100%";
+    $("tc").textContent=tests;
+    $("ok").textContent=trueCount;
+    $("ac").textContent=addedCount;
+    $("fn").textContent=functionCount;
+    $("num").textContent=numericCount;
+
+    setStatus(
+        (stopRequested?"STOPPED":"FINISHED ✓")+
+        `\n\nProperties: ${props.length}\nTests: ${tests}\nTRUE: ${trueCount}\nAdded: ${addedCount}`
+    );
+
+    running=false;
+    start.disabled=false;
+    stop.disabled=true;
+    exp.disabled=output.length===0;
+}
+
+/* =========================================================
+   LOAD
+========================================================= */
+load.addEventListener("click",async()=>{
+    if(!file.files.length){
+        setStatus("اختر all-css.json.");
+        return;
+    }
+
+    try{
+        setStatus("Loading all-css.json...");
+        data=JSON.parse(await file.files[0].text());
+
+        if(!loadProperties()){
+            setStatus("JSON loaded but properties were not found.");
+            return;
+        }
+
+        /* Count original values immediately. */
+        let totalOriginal=0;
+        for(const p of props)totalOriginal+=propertyOriginal(p).size;
+        $("vc").textContent=totalOriginal;
+
+        start.disabled=false;
+
+        setStatus(
+            `READY ✓\n\nProperties: ${props.length}\nOriginal values: ${totalOriginal}\n\nاضغط START.`
+        );
+    }catch(e){
+        console.error(e);
+        setStatus("JSON ERROR:\n"+e.message);
+    }
+});
+
+start.addEventListener("click",run);
+
+stop.addEventListener("click",()=>{
+    stopRequested=true;
+    setStatus("Stopping...");
+});
+
+/* =========================================================
+   EXPORT
+========================================================= */
+exp.addEventListener("click",()=>{
+    const blob=new Blob([JSON.stringify({
+        generatedAt:new Date().toISOString(),
+        propertyCount:props.length,
+        tests,
+        trueCount,
+        addedCount,
+        properties:output
+    },null,2)],{type:"application/json"});
+
+    const a=document.createElement("a");
+    a.href=URL.createObjectURL(blob);
+    a.download="css-values-complete.json";
+    a.click();
+    setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+});
+
+stop.disabled=true;
+</script>
+</body>
+</html>

@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best Phones 2026</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+:root{
+    --bg:#071226;
+    --card:#111827;
+    --card-light:#172033;
+    --text:#fff;
+    --muted:#94a3b8;
+    --blue:#4f8cff;
+    --border:rgba(255,255,255,.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:Arial,sans-serif;
+}
+
+section{
+    padding:80px 5%;
+}
+
+h2{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:25px;
+    font-size:32px;
+}
+
+h2 i{
+    color:var(--blue);
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:24px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    border-color:var(--blue);
+}
+
+.card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:22px;
+}
+
+.card-content p{
+    color:var(--muted);
+    line-height:1.7;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 14px;
+    border-radius:999px;
+    background:var(--blue);
+    color:#fff;
+    font-size:.85rem;
+    margin-bottom:12px;
+}
+
+/* HERO */
+#page-nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    gap:10px;
+
+    overflow-x:auto;
+
+    padding:15px;
+
+    background:#111827;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+#page-nav a{
+    white-space:nowrap;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:#172033;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+#page-nav a:hover{
+    background:#4f8cff;
+}
+#hero{
+    min-height:70vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+
+    background:
+    radial-gradient(circle at top,#2563eb 0%,transparent 35%),
+    linear-gradient(180deg,#071226,#091425);
+}
+
+#hero h1{
+    font-size:70px;
+    margin-bottom:20px;
+}
+
+#hero span{
+    color:var(--blue);
+}
+
+#hero p{
+    max-width:800px;
+    color:var(--muted);
+    line-height:1.8;
+}
+
+/* TOP PICKS */
+
+.rank-card{
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+    padding:20px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    margin-bottom:15px;
+}
+
+.rank-number{
+    width:60px;
+    height:60px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--blue);
+
+    font-weight:bold;
+    font-size:20px;
+}
+
+/* CATEGORY */
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.category-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:30px;
+    text-align:center;
+}
+
+.category-card i{
+    font-size:45px;
+    color:var(--blue);
+    margin-bottom:15px;
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.stat{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:24px;
+    text-align:center;
+    padding:35px;
+}
+
+.stat h3{
+    font-size:42px;
+    color:var(--blue);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    section{
+        padding:60px 20px;
+    }
+
+    #hero h1{
+        font-size:42px;
+    }
+
+    h2{
+        font-size:24px;
+    }
+
+    .rank-card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
+#hero{
+    min-height:75vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:60px 20px;
+
+    background:
+    radial-gradient(circle at top,#2563eb 0%,transparent 35%),
+    linear-gradient(180deg,#071226,#0b1324);
+
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-badge{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:#4f8cff;
+
+    margin-bottom:25px;
+}
+
+#hero h1{
+    font-size:72px;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+#hero h1 span{
+    color:#4f8cff;
+}
+
+#hero p{
+    max-width:750px;
+    color:#94a3b8;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:35px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.btn-primary,
+.btn-secondary{
+    padding:14px 24px;
+    border-radius:14px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.btn-primary{
+    background:#4f8cff;
+    color:#fff;
+}
+
+.btn-secondary{
+    background:#111827;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.hero-stats{
+    display:flex;
+    gap:20px;
+    margin-top:50px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero-stat{
+    min-width:180px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:20px;
+}
+
+.hero-stat h3{
+    font-size:32px;
+    color:#4f8cff;
+    margin-bottom:8px;
+}
+
+.hero-stat span{
+    color:#94a3b8;
+}
+
+@media(max-width:768px){
+
+    #hero h1{
+        font-size:42px;
+    }
+
+    .hero-stat{
+        width:100%;
+    }
+
+}
+.editors-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:20px;
+}
+
+.editor-hero{
+    position:relative;
+    overflow:hidden;
+
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:28px;
+
+    padding:30px;
+}
+
+.editor-badge{
+    position:absolute;
+    top:20px;
+    right:20px;
+
+    background:#4f8cff;
+    color:#fff;
+
+    padding:10px 16px;
+    border-radius:999px;
+
+    font-size:14px;
+}
+
+.editor-hero img{
+    width:100%;
+    max-height:350px;
+    object-fit:contain;
+}
+
+.editor-content h3{
+    font-size:32px;
+    margin:20px 0 10px;
+}
+
+.editor-content p{
+    color:#94a3b8;
+    line-height:1.8;
+}
+
+.editor-score{
+    margin-top:20px;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.editor-score strong{
+    font-size:40px;
+    color:#4f8cff;
+}
+
+.editor-list{
+    display:grid;
+    gap:20px;
+}
+
+.editor-card{
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:25px;
+
+    transition:.3s;
+}
+
+.editor-card:hover{
+    transform:translateY(-4px);
+    border-color:#4f8cff;
+}
+
+.editor-card i{
+    font-size:30px;
+    color:#4f8cff;
+    margin-bottom:15px;
+}
+
+.editor-card p{
+    color:#94a3b8;
+    margin-top:8px;
+}
+
+@media(max-width:768px){
+
+    .editors-grid{
+        grid-template-columns:1fr;
+    }
+
+    .editor-content h3{
+        font-size:24px;
+    }
+
+}
+.section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:25px;
+}
+.section-header h2{
+  width:100%;
+    margin:0;
+    white-space:nowrap;
+    margin-top: 30px;
+
+}
+.view-all{
+    color:#4f8cff;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:600;
+    align-self:flex-end;
+    margin-bottom: 40px;
+    white-space:nowrap;
+    
+}
+.ranking-list{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.ranking-card{
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+    padding:20px;
+
+    transition:.3s;
+}
+
+.ranking-card:hover{
+    transform:translateY(-4px);
+    border-color:#4f8cff;
+}
+
+.rank-number{
+    width:60px;
+    height:60px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    font-weight:700;
+    flex-shrink:0;
+}
+
+.gold{
+    background:#f59e0b;
+}
+
+.silver{
+    background:#94a3b8;
+}
+
+.bronze{
+    background:#b45309;
+}
+
+.ranking-card img{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+}
+
+.rank-content{
+    flex:1;
+}
+
+.rank-content h3{
+    margin-bottom:8px;
+}
+
+.rank-content p{
+    color:#94a3b8;
+    margin-bottom:10px;
+}
+
+.stars{
+    color:#fbbf24;
+    letter-spacing:2px;
+}
+
+.rank-score{
+    font-size:38px;
+    font-weight:700;
+    color:#4f8cff;
+}
+
+@media(max-width:768px){
+
+    .ranking-card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .rank-score{
+        font-size:32px;
+    }
+
+}
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+}
+
+.category-card{
+    position:relative;
+
+    text-align:center;
+
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:25px;
+
+    transition:.3s;
+}
+
+.category-card:hover{
+    transform:translateY(-6px);
+    border-color:#4f8cff;
+}
+
+.category-icon{
+    width:60px;
+    height:60px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#172033;
+
+    color:#4f8cff;
+
+    font-size:24px;
+}
+
+.category-card h3{
+    margin:15px 0;
+}
+
+.category-card img{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+    margin:15px auto;
+}
+
+.category-card h4{
+    margin-bottom:12px;
+}
+
+.score{
+    display:inline-block;
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    background:#4f8cff;
+
+    color:#fff;
+
+    font-weight:700;
+}
+.trending-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:20px;
+    padding:10px 0px;
+}
+
+.trending-card{
+    display:flex;
+    align-items:center;
+    
+
+    position:relative;
+
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+    padding:20px;
+
+    transition:.3s;
+}
+
+.trending-card:hover{
+    transform:translateY(-5px);
+    border-color:#4f8cff;
+}
+
+.trend-rank{
+    position:absolute;
+    top:15px;
+    right:15px;
+
+    width:40px;
+    height:40px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#4f8cff;
+    color:#fff;
+
+    font-weight:700;
+}
+
+.trending-card img{
+    width:110px;
+    height:110px;
+    object-fit:contain;
+}
+
+.trend-content{
+    flex:1;
+}
+
+.trend-content h3{
+    margin-bottom:8px;
+}
+
+.trend-content p{
+    color:#94a3b8;
+    margin-bottom:12px;
+    line-height:1.6;
+}
+
+.trend-stats{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.trend-stats span{
+    color:#94a3b8;
+    font-size:14px;
+}
+
+.trend-stats i{
+    color:#4f8cff;
+}
+
+@media(max-width:768px){
+
+    .trending-card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div id="page-nav"></div>
+<section id="hero">
+
+    <div class="hero-badge">
+        <i class="fa-solid fa-crown"></i>
+        Editor's Choice 2026
+    </div>
+
+    <h1>
+        Best <span>Phones</span>
+        of 2026
+    </h1>
+
+    <p>
+        Discover the highest-rated smartphones based on performance,
+        camera quality, battery life, display experience and overall value.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="#top-ranking" class="btn-primary">
+            <i class="fa-solid fa-trophy"></i>
+            Top Rankings
+        </a>
+
+        <a href="#categories" class="btn-secondary">
+            <i class="fa-solid fa-layer-group"></i>
+            Categories
+        </a>
+
+    </div>
+
+    <div class="hero-stats">
+
+        <div class="hero-stat">
+            <h3>500+</h3>
+            <span>Phones Tested</span>
+        </div>
+
+        <div class="hero-stat">
+            <h3>50+</h3>
+            <span>Brands</span>
+        </div>
+
+        <div class="hero-stat">
+            <h3>10M+</h3>
+            <span>Monthly Views</span>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EDITOR PICKS -->
+
+<section id="editors-choice">
+
+    <div class="section-header">
+
+
+        <h2>
+            <i class="fa-solid fa-star"></i>
+            Editor's Choice
+        </h2>
+        <a href="best-phones.html" class="view-all">
+            View All
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="editors-grid">
+
+        <div class="editor-hero">
+
+            <div class="editor-badge">
+                <i class="fa-solid fa-crown"></i>
+                Best Phone 2026
+            </div>
+
+            <img src="apple/iphone17promax_1.png" alt="iPhone 17 Pro Max">
+
+            <div class="editor-content">
+
+                <h3>iPhone 17 Pro Max</h3>
+
+                <p>
+                    The ultimate smartphone with exceptional performance,
+                    battery life, display quality and camera experience.
+                </p>
+
+                <div class="editor-score">
+                    <span>Score</span>
+                    <strong>9.8</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="editor-list">
+
+            <div class="editor-card">
+
+                <i class="fa-solid fa-camera"></i>
+
+                <h3>Galaxy S26 Ultra</h3>
+
+                <p>Best Camera Phone</p>
+
+            </div>
+
+            <div class="editor-card">
+
+                <i class="fa-solid fa-battery-full"></i>
+
+                <h3>Honor Magic 8 Pro</h3>
+
+                <p>Best Battery Life</p>
+
+            </div>
+
+            <div class="editor-card">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                <h3>RedMagic 11 Pro</h3>
+
+                <p>Best Performance</p>
+
+            </div>
+
+            <div class="editor-card">
+
+                <i class="fa-solid fa-money-bill-wave"></i>
+
+                <h3>Xiaomi 16 Ultra</h3>
+
+                <p>Best Value</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TOP RANKING -->
+
+<section id="top-ranking">
+
+    <div class="section-header">
+
+        <h2>
+            <i class="fa-solid fa-trophy"></i>
+            Top Rated Phones
+        </h2>
+                <a href="top-rated.html" class="view-all">
+            View All
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="ranking-list">
+
+        <div class="ranking-card">
+
+            <div class="rank-number gold">#1</div>
+
+            <img src="apple/iphone17promax_1.png" alt="">
+
+            <div class="rank-content">
+
+                <h3>iPhone 17 Pro Max</h3>
+
+                <p>Best overall smartphone of the year.</p>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+            </div>
+
+            <div class="rank-score">
+                9.8
+            </div>
+
+        </div>
+
+        <div class="ranking-card">
+
+            <div class="rank-number silver">#2</div>
+
+            <img src="samsung/galaxys26ultra.png" alt="">
+
+            <div class="rank-content">
+
+                <h3>Galaxy S26 Ultra</h3>
+
+                <p>Best Android flagship experience.</p>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+            </div>
+
+            <div class="rank-score">
+                9.7
+            </div>
+
+        </div>
+
+        <div class="ranking-card">
+
+            <div class="rank-number bronze">#3</div>
+
+            <img src="google/pixel10pro.png" alt="">
+
+            <div class="rank-content">
+
+                <h3>Pixel 10 Pro</h3>
+
+                <p>Outstanding camera and software.</p>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+            </div>
+
+            <div class="rank-score">
+                9.6
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BEST CATEGORIES -->
+
+<section id="categories">
+
+    <div class="section-header">
+
+        <h2>
+            <i class="fa-solid fa-layer-group"></i>
+            Best By Category
+        </h2>
+         <a href="best-by-category.html" class="view-all">
+            View All
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="category-grid">
+
+        <div class="category-card">
+
+            <div class="category-icon">
+                <i class="fa-solid fa-camera"></i>
+            </div>
+
+            <h3>Best Camera</h3>
+
+            <img src="samsung/galaxys26ultra.png" alt="">
+
+            <h4>Galaxy S26 Ultra</h4>
+
+            <span class="score">9.9</span>
+
+        </div>
+
+        <div class="category-card">
+
+            <div class="category-icon">
+                <i class="fa-solid fa-battery-full"></i>
+            </div>
+
+            <h3>Best Battery</h3>
+
+            <img src="honor/magic8pro.png" alt="">
+
+            <h4>Honor Magic 8 Pro</h4>
+
+            <span class="score">9.8</span>
+
+        </div>
+
+        <div class="category-card">
+
+            <div class="category-icon">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+
+            <h3>Best Performance</h3>
+
+            <img src="apple/iphone17promax_1.png" alt="">
+
+            <h4>iPhone 17 Pro Max</h4>
+
+            <span class="score">9.9</span>
+
+        </div>
+
+        <div class="category-card">
+
+            <div class="category-icon">
+                <i class="fa-solid fa-money-bill-wave"></i>
+            </div>
+
+            <h3>Best Value</h3>
+
+            <img src="xiaomi/xiaomi16ultra.png" alt="">
+
+            <h4>Xiaomi 16 Ultra</h4>
+
+            <span class="score">9.7</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TRENDING -->
+
+<section id="trending">
+
+    <div class="section-header">
+
+        <h2>
+            <i class="fa-solid fa-fire"></i>
+            Trending Phones
+        </h2>
+        <a href="trending.html" class="view-all">
+            View All
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="trending-grid">
+
+        <div class="trending-card">
+
+            <div class="trend-rank">#1</div>
+
+            <img src="nothing/phone4.png" alt="Nothing Phone 4">
+
+            <div class="trend-content">
+
+                <h3>Nothing Phone (4)</h3>
+
+                <p>
+                    One of the most discussed smartphones this month.
+                </p>
+
+                <div class="trend-stats">
+                    <span>
+                        <i class="fa-solid fa-eye"></i>
+                        1.2M Views
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-fire"></i>
+                        Trending
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="trending-card">
+
+            <div class="trend-rank">#2</div>
+
+            <img src="google/pixel10pro.png" alt="Pixel 10 Pro">
+
+            <div class="trend-content">
+
+                <h3>Pixel 10 Pro</h3>
+
+                <p>
+                    Rapidly rising in popularity worldwide.
+                </p>
+
+                <div class="trend-stats">
+                    <span>
+                        <i class="fa-solid fa-eye"></i>
+                        950K Views
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                        +35%
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STATS -->
+
+<section id="stats">
+
+    <h2>
+        <i class="fa-solid fa-chart-line"></i>
+        Statistics
+    </h2>
+
+    <div class="stats">
+
+        <div class="stat">
+            <h3>500+</h3>
+            <p>Reviewed Phones</p>
+        </div>
+
+        <div class="stat">
+            <h3>10M+</h3>
+            <p>Monthly Views</p>
+        </div>
+
+        <div class="stat">
+            <h3>95%</h3>
+            <p>User Satisfaction</p>
+        </div>
+
+    </div>
+
+</section>
+<script>
+  const pageNav = document.getElementById("page-nav");
+
+document.querySelectorAll("section h2").forEach((title, index) => {
+
+    const section = title.closest("section");
+
+    if (!section.id) {
+        section.id = "section-" + index;
+    }
+
+    const item = document.createElement("a");
+
+    item.href = "#" + section.id;
+
+    item.textContent = title.textContent.trim();
+
+    pageNav.appendChild(item);
+
+});
+</script>
+</body>
+</html>

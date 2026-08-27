@@ -1,0 +1,5201 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>iPhone 17 Pro Max Review</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
+rel="stylesheet">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<head>
+<style>
+  :root{
+    --bg:#050b1f;
+    --card:#0d1b2a;
+    --card2:#111827;
+    --border:#1e293b;
+    --primary:#3b82f6;
+    --text:#fff;
+    --muted:#94a3b8;
+    --success:#22c55e;
+    --danger:#ef4444;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:Arial,sans-serif;
+    margin:0;
+}
+
+main{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
+.sections-nav{
+    position:sticky;
+    top:0;
+    z-index:999;
+
+    display:flex;
+    gap:10px;
+
+    overflow-x:auto;
+    scrollbar-width:none;
+
+    padding:12px 15px;
+
+    background:#08111f;
+    border-bottom:1px solid #1e293b;
+}
+
+.sections-nav::-webkit-scrollbar{
+    display:none;
+}
+
+.sections-nav a{
+    flex-shrink:0;
+
+    padding:10px 16px;
+
+    background:#111827;
+    border:1px solid #1e293b;
+    border-radius:999px;
+
+    color:#fff;
+    text-decoration:none;
+
+    font-size:13px;
+    font-weight:600;
+
+    transition:.3s ease;
+}
+
+.sections-nav a:hover{
+    background:#2563eb;
+    border-color:#2563eb;
+    transform:translateY(-2px);
+}
+
+.sections-nav a:active{
+    transform:scale(.96);
+}
+
+/* الرابط النشط */
+.sections-nav a.active{
+    background:#2563eb;
+    border-color:#2563eb;
+    color:#fff;
+    box-shadow:0 0 15px rgba(37,99,235,.4);
+}
+
+/* موبايل */
+@media(max-width:768px){
+
+    .sections-nav{
+        padding:10px;
+        gap:8px;
+    }
+
+    .sections-nav a{
+        font-size:12px;
+        padding:8px 14px;
+    }
+
+}
+section{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:20px;
+    margin-bottom:20px;
+    
+}
+
+section h2{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+    font-size:22px;
+}
+
+section h2::before{
+    content:"";
+    width:5px;
+    height:24px;
+    border-radius:20px;
+    background:var(--primary);
+}
+
+/* Hero */
+
+#hero-review{
+    text-align:center;
+}
+
+#hero-review img{
+    width:220px;
+    max-width:100%;
+    display:block;
+    margin:auto;
+}
+
+.review-score{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:var(--primary);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    margin:20px auto;
+}
+
+.review-score strong{
+    font-size:40px;
+}
+
+.review-score span{
+    font-size:12px;
+}
+
+/* Rating Overview */
+
+.rating-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+}
+
+.rating-card{
+    background:var(--card2);
+    padding:15px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.rating-card h3{
+    margin-bottom:10px;
+}
+
+.rating-card span{
+    color:var(--primary);
+    font-size:24px;
+    font-weight:700;
+}
+
+/* Pros & Cons */
+
+#pros-cons{
+    display:grid;
+    grid-template-columns:1fr 3fr;
+    gap:20px;
+}
+#pros-cons h2{
+  display: block;
+}
+.pros,
+.cons{
+  display: flex;
+    background:var(--card2);
+    padding:20px;
+    border-radius:16px;
+}
+
+.pros h3{
+    color:var(--success);
+}
+
+.cons h3{
+    color:var(--danger);
+}
+
+.pros ul,
+.cons ul{
+    list-style:none;
+    padding:0;
+}
+
+.pros li,
+.cons li{
+    background:#0f172a;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+/* Benchmark */
+
+.benchmark-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:var(--card2);
+    padding:14px;
+    border-radius:12px;
+    margin-bottom:10px;
+}
+
+/* Alternatives */
+
+.alternative-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.alt-card{
+    background:var(--card2);
+    padding:20px;
+    border-radius:16px;
+    text-align:center;
+}
+
+/* User Reviews */
+
+.review-card{
+    background:var(--card2);
+    padding:18px;
+    border-radius:16px;
+    margin-bottom:15px;
+}
+
+.review-user{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+}
+
+.review-stars{
+    color:#facc15;
+}
+
+/* FAQ */
+
+.faq-item{
+    background:var(--card2);
+    border-radius:14px;
+    padding:15px;
+    margin-bottom:12px;
+}
+
+.faq-item h3{
+    margin-bottom:8px;
+}
+
+.faq-item p{
+    color:var(--muted);
+}
+
+/* Final Verdict */
+
+#final-verdict{
+    border:1px solid rgba(59,130,246,.3);
+}
+
+#final-verdict p{
+    line-height:1.8;
+    color:#cbd5e1;
+}
+
+/* Generic Text */
+
+section p{
+    line-height:1.8;
+    color:#cbd5e1;
+}
+
+section ul{
+    margin:0;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    #pros-cons{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:16px;
+    }
+
+    section h2{
+        font-size:18px;
+    }
+
+    .review-score{
+        width:90px;
+        height:90px;
+    }
+
+    .review-score strong{
+        font-size:30px;
+    }
+}
+#hero-review{
+    display:grid;
+    grid-template-columns:1fr 400px;
+    gap:30px;
+    align-items:center;
+
+    background:#0d1b2a;
+    border:1px solid #1e293b;
+    border-radius:24px;
+
+    padding:30px;
+}
+
+.review-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    background:#f59e0b;
+    color:#fff;
+
+    padding:10px 18px;
+    border-radius:999px;
+
+    font-size:13px;
+    font-weight:600;
+}
+
+#hero-review h1{
+    margin:20px 0 12px;
+    font-size:42px;
+    line-height:1.2;
+}
+
+#hero-review p{
+    color:#94a3b8;
+    line-height:1.8;
+    max-width:700px;
+}
+
+.review-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-top:25px;
+}
+
+.meta-item{
+    background:#111827;
+    padding:12px 16px;
+    border-radius:14px;
+}
+
+.meta-item strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.meta-item span{
+    color:#94a3b8;
+    font-size:14px;
+}
+
+.review-score{
+    width:140px;
+    height:140px;
+
+    margin-top:25px;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.review-score span{
+    font-size:48px;
+    font-weight:700;
+}
+
+.review-score small{
+    font-size:13px;
+}
+
+.hero-image{
+    text-align:center;
+}
+
+.hero-image img{
+    width:100%;
+    max-width:350px;
+    object-fit:contain;
+}
+
+@media(max-width:900px){
+
+    #hero-review{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .review-meta{
+        justify-content:center;
+    }
+
+    .review-score{
+        margin:25px auto 0;
+    }
+
+    .hero-image img{
+        max-width:250px;
+    }
+
+}
+.summary-card{
+    background:#111827;
+    border:1px solid #1e293b;
+    border-radius:18px;
+    padding:20px;
+}
+
+.summary-card p{
+    color:#cbd5e1;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.summary-highlights{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:12px;
+}
+
+.highlight{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    background:#0f172a;
+    padding:14px;
+
+    border-radius:14px;
+}
+
+.highlight i{
+    color:#3b82f6;
+    font-size:18px;
+}
+
+.highlight span{
+    font-weight:600;
+}
+.ratings-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.rating-card{
+    background:#111827;
+    border:1px solid #1e293b;
+    border-radius:18px;
+    padding:20px;
+    text-align:center;
+}
+
+.rating-card h3{
+    margin-bottom:12px;
+    font-size:18px;
+}
+
+.score{
+    font-size:38px;
+    font-weight:700;
+    color:#3b82f6;
+    margin-bottom:10px;
+}
+
+.rating-card span{
+    color:#94a3b8;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.overall-rating{
+    display:flex;
+    align-items:center;
+    gap:25px;
+
+    background:#111827;
+    border:1px solid #1e293b;
+    border-radius:18px;
+    padding:20px;
+}
+
+.overall-circle{
+    min-width:120px;
+    width:120px;
+    height:120px;
+    border-radius:50%;
+
+    background:#2563eb;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+.overall-circle span{
+    font-size:42px;
+    font-weight:700;
+    color:#fff;
+}
+
+.overall-circle small{
+    color:#fff;
+    font-size:13px;
+}
+
+.overall-rating p{
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+@media(max-width:768px){
+
+    .overall-rating{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
+.pros-cons-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.pros-card,
+.cons-card{
+    background:#111827;
+    border:1px solid #1e293b;
+    border-radius:18px;
+    padding:20px;
+}
+
+.pros-card h3,
+.cons-card h3{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+    font-size:20px;
+}
+
+.pros-card h3{
+    color:#22c55e;
+}
+
+.cons-card h3{
+    color:#ef4444;
+}
+
+.pros-card ul,
+.cons-card ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.pros-card li,
+.cons-card li{
+    padding:12px 14px;
+    margin-bottom:10px;
+    border-radius:12px;
+    background:#0f172a;
+    line-height:1.6;
+}
+
+.pros-card li:last-child,
+.cons-card li:last-child{
+    margin-bottom:0;
+}
+
+@media(max-width:768px){
+
+    .pros-cons-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+.design-content{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:25px;
+    align-items:center;
+}
+
+.design-image{
+    background:#111827;
+    border-radius:18px;
+    padding:20px;
+}
+
+.design-image img{
+    width:100%;
+    display:block;
+    object-fit:contain;
+}
+
+.design-text p{
+    color:#cbd5e1;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.design-highlights{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-top:20px;
+}
+
+.highlight-item{
+    background:#111827;
+    border:1px solid #1e293b;
+    border-radius:14px;
+    padding:14px;
+}
+
+.highlight-item strong{
+    display:block;
+    margin-bottom:5px;
+    color:#fff;
+}
+
+.highlight-item span{
+    color:#94a3b8;
+    font-size:14px;
+}
+
+.section-score{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:#2563eb;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    margin-top:20px;
+}
+
+.section-score span{
+    font-size:38px;
+    font-weight:700;
+    color:#fff;
+}
+
+.section-score small{
+    color:#fff;
+    font-size:12px;
+}
+
+@media(max-width:768px){
+
+    .design-content{
+        grid-template-columns:1fr;
+    }
+
+    .design-highlights{
+        grid-template-columns:1fr;
+    }
+
+    .section-score{
+        margin:auto;
+        margin-top:20px;
+    }
+
+}
+.review-section {
+    padding: 60px 16px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    color: var(--text-main);
+    margin-bottom: 8px;
+}
+
+.section-title p {
+    color: var(--text-muted);
+}
+
+
+.display-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+
+.display-image img {
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+}
+
+
+.display-info {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+}
+
+
+.spec-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 16px;
+}
+
+
+.spec-card span {
+    display: block;
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+
+.spec-card strong {
+    color: var(--text-main);
+    font-size: 18px;
+}
+
+
+.review-text {
+    margin-top: 30px;
+    background: rgba(13,23,41,.3);
+    padding: 25px;
+    border-radius: 16px;
+    line-height: 1.8;
+    color: #cbd5e1;
+}
+
+
+@media(max-width:768px){
+
+    .display-content{
+        grid-template-columns:1fr;
+    }
+
+    .display-info{
+        grid-template-columns:1fr;
+    }
+
+}
+.performance-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+
+.performance-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:25px;
+    border-radius:18px;
+}
+
+
+.performance-card span {
+    color:var(--text-muted);
+    font-size:14px;
+}
+
+
+.performance-card h3 {
+    margin:12px 0;
+    color:var(--text-main);
+}
+
+
+.performance-card p {
+    color:#94a3b8;
+    line-height:1.6;
+}
+
+
+.benchmark-box {
+    margin-top:30px;
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:25px;
+    border-radius:18px;
+}
+
+
+.benchmark-box h3 {
+    margin-bottom:20px;
+}
+
+
+.benchmark {
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid var(--border);
+}
+
+
+.benchmark span {
+    color:var(--text-muted);
+}
+
+
+.benchmark strong {
+    color:#5b94ff;
+}
+
+
+@media(max-width:900px){
+
+    .performance-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .performance-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+.gaming-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+
+.gaming-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:25px;
+    border-radius:18px;
+}
+
+
+.gaming-card span {
+    color:var(--text-muted);
+    font-size:14px;
+}
+
+
+.gaming-card h3 {
+    color:var(--text-main);
+    margin:12px 0;
+}
+
+
+.gaming-card p {
+    color:#94a3b8;
+    line-height:1.6;
+}
+
+
+.game-test {
+    margin-top:30px;
+    padding:25px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+}
+
+
+.game-test h3 {
+    margin-bottom:20px;
+}
+
+
+.game-row {
+    display:flex;
+    justify-content:space-between;
+    padding:16px 0;
+    border-bottom:1px solid var(--border);
+}
+
+
+.game-row span {
+    color:var(--text-muted);
+}
+
+
+.game-row strong {
+    color:#5b94ff;
+}
+
+
+@media(max-width:900px){
+
+    .gaming-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .gaming-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+.camera-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+
+.camera-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:25px;
+    border-radius:18px;
+}
+
+
+.camera-card span {
+    color:var(--text-muted);
+    font-size:14px;
+}
+
+
+.camera-card h3 {
+    color:var(--text-main);
+    margin:12px 0;
+}
+
+
+.camera-card p {
+    color:#94a3b8;
+    line-height:1.6;
+}
+
+
+.camera-scores {
+    margin-top:30px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:25px;
+}
+
+
+.score-row {
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid var(--border);
+}
+
+
+.score-row span {
+    color:var(--text-muted);
+}
+
+
+.score-row strong {
+    color:#5b94ff;
+}
+
+
+.camera-gallery {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:30px;
+}
+
+
+.camera-gallery img {
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:16px;
+}
+
+
+@media(max-width:900px){
+
+    .camera-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .camera-grid,
+    .camera-gallery{
+        grid-template-columns:1fr;
+    }
+
+}
+.video-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+
+.video-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:25px;
+    border-radius:18px;
+}
+
+
+.video-card span {
+    color:var(--text-muted);
+    font-size:14px;
+}
+
+
+.video-card h3 {
+    color:var(--text-main);
+    margin:12px 0;
+}
+
+
+.video-card p {
+    color:#94a3b8;
+    line-height:1.6;
+}
+
+
+.video-tests {
+    margin-top:30px;
+    padding:25px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+}
+
+
+.video-row {
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid var(--border);
+}
+
+
+.video-row span {
+    color:var(--text-muted);
+}
+
+
+.video-row strong {
+    color:#5b94ff;
+}
+
+
+.video-features {
+    margin-top:30px;
+    padding:25px;
+    background:var(--card);
+    border-radius:18px;
+    border:1px solid var(--border);
+}
+
+
+.feature-tags {
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:15px;
+}
+
+
+.feature-tags span {
+    background:#111c33;
+    color:#cbd5e1;
+    padding:8px 15px;
+    border-radius:30px;
+    font-size:14px;
+}
+
+
+@media(max-width:900px){
+
+    .video-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .video-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+.selfie-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+
+.selfie-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:25px;
+    border-radius:18px;
+}
+
+
+.selfie-card span {
+    color:var(--text-muted);
+    font-size:14px;
+}
+
+
+.selfie-card h3 {
+    color:var(--text-main);
+    margin:12px 0;
+}
+
+
+.selfie-card p {
+    color:#94a3b8;
+    line-height:1.6;
+}
+
+
+.selfie-score {
+    margin-top:30px;
+    padding:25px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+}
+
+
+.selfie-row {
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid var(--border);
+}
+
+
+.selfie-row span {
+    color:var(--text-muted);
+}
+
+
+.selfie-row strong {
+    color:#5b94ff;
+}
+
+
+.selfie-features {
+    margin-top:30px;
+    padding:25px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+}
+
+
+@media(max-width:900px){
+
+    .selfie-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .selfie-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+.battery-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+
+.battery-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:25px;
+    border-radius:18px;
+}
+
+
+.battery-card span {
+    color:var(--text-muted);
+    font-size:14px;
+}
+
+
+.battery-card h3 {
+    color:var(--text-main);
+    margin:12px 0;
+}
+
+
+.battery-card p {
+    color:#94a3b8;
+    line-height:1.6;
+}
+
+
+.battery-tests,
+.charging-info {
+    margin-top:30px;
+    padding:25px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+}
+
+
+.battery-row,
+.charge-item {
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid var(--border);
+}
+
+
+.battery-row span,
+.charge-item span {
+    color:var(--text-muted);
+}
+
+
+.battery-row strong,
+.charge-item strong {
+    color:#5b94ff;
+}
+
+
+@media(max-width:900px){
+
+    .battery-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .battery-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+.charging-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+
+.charging-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:25px;
+    border-radius:18px;
+}
+
+
+.charging-card span {
+    color:var(--text-muted);
+    font-size:14px;
+}
+
+
+.charging-card h3 {
+    color:var(--text-main);
+    margin:12px 0;
+}
+
+
+.charging-card p {
+    color:#94a3b8;
+    line-height:1.6;
+}
+
+
+.charging-test,
+.charging-features {
+    margin-top:30px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:25px;
+}
+
+
+.charge-row {
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid var(--border);
+}
+
+
+.charge-row span {
+    color:var(--text-muted);
+}
+
+
+.charge-row strong {
+    color:#5b94ff;
+}
+
+
+@media(max-width:900px){
+
+    .charging-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .charging-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+.software-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+
+.software-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:25px;
+    border-radius:18px;
+}
+
+
+.software-card span {
+    color:var(--text-muted);
+    font-size:14px;
+}
+
+
+.software-card h3 {
+    color:var(--text-main);
+    margin:12px 0;
+}
+
+
+.software-card p {
+    color:#94a3b8;
+    line-height:1.6;
+}
+
+
+.ui-experience,
+.software-features {
+    margin-top:30px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:25px;
+}
+
+
+.ui-row {
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid var(--border);
+}
+
+
+.ui-row span {
+    color:var(--text-muted);
+}
+
+
+.ui-row strong {
+    color:#5b94ff;
+}
+
+
+@media(max-width:900px){
+
+    .software-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .software-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+.ai-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+
+.ai-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:25px;
+    border-radius:18px;
+}
+
+
+.ai-card span {
+    color:var(--text-muted);
+    font-size:14px;
+}
+
+
+.ai-card h3 {
+    color:var(--text-main);
+    margin:12px 0;
+}
+
+
+.ai-card p {
+    color:#94a3b8;
+    line-height:1.6;
+}
+
+
+.ai-score,
+.ai-features-list {
+    margin-top:30px;
+    padding:25px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+}
+
+
+.ai-row {
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid var(--border);
+}
+
+
+.ai-row span {
+    color:var(--text-muted);
+}
+
+
+.ai-row strong {
+    color:#5b94ff;
+}
+
+
+@media(max-width:900px){
+
+    .ai-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .ai-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+.audio-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+
+.audio-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:25px;
+    border-radius:18px;
+}
+
+
+.audio-card span {
+    color:var(--text-muted);
+    font-size:14px;
+}
+
+
+.audio-card h3 {
+    color:var(--text-main);
+    margin:12px 0;
+}
+
+
+.audio-card p {
+    color:#94a3b8;
+    line-height:1.6;
+}
+
+
+.audio-test,
+.audio-features {
+    margin-top:30px;
+    padding:25px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+}
+
+
+.audio-row {
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid var(--border);
+}
+
+
+.audio-row span {
+    color:var(--text-muted);
+}
+
+
+.audio-row strong {
+    color:#5b94ff;
+}
+
+
+@media(max-width:900px){
+
+    .audio-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .audio-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+.connectivity-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+
+.connectivity-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:25px;
+    border-radius:18px;
+}
+
+
+.connectivity-card span {
+    color:var(--text-muted);
+    font-size:14px;
+}
+
+
+.connectivity-card h3 {
+    color:var(--text-main);
+    margin:12px 0;
+}
+
+
+.connectivity-card p {
+    color:#94a3b8;
+    line-height:1.6;
+}
+
+
+.connectivity-list,
+.connectivity-features {
+    margin-top:30px;
+    padding:25px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+}
+
+
+.connectivity-row {
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid var(--border);
+}
+
+
+.connectivity-row span {
+    color:var(--text-muted);
+}
+
+
+.connectivity-row strong {
+    color:#5b94ff;
+}
+
+
+@media(max-width:900px){
+
+    .connectivity-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .connectivity-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+.benchmark-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+
+.benchmark-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:25px;
+    border-radius:18px;
+}
+
+
+.benchmark-card span {
+    color:var(--text-muted);
+    font-size:14px;
+}
+
+
+.benchmark-card h3 {
+    color:var(--text-main);
+    margin:12px 0;
+}
+
+
+.benchmark-card p {
+    color:#94a3b8;
+    line-height:1.6;
+}
+
+
+.benchmark-results,
+.performance-chart {
+    margin-top:30px;
+    padding:25px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+}
+
+
+.benchmark-row {
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid var(--border);
+}
+
+
+.benchmark-row span {
+    color:var(--text-muted);
+}
+
+
+.benchmark-row strong {
+    color:#5b94ff;
+}
+
+
+.chart-item {
+    margin-top:20px;
+}
+
+
+.chart-item span {
+    color:var(--text-muted);
+}
+
+
+.bar {
+    height:10px;
+    background:#1e293b;
+    border-radius:20px;
+    margin-top:8px;
+    overflow:hidden;
+}
+
+
+.bar div {
+    height:100%;
+    background:#5b94ff;
+    border-radius:20px;
+}
+
+
+@media(max-width:900px){
+
+    .benchmark-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .benchmark-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+.usage-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+
+.usage-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:25px;
+    border-radius:18px;
+}
+
+
+.usage-card span {
+    color:var(--text-muted);
+    font-size:14px;
+}
+
+
+.usage-card h3 {
+    color:var(--text-main);
+    margin:12px 0;
+}
+
+
+.usage-card p {
+    color:#94a3b8;
+    line-height:1.6;
+}
+
+
+.usage-tests,
+.usage-scenarios {
+    margin-top:30px;
+    padding:25px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+}
+
+
+.usage-row {
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid var(--border);
+}
+
+
+.usage-row span {
+    color:var(--text-muted);
+}
+
+
+.usage-row strong {
+    color:#5b94ff;
+}
+
+
+@media(max-width:900px){
+
+    .usage-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .usage-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+.heat-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+
+.heat-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:25px;
+    border-radius:18px;
+}
+
+
+.heat-card span {
+    color:var(--text-muted);
+    font-size:14px;
+}
+
+
+.heat-card h3 {
+    color:var(--text-main);
+    margin:12px 0;
+}
+
+
+.heat-card p {
+    color:#94a3b8;
+    line-height:1.6;
+}
+
+
+.thermal-test,
+.thermal-features {
+    margin-top:30px;
+    padding:25px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+}
+
+
+.thermal-row {
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid var(--border);
+}
+
+
+.thermal-row span {
+    color:var(--text-muted);
+}
+
+
+.thermal-row strong {
+    color:#5b94ff;
+}
+
+
+@media(max-width:900px){
+
+    .heat-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .heat-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+.durability-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+
+.durability-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:25px;
+    border-radius:18px;
+}
+
+
+.durability-card span {
+    color:var(--text-muted);
+    font-size:14px;
+}
+
+
+.durability-card h3 {
+    color:var(--text-main);
+    margin:12px 0;
+}
+
+
+.durability-card p {
+    color:#94a3b8;
+    line-height:1.6;
+}
+
+
+.protection-test,
+.durability-features {
+    margin-top:30px;
+    padding:25px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+}
+
+
+.durability-row {
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid var(--border);
+}
+
+
+.durability-row span {
+    color:var(--text-muted);
+}
+
+
+.durability-row strong {
+    color:#5b94ff;
+}
+
+
+@media(max-width:900px){
+
+    .durability-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .durability-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+.storage-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+
+.storage-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:25px;
+    border-radius:18px;
+}
+
+
+.storage-card span {
+    color:var(--text-muted);
+    font-size:14px;
+}
+
+
+.storage-card h3 {
+    color:var(--text-main);
+    margin:12px 0;
+}
+
+
+.storage-card p {
+    color:#94s3b8;
+    line-height:1.6;
+}
+
+
+.memory-details,
+.storage-features {
+    margin-top:30px;
+    padding:25px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+}
+
+
+.memory-row {
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid var(--border);
+}
+
+
+.memory-row span {
+    color:var(--text-muted);
+}
+
+
+.memory-row strong {
+    color:#5b94ff;
+}
+
+
+@media(max-width:900px){
+
+    .storage-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .storage-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+.price-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+
+.price-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:25px;
+    border-radius:18px;
+}
+
+
+.price-card span {
+    color:var(--text-muted);
+    font-size:14px;
+}
+
+
+.price-card h3 {
+    color:var(--text-main);
+    margin:12px 0;
+}
+
+
+.price-card p {
+    color:#94a3b8;
+    line-height:1.6;
+}
+
+
+.value-analysis,
+.competitors,
+.verdict-box {
+    margin-top:30px;
+    padding:25px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+}
+
+
+.value-row {
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid var(--border);
+}
+
+
+.value-row span {
+    color:var(--text-muted);
+}
+
+
+.value-row strong {
+    color:#5b94ff;
+}
+
+
+.verdict-box p {
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+
+@media(max-width:900px){
+
+    .price-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .price-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+.competition-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:30px;
+    overflow-x: auto;
+}
+
+
+.competitor-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:25px;
+    border-radius:18px;
+    width: 100%;
+}
+
+.competition-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.competition-grid::-webkit-scrollbar-track {
+    background: #0d1729;
+    border-radius: 10px;
+}
+
+.competition-grid::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 10px;
+}
+.competitor-card.highlight {
+    border-color:#3b82f6;
+}
+
+
+.competitor-card h3 {
+    color:var(--text-main);
+}
+
+
+.competitor-card span {
+    color:var(--text-muted);
+    font-size:14px;
+}
+
+
+.compare-row,
+.table-row {
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid var(--border);
+}
+
+
+.compare-row p,
+.table-row span {
+    color:var(--text-muted);
+}
+
+
+.compare-row strong,
+.table-row strong {
+    color:#5b94ff;
+}
+
+
+.competition-table,
+.winner-box {
+    margin-top:30px;
+    padding:25px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+}
+
+
+@media(max-width:900px){
+
+    .competition-grid{
+        grid-template-columns:1fr;
+    }
+.buyer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+}
+#alternatives {
+    padding: 50px 15px;
+}
+
+.section-header {
+    margin-bottom: 25px;
+}
+
+.section-header h2 {
+    color: var(--text-main);
+    font-size: 28px;
+}
+
+.section-header p {
+    color: var(--text-muted);
+}
+
+
+.phone-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
+
+.phone-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.phone-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+
+.phone-card img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: contain;
+    background: #081020;
+}
+
+
+.phone-info {
+    padding: 18px;
+}
+
+.phone-info span {
+    color: var(--primary);
+    font-size: 13px;
+}
+
+.phone-info h3 {
+    color: var(--text-main);
+    margin: 8px 0;
+}
+
+.phone-info p {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.phone-info a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #5b94ff;
+}
+#rating-breakdown {
+    padding: 50px 15px;
+}
+
+
+.rating-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 25px;
+}
+
+
+.rating-item {
+    margin-bottom: 22px;
+}
+
+
+.rating-title {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-main);
+    margin-bottom: 10px;
+}
+
+
+.rating-title strong {
+    color: #5b94ff;
+}
+
+
+.rating-bar {
+    height: 10px;
+    background: #111c32;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+.rating-bar span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #5b94ff);
+    border-radius: inherit;
+}
+#who-should-buy {
+    padding: 50px 15px;
+}
+
+
+.buyer-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
+
+.buyer-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 25px;
+}
+
+
+.buyer-icon {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+
+.recommended .buyer-icon {
+    color: #22c55e;
+}
+
+
+.avoid .buyer-icon {
+    color: #ef4444;
+}
+
+
+.buyer-card h3 {
+    color: var(--text-main);
+    margin-bottom: 15px;
+}
+
+
+.buyer-card ul {
+    padding-left: 20px;
+    color: var(--text-muted);
+}
+
+
+.buyer-card li {
+    margin-bottom: 10px;
+}
+@media(min-width:900px){
+
+    .competition-grid{
+        grid-template-columns:1fr;
+    }
+.buyer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    text-align: center;
+    margin: 0 auto;
+}
+}
+#who-should-skip {
+    padding: 50px 15px;
+}
+
+
+.skip-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 18px;
+}
+@media(min-width:700px){
+  .skip-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+}
+
+.skip-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px;
+    transition: .3s;
+}
+
+
+.skip-card:hover {
+    transform: translateY(-5px);
+    border-color: #ef4444;
+}
+
+
+.skip-card i {
+    font-size: 28px;
+    color: #ef4444;
+    margin-bottom: 15px;
+}
+
+
+.skip-card h3 {
+    color: var(--text-main);
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+.skip-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+#final-verdict {
+    padding: 60px 15px;
+}
+
+
+.verdict-box {
+    display: grid;
+    gap: 30px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+
+.verdict-score {
+    min-width: 180px;
+    text-align: center;
+    background: #081020;
+    border-radius: 16px;
+    padding: 25px;
+}
+
+
+.verdict-score strong {
+    display: block;
+    font-size: 55px;
+    color: #5b94ff;
+}
+
+
+.verdict-score span {
+    color: var(--text-main);
+    font-size: 20px;
+}
+
+
+.stars {
+    color: #facc15;
+    margin-top: 10px;
+}
+
+
+.verdict-content h3 {
+    color: var(--text-main);
+    margin-bottom: 15px;
+}
+
+
+.verdict-content p {
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+
+.verdict-points div {
+    margin-top: 12px;
+    color: var(--text-main);
+}
+
+
+.verdict-points i {
+    margin-right: 10px;
+    color: #22c55e;
+}
+
+
+.verdict-points .fa-xmark {
+    color: #ef4444;
+}
+#user-reviews {
+    padding: 60px 15px;
+}
+
+
+.reviews-summary {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 25px;
+}
+
+
+.average-rating {
+    text-align: center;
+}
+
+
+.average-rating strong {
+    font-size: 55px;
+    color: #5b94ff;
+}
+
+
+.stars {
+    color: #facc15;
+    font-size: 22px;
+}
+
+
+.average-rating span {
+    color: var(--text-muted);
+}
+
+
+.rating-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+    color: var(--text-main);
+}
+
+
+.bar {
+    flex: 1;
+    height: 8px;
+    background: #111c32;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+.bar span {
+    display: block;
+    height: 100%;
+    background: #3b82f6;
+}
+
+
+.review-list {
+    display: grid;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+
+.review-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+}
+
+
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+
+.user-info span {
+    color: #facc15;
+}
+
+
+.review-card p {
+    color: var(--text-muted);
+}
+#faq {
+    padding: 60px 15px;
+}
+
+
+.faq-list {
+    display: grid;
+    gap: 15px;
+}
+
+
+.faq-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    padding: 20px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+
+.faq-question i {
+    color: #5b94ff;
+}
+
+
+.faq-answer {
+    display: none;
+    padding: 0 20px 20px;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+</style>
+<body>
+<nav class="sections-nav">
+
+<a href="#hero-review">Hero</a>
+<a href="#review-summary">Summary</a>
+<a href="#rating-overview">Ratings</a>
+<a href="#pros-cons">Pros & Cons</a>
+<a href="#design-build">Design</a>
+<a href="#display-review">Display</a>
+<a href="#performance-review">Performance</a>
+<a href="#gaming-review">Gaming</a>
+<a href="#camera-review">Camera</a>
+<a href="#video-recording">Video</a>
+<a href="#selfie-camera">Selfie</a>
+<a href="#battery-life">Battery</a>
+<a href="#charging-review">Charging</a>
+<a href="#software-ui">Software</a>
+<a href="#ai-features">AI</a>
+<a href="#audio-speakers">Audio</a>
+<a href="#connectivity">Connectivity</a>
+<a href="#benchmarks">Benchmarks</a>
+<a href="#real-world-usage">Usage</a>
+<a href="#heat-management">Heat</a>
+<a href="#durability">Durability</a>
+<a href="#storage-ram">Storage</a>
+<a href="#price-value">Value</a>
+<a href="#competition">Competition</a>
+<a href="#alternatives">Alternatives</a>
+<a href="#rating-breakdown">Scores</a>
+<a href="#who-should-buy">Buy It</a>
+<a href="#who-should-skip">Skip It</a>
+<a href="#final-verdict">Verdict</a>
+<a href="#user-reviews">Reviews</a>
+<a href="#faq">FAQ</a>
+
+</nav>
+<section id="hero-review">
+
+    <div class="hero-content">
+
+   <span class="review-badge">
+            <i class="fa-solid fa-star"></i>
+            {{BADGE}}
+        </span>
+
+        <h1>{{TITLE}}</h1>
+
+
+       <p>
+            {{DESCRIPTION}}
+        </p>
+
+<div class="review-meta">
+
+    <div class="meta-item">
+        <strong>Published</strong>
+        <span>{{PUBLISHED_DATE}}</span>
+    </div>
+
+    <div class="meta-item">
+        <strong>Updated</strong>
+        <span>{{UPDATED_DATE}}</span>
+    </div>
+
+    <div class="meta-item">
+        <strong>Author</strong>
+        <span>{{AUTHOR}}</span>
+    </div>
+
+</div> 
+
+     <div class="review-score">
+        <small>Overall Score</small>
+    <span>{{OVERALL_SCORE_1}}</span>
+</div>
+
+</div>
+
+<div class="hero-image">
+    <img src="{{HERO_IMAGE}}" alt="{{PHONE_NAME}}">
+</div>
+
+</section>
+
+</section>
+
+<section id="review-summary">
+
+    <h2>
+        <i class="fa-solid fa-file-lines"></i>
+        Review Summary
+    </h2>
+
+    <div class="summary-card">
+
+        <p>
+            {{SUMMARY_TEXT}}
+        </p>
+
+        <div class="summary-highlights">
+
+            <div class="highlight">
+                <i class="fa-solid fa-camera"></i>
+                <span>{{HIGHLIGHT_1}}</span>
+            </div>
+
+            <div class="highlight">
+                <i class="fa-solid fa-microchip"></i>
+                <span>{{HIGHLIGHT_2}}</span>
+            </div>
+
+            <div class="highlight">
+                <i class="fa-solid fa-battery-full"></i>
+                <span>{{HIGHLIGHT_3}}</span>
+            </div>
+
+            <div class="highlight">
+                <i class="fa-solid fa-mobile-screen"></i>
+                <span>{{HIGHLIGHT_4}}</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="rating-overview">
+
+    <h2>
+        <i class="fa-solid fa-star"></i>
+        Rating Overview
+    </h2>
+
+    <div class="ratings-grid">
+
+        <div class="rating-card">
+            <h3>Design</h3>
+            <div class="score">{{DESIGN_SCORE}}</div>
+            <span>{{DESIGN_TEXT}}</span>
+        </div>
+
+        <div class="rating-card">
+            <h3>Display</h3>
+            <div class="score">{{DISPLAY_SCORE}}</div>
+            <span>{{DISPLAY_TEXT}}</span>
+        </div>
+
+        <div class="rating-card">
+            <h3>Performance</h3>
+            <div class="score">{{PERFORMANCE_SCORE}}</div>
+            <span>{{PERFORMANCE_TEXT}}</span>
+        </div>
+
+        <div class="rating-card">
+            <h3>Camera</h3>
+            <div class="score">{{CAMERA_SCORE}}</div>
+            <span>{{CAMERA_TEXT}}</span>
+        </div>
+
+        <div class="rating-card">
+            <h3>Battery</h3>
+            <div class="score">{{BATTERY_SCORE}}</div>
+            <span>{{BATTERY_TEXT}}</span>
+        </div>
+
+        <div class="rating-card">
+            <h3>Software</h3>
+            <div class="score">{{SOFTWARE_SCORE}}</div>
+            <span>{{SOFTWARE_TEXT}}</span>
+        </div>
+
+    </div>
+
+    <div class="overall-rating">
+
+        <div class="overall-circle">
+            <span>{{OVERALL_SCORE}}</span>
+            <small>Overall</small>
+        </div>
+
+        <p>
+            {{OVERALL_RATING_TEXT}}
+        </p>
+
+    </div>
+
+</section>
+
+<section id="pros-cons">
+
+    <h2>
+        <i class="fa-solid fa-scale-balanced"></i>
+        Pros & Cons
+    </h2>
+
+    <div class="pros-cons-grid">
+
+        <div class="pros-card">
+
+            <h3>
+                <i class="fa-solid fa-circle-check"></i>
+                Pros
+            </h3>
+
+           <ul>
+    <li>{{PRO_1}}</li>
+    <li>{{PRO_2}}</li>
+    <li>{{PRO_3}}</li>
+    <li>{{PRO_4}}</li>
+    <li>{{PRO_5}}</li>
+    <li>{{PRO_6}}</li>
+    <li>{{PRO_7}}</li>
+    <li>{{PRO_8}}</li>
+</ul>
+
+        </div>
+
+        <div class="cons-card">
+
+            <h3>
+                <i class="fa-solid fa-circle-xmark"></i>
+                Cons
+            </h3>
+
+           <ul>
+    <li>{{CON_1}}</li>
+    <li>{{CON_2}}</li>
+    <li>{{CON_3}}</li>
+    <li>{{CON_4}}</li>
+    <li>{{CON_5}}</li>
+    <li>{{CON_6}}</li>
+</ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="design-build">
+
+    <h2>
+        <i class="fa-solid fa-compass-drafting"></i>
+        Design & Build
+    </h2>
+
+    <div class="design-content">
+
+        <div class="design-image">
+            <img src="{{DESIGN_IMAGE}}" alt="{{PHONE_NAME}} Design">
+        </div>
+
+        <div class="design-text">
+
+            <p>{{DESIGN_TEXT_1}}</p>
+
+            <p>{{DESIGN_TEXT_2}}</p>
+
+            <div class="design-highlights">
+
+                <div class="highlight-item">
+                    <strong>Material</strong>
+                    <span>{{MATERIAL}}</span>
+                </div>
+                <div class="meta-item">
+               <strong>Dimensions</strong>
+                <span>{{DIMENSION}}</span>
+                </div>
+                <div class="highlight-item">
+                    <strong>Weight</strong>
+                    <span>{{WEIGHT}}</span>
+                </div>
+
+                <div class="highlight-item">
+                    <strong>Protection</strong>
+                    <span>{{PROTECTION}}</span>
+                </div>
+
+                <div class="highlight-item">
+                    <strong>Build Quality</strong>
+                    <span>{{BUILD_QUALITY}}</span>
+                </div>
+
+            </div>
+
+            <div class="section-score">
+                <span>{{DESIGN_SCORE}}</span>
+                <small>Design Score</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="display-review" class="review-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Display</h2>
+            <p>{{DISPLAY_SUBTITLE}}</p>
+        </div>
+
+        <div class="display-content">
+
+            <div class="display-image">
+                <img src="{{DISPLAY_IMAGE}}" alt="{{PHONE_NAME}} Display">
+            </div>
+
+            <div class="display-info">
+
+                <div class="spec-card">
+                    <span>Panel</span>
+                    <strong>{{DISPLAY_PANEL}}</strong>
+                </div>
+
+                <div class="spec-card">
+                    <span>Size</span>
+                    <strong>{{DISPLAY_SIZE}}</strong>
+                </div>
+
+                <div class="spec-card">
+                    <span>Resolution</span>
+                    <strong>{{DISPLAY_RESOLUTION}}</strong>
+                </div>
+
+                <div class="spec-card">
+                    <span>Refresh Rate</span>
+                    <strong>{{DISPLAY_REFRESH_RATE}}</strong>
+                </div>
+
+                <div class="spec-card">
+                    <span>Brightness</span>
+                    <strong>{{DISPLAY_BRIGHTNESS}}</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="review-text">
+            <p>{{DISPLAY_REVIEW}}</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="performance-review" class="review-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Performance</h2>
+            <p>{{PERFORMANCE_SUBTITLE}}</p>
+        </div>
+
+        <div class="performance-grid">
+
+            <div class="performance-card">
+                <span>Processor</span>
+                <h3>{{PROCESSOR}}</h3>
+                <p>{{PROCESSOR_DESC}}</p>
+            </div>
+            <div class="performance-card">
+         <span>CPU</span>
+          <h3>{{CPU}}</h3>
+          <p>{{CPU_DESCRIPTION}}</p>
+       </div>
+
+          <div class="performance-card">
+            <span>GPU</span>
+             <h3>{{GPU}}</h3>
+            <p>{{GPU_DESCRIPTION}}</p>
+           </div>
+            <div class="performance-card">
+                <span>RAM</span>
+                <h3>{{RAM}}</h3>
+                <p>{{RAM_DESC}}</p>
+            </div>
+
+            <div class="performance-card">
+                <span>Storage</span>
+                <h3>{{STORAGE}}</h3>
+                <p>{{STORAGE_DESC}}</p>
+            </div>
+            <div class="performance-card">
+               <span>Card Slot</span>
+                <h3>{{SLOT-STATUS}}</h3>
+                <p>{{SLOT-DESCRIPTION}}</p>
+            </div>
+            <div class="performance-card">
+                <span>Gaming</span>
+                <h3>{{GAMING_SCORE}}</h3>
+                <p>{{GAMING_DESC}}</p>
+            </div>
+
+        </div>
+
+        <div class="benchmark-box">
+
+            <h3>Benchmark Results</h3>
+
+            <div class="benchmark">
+                <span>AnTuTu 10</span>
+                <strong>{{ANTUTU_SCORE}}</strong>
+            </div>
+
+            <div class="benchmark">
+                <span>Geekbench 6</span>
+                <strong>{{GEEKBENCH_SCORE}}</strong>
+            </div>
+
+            <div class="benchmark">
+                <span>3DMark Wild Life</span>
+                <strong>{{THREEDMARK_SCORE}}</strong>
+            </div>
+
+        </div>
+
+        <div class="review-text">
+            <p>{{PERFORMANCE_REVIEW}}</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="gaming-review" class="review-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Gaming</h2>
+            <p>{{GAMING_SUBTITLE}}</p>
+        </div>
+
+        <div class="gaming-grid">
+
+            <div class="gaming-card">
+                <span>GPU Performance</span>
+                <h3>{{GPU_PERFORMANCE}}</h3>
+                <p>{{GPU_DESCRIPTION}}</p>
+            </div>
+
+            <div class="gaming-card">
+                <span>Frame Rate</span>
+                <h3>{{FRAME_RATE}}</h3>
+                <p>{{FRAME_RATE_DESCRIPTION}}</p>
+            </div>
+
+            <div class="gaming-card">
+                <span>Thermals</span>
+                <h3>{{THERMALS}}</h3>
+                <p>{{THERMALS_DESCRIPTION}}</p>
+            </div>
+
+            <div class="gaming-card">
+                <span>Gaming Mode</span>
+                <h3>{{GAMING_MODE}}</h3>
+                <p>{{GAMING_MODE_DESCRIPTION}}</p>
+            </div>
+
+        </div>
+
+        <div class="game-test">
+
+            <h3>Gaming Test Results</h3>
+
+            <div class="game-row">
+                <span>{{GAME_1}}</span>
+                <strong>{{GAME_1_RESULT}}</strong>
+            </div>
+
+            <div class="game-row">
+                <span>{{GAME_2}}</span>
+                <strong>{{GAME_2_RESULT}}</strong>
+            </div>
+
+            <div class="game-row">
+                <span>{{GAME_3}}</span>
+                <strong>{{GAME_3_RESULT}}</strong>
+            </div>
+
+        </div>
+
+        <div class="review-text">
+            <p>{{GAMING_REVIEW}}</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="camera-review" class="review-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Camera</h2>
+            <p>{{CAMERA_SUBTITLE}}</p>
+        </div>
+
+        <div class="camera-grid">
+
+            <div class="camera-card">
+                <span>Main Camera</span>
+                <h3>{{MAIN_CAMERA}}</h3>
+                <p>{{MAIN_CAMERA_DESC}}</p>
+            </div>
+
+            <div class="camera-card">
+                <span>Ultra Wide</span>
+                <h3>{{ULTRAWIDE_CAMERA}}</h3>
+                <p>{{ULTRAWIDE_CAMERA_DESC}}</p>
+            </div>
+
+            <div class="camera-card">
+                <span>Telephoto</span>
+                <h3>{{TELEPHOTO_CAMERA}}</h3>
+                <p>{{TELEPHOTO_CAMERA_DESC}}</p>
+            </div>
+
+            <div class="camera-card">
+                <span>Selfie Camera</span>
+                <h3>{{SELFIE_CAMERA}}</h3>
+                <p>{{SELFIE_CAMERA_DESC}}</p>
+            </div>
+
+        </div>
+
+        <div class="camera-scores">
+
+            <h3>Camera Quality</h3>
+
+            <div class="score-row">
+                <span>Daylight Photos</span>
+                <strong>{{DAYLIGHT_SCORE}}</strong>
+            </div>
+
+            <div class="score-row">
+                <span>Night Photography</span>
+                <strong>{{NIGHT_SCORE}}</strong>
+            </div>
+
+            <div class="score-row">
+                <span>Portrait Mode</span>
+                <strong>{{PORTRAIT_SCORE}}</strong>
+            </div>
+
+            <div class="score-row">
+                <span>Video Recording</span>
+                <strong>{{VIDEO_SCORE}}</strong>
+            </div>
+
+        </div>
+
+        <div class="camera-gallery">
+
+            <img src="{{CAMERA_SAMPLE_1}}" alt="Camera sample">
+            <img src="{{CAMERA_SAMPLE_2}}" alt="Night photo sample">
+            <img src="{{CAMERA_SAMPLE_3}}" alt="Portrait sample">
+
+        </div>
+
+        <div class="review-text">
+            <p>{{CAMERA_REVIEW}}</p>
+        </div>
+
+    </div>
+</section>
+<section id="video-recording" class="review-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Video Recording</h2>
+            <p>{{VIDEO_SUBTITLE}}</p>
+        </div>
+
+        <div class="video-grid">
+
+            <div class="video-card">
+                <span>Maximum Resolution</span>
+                <h3>{{MAX_VIDEO_RESOLUTION}}</h3>
+                <p>{{MAX_VIDEO_RESOLUTION_DESC}}</p>
+            </div>
+
+            <div class="video-card">
+                <span>4K Recording</span>
+                <h3>{{FOURK_RECORDING}}</h3>
+                <p>{{FOURK_RECORDING_DESC}}</p>
+            </div>
+
+            <div class="video-card">
+                <span>Stabilization</span>
+                <h3>{{VIDEO_STABILIZATION}}</h3>
+                <p>{{VIDEO_STABILIZATION_DESC}}</p>
+            </div>
+
+            <div class="video-card">
+                <span>Audio Quality</span>
+                <h3>{{AUDIO_QUALITY}}</h3>
+                <p>{{AUDIO_QUALITY_DESC}}</p>
+            </div>
+
+        </div>
+
+        <div class="video-tests">
+
+            <h3>Video Performance</h3>
+
+            <div class="video-row">
+                <span>Daylight Video</span>
+                <strong>{{DAYLIGHT_VIDEO_SCORE}}</strong>
+            </div>
+
+            <div class="video-row">
+                <span>Low Light Video</span>
+                <strong>{{LOWLIGHT_VIDEO_SCORE}}</strong>
+            </div>
+
+            <div class="video-row">
+                <span>Stabilization</span>
+                <strong>{{STABILIZATION_SCORE}}</strong>
+            </div>
+
+            <div class="video-row">
+                <span>Autofocus</span>
+                <strong>{{AUTOFOCUS_SCORE}}</strong>
+            </div>
+
+        </div>
+
+        <div class="video-features">
+
+            <h3>Video Features</h3>
+
+            <div class="feature-tags">
+                {{VIDEO_FEATURES}}
+            </div>
+
+        </div>
+
+        <div class="review-text">
+            <p>{{VIDEO_REVIEW}}</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="selfie-camera" class="review-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Selfie Camera</h2>
+            <p>{{SELFIE_SUBTITLE}}</p>
+        </div>
+
+        <div class="selfie-grid">
+
+            <div class="selfie-card">
+                <span>Front Camera</span>
+                <h3>{{FRONT_CAMERA}}</h3>
+                <p>{{FRONT_CAMERA_DESC}}</p>
+            </div>
+
+            <div class="selfie-card">
+                <span>Video Recording</span>
+                <h3>{{SELFIE_VIDEO}}</h3>
+                <p>{{SELFIE_VIDEO_DESC}}</p>
+            </div>
+
+            <div class="selfie-card">
+                <span>Portrait Mode</span>
+                <h3>{{SELFIE_PORTRAIT}}</h3>
+                <p>{{SELFIE_PORTRAIT_DESC}}</p>
+            </div>
+
+            <div class="selfie-card">
+                <span>Low Light</span>
+                <h3>{{SELFIE_LOWLIGHT}}</h3>
+                <p>{{SELFIE_LOWLIGHT_DESC}}</p>
+            </div>
+
+        </div>
+
+        <div class="selfie-score">
+
+            <h3>Selfie Quality Rating</h3>
+
+            <div class="selfie-row">
+                <span>Daylight Photos</span>
+                <strong>{{SELFIE_DAYLIGHT_SCORE}}</strong>
+            </div>
+
+            <div class="selfie-row">
+                <span>Night Selfies</span>
+                <strong>{{SELFIE_NIGHT_SCORE}}</strong>
+            </div>
+
+            <div class="selfie-row">
+                <span>Portraits</span>
+                <strong>{{SELFIE_PORTRAIT_SCORE}}</strong>
+            </div>
+
+            <div class="selfie-row">
+                <span>Video Calls</span>
+                <strong>{{SELFIE_VIDEOCALL_SCORE}}</strong>
+            </div>
+
+        </div>
+
+        <div class="selfie-features">
+
+            <h3>Selfie Features</h3>
+
+            <div class="feature-tags">
+                {{SELFIE_FEATURES}}
+            </div>
+
+        </div>
+
+        <div class="review-text">
+            <p>{{SELFIE_REVIEW}}</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="battery-life" class="review-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Battery Life</h2>
+            <p>{{BATTERY_SUBTITLE}}</p>
+        </div>
+
+        <div class="battery-grid">
+
+            <div class="battery-card">
+                <span>Battery Capacity</span>
+                <h3>{{BATTERY_CAPACITY}}</h3>
+                <p>{{BATTERY_CAPACITY_DESC}}</p>
+            </div>
+
+            <div class="battery-card">
+                <span>Charging Speed</span>
+                <h3>{{CHARGING_SPEED}}</h3>
+                <p>{{CHARGING_SPEED_DESC}}</p>
+            </div>
+
+            <div class="battery-card">
+                <span>Wireless Charging</span>
+                <h3>{{WIRELESS_CHARGING}}</h3>
+                <p>{{WIRELESS_CHARGING_DESC}}</p>
+            </div>
+
+            <div class="battery-card">
+                <span>Battery Type</span>
+                <h3>{{BATTERY_TYPE}}</h3>
+                <p>{{BATTERY_TYPE_DESC}}</p>
+            </div>
+
+        </div>
+
+        <div class="battery-tests">
+
+            <h3>Battery Tests</h3>
+
+            <div class="battery-row">
+                <span>Web Browsing</span>
+                <strong>{{WEB_BROWSING}}</strong>
+            </div>
+
+            <div class="battery-row">
+                <span>Video Playback</span>
+                <strong>{{VIDEO_PLAYBACK}}</strong>
+            </div>
+
+            <div class="battery-row">
+                <span>Gaming</span>
+                <strong>{{BATTERY_GAMING}}</strong>
+            </div>
+
+            <div class="battery-row">
+                <span>Mixed Usage</span>
+                <strong>{{MIXED_USAGE}}</strong>
+            </div>
+
+        </div>
+
+        <div class="charging-info">
+
+            <h3>Charging Experience</h3>
+
+            <div class="charge-item">
+                <span>0 - 50%</span>
+                <strong>{{CHARGE_50}}</strong>
+            </div>
+
+            <div class="charge-item">
+                <span>0 - 100%</span>
+                <strong>{{CHARGE_100}}</strong>
+            </div>
+
+        </div>
+
+        <div class="review-text">
+            <p>{{BATTERY_REVIEW}}</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="charging-review" class="review-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Charging</h2>
+            <p>{{CHARGING_SUBTITLE}}</p>
+        </div>
+
+        <div class="charging-grid">
+
+            <div class="charging-card">
+                <span>Wired Charging</span>
+                <h3>{{WIRED_CHARGING}}</h3>
+                <p>{{WIRED_CHARGING_DESC}}</p>
+            </div>
+
+            <div class="charging-card">
+                <span>Wireless Charging</span>
+                <h3>{{WIRELESS_CHARGING_POWER}}</h3>
+                <p>{{WIRELESS_CHARGING_DESC}}</p>
+            </div>
+
+            <div class="charging-card">
+                <span>Reverse Charging</span>
+                <h3>{{REVERSE_CHARGING}}</h3>
+                <p>{{REVERSE_CHARGING_DESC}}</p>
+            </div>
+
+            <div class="charging-card">
+                <span>Charger Included</span>
+                <h3>{{CHARGER_INCLUDED}}</h3>
+                <p>{{CHARGER_INCLUDED_DESC}}</p>
+            </div>
+
+        </div>
+
+        <div class="charging-test">
+
+            <h3>Charging Test Results</h3>
+
+            <div class="charge-row">
+                <span>0 - 25%</span>
+                <strong>{{CHARGE_25}}</strong>
+            </div>
+
+            <div class="charge-row">
+                <span>0 - 50%</span>
+                <strong>{{CHARGE_50}}</strong>
+            </div>
+
+            <div class="charge-row">
+                <span>0 - 80%</span>
+                <strong>{{CHARGE_80}}</strong>
+            </div>
+
+            <div class="charge-row">
+                <span>0 - 100%</span>
+                <strong>{{CHARGE_100}}</strong>
+            </div>
+
+        </div>
+
+        <div class="charging-features">
+
+            <h3>Charging Features</h3>
+
+            <div class="feature-tags">
+                {{CHARGING_FEATURES}}
+            </div>
+
+        </div>
+
+        <div class="review-text">
+            <p>{{CHARGING_REVIEW}}</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="software-ui" class="review-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Software & UI</h2>
+            <p>{{SOFTWARE_SUBTITLE}}</p>
+        </div>
+
+        <div class="software-grid">
+
+            <div class="software-card">
+                <span>Operating System</span>
+                <h3>{{OPERATING_SYSTEM}}</h3>
+                <p>{{OPERATING_SYSTEM_DESC}}</p>
+            </div>
+
+            <div class="software-card">
+                <span>User Interface</span>
+                <h3>{{USER_INTERFACE}}</h3>
+                <p>{{USER_INTERFACE_DESC}}</p>
+            </div>
+
+            <div class="software-card">
+                <span>Updates</span>
+                <h3>{{SOFTWARE_UPDATES}}</h3>
+                <p>{{SOFTWARE_UPDATES_DESC}}</p>
+            </div>
+
+            <div class="software-card">
+                <span>AI Features</span>
+                <h3>{{AI_FEATURES}}</h3>
+                <p>{{AI_FEATURES_DESC}}</p>
+            </div>
+
+        </div>
+
+        <div class="ui-experience">
+
+            <h3>User Experience</h3>
+
+            <div class="ui-row">
+                <span>Interface Speed</span>
+                <strong>{{INTERFACE_SPEED}}</strong>
+            </div>
+
+            <div class="ui-row">
+                <span>Customization</span>
+                <strong>{{CUSTOMIZATION_SCORE}}</strong>
+            </div>
+
+            <div class="ui-row">
+                <span>Multitasking</span>
+                <strong>{{MULTITASKING_SCORE}}</strong>
+            </div>
+
+            <div class="ui-row">
+                <span>Ease of Use</span>
+                <strong>{{EASE_OF_USE}}</strong>
+            </div>
+
+        </div>
+
+        <div class="software-features">
+
+            <h3>Software Features</h3>
+
+            <div class="feature-tags">
+                {{SOFTWARE_FEATURES}}
+            </div>
+
+        </div>
+
+        <div class="review-text">
+            <p>{{SOFTWARE_REVIEW}}</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="ai-features" class="review-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>AI Features</h2>
+            <p>{{AI_SUBTITLE}}</p>
+        </div>
+
+        <div class="ai-grid">
+
+            <div class="ai-card">
+                <span>AI Assistant</span>
+                <h3>{{AI_ASSISTANT}}</h3>
+                <p>{{AI_ASSISTANT_DESC}}</p>
+            </div>
+
+            <div class="ai-card">
+                <span>AI Photo Editing</span>
+                <h3>{{AI_PHOTO_EDITING}}</h3>
+                <p>{{AI_PHOTO_EDITING_DESC}}</p>
+            </div>
+
+            <div class="ai-card">
+                <span>AI Translation</span>
+                <h3>{{AI_TRANSLATION}}</h3>
+                <p>{{AI_TRANSLATION_DESC}}</p>
+            </div>
+
+            <div class="ai-card">
+                <span>AI Performance</span>
+                <h3>{{AI_PERFORMANCE}}</h3>
+                <p>{{AI_PERFORMANCE_DESC}}</p>
+            </div>
+
+        </div>
+
+        <div class="ai-score">
+
+            <h3>AI Experience Rating</h3>
+
+            <div class="ai-row">
+                <span>AI Tools</span>
+                <strong>{{AI_TOOLS_SCORE}}</strong>
+            </div>
+
+            <div class="ai-row">
+                <span>Photo Intelligence</span>
+                <strong>{{PHOTO_INTELLIGENCE_SCORE}}</strong>
+            </div>
+
+            <div class="ai-row">
+                <span>Daily Productivity</span>
+                <strong>{{DAILY_PRODUCTIVITY_SCORE}}</strong>
+            </div>
+
+            <div class="ai-row">
+                <span>Smart Features</span>
+                <strong>{{SMART_FEATURES_SCORE}}</strong>
+            </div>
+
+        </div>
+
+        <div class="ai-features-list">
+
+            <h3>AI Capabilities</h3>
+
+            <div class="feature-tags">
+                {{AI_CAPABILITIES}}
+            </div>
+
+        </div>
+
+        <div class="review-text">
+            <p>{{AI_REVIEW}}</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="audio-speakers" class="review-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Audio & Speakers</h2>
+            <p>{{AUDIO_SUBTITLE}}</p>
+        </div>
+
+        <div class="audio-grid">
+
+            <div class="audio-card">
+                <span>Speaker System</span>
+                <h3>{{SPEAKER_SYSTEM}}</h3>
+                <p>{{SPEAKER_SYSTEM_DESC}}</p>
+            </div>
+
+            <div class="audio-card">
+                <span>Sound Quality</span>
+                <h3>{{SOUND_QUALITY}}</h3>
+                <p>{{SOUND_QUALITY_DESC}}</p>
+            </div>
+
+            <div class="audio-card">
+                <span>Dolby Support</span>
+                <h3>{{DOLBY_SUPPORT}}</h3>
+                <p>{{DOLBY_SUPPORT_DESC}}</p>
+            </div>
+            <div class="audio-card">
+    <span>3.5mm Jack</span>
+    <h3>{{NO_YES}}</h3>
+    <p>{{JACK-DESCRIPTION}}</p>
+</div>
+
+            <div class="audio-card">
+                <span>Headphone Support</span>
+                <h3>{{HEADPHONE_SUPPORT}}</h3>
+                <p>{{HEADPHONE_SUPPORT_DESC}}</p>
+            </div>
+
+        </div>
+
+        <div class="audio-test">
+
+            <h3>Audio Performance</h3>
+
+            <div class="audio-row">
+                <span>Volume Level</span>
+                <strong>{{VOLUME_LEVEL_SCORE}}</strong>
+            </div>
+
+            <div class="audio-row">
+                <span>Bass Quality</span>
+                <strong>{{BASS_QUALITY_SCORE}}</strong>
+            </div>
+
+            <div class="audio-row">
+                <span>Vocal Clarity</span>
+                <strong>{{VOCAL_CLARITY_SCORE}}</strong>
+            </div>
+
+            <div class="audio-row">
+                <span>Gaming Audio</span>
+                <strong>{{GAMING_AUDIO_SCORE}}</strong>
+            </div>
+
+        </div>
+
+        <div class="audio-features">
+
+            <h3>Audio Features</h3>
+
+            <div class="feature-tags">
+                {{AUDIO_FEATURES}}
+            </div>
+
+        </div>
+
+        <div class="review-text">
+            <p>{{AUDIO_REVIEW}}</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="connectivity" class="review-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Connectivity</h2>
+            <p>{{CONNECTIVITY_SUBTITLE}}</p>
+        </div>
+
+        <div class="connectivity-grid">
+
+            <div class="connectivity-card">
+                <span>Mobile Network</span>
+                <h3>{{MOBILE_NETWORK}}</h3>
+                <p>{{MOBILE_NETWORK_DESC}}</p>
+            </div>
+
+            <div class="connectivity-card">
+                <span>Wi-Fi</span>
+                <h3>{{WIFI}}</h3>
+                <p>{{WIFI_DESC}}</p>
+            </div>
+
+            <div class="connectivity-card">
+                <span>Bluetooth</span>
+                <h3>{{BLUETOOTH}}</h3>
+                <p>{{BLUETOOTH_DESC}}</p>
+            </div>
+
+            <div class="connectivity-card">
+                <span>USB Port</span>
+                <h3>{{USB_PORT}}</h3>
+                <p>{{USB_PORT_DESC}}</p>
+            </div>
+
+        </div>
+
+        <div class="connectivity-list">
+
+            <h3>Connectivity Features</h3>
+
+            <div class="connectivity-row">
+                <span>NFC</span>
+                <strong>{{NFC}}</strong>
+            </div>
+
+            <div class="connectivity-row">
+                <span>GPS</span>
+                <strong>{{GPS}}</strong>
+            </div>
+
+            <div class="connectivity-row">
+                <span>SIM Support</span>
+                <strong>{{SIM_SUPPORT}}</strong>
+            </div>
+
+            <div class="connectivity-row">
+                <span>eSIM</span>
+                <strong>{{ESIM}}</strong>
+            </div>
+
+        </div>
+
+        <div class="connectivity-features">
+
+            <h3>Wireless Features</h3>
+
+            <div class="feature-tags">
+                {{WIRELESS_FEATURES}}
+            </div>
+
+        </div>
+
+        <div class="review-text">
+            <p>{{CONNECTIVITY_REVIEW}}</p>
+        </div>
+
+    </div>
+</section>
+<section id="security-sensors" class="review-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Security & Sensors</h2>
+            <p>Advanced Security and Smart Features</p>
+        </div>
+
+        <div class="security-grid">
+
+            <div class="security-card">
+                <span>Face Unlock</span>
+                <h3>{{FACE-UNLOCK}}</h3>
+                <p>{{FACE-UNLOCK-DESCRIPTION}}</p>
+            </div>
+
+            <div class="security-card">
+                <span>Emergency SOS</span>
+                <h3>{{EMERGENCY-SOS}}</h3>
+                <p>{{EMERGENCY-SOS-DESCRIPTION}}</p>
+            </div>
+
+            <div class="security-card">
+                <span>AI Features</span>
+                <h3>{{AI-FEATURES}}</h3>
+                <p>{{AI-FEATURES-DESCRIPTION}}</p>
+            </div>
+
+            <div class="security-card">
+                <span>Accelerometer</span>
+                <h3>{{ACCELEROMETER}}</h3>
+                <p>{{ACCELEROMETER-DESCRIPTION}}</p>
+            </div>
+
+            <div class="security-card">
+                <span>Gyroscope</span>
+                <h3>{{GYROSCOPE}}</h3>
+                <p>{{GYROSCOPE-DESCRIPTION}}</p>
+            </div>
+
+            <div class="security-card">
+                <span>Barometer</span>
+                <h3>{{BAROMETER}}</h3>
+                <p>{{BAROMETER-DESCRIPTION}}</p>
+            </div>
+
+            <div class="security-card">
+                <span>Compass</span>
+                <h3>{{COMPASS}}</h3>
+                <p>{{COMPASS-DESCRIPTION}}</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<section id="benchmarks" class="review-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Benchmarks</h2>
+            <p>{{BENCHMARKS_SUBTITLE}}</p>
+        </div>
+
+        <div class="benchmark-grid">
+
+            <div class="benchmark-card">
+                <span>{{ANTUTU_TITLE}}</span>
+                <h3>{{ANTUTU_SCORE}}</h3>
+                <p>{{ANTUTU_DESC}}</p>
+            </div>
+
+            <div class="benchmark-card">
+                <span>{{GEEKBENCH_TITLE}}</span>
+                <h3>{{GEEKBENCH_SCORE}}</h3>
+                <p>{{GEEKBENCH_DESC}}</p>
+            </div>
+
+            <div class="benchmark-card">
+                <span>{{THREEDMARK_TITLE}}</span>
+                <h3>{{THREEDMARK_SCORE}}</h3>
+                <p>{{THREEDMARK_DESC}}</p>
+            </div>
+
+            <div class="benchmark-card">
+                <span>{{PCMARK_TITLE}}</span>
+                <h3>{{PCMARK_SCORE}}</h3>
+                <p>{{PCMARK_DESC}}</p>
+            </div>
+
+        </div>
+
+        <div class="benchmark-results">
+
+            <h3>{{BENCHMARK_RESULTS_TITLE}}</h3>
+
+            <div class="benchmark-row">
+                <span>CPU Performance</span>
+                <strong>{{CPU_PERFORMANCE_SCORE}}</strong>
+            </div>
+
+            <div class="benchmark-row">
+                <span>GPU Performance</span>
+                <strong>{{GPU_PERFORMANCE_SCORE}}</strong>
+            </div>
+
+            <div class="benchmark-row">
+                <span>Memory Speed</span>
+                <strong>{{MEMORY_SPEED_SCORE}}</strong>
+            </div>
+
+            <div class="benchmark-row">
+                <span>Thermal Stability</span>
+                <strong>{{THERMAL_STABILITY_SCORE}}</strong>
+            </div>
+
+        </div>
+
+        <div class="performance-chart">
+
+            <h3>{{PERFORMANCE_CATEGORY_TITLE}}</h3>
+
+            <div class="chart-item">
+                <span>CPU</span>
+                <div class="bar">
+                    <div style="width:{{CPU_CHART_PERCENT}}%"></div>
+                </div>
+            </div>
+
+            <div class="chart-item">
+                <span>GPU</span>
+                <div class="bar">
+                    <div style="width:{{GPU_CHART_PERCENT}}%"></div>
+                </div>
+            </div>
+
+            <div class="chart-item">
+                <span>Gaming</span>
+                <div class="bar">
+                    <div style="width:{{GAMING_CHART_PERCENT}}%"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="review-text">
+            <p>{{BENCHMARK_REVIEW}}</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="real-world-usage" class="review-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Real World Usage</h2>
+            <p>{{USAGE_SUBTITLE}}</p>
+        </div>
+
+        <div class="usage-grid">
+
+            <div class="usage-card">
+                <span>Daily Tasks</span>
+                <h3>{{DAILY_TASKS_TITLE}}</h3>
+                <p>{{DAILY_TASKS_DESC}}</p>
+            </div>
+
+            <div class="usage-card">
+                <span>Multitasking</span>
+                <h3>{{MULTITASKING_TITLE}}</h3>
+                <p>{{MULTITASKING_DESC}}</p>
+            </div>
+
+            <div class="usage-card">
+                <span>Heavy Apps</span>
+                <h3>{{HEAVY_APPS_TITLE}}</h3>
+                <p>{{HEAVY_APPS_DESC}}</p>
+            </div>
+
+            <div class="usage-card">
+                <span>Long-Term Performance</span>
+                <h3>{{LONGTERM_PERFORMANCE_TITLE}}</h3>
+                <p>{{LONGTERM_PERFORMANCE_DESC}}</p>
+            </div>
+
+        </div>
+
+        <div class="usage-tests">
+
+            <h3>{{USAGE_RATING_TITLE}}</h3>
+
+            <div class="usage-row">
+                <span>App Performance</span>
+                <strong>{{APP_PERFORMANCE_SCORE}}</strong>
+            </div>
+
+            <div class="usage-row">
+                <span>Multitasking</span>
+                <strong>{{MULTITASKING_SCORE}}</strong>
+            </div>
+
+            <div class="usage-row">
+                <span>Responsiveness</span>
+                <strong>{{RESPONSIVENESS_SCORE}}</strong>
+            </div>
+
+            <div class="usage-row">
+                <span>Stability</span>
+                <strong>{{STABILITY_SCORE}}</strong>
+            </div>
+
+        </div>
+
+        <div class="usage-scenarios">
+
+            <h3>{{USAGE_SCENARIOS_TITLE}}</h3>
+
+            <div class="feature-tags">
+                {{USAGE_SCENARIOS}}
+            </div>
+
+        </div>
+
+        <div class="review-text">
+            <p>{{USAGE_REVIEW}}</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="heat-management" class="review-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Heat Management</h2>
+            <p>{{HEAT_SUBTITLE}}</p>
+        </div>
+
+        <div class="heat-grid">
+
+            <div class="heat-card">
+                <span>Cooling System</span>
+                <h3>{{COOLING_SYSTEM}}</h3>
+                <p>{{COOLING_SYSTEM_DESC}}</p>
+            </div>
+
+            <div class="heat-card">
+                <span>Gaming Temperature</span>
+                <h3>{{GAMING_TEMPERATURE}}</h3>
+                <p>{{GAMING_TEMPERATURE_DESC}}</p>
+            </div>
+
+            <div class="heat-card">
+                <span>Performance Stability</span>
+                <h3>{{PERFORMANCE_STABILITY}}</h3>
+                <p>{{PERFORMANCE_STABILITY_DESC}}</p>
+            </div>
+
+            <div class="heat-card">
+                <span>Daily Usage</span>
+                <h3>{{DAILY_USAGE_TEMP}}</h3>
+                <p>{{DAILY_USAGE_TEMP_DESC}}</p>
+            </div>
+
+        </div>
+
+        <div class="thermal-test">
+
+            <h3>{{THERMAL_TEST_TITLE}}</h3>
+
+            <div class="thermal-row">
+                <span>Idle Temperature</span>
+                <strong>{{IDLE_TEMPERATURE}}</strong>
+            </div>
+
+            <div class="thermal-row">
+                <span>Normal Usage</span>
+                <strong>{{NORMAL_USAGE_TEMP}}</strong>
+            </div>
+
+            <div class="thermal-row">
+                <span>Gaming Session</span>
+                <strong>{{GAMING_SESSION_TEMP}}</strong>
+            </div>
+
+            <div class="thermal-row">
+                <span>Stress Test</span>
+                <strong>{{STRESS_TEST_TEMP}}</strong>
+            </div>
+
+        </div>
+
+        <div class="thermal-features">
+
+            <h3>{{COOLING_FEATURES_TITLE}}</h3>
+
+            <div class="feature-tags">
+                {{COOLING_FEATURES}}
+            </div>
+
+        </div>
+
+        <div class="review-text">
+            <p>{{HEAT_REVIEW}}</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="durability" class="review-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Durability</h2>
+            <p>{{DURABILITY_SUBTITLE}}</p>
+        </div>
+
+        <div class="durability-grid">
+
+            <div class="durability-card">
+                <span>Frame Material</span>
+                <h3>{{FRAME_MATERIAL}}</h3>
+                <p>{{FRAME_MATERIAL_DESC}}</p>
+            </div>
+
+            <div class="durability-card">
+                <span>Front Protection</span>
+                <h3>{{FRONT_PROTECTION}}</h3>
+                <p>{{FRONT_PROTECTION_DESC}}</p>
+            </div>
+
+            <div class="durability-card">
+                <span>Water Resistance</span>
+                <h3>{{WATER_RESISTANCE}}</h3>
+                <p>{{WATER_RESISTANCE_DESC}}</p>
+            </div>
+
+            <div class="durability-card">
+                <span>Build Quality</span>
+                <h3>{{BUILD_QUALITY_RATING}}</h3>
+                <p>{{BUILD_QUALITY_DESC}}</p>
+            </div>
+
+        </div>
+
+        <div class="protection-test">
+
+            <h3>{{PROTECTION_FEATURES_TITLE}}</h3>
+
+            <div class="durability-row">
+                <span>Dust Resistance</span>
+                <strong>{{DUST_RESISTANCE}}</strong>
+            </div>
+
+            <div class="durability-row">
+                <span>Water Resistance</span>
+                <strong>{{WATER_DEPTH}}</strong>
+            </div>
+
+            <div class="durability-row">
+                <span>Screen Protection</span>
+                <strong>{{SCREEN_PROTECTION}}</strong>
+            </div>
+
+            <div class="durability-row">
+                <span>Frame Strength</span>
+                <strong>{{FRAME_STRENGTH}}</strong>
+            </div>
+
+        </div>
+
+        <div class="durability-features">
+
+            <h3>{{DURABILITY_FEATURES_TITLE}}</h3>
+
+            <div class="feature-tags">
+                {{DURABILITY_FEATURES}}
+            </div>
+
+        </div>
+
+        <div class="review-text">
+            <p>{{DURABILITY_REVIEW}}</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="storage-ram" class="review-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Storage & RAM</h2>
+            <p>{{STORAGE_SUBTITLE}}</p>
+        </div>
+
+
+        <div class="storage-grid">
+
+            <div class="storage-card">
+                <span>RAM Capacity</span>
+                <h3>{{RAM_CAPACITY}}</h3>
+                <p>{{RAM_CAPACITY_DESC}}</p>
+            </div>
+
+
+            <div class="storage-card">
+                <span>RAM Type</span>
+                <h3>{{RAM_TYPE}}</h3>
+                <p>{{RAM_TYPE_DESC}}</p>
+            </div>
+
+
+            <div class="storage-card">
+                <span>Storage Type</span>
+                <h3>{{STORAGE_TYPE}}</h3>
+                <p>{{STORAGE_TYPE_DESC}}</p>
+            </div>
+
+
+            <div class="storage-card">
+                <span>Storage Options</span>
+                <h3>{{STORAGE_OPTIONS}}</h3>
+                <p>{{STORAGE_OPTIONS_DESC}}</p>
+            </div>
+
+        </div>
+
+
+        <div class="memory-details">
+
+            <h3>Memory Performance</h3>
+
+
+            <div class="memory-row">
+                <span>App Loading Speed</span>
+                <strong>{{APP_LOADING_SPEED}}</strong>
+            </div>
+
+
+            <div class="memory-row">
+                <span>Multitasking</span>
+                <strong>{{MULTITASKING_MEMORY}}</strong>
+            </div>
+
+
+            <div class="memory-row">
+                <span>Game Loading</span>
+                <strong>{{GAME_LOADING}}</strong>
+            </div>
+
+
+            <div class="memory-row">
+                <span>Large File Transfer</span>
+                <strong>{{FILE_TRANSFER}}</strong>
+            </div>
+
+        </div>
+
+
+        <div class="storage-features">
+
+            <h3>Storage Features</h3>
+
+            <div class="feature-tags">
+                {{STORAGE_FEATURES}}
+            </div>
+
+        </div>
+
+
+        <div class="review-text">
+            <p>{{STORAGE_REVIEW}}</p>
+        </div>
+
+
+    </div>
+</section>
+
+<section id="price-value" class="review-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Price & Value</h2>
+            <p>{{PRICE_SUBTITLE}}</p>
+        </div>
+
+
+        <div class="price-grid">
+
+            <div class="price-card">
+                <span>Starting Price</span>
+                <h3>{{STARTING_PRICE}}</h3>
+                <p>{{STARTING_PRICE_DESC}}</p>
+            </div>
+
+
+            <div class="price-card">
+                <span>Premium Version</span>
+                <h3>{{PREMIUM_PRICE}}</h3>
+                <p>{{PREMIUM_PRICE_DESC}}</p>
+            </div>
+
+
+            <div class="price-card">
+                <span>Value Rating</span>
+                <h3>{{VALUE_RATING}}</h3>
+                <p>{{VALUE_RATING_DESC}}</p>
+            </div>
+
+
+            <div class="price-card">
+                <span>Best For</span>
+                <h3>{{BEST_FOR}}</h3>
+                <p>{{BEST_FOR_DESC}}</p>
+            </div>
+
+        </div>
+
+
+        <div class="value-analysis">
+
+            <h3>Value Assessment</h3>
+
+            <div class="value-row">
+                <span>Performance vs Price</span>
+                <strong>{{PERFORMANCE_VALUE}}</strong>
+            </div>
+
+
+            <div class="value-row">
+                <span>Camera vs Price</span>
+                <strong>{{CAMERA_VALUE}}</strong>
+            </div>
+
+
+            <div class="value-row">
+                <span>Battery vs Price</span>
+                <strong>{{BATTERY_VALUE}}</strong>
+            </div>
+
+
+            <div class="value-row">
+                <span>Long-Term Support</span>
+                <strong>{{SUPPORT_VALUE}}</strong>
+            </div>
+
+        </div>
+
+
+        <div class="competitors">
+
+            <h3>Main Competitors</h3>
+
+            <div class="feature-tags">
+                {{COMPETITORS}}
+            </div>
+
+        </div>
+
+
+        <div class="verdict-box">
+
+            <h3>Is It Worth Buying?</h3>
+
+            <p>{{VALUE_VERDICT}}</p>
+
+        </div>
+
+
+    </div>
+</section>
+
+<section id="competition" class="review-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Competition</h2>
+            <p>{{COMPETITION_SUBTITLE}}</p>
+        </div>
+
+
+        <div class="competition-grid">
+
+
+            <div class="competitor-card">
+
+                <h3>{{COMPETITOR_A_NAME}}</h3>
+                <span>{{COMPETITOR_A_TYPE}}</span>
+
+                <div class="compare-row">
+                    <p>Performance</p>
+                    <strong>{{COMPETITOR_A_PERFORMANCE}}</strong>
+                </div>
+
+                <div class="compare-row">
+                    <p>Camera</p>
+                    <strong>{{COMPETITOR_A_CAMERA}}</strong>
+                </div>
+
+                <div class="compare-row">
+                    <p>Battery</p>
+                    <strong>{{COMPETITOR_A_BATTERY}}</strong>
+                </div>
+
+            </div>
+
+
+
+            <div class="competitor-card highlight">
+
+                <h3>{{THIS_PHONE_NAME}}</h3>
+                <span>{{THIS_PHONE_TYPE}}</span>
+
+                <div class="compare-row">
+                    <p>Performance</p>
+                    <strong>{{THIS_PHONE_PERFORMANCE}}</strong>
+                </div>
+
+                <div class="compare-row">
+                    <p>Camera</p>
+                    <strong>{{THIS_PHONE_CAMERA}}</strong>
+                </div>
+
+                <div class="compare-row">
+                    <p>Battery</p>
+                    <strong>{{THIS_PHONE_BATTERY}}</strong>
+                </div>
+
+            </div>
+
+
+
+            <div class="competitor-card">
+
+                <h3>{{COMPETITOR_B_NAME}}</h3>
+                <span>{{COMPETITOR_B_TYPE}}</span>
+
+                <div class="compare-row">
+                    <p>Performance</p>
+                    <strong>{{COMPETITOR_B_PERFORMANCE}}</strong>
+                </div>
+
+                <div class="compare-row">
+                    <p>Camera</p>
+                    <strong>{{COMPETITOR_B_CAMERA}}</strong>
+                </div>
+
+                <div class="compare-row">
+                    <p>Battery</p>
+                    <strong>{{COMPETITOR_B_BATTERY}}</strong>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="competition-table">
+
+            <h3>Quick Comparison</h3>
+
+            <div class="table-row">
+                <span>Processor</span>
+                <strong>{{COMPARE_PROCESSOR}}</strong>
+            </div>
+
+            <div class="table-row">
+                <span>Display</span>
+                <strong>{{COMPARE_DISPLAY}}</strong>
+            </div>
+
+            <div class="table-row">
+                <span>Camera</span>
+                <strong>{{COMPARE_CAMERA}}</strong>
+            </div>
+
+            <div class="table-row">
+                <span>Price</span>
+                <strong>{{COMPARE_PRICE}}</strong>
+            </div>
+
+        </div>
+
+
+
+        <div class="winner-box">
+
+            <h3>Best Choice For</h3>
+
+            <div class="feature-tags">
+                {{BEST_CHOICE}}
+            </div>
+
+        </div>
+
+
+
+        <div class="review-text">
+            <p>{{COMPETITION_REVIEW}}</p>
+        </div>
+
+
+    </div>
+</section>
+
+<section id="alternatives" class="section">
+    <div class="container">
+
+        <div class="section-header">
+            <h2>Alternatives</h2>
+            <p>{{ALTERNATIVES_SUBTITLE}}</p>
+        </div>
+
+
+        <div class="phone-grid">
+
+
+            <article class="phone-card">
+                <img src="{{ALT1_IMAGE}}" alt="{{ALT1_NAME}}">
+                <div class="phone-info">
+                    <span>{{ALT1_BRAND}}</span>
+                    <h3>{{ALT1_NAME}}</h3>
+                    <p>{{ALT1_DESC}}</p>
+                    <a href="{{ALT1_LINK}}">View Details →</a>
+                </div>
+            </article>
+
+
+
+            <article class="phone-card">
+                <img src="{{ALT2_IMAGE}}" alt="{{ALT2_NAME}}">
+                <div class="phone-info">
+                    <span>{{ALT2_BRAND}}</span>
+                    <h3>{{ALT2_NAME}}</h3>
+                    <p>{{ALT2_DESC}}</p>
+                    <a href="{{ALT2_LINK}}">View Details →</a>
+                </div>
+            </article>
+
+
+
+            <article class="phone-card">
+                <img src="{{ALT3_IMAGE}}" alt="{{ALT3_NAME}}">
+                <div class="phone-info">
+                    <span>{{ALT3_BRAND}}</span>
+                    <h3>{{ALT3_NAME}}</h3>
+                    <p>{{ALT3_DESC}}</p>
+                    <a href="{{ALT3_LINK}}">View Details →</a>
+                </div>
+            </article>
+
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<section id="rating-breakdown" class="section">
+    <div class="container">
+
+        <div class="section-header">
+            <h2>Rating Breakdown</h2>
+            <p>{{RATING_SUBTITLE}}</p>
+        </div>
+
+
+        <div class="rating-box">
+
+
+            <div class="rating-item">
+                <div class="rating-title">
+                    <span>Design & Build</span>
+                    <strong>{{DESIGN_RATING}}</strong>
+                </div>
+
+                <div class="rating-bar">
+                    <span style="width:{{DESIGN_PERCENT}}%"></span>
+                </div>
+            </div>
+
+
+
+            <div class="rating-item">
+                <div class="rating-title">
+                    <span>Display</span>
+                    <strong>{{DISPLAY_RATING}}</strong>
+                </div>
+
+                <div class="rating-bar">
+                    <span style="width:{{DISPLAY_PERCENT}}%"></span>
+                </div>
+            </div>
+
+
+
+            <div class="rating-item">
+                <div class="rating-title">
+                    <span>Performance</span>
+                    <strong>{{PERFORMANCE_RATING}}</strong>
+                </div>
+
+                <div class="rating-bar">
+                    <span style="width:{{PERFORMANCE_PERCENT}}%"></span>
+                </div>
+            </div>
+
+
+
+            <div class="rating-item">
+                <div class="rating-title">
+                    <span>Camera</span>
+                    <strong>{{CAMERA_RATING}}</strong>
+                </div>
+
+                <div class="rating-bar">
+                    <span style="width:{{CAMERA_PERCENT}}%"></span>
+                </div>
+            </div>
+
+
+
+            <div class="rating-item">
+                <div class="rating-title">
+                    <span>Battery</span>
+                    <strong>{{BATTERY_RATING}}</strong>
+                </div>
+
+                <div class="rating-bar">
+                    <span style="width:{{BATTERY_PERCENT}}%"></span>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</section>
+
+<section id="who-should-buy" class="section">
+    <div class="container">
+
+        <div class="section-header">
+            <h2>Who Should Buy It</h2>
+            <p>{{BUYER_SUBTITLE}}</p>
+        </div>
+
+
+        <div class="buyer-grid">
+
+
+            <div class="buyer-card recommended">
+
+                <div class="buyer-icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <h3>You Should Buy It If</h3>
+
+                <ul>
+                    {{BUY_POINTS}}
+                </ul>
+
+            </div>
+
+
+
+            <div class="buyer-card avoid">
+
+                <div class="buyer-icon">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </div>
+
+                <h3>You Should Skip It If</h3>
+
+                <ul>
+                    {{SKIP_POINTS}}
+                </ul>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<section id="who-should-skip" class="section">
+
+    <div class="container">
+
+        <div class="section-header">
+            <h2>Who Should Skip It</h2>
+            <p>{{SKIP_SUBTITLE}}</p>
+        </div>
+
+
+
+        <div class="skip-grid">
+
+
+            <article class="skip-card">
+
+                <i class="fa-solid fa-wallet"></i>
+
+                <h3>{{SKIP_TITLE_1}}</h3>
+
+                <p>{{SKIP_DESC_1}}</p>
+
+            </article>
+
+
+
+            <article class="skip-card">
+
+                <i class="fa-solid fa-mobile-screen"></i>
+
+                <h3>{{SKIP_TITLE_2}}</h3>
+
+                <p>{{SKIP_DESC_2}}</p>
+
+            </article>
+
+
+
+            <article class="skip-card">
+
+                <i class="fa-solid fa-battery-half"></i>
+
+                <h3>{{SKIP_TITLE_3}}</h3>
+
+                <p>{{SKIP_DESC_3}}</p>
+
+            </article>
+
+
+
+            <article class="skip-card">
+
+                <i class="fa-solid fa-camera"></i>
+
+                <h3>{{SKIP_TITLE_4}}</h3>
+
+                <p>{{SKIP_DESC_4}}</p>
+
+            </article>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+<section id="final-verdict" class="section">
+    <div class="container">
+
+        <div class="section-header">
+            <h2>Final Verdict</h2>
+            <p>Our final thoughts and recommendation</p>
+        </div>
+
+
+        <div class="verdict-box">
+
+            <div class="verdict-score">
+                <strong>{{FINAL_SCORE}}</strong>
+                <span>{{FINAL_RATING}}</span>
+
+                <div class="stars">
+                    {{FINAL_STARS}}
+                </div>
+            </div>
+
+
+            <div class="verdict-content">
+
+                <h3>{{FINAL_TITLE}}</h3>
+
+                <p>
+                    {{FINAL_VERDICT_TEXT}}
+                </p>
+
+
+                <div class="verdict-points">
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        <span>{{FINAL_POINT_1}}</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        <span>{{FINAL_POINT_2}}</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-xmark"></i>
+                        <span>{{FINAL_POINT_3}}</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="user-reviews" class="section">
+    <div class="container">
+
+        <div class="section-header">
+            <h2>User Reviews</h2>
+            <p>What users say about this phone</p>
+        </div>
+
+
+        <div class="reviews-summary">
+
+            <div class="average-rating">
+
+                <strong>{{USER_AVERAGE}}</strong>
+
+                <div class="stars">
+                    {{USER_STARS}}
+                </div>
+
+                <span>
+                    {{USER_TOTAL_REVIEWS}}
+                </span>
+
+            </div>
+
+
+            <div class="rating-bars">
+
+                <div class="rating-row">
+                    <span>5 Stars</span>
+                    <div class="bar">
+                        <span style="width:{{RATING_5_WIDTH}}"></span>
+                    </div>
+                </div>
+
+
+                <div class="rating-row">
+                    <span>4 Stars</span>
+                    <div class="bar">
+                        <span style="width:{{RATING_4_WIDTH}}"></span>
+                    </div>
+                </div>
+
+
+                <div class="rating-row">
+                    <span>3 Stars</span>
+                    <div class="bar">
+                        <span style="width:{{RATING_3_WIDTH}}"></span>
+                    </div>
+                </div>
+
+
+                <div class="rating-row">
+                    <span>2 Stars</span>
+                    <div class="bar">
+                        <span style="width:{{RATING_2_WIDTH}}"></span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="review-list">
+
+
+            <article class="review-card">
+
+                <div class="user-info">
+                    <strong>{{REVIEW_1_NAME}}</strong>
+                    <span>{{REVIEW_1_STARS}}</span>
+                </div>
+
+                <p>
+                    {{REVIEW_1_TEXT}}
+                </p>
+
+            </article>
+
+
+
+            <article class="review-card">
+
+                <div class="user-info">
+                    <strong>{{REVIEW_2_NAME}}</strong>
+                    <span>{{REVIEW_2_STARS}}</span>
+                </div>
+
+                <p>
+                    {{REVIEW_2_TEXT}}
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+</section>
+
+<section id="faq" class="section">
+    <div class="container">
+
+        <div class="section-header">
+            <h2>FAQ</h2>
+            <p>{{FAQ_SUBTITLE}}</p>
+        </div>
+
+
+        <div class="faq-list">
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    {{FAQ_QUESTION_1}}
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="faq-answer">
+                    <p>
+                        {{FAQ_ANSWER_1}}
+                    </p>
+                </div>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    {{FAQ_QUESTION_2}}
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="faq-answer">
+                    <p>
+                        {{FAQ_ANSWER_2}}
+                    </p>
+                </div>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    {{FAQ_QUESTION_3}}
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="faq-answer">
+                    <p>
+                        {{FAQ_ANSWER_3}}
+                    </p>
+                </div>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    {{FAQ_QUESTION_4}}
+                    <i class="fa-solid "></i>
+                </button>
+
+                <div class="faq-answer">
+                    <p>
+                        {{FAQ_ANSWER_4}}
+                    </p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</section>
+<script>
+  document.querySelectorAll(".faq-question").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const item = button.parentElement;
+
+        item.classList.toggle("active");
+
+    });
+
+});
+</script>
+</body>
+</html>

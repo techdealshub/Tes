@@ -1,0 +1,550 @@
+{
+  "category": "Position & Placement",
+
+  "groups": {
+    "position": {
+      "type": "select",
+      "values": [
+        "static",
+        "relative",
+        "absolute",
+        "fixed",
+        "sticky"
+      ]
+    },
+
+    "insets": {
+      "properties": {
+        "top": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_LENGTH_POSITION"
+        },
+        "right": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_LENGTH_POSITION"
+        },
+        "bottom": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_LENGTH_POSITION"
+        },
+        "left": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_LENGTH_POSITION"
+        },
+        "inset": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_LENGTH_POSITION"
+        },
+        "inset-block": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_LENGTH_POSITION"
+        },
+        "inset-block-start": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_LENGTH_POSITION"
+        },
+        "inset-block-end": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_LENGTH_POSITION"
+        },
+        "inset-inline": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_LENGTH_POSITION"
+        },
+        "inset-inline-start": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_LENGTH_POSITION"
+        },
+        "inset-inline-end": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_LENGTH_POSITION"
+        }
+      }
+    },
+
+    "z-index": {
+      "type": "range",
+      "min": -1000,
+      "max": 1000,
+      "step": 1,
+      "default": 0,
+      "extraValues": [
+        "auto"
+      ]
+    },
+
+    "anchor-positioning": {
+      "type": "group",
+
+      "properties": {
+        "anchor-name": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_ANCHOR_NAME"
+        },
+
+        "anchor-scope": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_ANCHOR_SCOPE"
+        },
+
+        "position-anchor": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_POSITION_ANCHOR"
+        },
+
+        "position-area": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_POSITION_AREA"
+        },
+
+        "position-try": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_POSITION_TRY"
+        },
+
+        "position-try-fallbacks": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_POSITION_TRY_FALLBACKS"
+        },
+
+        "position-try-order": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_POSITION_TRY_ORDER"
+        }
+      }
+    },
+
+    "offset-motion": {
+      "type": "group",
+
+      "properties": {
+        "offset": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_OFFSET"
+        },
+
+        "offset-position": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_OFFSET_POSITION"
+        },
+
+        "offset-path": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_OFFSET_PATH"
+        },
+
+        "offset-distance": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_OFFSET_DISTANCE"
+        },
+
+        "offset-rotate": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_OFFSET_ROTATE"
+        },
+
+        "offset-anchor": {
+          "type": "value-control",
+          "valueSet": "VALUE_SET_OFFSET_ANCHOR"
+        }
+      }
+    }
+  },
+
+  "valueSets": {
+
+    "VALUE_SET_LENGTH_POSITION": {
+      "range": {
+        "min": -1000,
+        "max": 1000,
+        "step": 1,
+        "default": 0
+      },
+
+      "units": [
+        "px",
+        "%",
+        "em",
+        "rem",
+        "vw",
+        "vh",
+        "vmin",
+        "vmax",
+        "ch",
+        "ex",
+        "cm",
+        "mm",
+        "in",
+        "pt",
+        "pc"
+      ],
+
+      "specialValues": [
+        "auto",
+        "0"
+      ],
+
+      "functions": {
+        "calc": {
+          "type": "function",
+          "template": "calc({value})",
+          "placeholder": "calc(50% - 20px)"
+        },
+
+        "min": {
+          "type": "function",
+          "template": "min({value})",
+          "placeholder": "min(50%, 100px)"
+        },
+
+        "max": {
+          "type": "function",
+          "template": "max({value})",
+          "placeholder": "max(20px, 10%)"
+        },
+
+        "clamp": {
+          "type": "function",
+          "template": "clamp({value})",
+          "placeholder": "clamp(10px, 5%, 100px)"
+        }
+      }
+    },
+
+    "VALUE_SET_ANCHOR_NAME": {
+      "type": "keyword",
+      "values": [
+        "none",
+        "--anchor",
+        "inherit",
+        "initial",
+        "revert",
+        "revert-layer",
+        "unset"
+      ]
+    },
+
+    "VALUE_SET_ANCHOR_SCOPE": {
+      "type": "keyword",
+      "values": [
+        "none",
+        "all",
+        "inherit",
+        "initial",
+        "revert",
+        "revert-layer",
+        "unset"
+      ]
+    },
+
+    "VALUE_SET_POSITION_ANCHOR": {
+      "type": "keyword",
+      "values": [
+        "auto",
+        "none",
+        "--anchor",
+        "inherit",
+        "initial",
+        "revert",
+        "revert-layer",
+        "unset"
+      ]
+    },
+
+    "VALUE_SET_POSITION_AREA": {
+      "type": "keyword",
+      "values": [
+        "none",
+        "top",
+        "top left",
+        "top center",
+        "top right",
+        "left",
+        "center",
+        "right",
+        "bottom left",
+        "bottom center",
+        "bottom right",
+        "bottom",
+        "inherit",
+        "initial",
+        "revert",
+        "revert-layer",
+        "unset"
+      ]
+    },
+
+    "VALUE_SET_POSITION_TRY": {
+      "type": "keyword",
+      "values": [
+        "none",
+        "flip-block",
+        "flip-inline",
+        "flip-start",
+        "inherit",
+        "initial",
+        "revert",
+        "revert-layer",
+        "unset"
+      ]
+    },
+
+    "VALUE_SET_POSITION_TRY_FALLBACKS": {
+      "type": "keyword",
+      "values": [
+        "none",
+        "flip-block",
+        "flip-inline",
+        "flip-start",
+        "inherit",
+        "initial",
+        "revert",
+        "revert-layer",
+        "unset"
+      ]
+    },
+
+    "VALUE_SET_POSITION_TRY_ORDER": {
+      "type": "keyword",
+      "values": [
+        "normal",
+        "most-width",
+        "most-height",
+        "inherit",
+        "initial",
+        "revert",
+        "revert-layer",
+        "unset"
+      ]
+    },
+
+    "VALUE_SET_OFFSET": {
+      "type": "keyword",
+      "values": [
+        "none",
+        "auto",
+        "inherit",
+        "initial",
+        "revert",
+        "revert-layer",
+        "unset"
+      ]
+    },
+
+    "VALUE_SET_OFFSET_POSITION": {
+      "type": "mixed",
+      "values": [
+        "auto",
+        "normal",
+        "top",
+        "right",
+        "bottom",
+        "left",
+        "center",
+        "top left",
+        "top center",
+        "top right",
+        "center left",
+        "center right",
+        "bottom left",
+        "bottom center",
+        "bottom right",
+        "x-start",
+        "x-end",
+        "y-start",
+        "y-end",
+        "block-start",
+        "block-end",
+        "inline-start",
+        "inline-end",
+        "start",
+        "end",
+        "inherit",
+        "initial",
+        "revert",
+        "revert-layer",
+        "unset"
+      ],
+
+      "units": [
+        "px",
+        "%",
+        "em",
+        "rem",
+        "vw",
+        "vh",
+        "vmin",
+        "vmax",
+        "ch",
+        "ex",
+        "cm",
+        "mm",
+        "in",
+        "pt",
+        "pc"
+      ]
+    },
+
+    "VALUE_SET_OFFSET_PATH": {
+      "type": "mixed",
+      "values": [
+        "none",
+        "inherit",
+        "initial",
+        "revert",
+        "revert-layer",
+        "unset"
+      ],
+
+      "functions": [
+        "path()",
+        "ray()",
+        "circle()",
+        "ellipse()",
+        "polygon()",
+        "inset()",
+        "shape()"
+      ]
+    },
+
+    "VALUE_SET_OFFSET_DISTANCE": {
+      "range": {
+        "min": 0,
+        "max": 1000,
+        "step": 1,
+        "default": 0
+      },
+
+      "units": [
+        "px",
+        "%",
+        "em",
+        "rem",
+        "vw",
+        "vh",
+        "vmin",
+        "vmax",
+        "ch",
+        "ex",
+        "cm",
+        "mm",
+        "in",
+        "pt",
+        "pc"
+      ],
+
+      "specialValues": [
+        "0",
+        "inherit",
+        "initial",
+        "revert",
+        "revert-layer",
+        "unset"
+      ],
+
+      "functions": {
+        "calc": {
+          "type": "function",
+          "template": "calc({value})",
+          "placeholder": "calc(50% + 20px)"
+        },
+        "min": {
+          "type": "function",
+          "template": "min({value})",
+          "placeholder": "min(50%, 200px)"
+        },
+        "max": {
+          "type": "function",
+          "template": "max({value})",
+          "placeholder": "max(20px, 10%)"
+        },
+        "clamp": {
+          "type": "function",
+          "template": "clamp({value})",
+          "placeholder": "clamp(0px, 50%, 500px)"
+        }
+      }
+    },
+
+    "VALUE_SET_OFFSET_ROTATE": {
+      "type": "keyword",
+      "values": [
+        "auto",
+        "reverse",
+        "0deg",
+        "inherit",
+        "initial",
+        "revert",
+        "revert-layer",
+        "unset"
+      ],
+
+      "angleRange": {
+        "min": -360,
+        "max": 360,
+        "step": 1,
+        "default": 0
+      },
+
+      "units": [
+        "deg",
+        "grad",
+        "rad",
+        "turn"
+      ]
+    },
+
+    "VALUE_SET_OFFSET_ANCHOR": {
+      "type": "mixed",
+      "values": [
+        "auto",
+        "top",
+        "right",
+        "bottom",
+        "left",
+        "center",
+        "top left",
+        "top center",
+        "top right",
+        "center left",
+        "center right",
+        "bottom left",
+        "bottom center",
+        "bottom right",
+        "x-start",
+        "x-end",
+        "y-start",
+        "y-end",
+        "block-start",
+        "block-end",
+        "inline-start",
+        "inline-end",
+        "start",
+        "end",
+        "inherit",
+        "initial",
+        "revert",
+        "revert-layer",
+        "unset"
+      ],
+
+      "units": [
+        "px",
+        "%",
+        "em",
+        "rem",
+        "vw",
+        "vh",
+        "vmin",
+        "vmax",
+        "ch",
+        "ex",
+        "cm",
+        "mm",
+        "in",
+        "pt",
+        "pc"
+      ]
+    }
+  }
+}

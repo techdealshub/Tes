@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGen Tech - The Ultimate Smartphone Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome CDN Link -->
+<link rel="stylesheet" href="https://cloudflare.com">
+
+    <style>
+      /* Import highly clean design font */
+@import url('https://googleapis.com');
+
+/* Color variables configuration */
+:root {
+    --bg: #050816;
+    --card: #0d1729;
+    --border: #1e293b;
+    --primary: #3b82f6;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+}
+
+.custom-container {
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+.reaction-btn i {
+    font-size: 16px;
+    transition: transform 0.2s ease;
+}
+
+/* تأثير حركي لطيف عند تمرير الماوس فوق الأزرار */
+.reaction-btn:hover i {
+    transform: scale(1.15);
+}
+
+/* 1. Dynamic Reading Progress Bar */
+.reading-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background-color: var(--primary);
+    width: 0%;
+    z-index: 10000;
+    transition: width 0.1s ease;
+}
+
+/* 2. Glassmorphic Sticky Header */
+.site-header {
+    background-color: rgba(5, 8, 22, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text-main);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.site-logo span {
+    color: var(--primary);
+}
+
+.desktop-nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0 16px;
+    transition: color 0.2s;
+}
+
+.desktop-nav a:hover, .desktop-nav a.nav-active {
+    color: var(--primary);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* تنسيق حاوية زر البحث */
+.search-trigger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+/* تنسيق الأيقونة وإعطائها لوناً ظاهراً فوق الخلفية الداكنة */
+/* تنسيق حاوية زر البحث */
+
+
+/* تنسيق الأيقونة وإعطائها لوناً ظاهراً فوق الخلفية الداكنة */
+.search-icon {
+    color: var(--text-main); /* سيجعل الأيقونة باللون الأبيض الناصع */
+    font-size: 16px;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+/* تأثير الإضاءة الفخم باللون الأزرق المتناسق مع هويتك اللونية عند التمرير */
+.search-trigger:hover .search-icon {
+    color: var(--primary); /* يتحول للون الأزرق #3b82f6 */
+    transform: scale(1.15); /* تضخيم خفيف وناعم للأيقونة */
+}
+
+
+/* تأثير الإضاءة الفخم باللون الأزرق المتناسق مع هويتك اللونية عند التمرير */
+.search-trigger:hover .search-icon {
+    color: var(--primary); /* يتحول للون الأزرق #3b82f6 */
+    transform: scale(1.15); /* تضخيم خفيف وناعم للأيقونة */
+}
+
+
+.cta-premium {
+    background-color: var(--primary);
+    color: #ffffff;
+    border: none;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.cta-premium:hover {
+    opacity: 0.9;
+}
+
+/* 3. Main Dashboard Layout Grid */
+.main-layout {
+    display: grid;
+    grid-template-columns: 2.8fr 1.2fr;
+    gap: 50px;
+    padding: 60px 0;
+}
+
+.premium-badge {
+    color: var(--primary);
+    background-color: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    padding: 5px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.main-title {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    margin: 16px 0;
+}
+
+.author-meta-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.author-meta-card .avatar {
+    width: 42px;
+    height: 42px;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.meta-details {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+
+.meta-details .author-name {
+    font-weight: 700;
+}
+
+.meta-details .pub-date {
+    color: var(--text-muted);
+}
+
+/* Premium Image Holder Structure */
+.hero-image-container {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    margin-bottom: 40px;
+}
+
+.fluid-hero-img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Article Editorial Typography */
+.article-rich-text .paragraph-lead {
+    font-size: 19px;
+    color: #cbd5e1;
+    margin-bottom: 28px;
+}
+
+.article-rich-text h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 40px 0 14px 0;
+    color: var(--text-main);
+}
+
+.article-rich-text p {
+    font-size: 16px;
+    color: #cbd5e1;
+    margin-bottom: 24px;
+    text-align: justify;
+}
+
+/* 4. Quick Assessment Matrix Card */
+.spec-matrix-card {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    padding: 24px;
+    border-radius: 10px;
+    margin: 40px 0;
+}
+
+.spec-matrix-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.matrix-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.matrix-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255,255,255,0.02);
+    padding: 12px 16px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.03);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.matrix-item .score {
+    color: var(--primary);
+}
+
+/* 5. User Reaction System Styling */
+.article-reactions {
+    display: flex;
+    gap: 14px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+    margin: 40px 0;
+}
+
+.reaction-btn {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+}
+
+.reaction-btn:hover {
+    background-color: var(--border);
+}
+
+/* 6. Comment Architecture Engine */
+.comments-section {
+    margin-top: 50px;
+}
+
+.comments-section h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.comment-input-block textarea {
+    width: 100%;
+    height: 100px;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+    color: var(--text-main);
+    font-size: 14px;
+    outline: none;
+    resize: none;
+    margin-bottom: 12px;
+}
+
+.comment-input-block textarea:focus {
+    border-color: var(--primary);
+}
+
+.post-comment-btn {
+    background-color: var(--primary);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.comments-list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comment-node {
+    display: flex;
+    gap: 14px;
+    background-color: rgba(13, 23, 41, 0.4);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.comment-avatar {
+    width: 36px;
+    height: 36px;
+    background-color: var(--border);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.comment-content h5 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.comment-content h5 .c-date {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.comment-content p {
+    font-size: 14px;
+    color: #cbd5e1;
+}
+
+/* Sidebar Component Modules */
+.sidebar-widget {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    padding: 26px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+.sidebar-widget h4 {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+}
+
+.newsletter-widget p {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.newsletter-widget input {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-main);
+    font-size: 14px;
+    margin-bottom: 12px;
+    outline: none;
+}
+
+.newsletter-widget input:focus {
+    border-color: var(--primary);
+}
+
+.subscribe-btn {
+    width: 100%;
+    background-color: var(--primary);
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.sticky-widget {
+    position: sticky;
+    top: 110px;
+}
+
+.benchmark-list {
+    list-style: none;
+}
+
+.benchmark-list li {
+    margin-bottom: 12px;
+    border-bottom: 1px dashed var(--border);
+    padding-bottom: 10px;
+}
+
+.benchmark-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.benchmark-list a {
+    text-decoration: none;
+    color: #cbd5e1;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.benchmark-list a:hover {
+    color: var(--primary);
+}
+
+/* 7. Bottom Hub Feed Infrastructure */
+.bottom-hub-section {
+    background-color: rgba(13, 23, 41, 0.3);
+    border-top: 1px solid var(--border);
+    padding: 80px 0;
+}
+
+.hub-header {
+    margin-bottom: 40px;
+}
+
+.hub-header h2 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.hub-header p {
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+.subsection-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Cards Grid Architecture */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.hub-card {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.hub-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    border-color: var(--primary);
+}
+
+.card-mini-tag {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    width: max-content;
+    margin-bottom: 14px;
+}
+
+.color-apple { background-color: rgba(255,255,255,0.06); color: #fff; }
+.color-samsung { background-color: rgba(59,130,246,0.1); color: var(--primary); }
+.color-xiaomi { background-color: rgba(249,115,22,0.1); color: #f97316; }.hub-card h4 a {text-decoration: none;color: var(--text-main);font-size: 16px;font-weight: 700;line-height: 1.4;display: block;margin-bottom: 10px;}.hub-card p {font-size: 14px;color: var(--text-muted);margin-bottom: 16px;}.time-stamp, .sub-line {font-size: 12px;color: var(--text-muted);}/* Review Badge Specific Modules */.rev-card-header {display: flex;justify-content: space-between;align-items: flex-start;margin-bottom: 14px;}.rating-num {background-color: var(--primary);color: #ffffff;font-weight: 700;font-size: 12px;padding: 3px 8px;border-radius: 4px;}.rev-snippet {font-style: italic;font-size: 14px;color: #cbd5e1;}.rating-stars {color: #f59e0b;font-size: 13px;margin-top: 14px;letter-spacing: 2px;}/* 8. Modern Baseline Site Footer */.site-footer {background-color: #02040a;border-top: 1px solid var(--border);padding: 40px 0;color: var(--text-muted);font-size: 14px;}.footer-grid {display: flex;justify-content: space-between;align-items: center;flex-wrap: wrap;gap: 20px;}.footer-brand-side h3 {color: var(--text-main);font-size: 20px;margin-bottom: 6px;}.footer-brand-side h3 span { color: var(--primary); }.footer-brand-side p { max-width: 400px; font-size: 13px; }/* 9. Liquid Fluid Media Queries (Responsiveness Strategy) */@media (max-width: 992px) {.main-layout {grid-template-columns: 1fr;gap: 40px;padding: 30px 0;}.main-title {font-size: 30px;}.desktop-nav {display: none;}.footer-grid {flex-direction: column;text-align: center;}}
+    </style>
+</head>
+<body>
+
+    <!-- 1. شريط تقدم القراءة العلوي التفاعلي -->
+    <div class="reading-progress-bar" id="progressBar"></div>
+
+    <!-- 2. الهيدر الفاخر للموقع الكامل -->
+    <header class="site-header">
+        <div class="custom-container header-wrapper">
+            <a href="#" class="site-logo">NextGen<span>.</span></a>
+            <nav class="desktop-nav">
+                <a href="#">Home</a>
+                <a href="#" class="nav-active">Articles</a>
+                <a href="#">Reviews</a>
+                <a href="#">Benchmarks</a>
+                <a href="#">Videos</a>
+            </nav>
+            <div class="header-actions">
+<button class="search-trigger">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+</button>
+
+
+                <button class="cta-premium">Join Hub</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. مساحة المقال الرئيسي والتفاعل الجانبي -->
+    <main class="custom-container main-layout">
+        
+        <!-- العمود الأيسر: محتوى المقال المتكامل -->
+        <section class="article-section">
+            <article class="full-article">
+                <header class="article-header">
+                    <span class="premium-badge">Exclusive Report</span>
+                    <h1 class="main-title">The Smartphone Triad: Architectural War of iPhone, Samsung, and Xiaomi</h1>
+                    
+                    <div class="author-meta-card">
+                        <div class="avatar">TP</div>
+                        <div class="meta-details">
+                            <span class="author-name">By TechPulse Research Lab</span>
+                            <span class="pub-date">Published July 24, 2026 • 6 min read</span>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- حاوية الصورة السينمائية -->
+                <div class="hero-image-container">
+                    <img src="smartphones.png" alt="Flagship devices comparison" class="fluid-hero-img">
+                </div>
+
+                <!-- نص المقال -->
+                <div class="article-rich-text">
+                    <p class="paragraph-lead">
+                        The global mobile ecosystem is currently locked in an intense, multi-front architectural battle. Apple, Samsung, and Xiaomi each champion unique corporate philosophies, dividing global market share through distinct approaches.
+                    </p>
+
+                    <h2>Apple iPhone: Vertical Refinement & Sovereign Ecosystems</h2>
+                    <p>
+                        Apple avoids competing in basic hardware specification races. Instead, the Silicon Valley pioneer dominates through meticulous hardware-software synthesis. Powered by custom internal silicon architectures, the iPhone delivers industry-leading lifecycle longevity and absolute privacy standard frameworks.
+                    </p>
+
+                    <h2>Samsung: Engineering Vanguard & Display Supremacy</h2>
+                    <p>
+                        Samsung acts as the supreme hardware architect of the mobile era. Leveraging its multi-billion dollar display division, Samsung consistently dictates visual tech advancements with its industry-standard dynamic panels and experimental foldable form-factors.
+                    </p>
+
+                    <h2>Xiaomi: Technological Democratization & Hyper-Velocity</h2>
+                    <p>
+                        Xiaomi has effectively rewritten the rules of consumer electronics by breaking the direct correlation between premium specifications and high retail price tags, offering ultra-premium internal components and charging matrices within highly competitive tiers.
+                    </p>
+
+                    <!-- 4. إضافة: مصفوفة كارت التقييم والمواصفات السريع للمقال -->
+                    <div class="spec-matrix-card">
+                        <h3>Spec Hub Quick Assessment</h3>
+                        <div class="matrix-grid">
+                            <div class="matrix-item"><span>iPhone 17 Pro</span><span class="score">9.5 / 10</span></div>
+                            <div class="matrix-item"><span>Galaxy S26 Ultra</span><span class="score">9.3 / 10</span></div>
+                            <div class="matrix-item"><span>Xiaomi 16 Ultra</span><span class="score">9.0 / 10</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. إضافة: أزرار التفاعل وعداد الإعجابات التفاعلي بـ JavaScript -->
+                <div class="article-reactions">
+    <button class="reaction-btn" onclick="incrementLikes()">
+        <i class="fa-solid fa-fire" style="color: #ff4500;"></i> Useful (<span id="likeCount">142</span>)
+    </button>
+    <button class="reaction-btn" onclick="bookmarkArticle()">
+        <i class="fa-regular fa-bookmark"></i> Bookmark
+    </button>
+</div>
+
+            </article>
+
+            <!-- 6. إضافة: صندوق التعليقات الكامل أسفل المقال -->
+            <div class="comments-section">
+                <h3>Community Discussion (2)</h3>
+                <div class="comment-input-block">
+                    <textarea placeholder="Join the discussion, write a technical comment..."></textarea>
+                    <button class="post-comment-btn">Post Comment</button>
+                </div>
+                
+                <div class="comments-list">
+                    <div class="comment-node">
+                        <div class="comment-avatar">AM</div>
+                        <div class="comment-content">
+                            <h5>Alex Mercer <span class="c-date">2 hours ago</span></h5>
+                            <p>The 120W charging on Xiaomi completely changes daily routines. Once you experience it, going back to 25W feels prehistoric no matter how good the ecosystem is.</p>
+                        </div>
+                    </div>
+                    <div class="comment-node">
+                        <div class="comment-avatar">SK</div>
+                        <div class="comment-content">
+                            <h5>Sarah Connor <span class="c-date">5 hours ago</span></h5>
+                            <p>Vertical integration is why I stay with Apple. The clip transfer between my iPhone and Mac saves me hours of manual rendering weekly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- العمود الأيمن: أدوات السايدبار المتقدمة -->
+        <aside class="sidebar-section">
+            
+            <!-- ويدجت النشرة البريدية الاحترافية -->
+            <div class="sidebar-widget newsletter-widget">
+                <h4>Executive Briefing</h4>
+                <p>Get elite technical analysis delivered straight to your private inbox weekly.</p>
+                <input type="email" placeholder="Enter corporate email...">
+               <!-- إضافة أيقونة سهم أو طائرة ورقية بجانب النص -->
+<button class="subscribe-btn">Join Briefing <i class="fa-solid fa-paper-plane" style="margin-left: 5px;"></i></button>
+
+            </div>
+
+            <!-- ويدجت الكروت الأكثر قراءة وثبات بالتمرير -->
+            <div class="sidebar-widget sticky-widget">
+                <h4>Live Benchmarks</h4>
+                <ul class="benchmark-list">
+                    <li><a href="#">A19 Bionic vs Snapdragon 8 Gen 5</a></li>
+                    <li><a href="#">Foldable Hinge Longevity Audits</a></li>
+                    <li><a href="#">Periscope Zoom Sensor Degradation</a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <!-- 7. قســم بطاقات الأخبار الأخـرى والمراجعات الكامل في الأسفل -->
+    <section class="bottom-hub-section">
+        <div class="custom-container">
+            
+            <div class="hub-header">
+                <h2>Explore More Intelligence</h2>
+                <p>Dive deep into secondary reports and definitive product reviews</p>
+            </div>
+
+            <!-- كروت الأخبار الأخرى المتجاوبة -->
+            <h3 class="subsection-title">Latest Breaking Reports</h3>
+            <div class="cards-grid">
+                <div class="hub-card text-card">
+                    <span class="card-mini-tag color-apple">Apple</span>
+                    <h4><a href="#">TSMC confirms 2nm production timeline shifts.</a></h4>
+                    <p>New lithography nodes promise 15% efficiency boosts across micro-architectures...</p>
+                    <span class="time-stamp">3 hours ago</span>
+                </div>
+                <div class="hub-card text-card">
+                    <span class="card-mini-tag color-samsung">Samsung</span>
+                    <h4><a href="#">Display Division unveils zero-bezel panels.</a></h4>
+                    <p>New structural adhesive bonding layers remove perimeter borders completely...</p>
+                    <span class="time-stamp">6 hours ago</span>
+                </div>
+                <div class="hub-card text-card">
+                    <span class="card-mini-tag color-xiaomi">Xiaomi</span>
+                    <h4><a href="#">Solid-state thermal cooling array patented.</a></h4>
+                    <p>The passive vapor chamber matrix functions under maximum compute spikes...</p>
+                    <span class="time-stamp">Yesterday</span>
+                </div>
+            </div>
+
+            <!-- كروت المراجعات والتقييم بالنجوم والدرجات السفلية -->
+            <h3 class="subsection-title" style="margin-top: 50px;">Hardware Lab Reviews</h3>
+            <div class="cards-grid">
+                <div class="hub-card review-card">
+                    <div class="rev-card-header">
+                        <div>
+                            <h4>iPhone Pro Max</h4>
+                            <span class="sub-line">Apple Ecosystem</span>
+                        </div>                        <span class="rating-num">9.4</span>
+                    </div>
+                    <p class="rev-snippet">Unmatched cinematic video stability combined with lifetime performance predictability.</p>
+                    <div class="rating-stars">★★★★★</div>
+                </div>
+
+                <!-- كارد مراجعة هاتف سامسونج -->
+                <div class="hub-card review-card">
+                    <div class="rev-card-header">
+                        <div>
+                            <h4>Galaxy Ultra</h4>
+                            <span class="sub-line">Samsung Hardware</span>
+                        </div>
+                        <span class="rating-num">9.2</span>
+                    </div>
+                    <p class="rev-snippet">The most versatile optical macro zoom configuration on earth built underneath an anti-reflective panel.</p>
+                    <div class="rating-stars">★★★★★</div>
+                </div>
+
+                <!-- كارد مراجعة هاتف شاومي -->
+                <div class="hub-card review-card">
+                    <div class="rev-card-header">
+                        <div>
+                            <h4>Xiaomi Flagship</h4>
+                            <span class="sub-line">Xiaomi Global</span>
+                        </div>
+                        <span class="rating-num">8.9</span>
+                    </div>
+                    <p class="rev-snippet">Blistering 120W charging times that change daily habits completely at a highly disruptive consumer tier.</p>
+              <!-- نجوم كاملة ونجمة فارغة للحصول على تقييم 4 من 5 بشكل احترافي -->
+<div class="rating-stars">
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+</div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 8. الفوتر الفخم للموقع بالكامل -->
+    <footer class="site-footer">
+        <div class="custom-container footer-grid">
+            <div class="footer-brand-side">
+                <h3>NextGen<span>.</span></h3>
+                <p>Elite consumer technology analysis, hardware benchmarking, and architectural research.</p>
+            </div>
+            <div class="footer-links-side">
+                <p>© 2026 NextGen Media Group. All technical assessments reserved globally.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 9. كود JavaScript البسيط والذكي لتشغيل الميزات التفاعلية -->
+    <script>
+        // تحديث شريط تقدم القراءة العلوي عند تمرير الصفحة
+        window.onscroll = function() { updateProgressBar() };
+
+        function updateProgressBar() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+        }
+
+        // عداد الإعجابات التفاعلي لزر التفاعل
+        let likes = 142;
+        function incrementLikes() {
+            likes++;
+            document.getElementById("likeCount").innerText = likes;
+        }
+
+        function bookmarkArticle() {
+            alert("Article saved to your private hub bookmarks!");
+        }
+    </script>
+</body>
+</html>
+
