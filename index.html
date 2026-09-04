@@ -404,6 +404,7 @@ header{
     cursor:pointer;
 
     transition:.3s ease;
+  
 }
 
 .menu-link:hover,
@@ -910,8 +911,11 @@ section{
 .featured-trending{
 
     position:relative;
+    
 
     min-height:430px;
+  
+    max-width: 330px;
 
     overflow:hidden;
 
@@ -928,7 +932,7 @@ section{
     height:100%;
 
     min-height:430px;
-
+    
     object-fit:cover;
 
     opacity:.72;
@@ -1215,7 +1219,426 @@ section{
     font-weight:800;
 }
 
+/* =========================================================
+   EDITOR'S CHOICE
+========================================================= */
 
+#editors-choice .container{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:16px;
+
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+#editors-choice .section-header{
+
+    grid-column:1 / -1;
+
+}
+
+
+/* =========================================================
+   EDITOR CARD
+========================================================= */
+
+.ec-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-width:0;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:#101827;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    transition:
+
+        transform .35s ease,
+
+        border-color .35s ease,
+
+        box-shadow .35s ease;
+
+}
+
+
+.ec-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:rgba(59,130,246,.38);
+
+    box-shadow:
+
+        0 20px 45px rgba(0,0,0,.22);
+
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.ec-image-wrap{
+
+    width:100%;
+
+    height:190px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#0b1220;
+
+}
+
+
+.ec-image-wrap img{
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    transition:transform .45s ease;
+
+}
+
+
+.ec-card:hover .ec-image-wrap img{
+
+    transform:scale(1.06);
+
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.ec-badge{
+
+    position:absolute;
+
+    top:12px;
+
+    left:12px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:7px 10px;
+
+    border-radius:9px;
+
+    background:rgba(15,23,42,.88);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    color:#fff;
+
+    font-size:.68rem;
+
+    font-weight:800;
+
+    line-height:1;
+
+    backdrop-filter:blur(8px);
+
+    -webkit-backdrop-filter:blur(8px);
+
+}
+
+
+.ec-badge i{
+
+    font-size:.68rem;
+
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.ec-content{
+
+    padding:18px;
+
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.ec-category{
+
+    display:inline-block;
+
+    margin-bottom:7px;
+
+    color:#60a5fa;
+
+    font-size:.68rem;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    letter-spacing:.7px;
+
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.ec-content h3{
+
+    margin:0 0 8px;
+
+    color:#fff;
+
+    font-size:.98rem;
+
+    font-weight:800;
+
+    line-height:1.35;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.ec-content p{
+
+    margin:0;
+
+    color:var(--muted);
+
+    font-size:.79rem;
+
+    line-height:1.55;
+
+    min-height:38px;
+
+    display:-webkit-box;
+
+    -webkit-line-clamp:2;
+
+    -webkit-box-orient:vertical;
+
+    overflow:hidden;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.ec-footer{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    margin-top:16px;
+
+    padding-top:13px;
+
+    border-top:1px solid rgba(255,255,255,.06);
+
+}
+
+
+/* =========================================================
+   RATING
+========================================================= */
+
+.ec-rating{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:3px;
+
+}
+
+
+.ec-stars{
+
+    color:var(--yellow);
+
+    font-size:.76rem;
+
+    letter-spacing:1px;
+
+    line-height:1;
+
+}
+
+
+.ec-rating span{
+
+    color:var(--muted);
+
+    font-size:.62rem;
+
+    font-weight:600;
+
+}
+
+
+/* =========================================================
+   SCORE
+========================================================= */
+
+.ec-score{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-width:44px;
+
+    height:36px;
+
+    padding:0 9px;
+
+    border-radius:10px;
+
+    background:rgba(34,197,94,.12);
+
+    border:1px solid rgba(34,197,94,.15);
+
+    color:#4ade80;
+
+    font-size:.82rem;
+
+    font-weight:900;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width:1100px){
+
+    #editors-choice .container{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+@media (max-width:650px){
+
+    #editors-choice .container{
+
+        grid-template-columns:1fr;
+
+        gap:14px;
+
+    }
+
+
+    #editors-choice .section-header{
+
+        margin-bottom:2px;
+
+    }
+
+
+    .ec-image-wrap{
+
+        height:200px;
+
+    }
+
+
+    .ec-content{
+
+        padding:16px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width:420px){
+
+    .ec-image-wrap{
+
+        height:180px;
+
+    }
+
+
+    .ec-content h3{
+
+        font-size:.94rem;
+
+    }
+
+
+    .ec-content p{
+
+        font-size:.77rem;
+
+    }
+
+  }
 /* =========================================================
    LATEST REVIEWS
 ========================================================= */
@@ -1322,46 +1745,161 @@ section{
 }
 
 
+CSS الجديد
+
 /* =========================================================
-   COMPARISONS
+   POPULAR COMPARISONS
+========================================================= */
+
+#popular-comparisons{
+    position:relative;
+    padding:20px 0 45px;
+    
+    
+  
+}
+
+
+/* =========================================================
+   GRID
 ========================================================= */
 
 .container-comp{
 
-    width:min(1180px,92%);
-
-    margin:auto;
-
     display:grid;
 
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(3,380px);
 
-    gap:16px;
+    gap:18px;
+
+  align-items:center;
+    justify-content: center;
+
+    max-width:1400px;
+
+    margin:0 auto;
+
+    padding:0 0px;
 }
+
+
+/* =========================================================
+   CARD
+========================================================= */
 
 .comparison-card{
 
-    background:#101827;
+    position:relative;
 
-    border:1px solid var(--border);
+    min-width:0;
 
-    border-radius:22px;
+    padding:20px 17px 17px;
 
-    padding:18px;
+    overflow:hidden;
 
-    transition:.35s ease;
+    border:1px solid rgba(148,163,184,.16);
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.075),
+            rgba(255,255,255,.025)
+        );
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.20),
+        inset 0 1px 0 rgba(255,255,255,.055);
+
+    backdrop-filter:blur(14px);
+
+    -webkit-backdrop-filter:blur(14px);
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
 
     cursor:pointer;
 }
 
-.comparison-card:hover{
 
-    transform:translateY(-5px);
+/* subtle light */
 
-    border-color:rgba(59,130,246,.3);
+.comparison-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+    height:150px;
+
+    top:-85px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(59,130,246,.18),
+            transparent 70%
+        );
+
+    pointer-events:none;
 }
 
-.phones{
+
+/* bottom shine */
+
+.comparison-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:12%;
+    right:12%;
+    bottom:0;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.18),
+            transparent
+        );
+
+    opacity:.7;
+}
+
+
+/* hover */
+
+.comparison-card:hover{
+
+    transform:translateY(-7px);
+
+    border-color:
+        rgba(96,165,250,.38);
+
+    box-shadow:
+        0 22px 55px rgba(0,0,0,.32),
+        0 0 35px rgba(59,130,246,.07);
+}
+
+
+/* =========================================================
+   PHONES AREA
+========================================================= */
+
+.comparison-phones{
+
+    position:relative;
 
     display:flex;
 
@@ -1371,48 +1909,157 @@ section{
 
     gap:8px;
 
-    min-height:145px;
+    min-height:205px;
+
+    padding:3px 0 15px;
 }
 
-.phone{
 
-    flex:1;
+/* =========================================================
+   PHONE
+========================================================= */
+
+.comparison-phone{
+
+    position:relative;
+
+    width:calc(50% - 23px);
 
     min-width:0;
 
     text-align:center;
 }
 
-.phone img{
 
-    width:82px;
-    height:82px;
+/* =========================================================
+   IMAGE AREA
+========================================================= */
 
-    margin:auto;
+.phone-image{
 
-    object-fit:cover;
+    position:relative;
 
-    border-radius:14px;
+    height:155px;
 
-    transition:.3s ease;
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:1;
+  
+  
 }
 
-.comparison-card:hover .phone img{
 
-    transform:scale(1.05);
+/* glowing background */
+
+.phone-glow{
+
+    position:absolute;
+
+    width:95px;
+    height:125px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(59,130,246,.16),
+            transparent 68%
+        );
+
+    filter:blur(12px);
+
+    opacity:.7;
+
+    transition:
+        transform .45s ease,
+        opacity .45s ease;
 }
 
-.phone span{
+
+/* image */
+
+.phone-image img{
+
+    position:relative;
+
+    z-index:2;
 
     display:block;
 
-    margin-top:9px;
+    width:auto;
+    
+    max-width:80%;
 
-    color:#fff;
+    height:145px;
 
-    font-size:.72rem;
+    object-fit:contain;
 
-    font-weight:600;
+    filter:
+        drop-shadow(
+            0 14px 15px rgba(0,0,0,.35)
+        );
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    transition:
+        transform .45s cubic-bezier(.2,.8,.2,1),
+        filter .45s ease;
+  
+
+}
+
+
+/* hover image */
+
+.comparison-card:hover .phone-image img{
+
+    transform:
+        translateY(-7px)
+        scale(1.075);
+
+    filter:
+        drop-shadow(
+            0 20px 20px rgba(0,0,0,.42)
+        );
+}
+
+
+.comparison-card:hover .phone-glow{
+
+    transform:scale(1.2);
+
+    opacity:1;
+}
+
+
+/* =========================================================
+   PHONE NAME
+========================================================= */
+
+.phone-name{
+
+    display:block;
+
+    max-width:100%;
+
+    margin-top:3px;
+
+    padding:0 2px;
+
+    color:#f8fafc;
+
+    font-size:.68rem;
+
+    font-weight:650;
+
+    line-height:1.3;
 
     white-space:nowrap;
 
@@ -1421,12 +2068,21 @@ section{
     text-overflow:ellipsis;
 }
 
+
+/* =========================================================
+   VS
+========================================================= */
+
 .vs{
+
+    position:relative;
+
+    z-index:5;
 
     width:38px;
     height:38px;
 
-    flex-shrink:0;
+    flex:0 0 38px;
 
     display:flex;
 
@@ -1435,35 +2091,99 @@ section{
 
     border-radius:50%;
 
-    background:linear-gradient(
-        135deg,
-        #3b82f6,
-        #7c3aed
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #3b82f6,
+            #6366f1 50%,
+            #8b5cf6
+        );
+
+    box-shadow:
+        0 7px 20px rgba(79,70,229,.35),
+        inset 0 1px 1px rgba(255,255,255,.3);
 
     color:#fff;
 
-    font-size:.68rem;
+    font-size:.62rem;
 
-    font-weight:800;
+    font-weight:900;
+
+    letter-spacing:.5px;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
 }
+
+
+/* ring */
+
+.vs::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-4px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(99,102,241,.2);
+
+    transition:
+        transform .35s ease,
+        opacity .35s ease;
+}
+
+
+.comparison-card:hover .vs{
+
+    transform:scale(1.1);
+
+    box-shadow:
+        0 9px 27px rgba(79,70,229,.5),
+        inset 0 1px 1px rgba(255,255,255,.3);
+}
+
+
+.comparison-card:hover .vs::before{
+
+    transform:scale(1.3);
+
+    opacity:.5;
+}
+
+
+/* =========================================================
+   INFO
+========================================================= */
 
 .comparison-info{
 
+    position:relative;
+
     padding-top:15px;
 
-    border-top:1px solid var(--border);
+    border-top:1px solid rgba(148,163,184,.13);
 
     text-align:center;
+
+    z-index:2;
 }
+
 
 .comparison-info h3{
 
-    min-height:42px;
+    min-height:40px;
 
-    margin-bottom:8px;
+    margin:0 0 9px;
 
-    font-size:.86rem;
+    color:#f8fafc;
+
+    font-size:.82rem;
+
+    font-weight:700;
 
     line-height:1.45;
 
@@ -1476,12 +2196,70 @@ section{
     overflow:hidden;
 }
 
+
+/* VS inside title */
+
+.comparison-info h3 span{
+
+    display:inline-block;
+
+    margin:0 3px;
+
+    color:#818cf8;
+
+    font-size:.68rem;
+
+    font-weight:800;
+}
+
+
+/* =========================================================
+   COMPARISON COUNT
+========================================================= */
+
 .comparison-info p{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:6px;
+
+    margin:0;
 
     color:#64748b;
 
-    font-size:.72rem;
+    font-size:.67rem;
+
+    font-weight:550;
 }
+
+
+.comparison-info p i{
+
+    color:#60a5fa;
+
+    font-size:.62rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1100px){
+
+    .container-comp{
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
 
 
 /* =========================================================
@@ -1579,6 +2357,575 @@ section{
     font-size:.85rem;
 
     line-height:1.7;
+}
+
+/* =========================================================
+   PHONE SPECIFICATIONS
+========================================================= */
+
+#phone-specifications{
+    padding:70px 0;
+}
+
+#phone-specifications .container{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+#phone-specifications .section-header{
+    grid-column:1 / -1;
+}
+
+
+/* =========================================================
+   SPEC CARD
+========================================================= */
+
+.spec-card{
+    position:relative;
+
+    display:grid;
+    grid-template-columns:180px 1fr;
+    gap:20px;
+
+    min-height:230px;
+    padding:20px;
+
+    background:#101827;
+    border:1px solid var(--border);
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:
+        transform .35s ease,
+        background .35s ease,
+        border-color .35s ease;
+}
+
+.spec-card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(59,130,246,.35);
+    background:#141f32;
+}
+
+
+/* =========================================================
+   IMAGE AREA
+========================================================= */
+
+.spec-image{
+    width:100%;
+    height:100%;
+    min-height:190px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:12px;
+
+    box-sizing:border-box;
+
+    background:#0b1423;
+    border-radius:15px;
+
+    overflow:hidden;
+}
+
+.spec-image img{
+    display:block;
+
+    width:100%;
+    max-width:165px;
+
+    height:auto;
+    max-height:190px;
+
+    object-fit:contain;
+    object-position:center;
+
+    margin:auto;
+
+    transition:
+        transform .35s ease;
+}
+
+.spec-card:hover .spec-image img{
+    transform:scale(1.05);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.spec-content{
+    display:flex;
+    flex-direction:column;
+
+    min-width:0;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.spec-brand{
+    color:var(--primary-light);
+
+    font-size:.68rem;
+    font-weight:700;
+
+    text-transform:uppercase;
+    letter-spacing:.7px;
+
+    margin-bottom:5px;
+}
+
+
+/* =========================================================
+   PHONE TITLE
+========================================================= */
+
+.spec-content h3{
+    margin:0 0 14px;
+
+    color:#f8fafc;
+
+    font-size:1.05rem;
+    line-height:1.35;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   SPECIFICATIONS LIST
+========================================================= */
+
+.spec-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:8px;
+
+    margin-bottom:auto;
+}
+
+
+/* =========================================================
+   SPEC ITEM
+========================================================= */
+
+.spec-item{
+    display:flex;
+    flex-direction:column;
+
+    gap:3px;
+
+    min-width:0;
+
+    padding:9px 10px;
+
+    background:rgba(255,255,255,.025);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:10px;
+
+    box-sizing:border-box;
+}
+
+.spec-item span{
+    color:#64748b;
+
+    font-size:.65rem;
+    line-height:1.2;
+}
+
+.spec-item strong{
+    color:#e2e8f0;
+
+    font-size:.72rem;
+    font-weight:600;
+
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+
+    line-height:1.3;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.spec-footer{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:10px;
+
+    margin-top:14px;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.spec-price{
+    color:#f8fafc;
+
+    font-size:.78rem;
+    font-weight:700;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   FULL SPECS LINK
+========================================================= */
+
+.spec-link{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    color:var(--primary-light);
+
+    font-size:.72rem;
+    font-weight:700;
+
+    text-decoration:none;
+
+    white-space:nowrap;
+
+    transition:
+        gap .25s ease,
+        color .25s ease;
+}
+
+.spec-link:hover{
+    gap:9px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width:900px){
+
+    #phone-specifications .container{
+        grid-template-columns:1fr;
+    }
+
+    .spec-card{
+        grid-template-columns:190px 1fr;
+    }
+
+    .spec-image img{
+        max-width:175px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width:700px){
+
+    #phone-specifications{
+        padding:50px 0;
+    }
+
+    #phone-specifications .container{
+        grid-template-columns:1fr;
+
+        gap:16px;
+    }
+
+
+    /* -----------------------------------------
+       CARD
+    ----------------------------------------- */
+
+    .spec-card{
+        display:grid;
+
+        grid-template-columns:135px 1fr;
+
+        gap:15px;
+
+        min-height:0;
+
+        padding:15px;
+
+        border-radius:19px;
+    }
+
+
+    /* -----------------------------------------
+       IMAGE
+    ----------------------------------------- */
+
+    .spec-image{
+        width:100%;
+
+        min-height:210px;
+        height:100%;
+
+        padding:8px;
+
+        border-radius:14px;
+    }
+
+    .spec-image img{
+        width:100%;
+
+        max-width:125px;
+        max-height:175px;
+
+        object-fit:contain;
+    }
+
+
+    /* -----------------------------------------
+       CONTENT
+    ----------------------------------------- */
+
+    .spec-content{
+        min-width:0;
+    }
+
+
+    /* -----------------------------------------
+       BRAND
+    ----------------------------------------- */
+
+    .spec-brand{
+        font-size:.67rem;
+
+        margin-bottom:5px;
+
+        letter-spacing:.8px;
+    }
+
+
+    /* -----------------------------------------
+       TITLE
+    ----------------------------------------- */
+
+    .spec-content h3{
+        font-size:1rem;
+
+        line-height:1.3;
+
+        margin:0 0 12px;
+    }
+
+
+    /* -----------------------------------------
+       SPEC LIST
+    ----------------------------------------- */
+
+    .spec-list{
+        grid-template-columns:1fr;
+
+        gap:7px;
+    }
+
+
+    /* -----------------------------------------
+       SPEC ITEM
+    ----------------------------------------- */
+
+    .spec-item{
+        padding:8px 10px;
+
+        border-radius:10px;
+
+        gap:2px;
+    }
+
+    .spec-item span{
+        font-size:.61rem;
+    }
+
+    .spec-item strong{
+        font-size:.69rem;
+    }
+
+
+    /* -----------------------------------------
+       FOOTER
+    ----------------------------------------- */
+
+    .spec-footer{
+        margin-top:10px;
+
+        gap:6px;
+    }
+
+    .spec-price{
+        font-size:.72rem;
+    }
+
+    .spec-link{
+        font-size:.69rem;
+
+        gap:5px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width:480px){
+
+    .spec-card{
+        grid-template-columns:115px 1fr;
+
+        gap:13px;
+
+        padding:13px;
+    }
+
+
+    .spec-image{
+        min-height:195px;
+
+        padding:7px;
+    }
+
+    .spec-image img{
+        max-width:108px;
+        max-height:155px;
+    }
+
+
+    .spec-content h3{
+        font-size:.94rem;
+
+        line-height:1.25;
+
+        margin-bottom:10px;
+    }
+
+
+    .spec-brand{
+        font-size:.62rem;
+    }
+
+
+    .spec-list{
+        gap:6px;
+    }
+
+
+    .spec-item{
+        padding:7px 8px;
+    }
+
+    .spec-item span{
+        font-size:.58rem;
+    }
+
+    .spec-item strong{
+        font-size:.65rem;
+    }
+
+
+    .spec-footer{
+        margin-top:8px;
+    }
+
+    .spec-price{
+        font-size:.67rem;
+    }
+
+    .spec-link{
+        font-size:.65rem;
+    }
+
+  }
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    #phone-specifications .container{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .spec-card{
+        grid-template-columns:120px 1fr;
+        gap:14px;
+        padding:15px;
+    }
+
+    .spec-image{
+        min-height:170px;
+    }
+
+    .spec-list{
+        grid-template-columns:1fr;
+        gap:6px;
+    }
+
+    .spec-content h3{
+        font-size:.92rem;
+    }
+
+    .spec-price{
+        font-size:.7rem;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .spec-card{
+        grid-template-columns:105px 1fr;
+        min-height:190px;
+    }
+
+    .spec-image{
+        min-height:155px;
+    }
+
+    .spec-item{
+        padding:7px 8px;
+    }
+
+    .spec-footer{
+        margin-top:9px;
+    }
+
+    .spec-link{
+        font-size:.65rem;
+    }
+
 }
 
 
@@ -2174,11 +3521,11 @@ a:focus-visible{
 
         <div class="submenu">
 
-            <a href="#">Latest News</a>
+            <a href="news1.html">Latest News</a>
 
-            <a href="#">Leaks & Rumors</a>
+            <a href="leaks-rumors.html">Leaks & Rumors</a>
 
-            <a href="#">Software Updates</a>
+            <a href="software-updates.html">Software Updates</a>
 
         </div>
 
@@ -2208,11 +3555,11 @@ a:focus-visible{
 
             <a href="flagship-phones.html">Flagships</a>
 
-            <a href="#">Mid-Range</a>
+            <a href="mid-range-phones.html">Mid-Range</a>
 
-            <a href="#">Budget Phones</a>
+            <a href="budget-phones.html">Budget Phones</a>
 
-            <a href="#">Upcoming Phones</a>
+            <a href="upcoming-phones.html">Upcoming Phones</a>
 
         </div>
 
@@ -2240,13 +3587,13 @@ a:focus-visible{
 
         <div class="submenu">
 
-            <a href="#">Apple</a>
+            <a href="apple.html">Apple</a>
 
-            <a href="#">Samsung</a>
+            <a href="samsung.html">Samsung</a>
 
-            <a href="#">Xiaomi</a>
+            <a href="xiaomi.html">Xiaomi</a>
 
-            <a href="#">Google</a>
+            <a href="google.html">Google</a>
 
         </div>
 
@@ -2278,7 +3625,7 @@ a:focus-visible{
 
             <a href="#">Featured Reviews</a>
 
-            <a href="#">Editor's Choice</a>
+            <a href="editor-choice.html">Editor's Choice</a>
 
         </div>
 
@@ -2587,7 +3934,8 @@ a:focus-visible{
 
 </section><!-- =======================================================
      FEATURED REVIEWS
-======================================================= --><section id="featured-reviews"><div class="container">
+======================================================= -->
+  <section id="featured-reviews"><div class="container">
 
 
     <div class="section-header">
@@ -2820,7 +4168,380 @@ a:focus-visible{
 
 </div>
 
-</section><!-- =======================================================
+</section>
+  
+  <!-- =========================================================
+     EDITOR'S CHOICE
+========================================================= -->
+
+<section id="editors-choice">
+
+    <div class="container">
+
+        <!-- SECTION HEADER -->
+
+        <div class="section-header">
+
+            <div class="section-heading">
+
+                <span class="section-tag">
+
+                    <i class="fa-solid fa-award"></i>
+
+                    Editor's Choice
+
+                </span>
+
+                <h3>
+
+                    Our Top Picks
+
+                </h3>
+
+            </div>
+
+
+            <a
+                href="editor-choice.html"
+                class="view-all"
+            >
+
+                View All
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+                Editor's Choice
+
+            </a>
+
+        </div>
+
+
+        <!-- =================================================
+             CARD 1
+        ================================================== -->
+
+        <div class="ec-card search-card">
+
+            <div class="ec-image-wrap">
+
+                <img
+                    src="Samsung/img/galaxys26ultra_16_9.png"
+                    alt="Samsung Galaxy S26 Ultra"
+                >
+
+                <span class="ec-badge">
+
+                    <i class="fa-solid fa-crown"></i>
+
+                    Best Overall
+
+                </span>
+
+            </div>
+
+
+            <div class="ec-content">
+
+                <span class="ec-category">
+
+                    Flagship
+
+                </span>
+
+
+                <h3>
+
+                    Samsung Galaxy S26 Ultra
+
+                </h3>
+
+
+                <p>
+
+                    Exceptional display, powerful cameras,
+                    outstanding performance and advanced AI features.
+
+                </p>
+
+
+                <div class="ec-footer">
+
+                    <div class="ec-rating">
+
+                        <div class="ec-stars">
+
+                            ★★★★★
+
+                        </div>
+
+                        <span>
+
+                            Editor Rating
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="ec-score">
+
+                        9.6
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CARD 2
+        ================================================== -->
+
+        <div class="ec-card search-card">
+
+            <div class="ec-image-wrap">
+
+                <img
+                    src="apple/img/iphone17promax_16_9.png"
+                    alt="iPhone 17 Pro Max"
+                >
+
+                <span class="ec-badge">
+
+                    <i class="fa-solid fa-camera"></i>
+
+                    Best Camera
+
+                </span>
+
+            </div>
+
+
+            <div class="ec-content">
+
+                <span class="ec-category">
+
+                    Premium
+
+                </span>
+
+
+                <h3>
+
+                    iPhone 17 Pro Max
+
+                </h3>
+
+
+                <p>
+
+                    A premium flagship with exceptional photography,
+                    powerful performance and class-leading battery life.
+
+                </p>
+
+
+                <div class="ec-footer">
+
+                    <div class="ec-rating">
+
+                        <div class="ec-stars">
+
+                            ★★★★★
+
+                        </div>
+
+                        <span>
+
+                            Editor Rating
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="ec-score">
+
+                        9.5
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CARD 3
+        ================================================== -->
+
+        <div class="ec-card search-card">
+
+            <div class="ec-image-wrap">
+
+                <img
+                    src="xiaomi/img/Xiaomi16ultra_16_9.png"
+                    alt="Xiaomi 16 Ultra"
+                >
+
+                <span class="ec-badge">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    Best Value
+
+                </span>
+
+            </div>
+
+
+            <div class="ec-content">
+
+                <span class="ec-category">
+
+                    Flagship
+
+                </span>
+
+
+                <h3>
+
+                    Xiaomi 16 Ultra
+
+                </h3>
+
+
+                <p>
+
+                    Flagship-level cameras, ultra-fast charging
+                    and impressive performance at a competitive price.
+
+                </p>
+
+
+                <div class="ec-footer">
+
+                    <div class="ec-rating">
+
+                        <div class="ec-stars">
+
+                            ★★★★★
+
+                        </div>
+
+                        <span>
+
+                            Editor Rating
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="ec-score">
+
+                        9.4
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CARD 4
+        ================================================== -->
+
+        <div class="ec-card search-card">
+
+            <div class="ec-image-wrap">
+
+                <img
+                    src="google/img/Googlepixel10pro_16_9.png"
+                    alt="Google Pixel 10 Pro"
+                >
+
+                <span class="ec-badge">
+
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    Best AI
+
+                </span>
+
+            </div>
+
+
+            <div class="ec-content">
+
+                <span class="ec-category">
+
+                    Premium
+
+                </span>
+
+
+                <h3>
+
+                    Google Pixel 10 Pro
+
+                </h3>
+
+
+                <p>
+
+                    Outstanding computational photography,
+                    smart AI features and a clean Android experience.
+
+                </p>
+
+
+                <div class="ec-footer">
+
+                    <div class="ec-rating">
+
+                        <div class="ec-stars">
+
+                            ★★★★★
+
+                        </div>
+
+                        <span>
+
+                            Editor Rating
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="ec-score">
+
+                        9.3
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+  
+  <!-- =======================================================
      LATEST REVIEWS
 ======================================================= --><section id="latest-reviews"><div class="container">
 
@@ -2984,7 +4705,7 @@ a:focus-visible{
         <article class="review-card search-card">
 
             <img
-                src="Google/img/pixel10pro.png"
+                src="google/img/googlepixel10pro_3_2.png"
                 alt="Google Pixel 10 Pro"
             >
 
@@ -3044,310 +4765,767 @@ a:focus-visible{
 
 </section><!-- =======================================================
      POPULAR COMPARISONS
-======================================================= --><section id="popular-comparisons"><div class="container">
+======================================================= -->
+  <section id="popular-comparisons">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-heading">
+
+                <span class="section-tag">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    Compare
+                </span>
+
+                <h3>
+                    Popular Comparisons
+                </h3>
+
+            </div>
+
+            <!-- نفس المسار بدون تغيير -->
+            <a
+                href="phone-compare.html"
+                class="view-all"
+            >
+                View All
+                <i class="fa-solid fa-arrow-right"></i>
+                Popular Compare
+            </a>
+
+        </div>
+
+    </div>
 
 
-    <div class="section-header">
+    <div class="container-comp">
 
-        <div class="section-heading">
 
-            <span class="section-tag">
+        <!-- iPhone vs Samsung -->
+        <div class="comparison-card search-card">
 
-                <i class="fa-solid fa-scale-balanced"></i>
+            <div class="comparison-phones">
 
-                Compare
+                <div class="comparison-phone">
 
-            </span>
+                    <div class="phone-image">
+                        <span class="phone-glow"></span>
 
-            <h3>
+                        <img
+                            src="apple/img/iphone17promax_1_1.png"
+                            alt="iPhone 17 Pro Max"
+                        >
+                    </div>
 
-                Popular Comparisons
+                    <span class="phone-name">
+                        iPhone 17 Pro Max
+                    </span>
 
-            </h3>
+                </div>
+
+
+                <div class="vs">
+                    <span>VS</span>
+                </div>
+
+
+                <div class="comparison-phone">
+
+                    <div class="phone-image">
+                        <span class="phone-glow"></span>
+
+                        <img
+                            src="Samsung/img/galaxys26ultra_1_1.png"
+                            alt="Samsung Galaxy S26 Ultra"
+                        >
+                    </div>
+
+                    <span class="phone-name">
+                        Galaxy S26 Ultra
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="comparison-info">
+
+                <h3>
+                    iPhone 17 Pro Max
+                    <span>vs</span>
+                    Galaxy S26 Ultra
+                </h3>
+
+                <p>
+                    <i class="fa-solid fa-chart-simple"></i>
+                    12.5K comparisons this week
+                </p>
+
+            </div>
 
         </div>
 
 
-        <a
-            href="phone-compare.html"
-            class="view-all"
-        >
 
-            View All
+        <!-- Samsung vs Pixel -->
+        <div class="comparison-card search-card">
 
-            <i class="fa-solid fa-arrow-right"></i>
+            <div class="comparison-phones">
 
-            Popular Compare
+                <div class="comparison-phone">
 
-        </a>
+                    <div class="phone-image">
+                        <span class="phone-glow"></span>
+
+                        <img
+                            src="Samsung/img/galaxys26ultra_1_1.png"
+                            alt="Samsung Galaxy S26 Ultra"
+                        >
+                    </div>
+
+                    <span class="phone-name">
+                        Galaxy S26 Ultra
+                    </span>
+
+                </div>
+
+
+                <div class="vs">
+                    <span>VS</span>
+                </div>
+
+
+                <div class="comparison-phone">
+
+                    <div class="phone-image">
+                        <span class="phone-glow"></span>
+
+                        <img
+                            src="google/img/googlepixel10pro_1_1.png"
+                            alt="Google Pixel 10 Pro"
+                        >
+                    </div>
+
+                    <span class="phone-name">
+                        Pixel 10 Pro
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="comparison-info">
+
+                <h3>
+                    Galaxy S26 Ultra
+                    <span>vs</span>
+                    Google Pixel 10 Pro
+                </h3>
+
+                <p>
+                    <i class="fa-solid fa-chart-simple"></i>
+                    10.8K comparisons this week
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Xiaomi vs iPhone -->
+        <div class="comparison-card search-card">
+
+            <div class="comparison-phones">
+
+                <div class="comparison-phone">
+
+                    <div class="phone-image">
+                        <span class="phone-glow"></span>
+
+                        <img
+                            src="xiaomi/img/xiaomi16ultra_1_1.png"
+                            alt="Xiaomi 16 Ultra"
+                        >
+                    </div>
+
+                    <span class="phone-name">
+                        Xiaomi 16 Ultra
+                    </span>
+
+                </div>
+
+
+                <div class="vs">
+                    <span>VS</span>
+                </div>
+
+
+                <div class="comparison-phone">
+
+                    <div class="phone-image">
+                        <span class="phone-glow"></span>
+
+                        <img
+                            src="apple/img/iphone17promax_1_1.png"
+                            alt="iPhone 17 Pro Max"
+                        >
+                    </div>
+
+                    <span class="phone-name">
+                        iPhone 17 Pro Max
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="comparison-info">
+
+                <h3>
+                    Xiaomi 16 Ultra
+                    <span>vs</span>
+                    iPhone 17 Pro Max
+                </h3>
+
+                <p>
+                    <i class="fa-solid fa-chart-simple"></i>
+                    9.4K comparisons this week
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Samsung vs Xiaomi -->
+        <div class="comparison-card search-card">
+
+            <div class="comparison-phones">
+
+                <div class="comparison-phone">
+
+                    <div class="phone-image">
+                        <span class="phone-glow"></span>
+
+                        <img
+                            src="Samsung/img/galaxys26ultra_1_1.png"
+                            alt="Samsung Galaxy S26 Ultra"
+                        >
+                    </div>
+
+                    <span class="phone-name">
+                        Galaxy S26 Ultra
+                    </span>
+
+                </div>
+
+
+                <div class="vs">
+                    <span>VS</span>
+                </div>
+
+
+                <div class="comparison-phone">
+
+                    <div class="phone-image">
+                        <span class="phone-glow"></span>
+
+                        <img
+                            src="xiaomi/img/xiaomi16ultra_1_1.png"
+                            alt="Xiaomi 16 Ultra"
+                        >
+                    </div>
+
+                    <span class="phone-name">
+                        Xiaomi 16 Ultra
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="comparison-info">
+
+                <h3>
+                    Galaxy S26 Ultra
+                    <span>vs</span>
+                    Xiaomi 16 Ultra
+                </h3>
+
+                <p>
+                    <i class="fa-solid fa-chart-simple"></i>
+                    8.7K comparisons this week
+                </p>
+
+            </div>
+
+        </div>
+
 
     </div>
 
-</div>
+</section>
+<!-- =======================================================
+     PHONE SPECIFICATIONS
+======================================================= -->
+
+<section id="phone-specifications">
+
+    <div class="container">
 
 
-<div class="container-comp">
+        <!-- SECTION HEADER -->
+
+        <div class="section-header">
+
+            <div class="section-heading">
+
+                <span class="section-tag">
+
+                    <i class="fa-solid fa-list-check"></i>
+
+                    Specifications
+
+                </span>
+
+                <h2>
+
+                    Explore Phone Specifications
+
+                </h2>
+
+            </div>
 
 
-    <div class="comparison-card search-card">
+            <a
+                href="phone-specifications.html"
+                class="view-all"
+            >
 
-        <div class="phones">
+                View All
 
-            <div class="phone">
+                <i class="fa-solid fa-arrow-right"></i>
+
+                Specifications
+
+            </a>
+
+        </div>
+
+
+        <!-- CARD 1 -->
+
+        <article class="spec-card search-card">
+
+            <a
+                href="iphone-17-pro-max.html"
+                class="spec-image"
+            >
 
                 <img
-                    src="apple/iphone17promax_1.png"
+                    src="apple/img/iphone17promax_3_4.png"
                     alt="iPhone 17 Pro Max"
                 >
 
-                <span>
+            </a>
+
+
+            <div class="spec-content">
+
+                <span class="spec-brand">
+
+                    Apple
+
+                </span>
+
+
+                <h3>
 
                     iPhone 17 Pro Max
 
-                </span>
+                </h3>
+
+
+                <div class="spec-list">
+
+                    <div class="spec-item">
+
+                        <span>Display</span>
+
+                        <strong>6.9" OLED</strong>
+
+                    </div>
+
+
+                    <div class="spec-item">
+
+                        <span>Processor</span>
+
+                        <strong>A19 Pro</strong>
+
+                    </div>
+
+
+                    <div class="spec-item">
+
+                        <span>RAM</span>
+
+                        <strong>12GB</strong>
+
+                    </div>
+
+
+                    <div class="spec-item">
+
+                        <span>Camera</span>
+
+                        <strong>48MP</strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="spec-footer">
+
+                    <span class="spec-price">
+
+                        Flagship
+
+                    </span>
+
+
+                    <a
+                        href="iphone-17-pro-max.html"
+                        class="spec-link"
+                    >
+
+                        Full Specs
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
 
             </div>
 
-
-            <div class="vs">
-
-                VS
-
-            </div>
+        </article>
 
 
-            <div class="phone">
+        <!-- CARD 2 -->
+
+        <article class="spec-card search-card">
+
+            <a
+                href="samsung-galaxy-s26-ultra.html"
+                class="spec-image"
+            >
 
                 <img
-                    src="s26.jpg"
+                    src="Samsung/img/galaxys26ultra_16_9.png"
                     alt="Samsung Galaxy S26 Ultra"
                 >
 
-                <span>
-
-                    Galaxy S26 Ultra
-
-                </span>
-
-            </div>
-
-        </div>
+            </a>
 
 
-        <div class="comparison-info">
+            <div class="spec-content">
 
-            <h3>
+                <span class="spec-brand">
 
-                iPhone 17 Pro Max vs Galaxy S26 Ultra
-
-            </h3>
-
-            <p>
-
-                12.5K comparisons this week
-
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="comparison-card search-card">
-
-        <div class="phones">
-
-            <div class="phone">
-
-                <img
-                    src="pixel10pro.jpg"
-                    alt="Google Pixel 10 Pro"
-                >
-
-                <span>
-
-                    Pixel 10 Pro
+                    Samsung
 
                 </span>
 
-            </div>
 
-
-            <div class="vs">
-
-                VS
-
-            </div>
-
-
-            <div class="phone">
-
-                <img
-                    src="s26.jpg"
-                    alt="Samsung Galaxy S26 Ultra"
-                >
-
-                <span>
+                <h3>
 
                     Samsung Galaxy S26 Ultra
 
-                </span>
+                </h3>
+
+
+                <div class="spec-list">
+
+                    <div class="spec-item">
+
+                        <span>Display</span>
+
+                        <strong>6.9" AMOLED</strong>
+
+                    </div>
+
+
+                    <div class="spec-item">
+
+                        <span>Processor</span>
+
+                        <strong>Snapdragon 8 Elite</strong>
+
+                    </div>
+
+
+                    <div class="spec-item">
+
+                        <span>RAM</span>
+
+                        <strong>12GB</strong>
+
+                    </div>
+
+
+                    <div class="spec-item">
+
+                        <span>Camera</span>
+
+                        <strong>200MP</strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="spec-footer">
+
+                    <span class="spec-price">
+
+                        Ultra Flagship
+
+                    </span>
+
+
+                    <a
+                        href="samsung-galaxy-s26-ultra.html"
+                        class="spec-link"
+                    >
+
+                        Full Specs
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
 
             </div>
 
-        </div>
+        </article>
 
 
-        <div class="comparison-info">
+        <!-- CARD 3 -->
 
-            <h3>
+        <article class="spec-card search-card">
 
-                Google Pixel 10 Pro vs Galaxy S26 Ultra
-
-            </h3>
-
-            <p>
-
-                10.8K comparisons this week
-
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="comparison-card search-card">
-
-        <div class="phones">
-
-            <div class="phone">
+            <a
+                href="xiaomi-16-ultra.html"
+                class="spec-image"
+            >
 
                 <img
-                    src="xiaomi.jpg"
+                    src="xiaomi/img/Xiaomi16ultra_16_9.png"
                     alt="Xiaomi 16 Ultra"
                 >
 
-                <span>
+            </a>
+
+
+            <div class="spec-content">
+
+                <span class="spec-brand">
+
+                    Xiaomi
+
+                </span>
+
+
+                <h3>
 
                     Xiaomi 16 Ultra
 
-                </span>
+                </h3>
+
+
+                <div class="spec-list">
+
+                    <div class="spec-item">
+
+                        <span>Display</span>
+
+                        <strong>6.8" AMOLED</strong>
+
+                    </div>
+
+
+                    <div class="spec-item">
+
+                        <span>Processor</span>
+
+                        <strong>Snapdragon 8 Elite</strong>
+
+                    </div>
+
+
+                    <div class="spec-item">
+
+                        <span>RAM</span>
+
+                        <strong>16GB</strong>
+
+                    </div>
+
+
+                    <div class="spec-item">
+
+                        <span>Camera</span>
+
+                        <strong>200MP</strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="spec-footer">
+
+                    <span class="spec-price">
+
+                        Camera Flagship
+
+                    </span>
+
+
+                    <a
+                        href="xiaomi-16-ultra.html"
+                        class="spec-link"
+                    >
+
+                        Full Specs
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
 
             </div>
 
-
-            <div class="vs">
-
-                VS
-
-            </div>
+        </article>
 
 
-            <div class="phone">
+        <!-- CARD 4 -->
+
+        <article class="spec-card search-card">
+
+            <a
+                href="google-pixel-10-pro.html"
+                class="spec-image"
+            >
 
                 <img
-                    src="apple/iphone17promax_1.png"
-                    alt="iPhone 17 Pro Max"
+                    src="google/img/Googlepixel10pro_16_9.png"
+                    alt="Google Pixel 10 Pro"
                 >
 
-                <span>
+            </a>
 
-                    iPhone 17 Pro Max
+
+            <div class="spec-content">
+
+                <span class="spec-brand">
+
+                    Google
 
                 </span>
 
+
+                <h3>
+
+                    Google Pixel 10 Pro
+
+                </h3>
+
+
+                <div class="spec-list">
+
+                    <div class="spec-item">
+
+                        <span>Display</span>
+
+                        <strong>6.3" OLED</strong>
+
+                    </div>
+
+
+                    <div class="spec-item">
+
+                        <span>Processor</span>
+
+                        <strong>Tensor G5</strong>
+
+                    </div>
+
+
+                    <div class="spec-item">
+
+                        <span>RAM</span>
+
+                        <strong>16GB</strong>
+
+                    </div>
+
+
+                    <div class="spec-item">
+
+                        <span>Camera</span>
+
+                        <strong>50MP</strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="spec-footer">
+
+                    <span class="spec-price">
+
+                        AI Flagship
+
+                    </span>
+
+
+                    <a
+                        href="google-pixel-10-pro.html"
+                        class="spec-link"
+                    >
+
+                        Full Specs
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
             </div>
 
-        </div>
+        </article>
 
-
-        <div class="comparison-info">
-
-            <h3>
-
-                Xiaomi 16 Ultra vs iPhone 17 Pro Max
-
-            </h3>
-
-            <p>
-
-                9.4K comparisons this week
-
-            </p>
-
-        </div>
 
     </div>
 
+</section>
 
-    <div class="comparison-card search-card">
-
-        <div class="phones">
-
-            <div class="phone">
-
-                <img
-                    src="s26.jpg"
-                    alt="Samsung Galaxy S26 Ultra"
-                >
-
-                <span>
-
-                    Galaxy S26 Ultra
-
-                </span>
-
-            </div>
-
-
-            <div class="vs">
-
-                VS
-
-            </div>
-
-
-            <div class="phone">
-
-                <img
-                    src="xiaomi.jpg"
-                    alt="Xiaomi 16 Ultra"
-                >
-
-                <span>
-
-                    Xiaomi 16 Ultra
-
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="comparison-info">
-
-            <h3>
-
-                Galaxy S26 Ultra vs Xiaomi 16 Ultra
-
-            </h3>
-
-            <p>
-
-                8.7K comparisons this week
-
-            </p>
-
-        </div>
-
-    </div>
-
-
-</div>
-
-</section><!-- =======================================================
+  <!-- =======================================================
      BUYING GUIDES
 ======================================================= --><section><div class="container">
 

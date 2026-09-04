@@ -1,0 +1,3882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PhoneHub - Smartphone Reviews & Comparisons</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+:root{
+    --bg:#0b1120;
+    --card:#111827;
+    --border:rgba(255,255,255,.08);
+    --text:#ffffff;
+    --muted:#94a3b8;
+    --primary:#3b82f6;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter,Arial,sans-serif;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+}
+Header{
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  background:#0b1120;
+  border-bottom: 1px groove #ffffff11;
+  z-index: 10000;
+}
+.menu-btn{
+    position:fixed;
+    top:10px;
+    left:20px;
+
+    width:50px;
+    height:50px;
+
+    border:none;
+    border-radius:14px;
+
+    background:#111827;
+    color:#fff;
+
+    cursor:pointer;
+    z-index:1001;
+}
+.logo{
+  position:fixed;
+    top:0px;
+    left:0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width:70px;
+    height:70px;
+    overflow: hidden;
+}
+.logo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.6);
+  
+}
+/* Overlay */
+
+.overlay{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.6);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:999;
+}
+
+.overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+/* Sidebar */
+
+
+.sidebar{
+    position:fixed;
+    top:-100%;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    background:#111827;
+
+    overflow-y:auto;
+
+    transition:.4s ease;
+
+    z-index:1000;
+}
+
+.sidebar.active{
+    top:70px;
+}
+/* Header */
+
+.sidebar-header{
+    padding:25px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.sidebar-header h2{
+    color:#fff;
+    font-size:1.4rem;
+}
+
+.sidebar-header p{
+    margin-top:6px;
+    color:#94a3b8;
+    font-size:.85rem;
+}
+
+/* Menu */
+
+.menu{
+    display:block !important;
+    visibility:visible !important;
+    opacity:1 !important;
+
+    padding:20px 20px 20px;
+}
+
+.menu-item{
+    margin-bottom:8px;
+}
+
+.menu-link{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+     font-size:1.1rem;
+    padding:18px 20px;
+
+    border-radius:14px;
+
+    color:#fff;
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.menu-link:hover{
+    background:#1e293b;
+}
+
+.menu-left{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.menu-left i{
+    width:18px;
+    color:#3b82f6;
+}
+
+.arrow{
+    transition:.3s;
+}
+
+.menu-link.active .arrow{
+    transform:rotate(180deg);
+}
+
+/* Submenu */
+
+.submenu{
+    max-height:0;
+    overflow:hidden;
+    margin-left:22px;
+    padding-left:18px;
+
+    border-left:1px solid rgba(255,255,255,.08);
+
+    transition:max-height .35s ease;
+}
+
+.submenu.active{
+    max-height:500px;
+}
+
+.submenu a{
+    position:relative;
+
+    display:block;
+
+    padding:10px 12px 10px 18px;
+
+    color:#94a3b8;
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.submenu a::before{
+    content:"";
+
+    position:absolute;
+
+    left:-19px;
+    top:50%;
+
+    width:10px;
+    height:1px;
+
+    background:rgba(255,255,255,.15);
+}
+
+.submenu a::after{
+    content:"";
+
+    position:absolute;
+
+    left:-10px;
+    top:50%;
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:#3b82f6;
+
+    transform:translateY(-50%);
+}
+
+.submenu a:hover{
+    color:#fff;
+    transform:translateX(5px);
+}
+
+/* Social */
+
+.social-title{
+    color:#fff;
+    padding:20px 24px 10px;
+}
+
+.socials{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+
+    padding:0 24px 24px;
+}
+
+.socials a{
+    width:45px;
+    height:45px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:#1e293b;
+    color:#fff;
+
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.socials a:hover{
+    background:#3b82f6;
+    transform:translateY(-3px);
+}
+
+/* Footer */
+
+.sidebar-footer{
+    padding:20px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+    color:#64748b;
+    font-size:.8rem;
+}
+.search-container{
+    position:absolute;
+    text-align: right;
+    width:70px;
+    top:10px;
+    right: 0px;
+}
+
+.search-icon-btn{
+    width:50px;
+    height:50px;
+    position: absolute;
+    right: 20px;
+    border:none;
+    border-radius:50%;
+    background:#111827;
+    color:#fff;
+   z-index: 10001;
+    cursor:pointer;
+}
+
+.search-box{
+    position:absolute;
+    top:60px;
+    right:0px;
+    width:360px;
+    height:55px;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding:0 18px;
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.45),
+        0 10px 25px rgba(0,0,0,.25),
+        0 0 0 1px rgba(255,255,255,.05);
+    background:#111827;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-10px);
+
+    transition:.3s;
+}
+
+.search-box.active{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+    z-index: 10000;
+}
+
+.search-box input{
+    flex:1;
+
+    border:none;
+    outline:none;
+    background:none;
+
+    color:#fff;
+}
+
+.search-box i{
+    color:#9ca3af;
+}
+.container{
+    width:min(1200px,92%);
+    margin:auto;
+}
+.container-comp{
+    width:min(1200px,92%);
+    margin:auto;
+}
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* NAVBAR */
+/* HERO */
+
+#hero{
+    padding:120px 0 90px;
+    text-align:center;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 18px;
+    border-radius:999px;
+    background:rgba(59,130,246,.15);
+    color:#60a5fa;
+    margin-bottom:25px;
+}
+
+#hero h1{
+    font-size:clamp(3rem,6vw,5rem);
+    margin-bottom:20px;
+}
+
+#hero p{
+    max-width:750px;
+    margin:auto;
+    line-height:1.8;
+    color:var(--muted);
+}
+
+.hero-buttons{
+    margin-top:35px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 24px;
+    border-radius:12px;
+    margin:5px;
+    font-weight:600;
+}
+
+.btn-primary{
+    background:var(--primary);
+}
+
+.btn-secondary{
+    background:#1f2937;
+}
+
+section{
+    padding:30px 0px;
+}
+#featured-reviews{
+    display:grid;
+    
+    padding:30px 0;
+
+}
+
+
+.f-review-card{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    width:100%;
+    height:120px;
+    padding:10px;
+    margin-bottom: 15px;
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    transition:.3s ease;
+    cursor:pointer;
+    
+}
+
+.f-review-card:hover{
+    transform:translateY(-2px);
+    border-color:#3b82f6;
+}
+
+.f-review-card img{
+    width:100px;
+    height:100px;
+
+    border-radius:14px;
+    object-fit:cover;
+    flex-shrink:0;
+}
+
+.f-review-content{
+    flex:1;
+    min-width:0;
+}
+
+.f-review-content h3{
+    margin:0 0 0px;
+    color:#fff;
+
+    font-size:.95rem;
+    font-weight:700;
+
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.f-review-content p{
+    margin:0 0 10px;
+
+    color:#9ca3af;
+    font-size:.85rem;
+    line-height:1.4;
+
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+.f-review-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.stars{
+    color:#fbbf24;
+    font-size:.95rem;
+    letter-spacing:1px;
+    align-items: center;
+}
+
+.score{
+    padding:4px 10px;
+
+    border-radius:999px;
+
+    background:#3b82f6;
+    color:#fff;
+
+    font-size:.8rem;
+    font-weight:700;
+}
+.section-header{
+    display:flex;
+    flex-direction:column;
+    
+}
+
+.controls{
+    display:flex;
+    gap:10px;
+}
+
+.controls button{
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:14px;
+    background:#111827;
+    color:#fff;
+    cursor:pointer;
+}
+
+.carousel{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+}
+
+.featured-review-card{
+    max-width:320px;
+    background:#111827;
+    border-radius:24px;
+    overflow:hidden;
+    opacity:.45;
+    transform:scale(.85);
+    transition:.4s ease;
+}
+
+.featured-review-card.active{
+    width:500px;
+    opacity:1;
+    transform:scale(1);
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+
+.featured-review-card img{
+    width:100%;
+    max-width: 350px;
+    height:260px;
+    object-fit:cover;
+}
+
+.review-content{
+    padding:24px;
+}
+
+.score{
+    display:inline-block;
+    background:#22c55e;
+    color:#fff;
+    padding:6px 12px;
+    border-radius:8px;
+    margin-bottom:0px;
+}
+
+.review-content h3{
+    margin-bottom:15px;
+}
+
+.pros-cons{
+    display:flex;
+    justify-content:space-between;
+    color:#cbd5e1;
+}
+
+.pros{
+    color:#22c55e;
+}
+
+.cons{
+    color:#ef4444;
+}
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:1.4rem;
+    margin-bottom:30px;
+}
+
+.section-title i{
+    color:var(--primary);
+}
+
+/* TRENDING */
+
+.phone-list{
+    display:grid;
+    gap:18px;
+}
+
+.phone-card{
+    display:flex;
+    gap:18px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:15px;
+    transition:.3s;
+}
+
+.phone-card:hover{
+    transform:translateY(-4px);
+}
+
+.phone-card img{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:16px;
+}
+#trending-worldwide{
+    padding:40px 15px;
+    display: block;
+}
+.section-header{
+    margin-bottom:30px;
+    
+}
+
+.section-tag{
+    display:block;
+    align-items:center;
+    gap:8px;
+    color:#60a5fa;
+    margin-bottom:12px;
+}
+
+.section-tag i{
+    color:#f97316;
+}
+
+.section-header h3{
+    font-size:1.4rem;
+    width:100%;
+}
+
+.trending-grid{
+    display:grid;
+    grid-template-columns:2fr 3fr;
+    gap:25px;
+}
+
+.featured-trending{
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    overflow:hidden;
+}
+
+.featured-trending img{
+    width:100%;
+    height:179px;
+    object-fit:cover;
+}
+
+.featured-content{
+    padding:24px;
+}
+
+.rank{
+    color:#f59e0b;
+    font-weight:700;
+}
+
+.featured-content h3{
+    margin:12px 0;
+}
+
+.featured-content p{
+    color:#94a3b8;
+    line-height:1.7;
+}
+
+.trending-list{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.trend-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    padding:18px;
+    border-radius:16px;
+}
+
+.trend-item span{
+    color:#3b82f6;
+    font-weight:800;
+    font-size:1.1rem;
+}
+
+.trend-item h4{
+    font-size:1rem;
+}
+
+@media(max-width:900px){
+    .trending-grid{
+        grid-template-columns:1fr;
+    }
+}
+.phone-info{
+    flex:1;
+}
+
+.tag{
+    display:inline-block;
+    background:rgba(59,130,246,.15);
+    color:#60a5fa;
+    padding:5px 12px;
+    border-radius:999px;
+    font-size:.8rem;
+    margin-bottom:10px;
+}
+
+.phone-info h3{
+    margin-bottom:10px;
+}
+
+.phone-info p{
+    color:var(--muted);
+    line-height:1.6;
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.rating{
+    color:#fbbf24;
+    margin-bottom:10px;
+}
+
+/* COMPARISON */
+
+
+
+.compare-header{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+}
+
+.phone{
+    text-align:center;
+}
+
+.phone i{
+    font-size:3rem;
+    color:var(--primary);
+}
+
+.vs{
+    font-size:2rem;
+    font-weight:800;
+    color:var(--primary);
+}
+
+/* FEATURES */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.comparison-card{
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    padding:20px 10px;
+    margin-bottom:15px;
+    transition:.35s ease;
+    cursor:pointer;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    height:280px; /* ارتفاع ثابت */
+  
+}
+
+.comparison-card:hover{
+    transform:translateY(-6px);
+    border-color:#3b82f6;
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+
+.phones{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+    height:130px; /* تثبيت منطقة الصور */
+    flex-shrink:0;
+
+    margin-bottom:18px;
+  
+}
+
+.phone{
+    text-align:center;
+    flex:1;
+}
+
+.phone img{
+    width:90px;
+    height:90px;
+    transition:.3s;
+
+    object-fit:cover;
+}
+
+.comparison-card:hover .phone img{
+    transform:scale(1.08);
+}
+
+.phone span{
+    display:block;
+    margin-top:10px;
+
+    color:#fff;
+    font-size:.85rem;
+    font-weight:600;
+
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.vs{
+    width:50px;
+    height:50px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        #3b82f6,
+        #8b5cf6
+    );
+
+    color:#fff;
+    font-weight:800;
+    font-size:.9rem;
+
+    flex-shrink:0;
+}
+
+.comparison-info{
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.08);
+    padding-top:10px;
+    margin-top:auto;
+}
+
+.comparison-info h3{
+    margin:0 0 8px;
+
+    color:#fff;
+    font-size:1rem;
+    font-weight:600;
+    line-height:1.4;
+
+    min-height:44px; /* سطران ثابتان */
+
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+.comparison-info p{
+    margin:0;
+    color:#9ca3af;
+    font-size:.85rem;
+}
+.feature{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:25px;
+}
+
+.feature i{
+    font-size:2rem;
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.feature p{
+    color:var(--muted);
+    margin-top:10px;
+}
+
+/* NEWS */
+
+  .news-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:14px;
+   background:#111827;
+    max-height: 140px;
+    padding:16px 10px;
+    overflow: hidden;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.news-content{
+    flex:1;
+    min-width:0;
+}
+
+.news-meta{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    margin-bottom:8px;
+}
+
+.brand{
+    color:#3b82f6;
+    font-size:.8rem;
+    font-weight:600;
+}
+
+.time{
+    color:#9ca3af;
+    font-size:.8rem;
+}
+
+.news-content h3{
+    margin:0 0 8px;
+
+    color:#fff;
+    font-size:1rem;
+    font-weight:600;
+    line-height:1.4;
+
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+.news-content p{
+    margin:0;
+
+    color:#9ca3af;
+    font-size:.85rem;
+    line-height:1.5;
+
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+.news-card img{
+    width:110px;
+    height:110px;
+
+    border-radius:14px;
+    object-fit:cover;
+
+    flex-shrink:0;
+}
+.reviews-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,2fr));
+    gap:24px;
+    align-items:center;
+    justify-content: center;
+}
+.review-card{
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    overflow:hidden;
+    transition:.3s;
+    max-width: 340px;
+    margin: 0 auto;
+}
+.review-card img{
+  max-width:340px;
+}
+
+footer{
+    border-top:1px solid var(--border);
+    padding:40px 0;
+    text-align:center;
+    color:var(--muted);
+}
+
+@media(max-width:768px){
+
+.menu{
+    display:none;
+}
+
+.phone-card{
+    flex-direction:column;
+}
+
+.phone-card img{
+    width:100%;
+    height:220px;
+    
+}
+
+.compare-header{
+    flex-direction:column;
+}
+.section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.section-header h2{
+    font-size:2rem;
+}
+
+.section-header i{
+    color:#3b82f6;
+}
+
+.view-all{
+     
+    gap:8px;
+  background: linear-gradient(90deg, #3B82F6, #6a9def);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: .95rem;
+    text-decoration:none;
+    font-weight:400;
+    margin-bottom:25px;
+    padding-right: 0px;
+    align-self:flex-end;
+    
+    display:block;
+    width:fit-content;
+    margin-left:auto;
+    margin-right:0;
+    text-decoration:none;
+    font-weight:700;
+    font-size:16px;
+    background: linear-gradient(
+        135deg,
+        #3b82f6,
+        #06b6d4
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.view-all i{
+    font-size:.85rem;
+}
+
+.section-title{
+    margin-top:0;
+}
+
+.reviews-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:24px;
+}
+
+.review-card{
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.review-card:hover{
+    transform:translateY(-5px);
+}
+
+.review-card img{
+    width:100%;
+    height:179px;
+    object-fit:cover;
+}
+
+.review-content{
+    padding:20px;
+}
+
+.review-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.score{
+    background:#22c55e;
+    color:white;
+    font-weight:700;
+    padding:6px 12px;
+    border-radius:10px;
+}
+
+.date{
+    color:#94a3b8;
+    font-size:.9rem;
+}
+
+.review-content h3{
+    margin-bottom:12px;
+}
+
+.review-content p{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:15px;
+}
+
+.spec-tags{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.spec-tags span{
+    background:rgba(255,255,255,.06);
+    padding:6px 12px;
+    border-radius:999px;
+    font-size:.8rem;
+}
+}
+.comparison-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(500px,1fr));
+    gap:24px;
+}
+
+.comparison-card{
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    padding:24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    transition:.3s;
+}
+
+.comparison-card:hover{
+    transform:translateY(-5px);
+}
+
+.device{
+    flex:1;
+    text-align:center;
+}
+
+.device img{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:18px;
+    margin-bottom:12px;
+}
+
+.device h3{
+    font-size:1rem;
+    margin-bottom:10px;
+}
+
+.score{
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:10px;
+    background:#22c55e;
+    color:#fff;
+    font-weight:700;
+}
+
+.vs-circle{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:#2563eb;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+    font-size:1.2rem;
+    color:#fff;
+    flex-shrink:0;
+}
+
+.view-all{
+    color:#60a5fa;
+    text-decoration:none;
+}
+
+.section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+@media(max-width:768px){
+
+    .comparison-grid{
+        grid-template-columns:1fr;
+    }
+
+    .comparison-card{
+        flex-direction:column;
+    }
+}
+.news-layout{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:24px;
+}
+
+.featured-news{
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    overflow:hidden;
+}
+.reviews-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:24px;
+}
+.featured-news img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+}
+
+.featured-content{
+    padding:24px;
+}
+
+.news-category{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:#f97316;
+    margin-bottom:15px;
+}
+
+.featured-content h3{
+    font-size:1.8rem;
+    margin-bottom:15px;
+}
+
+.featured-content p{
+    color:#94a3b8;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.news-meta{
+    display:flex;
+    gap:20px;
+    color:#94a3b8;
+    font-size:.9rem;
+}
+
+.news-sidebar{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.mini-news{
+    display:flex;
+    gap:15px;
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:12px;
+}
+
+.mini-news img{
+    width:100px;
+    height:100px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.mini-news span{
+    color:#60a5fa;
+    font-size:.85rem;
+}
+
+.mini-news h4{
+    margin-top:8px;
+    font-size:.95rem;
+    line-height:1.5;
+}
+
+@media(max-width:900px){
+
+    .news-layout{
+        grid-template-columns:1fr;
+    }
+
+    .featured-news img{
+        height:250px;
+    }
+}
+.brands-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+}
+
+.brand-card{
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    padding:28px 20px;
+    text-align:center;
+    transition:.3s;
+    color:#fff;
+}
+
+.brand-card:hover{
+    transform:translateY(-6px);
+    border-color:#2563eb;
+    box-shadow:0 15px 35px rgba(37,99,235,.15);
+}
+
+.brand-card i{
+    font-size:2.8rem;
+    color:#60a5fa;
+    margin-bottom:15px;
+}
+
+.brand-card h3{
+    margin-bottom:8px;
+    font-size:1.1rem;
+}
+
+.brand-card span{
+    color:#94a3b8;
+    font-size:.9rem;
+}
+@media(min-width:768px){
+  .container-comp{
+    display: grid;
+  
+     grid-template-columns:repeat(auto-fit,minmax(350px,2fr));
+  }
+  .comparison-card{
+    max-width: 350px;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    gap: 35px;
+}
+
+
+}
+
+@media (min-width:768px){
+
+    .view-all{
+        margin-right:0 !important;
+        margin-left:auto !important;
+    }
+#featured-reviews .container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+#featured-reviews .section-header{
+    grid-column:1 / -1;
+}
+#latest-news .container{
+  display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+#latest-news .section-header{
+    grid-column:1 / -1;
+}
+}
+
+/* =========================================================
+   TECHDEALSHUB — HOMEPAGE PREMIUM VISUAL OVERRIDE
+   CONTENT / IMAGES / SECTIONS / LINKS / JS UNCHANGED
+========================================================= */
+:root{
+  --tdh-bg:#070a0f;
+  --tdh-bg-soft:#0b0f16;
+  --tdh-card:#10151e;
+  --tdh-card-2:#121923;
+  --tdh-border:rgba(255,255,255,.08);
+  --tdh-border-light:rgba(255,255,255,.14);
+  --tdh-text:#f4f7fb;
+  --tdh-text-2:#aeb7c5;
+  --tdh-text-3:#707b8c;
+  --tdh-blue:#3182f6;
+  --tdh-blue-2:#5a9bff;
+  --tdh-blue-soft:rgba(49,130,246,.12);
+  --tdh-green:#25c985;
+  --tdh-orange:#ff9d42;
+  --tdh-purple:#9b72ff;
+  --tdh-radius:20px;
+  --tdh-shadow:0 18px 50px rgba(0,0,0,.28);
+}
+html{scroll-behavior:auto}
+body{
+  font-family:Inter,Arial,sans-serif!important;
+  background:
+    radial-gradient(circle at 50% -10%,rgba(49,130,246,.075),transparent 34%),
+    var(--tdh-bg)!important;
+  color:var(--tdh-text)!important;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:linear-gradient(to bottom,black,transparent 75%);
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+
+/* HEADER */
+header{
+  position:sticky!important;
+  top:0!important;
+  left:0!important;
+  width:100%!important;
+  height:76px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  background:rgba(7,10,15,.88)!important;
+  backdrop-filter:blur(18px)!important;
+  -webkit-backdrop-filter:blur(18px)!important;
+  border-bottom:1px solid var(--tdh-border)!important;
+  box-shadow:0 8px 35px rgba(0,0,0,.12)!important;
+  z-index:10000!important;
+}
+.menu-btn,.search-icon-btn{
+  width:40px!important;height:40px!important;
+  border:1px solid var(--tdh-border)!important;
+  border-radius:11px!important;
+  background:rgba(255,255,255,.025)!important;
+  color:var(--tdh-text-2)!important;
+  transition:.22s ease!important;
+}
+.menu-btn{position:absolute!important;left:20px!important;top:18px!important}
+.search-icon-btn{position:absolute!important;right:20px!important;top:18px!important}
+.menu-btn:hover,.search-icon-btn:hover{
+  color:#fff!important;border-color:var(--tdh-border-light)!important;
+  background:rgba(255,255,255,.07)!important;
+  transform:translateY(-1px);
+}
+.logo{
+  position:absolute!important;
+  top:0!important;left:50%!important;
+  transform:translateX(-50%)!important;
+  width:76px!important;height:76px!important;
+  display:grid!important;place-items:center!important;
+  overflow:hidden!important;
+}
+.logo img{width:64px!important;height:64px!important;object-fit:contain!important;transform:none!important;filter:drop-shadow(0 8px 20px rgba(49,130,246,.18))}
+.search-container{position:absolute!important;right:0!important;top:0!important;width:80px!important;height:76px!important}
+.search-box{
+  position:absolute!important;
+  top:62px!important;right:20px!important;
+  width:min(430px,calc(100vw - 40px))!important;
+  height:58px!important;
+  padding:0 17px!important;
+  display:flex!important;align-items:center!important;gap:12px!important;
+  background:#111722!important;
+  border:1px solid var(--tdh-border-light)!important;
+  border-radius:16px!important;
+  box-shadow:0 25px 70px rgba(0,0,0,.55)!important;
+}
+.search-box input{font-size:13px!important}
+.search-box i{color:var(--tdh-blue-2)!important}
+
+/* SIDEBAR / MENU */
+.overlay{background:rgba(0,0,0,.72)!important;backdrop-filter:blur(4px)!important;z-index:9998!important}
+.sidebar{
+  top:-100%!important;left:0!important;width:100%!important;height:calc(100vh - 76px)!important;
+  background:rgba(10,14,21,.98)!important;
+  backdrop-filter:blur(20px)!important;
+  border-top:1px solid var(--tdh-border)!important;
+  box-shadow:0 30px 80px rgba(0,0,0,.55)!important;
+  z-index:9999!important;
+}
+.sidebar.active{top:76px!important}
+.menu{
+  width:min(900px,100%)!important;
+  margin:auto!important;
+  padding:28px 22px 20px!important;
+  display:grid!important;
+  grid-template-columns:repeat(2,1fr)!important;
+  gap:8px 12px!important;
+}
+.menu-item{margin:0!important}
+.menu-link{
+  padding:15px 16px!important;
+  min-height:54px!important;
+  border:1px solid transparent!important;
+  border-radius:13px!important;
+  background:rgba(255,255,255,.025)!important;
+  color:var(--tdh-text-2)!important;
+  font-size:13px!important;
+}
+.menu-link:hover,.menu-link.active{
+  color:#fff!important;
+  background:var(--tdh-blue-soft)!important;
+  border-color:rgba(49,130,246,.2)!important;
+}
+.menu-left{gap:11px!important}
+.menu-left i{color:var(--tdh-blue-2)!important;width:18px!important}
+.arrow{font-size:10px!important}
+.submenu{
+  margin:5px 0 8px 22px!important;
+  padding-left:15px!important;
+  border-left:1px solid rgba(49,130,246,.2)!important;
+}
+.submenu a{padding:9px 10px 9px 16px!important;font-size:12px!important}
+.social-title{
+  width:min(900px,calc(100% - 44px));margin:auto!important;
+  padding:16px 0 10px!important;
+  border-top:1px solid var(--tdh-border)!important;
+  color:var(--tdh-text-2)!important;font-size:11px!important;
+  text-transform:uppercase;letter-spacing:.12em;
+}
+.socials{
+  width:min(900px,calc(100% - 44px));margin:auto!important;
+  padding:4px 0 20px!important;
+}
+.socials a{
+  width:38px!important;height:38px!important;border-radius:10px!important;
+  background:rgba(255,255,255,.04)!important;
+  border:1px solid var(--tdh-border)!important;color:var(--tdh-text-2)!important;
+}
+.socials a:hover{background:var(--tdh-blue)!important;color:#fff!important}
+.sidebar-footer{
+  border-top:1px solid var(--tdh-border)!important;
+  color:var(--tdh-text-3)!important;font-size:10px!important;
+}
+
+/* GLOBAL CONTAINERS / SECTIONS */
+.container,.container-comp{
+  width:min(1240px,calc(100% - 40px))!important;
+  margin-left:auto!important;margin-right:auto!important;
+}
+section{padding:72px 0!important}
+.section-header{
+  display:flex!important;align-items:flex-end!important;
+  justify-content:space-between!important;gap:20px!important;
+  margin-bottom:24px!important;
+}
+.section-title,.section-header h3,.section-header h2{
+  font-size:22px!important;line-height:1.25!important;
+  letter-spacing:-.7px!important;font-weight:800!important;
+  margin:0!important;color:var(--tdh-text)!important;
+}
+.section-title i,.section-header h3 i{color:var(--tdh-blue-2)!important}
+.section-tag{
+  display:inline-flex!important;align-items:center!important;gap:8px!important;
+  margin-bottom:10px!important;color:var(--tdh-blue-2)!important;
+  font-size:9px!important;font-weight:800!important;
+  letter-spacing:.12em!important;text-transform:uppercase!important;
+}
+.section-tag i{color:var(--tdh-blue-2)!important}
+.view-all{
+  display:flex!important;align-items:center!important;gap:7px!important;
+  color:var(--tdh-blue-2)!important;font-size:11px!important;font-weight:700!important;
+  margin:0!important;padding:0!important;background:none!important;
+  -webkit-text-fill-color:initial!important;
+}
+.view-all:hover{color:#fff!important}
+.view-all i{font-size:9px!important;transition:.2s}
+.view-all:hover i{transform:translateX(4px)}
+
+/* HERO */
+#hero{
+  position:relative!important;
+  padding:105px 0 85px!important;
+  text-align:center!important;
+  overflow:hidden!important;
+}
+#hero::before{
+  content:"";position:absolute;width:650px;height:420px;left:50%;top:-220px;
+  transform:translateX(-50%);
+  background:rgba(49,130,246,.11);filter:blur(100px);pointer-events:none;
+}
+#hero .container{position:relative}
+.badge{
+  display:inline-flex!important;align-items:center!important;gap:8px!important;
+  padding:7px 12px!important;margin-bottom:18px!important;
+  border:1px solid rgba(49,130,246,.25)!important;
+  border-radius:30px!important;background:var(--tdh-blue-soft)!important;
+  color:var(--tdh-blue-2)!important;font-size:10px!important;font-weight:800!important;
+  letter-spacing:.05em;
+}
+#hero h1{
+  max-width:900px;margin:0 auto 18px!important;
+  font-size:clamp(38px,6vw,68px)!important;
+  line-height:1.02!important;letter-spacing:-3px!important;font-weight:900!important;
+}
+#hero p{
+  max-width:690px!important;margin:auto!important;color:var(--tdh-text-2)!important;
+  font-size:14px!important;line-height:1.85!important;
+}
+.hero-buttons{margin-top:28px!important;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.btn{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:9px!important;
+  padding:12px 17px!important;margin:0!important;border-radius:11px!important;
+  border:1px solid var(--tdh-border)!important;font-size:11px!important;font-weight:800!important;
+  transition:.25s!important;
+}
+.btn-primary{
+  background:var(--tdh-blue)!important;color:#fff!important;
+  box-shadow:0 10px 28px rgba(49,130,246,.2)!important;
+}
+.btn-secondary{background:rgba(255,255,255,.035)!important;color:var(--tdh-text-2)!important}
+.btn:hover{transform:translateY(-2px)!important;border-color:var(--tdh-border-light)!important}
+.btn-secondary:hover{color:#fff!important;background:rgba(255,255,255,.07)!important}
+
+/* TRENDING */
+#trending-worldwide{padding-top:35px!important}
+.trending-grid{display:grid!important;grid-template-columns:1.05fr 1fr!important;gap:16px!important}
+.featured-trending,.trend-item{
+  background:linear-gradient(180deg,#111720,#0d1219)!important;
+  border:1px solid var(--tdh-border)!important;
+  box-shadow:none!important;
+  transition:.28s ease!important;
+}
+.featured-trending{border-radius:20px!important;overflow:hidden!important}
+.featured-trending:hover,.trend-item:hover{
+  transform:translateY(-4px)!important;border-color:rgba(49,130,246,.28)!important;
+  box-shadow:0 20px 50px rgba(0,0,0,.28)!important;
+}
+.featured-trending img{height:245px!important;object-fit:cover!important}
+.featured-content{padding:20px!important}
+.rank{
+  display:inline-flex!important;padding:6px 9px!important;border-radius:8px!important;
+  background:rgba(255,157,66,.1)!important;color:var(--tdh-orange)!important;
+  font-size:9px!important;font-weight:800!important;text-transform:uppercase;
+}
+.featured-content h3{font-size:19px!important;line-height:1.35!important;letter-spacing:-.5px!important;margin:12px 0 8px!important}
+.featured-content p{color:var(--tdh-text-3)!important;font-size:11px!important;line-height:1.75!important}
+.trending-list{gap:8px!important}
+.trend-item{
+  min-height:64px!important;padding:13px 15px!important;border-radius:14px!important;
+  display:flex!important;align-items:center!important;gap:13px!important;
+}
+.trend-item span{
+  width:31px;height:31px;display:grid;place-items:center;border-radius:9px;
+  background:var(--tdh-blue-soft);color:var(--tdh-blue-2)!important;font-size:10px!important;
+}
+.trend-item h4{font-size:12px!important;font-weight:750!important}
+
+/* FEATURED REVIEWS */
+#featured-reviews .container{
+  display:grid!important;grid-template-columns:repeat(4,1fr)!important;gap:12px!important;
+}
+#featured-reviews .section-header{grid-column:1/-1}
+.f-review-card{
+  width:auto!important;height:100px!important;margin:0!important;padding:10px!important;
+  gap:11px!important;border-radius:16px!important;
+  background:linear-gradient(180deg,#111720,#0d1219)!important;
+  border:1px solid var(--tdh-border)!important;
+}
+.f-review-card:hover{transform:translateY(-4px)!important;border-color:rgba(49,130,246,.28)!important;box-shadow:0 18px 45px rgba(0,0,0,.28)!important}
+.f-review-card img{width:78px!important;height:78px!important;border-radius:11px!important}
+.f-review-content h3{font-size:11px!important;margin:0 0 4px!important}
+.f-review-content p{font-size:9px!important;line-height:1.45!important;margin:0 0 6px!important;color:var(--tdh-text-3)!important}
+.f-review-footer{display:flex!important;align-items:center!important;justify-content:space-between!important}
+.stars{font-size:11px!important;letter-spacing:1px!important;color:#fbbf24!important}
+.score{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  padding:4px 8px!important;border-radius:7px!important;background:rgba(37,201,133,.12)!important;
+  color:var(--tdh-green)!important;font-size:9px!important;font-weight:800!important;
+}
+
+/* LATEST REVIEWS */
+.reviews-grid{
+  display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:16px!important;
+}
+.review-card{
+  max-width:none!important;margin:0!important;
+  background:linear-gradient(180deg,#111720,#0d1219)!important;
+  border:1px solid var(--tdh-border)!important;border-radius:19px!important;
+  overflow:hidden!important;transition:.28s ease!important;
+}
+.review-card:hover{transform:translateY(-5px)!important;border-color:rgba(49,130,246,.28)!important;box-shadow:0 22px 55px rgba(0,0,0,.32)!important}
+.review-card img{width:100%!important;height:205px!important;object-fit:cover!important}
+.review-content{padding:17px!important}
+.review-top{margin-bottom:11px!important}
+.date{font-size:10px!important;color:var(--tdh-text-3)!important}
+.review-content h3{font-size:15px!important;letter-spacing:-.3px!important;margin-bottom:7px!important}
+.review-content p{font-size:10px!important;line-height:1.7!important;color:var(--tdh-text-3)!important;margin-bottom:12px!important}
+.spec-tags{gap:6px!important}
+.spec-tags span{
+  padding:5px 8px!important;border:1px solid var(--tdh-border)!important;
+  background:rgba(255,255,255,.025)!important;color:var(--tdh-text-2)!important;
+  border-radius:7px!important;font-size:8px!important;
+}
+
+/* POPULAR COMPARISONS */
+.container-comp{
+  display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:16px!important;
+}
+#popular-comparisons .comparison-card{
+  max-width:none!important;height:auto!important;margin:0!important;padding:0!important;
+  display:block!important;border-radius:19px!important;
+  background:linear-gradient(180deg,#111720,#0d1219)!important;
+  border:1px solid var(--tdh-border)!important;overflow:hidden!important;
+}
+#popular-comparisons .comparison-card:hover{
+  transform:translateY(-5px)!important;border-color:rgba(49,130,246,.28)!important;
+  box-shadow:0 22px 55px rgba(0,0,0,.32)!important;
+}
+.phones{
+  height:185px!important;margin:0!important;padding:10px!important;
+  background:radial-gradient(circle at center,rgba(49,130,246,.08),transparent 60%)!important;
+  border-bottom:1px solid var(--tdh-border)!important;
+}
+.phone img{
+  width:92px!important;height:92px!important;object-fit:contain!important;
+}
+.phone span{font-size:9px!important;margin-top:7px!important}
+.vs{
+  width:36px!important;height:36px!important;border-radius:50%!important;
+  background:var(--tdh-blue)!important;color:#fff!important;
+  font-size:9px!important;font-weight:900!important;box-shadow:0 8px 25px rgba(49,130,246,.25)!important;
+}
+.comparison-info{
+  border-top:0!important;padding:15px 16px!important;margin:0!important;text-align:center!important;
+}
+.comparison-info h3{font-size:13px!important;line-height:1.4!important;min-height:auto!important;margin-bottom:6px!important}
+.comparison-info p{font-size:9px!important;color:var(--tdh-text-3)!important}
+
+/* BUYING GUIDES */
+.features{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:16px!important}
+.feature{
+  position:relative!important;min-height:150px!important;padding:22px!important;
+  background:linear-gradient(180deg,#111720,#0d1219)!important;
+  border:1px solid var(--tdh-border)!important;border-radius:18px!important;
+  transition:.28s!important;
+}
+.feature:hover{transform:translateY(-5px)!important;border-color:rgba(49,130,246,.28)!important;box-shadow:0 20px 50px rgba(0,0,0,.28)!important}
+.feature i{
+  width:40px;height:40px;display:grid;place-items:center;
+  margin-bottom:15px!important;border-radius:11px;
+  background:var(--tdh-blue-soft)!important;color:var(--tdh-blue-2)!important;font-size:15px!important;
+}
+.feature h3{font-size:14px!important;margin-bottom:5px!important}
+.feature p{font-size:10px!important;color:var(--tdh-text-3)!important;line-height:1.65!important}
+
+/* NEWS */
+#latest-news .container{
+  display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:12px!important;
+}
+#latest-news .section-header{grid-column:1/-1}
+.news-card{
+  min-height:128px!important;max-height:none!important;
+  margin:0!important;padding:11px!important;gap:12px!important;
+  background:linear-gradient(180deg,#111720,#0d1219)!important;
+  border:1px solid var(--tdh-border)!important;border-radius:15px!important;
+  transition:.28s!important;
+}
+.news-card:hover{transform:translateY(-4px)!important;border-color:rgba(49,130,246,.28)!important;box-shadow:0 18px 45px rgba(0,0,0,.28)!important}
+.news-content h3{font-size:11px!important;line-height:1.4!important;margin-bottom:5px!important}
+.news-content p{font-size:9px!important;line-height:1.5!important;color:var(--tdh-text-3)!important}
+.news-meta{gap:7px!important;margin-bottom:6px!important}
+.brand{font-size:8px!important;color:var(--tdh-blue-2)!important}
+.time{font-size:8px!important;color:var(--tdh-text-3)!important}
+.news-card img{width:82px!important;height:82px!important;border-radius:10px!important}
+
+/* BRANDS */
+.brands-grid{display:grid!important;grid-template-columns:repeat(4,1fr)!important;gap:12px!important}
+.brand-card{
+  padding:22px 15px!important;border-radius:17px!important;
+  background:linear-gradient(180deg,#111720,#0d1219)!important;
+  border:1px solid var(--tdh-border)!important;transition:.28s!important;
+}
+.brand-card:hover{transform:translateY(-5px)!important;border-color:rgba(49,130,246,.28)!important;box-shadow:0 20px 50px rgba(0,0,0,.28)!important}
+.brand-card i{font-size:24px!important;color:var(--tdh-blue-2)!important;margin-bottom:10px!important}
+.brand-card h3{font-size:12px!important;margin-bottom:3px!important}
+.brand-card span{font-size:9px!important;color:var(--tdh-text-3)!important}
+
+/* FOOTER */
+footer{
+  margin-top:30px!important;padding:35px 20px!important;
+  border-top:1px solid var(--tdh-border)!important;
+  background:#05070b!important;color:var(--tdh-text-3)!important;
+  font-size:10px!important;
+}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+  #featured-reviews .container{grid-template-columns:repeat(2,1fr)!important}
+  .container-comp{grid-template-columns:repeat(2,1fr)!important}
+  #latest-news .container{grid-template-columns:repeat(2,1fr)!important}
+  .brands-grid{grid-template-columns:repeat(4,1fr)!important}
+}
+@media(max-width:760px){
+  header{height:68px!important}
+  .menu-btn,.search-icon-btn{top:14px!important}
+  .sidebar{height:calc(100vh - 68px)!important}
+  .sidebar.active{top:68px!important}
+  .logo{height:68px!important;width:68px!important}
+  .logo img{width:57px!important;height:57px!important}
+  .menu{grid-template-columns:1fr!important;padding:18px 14px!important}
+  .social-title,.socials{width:calc(100% - 28px)}
+  .container,.container-comp{width:min(100% - 28px,1240px)!important}
+  section{padding:52px 0!important}
+  #hero{padding:75px 0 60px!important}
+  #hero h1{font-size:clamp(35px,11vw,52px)!important;letter-spacing:-2px!important}
+  #hero p{font-size:12px!important}
+  .section-header{align-items:flex-end!important}
+  .section-header h2,.section-header h3,.section-title{font-size:19px!important}
+  .view-all{font-size:9px!important}
+  .trending-grid{grid-template-columns:1fr!important}
+  .featured-trending img{height:205px!important}
+  #featured-reviews .container,.reviews-grid,.features,.container-comp,#latest-news .container{
+    grid-template-columns:1fr!important;
+  }
+  .f-review-card{height:92px!important}
+  .f-review-card img{width:70px!important;height:70px!important}
+  .review-card img{height:220px!important}
+  .brands-grid{grid-template-columns:repeat(2,1fr)!important}
+  .news-card{min-height:112px!important}
+  .news-card img{width:76px!important;height:76px!important}
+  .phones{height:175px!important}
+}
+@media(max-width:430px){
+  .section-header{gap:10px!important}
+  .view-all{font-size:12px!important}
+  .section-title,.section-header h3,.section-header h2{font-size:17px!important}
+  .featured-content h3{font-size:17px!important}
+  .featured-content{padding:16px!important}
+  .brand-card{padding:18px 10px!important}
+  .search-box{right:14px!important;width:calc(100vw - 28px)!important}
+}
+
+
+/* =========================================================
+   TECHDEALSHUB PREMIUM FOOTER + MENU POLISH
+========================================================= */
+.sidebar-topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 20px;
+    border-bottom:1px solid rgba(255,255,255,.07);
+    background:linear-gradient(180deg,rgba(49,130,246,.08),transparent);
+}
+.sidebar-brand{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:900;letter-spacing:-.5px}
+.sidebar-brand>span:last-child span{color:#5a9bff}
+.sidebar-brand-mark,.tdh-footer-logo-mark{
+    width:38px;height:38px;display:grid;place-items:center;border-radius:11px;
+    background:linear-gradient(135deg,#3182f6,#1554b8);
+    box-shadow:0 8px 25px rgba(49,130,246,.25);color:#fff;
+}
+.sidebar-close{
+    width:40px;height:40px;display:grid;place-items:center;border-radius:11px;
+    border:1px solid rgba(49,130,246,.38);background:rgba(49,130,246,.12);
+    color:#3182f6;cursor:pointer;transition:.22s ease;font-size:18px;
+}
+.sidebar-close:hover{background:#3182f6;color:#fff;transform:rotate(90deg);box-shadow:0 8px 25px rgba(49,130,246,.28)}
+.sidebar.active{top:70px!important}
+.sidebar .menu{padding-top:14px}
+.menu-link{border:1px solid transparent}
+.menu-link:hover,.menu-link.active{background:rgba(49,130,246,.08)!important;border-color:rgba(49,130,246,.12)}
+.menu-link.active .menu-left,.menu-link.active .arrow{color:#fff}
+.menu-link.active .menu-left i{color:#5a9bff}
+.socials a:nth-child(3){color:#3182f6;border:1px solid rgba(49,130,246,.35);background:rgba(49,130,246,.10)}
+.socials a:nth-child(3):hover{background:#3182f6;color:#fff}
+.sidebar-footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 18px;margin-bottom:12px}
+.sidebar-footer-links a{color:#7f8da1;transition:.2s}.sidebar-footer-links a:hover{color:#5a9bff}
+.sidebar-footer p{margin:0}
+
+.tdh-footer{
+    position:relative;margin-top:30px;background:#05080d;border-top:1px solid rgba(255,255,255,.08);
+    overflow:hidden;
+}
+.tdh-footer-glow{position:absolute;width:600px;height:280px;left:50%;top:-210px;transform:translateX(-50%);background:rgba(49,130,246,.09);filter:blur(90px);pointer-events:none}
+.tdh-footer-inner{position:relative;width:min(1240px,calc(100% - 40px));margin:auto;padding:58px 0 22px}
+.tdh-footer-top{display:grid;grid-template-columns:1.55fr repeat(4,1fr);gap:34px;padding-bottom:42px}
+.tdh-footer-brand{max-width:330px}
+.tdh-footer-logo{display:flex;align-items:center;gap:11px;font-size:19px;font-weight:900;letter-spacing:-.7px}
+.tdh-footer-logo>span:last-child span{color:#5a9bff}
+.tdh-footer-logo-mark{width:40px;height:40px}
+.tdh-footer-brand p{margin:17px 0 20px;color:#707b8c;font-size:12px;line-height:1.8}
+.tdh-footer-socials{display:flex;gap:8px;flex-wrap:wrap}
+.tdh-footer-socials a{width:36px;height:36px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.08);border-radius:10px;background:rgba(255,255,255,.025);color:#aeb7c5;transition:.2s}
+.tdh-footer-socials a:hover{color:#fff;border-color:rgba(49,130,246,.35);background:rgba(49,130,246,.12);transform:translateY(-2px)}
+.tdh-footer-socials .tdh-x-social{color:#3182f6;border-color:rgba(49,130,246,.4);background:rgba(49,130,246,.10)}
+.tdh-footer-socials .tdh-x-social:hover{background:#3182f6;color:#fff}
+.tdh-footer-col{display:flex;flex-direction:column;gap:9px}
+.tdh-footer-col h3{font-size:12px;color:#f4f7fb;margin-bottom:8px;font-weight:800}
+.tdh-footer-col a{font-size:11px;color:#707b8c;transition:.2s}
+.tdh-footer-col a:hover{color:#5a9bff;transform:translateX(2px)}
+.tdh-footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);color:#586474;font-size:10px}
+.tdh-legal-links{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end}
+.tdh-legal-links a{color:#707b8c}.tdh-legal-links a:hover{color:#5a9bff}
+@media(max-width:1000px){.tdh-footer-top{grid-template-columns:1.5fr repeat(2,1fr)}.tdh-footer-brand{grid-column:1/-1;max-width:600px}}
+@media(max-width:650px){
+    .tdh-footer-inner{width:min(100% - 28px,1240px);padding-top:42px}
+    .tdh-footer-top{grid-template-columns:1fr 1fr;gap:30px 22px}
+    .tdh-footer-brand{grid-column:1/-1}
+    .tdh-footer-bottom{align-items:flex-start;flex-direction:column}
+    .tdh-legal-links{justify-content:flex-start;gap:10px 15px}
+}
+
+
+/* =========================================================
+   PREMIUM FOOTER — DESIGN ONLY
+   Keeps the homepage content untouched above the footer.
+========================================================= */
+.tdh-footer-pro{
+    position:relative;
+    margin-top:48px;
+    background:
+      radial-gradient(circle at 82% 8%,rgba(49,130,246,.10),transparent 28%),
+      linear-gradient(180deg,#070b12 0%,#04070b 100%);
+    border-top:1px solid rgba(255,255,255,.09);
+    overflow:hidden;
+}
+.tdh-footer-pro-glow{position:absolute;width:760px;height:300px;left:50%;top:-245px;transform:translateX(-50%);background:rgba(49,130,246,.13);filter:blur(95px);pointer-events:none}
+.tdh-footer-pro-grid-bg{position:absolute;inset:0;opacity:.22;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:46px 46px;mask-image:linear-gradient(to bottom,black,transparent 75%)}
+.tdh-footer-pro .tdh-footer-inner{position:relative;z-index:1;width:min(1280px,calc(100% - 44px));margin:auto;padding:64px 0 22px}
+.tdh-footer-identity{display:grid;grid-template-columns:1.05fr 1.45fr;gap:48px;align-items:stretch}
+.tdh-footer-pro .tdh-footer-brand{max-width:430px}
+.tdh-footer-pro .tdh-footer-logo{display:inline-flex;align-items:center;gap:12px;font-size:22px;font-weight:900;letter-spacing:-.9px;color:#f7faff;text-decoration:none}
+.tdh-footer-pro .tdh-footer-logo>span:last-child span{color:#5a9bff}
+.tdh-footer-pro .tdh-footer-logo-mark{width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(90,155,255,.35);border-radius:13px;background:linear-gradient(145deg,rgba(49,130,246,.22),rgba(49,130,246,.04));color:#62a2ff;box-shadow:0 12px 35px rgba(0,0,0,.24)}
+.tdh-footer-pro .tdh-footer-brand p{margin:18px 0 22px;color:#7c8797;font-size:12px;line-height:1.9;max-width:390px}
+.tdh-footer-pro .tdh-footer-socials{display:flex;gap:9px;flex-wrap:wrap}
+.tdh-footer-pro .tdh-footer-socials a{width:38px;height:38px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.09);border-radius:11px;background:rgba(255,255,255,.025);color:#9aa6b6;text-decoration:none;transition:.25s ease}
+.tdh-footer-pro .tdh-footer-socials a:hover{color:#fff;border-color:rgba(90,155,255,.55);background:rgba(49,130,246,.14);transform:translateY(-3px);box-shadow:0 8px 22px rgba(49,130,246,.13)}
+.tdh-footer-pro .tdh-footer-socials .tdh-x-social{color:#5a9bff;border-color:rgba(49,130,246,.4);background:rgba(49,130,246,.10)}
+.tdh-footer-newsletter{padding:25px;border:1px solid rgba(255,255,255,.09);border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));box-shadow:0 18px 55px rgba(0,0,0,.18);backdrop-filter:blur(12px)}
+.tdh-footer-mini-label{display:inline-flex;align-items:center;gap:7px;color:#5fa0ff;font-size:9px;font-weight:900;letter-spacing:1.4px}
+.tdh-footer-newsletter h3{margin:9px 0 7px;color:#f6f9fd;font-size:20px;letter-spacing:-.5px}
+.tdh-footer-newsletter p{margin:0 0 17px;color:#7b8797;font-size:11px;line-height:1.7}
+.tdh-footer-newsletter-form{display:flex;gap:8px}
+.tdh-footer-newsletter-form input{min-width:0;flex:1;height:44px;padding:0 14px;border:1px solid rgba(255,255,255,.09);border-radius:11px;background:rgba(0,0,0,.24);color:#eef4fb;outline:none;font-size:11px;transition:.2s}
+.tdh-footer-newsletter-form input:focus{border-color:rgba(49,130,246,.65);box-shadow:0 0 0 3px rgba(49,130,246,.10)}
+.tdh-footer-newsletter-form button{height:44px;padding:0 17px;border:0;border-radius:11px;background:#3182f6;color:#fff;font-size:11px;font-weight:800;cursor:pointer;transition:.2s}
+.tdh-footer-newsletter-form button:hover{background:#4b93ff;transform:translateY(-1px)}
+.tdh-footer-newsletter-note{margin-top:10px;color:#596576;font-size:9px}.tdh-footer-newsletter-note i{margin-right:5px;color:#5a9bff}
+.tdh-footer-divider{height:1px;margin:42px 0 34px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.10),transparent)}
+.tdh-footer-links-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:28px}
+.tdh-footer-pro .tdh-footer-col{display:flex;flex-direction:column;gap:10px}
+.tdh-footer-pro .tdh-footer-col h3{display:flex;align-items:center;gap:8px;margin:0 0 7px;color:#eef3fa;font-size:11px;font-weight:900;letter-spacing:.15px}
+.tdh-footer-pro .tdh-footer-col h3 i{color:#5598ff;font-size:10px}
+.tdh-footer-pro .tdh-footer-col a{font-size:10px;color:#707b8c;text-decoration:none;transition:.2s;line-height:1.45}
+.tdh-footer-pro .tdh-footer-col a:hover{color:#65a5ff;transform:translateX(3px)}
+.tdh-link-arrow{font-size:8px;margin-left:2px}
+.tdh-footer-feature-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:42px 0 28px;padding:13px;border:1px solid rgba(255,255,255,.065);border-radius:16px;background:rgba(255,255,255,.018)}
+.tdh-footer-feature-strip>div{display:flex;align-items:center;gap:10px;padding:7px 10px;border-right:1px solid rgba(255,255,255,.055)}
+.tdh-footer-feature-strip>div:last-child{border-right:0}
+.tdh-feature-icon{width:32px;height:32px;display:grid;place-items:center;border-radius:9px;background:rgba(49,130,246,.10);color:#5a9bff;font-size:11px;flex:0 0 auto}
+.tdh-footer-feature-strip strong,.tdh-footer-feature-strip small{display:block}.tdh-footer-feature-strip strong{color:#cbd4df;font-size:9px}.tdh-footer-feature-strip small{margin-top:3px;color:#5d6878;font-size:8px}
+.tdh-footer-pro .tdh-footer-bottom{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);color:#596576;font-size:9px}
+.tdh-footer-pro .tdh-legal-links{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}.tdh-footer-pro .tdh-legal-links a{color:#6e7989;text-decoration:none}.tdh-footer-pro .tdh-legal-links a:hover{color:#5a9bff}
+.tdh-footer-pro .tdh-status{display:flex;align-items:center;gap:7px;white-space:nowrap}.tdh-footer-pro .tdh-status-dot{width:6px;height:6px;border-radius:50%;background:#42d392;box-shadow:0 0 10px rgba(66,211,146,.55)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:1100px){.tdh-footer-links-grid{grid-template-columns:repeat(3,1fr)}.tdh-footer-identity{grid-template-columns:1fr}.tdh-footer-pro .tdh-footer-brand{max-width:650px}.tdh-footer-feature-strip{grid-template-columns:repeat(2,1fr)}.tdh-footer-feature-strip>div:nth-child(2){border-right:0}}
+@media(max-width:650px){.tdh-footer-pro .tdh-footer-inner{width:min(100% - 28px,1280px);padding-top:44px}.tdh-footer-newsletter{padding:19px}.tdh-footer-newsletter h3{font-size:17px}.tdh-footer-newsletter-form{flex-direction:column}.tdh-footer-newsletter-form button{width:100%}.tdh-footer-links-grid{grid-template-columns:1fr 1fr;gap:28px 20px}.tdh-footer-feature-strip{grid-template-columns:1fr 1fr;margin-top:34px}.tdh-footer-feature-strip>div{border-right:0!important}.tdh-footer-pro .tdh-footer-bottom{grid-template-columns:1fr;gap:13px;align-items:flex-start}.tdh-footer-pro .tdh-legal-links{justify-content:flex-start;gap:9px 15px}.tdh-footer-pro .tdh-status{order:-1}.tdh-footer-divider{margin:34px 0 28px}}
+@media(max-width:380px){.tdh-footer-links-grid,.tdh-footer-feature-strip{grid-template-columns:1fr}.tdh-footer-feature-strip>div{border-bottom:1px solid rgba(255,255,255,.055)!important}.tdh-footer-feature-strip>div:last-child{border-bottom:0!important}}
+
+
+/* FINAL GLOBAL POLISH — corrected alignment / no horizontal overflow */
+html,body{overflow-x:hidden!important}
+
+/* MENU */
+.menu-btn.is-open{background:#3182f6!important;color:#fff!important;border-color:#3182f6!important;box-shadow:0 8px 24px rgba(49,130,246,.28)!important}
+.menu-btn i{transition:transform .25s ease}
+.menu-btn.is-open i{transform:rotate(90deg)}
+.sidebar{width:100vw!important;max-width:100vw!important;right:auto!important;
+  height:calc(100vh - 70px)!important;
+  overflow-x:hidden!important;overflow-y:auto!important;
+  -webkit-overflow-scrolling:touch!important;
+  overscroll-behavior:contain!important;
+  scrollbar-width:auto!important;
+}
+.sidebar-topbar{width:100%!important;box-sizing:border-box!important}
+.sidebar .menu{width:min(calc(100% - 32px),1240px)!important;max-width:1240px!important;margin-left:auto!important;margin-right:auto!important;box-sizing:border-box!important}
+.sidebar-footer{width:100%!important;box-sizing:border-box!important;overflow:hidden!important}
+
+/* COMPARISON CARDS
+   Two phones always share the same horizontal row.
+   Image first, name directly underneath; both columns use identical sizing. */
+#popular-comparisons .phones{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr)!important;
+  align-items:center!important;
+  justify-items:center!important;
+  gap:6px!important;
+  height:154px!important;
+  padding:10px 12px!important;
+  box-sizing:border-box!important;
+  overflow:hidden!important;
+}
+#popular-comparisons .phone{
+  width:100%!important;
+  min-width:0!important;
+  height:132px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:7px!important;
+  margin:0!important;
+  padding:0!important;
+  text-align:center!important;
+}
+#popular-comparisons .phone img{
+  width:72px!important;
+  height:82px!important;
+  flex:0 0 82px!important;
+  object-fit:contain!important;
+  margin:0!important;
+}
+#popular-comparisons .phone span{
+  display:flex!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  width:100%!important;
+  max-width:105px!important;
+  min-height:28px!important;
+  margin:0!important;
+  padding:0 2px!important;
+  font-size:8.5px!important;
+  line-height:1.3!important;
+  text-align:center!important;
+  white-space:normal!important;
+  overflow-wrap:anywhere!important;
+}
+#popular-comparisons .vs{
+  width:32px!important;
+  height:32px!important;
+  flex:0 0 32px!important;
+  margin:0!important;
+  align-self:center!important;
+}
+#popular-comparisons .comparison-info{padding:13px 15px 15px!important}
+
+/* NEWS — subtle premium decoration, content/images unchanged */
+#latest-news .news-card{
+  position:relative!important;
+  isolation:isolate!important;
+  background:linear-gradient(145deg,#121a25,#0c1118)!important;
+  border:1px solid rgba(255,255,255,.08)!important;
+  box-shadow:0 12px 35px rgba(0,0,0,.18)!important;
+}
+#latest-news .news-card::before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:3px;border-radius:99px;background:linear-gradient(#3182f6,#60a5fa);pointer-events:none}
+#latest-news .news-card::after{content:"";position:absolute;right:-35px;top:-35px;width:100px;height:100px;border-radius:50%;background:rgba(49,130,246,.07);pointer-events:none}
+#latest-news .news-card:hover{transform:translateY(-5px)!important;border-color:rgba(49,130,246,.34)!important;box-shadow:0 20px 50px rgba(0,0,0,.3)!important}
+#latest-news .news-content{padding-left:7px!important}
+#latest-news .brand{display:inline-flex!important;padding:4px 7px!important;border-radius:6px!important;background:rgba(49,130,246,.10)!important}
+#latest-news .news-card img{transition:transform .3s ease!important;box-shadow:0 8px 20px rgba(0,0,0,.25)!important}
+#latest-news .news-card:hover img{transform:scale(1.04)!important}
+
+/* FOOTER — exactly 3 columns across on desktop/tablet */
+.tdh-footer{background:linear-gradient(180deg,#070b11,#04070b)!important;overflow:hidden!important}
+.tdh-footer-inner{width:min(1240px,calc(100% - 40px))!important;max-width:1240px!important;margin:0 auto!important;padding:64px 0 24px!important;box-sizing:border-box!important}
+.tdh-footer-links-grid{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:42px 48px!important;
+  width:100%!important;
+  box-sizing:border-box!important;
+}
+.tdh-footer-pro .tdh-footer-col{min-width:0!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;text-align:left!important}
+.tdh-footer-pro .tdh-footer-col h3{position:relative;padding-bottom:9px!important;margin:0 0 9px!important}
+.tdh-footer-pro .tdh-footer-col h3::after{content:"";position:absolute;left:0;bottom:0;width:24px;height:2px;border-radius:2px;background:#3182f6}
+.tdh-footer-pro .tdh-footer-col a{text-align:left!important;max-width:100%!important;overflow-wrap:anywhere!important}
+.tdh-footer-bottom{text-align:left!important}
+.tdh-legal-links{justify-content:flex-end!important}
+
+/* Prevent any decorative oversized element from creating a second horizontal scroll */
+.tdh-footer-pro-glow,.tdh-footer-pro-grid-bg,.tdh-footer-glow{max-width:100vw!important;pointer-events:none!important}
+
+@media(max-width:900px){
+  .tdh-footer-links-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:34px 24px!important}
+}
+@media(max-width:650px){
+  #popular-comparisons .phones{grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr)!important;height:145px!important;padding:8px!important}
+  #popular-comparisons .phone{height:125px!important;gap:6px!important}
+  #popular-comparisons .phone img{width:62px!important;height:76px!important;flex-basis:76px!important}
+  #popular-comparisons .phone span{font-size:7.5px!important;max-width:82px!important;min-height:27px!important}
+  #popular-comparisons .vs{width:27px!important;height:27px!important;flex-basis:27px!important;font-size:8px!important}
+  .tdh-footer-inner{width:min(100% - 28px,1240px)!important;padding-top:44px!important}
+  .tdh-footer-links-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:30px 22px!important}
+  .tdh-footer-bottom{grid-template-columns:1fr!important;gap:13px!important;align-items:flex-start!important}
+  .tdh-footer-pro .tdh-legal-links{justify-content:flex-start!important;gap:9px 15px!important}
+}
+@media(max-width:390px){
+  #popular-comparisons .phone img{width:56px!important;height:70px!important;flex-basis:70px!important}
+  #popular-comparisons .phone span{font-size:7px!important;max-width:72px!important}
+}
+/* COMPARISON IMAGE FINAL — square 1:1 and perfectly centered */
+#popular-comparisons .phones{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr)!important;
+  align-items:center!important;
+  justify-items:center!important;
+  column-gap:6px!important;
+  height:168px!important;
+  padding:10px 12px!important;
+  box-sizing:border-box!important;
+}
+#popular-comparisons .phone{
+  width:100%!important;
+  min-width:0!important;
+  height:148px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:8px!important;
+  margin:0!important;
+  padding:0!important;
+  text-align:center!important;
+  
+}
+#popular-comparisons .phone img{
+  width:84px!important;
+  height:84px!important;
+  min-width:84px!important;
+  min-height:84px!important;
+  max-width:84px!important;
+  max-height:84px!important;
+  flex:0 0 84px!important;
+  aspect-ratio:1 / 1!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  display:block!important;
+  margin:0 auto!important;
+}
+#popular-comparisons .phone span{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:100%!important;
+  max-width:110px!important;
+  min-height:30px!important;
+  margin:0 auto!important;
+  padding:0 2px!important;
+  font-size:8.5px!important;
+  line-height:1.3!important;
+  text-align:center!important;
+  white-space:normal!important;
+  overflow-wrap:anywhere!important;
+}
+#popular-comparisons .vs{
+  align-self:center!important;
+  margin-top:26px!important;
+}
+@media(max-width:650px){
+  #popular-comparisons .phones{
+    grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr)!important;
+    height:154px!important;
+    padding:8px!important;
+  }
+  #popular-comparisons .phone{height:138px!important;gap:7px!important}
+  #popular-comparisons .phone img{
+    width:72px!important;height:72px!important;
+    min-width:72px!important;min-height:72px!important;
+    max-width:72px!important;max-height:72px!important;
+    flex-basis:72px!important;
+  }
+  #popular-comparisons .phone span{font-size:7.5px!important;max-width:82px!important;min-height:27px!important}
+  #popular-comparisons .vs{width:27px!important;height:27px!important;flex-basis:27px!important;font-size:8px!important;margin-top:22px!important}
+}
+@media(max-width:390px){
+  #popular-comparisons .phone img{
+    width:66px!important;height:66px!important;
+    min-width:66px!important;min-height:66px!important;
+    max-width:66px!important;max-height:66px!important;
+    flex-basis:66px!important;
+  }
+  #popular-comparisons .phone span{font-size:7px!important;max-width:74px!important}
+}
+</style>
+<style id="tdh-menu-final-fix">
+/* FINAL MENU FIX: stays below the header, never disappears under its top border. */
+.sidebar{
+  top:-100%!important;
+  left:0!important;
+  width:100vw!important;
+  max-width:100vw!important;
+  height:calc(100vh - 70px)!important;
+  margin:0!important;
+  overflow-x:hidden!important;
+  overflow-y:auto!important;
+  scrollbar-width:auto!important;
+  -webkit-overflow-scrolling:touch!important;
+}
+.sidebar.active{top:70px!important}
+.sidebar .menu,
+.sidebar .social-title,
+.sidebar .socials,
+.sidebar .sidebar-footer{
+  width:min(100% - 40px,900px)!important;
+  max-width:900px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  box-sizing:border-box!important;
+}
+.sidebar .menu{padding-left:0!important;padding-right:0!important}
+.sidebar .social-title{padding-left:0!important;padding-right:0!important}
+.sidebar .socials{padding-left:0!important;padding-right:0!important}
+.sidebar .sidebar-footer{margin-top:8px!important}
+@media(max-width:650px){
+  .sidebar{height:calc(100vh - 68px)!important}
+  .sidebar.active{top:68px!important}
+  .sidebar .menu,
+  .sidebar .social-title,
+  .sidebar .socials,
+  .sidebar .sidebar-footer{width:calc(100% - 32px)!important;max-width:none!important}
+}
+</style>
+</head>
+
+<body>
+<header>
+<button class="menu-btn" aria-label="Open menu" aria-expanded="false">
+    <i class="fa-solid fa-bars"></i>
+</button>
+<div class="logo">
+  <img src="techdealshub.png" alt="techdealshub" >
+</div>
+<div class="search-container">
+
+    <button id="searchToggle" class="search-icon-btn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+
+    <div class="search-box">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input id="searchInput"
+            type="text"
+            placeholder="Search phones, reviews, news..."
+        >
+
+       
+
+    </div>
+
+</div>
+</header>
+<div class="overlay"></div>
+
+<aside class="sidebar">
+    <div class="sidebar-topbar">
+        <div class="sidebar-brand">
+            <span class="sidebar-brand-mark"><i class="fa-solid fa-mobile-screen-button"></i></span>
+            <span>TechDeals<span>Hub</span></span>
+        </div>
+        <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+
+    <div class="menu">
+
+        <div class="menu-item">
+            <div class="menu-link">
+                <div class="menu-left">
+                    <i class="fa-solid fa-fire"></i>
+                    Trending
+                </div>
+                <i class="fa-solid fa-chevron-down arrow"></i>
+            </div>
+
+            <div class="submenu">
+                <a href="trending-comparisons.html">Trending Phones</a>
+                <a href="latest-reviews.html">Popular Reviews</a>
+                <a href="trending-comparisons.html">Most Viewed</a>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="menu-link">
+                <div class="menu-left">
+                    <i class="fa-solid fa-newspaper"></i>
+                    News
+                </div>
+                <i class="fa-solid fa-chevron-down arrow"></i>
+            </div>
+
+            <div class="submenu">
+                <a href="news_phones.html">Latest News</a>
+                <a href="news_phones.html">Leaks & Rumors</a>
+                <a href="software-updates.html">Software Updates</a>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="menu-link">
+                <div class="menu-left">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    Phones
+                </div>
+                <i class="fa-solid fa-chevron-down arrow"></i>
+            </div>
+
+            <div class="submenu">
+                <a href="flagship-comparisons.html">Flagships</a>
+                <a href="mid-range-comparisons.html">Mid-Range</a>
+                <a href="budget-phones.html">Budget Phones</a>
+                <a href="upcoming-phones.html">Upcoming Phones</a>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="menu-link">
+                <div class="menu-left">
+                    <i class="fa-solid fa-building"></i>
+                    Brands
+                </div>
+                <i class="fa-solid fa-chevron-down arrow"></i>
+            </div>
+
+            <div class="submenu">
+                <a href="apple.html">Apple</a>
+                <a href="samsung.html">Samsung</a>
+                <a href="xiaomi.html">Xiaomi</a>
+                <a href="google.html">Google</a>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="menu-link">
+                <div class="menu-left">
+                    <i class="fa-solid fa-star"></i>
+                    Reviews
+                </div>
+                <i class="fa-solid fa-chevron-down arrow"></i>
+            </div>
+
+            <div class="submenu">
+                <a href="latest-reviews.html">Latest Reviews</a>
+                <a href="featured-reviews.html">Featured Reviews</a>
+                <a href="featured-reviews.html">Editor's Choice</a>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="menu-link">
+                <div class="menu-left">
+                    <i class="fa-solid fa-code-compare"></i>
+                    Comparisons
+                </div>
+                <i class="fa-solid fa-chevron-down arrow"></i>
+            </div>
+
+            <div class="submenu">
+                <a href="phone-compare.html">Phone vs Phone</a>
+                <a href="phone-compare.html">Camera Comparison</a>
+                <a href="phone-compare.html">Battery Comparison</a>
+            </div>
+        </div>
+
+    </div>
+
+    <h3 class="social-title">Follow Us</h3>
+
+    <div class="socials">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a class="tdh-x-social" href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+
+    <div class="sidebar-footer">
+        <div class="sidebar-footer-links">
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy-policy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+        </div>
+        <p>© 2026 TechDealsHub. All rights reserved.</p>
+    </div>
+
+</aside>
+
+
+<section id="hero">
+<div class="container">
+
+<div class="badge">
+<i class="fa-solid fa-fire"></i>
+Latest Smartphones 2026
+</div>
+
+<h1>Discover The World's Best Smartphones</h1>
+
+<p>
+Compare specifications, read reviews, explore pros and cons,
+and stay updated with the latest smartphone launches and news.
+</p>
+
+<div class="hero-buttons">
+<a href="latest-comparisons.html" class="btn btn-primary">
+<i class="fa-solid fa-mobile-screen"></i>
+ Explore Phones
+</a>
+
+<a href="phone-compare.html" class="btn btn-secondary">
+<i class="fa-solid fa-scale-balanced"></i>
+ Compare Devices
+</a>
+</div>
+
+</div>
+</section>
+
+<section id="trending-worldwide">
+  <div class="container">
+<span class="section-tag">
+            <i class="fa-solid fa-fire"></i>
+            Trending Worldwide
+        </span>
+    <div class="section-header">
+          <a href="trending-comparisons.html" class="view-all">
+    View All
+    <i class="fa-solid fa-arrow-right"></i>
+    Trending 
+</a>
+        <h2>Most Popular Smartphones Right Now</h2>
+    </div>
+
+    <div class="trending-grid">
+
+        <!-- Featured -->
+        <article class="featured-trending search-card">
+            <img src="apple/img/iphone17promax_3_4.png" alt="iPhone 17 Pro Max">
+
+            <div class="featured-content">
+                <span class="rank">#1 Worldwide</span>
+
+                <h3>iPhone 17 Pro Max Dominates Global Searches</h3>
+
+                <p>
+                    Apple's latest flagship continues to lead worldwide
+                    interest thanks to its camera upgrades and AI features.
+                </p>
+            </div>
+        </article>
+
+        <!-- List -->
+        <div class="trending-list">
+
+            <div class="trend-item search-card">
+                <span>#2</span>
+                <h4>Galaxy S26 Ultra</h4>
+            </div>
+
+            <div class="trend-item search-card">
+                <span>#3</span>
+                <h4>Xiaomi 16 Ultra</h4>
+            </div>
+
+            <div class="trend-item search-card">
+                <span>#4</span>
+                <h4>Google Pixel 11 Pro</h4>
+            </div>
+
+            <div class="trend-item search-card">
+                <span>#5</span>
+                <h4>OnePlus 15</h4>
+            </div>
+
+            <div class="trend-item search-card">
+                <span>#6</span>
+                <h4>Honor Magic 9 Pro</h4>
+            </div>
+            
+            <div class="trend-item search-card">
+                <span>#7</span>
+                <h4>Samsung Z Fold 6</h4>
+            </div>
+        </div>
+
+    </div>
+  </div>
+</section>
+<section id="featured-reviews">
+   <div class="container">
+    <div class="section-header">
+  <a href="featured-reviews.html" class="view-all">
+    View All
+    <i class="fa-solid fa-arrow-right"></i>
+    Featured Reviews 
+</a>
+        <h3>
+            <i class="fa-solid fa-award"></i>
+            Featured Reviews
+        </h3>
+    </div>
+
+<div class="f-review-card search-card">
+
+    <img src="apple/img/iphone17promax_1_1.png" alt="iPhone 17 Pro Max">
+
+    <div class="f-review-content">
+
+        <h3>iPhone 17 Pro Max Review</h3>
+
+        <p>Best camera, battery life and performance.</p>
+
+        <div class="f-review-footer">
+            <div class="stars">★★★★★</div>
+            <div class="score">9.6</div>
+        </div>
+
+    </div>
+
+</div>
+<div class="f-review-card search-card">
+
+    <img src="Samsung/img/galaxys26ultra_1_1.png" alt="Galaxy S26 Ultra">
+
+    <div class="f-review-content">
+
+        <h3>Galaxy S26 Ultra Review</h3>
+
+        <p>Outstanding display, powerful zoom camera and advanced AI features.</p>
+
+        <div class="f-review-footer">
+            <div class="stars">★★★★★</div>
+            <div class="score">9.4</div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="f-review-card search-card">
+
+    <img src="xiaomi/img/xiaomi16ultra_1_1.png" alt="Xiaomi 16 Ultra">
+
+    <div class="f-review-content">
+
+        <h3>Xiaomi 16 Ultra Review</h3>
+
+        <p>Flagship cameras, ultra-fast charging and excellent value for money.</p>
+
+        <div class="f-review-footer">
+            <div class="stars">★★★★★</div>
+            <div class="score">9.3</div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="f-review-card search-card">
+
+    <img src="google/img/googlepixel10pro_1_1.png" alt="Google Pixel 10 Pro">
+
+    <div class="f-review-content">
+
+        <h3>Google Pixel 10 Pro Review</h3>
+
+        <p>Exceptional computational photography and a clean Android experience.</p>
+
+        <div class="f-review-footer">
+            <div class="stars">★★★★★</div>
+            <div class="score">9.2</div>
+        </div>
+
+    </div>
+
+</div>
+</div>
+</section>
+<section id="latest-reviews">
+    <div class="container">
+
+        <div class="section-header">
+                   <a href="latest-reviews.html" class="view-all">
+    View All
+    <i class="fa-solid fa-arrow-right"></i>
+    Latest Reviews 
+</a>
+            <h3>
+                <i class="fa-solid fa-star"></i>
+                Latest Reviews
+            </h3>
+        </div>
+
+        <div class="reviews-grid">
+          
+            <article class="review-card search-card">
+
+                <img src="apple/img/iphone17promax_3_2.png" alt="iPhone 17 Pro Max">
+
+                <div class="review-content">
+
+                    <div class="review-top">
+                        <span class="score">9.6</span>
+                        <span class="date">2 days ago</span>
+                    </div>
+
+                    <h3>iPhone 17 Pro Max Review</h3>
+
+                    <p>
+                        Apple's most advanced smartphone with exceptional
+                        performance, camera quality and battery life.
+                    </p>
+
+                    <div class="spec-tags">
+                        <span>A19 Pro</span>
+                        <span>48MP</span>
+                        <span>512GB</span>
+                    </div>
+
+                </div>
+
+            </article>
+          
+            
+
+            <article class="review-card search-card">
+
+                <img src="Samsung/img/galaxys26ultra_3_2.png" alt="Galaxy S26 Ultra">
+
+                <div class="review-content">
+
+                    <div class="review-top">
+                        <span class="score">9.4</span>
+                        <span class="date">5 days ago</span>
+                    </div>
+
+                    <h3>Galaxy S26 Ultra Review</h3>
+
+                    <p>
+                        A powerful Android flagship featuring an excellent
+                        display, long battery life and advanced zoom camera.
+                    </p>
+
+                    <div class="spec-tags">
+                        <span>Snapdragon</span>
+                        <span>200MP</span>
+                        <span>AI Features</span>
+                    </div>
+
+                </div>
+
+            </article>
+          <article class="review-card search-card">
+
+    <img src="xiaomi/img/xiaomi16ultra_16_9.png" alt="Xiaomi 16 Ultra">
+
+    <div class="review-content">
+
+        <div class="review-top">
+            <span class="score">9.3</span>
+            <span class="date">4 days ago</span>
+        </div>
+
+        <h3>Xiaomi 16 Ultra Review</h3>
+
+        <p>
+            A premium flagship with an impressive camera system,
+            powerful performance and a stunning high-resolution display.
+        </p>
+
+        <div class="spec-tags">
+            <span>Snapdragon</span>
+            <span>200MP</span>
+            <span>120W Charging</span>
+        </div>
+
+    </div>
+
+          </article>
+          <article class="review-card search-card">
+
+    <img src="google/img/googlepixel10pro_3_2.png" alt="Google Pixel 10 Pro">
+
+    <div class="review-content">
+
+        <div class="review-top">
+            <span class="score">9.1</span>
+            <span class="date">3 days ago</span>
+        </div>
+
+        <h3>Google Pixel 10 Pro Review</h3>
+
+        <p>
+            A refined flagship offering outstanding photography,
+            clean Android software and powerful AI-powered features.
+        </p>
+
+        <div class="spec-tags">
+            <span>Tensor</span>
+            <span>50MP</span>
+            <span>Google AI</span>
+        </div>
+
+    </div>
+
+          </article>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="popular-comparisons">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <a href="phone-compare.html" class="view-all">
+                View All
+                <i class="fa-solid fa-arrow-right"></i>
+                Popular Compare
+            </a>
+
+            <h3 class="section-title">
+                <i class="fa-solid fa-scale-balanced"></i>
+                Popular Comparisons
+            </h3>
+
+        </div>
+
+    </div>
+
+
+    <div class="container-comp">
+
+
+        <div class="comparison-card search-card">
+
+            <div class="phones">
+
+                <div class="phone">
+                    <img src="apple/img/iphone17promax_1_1.png" alt="">
+                    <span>iPhone 17 Pro Max</span>
+                </div>
+
+                <div class="vs">VS</div>
+
+                <div class="phone">
+                    <img src="Samsung/img/galaxys26ultra_1_1.png" alt="">
+                    <span>Galaxy S26 Ultra</span>
+                </div>
+
+            </div>
+
+            <div class="comparison-info">
+
+                <h3>
+                    iPhone 17 Pro Max vs Galaxy S26 Ultra
+                </h3>
+
+                <p>
+                    12.5K comparisons this week
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="comparison-card search-card">
+
+            <div class="phones">
+
+                <div class="phone">
+                    <img
+                        src="apple/img/iphone17promax_1_1.png"
+                        alt="iPhone 17 Pro Max"
+                    >
+                    <span>iPhone 17 Pro Max</span>
+                </div>
+
+                <div class="vs">VS</div>
+
+                <div class="phone">
+                    <img
+                        src="Samsung/img/galaxys26ultra_1_1.png"
+                        alt="Galaxy S26 Ultra"
+                    >
+                    <span>Galaxy S26 Ultra</span>
+                </div>
+
+            </div>
+
+            <div class="comparison-info">
+
+                <h3>
+                    iPhone 17 Pro Max vs Galaxy S26 Ultra
+                </h3>
+
+                <p>
+                    12.5K comparisons this week
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="comparison-card search-card">
+
+            <div class="phones">
+
+                <div class="phone">
+                    <img
+                        src="google/img/googlepixel10pro_1_1.png"
+                        alt="Google Pixel 10 Pro"
+                    >
+                    <span>Google Pixel 10 Pro</span>
+                </div>
+
+                <div class="vs">VS</div>
+
+                <div class="phone">
+                    <img
+                        src="Samsung/img/galaxys26ultra_1_1.png"
+                        alt="Galaxy S26 Ultra"
+                    >
+                    <span>Galaxy S26 Ultra</span>
+                </div>
+
+            </div>
+
+            <div class="comparison-info">
+
+                <h3>
+                    Google Pixel 10 Pro vs Galaxy S26 Ultra
+                </h3>
+
+                <p>
+                    10.8K comparisons this week
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="comparison-card search-card">
+
+            <div class="phones">
+
+                <div class="phone">
+                    <img
+                        src="xiaomi/img/xiaomi16ultra_1_1.png"
+                        alt="Xiaomi 16 Ultra"
+                    >
+                    <span>Xiaomi 16 Ultra</span>
+                </div>
+
+                <div class="vs">VS</div>
+
+                <div class="phone">
+                    <img
+                        src="apple/img/iphone17promax_1_1.png"
+                        alt="iPhone 17 Pro Max"
+                    >
+                    <span>iPhone 17 Pro Max</span>
+                </div>
+
+            </div>
+
+            <div class="comparison-info">
+
+                <h3>
+                    Xiaomi 16 Ultra vs iPhone 17 Pro Max
+                </h3>
+
+                <p>
+                    9.4K comparisons this week
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div><!-- container-comp -->
+
+
+</section>
+
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <a href="buy-guides.html" class="view-all">
+                View All
+                <i class="fa-solid fa-arrow-right"></i>
+                Buying Guides
+            </a>
+
+            <h3 class="section-title">
+
+                <i class="fa-solid fa-microchip"></i>
+
+                Buying Guides
+
+            </h3>
+
+        </div>
+
+
+        <div class="features">
+
+            <div class="feature search-card">
+
+                <i class="fa-solid fa-camera"></i>
+
+                <h3>
+                    Best Camera Phones
+                </h3>
+
+                <p>
+                    Top smartphones for photography lovers.
+                </p>
+
+            </div>
+
+
+            <div class="feature search-card">
+
+                <i class="fa-solid fa-gamepad"></i>
+
+                <h3>
+                    Best Gaming Phones
+                </h3>
+
+                <p>
+                    Maximum performance for mobile gamers.
+                </p>
+
+            </div>
+
+
+            <div class="feature search-card">
+
+                <i class="fa-solid fa-battery-full"></i>
+
+                <h3>
+                    Best Battery Life
+                </h3>
+
+                <p>
+                    Phones that last all day and beyond.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="latest-news">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <a href="news_phones.html" class="view-all">
+
+                View All
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+                News
+
+            </a>
+
+
+            <h3 class="section-title">
+
+                <i class="fa-solid fa-newspaper"></i>
+
+                Latest News
+
+            </h3>
+
+        </div>
+
+
+        <div class="news-card search-card">
+
+            <div class="news-content">
+
+                <div class="news-meta">
+
+                    <span class="brand">
+                        Apple
+                    </span>
+
+                    <span class="time">
+                        2 hours ago
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    iPhone 17 Pro Max gets major camera upgrades
+                </h3>
+
+
+                <p>
+                    Apple introduces a redesigned camera system and improved battery life.
+                </p>
+
+            </div>
+
+
+            <img
+                src="iphone17-news.jpg"
+                alt="iPhone 17 Pro Max"
+            >
+
+        </div>
+
+
+        <div class="news-card search-card">
+
+            <div class="news-content">
+
+                <div class="news-meta">
+
+                    <span class="brand">
+                        Samsung
+                    </span>
+
+                    <span class="time">
+                        4 hours ago
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Galaxy S26 Ultra brings powerful new AI features
+                </h3>
+
+
+                <p>
+                    Samsung expands Galaxy AI with advanced productivity tools.
+                </p>
+
+            </div>
+
+
+            <img
+                src="s26-news.jpg"
+                alt="Galaxy S26 Ultra"
+            >
+
+        </div>
+
+
+        <div class="news-card search-card">
+
+            <div class="news-content">
+
+                <div class="news-meta">
+
+                    <span class="brand">
+                        Google
+                    </span>
+
+                    <span class="time">
+                        6 hours ago
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Pixel 10 Pro benchmark results leak ahead of launch
+                </h3>
+
+
+                <p>
+                    New benchmark scores reveal significant Tensor chip improvements.
+                </p>
+
+            </div>
+
+
+            <img
+                src="pixel10-news.jpg"
+                alt="Google Pixel 10 Pro"
+            >
+
+        </div>
+
+
+        <div class="news-card search-card">
+
+            <div class="news-content">
+
+                <div class="news-meta">
+
+                    <span class="brand">
+                        Xiaomi
+                    </span>
+
+                    <span class="time">
+                        9 hours ago
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Xiaomi 16 Ultra launch date officially confirmed
+                </h3>
+
+
+                <p>
+                    Xiaomi prepares to unveil its next flagship camera-focused smartphone.
+                </p>
+
+            </div>
+
+
+            <img
+                src="xiaomi-news.jpg"
+                alt="Xiaomi 16 Ultra"
+            >
+
+        </div>
+
+
+        <div class="news-card search-card">
+
+            <div class="news-content">
+
+                <div class="news-meta">
+
+                    <span class="brand">
+                        OnePlus
+                    </span>
+
+                    <span class="time">
+                        12 hours ago
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    OnePlus 15 Pro expected to feature a larger battery
+                </h3>
+
+
+                <p>
+                    Leaks suggest major battery life improvements for the upcoming flagship.
+                </p>
+
+            </div>
+
+
+            <img
+                src="oneplus15-news.jpg"
+                alt="OnePlus 15 Pro"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="brands">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <a href="phones-brands.html" class="view-all">
+                View All
+                <i class="fa-solid fa-arrow-right"></i>
+                Brands
+            </a>
+
+            <h3 class="section-title">
+                <i class="fa-solid fa-building"></i>
+                Top Brands
+            </h3>
+
+        </div>
+
+
+        <div class="brands-grid">
+
+            <a href="#" class="brand-card search-card">
+
+                <i class="fa-brands fa-apple"></i>
+
+                <h3>Apple</h3>
+
+                <span>125 Devices</span>
+
+            </a>
+
+
+            <a href="#" class="brand-card search-card">
+
+                <i class="fa-solid fa-mobile-screen"></i>
+
+                <h3>Samsung</h3>
+
+                <span>210 Devices</span>
+
+            </a>
+
+
+            <a href="#" class="brand-card search-card">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                <h3>Xiaomi</h3>
+
+                <span>180 Devices</span>
+
+            </a>
+
+
+            <a href="#" class="brand-card search-card">
+
+                <i class="fa-brands fa-google"></i>
+
+                <h3>Google</h3>
+
+                <span>42 Devices</span>
+
+            </a>
+
+
+            <a href="#" class="brand-card search-card">
+
+                <i class="fa-solid fa-crown"></i>
+
+                <h3>Honor</h3>
+
+                <span>88 Devices</span>
+
+            </a>
+
+
+            <a href="#" class="brand-card search-card">
+
+                <i class="fa-solid fa-microchip"></i>
+
+                <h3>OnePlus</h3>
+
+                <span>54 Devices</span>
+
+            </a>
+
+
+            <a href="#" class="brand-card search-card">
+
+                <i class="fa-solid fa-camera"></i>
+
+                <h3>Oppo</h3>
+
+                <span>93 Devices</span>
+
+            </a>
+
+
+            <a href="#" class="brand-card search-card">
+
+                <i class="fa-solid fa-star"></i>
+
+                <h3>Vivo</h3>
+
+                <span>76 Devices</span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<footer class="tdh-footer tdh-footer-pro" aria-label="TechDealsHub footer">
+    <div class="tdh-footer-pro-glow"></div>
+    <div class="tdh-footer-pro-grid-bg"></div>
+
+    <div class="tdh-footer-inner">
+
+        <div class="tdh-footer-identity">
+            <div class="tdh-footer-brand">
+                <a href="index.html" class="tdh-footer-logo">
+                    <span class="tdh-footer-logo-mark"><i class="fa-solid fa-mobile-screen-button"></i></span>
+                    <span>TechDeals<span>Hub</span></span>
+                </a>
+                <p>
+                    Your destination for smartphone reviews, comparisons, news,
+                    buying guides and the best phone deals.
+                </p>
+
+                <div class="tdh-footer-socials" aria-label="Social links">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a class="tdh-x-social" href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="tdh-footer-newsletter">
+                <div class="tdh-footer-newsletter-copy">
+                    <span class="tdh-footer-mini-label"><i class="fa-solid fa-bolt"></i> STAY AHEAD</span>
+                    <h3>Get the latest smartphone updates.</h3>
+                    <p>News, reviews, comparisons and buying advice — delivered to your inbox.</p>
+                </div>
+                <form class="tdh-footer-newsletter-form" id="tdhHomeNewsletter">
+                    <label class="sr-only" for="tdhHomeEmail">Email address</label>
+                    <input id="tdhHomeEmail" type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe <i class="fa-solid fa-arrow-right"></i></button>
+                </form>
+                <div class="tdh-footer-newsletter-note"><i class="fa-solid fa-lock"></i> No spam. Unsubscribe anytime.</div>
+            </div>
+        </div>
+
+        <div class="tdh-footer-divider"></div>
+
+        <div class="tdh-footer-links-grid">
+            <div class="tdh-footer-col">
+                <h3><i class="fa-solid fa-mobile-screen-button"></i> Phones</h3>
+                <a href="phones.html">All Phones</a>
+                <a href="upcoming-phones.html">Upcoming Phones</a>
+                <a href="flagships.html">Flagship Phones</a>
+                <a href="mid-range-comparisons.html">Mid-Range Phones</a>
+                <a href="budget-phones.html">Budget Phones</a>
+                <a href="phones-brands.html">Phone Brands</a>
+            </div>
+
+            <div class="tdh-footer-col">
+                <h3><i class="fa-solid fa-scale-balanced"></i> Comparisons</h3>
+                <a href="latest-comparisons.html">Latest Comparisons</a>
+                <a href="trending-comparisons.html">Trending Comparisons</a>
+                <a href="flagship-comparisons.html">Flagship Comparisons</a>
+                <a href="mid-range-comparisons.html">Mid-Range Comparisons</a>
+                <a href="phone-compare.html">Phone Comparison</a>
+                <a href="buy-guides.html">Best Phone Deals</a>
+            </div>
+
+            <div class="tdh-footer-col">
+                <h3><i class="fa-solid fa-star"></i> Reviews</h3>
+                <a href="latest-reviews.html">Latest Reviews</a>
+                <a href="featured-reviews.html">Featured Reviews</a>
+                <a href="featured-reviews.html">Editor's Choice</a>
+                <a href="reviews.html">All Reviews</a>
+                <a href="software-updates.html">Software Updates</a>
+            </div>
+
+            <div class="tdh-footer-col">
+                <h3><i class="fa-solid fa-newspaper"></i> News</h3>
+                <a href="news_phones.html">Latest News</a>
+                <a href="software-updates.html">Software Updates</a>
+                <a href="upcoming-phones.html">Upcoming Phones</a>
+                <a href="trending-comparisons.html">Trending</a>
+                <a href="buy-guides.html">Buying Guides</a>
+            </div>
+
+            <div class="tdh-footer-col">
+                <h3><i class="fa-solid fa-layer-group"></i> Brands</h3>
+                <a href="apple.html">Apple</a>
+                <a href="samsung.html">Samsung</a>
+                <a href="xiaomi.html">Xiaomi</a>
+                <a href="brands.html">Google & Pixel</a>
+                <a href="brands.html">OnePlus</a>
+                <a href="phones-brands.html">All Brands <i class="fa-solid fa-arrow-right tdh-link-arrow"></i></a>
+            </div>
+
+            <div class="tdh-footer-col">
+                <h3><i class="fa-solid fa-circle-info"></i> Company</h3>
+                <a href="about.html">About TechDealsHub</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="editorial-policy.html">Editorial Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+
+        <div class="tdh-footer-feature-strip">
+            <div><span class="tdh-feature-icon"><i class="fa-solid fa-shield-halved"></i></span><span><strong>Independent</strong><small>Editorial coverage</small></span></div>
+            <div><span class="tdh-feature-icon"><i class="fa-solid fa-chart-line"></i></span><span><strong>Smart Comparisons</strong><small>Specs that matter</small></span></div>
+            <div><span class="tdh-feature-icon"><i class="fa-solid fa-bolt"></i></span><span><strong>Always Updated</strong><small>Latest tech information</small></span></div>
+            <div><span class="tdh-feature-icon"><i class="fa-solid fa-lock"></i></span><span><strong>Privacy First</strong><small>Your data matters</small></span></div>
+        </div>
+
+        <div class="tdh-footer-bottom">
+            <div class="tdh-copyright">© <span id="tdhFooterYear">2026</span> TechDealsHub. All rights reserved.</div>
+            <div class="tdh-legal-links">
+                <a href="privacy-policy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="editorial-policy.html">Editorial Policy</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="tdh-status"><span class="tdh-status-dot"></span> All systems operational</div>
+        </div>
+    </div>
+</footer>
+<script>
+
+
+const menuBtn = document.querySelector('.menu-btn');
+const sidebar = document.querySelector('.sidebar');
+const overlay = document.querySelector('.overlay');
+const sidebarClose = document.getElementById('sidebarClose');
+
+
+if(menuBtn && sidebar && overlay){
+
+    const closeMenu = () => {
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        menuBtn.classList.remove('is-open');
+        menuBtn.setAttribute('aria-label','Open menu');
+        menuBtn.setAttribute('aria-expanded','false');
+        const icon = menuBtn.querySelector('i');
+        if(icon) icon.className = 'fa-solid fa-bars';
+    };
+
+    menuBtn.addEventListener('click', () => {
+        const isOpen = sidebar.classList.toggle('active');
+        overlay.classList.toggle('active', isOpen);
+        menuBtn.classList.toggle('is-open', isOpen);
+        menuBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+        menuBtn.setAttribute('aria-expanded', String(isOpen));
+        const icon = menuBtn.querySelector('i');
+        if(icon) icon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+    });
+
+    overlay.addEventListener('click', closeMenu);
+
+
+    if(sidebarClose){
+        sidebarClose.addEventListener('click', closeMenu);
+    }
+
+}
+
+
+document.querySelectorAll('.menu-link').forEach(link => {
+
+    link.addEventListener('click', () => {
+
+        link.classList.toggle('active');
+
+        const submenu =
+            link.nextElementSibling;
+
+        if(submenu){
+
+            submenu.classList.toggle('active');
+
+        }
+
+    });
+
+});
+
+
+const cards =
+    document.querySelectorAll(
+        ".featured-review-card"
+    );
+
+
+const nextBtn =
+    document.getElementById("next");
+
+
+const prevBtn =
+    document.getElementById("prev");
+
+
+const searchBtn =
+    document.getElementById("searchToggle");
+
+
+const searchBox =
+    document.querySelector(".search-box");
+
+
+const searchInput =
+    document.getElementById("searchInput");
+
+
+// =====================================================
+// SEARCH BUTTON
+// =====================================================
+
+if(
+    searchBtn &&
+    searchBox
+){
+
+    searchBtn.addEventListener(
+        "click",
+        () => {
+
+            searchBtn.style.background =
+                '#3b82f6';
+
+            searchBox.classList.toggle(
+                "active"
+            );
+
+
+            if(
+                searchBox.classList.contains(
+                    "active"
+                )
+            ){
+
+                if(searchInput){
+
+                    searchInput.focus();
+
+                }
+
+            }else{
+
+                searchBtn.style.background =
+                    '#111827';
+
+            }
+
+        }
+    );
+
+}
+
+
+// =====================================================
+// SEARCH INPUT
+// =====================================================
+
+if(searchInput){
+
+    searchInput.addEventListener(
+        "input",
+        function(){
+
+            const keyword =
+                this.value
+                    .trim()
+                    .toLowerCase();
+
+
+            const searching =
+                keyword.length > 0;
+
+
+            document
+                .querySelectorAll(
+                    ".search-card"
+                )
+                .forEach(card => {
+
+                    const text =
+                        card.textContent
+                            .toLowerCase();
+
+
+                    card.style.display =
+                        text.includes(keyword)
+                        ? ""
+                        : "none";
+
+                });
+
+
+            document
+                .querySelectorAll(
+                    "section"
+                )
+                .forEach(section => {
+
+                    const cards =
+                        section.querySelectorAll(
+                            ".search-card"
+                        );
+
+
+                    if(cards.length === 0){
+
+                        section.style.display =
+                            searching
+                            ? "none"
+                            : "";
+
+                        return;
+
+                    }
+
+
+                    const hasVisibleCard =
+                        [...cards].some(
+                            card =>
+                                card.style.display !==
+                                "none"
+                        );
+
+
+                    section.style.display =
+                        hasVisibleCard
+                        ? ""
+                        : "none";
+
+                });
+
+        }
+    );
+
+}
+
+
+// =====================================================
+// SEARCH CARD CLICK
+// =====================================================
+
+document
+    .querySelectorAll(
+        ".search-card"
+    )
+    .forEach(card => {
+
+        const title =
+            card.querySelector(
+                "h3,h4"
+            );
+
+
+        if(!title){
+
+            return;
+
+        }
+
+
+        const url =
+            title.textContent
+                .trim()
+                .toLowerCase()
+                .replace(
+                    /[^\w\s-]/g,
+                    ""
+                )
+                .replace(
+                    /\s+/g,
+                    "-"
+                )
+                + ".html";
+
+
+        card.style.cursor =
+            "pointer";
+
+
+        card.addEventListener(
+            "click",
+            () => {
+
+                window.location.href =
+                    url;
+
+            }
+        );
+
+    });
+
+
+// =====================================================
+// NEXT BUTTON
+// =====================================================
+
+if(nextBtn){
+
+    nextBtn.addEventListener(
+        "click",
+        () => {
+
+            current++;
+
+
+            if(current >= cards.length){
+
+                current = 0;
+
+            }
+
+
+            updateCards();
+
+        }
+    );
+
+}
+
+
+// =====================================================
+// PREVIOUS BUTTON
+// =====================================================
+
+if(prevBtn){
+
+    prevBtn.addEventListener(
+        "click",
+        () => {
+
+            current--;
+
+
+            if(current < 0){
+
+                current =
+                    cards.length - 1;
+
+            }
+
+
+            updateCards();
+
+        }
+    );
+
+}
+
+
+// =====================================================
+// UPDATE CARDS
+// =====================================================
+
+if(
+    typeof updateCards ===
+    "function"
+){
+
+    updateCards();
+
+}
+
+
+</script>
+<script>
+(function(){
+    const y=document.getElementById("tdhFooterYear");
+    if(y) y.textContent=new Date().getFullYear();
+    const form=document.getElementById("tdhHomeNewsletter");
+    if(form){
+        form.addEventListener("submit",function(e){
+            e.preventDefault();
+            const input=document.getElementById("tdhHomeEmail");
+            const button=form.querySelector("button");
+            if(!input || !input.value.trim()) return;
+            const original=button.innerHTML;
+            button.innerHTML='Subscribed <i class="fa-solid fa-check"></i>';
+            button.disabled=true;
+            input.value="";
+            setTimeout(function(){button.innerHTML=original;button.disabled=false;},2500);
+        });
+    }
+})();
+</script>
+</body>
+</html>

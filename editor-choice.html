@@ -1,0 +1,2845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Editor's Choice - The smartphones selected by our editors for the best performance, cameras, battery life, design and value."
+    >
+
+    <meta
+        name="theme-color"
+        content="#070b13"
+    >
+
+    <title>Editor's Choice | TechDealsHub</title>
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+
+    --bg:#070b13;
+
+    --bg-soft:#0a101b;
+
+    --card:#101827;
+
+    --card-2:#0d1523;
+
+    --border:rgba(148,163,184,.14);
+
+    --border-hover:rgba(96,165,250,.38);
+
+    --text:#f8fafc;
+
+    --muted:#94a3b8;
+
+    --blue:#60a5fa;
+
+    --blue-strong:#2563eb;
+
+    --yellow:#facc15;
+
+    --green:#4ade80;
+
+    --red:#fb7185;
+
+    --shadow:0 25px 70px rgba(0,0,0,.28);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    font-family:
+
+        "Inter",
+
+        system-ui,
+
+        -apple-system,
+
+        BlinkMacSystemFont,
+
+        "Segoe UI",
+
+        sans-serif;
+
+    color:var(--text);
+
+    background:
+
+        radial-gradient(
+
+            circle at 50% -15%,
+
+            rgba(59,130,246,.14),
+
+            transparent 34%
+
+        ),
+
+        var(--bg);
+
+    line-height:1.5;
+
+}
+
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+
+button{
+
+    font:inherit;
+
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container{
+
+    width:min(
+
+        1180px,
+
+        calc(100% - 32px)
+
+    );
+
+    margin:0 auto;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    background:rgba(7,11,19,.82);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+
+.navbar{
+
+    min-height:72px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:25px;
+
+}
+
+
+.logo{
+
+    font-size:21px;
+
+    font-weight:900;
+
+    letter-spacing:-.7px;
+
+}
+
+
+.logo span{
+
+    color:var(--blue);
+
+}
+
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
+
+.nav-links a{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    font-weight:700;
+
+    transition:.25s ease;
+
+}
+
+
+.nav-links a:hover{
+
+    color:#fff;
+
+}
+
+
+.nav-links a.active{
+
+    color:#fff;
+
+}
+
+
+.nav-links a.active::after{
+
+    content:"";
+
+    display:block;
+
+    height:2px;
+
+    width:18px;
+
+    margin:5px auto 0;
+
+    border-radius:5px;
+
+    background:var(--blue);
+
+}
+
+
+.menu-button{
+
+    display:none;
+
+    border:0;
+
+    background:transparent;
+
+    color:#fff;
+
+    font-size:21px;
+
+    cursor:pointer;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.editor-hero{
+
+    position:relative;
+
+    padding:
+
+        78px
+
+        0
+
+        55px;
+
+    text-align:center;
+
+    overflow:hidden;
+
+}
+
+
+.editor-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    top:-300px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    border-radius:50%;
+
+    background:rgba(37,99,235,.13);
+
+    filter:blur(70px);
+
+    pointer-events:none;
+
+}
+
+
+.hero-inner{
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+
+.editor-tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:
+
+        8px
+
+        13px;
+
+    border-radius:999px;
+
+    color:var(--blue);
+
+    background:rgba(59,130,246,.08);
+
+    border:1px solid rgba(96,165,250,.2);
+
+    font-size:11px;
+
+    font-weight:900;
+
+    letter-spacing:.9px;
+
+    text-transform:uppercase;
+
+}
+
+
+.editor-tag i{
+
+    font-size:12px;
+
+}
+
+
+.editor-hero h1{
+
+    max-width:800px;
+
+    margin:
+
+        20px
+
+        auto
+
+        14px;
+
+    font-size:
+
+        clamp(
+
+            36px,
+
+            6vw,
+
+            62px
+
+        );
+
+    line-height:1.02;
+
+    letter-spacing:-2.8px;
+
+}
+
+
+.editor-hero h1 span{
+
+    color:var(--blue);
+
+}
+
+
+.editor-hero p{
+
+    max-width:680px;
+
+    margin:auto;
+
+    color:var(--muted);
+
+    font-size:15px;
+
+    line-height:1.75;
+
+}
+
+
+/* =========================================================
+   FEATURED EDITOR PICK
+========================================================= */
+
+.editor-feature{
+
+    display:grid;
+
+    grid-template-columns:
+
+        1.08fr
+
+        .92fr;
+
+    min-height:420px;
+
+    margin-bottom:65px;
+
+    overflow:hidden;
+
+    border:
+
+        1px
+
+        solid
+
+        var(--border);
+
+    border-radius:28px;
+
+    background:
+
+        linear-gradient(
+
+            145deg,
+
+            #111c2e,
+
+            #0c1320
+
+        );
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.feature-visual{
+
+    position:relative;
+
+    min-height:420px;
+
+    overflow:hidden;
+
+    background:#080e18;
+
+}
+
+
+.feature-visual::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent 55%,
+
+            rgba(7,11,19,.38)
+
+        );
+
+    pointer-events:none;
+
+}
+
+
+.feature-visual img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:
+
+        transform
+
+        .7s
+
+        ease;
+
+}
+
+
+.editor-feature:hover .feature-visual img{
+
+    transform:scale(1.035);
+
+}
+
+
+.feature-badge{
+
+    position:absolute;
+
+    top:18px;
+
+    left:18px;
+
+    z-index:2;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    padding:
+
+        9px
+
+        13px;
+
+    border-radius:10px;
+
+    color:#fff;
+
+    background:rgba(15,23,42,.9);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    backdrop-filter:blur(10px);
+
+    font-size:11px;
+
+    font-weight:900;
+
+}
+
+
+.feature-content{
+
+    padding:42px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+
+.feature-kicker{
+
+    color:var(--blue);
+
+    font-size:11px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+
+.feature-content h2{
+
+    margin:
+
+        10px
+
+        0
+
+        14px;
+
+    font-size:34px;
+
+    line-height:1.12;
+
+    letter-spacing:-1.2px;
+
+}
+
+
+.feature-content p{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.75;
+
+}
+
+
+.feature-meta{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    margin:
+
+        25px
+
+        0;
+
+}
+
+
+.feature-rating{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:5px;
+
+}
+
+
+.feature-stars{
+
+    color:var(--yellow);
+
+    letter-spacing:2px;
+
+    font-size:14px;
+
+}
+
+
+.feature-rating small{
+
+    color:var(--muted);
+
+    font-size:10px;
+
+}
+
+
+.feature-score{
+
+    width:58px;
+
+    height:52px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:13px;
+
+    color:var(--green);
+
+    background:rgba(34,197,94,.11);
+
+    border:1px solid rgba(34,197,94,.18);
+
+    font-size:18px;
+
+    font-weight:900;
+
+}
+
+
+.feature-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.primary-button,
+
+.secondary-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    min-height:42px;
+
+    padding:
+
+        0
+
+        15px;
+
+    border-radius:10px;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    transition:.25s ease;
+
+}
+
+
+.primary-button{
+
+    color:#fff;
+
+    background:var(--blue-strong);
+
+}
+
+
+.primary-button:hover{
+
+    background:#3b82f6;
+
+    transform:translateY(-2px);
+
+}
+
+
+.secondary-button{
+
+    color:#cbd5e1;
+
+    border:1px solid var(--border);
+
+    background:rgba(255,255,255,.03);
+
+}
+
+
+.secondary-button:hover{
+
+    border-color:var(--border-hover);
+
+    color:#fff;
+
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.section{
+
+    padding-bottom:65px;
+
+}
+
+
+.section-header{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    margin-bottom:22px;
+
+}
+
+
+.section-heading{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:6px;
+
+}
+
+
+.section-tag{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    color:var(--blue);
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:.9px;
+
+    text-transform:uppercase;
+
+}
+
+
+.section-header h2{
+
+    font-size:25px;
+
+    line-height:1.2;
+
+    letter-spacing:-.7px;
+
+}
+
+
+.section-description{
+
+    color:var(--muted);
+
+    font-size:12px;
+
+}
+
+
+.view-all{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    color:var(--blue);
+
+    font-size:12px;
+
+    font-weight:800;
+
+    white-space:nowrap;
+
+    transition:.25s;
+
+}
+
+
+.view-all:hover{
+
+    gap:10px;
+
+}
+
+
+/* =========================================================
+   EDITOR CARDS
+========================================================= */
+
+.editor-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(
+
+            3,
+
+            1fr
+
+        );
+
+    gap:17px;
+
+}
+
+
+.editor-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    min-width:0;
+
+    background:var(--card);
+
+    border:
+
+        1px
+
+        solid
+
+        var(--border);
+
+    border-radius:20px;
+
+    transition:
+
+        transform
+
+        .35s
+
+        ease,
+
+        border-color
+
+        .35s
+
+        ease,
+
+        box-shadow
+
+        .35s
+
+        ease;
+
+}
+
+
+.editor-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--border-hover);
+
+    box-shadow:
+
+        0
+
+        20px
+
+        50px
+
+        rgba(0,0,0,.22);
+
+}
+
+
+.editor-image{
+
+    position:relative;
+
+    height:205px;
+
+    overflow:hidden;
+
+    background:#080e18;
+
+}
+
+
+.editor-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:
+
+        transform
+
+        .45s
+
+        ease;
+
+}
+
+
+.editor-card:hover .editor-image img{
+
+    transform:scale(1.06);
+
+}
+
+
+.editor-badge{
+
+    position:absolute;
+
+    top:12px;
+
+    left:12px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:
+
+        7px
+
+        10px;
+
+    border-radius:9px;
+
+    color:#fff;
+
+    background:rgba(15,23,42,.9);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    backdrop-filter:blur(8px);
+
+    font-size:9px;
+
+    font-weight:900;
+
+}
+
+
+.editor-body{
+
+    padding:18px;
+
+}
+
+
+.editor-category{
+
+    display:inline-block;
+
+    margin-bottom:6px;
+
+    color:var(--blue);
+
+    font-size:9px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    letter-spacing:.8px;
+
+}
+
+
+.editor-body h3{
+
+    margin-bottom:8px;
+
+    font-size:16px;
+
+    line-height:1.35;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+}
+
+
+.editor-body p{
+
+    min-height:39px;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.65;
+
+    display:-webkit-box;
+
+    -webkit-line-clamp:2;
+
+    -webkit-box-orient:vertical;
+
+    overflow:hidden;
+
+}
+
+
+.editor-footer{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-top:16px;
+
+    padding-top:13px;
+
+    border-top:1px solid rgba(255,255,255,.06);
+
+}
+
+
+.rating-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:3px;
+
+}
+
+
+.rating-stars{
+
+    color:var(--yellow);
+
+    letter-spacing:1px;
+
+    font-size:11px;
+
+}
+
+
+.rating-info small{
+
+    color:var(--muted);
+
+    font-size:8px;
+
+}
+
+
+.rating-score{
+
+    min-width:44px;
+
+    padding:
+
+        7px
+
+        9px;
+
+    text-align:center;
+
+    border-radius:9px;
+
+    color:var(--green);
+
+    background:rgba(34,197,94,.11);
+
+    border:1px solid rgba(34,197,94,.14);
+
+    font-size:12px;
+
+    font-weight:900;
+
+}
+
+
+/* =========================================================
+   CATEGORY STRIP
+========================================================= */
+
+.category-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(
+
+            4,
+
+            1fr
+
+        );
+
+    gap:14px;
+
+}
+
+
+.category-box{
+
+    position:relative;
+
+    padding:22px 19px;
+
+    overflow:hidden;
+
+    border:
+
+        1px
+
+        solid
+
+        var(--border);
+
+    border-radius:17px;
+
+    background:var(--card-2);
+
+    transition:.3s ease;
+
+}
+
+
+.category-box:hover{
+
+    transform:translateY(-4px);
+
+    border-color:var(--border-hover);
+
+}
+
+
+.category-icon{
+
+    width:39px;
+
+    height:39px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:14px;
+
+    border-radius:11px;
+
+    color:var(--blue);
+
+    background:rgba(59,130,246,.1);
+
+}
+
+
+.category-box h3{
+
+    margin-bottom:5px;
+
+    font-size:14px;
+
+}
+
+
+.category-box p{
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    line-height:1.6;
+
+}
+
+
+/* =========================================================
+   EDITOR NOTE
+========================================================= */
+
+.editor-note{
+
+    margin-top:0;
+
+    padding:30px;
+
+    border:
+
+        1px
+
+        solid
+
+        var(--border);
+
+    border-radius:20px;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(59,130,246,.07),
+
+            rgba(255,255,255,.02)
+
+        );
+
+}
+
+
+.note-inner{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+
+.note-icon{
+
+    flex:0 0 48px;
+
+    width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:14px;
+
+    color:var(--blue);
+
+    background:rgba(59,130,246,.1);
+
+    font-size:18px;
+
+}
+
+
+.note-text h3{
+
+    margin-bottom:4px;
+
+    font-size:15px;
+
+}
+
+
+.note-text p{
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.65;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer{
+
+    margin-top:10px;
+
+    border-top:
+
+        1px
+
+        solid
+
+        var(--border);
+
+    padding:
+
+        30px
+
+        0;
+
+}
+
+
+.footer-inner{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+}
+
+
+.footer-logo{
+
+    font-size:15px;
+
+    font-weight:900;
+
+}
+
+
+.footer-logo span{
+
+    color:var(--blue);
+
+}
+
+
+.footer-text{
+
+    color:var(--muted);
+
+    font-size:10px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE 1000
+========================================================= */
+
+@media(max-width:1000px){
+
+    .editor-feature{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .feature-visual{
+
+        min-height:350px;
+
+    }
+
+
+    .feature-content{
+
+        padding:32px;
+
+    }
+
+
+    .editor-grid{
+
+        grid-template-columns:
+
+            repeat(
+
+                2,
+
+                1fr
+
+            );
+
+    }
+
+
+    .category-grid{
+
+        grid-template-columns:
+
+            repeat(
+
+                2,
+
+                1fr
+
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE 650
+========================================================= */
+
+@media(max-width:650px){
+
+    .container{
+
+        width:
+
+            calc(
+
+                100% - 24px
+
+            );
+
+    }
+
+
+    .nav-links{
+
+        display:none;
+
+    }
+
+
+    .menu-button{
+
+        display:block;
+
+    }
+
+
+    .editor-hero{
+
+        padding:
+
+            58px
+
+            0
+
+            40px;
+
+    }
+
+
+    .editor-hero h1{
+
+        font-size:38px;
+
+        letter-spacing:-1.8px;
+
+    }
+
+
+    .editor-hero p{
+
+        font-size:13px;
+
+    }
+
+
+    .feature-visual{
+
+        min-height:250px;
+
+    }
+
+
+    .feature-content{
+
+        padding:25px;
+
+    }
+
+
+    .feature-content h2{
+
+        font-size:27px;
+
+    }
+
+
+    .feature-meta{
+
+        margin:21px 0;
+
+    }
+
+
+    .section-header{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+
+    .editor-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .editor-image{
+
+        height:210px;
+
+    }
+
+
+    .category-grid{
+
+        grid-template-columns:
+
+            repeat(
+
+                2,
+
+                1fr
+
+            );
+
+    }
+
+
+    .note-inner{
+
+        align-items:flex-start;
+
+    }
+
+
+    .footer-inner{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE 420
+========================================================= */
+
+@media(max-width:420px){
+
+    .editor-hero h1{
+
+        font-size:33px;
+
+    }
+
+
+    .category-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .feature-buttons{
+
+        flex-direction:column;
+
+    }
+
+
+    .primary-button,
+
+    .secondary-button{
+
+        width:100%;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     HEADER
+======================================================= -->
+
+<header class="site-header">
+
+    <div class="container navbar">
+
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+
+            Tech<span>Deals</span>Hub
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="featured-reviews.html">
+                Reviews
+            </a>
+
+            <a href="upcoming.html">
+                Upcoming
+            </a>
+
+            <a
+                href="editors-choice.html"
+                class="active"
+            >
+                Editor's Choice
+            </a>
+
+        </nav>
+
+
+        <button
+            class="menu-button"
+            aria-label="Open menu"
+        >
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<section class="editor-hero">
+
+    <div class="container hero-inner">
+
+
+        <span class="editor-tag">
+
+            <i class="fa-solid fa-award"></i>
+
+            Editor's Choice
+
+        </span>
+
+
+        <h1>
+
+            The Phones We
+            <span>Recommend Most</span>
+
+        </h1>
+
+
+        <p>
+
+            Our editors carefully select the smartphones that
+            stand out from the competition — based on performance,
+            cameras, battery life, software, design and overall value.
+
+        </p>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     FEATURED PICK
+======================================================= -->
+
+<section>
+
+    <div class="container">
+
+
+        <article class="editor-feature">
+
+
+            <div class="feature-visual">
+
+
+                <img
+                    src="Samsung/img/galaxys26ultra_16_9.png"
+                    alt="Samsung Galaxy S26 Ultra"
+                >
+
+
+                <span class="feature-badge">
+
+                    <i class="fa-solid fa-crown"></i>
+
+                    Best Overall
+
+                </span>
+
+
+            </div>
+
+
+
+            <div class="feature-content">
+
+
+                <span class="feature-kicker">
+
+                    Editor's #1 Pick
+
+                </span>
+
+
+                <h2>
+
+                    Samsung Galaxy S26 Ultra
+
+                </h2>
+
+
+                <p>
+
+                    A complete flagship experience combining an
+                    exceptional display, powerful performance,
+                    advanced cameras, impressive zoom capabilities
+                    and a feature-rich software experience.
+
+                </p>
+
+
+                <div class="feature-meta">
+
+
+                    <div class="feature-rating">
+
+                        <span class="feature-stars">
+
+                            ★★★★★
+
+                        </span>
+
+                        <small>
+
+                            Our Editor Rating
+
+                        </small>
+
+                    </div>
+
+
+                    <div class="feature-score">
+
+                        9.6
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="feature-buttons">
+
+
+                    <a
+                        href="samsung-galaxy-s26-ultra-review.html"
+                        class="primary-button"
+                    >
+
+                        Read Full Review
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+
+                    <a
+                        href="index.html"
+                        class="secondary-button"
+                    >
+
+                        Compare Phones
+
+                        <i class="fa-solid fa-scale-balanced"></i>
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     TOP PICKS
+======================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+
+            <div class="section-heading">
+
+
+                <span class="section-tag">
+
+                    <i class="fa-solid fa-star"></i>
+
+                    Our Picks
+
+                </span>
+
+
+                <h2>
+
+                    Editor's Choice Awards
+
+                </h2>
+
+
+                <p class="section-description">
+
+                    The best phones for different types of users.
+
+                </p>
+
+
+            </div>
+
+
+            <a
+                href="index.html"
+                class="view-all"
+            >
+
+                View All Phones
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+        </div>
+
+
+
+        <div class="editor-grid">
+
+
+            <!-- CARD 1 -->
+
+            <article class="editor-card">
+
+
+                <div class="editor-image">
+
+
+                    <img
+                        src="apple/img/iphone17promax_16_9.png"
+                        alt="iPhone 17 Pro Max"
+                    >
+
+
+                    <span class="editor-badge">
+
+                        <i class="fa-solid fa-camera"></i>
+
+                        Best Camera
+
+                    </span>
+
+
+                </div>
+
+
+                <div class="editor-body">
+
+
+                    <span class="editor-category">
+
+                        Premium
+
+                    </span>
+
+
+                    <h3>
+
+                        iPhone 17 Pro Max
+
+                    </h3>
+
+
+                    <p>
+
+                        Exceptional photography, premium
+                        performance and excellent battery life.
+
+                    </p>
+
+
+                    <div class="editor-footer">
+
+
+                        <div class="rating-info">
+
+                            <span class="rating-stars">
+
+                                ★★★★★
+
+                            </span>
+
+                            <small>
+
+                                Editor Rating
+
+                            </small>
+
+                        </div>
+
+
+                        <span class="rating-score">
+
+                            9.5
+
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- CARD 2 -->
+
+            <article class="editor-card">
+
+
+                <div class="editor-image">
+
+
+                    <img
+                        src="xiaomi/img/Xiaomi16ultra_16_9.png"
+                        alt="Xiaomi 16 Ultra"
+                    >
+
+
+                    <span class="editor-badge">
+
+                        <i class="fa-solid fa-bolt"></i>
+
+                        Best Value
+
+                    </span>
+
+
+                </div>
+
+
+                <div class="editor-body">
+
+
+                    <span class="editor-category">
+
+                        Flagship
+
+                    </span>
+
+
+                    <h3>
+
+                        Xiaomi 16 Ultra
+
+                    </h3>
+
+
+                    <p>
+
+                        Flagship cameras, ultra-fast charging
+                        and impressive performance for its price.
+
+                    </p>
+
+
+                    <div class="editor-footer">
+
+
+                        <div class="rating-info">
+
+                            <span class="rating-stars">
+
+                                ★★★★★
+
+                            </span>
+
+                            <small>
+
+                                Editor Rating
+
+                            </small>
+
+                        </div>
+
+
+                        <span class="rating-score">
+
+                            9.4
+
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- CARD 3 -->
+
+            <article class="editor-card">
+
+
+                <div class="editor-image">
+
+
+                    <img
+                        src="google/img/Googlepixel10pro_16_9.png"
+                        alt="Google Pixel 10 Pro"
+                    >
+
+
+                    <span class="editor-badge">
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                        Best AI
+
+                    </span>
+
+
+                </div>
+
+
+                <div class="editor-body">
+
+
+                    <span class="editor-category">
+
+                        Premium
+
+                    </span>
+
+
+                    <h3>
+
+                        Google Pixel 10 Pro
+
+                    </h3>
+
+
+                    <p>
+
+                        Outstanding computational photography,
+                        smart AI features and clean Android software.
+
+                    </p>
+
+
+                    <div class="editor-footer">
+
+
+                        <div class="rating-info">
+
+                            <span class="rating-stars">
+
+                                ★★★★★
+
+                            </span>
+
+                            <small>
+
+                                Editor Rating
+
+                            </small>
+
+                        </div>
+
+
+                        <span class="rating-score">
+
+                            9.3
+
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- CARD 4 -->
+
+            <article class="editor-card">
+
+
+                <div class="editor-image">
+
+
+                    <img
+                        src="Samsung/img/galaxys26ultra_16_9.png"
+                        alt="Samsung Galaxy S26 Ultra"
+                    >
+
+
+                    <span class="editor-badge">
+
+                        <i class="fa-solid fa-display"></i>
+
+                        Best Display
+
+                    </span>
+
+
+                </div>
+
+
+                <div class="editor-body">
+
+
+                    <span class="editor-category">
+
+                        Flagship
+
+                    </span>
+
+
+                    <h3>
+
+                        Galaxy S26 Ultra
+
+                    </h3>
+
+
+                    <p>
+
+                        A stunning large display with excellent
+                        brightness, detail and immersive viewing.
+
+                    </p>
+
+
+                    <div class="editor-footer">
+
+
+                        <div class="rating-info">
+
+                            <span class="rating-stars">
+
+                                ★★★★★
+
+                            </span>
+
+                            <small>
+
+                                Editor Rating
+
+                            </small>
+
+                        </div>
+
+
+                        <span class="rating-score">
+
+                            9.6
+
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- CARD 5 -->
+
+            <article class="editor-card">
+
+
+                <div class="editor-image">
+
+
+                    <img
+                        src="apple/img/iphone17promax_16_9.png"
+                        alt="iPhone 17 Pro Max"
+                    >
+
+
+                    <span class="editor-badge">
+
+                        <i class="fa-solid fa-gauge-high"></i>
+
+                        Best Performance
+
+                    </span>
+
+
+                </div>
+
+
+                <div class="editor-body">
+
+
+                    <span class="editor-category">
+
+                        Power User
+
+                    </span>
+
+
+                    <h3>
+
+                        iPhone 17 Pro Max
+
+                    </h3>
+
+
+                    <p>
+
+                        Powerful performance for gaming,
+                        creative workloads and demanding apps.
+
+                    </p>
+
+
+                    <div class="editor-footer">
+
+
+                        <div class="rating-info">
+
+                            <span class="rating-stars">
+
+                                ★★★★★
+
+                            </span>
+
+                            <small>
+
+                                Editor Rating
+
+                            </small>
+
+                        </div>
+
+
+                        <span class="rating-score">
+
+                            9.5
+
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- CARD 6 -->
+
+            <article class="editor-card">
+
+
+                <div class="editor-image">
+
+
+                    <img
+                        src="xiaomi/img/Xiaomi16ultra_16_9.png"
+                        alt="Xiaomi 16 Ultra"
+                    >
+
+
+                    <span class="editor-badge">
+
+                        <i class="fa-solid fa-battery-full"></i>
+
+                        Best Battery
+
+                    </span>
+
+
+                </div>
+
+
+                <div class="editor-body">
+
+
+                    <span class="editor-category">
+
+                        Everyday
+
+                    </span>
+
+
+                    <h3>
+
+                        Xiaomi 16 Ultra
+
+                    </h3>
+
+
+                    <p>
+
+                        Excellent endurance and fast charging
+                        for users who need dependable all-day power.
+
+                    </p>
+
+
+                    <div class="editor-footer">
+
+
+                        <div class="rating-info">
+
+                            <span class="rating-stars">
+
+                                ★★★★★
+
+                            </span>
+
+                            <small>
+
+                                Editor Rating
+
+                            </small>
+
+                        </div>
+
+
+                        <span class="rating-score">
+
+                            9.4
+
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </article>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     CATEGORIES
+======================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+
+            <div class="section-heading">
+
+
+                <span class="section-tag">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    By Category
+
+                </span>
+
+
+                <h2>
+
+                    Find Your Perfect Pick
+
+                </h2>
+
+
+                <p class="section-description">
+
+                    Different priorities need different choices.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="category-grid">
+
+
+            <div class="category-box">
+
+
+                <div class="category-icon">
+
+                    <i class="fa-solid fa-crown"></i>
+
+                </div>
+
+
+                <h3>
+
+                    Best Overall
+
+                </h3>
+
+
+                <p>
+
+                    The most complete smartphone experience
+                    with the fewest compromises.
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="category-box">
+
+
+                <div class="category-icon">
+
+                    <i class="fa-solid fa-camera"></i>
+
+                </div>
+
+
+                <h3>
+
+                    Best Camera
+
+                </h3>
+
+
+                <p>
+
+                    Our top recommendation for photography
+                    and video enthusiasts.
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="category-box">
+
+
+                <div class="category-icon">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                </div>
+
+
+                <h3>
+
+                    Best Value
+
+                </h3>
+
+
+                <p>
+
+                    Maximum features and performance
+                    without unnecessary spending.
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="category-box">
+
+
+                <div class="category-icon">
+
+                    <i class="fa-solid fa-gamepad"></i>
+
+                </div>
+
+
+                <h3>
+
+                    Best Performance
+
+                </h3>
+
+
+                <p>
+
+                    Designed for gaming, multitasking
+                    and demanding workloads.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     EDITOR NOTE
+======================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="editor-note">
+
+
+            <div class="note-inner">
+
+
+                <div class="note-icon">
+
+                    <i class="fa-solid fa-pen-nib"></i>
+
+                </div>
+
+
+                <div class="note-text">
+
+
+                    <h3>
+
+                        How Our Editor's Choice Works
+
+                    </h3>
+
+
+                    <p>
+
+                        Editor's Choice highlights the smartphones
+                        that we believe stand out in their category.
+                        Our selections consider performance, camera
+                        quality, display, battery life, software,
+                        design, features and overall value.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
+<footer class="site-footer">
+
+    <div class="container footer-inner">
+
+
+        <div class="footer-logo">
+
+            Tech<span>Deals</span>Hub
+
+        </div>
+
+
+        <div class="footer-text">
+
+            © 2026 TechDealsHub · Editor's Choice
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>

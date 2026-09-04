@@ -251,8 +251,11 @@ content="width=device-width,initial-scale=1">
 <label>Geekbench Multi-Core</label>
 <input type="text" name="geekbench_multi_core">
 
-<label>3DMark Wild Life</label>
+<label>3DMark Wild Life Extreme</label>
 <input type="text" name="3dmark_wild_life">
+
+<label>PCMark Work 3.0</label>
+<input type="text" name="pcmark_work">
 
 <label>PCMark Battery</label>
 <input type="text" name="pcmark_battery">

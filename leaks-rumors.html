@@ -1,0 +1,3504 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leaks & Rumors | TechDealsHub</title><meta name="description" content="Latest smartphone leaks, rumors, specifications, release dates and early reports from Samsung, Apple, Xiaomi, Google and more."><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+
+    --bg:#070b12;
+    --bg-soft:#0b111c;
+    --card:#101827;
+    --card-2:#121c2c;
+
+    --border:rgba(255,255,255,.08);
+    --border-light:rgba(255,255,255,.13);
+
+    --text:#f4f7fb;
+    --muted:#8d9aae;
+    --muted-2:#647186;
+
+    --blue:#3b82f6;
+    --blue-light:#60a5fa;
+    --blue-soft:rgba(59,130,246,.12);
+
+    --green:#22c55e;
+    --green-soft:rgba(34,197,94,.12);
+
+    --yellow:#fbbf24;
+    --yellow-soft:rgba(251,191,36,.12);
+
+    --red:#ef4444;
+    --red-soft:rgba(239,68,68,.12);
+
+    --purple:#a855f7;
+    --purple-soft:rgba(168,85,247,.12);
+
+    --radius:20px;
+
+    --container:1200px;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:
+        radial-gradient(
+            circle at 20% -10%,
+            rgba(59,130,246,.10),
+            transparent 35%
+        ),
+        var(--bg);
+
+    color:var(--text);
+
+    font-family:"Inter",sans-serif;
+
+    line-height:1.6;
+
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+button{
+    font:inherit;
+}
+
+.container{
+
+    width:min(
+        calc(100% - 40px),
+        var(--container)
+    );
+
+    margin:auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header{
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(7,11,18,.88);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border-bottom:1px solid var(--border);
+}
+
+.header-inner{
+
+    min-height:76px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:30px;
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
+
+    gap:10px;
+
+    font-size:21px;
+    font-weight:800;
+
+    letter-spacing:-.6px;
+}
+
+.logo-icon{
+
+    width:38px;
+    height:38px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:11px;
+
+    background:linear-gradient(
+        135deg,
+        var(--blue),
+        #2563eb
+    );
+
+    box-shadow:
+        0 8px 25px rgba(37,99,235,.28);
+}
+
+.logo span{
+    color:var(--blue-light);
+}
+
+.main-nav{
+
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.main-nav a{
+
+    color:var(--muted);
+
+    font-size:14px;
+    font-weight:600;
+
+    transition:.25s ease;
+
+    position:relative;
+}
+
+.main-nav a:hover,
+.main-nav a.active{
+    color:#fff;
+}
+
+.main-nav a.active::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    bottom:-10px;
+
+    height:2px;
+
+    border-radius:10px;
+
+    background:var(--blue);
+}
+
+.header-actions{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.header-btn{
+
+    width:40px;
+    height:40px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid var(--border);
+
+    background:var(--card);
+
+    color:var(--muted);
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+}
+
+.header-btn:hover{
+
+    color:#fff;
+
+    border-color:rgba(59,130,246,.35);
+
+    background:var(--blue-soft);
+}
+
+.mobile-menu{
+    display:none;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    position:relative;
+
+    padding:90px 0 70px;
+
+    overflow:hidden;
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:rgba(59,130,246,.07);
+
+    filter:blur(80px);
+
+    top:-250px;
+    left:-180px;
+
+    pointer-events:none;
+}
+
+.hero-inner{
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1.4fr)
+        minmax(300px,.6fr);
+
+    align-items:center;
+
+    gap:70px;
+}
+
+.hero-content{
+    max-width:720px;
+}
+
+.hero-tag{
+
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+
+    padding:8px 13px;
+
+    border-radius:30px;
+
+    background:var(--blue-soft);
+
+    border:1px solid rgba(59,130,246,.20);
+
+    color:var(--blue-light);
+
+    font-size:12px;
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.7px;
+
+    margin-bottom:20px;
+}
+
+.hero h1{
+
+    font-size:clamp(
+        40px,
+        6vw,
+        68px
+    );
+
+    line-height:1.02;
+
+    letter-spacing:-2.8px;
+
+    margin-bottom:24px;
+}
+
+.hero h1 span{
+    color:var(--blue-light);
+}
+
+.hero-description{
+
+    max-width:650px;
+
+    color:var(--muted);
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+}
+
+.hero-actions{
+
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:12px;
+}
+
+.btn{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:9px;
+
+    min-height:48px;
+
+    padding:0 18px;
+
+    border-radius:13px;
+
+    font-size:14px;
+    font-weight:700;
+
+    border:1px solid transparent;
+
+    transition:.25s ease;
+}
+
+.btn-primary{
+
+    background:var(--blue);
+
+    color:#fff;
+
+    box-shadow:
+        0 10px 30px rgba(59,130,246,.20);
+}
+
+.btn-primary:hover{
+
+    background:#2563eb;
+
+    transform:translateY(-2px);
+}
+
+.btn-secondary{
+
+    background:var(--card);
+
+    border-color:var(--border);
+
+    color:#dce3ec;
+}
+
+.btn-secondary:hover{
+
+    border-color:var(--border-light);
+
+    background:var(--card-2);
+
+    transform:translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO STATS
+========================================================= */
+
+.hero-stats{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+}
+
+.stat-card{
+
+    padding:22px;
+
+    min-height:130px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    border:1px solid var(--border);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.035),
+            rgba(255,255,255,.015)
+        ),
+        var(--card);
+
+    border-radius:18px;
+}
+
+.stat-icon{
+
+    width:36px;
+    height:36px;
+
+    border-radius:10px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:var(--blue-light);
+
+    background:var(--blue-soft);
+}
+
+.stat-number{
+
+    font-size:26px;
+    font-weight:800;
+
+    letter-spacing:-1px;
+}
+
+.stat-label{
+
+    color:var(--muted);
+
+    font-size:12px;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section{
+
+    padding:35px 0 80px;
+}
+
+.section-header{
+
+    display:flex;
+
+    align-items:flex-end;
+    justify-content:space-between;
+
+    gap:20px;
+
+    margin-bottom:28px;
+}
+
+.section-heading{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:8px;
+}
+
+.section-tag{
+
+    display:inline-flex;
+    align-items:center;
+
+    gap:8px;
+
+    color:var(--blue-light);
+
+    font-size:11px;
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+}
+
+.section-title{
+
+    font-size:30px;
+
+    line-height:1.2;
+
+    letter-spacing:-1.1px;
+}
+
+.section-description{
+
+    max-width:600px;
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    margin-top:5px;
+}
+
+.view-all{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:var(--blue-light);
+
+    font-size:13px;
+
+    font-weight:700;
+
+    white-space:nowrap;
+
+    transition:.2s ease;
+}
+
+.view-all:hover{
+    gap:12px;
+}
+
+
+/* =========================================================
+   FILTER BAR
+========================================================= */
+
+.filter-wrapper{
+
+    padding:6px;
+
+    margin-bottom:28px;
+
+    border:1px solid var(--border);
+
+    background:rgba(16,24,39,.65);
+
+    border-radius:16px;
+
+    overflow-x:auto;
+
+    scrollbar-width:none;
+}
+
+.filter-wrapper::-webkit-scrollbar{
+    display:none;
+}
+
+.filters{
+
+    display:flex;
+
+    gap:5px;
+
+    min-width:max-content;
+}
+
+.filter-btn{
+
+    border:0;
+
+    background:transparent;
+
+    color:var(--muted);
+
+    padding:10px 15px;
+
+    border-radius:11px;
+
+    cursor:pointer;
+
+    font-size:13px;
+    font-weight:700;
+
+    transition:.2s ease;
+}
+
+.filter-btn:hover{
+    color:#fff;
+}
+
+.filter-btn.active{
+
+    background:var(--blue);
+
+    color:#fff;
+
+    box-shadow:
+        0 5px 15px rgba(59,130,246,.20);
+}
+
+
+/* =========================================================
+   LEAKS GRID
+========================================================= */
+
+.leaks-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:20px;
+}
+
+.leak-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+    background:var(--card);
+
+    border-radius:var(--radius);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+
+    cursor:pointer;
+}
+
+.leak-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:
+        rgba(59,130,246,.25);
+
+    box-shadow:
+        0 18px 50px rgba(0,0,0,.22);
+}
+
+.leak-image{
+
+    position:relative;
+
+    height:215px;
+
+    overflow:hidden;
+
+    background:#0b111c;
+}
+
+.leak-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:
+        transform .5s ease;
+}
+
+.leak-card:hover
+.leak-image img{
+    transform:scale(1.05);
+}
+
+.leak-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(7,11,18,.8),
+            transparent 55%
+        );
+}
+
+.status-badge{
+
+    position:absolute;
+
+    top:14px;
+    left:14px;
+
+    display:inline-flex;
+
+    align-items:center;
+    gap:7px;
+
+    padding:7px 10px;
+
+    border-radius:9px;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    letter-spacing:.5px;
+
+    backdrop-filter:blur(10px);
+}
+
+.status-leaked{
+
+    color:#fca5a5;
+
+    background:rgba(127,29,29,.75);
+
+    border:1px solid rgba(239,68,68,.25);
+}
+
+.status-rumored{
+
+    color:#fcd34d;
+
+    background:rgba(120,83,10,.75);
+
+    border:1px solid rgba(251,191,36,.25);
+}
+
+.status-expected{
+
+    color:#93c5fd;
+
+    background:rgba(30,64,175,.75);
+
+    border:1px solid rgba(59,130,246,.25);
+}
+
+.leak-content{
+    padding:20px;
+}
+
+.leak-meta{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:10px;
+
+    margin-bottom:10px;
+}
+
+.leak-brand{
+
+    color:var(--blue-light);
+
+    font-size:11px;
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    letter-spacing:.7px;
+}
+
+.leak-date{
+
+    color:var(--muted-2);
+
+    font-size:10px;
+}
+
+.leak-title{
+
+    font-size:18px;
+
+    line-height:1.35;
+
+    letter-spacing:-.5px;
+
+    margin-bottom:10px;
+}
+
+.leak-description{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.65;
+
+    margin-bottom:18px;
+}
+
+.leak-footer{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding-top:15px;
+
+    border-top:1px solid var(--border);
+}
+
+.confidence{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:5px;
+
+    flex:1;
+}
+
+.confidence-label{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    color:var(--muted);
+
+    font-size:10px;
+    font-weight:600;
+}
+
+.confidence-label strong{
+    color:var(--green);
+}
+
+.progress{
+
+    width:100%;
+    height:4px;
+
+    background:#1c2737;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.progress span{
+
+    display:block;
+
+    height:100%;
+
+    border-radius:20px;
+
+    background:var(--green);
+}
+
+.read-link{
+
+    width:34px;
+    height:34px;
+
+    flex-shrink:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    color:var(--muted);
+
+    transition:.2s ease;
+}
+
+.read-link:hover{
+
+    color:#fff;
+
+    background:var(--blue);
+
+    border-color:var(--blue);
+}
+
+
+/* =========================================================
+   FEATURED RUMOR
+========================================================= */
+
+.featured-rumor{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1.15fr)
+        minmax(0,.85fr);
+
+    gap:0;
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+    background:var(--card);
+
+    border-radius:24px;
+
+    margin-bottom:70px;
+}
+
+.featured-rumor-image{
+
+    min-height:430px;
+
+    position:relative;
+
+    background:#0b111c;
+
+    overflow:hidden;
+}
+
+.featured-rumor-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.featured-rumor-image::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 40%,
+            rgba(7,11,18,.9)
+        );
+}
+
+.featured-content{
+
+    padding:45px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.featured-content .status-badge{
+
+    position:static;
+
+    width:max-content;
+
+    margin-bottom:20px;
+}
+
+.featured-content h2{
+
+    font-size:34px;
+
+    line-height:1.15;
+
+    letter-spacing:-1.2px;
+
+    margin-bottom:16px;
+}
+
+.featured-content p{
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+}
+
+.featured-details{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:10px;
+
+    margin-bottom:25px;
+}
+
+.detail{
+
+    padding:13px;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.02);
+}
+
+.detail small{
+
+    display:block;
+
+    color:var(--muted-2);
+
+    font-size:10px;
+
+    margin-bottom:3px;
+}
+
+.detail strong{
+    font-size:13px;
+}
+
+
+/* =========================================================
+   TRENDING + TRACKER
+========================================================= */
+
+.two-columns{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1.3fr)
+        minmax(300px,.7fr);
+
+    gap:25px;
+}
+
+.panel{
+
+    border:1px solid var(--border);
+
+    background:var(--card);
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.panel-header{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    padding:20px;
+
+    border-bottom:1px solid var(--border);
+}
+
+.panel-title{
+
+    display:flex;
+    align-items:center;
+
+    gap:9px;
+
+    font-size:16px;
+    font-weight:800;
+}
+
+.panel-title i{
+    color:var(--blue-light);
+}
+
+.panel-body{
+    padding:8px 20px 20px;
+}
+
+.trending-item{
+
+    display:grid;
+
+    grid-template-columns:
+        34px 55px 1fr auto;
+
+    align-items:center;
+
+    gap:13px;
+
+    padding:15px 0;
+
+    border-bottom:1px solid var(--border);
+}
+
+.trending-item:last-child{
+    border-bottom:0;
+}
+
+.trending-number{
+
+    font-size:15px;
+
+    font-weight:800;
+
+    color:var(--muted-2);
+
+    text-align:center;
+}
+
+.trending-image{
+
+    width:55px;
+    height:55px;
+
+    overflow:hidden;
+
+    border-radius:11px;
+
+    background:#0b111c;
+}
+
+.trending-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.trending-info h4{
+
+    font-size:13px;
+
+    line-height:1.4;
+
+    margin-bottom:4px;
+}
+
+.trending-info span{
+
+    color:var(--muted);
+
+    font-size:10px;
+}
+
+.trending-arrow{
+
+    color:var(--muted-2);
+
+    font-size:12px;
+}
+
+
+/* =========================================================
+   RUMOR TRACKER
+========================================================= */
+
+.tracker-item{
+
+    padding:17px 0;
+
+    border-bottom:1px solid var(--border);
+}
+
+.tracker-item:last-child{
+    border-bottom:0;
+}
+
+.tracker-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:8px;
+}
+
+.tracker-name{
+
+    font-size:13px;
+
+    font-weight:700;
+}
+
+.tracker-status{
+
+    font-size:10px;
+
+    font-weight:800;
+
+    padding:5px 8px;
+
+    border-radius:7px;
+
+    text-transform:uppercase;
+}
+
+.status-green{
+
+    color:#86efac;
+
+    background:var(--green-soft);
+}
+
+.status-yellow{
+
+    color:#fde68a;
+
+    background:var(--yellow-soft);
+}
+
+.status-purple{
+
+    color:#d8b4fe;
+
+    background:var(--purple-soft);
+}
+
+.tracker-bar{
+
+    height:5px;
+
+    background:#1c2737;
+
+    border-radius:10px;
+
+    overflow:hidden;
+}
+
+.tracker-bar span{
+
+    display:block;
+
+    height:100%;
+
+    border-radius:10px;
+
+    background:var(--blue);
+}
+
+.tracker-date{
+
+    display:block;
+
+    margin-top:7px;
+
+    color:var(--muted-2);
+
+    font-size:10px;
+}
+
+
+/* =========================================================
+   HOW WE RATE
+========================================================= */
+
+.info-section{
+
+    margin-top:70px;
+}
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:18px;
+}
+
+.info-card{
+
+    padding:25px;
+
+    border:1px solid var(--border);
+
+    background:var(--card);
+
+    border-radius:18px;
+
+    transition:.25s ease;
+}
+
+.info-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:var(--border-light);
+}
+
+.info-icon{
+
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:var(--blue-soft);
+
+    color:var(--blue-light);
+
+    margin-bottom:18px;
+}
+
+.info-card h3{
+
+    font-size:16px;
+
+    margin-bottom:8px;
+}
+
+.info-card p{
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    margin-top:50px;
+
+    border-top:1px solid var(--border);
+
+    background:#060a11;
+}
+
+.footer-inner{
+
+    padding:45px 0 30px;
+
+    display:grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        1fr
+        1fr;
+
+    gap:40px;
+}
+
+.footer-brand p{
+
+    max-width:330px;
+
+    margin-top:15px;
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    line-height:1.8;
+}
+
+.footer-column h4{
+
+    font-size:12px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.7px;
+
+    margin-bottom:15px;
+}
+
+.footer-column a{
+
+    display:block;
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    margin-bottom:10px;
+
+    transition:.2s ease;
+}
+
+.footer-column a:hover{
+    color:#fff;
+}
+
+.footer-bottom{
+
+    padding:20px 0;
+
+    border-top:1px solid var(--border);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    color:var(--muted-2);
+
+    font-size:10px;
+}
+
+
+/* =========================================================
+   NO RESULTS
+========================================================= */
+
+.no-results{
+
+    display:none;
+
+    grid-column:1/-1;
+
+    text-align:center;
+
+    padding:70px 20px;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    background:var(--card);
+}
+
+.no-results i{
+
+    font-size:35px;
+
+    color:var(--muted-2);
+
+    margin-bottom:15px;
+}
+
+.no-results h3{
+
+    font-size:18px;
+
+    margin-bottom:5px;
+}
+
+.no-results p{
+
+    color:var(--muted);
+
+    font-size:13px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1050px){
+
+    .hero-inner{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .hero-stats{
+        max-width:650px;
+    }
+
+    .leaks-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .two-columns{
+        grid-template-columns:1fr;
+    }
+
+    .featured-rumor{
+        grid-template-columns:1fr;
+    }
+
+    .featured-rumor-image{
+        min-height:350px;
+    }
+
+    .featured-rumor-image::after{
+        background:
+            linear-gradient(
+                to bottom,
+                transparent 45%,
+                rgba(7,11,18,.75)
+            );
+    }
+
+    .footer-inner{
+        grid-template-columns:
+            1fr 1fr;
+    }
+}
+
+
+@media(max-width:750px){
+
+    .container{
+        width:min(
+            calc(100% - 28px),
+            var(--container)
+        );
+    }
+
+    .main-nav{
+        display:none;
+    }
+
+    .mobile-menu{
+        display:flex;
+    }
+
+    .hero{
+        padding:65px 0 50px;
+    }
+
+    .hero h1{
+        letter-spacing:-1.8px;
+    }
+
+    .hero-description{
+        font-size:15px;
+    }
+
+    .section{
+        padding-bottom:60px;
+    }
+
+    .section-title{
+        font-size:25px;
+    }
+
+    .section-header{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .featured-content{
+        padding:30px 25px;
+    }
+
+    .featured-content h2{
+        font-size:27px;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+
+@media(max-width:600px){
+
+    .header-inner{
+        min-height:68px;
+    }
+
+    .logo{
+        font-size:18px;
+    }
+
+    .logo-icon{
+        width:35px;
+        height:35px;
+    }
+
+    .hero-stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stat-card{
+        min-height:115px;
+        padding:17px;
+    }
+
+    .stat-number{
+        font-size:22px;
+    }
+
+    .leaks-grid{
+        grid-template-columns:1fr;
+    }
+
+    .leak-image{
+        height:220px;
+    }
+
+    .featured-rumor-image{
+        min-height:270px;
+    }
+
+    .featured-details{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-inner{
+        grid-template-columns:1fr 1fr;
+        gap:30px 20px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+    }
+}
+
+
+@media(max-width:420px){
+
+    .hero h1{
+        font-size:39px;
+    }
+
+    .hero-actions{
+        flex-direction:column;
+    }
+
+    .hero-actions .btn{
+        width:100%;
+    }
+
+    .hero-stats{
+        grid-template-columns:1fr;
+    }
+
+    .featured-details{
+        grid-template-columns:1fr;
+    }
+
+    .trending-item{
+        grid-template-columns:
+            25px 48px 1fr;
+    }
+
+    .trending-arrow{
+        display:none;
+    }
+
+    .footer-inner{
+        grid-template-columns:1fr;
+    }
+}
+
+</style></head><body><!-- =====================================================
+     HEADER
+===================================================== --><header class="site-header"><div class="container header-inner">
+
+    <a href="index.html" class="logo">
+
+        <span class="logo-icon">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+        </span>
+
+        Tech<span>DealsHub</span>
+
+    </a>
+
+
+    <nav class="main-nav">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="reviews.html">
+            Reviews
+        </a>
+
+        <a href="upcoming.html">
+            Upcoming
+        </a>
+
+        <a href="editors-choice.html">
+            Editor's Choice
+        </a>
+
+        <a href="leaks-rumors.html" class="active">
+            Leaks & Rumors
+        </a>
+
+    </nav>
+
+
+    <div class="header-actions">
+
+        <button class="header-btn"
+                aria-label="Search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+        </button>
+
+        <button class="header-btn mobile-menu"
+                aria-label="Menu"
+                id="menuBtn">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </div>
+
+</div>
+
+</header><!-- =====================================================
+     HERO
+===================================================== --><section class="hero"><div class="container hero-inner">
+
+
+    <div class="hero-content">
+
+        <div class="hero-tag">
+
+            <i class="fa-solid fa-bolt"></i>
+
+            Leaks & Rumors
+
+        </div>
+
+
+        <h1>
+
+            What's Coming <span>Next?</span>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            Stay ahead of the smartphone market with the
+            latest leaks, rumors, early specifications,
+            renders and expected launch details from the
+            world's biggest smartphone brands.
+
+        </p>
+
+
+        <div class="hero-actions">
+
+            <a href="#latest-leaks"
+               class="btn btn-primary">
+
+                <i class="fa-solid fa-fire"></i>
+
+                Latest Leaks
+
+            </a>
+
+
+            <a href="#rumor-tracker"
+               class="btn btn-secondary">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                Rumor Tracker
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="hero-stats">
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                <i class="fa-solid fa-newspaper"></i>
+            </div>
+
+            <div>
+
+                <div class="stat-number">
+                    120+
+                </div>
+
+                <div class="stat-label">
+                    Active Rumors
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                <i class="fa-solid fa-building"></i>
+            </div>
+
+            <div>
+
+                <div class="stat-number">
+                    12
+                </div>
+
+                <div class="stat-label">
+                    Brands Tracked
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                <i class="fa-solid fa-clock"></i>
+            </div>
+
+            <div>
+
+                <div class="stat-number">
+                    Daily
+                </div>
+
+                <div class="stat-label">
+                    Updates
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <div>
+
+                <div class="stat-number">
+                    95%
+                </div>
+
+                <div class="stat-label">
+                    Source Tracking
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section><!-- =====================================================
+     FEATURED RUMOR
+===================================================== --><section class="section"><div class="container">
+
+
+    <div class="section-header">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+
+                <i class="fa-solid fa-star"></i>
+
+                Featured Rumor
+
+            </span>
+
+            <h2 class="section-title">
+                The Biggest Story Right Now
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <article class="featured-rumor">
+
+
+        <div class="featured-rumor-image">
+
+            <img src="Samsung/img/galaxys26ultra_16_9.png"
+                 alt="Samsung Galaxy S26 Ultra">
+
+        </div>
+
+
+        <div class="featured-content">
+
+
+            <span class="status-badge status-rumored">
+
+                <i class="fa-solid fa-circle"></i>
+
+                Rumored
+
+            </span>
+
+
+            <h2>
+                Samsung Galaxy S26 Ultra
+            </h2>
+
+
+            <p>
+
+                Early reports suggest Samsung may be
+                preparing another major Ultra flagship
+                with improvements to the camera system,
+                display technology, AI features and
+                overall performance.
+
+            </p>
+
+
+            <div class="featured-details">
+
+
+                <div class="detail">
+
+                    <small>
+                        Expected Launch
+                    </small>
+
+                    <strong>
+                        Early 2027
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <small>
+                        Confidence
+                    </small>
+
+                    <strong style="color:var(--green);">
+                        86%
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <small>
+                        Category
+                    </small>
+
+                    <strong>
+                        Ultra Flagship
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <small>
+                        Last Updated
+                    </small>
+
+                    <strong>
+                        Recently
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <a href="#latest-leaks"
+                   class="btn btn-primary">
+
+                    Explore Rumor
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </article>
+
+</div>
+
+</section><!-- =====================================================
+     LATEST LEAKS
+===================================================== --><section class="section"
+         id="latest-leaks"><div class="container">
+
+
+    <div class="section-header">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                Latest Updates
+
+            </span>
+
+            <h2 class="section-title">
+                Latest Leaks & Rumors
+            </h2>
+
+            <p class="section-description">
+
+                Fresh reports, leaked specifications,
+                renders and launch information from
+                across the smartphone industry.
+
+            </p>
+
+        </div>
+
+
+        <a href="#"
+           class="view-all">
+
+            View All
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+
+
+    <!-- FILTERS -->
+
+    <div class="filter-wrapper">
+
+        <div class="filters">
+
+            <button class="filter-btn active"
+                    data-filter="all">
+
+                All
+
+            </button>
+
+            <button class="filter-btn"
+                    data-filter="samsung">
+
+                Samsung
+
+            </button>
+
+            <button class="filter-btn"
+                    data-filter="apple">
+
+                Apple
+
+            </button>
+
+            <button class="filter-btn"
+                    data-filter="xiaomi">
+
+                Xiaomi
+
+            </button>
+
+            <button class="filter-btn"
+                    data-filter="google">
+
+                Google
+
+            </button>
+
+            <button class="filter-btn"
+                    data-filter="oneplus">
+
+                OnePlus
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="leaks-grid"
+         id="leaksGrid">
+
+
+        <!-- CARD 1 -->
+
+        <article class="leak-card"
+                 data-brand="samsung">
+
+            <div class="leak-image">
+
+                <img src="Samsung/img/galaxys26ultra_16_9.png"
+                     alt="Galaxy S26 Ultra">
+
+                <div class="leak-overlay"></div>
+
+                <span class="status-badge status-leaked">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    Leaked
+
+                </span>
+
+            </div>
+
+
+            <div class="leak-content">
+
+                <div class="leak-meta">
+
+                    <span class="leak-brand">
+                        Samsung
+                    </span>
+
+                    <span class="leak-date">
+                        2h ago
+                    </span>
+
+                </div>
+
+
+                <h3 class="leak-title">
+
+                    Galaxy S26 Ultra Camera
+                    Upgrades Reportedly Leaked
+
+                </h3>
+
+
+                <p class="leak-description">
+
+                    New reports point to major camera
+                    improvements and a possible sensor
+                    upgrade for Samsung's next Ultra.
+
+                </p>
+
+
+                <div class="leak-footer">
+
+                    <div class="confidence">
+
+                        <div class="confidence-label">
+
+                            <span>
+                                Confidence
+                            </span>
+
+                            <strong>
+                                91%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress">
+
+                            <span style="width:91%;"></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="#"
+                       class="read-link"
+                       aria-label="Read rumor">
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- CARD 2 -->
+
+        <article class="leak-card"
+                 data-brand="apple">
+
+            <div class="leak-image">
+
+                <img src="apple/img/iphone17promax_16_9.png"
+                     alt="iPhone 17 Pro Max">
+
+                <div class="leak-overlay"></div>
+
+                <span class="status-badge status-rumored">
+
+                    <i class="fa-solid fa-circle-question"></i>
+
+                    Rumored
+
+                </span>
+
+            </div>
+
+
+            <div class="leak-content">
+
+                <div class="leak-meta">
+
+                    <span class="leak-brand">
+                        Apple
+                    </span>
+
+                    <span class="leak-date">
+                        5h ago
+                    </span>
+
+                </div>
+
+
+                <h3 class="leak-title">
+
+                    iPhone 17 Pro Max May Bring
+                    a Bigger Battery
+
+                </h3>
+
+
+                <p class="leak-description">
+
+                    Industry reports suggest Apple could
+                    increase battery capacity while
+                    improving overall efficiency.
+
+                </p>
+
+
+                <div class="leak-footer">
+
+                    <div class="confidence">
+
+                        <div class="confidence-label">
+
+                            <span>
+                                Confidence
+                            </span>
+
+                            <strong>
+                                78%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress">
+
+                            <span style="width:78%;"></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="#"
+                       class="read-link">
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- CARD 3 -->
+
+        <article class="leak-card"
+                 data-brand="xiaomi">
+
+            <div class="leak-image">
+
+                <img src="xiaomi/img/Xiaomi16ultra_16_9.png"
+                     alt="Xiaomi 16 Ultra">
+
+                <div class="leak-overlay"></div>
+
+                <span class="status-badge status-leaked">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    Leaked
+
+                </span>
+
+            </div>
+
+
+            <div class="leak-content">
+
+                <div class="leak-meta">
+
+                    <span class="leak-brand">
+                        Xiaomi
+                    </span>
+
+                    <span class="leak-date">
+                        7h ago
+                    </span>
+
+                </div>
+
+
+                <h3 class="leak-title">
+
+                    Xiaomi 16 Ultra Specs
+                    Surface Online
+
+                </h3>
+
+
+                <p class="leak-description">
+
+                    A new leak reportedly reveals display,
+                    chipset and charging details for the
+                    next Xiaomi Ultra flagship.
+
+                </p>
+
+
+                <div class="leak-footer">
+
+                    <div class="confidence">
+
+                        <div class="confidence-label">
+
+                            <span>
+                                Confidence
+                            </span>
+
+                            <strong>
+                                88%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress">
+
+                            <span style="width:88%;"></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="#"
+                       class="read-link">
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- CARD 4 -->
+
+        <article class="leak-card"
+                 data-brand="google">
+
+            <div class="leak-image">
+
+                <img src="google/img/Googlepixel10pro_16_9.png"
+                     alt="Google Pixel 10 Pro">
+
+                <div class="leak-overlay"></div>
+
+                <span class="status-badge status-expected">
+
+                    <i class="fa-solid fa-calendar"></i>
+
+                    Expected
+
+                </span>
+
+            </div>
+
+
+            <div class="leak-content">
+
+                <div class="leak-meta">
+
+                    <span class="leak-brand">
+                        Google
+                    </span>
+
+                    <span class="leak-date">
+                        1d ago
+                    </span>
+
+                </div>
+
+
+                <h3 class="leak-title">
+
+                    Pixel Pro Series Could
+                    Get New AI Features
+
+                </h3>
+
+
+                <p class="leak-description">
+
+                    Early information points toward deeper
+                    on-device AI integration in Google's
+                    next generation of Pixel devices.
+
+                </p>
+
+
+                <div class="leak-footer">
+
+                    <div class="confidence">
+
+                        <div class="confidence-label">
+
+                            <span>
+                                Confidence
+                            </span>
+
+                            <strong>
+                                82%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress">
+
+                            <span style="width:82%;"></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="#"
+                       class="read-link">
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- CARD 5 -->
+
+        <article class="leak-card"
+                 data-brand="oneplus">
+
+            <div class="leak-image">
+
+                <img src="xiaomi/img/Xiaomi16ultra_16_9.png"
+                     alt="Upcoming OnePlus flagship">
+
+                <div class="leak-overlay"></div>
+
+                <span class="status-badge status-rumored">
+
+                    <i class="fa-solid fa-circle-question"></i>
+
+                    Rumored
+
+                </span>
+
+            </div>
+
+
+            <div class="leak-content">
+
+                <div class="leak-meta">
+
+                    <span class="leak-brand">
+                        OnePlus
+                    </span>
+
+                    <span class="leak-date">
+                        1d ago
+                    </span>
+
+                </div>
+
+
+                <h3 class="leak-title">
+
+                    OnePlus Flagship May Push
+                    Charging Speeds Further
+
+                </h3>
+
+
+                <p class="leak-description">
+
+                    Reports suggest OnePlus is exploring
+                    faster wired charging and a larger
+                    battery for its next flagship.
+
+                </p>
+
+
+                <div class="leak-footer">
+
+                    <div class="confidence">
+
+                        <div class="confidence-label">
+
+                            <span>
+                                Confidence
+                            </span>
+
+                            <strong>
+                                74%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress">
+
+                            <span style="width:74%;"></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="#"
+                       class="read-link">
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- CARD 6 -->
+
+        <article class="leak-card"
+                 data-brand="samsung">
+
+            <div class="leak-image">
+
+                <img src="Samsung/img/galaxys26ultra_16_9.png"
+                     alt="Samsung Galaxy">
+
+                <div class="leak-overlay"></div>
+
+                <span class="status-badge status-expected">
+
+                    <i class="fa-solid fa-calendar"></i>
+
+                    Expected
+
+                </span>
+
+            </div>
+
+
+            <div class="leak-content">
+
+                <div class="leak-meta">
+
+                    <span class="leak-brand">
+                        Samsung
+                    </span>
+
+                    <span class="leak-date">
+                        2d ago
+                    </span>
+
+                </div>
+
+
+                <h3 class="leak-title">
+
+                    Samsung May Expand Its
+                    AI Smartphone Features
+
+                </h3>
+
+
+                <p class="leak-description">
+
+                    More Galaxy devices could receive
+                    advanced AI tools as Samsung expands
+                    its Galaxy AI ecosystem.
+
+                </p>
+
+
+                <div class="leak-footer">
+
+                    <div class="confidence">
+
+                        <div class="confidence-label">
+
+                            <span>
+                                Confidence
+                            </span>
+
+                            <strong>
+                                84%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress">
+
+                            <span style="width:84%;"></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="#"
+                       class="read-link">
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <div class="no-results"
+             id="noResults">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <h3>
+                No rumors found
+            </h3>
+
+            <p>
+                Try selecting another brand.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section><!-- =====================================================
+     TRENDING + TRACKER
+===================================================== --><section class="section"
+         id="rumor-tracker"><div class="container two-columns">
+
+
+    <!-- TRENDING -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <div class="panel-title">
+
+                <i class="fa-solid fa-fire"></i>
+
+                Trending Rumors
+
+            </div>
+
+            <span class="section-tag">
+                Today
+            </span>
+
+        </div>
+
+
+        <div class="panel-body">
+
+
+            <a href="#"
+               class="trending-item">
+
+                <span class="trending-number">
+                    01
+                </span>
+
+                <span class="trending-image">
+
+                    <img src="Samsung/img/galaxys26ultra_16_9.png"
+                         alt="Galaxy S26 Ultra">
+
+                </span>
+
+                <span class="trending-info">
+
+                    <h4>
+                        Galaxy S26 Ultra camera
+                        upgrades
+                    </h4>
+
+                    <span>
+                        14.2K views
+                    </span>
+
+                </span>
+
+                <i class="fa-solid fa-chevron-right trending-arrow"></i>
+
+            </a>
+
+
+            <a href="#"
+               class="trending-item">
+
+                <span class="trending-number">
+                    02
+                </span>
+
+                <span class="trending-image">
+
+                    <img src="apple/img/iphone17promax_16_9.png"
+                         alt="iPhone">
+
+                </span>
+
+                <span class="trending-info">
+
+                    <h4>
+                        iPhone next-gen battery
+                        rumors
+                    </h4>
+
+                    <span>
+                        11.8K views
+                    </span>
+
+                </span>
+
+                <i class="fa-solid fa-chevron-right trending-arrow"></i>
+
+            </a>
+
+
+            <a href="#"
+               class="trending-item">
+
+                <span class="trending-number">
+                    03
+                </span>
+
+                <span class="trending-image">
+
+                    <img src="xiaomi/img/Xiaomi16ultra_16_9.png"
+                         alt="Xiaomi">
+
+                </span>
+
+                <span class="trending-info">
+
+                    <h4>
+                        Xiaomi Ultra
+                        specifications
+                    </h4>
+
+                    <span>
+                        9.6K views
+                    </span>
+
+                </span>
+
+                <i class="fa-solid fa-chevron-right trending-arrow"></i>
+
+            </a>
+
+
+            <a href="#"
+               class="trending-item">
+
+                <span class="trending-number">
+                    04
+                </span>
+
+                <span class="trending-image">
+
+                    <img src="google/img/Googlepixel10pro_16_9.png"
+                         alt="Pixel">
+
+                </span>
+
+                <span class="trending-info">
+
+                    <h4>
+                        Pixel AI features
+                        leak
+                    </h4>
+
+                    <span>
+                        8.4K views
+                    </span>
+
+                </span>
+
+                <i class="fa-solid fa-chevron-right trending-arrow"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- TRACKER -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <div class="panel-title">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                Rumor Tracker
+
+            </div>
+
+        </div>
+
+
+        <div class="panel-body">
+
+
+            <div class="tracker-item">
+
+                <div class="tracker-top">
+
+                    <span class="tracker-name">
+                        Galaxy S26 Ultra
+                    </span>
+
+                    <span class="tracker-status status-green">
+                        High
+                    </span>
+
+                </div>
+
+                <div class="tracker-bar">
+
+                    <span style="width:91%;"></span>
+
+                </div>
+
+                <span class="tracker-date">
+                    Confidence updated today
+                </span>
+
+            </div>
+
+
+            <div class="tracker-item">
+
+                <div class="tracker-top">
+
+                    <span class="tracker-name">
+                        iPhone Pro Series
+                    </span>
+
+                    <span class="tracker-status status-yellow">
+                        Medium
+                    </span>
+
+                </div>
+
+                <div class="tracker-bar">
+
+                    <span style="width:78%;"></span>
+
+                </div>
+
+                <span class="tracker-date">
+                    Confidence updated today
+                </span>
+
+            </div>
+
+
+            <div class="tracker-item">
+
+                <div class="tracker-top">
+
+                    <span class="tracker-name">
+                        Xiaomi Ultra
+                    </span>
+
+                    <span class="tracker-status status-green">
+                        High
+                    </span>
+
+                </div>
+
+                <div class="tracker-bar">
+
+                    <span style="width:88%;"></span>
+
+                </div>
+
+                <span class="tracker-date">
+                    Confidence updated recently
+                </span>
+
+            </div>
+
+
+            <div class="tracker-item">
+
+                <div class="tracker-top">
+
+                    <span class="tracker-name">
+                        Pixel Pro
+                    </span>
+
+                    <span class="tracker-status status-purple">
+                        Watch
+                    </span>
+
+                </div>
+
+                <div class="tracker-bar">
+
+                    <span style="width:82%;"></span>
+
+                </div>
+
+                <span class="tracker-date">
+                    Confidence updated recently
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section><!-- =====================================================
+     HOW WE RATE
+===================================================== --><section class="section info-section"><div class="container">
+
+
+    <div class="section-header">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                Our Method
+
+            </span>
+
+            <h2 class="section-title">
+                How We Handle Rumors
+            </h2>
+
+            <p class="section-description">
+
+                Not every leak is reliable. We separate
+                speculation from stronger reports and
+                clearly show how confident we are.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="info-grid">
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            </div>
+
+            <h3>
+                Source Tracking
+            </h3>
+
+            <p>
+
+                We evaluate the origin of each report,
+                previous accuracy and whether multiple
+                independent sources support the claim.
+
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+
+                <i class="fa-solid fa-chart-simple"></i>
+
+            </div>
+
+            <h3>
+                Confidence Score
+            </h3>
+
+            <p>
+
+                Each rumor receives a confidence level
+                based on the strength of available
+                evidence and consistency between reports.
+
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+
+                <i class="fa-solid fa-rotate"></i>
+
+            </div>
+
+            <h3>
+                Continuous Updates
+            </h3>
+
+            <p>
+
+                Rumors can change quickly. We update
+                our tracker when new information confirms,
+                weakens or contradicts an earlier report.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section><!-- =====================================================
+     FOOTER
+===================================================== --><footer><div class="container footer-inner">
+
+
+    <div class="footer-brand">
+
+        <a href="index.html"
+           class="logo">
+
+            <span class="logo-icon">
+
+                <i class="fa-solid fa-mobile-screen-button"></i>
+
+            </span>
+
+            Tech<span>DealsHub</span>
+
+        </a>
+
+        <p>
+
+            Smartphone reviews, comparisons,
+            upcoming phones, leaks and buying
+            guides — all in one place.
+
+        </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>
+            Explore
+        </h4>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="reviews.html">
+            Reviews
+        </a>
+
+        <a href="upcoming.html">
+            Upcoming Phones
+        </a>
+
+        <a href="editors-choice.html">
+            Editor's Choice
+        </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>
+            Discover
+        </h4>
+
+        <a href="flagship.html">
+            Flagship Phones
+        </a>
+
+        <a href="budget.html">
+            Budget Phones
+        </a>
+
+        <a href="leaks-rumors.html">
+            Leaks & Rumors
+        </a>
+
+        <a href="#">
+            Comparisons
+        </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>
+            Follow
+        </h4>
+
+        <a href="#">
+            <i class="fa-brands fa-x-twitter"></i>
+            &nbsp; X / Twitter
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-facebook"></i>
+            &nbsp; Facebook
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+            &nbsp; Instagram
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-youtube"></i>
+            &nbsp; YouTube
+        </a>
+
+    </div>
+
+</div>
+
+
+<div class="container footer-bottom">
+
+    <span>
+        © 2026 TechDealsHub. All rights reserved.
+    </span>
+
+    <span>
+        Leaks are subject to change.
+    </span>
+
+</div>
+
+</footer><!-- =====================================================
+     JAVASCRIPT
+===================================================== --><script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+
+    /* =====================================================
+       BRAND FILTER
+    ===================================================== */
+
+    const filterButtons =
+        document.querySelectorAll(".filter-btn");
+
+    const leakCards =
+        document.querySelectorAll(".leak-card");
+
+    const noResults =
+        document.getElementById("noResults");
+
+
+    filterButtons.forEach(function(button){
+
+        button.addEventListener("click", function(){
+
+            const filter =
+                button.getAttribute("data-filter");
+
+
+            filterButtons.forEach(function(btn){
+
+                btn.classList.remove("active");
+
+            });
+
+
+            button.classList.add("active");
+
+
+            let visibleCards = 0;
+
+
+            leakCards.forEach(function(card){
+
+                const brand =
+                    card.getAttribute("data-brand");
+
+
+                if(
+                    filter === "all" ||
+                    brand === filter
+                ){
+
+                    card.style.display = "";
+
+                    visibleCards++;
+
+                }else{
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+
+            if(visibleCards === 0){
+
+                noResults.style.display = "block";
+
+            }else{
+
+                noResults.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    const menuBtn =
+        document.getElementById("menuBtn");
+
+    const nav =
+        document.querySelector(".main-nav");
+
+
+    if(menuBtn){
+
+        menuBtn.addEventListener("click", function(){
+
+            const isOpen =
+                nav.classList.toggle("mobile-open");
+
+
+            if(isOpen){
+
+                nav.style.display = "flex";
+
+                nav.style.position = "absolute";
+
+                nav.style.top = "68px";
+
+                nav.style.left = "14px";
+
+                nav.style.right = "14px";
+
+                nav.style.padding = "15px";
+
+                nav.style.flexDirection = "column";
+
+                nav.style.alignItems = "stretch";
+
+                nav.style.gap = "5px";
+
+                nav.style.background = "rgba(16,24,39,.98)";
+
+                nav.style.border = "1px solid var(--border)";
+
+                nav.style.borderRadius = "16px";
+
+                nav.style.boxShadow =
+                    "0 20px 50px rgba(0,0,0,.35)";
+
+            }else{
+
+                nav.removeAttribute("style");
+
+            }
+
+        });
+
+    }
+
+
+
+    /* =====================================================
+       CLOSE MOBILE MENU AFTER CLICK
+    ===================================================== */
+
+    nav.querySelectorAll("a").forEach(function(link){
+
+        link.addEventListener("click", function(){
+
+            if(window.innerWidth <= 750){
+
+                nav.classList.remove("mobile-open");
+
+                nav.removeAttribute("style");
+
+            }
+
+        });
+
+    });
+
+
+
+    /* =====================================================
+       ESC KEY
+    ===================================================== */
+
+    document.addEventListener("keydown", function(event){
+
+        if(event.key === "Escape"){
+
+            nav.classList.remove("mobile-open");
+
+            nav.removeAttribute("style");
+
+        }
+
+    });
+
+
+
+    /* =====================================================
+       RESET NAVIGATION ON RESIZE
+    ===================================================== */
+
+    window.addEventListener("resize", function(){
+
+        if(window.innerWidth > 750){
+
+            nav.classList.remove("mobile-open");
+
+            nav.removeAttribute("style");
+
+        }
+
+    });
+
+
+});
+
+</script></body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upcoming Phones | TechDealsHub</title>
+<meta name="description" content="Discover upcoming smartphones, expected launch dates, rumored specifications, prices and the phones worth waiting for.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<style>
+:root{--bg:#f5f7fb;--surface:#fff;--soft:#f8fafc;--text:#0f172a;--muted:#64748b;--border:#e5eaf1;--primary:#2563eb;--primary2:#1d4ed8;--blue:#eff6ff;--green:#16a34a;--orange:#f59e0b;--purple:#7c3aed;--shadow:0 12px 35px rgba(15,23,42,.07);--shadow2:0 22px 55px rgba(15,23,42,.12)}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}a{text-decoration:none;color:inherit}button,input,select{font:inherit}button{cursor:pointer}
+.container{width:min(1180px,calc(100% - 32px));margin:auto}
+.header{height:68px;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000}.header-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{display:flex;align-items:center;gap:9px;font-size:18px;font-weight:900;letter-spacing:-.06em}.logo-icon{width:35px;height:35px;border-radius:10px;background:var(--primary);color:#fff;display:grid;place-items:center}.logo span:last-child{color:var(--primary)}
+.nav{display:flex;gap:4px}.nav a{font-size:10px;font-weight:800;color:var(--muted);padding:9px 12px;border-radius:9px}.nav a:hover,.nav a.active{color:var(--primary);background:var(--blue)}.menu-btn{display:none;width:36px;height:36px;border:1px solid var(--border);background:#fff;border-radius:10px;color:var(--muted)}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:#fff;z-index:999;border-bottom:1px solid var(--border);box-shadow:var(--shadow)}.mobile-menu.open{display:block}.mobile-menu a{display:flex;gap:12px;padding:14px 20px;border-bottom:1px solid #f1f5f9;color:var(--muted);font-size:11px;font-weight:800}.mobile-menu a.active{color:var(--primary);background:var(--blue)}
+
+.hero-wrap{padding:30px 0 16px}.hero{position:relative;overflow:hidden;border:1px solid var(--border);border-radius:28px;background:#fff;padding:47px 52px;box-shadow:var(--shadow)}.hero:before{content:"";position:absolute;width:430px;height:430px;border-radius:50%;right:-130px;top:-220px;background:radial-gradient(circle,#dbeafe 0,#eff6ff 48%,transparent 70%)}.hero:after{content:"";position:absolute;width:250px;height:250px;border-radius:50%;right:160px;bottom:-190px;background:#f1f5f9}.hero-content{position:relative;z-index:2;max-width:760px}.eyebrow{display:inline-flex;gap:7px;align-items:center;color:var(--primary);font-size:9px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin-bottom:11px}.hero h1{font-size:clamp(38px,5vw,60px);line-height:1;letter-spacing:-.065em}.hero h1 span{color:var(--primary)}.hero p{max-width:690px;color:var(--muted);font-size:13px;line-height:1.8;margin-top:16px}.hero-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}.pill{display:flex;gap:7px;align-items:center;border:1px solid var(--border);background:#fff;border-radius:10px;padding:8px 11px;font-size:9px;font-weight:800}.pill i{color:var(--primary)}
+
+.timeline-wrap{padding:10px 0 24px}.timeline{background:#0f172a;border-radius:18px;padding:19px 22px;color:#fff;display:flex;align-items:center;gap:18px;overflow:hidden}.timeline-label{white-space:nowrap;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:#94a3b8}.months{display:flex;flex:1;gap:7px}.month{flex:1;text-align:center;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);border-radius:9px;padding:9px 4px}.month strong{display:block;font-size:9px}.month small{font-size:7px;color:#64748b}.month.current{background:rgba(37,99,235,.2);border-color:rgba(96,165,250,.45)}.month.current small{color:#93c5fd}
+
+.controls{padding-bottom:14px}.control-box{background:#fff;border:1px solid var(--border);border-radius:17px;padding:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 6px 22px rgba(15,23,42,.035)}.search{position:relative;flex:1;max-width:400px}.search i{position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:11px;color:#94a3b8}.search input{height:40px;width:100%;border:1px solid var(--border);border-radius:10px;background:#f8fafc;padding:0 13px 0 35px;font-size:10px;font-weight:700;outline:none}.search input:focus{border-color:#93c5fd;background:#fff}.right{display:flex;gap:8px}.select{height:40px;border:1px solid var(--border);border-radius:10px;background:#fff;padding:0 11px;font-size:10px;font-weight:800;color:var(--text);outline:none}.views{display:flex;background:#f1f5f9;border-radius:10px;padding:3px}.view{border:0;background:transparent;width:34px;height:34px;border-radius:8px;color:#94a3b8}.view.active{background:#fff;color:var(--primary);box-shadow:0 2px 7px rgba(15,23,42,.08)}
+
+.filters{padding-bottom:24px}.filter-row{display:flex;gap:7px;flex-wrap:wrap}.filter{border:1px solid var(--border);background:#fff;color:var(--muted);padding:9px 13px;border-radius:999px;font-size:9px;font-weight:900}.filter:hover{border-color:#bfdbfe;color:var(--primary)}.filter.active{background:var(--primary);border-color:var(--primary);color:#fff}
+
+.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:15px}.section-head h2{font-size:21px;letter-spacing:-.04em}.section-head p{font-size:9px;color:var(--muted);font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px}.card{background:#fff;border:1px solid var(--border);border-radius:19px;overflow:hidden;box-shadow:var(--shadow);transition:.25s}.card:hover{transform:translateY(-6px);box-shadow:var(--shadow2);border-color:#cbd5e1}.card.hidden{display:none}
+.visual{height:250px;background:linear-gradient(145deg,#f8fafc,#e9eef5);position:relative;overflow:hidden}.visual img{width:100%;height:100%;object-fit:cover;display:block;transition:.35s}.card:hover .visual img{transform:scale(1.035)}
+.badge{position:absolute;z-index:4;top:13px;left:13px;padding:6px 10px;border-radius:999px;color:#fff;background:var(--primary);font-size:8px;font-weight:900;text-transform:uppercase}.badge.purple{background:var(--purple)}.badge.orange{background:var(--orange)}.badge.green{background:var(--green)}
+.actions{position:absolute;z-index:5;top:13px;right:13px;display:flex;gap:5px}.action{width:31px;height:31px;border:1px solid rgba(255,255,255,.8);border-radius:8px;background:rgba(255,255,255,.93);color:#64748b;display:grid;place-items:center}.action:hover{color:var(--primary)}
+.body{padding:18px}.brand{font-size:8px;color:var(--primary);font-weight:900;text-transform:uppercase;letter-spacing:.1em}.name{font-size:19px;line-height:1.2;letter-spacing:-.04em;margin-top:4px}.desc{font-size:10px;color:var(--muted);line-height:1.65;margin-top:7px;min-height:35px}
+.launch{display:flex;align-items:center;justify-content:space-between;background:#f8fafc;border:1px solid #f1f5f9;border-radius:10px;padding:10px;margin-top:12px}.launch label{display:block;font-size:7px;color:#94a3b8;text-transform:uppercase;font-weight:800}.launch strong{font-size:9px;display:block;margin-top:2px}.days{font-size:8px;color:var(--primary);font-weight:900}
+.price-row{display:flex;align-items:end;justify-content:space-between;margin-top:12px}.price{font-size:20px;font-weight:900;color:var(--primary);letter-spacing:-.04em}.price small{font-size:8px;color:#94a3b8;font-weight:700}.status{font-size:8px;color:var(--muted);font-weight:800}.status i{color:var(--orange);margin-right:4px}
+.specs{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px}.spec{background:#f8fafc;border-radius:9px;padding:9px}.spec label{display:block;font-size:7px;color:#94a3b8;text-transform:uppercase;font-weight:700}.spec b{font-size:9px;display:block;margin-top:2px}
+.footer-card{display:flex;gap:7px;margin-top:13px}.details{flex:1;height:38px;border-radius:9px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;gap:7px;font-size:9px;font-weight:900}.details:hover{background:var(--primary2)}.remind{width:42px;height:38px;border:1px solid var(--border);border-radius:9px;background:#fff;color:#64748b}.remind.active{background:var(--blue);color:var(--primary);border-color:#bfdbfe}
+
+.grid.list{grid-template-columns:1fr}.grid.list .card{display:grid;grid-template-columns:270px 1fr}.grid.list .visual{height:100%;min-height:280px}.grid.list .specs{grid-template-columns:repeat(4,1fr)}.grid.list .body{padding:22px}.grid.list .footer-card{max-width:500px}
+.empty{display:none;background:#fff;border:1px solid var(--border);border-radius:18px;text-align:center;padding:55px 20px}.empty.show{display:block}.empty-icon{width:55px;height:55px;margin:auto auto 12px;border-radius:15px;background:var(--blue);color:var(--primary);display:grid;place-items:center}.empty h3{font-size:18px}.empty p{font-size:10px;color:var(--muted);margin-top:4px}
+
+.guide-wrap{padding:55px 0}.guide{background:#0f172a;color:#fff;border-radius:22px;padding:34px;display:grid;grid-template-columns:1.4fr 1fr;gap:30px;position:relative;overflow:hidden}.guide:after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;right:-120px;top:-130px;background:rgba(37,99,235,.22)}.guide h2{font-size:28px;letter-spacing:-.05em;position:relative;z-index:2}.guide p{font-size:10px;color:#94a3b8;line-height:1.8;margin-top:8px;position:relative;z-index:2}.guide-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:relative;z-index:2}.guide-item{border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.04);border-radius:10px;padding:11px;font-size:9px;font-weight:800}.guide-item i{color:#60a5fa;margin-right:6px}
+.footer{background:#fff;border-top:1px solid var(--border);padding:32px 0}.footer-inner{display:flex;justify-content:space-between;gap:25px}.footer-brand{font-size:15px;font-weight:900}.footer-brand span{color:var(--primary)}.footer p{font-size:9px;color:var(--muted);margin-top:5px}.footer-links{display:flex;gap:15px;flex-wrap:wrap}.footer-links a{font-size:9px;color:var(--muted);font-weight:800}.footer-links a:hover{color:var(--primary)}.copy{text-align:center;border-top:1px solid #f1f5f9;margin-top:25px;padding-top:18px;color:#94a3b8;font-size:8px}
+
+.overlay{display:none;position:fixed;inset:0;background:rgba(15,23,42,.55);backdrop-filter:blur(5px);z-index:2000;align-items:center;justify-content:center;padding:20px}.overlay.open{display:flex}.modal{width:min(430px,100%);background:#fff;border-radius:20px;padding:22px;box-shadow:0 25px 80px rgba(0,0,0,.25)}.modal-top{display:flex;justify-content:space-between;align-items:center}.modal h3{font-size:17px}.close{width:32px;height:32px;border:0;border-radius:8px;background:#f1f5f9;color:#64748b}.modal-text{font-size:10px;color:var(--muted);margin:10px 0 15px}.share-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.share{height:42px;border:1px solid var(--border);border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;gap:7px;font-size:9px;font-weight:900}.share:hover{background:var(--blue);border-color:#bfdbfe;color:var(--primary)}.copy{width:100%;height:40px;border:0;border-radius:9px;background:var(--primary);color:#fff;font-size:9px;font-weight:900;margin-top:9px}.copy-status{text-align:center;min-height:13px;color:var(--green);font-size:9px;font-weight:800;margin-top:8px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;background:#0f172a;color:#fff;padding:10px 15px;border-radius:10px;font-size:9px;font-weight:800;pointer-events:none;z-index:3000;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media(max-width:950px){.nav{display:none}.menu-btn{display:grid;place-items:center}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.container{width:calc(100% - 22px)}.hero{padding:30px 23px;border-radius:20px}.hero h1{font-size:38px}.hero p{font-size:11px}.timeline{display:block}.months{margin-top:12px}.control-box{flex-direction:column;align-items:stretch}.search{max-width:none}.right{justify-content:space-between}.grid{grid-template-columns:1fr}.grid.list .card{display:block}.grid.list .visual{height:230px;min-height:0}.grid.list .specs{grid-template-columns:1fr 1fr}.guide{grid-template-columns:1fr;padding:25px}.footer-inner{flex-direction:column}}
+@media(max-width:430px){.hero h1{font-size:34px}.hero-pills{display:grid;grid-template-columns:1fr 1fr}.months{gap:4px}.month{padding:7px 2px}.month:nth-child(n+5){display:none}.visual{height:225px}}
+</style>
+</head>
+<body>
+
+<header class="header">
+<div class="container header-inner">
+<a class="logo" href="index.html"><span class="logo-icon"><i class="fa-solid fa-mobile-screen-button"></i></span>TechDeals<span>Hub</span></a>
+<nav class="nav">
+<a href="index.html">Home</a><a href="reviews.html">Reviews</a><a href="flagships.html">Flagships</a><a href="budget-phones.html">Budget</a><a href="upcoming-phones.html" class="active">Upcoming</a><a href="compare.html">Compare</a>
+</nav>
+<button class="menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></button>
+</div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+<a href="reviews.html"><i class="fa-solid fa-star"></i> Reviews</a>
+<a href="flagships.html"><i class="fa-solid fa-crown"></i> Flagships</a>
+<a href="budget-phones.html"><i class="fa-solid fa-wallet"></i> Budget Phones</a>
+<a href="upcoming-phones.html" class="active"><i class="fa-solid fa-calendar-days"></i> Upcoming Phones</a>
+<a href="compare.html"><i class="fa-solid fa-scale-balanced"></i> Compare</a>
+</div>
+
+<main>
+<section class="hero-wrap"><div class="container"><div class="hero"><div class="hero-content">
+<div class="eyebrow"><i class="fa-solid fa-calendar-days"></i> Future Devices</div>
+<h1>Phones worth<br><span>waiting for.</span></h1>
+<p>Stay ahead of the next smartphone releases. Explore upcoming devices, expected launch windows, rumored features and the models that could define the next generation of mobile technology.</p>
+<div class="hero-pills">
+<div class="pill"><i class="fa-solid fa-clock"></i> Release dates</div>
+<div class="pill"><i class="fa-solid fa-bolt"></i> New technology</div>
+<div class="pill"><i class="fa-solid fa-circle-check"></i> Announced</div>
+<div class="pill"><i class="fa-solid fa-bell"></i> Get notified</div>
+</div>
+</div></div></div></section>
+
+<section class="timeline-wrap"><div class="container"><div class="timeline">
+<div class="timeline-label">Launch calendar</div>
+<div class="months">
+<div class="month current"><strong>SEP</strong><small>2026</small></div><div class="month"><strong>OCT</strong><small>2026</small></div><div class="month"><strong>NOV</strong><small>2026</small></div><div class="month"><strong>DEC</strong><small>2026</small></div><div class="month"><strong>JAN</strong><small>2027</small></div><div class="month"><strong>FEB</strong><small>2027</small></div>
+</div>
+</div></div></section>
+
+<section class="controls"><div class="container"><div class="control-box">
+<div class="search"><i class="fa-solid fa-magnifying-glass"></i><input id="search" type="search" placeholder="Search upcoming phones..."></div>
+<div class="right">
+<select class="select" id="sort"><option value="featured">Featured</option><option value="date">Soonest Launch</option><option value="rating">Most Anticipated</option><option value="price">Lowest Price</option><option value="name">Name A-Z</option></select>
+<div class="views"><button class="view active" id="gridBtn"><i class="fa-solid fa-grip"></i></button><button class="view" id="listBtn"><i class="fa-solid fa-list"></i></button></div>
+</div>
+</div></div></section>
+
+<section class="filters"><div class="container"><div class="filter-row" id="filters">
+<button class="filter active" data-brand="all">All</button><button class="filter" data-brand="samsung">Samsung</button><button class="filter" data-brand="apple">Apple</button><button class="filter" data-brand="xiaomi">Xiaomi</button><button class="filter" data-brand="oneplus">OnePlus</button><button class="filter" data-brand="google">Google</button><button class="filter" data-brand="honor">Honor</button><button class="filter" data-brand="vivo">Vivo</button>
+</div></div></section>
+
+<section><div class="container">
+<div class="section-head"><div><h2>Upcoming Phones</h2><p>The devices we're watching next</p></div><p id="count">8 phones</p></div>
+
+<div class="grid" id="grid">
+
+<article class="card" data-brand="xiaomi" data-date="2026-09-15" data-rating="9.8" data-price="1299" data-featured="10" data-name="Xiaomi 18 Fold">
+<div class="visual"><span class="badge purple">Highly Anticipated</span><div class="actions"><button class="action share" data-title="Xiaomi 18 Fold" data-url="phones/xiaomi18fold.html"><i class="fa-solid fa-share-nodes"></i></button></div><img src="images/xiaomi18fold.webp" alt="Xiaomi 18 Fold" loading="lazy"></div>
+<div class="body"><div class="brand">Xiaomi</div><h3 class="name">Xiaomi 18 Fold</h3><p class="desc">A next-generation foldable expected to push Xiaomi's premium hardware and in-house silicon further.</p>
+<div class="launch"><div><label>Expected launch</label><strong>September 2026</strong></div><span class="days" data-date="2026-09-15"></span></div>
+<div class="price-row"><div class="price">$1,299 <small>expected</small></div><span class="status"><i class="fa-solid fa-fire"></i>Hot</span></div>
+<div class="specs"><div class="spec"><label>Form</label><b>Foldable</b></div><div class="spec"><label>Chip</label><b>Xring O3</b></div><div class="spec"><label>Display</label><b>Foldable OLED</b></div><div class="spec"><label>5G</label><b>Yes</b></div></div>
+<div class="footer-card"><a class="details" href="phones/xiaomi18fold.html">View Details <i class="fa-solid fa-arrow-right"></i></a><button class="remind"><i class="fa-regular fa-bell"></i></button></div></div>
+</article>
+
+<article class="card" data-brand="apple" data-date="2026-09-09" data-rating="9.9" data-price="1499" data-featured="9" data-name="iPhone 18 Pro Max">
+<div class="visual"><span class="badge">Expected</span><div class="actions"><button class="action share" data-title="iPhone 18 Pro Max" data-url="phones/iphone18promax.html"><i class="fa-solid fa-share-nodes"></i></button></div><img src="images/iphone18promax.webp" alt="iPhone 18 Pro Max" loading="lazy"></div>
+<div class="body"><div class="brand">Apple</div><h3 class="name">iPhone 18 Pro Max</h3><p class="desc">Apple's next premium iPhone, expected to focus on camera improvements, performance and new-generation features.</p>
+<div class="launch"><div><label>Expected launch</label><strong>September 2026</strong></div><span class="days" data-date="2026-09-09"></span></div>
+<div class="price-row"><div class="price">$1,499 <small>expected</small></div><span class="status"><i class="fa-solid fa-star"></i>Top watch</span></div>
+<div class="specs"><div class="spec"><label>Display</label><b>OLED ProMotion</b></div><div class="spec"><label>Chip</label><b>Next-gen A-series</b></div><div class="spec"><label>Camera</label><b>Pro system</b></div><div class="spec"><label>5G</label><b>Yes</b></div></div>
+<div class="footer-card"><a class="details" href="phones/iphone18promax.html">View Details <i class="fa-solid fa-arrow-right"></i></a><button class="remind"><i class="fa-regular fa-bell"></i></button></div></div>
+</article>
+
+<article class="card" data-brand="samsung" data-date="2027-01-20" data-rating="9.6" data-price="1299" data-featured="8" data-name="Samsung Galaxy S27 Ultra">
+<div class="visual"><span class="badge green">Next Flagship</span><div class="actions"><button class="action share" data-title="Samsung Galaxy S27 Ultra" data-url="phones/samsungs27ultra.html"><i class="fa-solid fa-share-nodes"></i></button></div><img src="images/galaxys27ultra.webp" alt="Samsung Galaxy S27 Ultra" loading="lazy"></div>
+<div class="body"><div class="brand">Samsung</div><h3 class="name">Galaxy S27 Ultra</h3><p class="desc">The next Galaxy Ultra generation, expected to combine cutting-edge cameras, AI and flagship performance.</p>
+<div class="launch"><div><label>Expected launch</label><strong>January 2027</strong></div><span class="days" data-date="2027-01-20"></span></div>
+<div class="price-row"><div class="price">$1,299 <small>expected</small></div><span class="status"><i class="fa-solid fa-bolt"></i>Flagship</span></div>
+<div class="specs"><div class="spec"><label>Display</label><b>AMOLED</b></div><div class="spec"><label>Chip</label><b>Next Snapdragon</b></div><div class="spec"><label>Camera</label><b>Ultra system</b></div><div class="spec"><label>AI</label><b>Galaxy AI</b></div></div>
+<div class="footer-card"><a class="details" href="phones/samsungs27ultra.html">View Details <i class="fa-solid fa-arrow-right"></i></a><button class="remind"><i class="fa-regular fa-bell"></i></button></div></div>
+</article>
+
+<article class="card" data-brand="oneplus" data-date="2026-10-15" data-rating="9.2" data-price="799" data-featured="7" data-name="OnePlus 16">
+<div class="visual"><span class="badge orange">Performance</span><div class="actions"><button class="action share" data-title="OnePlus 16" data-url="phones/oneplus16.html"><i class="fa-solid fa-share-nodes"></i></button></div><img src="images/oneplus16.webp" alt="OnePlus 16" loading="lazy"></div>
+<div class="body"><div class="brand">OnePlus</div><h3 class="name">OnePlus 16</h3><p class="desc">A performance-first flagship expected to pair powerful hardware with fast charging and clean software.</p>
+<div class="launch"><div><label>Expected launch</label><strong>October 2026</strong></div><span class="days" data-date="2026-10-15"></span></div>
+<div class="price-row"><div class="price">$799 <small>expected</small></div><span class="status"><i class="fa-solid fa-gauge-high"></i>Fast</span></div>
+<div class="specs"><div class="spec"><label>Display</label><b>LTPO AMOLED</b></div><div class="spec"><label>Chip</label><b>Next Snapdragon</b></div><div class="spec"><label>Camera</label><b>Hasselblad</b></div><div class="spec"><label>Battery</label><b>Large</b></div></div>
+<div class="footer-card"><a class="details" href="phones/oneplus16.html">View Details <i class="fa-solid fa-arrow-right"></i></a><button class="remind"><i class="fa-regular fa-bell"></i></button></div></div>
+</article>
+
+<article class="card" data-brand="google" data-date="2026-10-01" data-rating="9.0" data-price="999" data-featured="6" data-name="Google Pixel 11 Pro">
+<div class="visual"><span class="badge">Expected</span><div class="actions"><button class="action share" data-title="Google Pixel 11 Pro" data-url="phones/pixel11pro.html"><i class="fa-solid fa-share-nodes"></i></button></div><img src="images/pixel11pro.webp" alt="Google Pixel 11 Pro" loading="lazy"></div>
+<div class="body"><div class="brand">Google</div><h3 class="name">Pixel 11 Pro</h3><p class="desc">Google's next Pro Pixel is expected to bring new AI experiences, camera processing and Tensor-powered features.</p>
+<div class="launch"><div><label>Expected launch</label><strong>October 2026</strong></div><span class="days" data-date="2026-10-01"></span></div>
+<div class="price-row"><div class="price">$999 <small>expected</small></div><span class="status"><i class="fa-solid fa-camera"></i>Camera</span></div>
+<div class="specs"><div class="spec"><label>Display</label><b>LTPO OLED</b></div><div class="spec"><label>Chip</label><b>Tensor</b></div><div class="spec"><label>Camera</label><b>Pro AI</b></div><div class="spec"><label>Software</label><b>Android</b></div></div>
+<div class="footer-card"><a class="details" href="phones/pixel11pro.html">View Details <i class="fa-solid fa-arrow-right"></i></a><button class="remind"><i class="fa-regular fa-bell"></i></button></div></div>
+</article>
+
+<article class="card" data-brand="honor" data-date="2026-10-20" data-rating="8.8" data-price="899" data-featured="5" data-name="Honor Magic8 Pro">
+<div class="visual"><span class="badge purple">New</span><div class="actions"><button class="action share" data-title="Honor Magic8 Pro" data-url="phones/honormagic8pro.html"><i class="fa-solid fa-share-nodes"></i></button></div><img src="images/honor-magic8-pro.webp" alt="Honor Magic8 Pro" loading="lazy"></div>
+<div class="body"><div class="brand">Honor</div><h3 class="name">Magic8 Pro</h3><p class="desc">A premium Honor device expected to emphasize display quality, photography and flagship-level performance.</p>
+<div class="launch"><div><label>Expected launch</label><strong>October 2026</strong></div><span class="days" data-date="2026-10-20"></span></div>
+<div class="price-row"><div class="price">$899 <small>expected</small></div><span class="status"><i class="fa-solid fa-display"></i>Premium</span></div>
+<div class="specs"><div class="spec"><label>Display</label><b>OLED</b></div><div class="spec"><label>Chip</label><b>Snapdragon</b></div><div class="spec"><label>Camera</label><b>Periscope</b></div><div class="spec"><label>Battery</label><b>Large</b></div></div>
+<div class="footer-card"><a class="details" href="phones/honormagic8pro.html">View Details <i class="fa-solid fa-arrow-right"></i></a><button class="remind"><i class="fa-regular fa-bell"></i></button></div></div>
+</article>
+
+<article class="card" data-brand="vivo" data-date="2026-11-05" data-rating="8.7" data-price="999" data-featured="4" data-name="Vivo X300 Ultra">
+<div class="visual"><span class="badge green">Camera Phone</span><div class="actions"><button class="action share" data-title="Vivo X300 Ultra" data-url="phones/vivox300ultra.html"><i class="fa-solid fa-share-nodes"></i></button></div><img src="images/vivo-x300-ultra.webp" alt="Vivo X300 Ultra" loading="lazy"></div>
+<div class="body"><div class="brand">Vivo</div><h3 class="name">Vivo X300 Ultra</h3><p class="desc">An upcoming camera-focused flagship expected to target serious mobile photography enthusiasts.</p>
+<div class="launch"><div><label>Expected launch</label><strong>November 2026</strong></div><span class="days" data-date="2026-11-05"></span></div>
+<div class="price-row"><div class="price">$999 <small>expected</small></div><span class="status"><i class="fa-solid fa-camera"></i>Camera</span></div>
+<div class="specs"><div class="spec"><label>Display</label><b>AMOLED</b></div><div class="spec"><label>Chip</label><b>Snapdragon</b></div><div class="spec"><label>Camera</label><b>Ultra Zoom</b></div><div class="spec"><label>5G</label><b>Yes</b></div></div>
+<div class="footer-card"><a class="details" href="phones/vivox300ultra.html">View Details <i class="fa-solid fa-arrow-right"></i></a><button class="remind"><i class="fa-regular fa-bell"></i></button></div></div>
+</article>
+
+<article class="card" data-brand="samsung" data-date="2027-02-10" data-rating="8.9" data-price="1199" data-featured="3" data-name="Samsung Galaxy Z Fold9">
+<div class="visual"><span class="badge purple">Foldable</span><div class="actions"><button class="action share" data-title="Samsung Galaxy Z Fold9" data-url="phones/galaxyzfold9.html"><i class="fa-solid fa-share-nodes"></i></button></div><img src="images/galaxy-z-fold9.webp" alt="Samsung Galaxy Z Fold9" loading="lazy"></div>
+<div class="body"><div class="brand">Samsung</div><h3 class="name">Galaxy Z Fold9</h3><p class="desc">Samsung's future foldable generation, expected to continue the company's focus on thinner hardware and smarter multitasking.</p>
+<div class="launch"><div><label>Expected launch</label><strong>February 2027</strong></div><span class="days" data-date="2027-02-10"></span></div>
+<div class="price-row"><div class="price">$1,199 <small>expected</small></div><span class="status"><i class="fa-solid fa-layer-group"></i>Foldable</span></div>
+<div class="specs"><div class="spec"><label>Form</label><b>Foldable</b></div><div class="spec"><label>Display</label><b>AMOLED</b></div><div class="spec"><label>Chip</label><b>Next-gen</b></div><div class="spec"><label>AI</label><b>Galaxy AI</b></div></div>
+<div class="footer-card"><a class="details" href="phones/galaxyzfold9.html">View Details <i class="fa-solid fa-arrow-right"></i></a><button class="remind"><i class="fa-regular fa-bell"></i></button></div></div>
+</article>
+
+</div>
+<div class="empty" id="empty"><div class="empty-icon"><i class="fa-solid fa-calendar-xmark"></i></div><h3>No upcoming phones found</h3><p>Try another search term or select a different brand.</p></div>
+</div></section>
+
+<section class="guide-wrap"><div class="container"><div class="guide">
+<div><h2>Should you wait?</h2><p>Waiting for a new phone can be worthwhile when the next generation brings a major chipset, camera or form-factor upgrade. But launch dates and specifications can change, especially for devices that have not been officially announced.</p></div>
+<div class="guide-list"><div class="guide-item"><i class="fa-solid fa-calendar-check"></i> Confirm the launch date</div><div class="guide-item"><i class="fa-solid fa-microchip"></i> Compare the new chipset</div><div class="guide-item"><i class="fa-solid fa-camera"></i> Watch camera upgrades</div><div class="guide-item"><i class="fa-solid fa-tag"></i> Compare launch pricing</div></div>
+</div></div></section>
+</main>
+
+<footer class="footer"><div class="container"><div class="footer-inner"><div><div class="footer-brand">TechDeals<span>Hub</span></div><p>Smartphone reviews, comparisons and buying guides.</p></div><div class="footer-links"><a href="reviews.html">Reviews</a><a href="flagships.html">Flagships</a><a href="budget-phones.html">Budget Phones</a><a href="upcoming-phones.html">Upcoming</a><a href="compare.html">Compare</a></div></div><div class="copy">© 2026 TechDealsHub. All rights reserved.</div></div></footer>
+
+<div class="overlay" id="shareOverlay"><div class="modal"><div class="modal-top"><h3>Share this phone</h3><button class="close" id="closeShare"><i class="fa-solid fa-xmark"></i></button></div><p class="modal-text" id="shareTitle">Upcoming phone</p><div class="share-grid"><a class="share" id="facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i> Facebook</a><a class="share" id="x" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i> X</a><a class="share" id="whatsapp" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a><a class="share" id="email"><i class="fa-solid fa-envelope"></i> Email</a></div><button class="copy" id="copyLink"><i class="fa-solid fa-link"></i> Copy Link</button><div class="copy-status" id="copyStatus"></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+(() => {
+const grid=document.getElementById("grid"),cards=[...document.querySelectorAll(".card")],search=document.getElementById("search"),sort=document.getElementById("sort"),filters=[...document.querySelectorAll(".filter")],count=document.getElementById("count"),empty=document.getElementById("empty");
+let activeBrand="all",shareUrl="";
+function apply(){
+ const q=search.value.trim().toLowerCase();
+ cards.forEach(c=>{const visible=(activeBrand==="all"||c.dataset.brand===activeBrand)&&(!q||c.dataset.name.toLowerCase().includes(q));c.classList.toggle("hidden",!visible)});
+ const n=cards.filter(c=>!c.classList.contains("hidden")).length;count.textContent=n+" "+(n===1?"phone":"phones");empty.classList.toggle("show",n===0);
+}
+function sortCards(){
+ const v=sort.value;
+ [...cards].sort((a,b)=>{
+  if(v==="date")return new Date(a.dataset.date)-new Date(b.dataset.date);
+  if(v==="rating")return +b.dataset.rating-+a.dataset.rating;
+  if(v==="price")return +a.dataset.price-+b.dataset.price;
+  if(v==="name")return a.dataset.name.localeCompare(b.dataset.name);
+  return +b.dataset.featured-+a.dataset.featured;
+ }).forEach(c=>grid.appendChild(c));apply();
+}
+filters.forEach(b=>b.addEventListener("click",()=>{filters.forEach(x=>x.classList.remove("active"));b.classList.add("active");activeBrand=b.dataset.brand;apply()}));
+search.addEventListener("input",apply);sort.addEventListener("change",sortCards);
+document.getElementById("gridBtn").addEventListener("click",()=>{grid.classList.remove("list");document.getElementById("gridBtn").classList.add("active");document.getElementById("listBtn").classList.remove("active")});
+document.getElementById("listBtn").addEventListener("click",()=>{grid.classList.add("list");document.getElementById("listBtn").classList.add("active");document.getElementById("gridBtn").classList.remove("active")});
+const menu=document.getElementById("mobileMenu"),menuBtn=document.getElementById("menuBtn");
+menuBtn.addEventListener("click",()=>{menu.classList.toggle("open");menuBtn.innerHTML=menu.classList.contains("open")?'<i class="fa-solid fa-xmark"></i>':'<i class="fa-solid fa-bars"></i>'});
+document.querySelectorAll(".remind").forEach(b=>b.addEventListener("click",()=>{b.classList.toggle("active");b.innerHTML=b.classList.contains("active")?'<i class="fa-solid fa-bell"></i>':'<i class="fa-regular fa-bell"></i>';showToast(b.classList.contains("active")?"Reminder enabled":"Reminder removed")}));
+const overlay=document.getElementById("shareOverlay"),close=document.getElementById("closeShare"),titleEl=document.getElementById("shareTitle"),facebook=document.getElementById("facebook"),x=document.getElementById("x"),whatsapp=document.getElementById("whatsapp"),email=document.getElementById("email"),copy=document.getElementById("copyLink"),status=document.getElementById("copyStatus");
+function openShare(title,url){
+ shareUrl=new URL(url||location.href,location.href).href;titleEl.textContent=title||"Upcoming phone";
+ facebook.href="https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(shareUrl);
+ x.href="https://twitter.com/intent/tweet?text="+encodeURIComponent("Check out "+title)+"&url="+encodeURIComponent(shareUrl);
+ whatsapp.href="https://wa.me/?text="+encodeURIComponent("Check out "+title+" "+shareUrl);
+ email.href="mailto:?subject="+encodeURIComponent(title)+"&body="+encodeURIComponent(shareUrl);
+ status.textContent="";overlay.classList.add("open");
+}
+document.querySelectorAll(".share").forEach(b=>b.addEventListener("click",async()=>{
+ const title=b.dataset.title,url=b.dataset.url||location.href;
+ if(navigator.share){try{await navigator.share({title,text:"Check out "+title,url:new URL(url,location.href).href});return}catch(e){}}
+ openShare(title,url);
+}));
+close.addEventListener("click",()=>overlay.classList.remove("open"));overlay.addEventListener("click",e=>{if(e.target===overlay)overlay.classList.remove("open")});
+copy.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(shareUrl)}catch(e){const t=document.createElement("textarea");t.value=shareUrl;document.body.appendChild(t);t.select();document.execCommand("copy");t.remove()}status.textContent="Link copied successfully!"});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){overlay.classList.remove("open");menu.classList.remove("open")}});
+function showToast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");clearTimeout(window.toast);window.toast=setTimeout(()=>t.classList.remove("show"),1800)}
+function updateDays(){document.querySelectorAll(".days").forEach(el=>{const d=new Date(el.dataset.date+"T00:00:00"),now=new Date();const days=Math.ceil((d-now)/(864e5));el.textContent=days>0?days+" days":days===0?"Today":"Expected soon"})}
+updateDays();sortCards();
+})();
+</script>
+</body>
+</html>

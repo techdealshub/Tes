@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Budget Phones | TechDealsHub</title>
+<meta name="description" content="Discover the best budget smartphones, compare prices, specifications, ratings and find the best value for your money.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+:root{
+--bg:#f5f7fb;--surface:#fff;--surface2:#f8fafc;--text:#0f172a;--muted:#64748b;
+--border:#e6eaf0;--primary:#2563eb;--primary2:#1d4ed8;--blueSoft:#eff6ff;
+--green:#16a34a;--orange:#f59e0b;--red:#ef4444;
+--shadow:0 12px 35px rgba(15,23,42,.07);--shadow2:0 22px 55px rgba(15,23,42,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+button,input,select{font:inherit} button{cursor:pointer} a{text-decoration:none;color:inherit}
+.container{width:min(1180px,calc(100% - 32px));margin:auto}
+
+/* HEADER */
+.header{height:68px;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000}
+.header-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:9px;font-size:18px;font-weight:900;letter-spacing:-.06em}
+.logo-icon{width:35px;height:35px;border-radius:10px;background:var(--primary);color:#fff;display:grid;place-items:center;font-size:14px;box-shadow:0 7px 18px rgba(37,99,235,.25)}
+.logo span:last-child{color:var(--primary)}
+.nav{display:flex;gap:4px}
+.nav a{font-size:10px;font-weight:800;color:var(--muted);padding:9px 12px;border-radius:9px}
+.nav a:hover,.nav a.active{color:var(--primary);background:var(--blueSoft)}
+.header-actions{display:flex;gap:7px}
+.icon-btn{width:36px;height:36px;border:1px solid var(--border);background:#fff;color:var(--muted);border-radius:10px;display:grid;place-items:center}
+.icon-btn:hover{color:var(--primary);border-color:#bfdbfe;background:var(--blueSoft)}
+.menu-btn{display:none}
+
+/* MOBILE MENU */
+.mobile-menu{display:none;background:#fff;border-bottom:1px solid var(--border);position:fixed;top:68px;left:0;right:0;z-index:999;box-shadow:var(--shadow)}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:flex;gap:12px;align-items:center;padding:14px 20px;border-bottom:1px solid #f1f5f9;font-size:12px;font-weight:800;color:var(--muted)}
+.mobile-menu a.active{color:var(--primary);background:var(--blueSoft)}
+
+/* HERO */
+.hero-wrap{padding:32px 0 18px}
+.hero{position:relative;overflow:hidden;border:1px solid var(--border);border-radius:28px;background:#fff;padding:48px 52px;box-shadow:var(--shadow)}
+.hero:before{content:"";position:absolute;width:390px;height:390px;border-radius:50%;right:-120px;top:-180px;background:radial-gradient(circle,#dbeafe 0,#eff6ff 45%,transparent 70%)}
+.hero:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;right:90px;bottom:-190px;background:#f1f5f9}
+.hero-content{position:relative;z-index:2;max-width:720px}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;color:var(--primary);font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.12em;margin-bottom:11px}
+.hero h1{font-size:clamp(38px,5vw,60px);line-height:1;letter-spacing:-.065em}
+.hero h1 span{color:var(--primary)}
+.hero p{max-width:650px;color:var(--muted);font-size:13px;line-height:1.8;margin-top:16px}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:23px}
+.pill{display:flex;align-items:center;gap:7px;padding:8px 11px;border:1px solid var(--border);background:#fff;border-radius:10px;font-size:9px;font-weight:800;color:var(--text)}
+.pill i{color:var(--primary)}
+
+/* CONTROLS */
+.controls{padding:12px 0 16px}
+.control-box{background:#fff;border:1px solid var(--border);border-radius:17px;padding:12px;box-shadow:0 6px 22px rgba(15,23,42,.035);display:flex;gap:10px;align-items:center;justify-content:space-between}
+.search{position:relative;flex:1;max-width:390px}
+.search i{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:#94a3b8;font-size:11px}
+.search input{width:100%;height:40px;border:1px solid var(--border);border-radius:10px;background:#f8fafc;outline:none;padding:0 13px 0 35px;font-size:10px;font-weight:700;color:var(--text)}
+.search input:focus{background:#fff;border-color:#93c5fd;box-shadow:0 0 0 3px rgba(37,99,235,.07)}
+.control-right{display:flex;align-items:center;gap:8px}
+.select{height:40px;border:1px solid var(--border);border-radius:10px;background:#fff;padding:0 11px;font-size:10px;font-weight:800;color:var(--text);outline:none}
+.views{display:flex;gap:3px;background:#f1f5f9;border-radius:10px;padding:3px}
+.view{width:34px;height:34px;border:0;background:transparent;border-radius:8px;color:#94a3b8}
+.view.active{background:#fff;color:var(--primary);box-shadow:0 2px 7px rgba(15,23,42,.08)}
+
+/* FILTERS */
+.filters{padding:0 0 24px}
+.filter-row{display:flex;gap:7px;flex-wrap:wrap}
+.filter{border:1px solid var(--border);background:#fff;color:var(--muted);padding:9px 13px;border-radius:999px;font-size:9px;font-weight:900;transition:.2s}
+.filter:hover{border-color:#bfdbfe;color:var(--primary)}
+.filter.active{background:var(--primary);border-color:var(--primary);color:#fff}
+
+/* SECTION HEAD */
+.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:15px}
+.section-head h2{font-size:21px;letter-spacing:-.04em}
+.section-head p{font-size:9px;color:var(--muted);font-weight:700}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px}
+.card{background:#fff;border:1px solid var(--border);border-radius:19px;overflow:hidden;box-shadow:var(--shadow);transition:.25s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow2);border-color:#cbd5e1}
+.card.hidden{display:none}
+.visual{height:245px;position:relative;background:linear-gradient(145deg,#f8fafc,#edf2f7);overflow:hidden}
+.visual img{width:100%;height:100%;object-fit:cover;display:block;transition:.35s}
+.card:hover .visual img{transform:scale(1.035)}
+.badge{position:absolute;top:13px;left:13px;z-index:3;padding:6px 10px;border-radius:999px;color:#fff;background:var(--primary);font-size:8px;font-weight:900;text-transform:uppercase;letter-spacing:.05em}
+.badge.green{background:var(--green)}.badge.orange{background:var(--orange)}
+.actions{position:absolute;top:13px;right:13px;z-index:4;display:flex;gap:5px}
+.action{width:31px;height:31px;border:1px solid rgba(255,255,255,.8);border-radius:8px;background:rgba(255,255,255,.93);color:#64748b;display:grid;place-items:center}
+.action:hover{color:var(--primary)}.action.favorite.active{color:var(--red)}
+.body{padding:18px}
+.brand{font-size:8px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);margin-bottom:5px}
+.name{font-size:19px;line-height:1.2;letter-spacing:-.04em;font-weight:900}
+.desc{font-size:10px;color:var(--muted);line-height:1.65;margin-top:7px;min-height:35px}
+.rating{display:flex;align-items:center;gap:6px;margin-top:11px}
+.stars{font-size:10px;color:var(--orange);letter-spacing:1px}
+.rating strong{font-size:10px}.rating small{font-size:8px;color:#94a3b8}
+.price-row{display:flex;align-items:end;justify-content:space-between;border-top:1px solid #f1f5f9;margin-top:13px;padding-top:12px}
+.price{font-size:21px;font-weight:900;letter-spacing:-.04em;color:var(--primary)}
+.price small{font-size:8px;color:#94a3b8;font-weight:700;letter-spacing:0}
+.value-note{font-size:8px;color:var(--green);font-weight:900}
+.specs{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px}
+.spec{background:#f8fafc;border-radius:9px;padding:9px}
+.spec label{display:block;font-size:7px;text-transform:uppercase;color:#94a3b8;font-weight:700}
+.spec b{display:block;font-size:9px;margin-top:2px}
+.footer-card{display:flex;gap:7px;margin-top:13px}
+.details{flex:1;height:38px;border-radius:9px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;gap:7px;font-size:9px;font-weight:900}
+.details:hover{background:var(--primary2)}
+.compare{width:40px;height:38px;border:1px solid var(--border);border-radius:9px;background:#fff;color:#64748b}
+.compare.active{background:var(--blueSoft);color:var(--primary);border-color:#bfdbfe}
+
+/* LIST */
+.grid.list{grid-template-columns:1fr}
+.grid.list .card{display:grid;grid-template-columns:270px 1fr}
+.grid.list .visual{height:100%;min-height:260px}
+.grid.list .body{padding:23px}
+.grid.list .specs{grid-template-columns:repeat(4,1fr)}
+.grid.list .footer-card{max-width:520px}
+
+/* EMPTY */
+.empty{display:none;text-align:center;background:#fff;border:1px solid var(--border);border-radius:18px;padding:55px 20px}
+.empty.show{display:block}
+.empty-icon{width:55px;height:55px;margin:auto auto 12px;border-radius:15px;background:var(--blueSoft);color:var(--primary);display:grid;place-items:center;font-size:19px}
+.empty h3{font-size:18px}.empty p{font-size:10px;color:var(--muted);margin-top:4px}
+
+/* GUIDE */
+.guide-wrap{padding:55px 0}
+.guide{border-radius:22px;background:#0f172a;color:#fff;padding:34px;display:grid;grid-template-columns:1.5fr 1fr;gap:30px;position:relative;overflow:hidden}
+.guide:after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;right:-120px;top:-130px;background:rgba(37,99,235,.22)}
+.guide h2{font-size:28px;letter-spacing:-.05em;position:relative;z-index:2}
+.guide p{color:#94a3b8;font-size:10px;line-height:1.8;margin-top:9px;max-width:600px;position:relative;z-index:2}
+.guide-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:relative;z-index:2}
+.guide-item{padding:11px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.04);border-radius:10px;font-size:9px;font-weight:800}
+.guide-item i{color:#60a5fa;margin-right:6px}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--border);background:#fff;padding:32px 0}
+.footer-inner{display:flex;justify-content:space-between;gap:25px}
+.footer-brand{font-weight:900;font-size:15px}.footer-brand span{color:var(--primary)}
+.footer p{font-size:9px;color:var(--muted);margin-top:5px}
+.footer-links{display:flex;gap:15px;flex-wrap:wrap}
+.footer-links a{font-size:9px;color:var(--muted);font-weight:800}.footer-links a:hover{color:var(--primary)}
+.copy{text-align:center;border-top:1px solid #f1f5f9;margin-top:25px;padding-top:18px;color:#94a3b8;font-size:8px}
+
+/* SHARE MODAL */
+.overlay{display:none;position:fixed;inset:0;background:rgba(15,23,42,.55);backdrop-filter:blur(5px);z-index:2000;align-items:center;justify-content:center;padding:20px}
+.overlay.open{display:flex}
+.share-modal{width:min(430px,100%);background:#fff;border-radius:20px;padding:22px;box-shadow:0 25px 80px rgba(0,0,0,.25)}
+.share-top{display:flex;justify-content:space-between;align-items:center}
+.share-top h3{font-size:17px}.close{width:32px;height:32px;border:0;border-radius:8px;background:#f1f5f9;color:#64748b}
+.share-title{font-size:10px;color:var(--muted);margin:12px 0}
+.share-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.share-link{height:42px;border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;gap:7px;font-size:9px;font-weight:900;background:#fff}
+.share-link:hover{background:var(--blueSoft);color:var(--primary);border-color:#bfdbfe}
+.copy-link{margin-top:9px;width:100%;height:40px;border:0;border-radius:9px;background:var(--primary);color:#fff;font-size:9px;font-weight:900}
+.copy-status{text-align:center;color:var(--green);font-size:9px;font-weight:800;margin-top:8px;min-height:13px}
+
+/* TOAST */
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#0f172a;color:#fff;padding:10px 15px;border-radius:10px;font-size:9px;font-weight:800;z-index:3000;transition:.25s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* RESPONSIVE */
+@media(max-width:950px){
+.nav{display:none}.menu-btn{display:grid}
+.grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.hero{padding:40px}.hero:before{opacity:.6}
+}
+@media(max-width:700px){
+.container{width:calc(100% - 22px)}
+.hero-wrap{padding-top:20px}.hero{padding:30px 23px;border-radius:20px}
+.hero h1{font-size:38px}.hero p{font-size:11px}
+.control-box{flex-direction:column;align-items:stretch}.search{max-width:none}.control-right{justify-content:space-between}
+.grid{grid-template-columns:1fr}.grid.list .card{display:block}.grid.list .visual{height:230px;min-height:0}.grid.list .specs{grid-template-columns:1fr 1fr}
+.guide{grid-template-columns:1fr;padding:25px}
+.footer-inner{flex-direction:column}
+}
+@media(max-width:430px){
+.hero h1{font-size:34px}.hero-pills{display:grid;grid-template-columns:1fr 1fr}
+.visual{height:225px}.body{padding:16px}.section-head h2{font-size:18px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+<div class="container header-inner">
+<a class="logo" href="index.html">
+<span class="logo-icon"><i class="fa-solid fa-mobile-screen-button"></i></span>
+TechDeals<span>Hub</span>
+</a>
+
+<nav class="nav">
+<a href="index.html">Home</a>
+<a href="reviews.html">Reviews</a>
+<a href="flagships.html">Flagships</a>
+<a href="budget-phones.html" class="active">Budget</a>
+<a href="compare.html">Compare</a>
+</nav>
+
+<div class="header-actions">
+<button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+</div>
+</div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+<a href="reviews.html"><i class="fa-solid fa-star"></i> Reviews</a>
+<a href="flagships.html"><i class="fa-solid fa-crown"></i> Flagships</a>
+<a href="budget-phones.html" class="active"><i class="fa-solid fa-wallet"></i> Budget Phones</a>
+<a href="compare.html"><i class="fa-solid fa-scale-balanced"></i> Compare</a>
+</div>
+
+<main>
+
+<section class="hero-wrap">
+<div class="container">
+<div class="hero">
+<div class="hero-content">
+<div class="eyebrow"><i class="fa-solid fa-wallet"></i> Budget Collection</div>
+<h1>Smart choices.<br><span>Better value.</span></h1>
+<p>Explore affordable smartphones that deliver the features that matter most — great displays, dependable cameras, long battery life and smooth everyday performance.</p>
+<div class="hero-pills">
+<div class="pill"><i class="fa-solid fa-tag"></i> Best value</div>
+<div class="pill"><i class="fa-solid fa-battery-full"></i> Long battery</div>
+<div class="pill"><i class="fa-solid fa-camera"></i> Great cameras</div>
+<div class="pill"><i class="fa-solid fa-star"></i> Expert rated</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="controls">
+<div class="container">
+<div class="control-box">
+<div class="search">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input id="search" type="search" placeholder="Search budget phones...">
+</div>
+<div class="control-right">
+<select class="select" id="sort">
+<option value="featured">Featured</option>
+<option value="rating">Highest Rated</option>
+<option value="low">Price: Low to High</option>
+<option value="high">Price: High to Low</option>
+<option value="name">Name A-Z</option>
+</select>
+<div class="views">
+<button class="view active" id="gridBtn" aria-label="Grid"><i class="fa-solid fa-grip"></i></button>
+<button class="view" id="listBtn" aria-label="List"><i class="fa-solid fa-list"></i></button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="filters">
+<div class="container">
+<div class="filter-row" id="filters">
+<button class="filter active" data-brand="all">All</button>
+<button class="filter" data-brand="samsung">Samsung</button>
+<button class="filter" data-brand="xiaomi">Xiaomi</button>
+<button class="filter" data-brand="redmi">Redmi</button>
+<button class="filter" data-brand="realme">Realme</button>
+<button class="filter" data-brand="motorola">Motorola</button>
+<button class="filter" data-brand="oneplus">OnePlus</button>
+<button class="filter" data-brand="google">Google</button>
+</div>
+</div>
+</section>
+
+<section class="phones">
+<div class="container">
+<div class="section-head">
+<div>
+<h2>Best Budget Phones</h2>
+<p>Carefully selected for value and everyday performance</p>
+</div>
+<p id="count">8 phones</p>
+</div>
+
+<div class="grid" id="grid">
+
+<!-- CARD 1 -->
+<article class="card" data-brand="samsung" data-price="449" data-rating="4.6" data-featured="10" data-name="Samsung Galaxy A56">
+<div class="visual">
+<span class="badge">Best Value</span>
+<div class="actions">
+<button class="action favorite" title="Favorite"><i class="fa-regular fa-heart"></i></button>
+<button class="action share" title="Share" data-title="Samsung Galaxy A56" data-url="phones/samsunggalaxya56.html"><i class="fa-solid fa-share-nodes"></i></button>
+</div>
+<img src="Samsung/img/galaxya56_1_1.png" alt="Samsung Galaxy A56" loading="lazy">
+</div>
+<div class="body">
+<div class="brand">Samsung</div>
+<h3 class="name">Galaxy A56</h3>
+<p class="desc">A polished everyday phone with a bright AMOLED display, dependable cameras and excellent battery life.</p>
+<div class="rating"><span class="stars">★★★★★</span><strong>4.6</strong><small>128 reviews</small></div>
+<div class="price-row"><div class="price">$449</div><span class="value-note">Excellent value</span></div>
+<div class="specs">
+<div class="spec"><label>Display</label><b>6.7" AMOLED</b></div>
+<div class="spec"><label>Chip</label><b>Exynos</b></div>
+<div class="spec"><label>Camera</label><b>50MP</b></div>
+<div class="spec"><label>Battery</label><b>5000mAh</b></div>
+</div>
+<div class="footer-card"><a class="details" href="phones/samsunggalaxya56.html">View Full Details <i class="fa-solid fa-arrow-right"></i></a><button class="compare" title="Add to compare"><i class="fa-solid fa-scale-balanced"></i></button></div>
+</div>
+</article>
+
+<!-- CARD 2 -->
+<article class="card" data-brand="redmi" data-price="249" data-rating="4.5" data-featured="9" data-name="Redmi Note 14 Pro">
+<div class="visual">
+<span class="badge green">Great Value</span>
+<div class="actions">
+<button class="action favorite" title="Favorite"><i class="fa-regular fa-heart"></i></button>
+<button class="action share" data-title="Redmi Note 14 Pro" data-url="phones/redminote14pro.html"><i class="fa-solid fa-share-nodes"></i></button>
+</div>
+<img src="images/redmi-note-14-pro.webp" alt="Redmi Note 14 Pro" loading="lazy">
+</div>
+<div class="body">
+<div class="brand">Redmi</div>
+<h3 class="name">Redmi Note 14 Pro</h3>
+<p class="desc">A feature-packed affordable phone with a smooth AMOLED display and strong all-day battery endurance.</p>
+<div class="rating"><span class="stars">★★★★★</span><strong>4.5</strong><small>94 reviews</small></div>
+<div class="price-row"><div class="price">$249</div><span class="value-note">Top pick</span></div>
+<div class="specs">
+<div class="spec"><label>Display</label><b>6.67" AMOLED</b></div>
+<div class="spec"><label>Chip</label><b>Dimensity</b></div>
+<div class="spec"><label>Camera</label><b>200MP</b></div>
+<div class="spec"><label>Battery</label><b>5500mAh</b></div>
+</div>
+<div class="footer-card"><a class="details" href="phones/redminote14pro.html">View Full Details <i class="fa-solid fa-arrow-right"></i></a><button class="compare"><i class="fa-solid fa-scale-balanced"></i></button></div>
+</div>
+</article>
+
+<!-- CARD 3 -->
+<article class="card" data-brand="xiaomi" data-price="299" data-rating="4.6" data-featured="8" data-name="Xiaomi Redmi Note 14">
+<div class="visual">
+<span class="badge orange">Popular</span>
+<div class="actions">
+<button class="action favorite"><i class="fa-regular fa-heart"></i></button>
+<button class="action share" data-title="Xiaomi Redmi Note 14" data-url="phones/redminote14.html"><i class="fa-solid fa-share-nodes"></i></button>
+</div>
+<img src="images/redmi-note-14.webp" alt="Xiaomi Redmi Note 14" loading="lazy">
+</div>
+<div class="body">
+<div class="brand">Xiaomi</div>
+<h3 class="name">Redmi Note 14</h3>
+<p class="desc">A balanced budget smartphone offering a quality display, capable performance and versatile cameras.</p>
+<div class="rating"><span class="stars">★★★★★</span><strong>4.6</strong><small>87 reviews</small></div>
+<div class="price-row"><div class="price">$299</div><span class="value-note">Popular choice</span></div>
+<div class="specs">
+<div class="spec"><label>Display</label><b>6.67" AMOLED</b></div>
+<div class="spec"><label>Chip</label><b>Snapdragon</b></div>
+<div class="spec"><label>Camera</label><b>108MP</b></div>
+<div class="spec"><label>Battery</label><b>5110mAh</b></div>
+</div>
+<div class="footer-card"><a class="details" href="phones/redminote14.html">View Full Details <i class="fa-solid fa-arrow-right"></i></a><button class="compare"><i class="fa-solid fa-scale-balanced"></i></button></div>
+</div>
+</article>
+
+<!-- CARD 4 -->
+<article class="card" data-brand="realme" data-price="299" data-rating="4.4" data-featured="7" data-name="Realme 14 Pro">
+<div class="visual">
+<span class="badge">Best Seller</span>
+<div class="actions">
+<button class="action favorite"><i class="fa-regular fa-heart"></i></button>
+<button class="action share" data-title="Realme 14 Pro" data-url="phones/realme14pro.html"><i class="fa-solid fa-share-nodes"></i></button>
+</div>
+<img src="images/realme14pro.webp" alt="Realme 14 Pro" loading="lazy">
+</div>
+<div class="body">
+<div class="brand">Realme</div>
+<h3 class="name">Realme 14 Pro</h3>
+<p class="desc">A stylish value phone focused on smooth performance, fast charging and a vibrant display.</p>
+<div class="rating"><span class="stars">★★★★★</span><strong>4.4</strong><small>76 reviews</small></div>
+<div class="price-row"><div class="price">$299</div><span class="value-note">Strong choice</span></div>
+<div class="specs">
+<div class="spec"><label>Display</label><b>6.77" OLED</b></div>
+<div class="spec"><label>Chip</label><b>Dimensity</b></div>
+<div class="spec"><label>Camera</label><b>50MP</b></div>
+<div class="spec"><label>Battery</label><b>6000mAh</b></div>
+</div>
+<div class="footer-card"><a class="details" href="phones/realme14pro.html">View Full Details <i class="fa-solid fa-arrow-right"></i></a><button class="compare"><i class="fa-solid fa-scale-balanced"></i></button></div>
+</div>
+</article>
+
+<!-- CARD 5 -->
+<article class="card" data-brand="motorola" data-price="349" data-rating="4.3" data-featured="6" data-name="Motorola Edge 60 Fusion">
+<div class="visual">
+<span class="badge green">Smart Buy</span>
+<div class="actions">
+<button class="action favorite"><i class="fa-regular fa-heart"></i></button>
+<button class="action share" data-title="Motorola Edge 60 Fusion" data-url="phones/motorolaedge60fusion.html"><i class="fa-solid fa-share-nodes"></i></button>
+</div>
+<img src="images/motorola-edge-60-fusion.webp" alt="Motorola Edge 60 Fusion" loading="lazy">
+</div>
+<div class="body">
+<div class="brand">Motorola</div>
+<h3 class="name">Edge 60 Fusion</h3>
+<p class="desc">A clean and stylish smartphone with a curved OLED display and a smooth Android experience.</p>
+<div class="rating"><span class="stars">★★★★★</span><strong>4.3</strong><small>61 reviews</small></div>
+<div class="price-row"><div class="price">$349</div><span class="value-note">Smart buy</span></div>
+<div class="specs">
+<div class="spec"><label>Display</label><b>6.7" pOLED</b></div>
+<div class="spec"><label>Chip</label><b>Dimensity</b></div>
+<div class="spec"><label>Camera</label><b>50MP</b></div>
+<div class="spec"><label>Battery</label><b>5200mAh</b></div>
+</div>
+<div class="footer-card"><a class="details" href="phones/motorolaedge60fusion.html">View Full Details <i class="fa-solid fa-arrow-right"></i></a><button class="compare"><i class="fa-solid fa-scale-balanced"></i></button></div>
+</div>
+</article>
+
+<!-- CARD 6 -->
+<article class="card" data-brand="oneplus" data-price="399" data-rating="4.5" data-featured="5" data-name="OnePlus Nord 5">
+<div class="visual">
+<span class="badge">Performance</span>
+<div class="actions">
+<button class="action favorite"><i class="fa-regular fa-heart"></i></button>
+<button class="action share" data-title="OnePlus Nord 5" data-url="phones/oneplusnord5.html"><i class="fa-solid fa-share-nodes"></i></button>
+</div>
+<img src="images/oneplus-nord-5.webp" alt="OnePlus Nord 5" loading="lazy">
+</div>
+<div class="body">
+<div class="brand">OnePlus</div>
+<h3 class="name">OnePlus Nord 5</h3>
+<p class="desc">A performance-focused affordable phone with fast software, a high refresh-rate display and a large battery.</p>
+<div class="rating"><span class="stars">★★★★★</span><strong>4.5</strong><small>103 reviews</small></div>
+<div class="price-row"><div class="price">$399</div><span class="value-note">Performance pick</span></div>
+<div class="specs">
+<div class="spec"><label>Display</label><b>6.83" AMOLED</b></div>
+<div class="spec"><label>Chip</label><b>Snapdragon</b></div>
+<div class="spec"><label>Camera</label><b>50MP</b></div>
+<div class="spec"><label>Battery</label><b>6800mAh</b></div>
+</div>
+<div class="footer-card"><a class="details" href="phones/oneplusnord5.html">View Full Details <i class="fa-solid fa-arrow-right"></i></a><button class="compare"><i class="fa-solid fa-scale-balanced"></i></button></div>
+</div>
+</article>
+
+<!-- CARD 7 -->
+<article class="card" data-brand="google" data-price="499" data-rating="4.6" data-featured="4" data-name="Google Pixel 9a">
+<div class="visual">
+<span class="badge green">Camera Pick</span>
+<div class="actions">
+<button class="action favorite"><i class="fa-regular fa-heart"></i></button>
+<button class="action share" data-title="Google Pixel 9a" data-url="phones/googlepixel9a.html"><i class="fa-solid fa-share-nodes"></i></button>
+</div>
+<img src="images/pixel9a.webp" alt="Google Pixel 9a" loading="lazy">
+</div>
+<div class="body">
+<div class="brand">Google</div>
+<h3 class="name">Pixel 9a</h3>
+<p class="desc">An affordable Pixel with excellent computational photography, clean software and long-term updates.</p>
+<div class="rating"><span class="stars">★★★★★</span><strong>4.6</strong><small>119 reviews</small></div>
+<div class="price-row"><div class="price">$499</div><span class="value-note">Camera favorite</span></div>
+<div class="specs">
+<div class="spec"><label>Display</label><b>6.3" OLED</b></div>
+<div class="spec"><label>Chip</label><b>Tensor</b></div>
+<div class="spec"><label>Camera</label><b>48MP</b></div>
+<div class="spec"><label>Battery</label><b>5100mAh</b></div>
+</div>
+<div class="footer-card"><a class="details" href="phones/googlepixel9a.html">View Full Details <i class="fa-solid fa-arrow-right"></i></a><button class="compare"><i class="fa-solid fa-scale-balanced"></i></button></div>
+</div>
+</article>
+
+<!-- CARD 8 -->
+<article class="card" data-brand="samsung" data-price="299" data-rating="4.2" data-featured="3" data-name="Samsung Galaxy A36">
+<div class="visual">
+<span class="badge orange">Popular</span>
+<div class="actions">
+<button class="action favorite"><i class="fa-regular fa-heart"></i></button>
+<button class="action share" data-title="Samsung Galaxy A36" data-url="phones/samsunggalaxya36.html"><i class="fa-solid fa-share-nodes"></i></button>
+</div>
+<img src="images/galaxy-a36.webp" alt="Samsung Galaxy A36" loading="lazy">
+</div>
+<div class="body">
+<div class="brand">Samsung</div>
+<h3 class="name">Galaxy A36</h3>
+<p class="desc">A reliable affordable Samsung phone with a bright display, solid cameras and a familiar user experience.</p>
+<div class="rating"><span class="stars">★★★★★</span><strong>4.2</strong><small>72 reviews</small></div>
+<div class="price-row"><div class="price">$299</div><span class="value-note">Everyday pick</span></div>
+<div class="specs">
+<div class="spec"><label>Display</label><b>6.7" AMOLED</b></div>
+<div class="spec"><label>Chip</label><b>Snapdragon</b></div>
+<div class="spec"><label>Camera</label><b>50MP</b></div>
+<div class="spec"><label>Battery</label><b>5000mAh</b></div>
+</div>
+<div class="footer-card"><a class="details" href="phones/samsunggalaxya36.html">View Full Details <i class="fa-solid fa-arrow-right"></i></a><button class="compare"><i class="fa-solid fa-scale-balanced"></i></button></div>
+</div>
+</article>
+
+</div>
+
+<div class="empty" id="empty">
+<div class="empty-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+<h3>No phones found</h3>
+<p>Try another search term or choose a different brand.</p>
+</div>
+</div>
+</section>
+
+<section class="guide-wrap">
+<div class="container">
+<div class="guide">
+<div>
+<h2>How to choose a budget phone</h2>
+<p>Don't only look at the lowest price. The best budget phone balances display quality, processor performance, camera quality, battery life, software support and overall build.</p>
+</div>
+<div class="guide-list">
+<div class="guide-item"><i class="fa-solid fa-microchip"></i> Prioritize the processor</div>
+<div class="guide-item"><i class="fa-solid fa-battery-full"></i> Check battery capacity</div>
+<div class="guide-item"><i class="fa-solid fa-camera"></i> Look beyond megapixels</div>
+<div class="guide-item"><i class="fa-solid fa-display"></i> Prefer AMOLED when possible</div>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-inner">
+<div>
+<div class="footer-brand">TechDeals<span>Hub</span></div>
+<p>Smartphone reviews, comparisons and buying guides.</p>
+</div>
+<div class="footer-links">
+<a href="reviews.html">Reviews</a>
+<a href="flagships.html">Flagships</a>
+<a href="budget-phones.html">Budget Phones</a>
+<a href="compare.html">Compare</a>
+<a href="about.html">About</a>
+</div>
+</div>
+<div class="copy">© 2026 TechDealsHub. All rights reserved.</div>
+</div>
+</footer>
+
+<!-- SHARE -->
+<div class="overlay" id="shareOverlay">
+<div class="share-modal">
+<div class="share-top">
+<h3>Share this phone</h3>
+<button class="close" id="closeShare"><i class="fa-solid fa-xmark"></i></button>
+</div>
+<div class="share-title" id="shareTitle">Phone</div>
+<div class="share-grid">
+<a class="share-link" id="facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+<a class="share-link" id="x" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i> X</a>
+<a class="share-link" id="whatsapp" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+<a class="share-link" id="email"><i class="fa-solid fa-envelope"></i> Email</a>
+</div>
+<button class="copy-link" id="copyLink"><i class="fa-solid fa-link"></i> Copy Link</button>
+<div class="copy-status" id="copyStatus"></div>
+</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(() => {
+"use strict";
+
+const grid = document.getElementById("grid");
+const cards = [...document.querySelectorAll(".card")];
+const search = document.getElementById("search");
+const sort = document.getElementById("sort");
+const filters = [...document.querySelectorAll(".filter")];
+const count = document.getElementById("count");
+const empty = document.getElementById("empty");
+const gridBtn = document.getElementById("gridBtn");
+const listBtn = document.getElementById("listBtn");
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+let activeBrand = "all";
+let shareUrl = "";
+let shareTitle = "";
+
+function apply(){
+    const q = search.value.trim().toLowerCase();
+
+    cards.forEach(card => {
+        const brand = card.dataset.brand;
+        const name = card.dataset.name.toLowerCase();
+        const visible =
+            (activeBrand === "all" || brand === activeBrand) &&
+            (!q || name.includes(q));
+
+        card.classList.toggle("hidden", !visible);
+    });
+
+    const visibleCards = cards.filter(c => !c.classList.contains("hidden"));
+    count.textContent = `${visibleCards.length} ${visibleCards.length === 1 ? "phone" : "phones"}`;
+    empty.classList.toggle("show", visibleCards.length === 0);
+}
+
+function sortCards(){
+    const value = sort.value;
+
+    const sorted = [...cards].sort((a,b) => {
+        if(value === "rating") return +b.dataset.rating - +a.dataset.rating;
+        if(value === "low") return +a.dataset.price - +b.dataset.price;
+        if(value === "high") return +b.dataset.price - +a.dataset.price;
+        if(value === "name") return a.dataset.name.localeCompare(b.dataset.name);
+        return +b.dataset.featured - +a.dataset.featured;
+    });
+
+    sorted.forEach(card => grid.appendChild(card));
+    apply();
+}
+
+filters.forEach(btn => {
+    btn.addEventListener("click", () => {
+        filters.forEach(x => x.classList.remove("active"));
+        btn.classList.add("active");
+        activeBrand = btn.dataset.brand;
+        apply();
+    });
+});
+
+search.addEventListener("input", apply);
+sort.addEventListener("change", sortCards);
+
+gridBtn.addEventListener("click", () => {
+    grid.classList.remove("list");
+    gridBtn.classList.add("active");
+    listBtn.classList.remove("active");
+});
+
+listBtn.addEventListener("click", () => {
+    grid.classList.add("list");
+    listBtn.classList.add("active");
+    gridBtn.classList.remove("active");
+});
+
+menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("open");
+    menuBtn.innerHTML = mobileMenu.classList.contains("open")
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+});
+
+document.querySelectorAll(".favorite").forEach(btn => {
+    btn.addEventListener("click", () => {
+        btn.classList.toggle("active");
+        const icon = btn.querySelector("i");
+        const active = btn.classList.contains("active");
+
+        icon.className = active
+            ? "fa-solid fa-heart"
+            : "fa-regular fa-heart";
+
+        if(active){
+            btn.animate(
+                [{transform:"scale(1)"},{transform:"scale(1.2)"},{transform:"scale(1)"}],
+                {duration:280}
+            );
+            showToast("Added to favorites");
+        }else{
+            showToast("Removed from favorites");
+        }
+    });
+});
+
+document.querySelectorAll(".compare").forEach(btn => {
+    btn.addEventListener("click", () => {
+        btn.classList.toggle("active");
+        showToast(
+            btn.classList.contains("active")
+            ? "Added to comparison"
+            : "Removed from comparison"
+        );
+    });
+});
+
+const overlay = document.getElementById("shareOverlay");
+const closeShare = document.getElementById("closeShare");
+const shareTitleEl = document.getElementById("shareTitle");
+const facebook = document.getElementById("facebook");
+const x = document.getElementById("x");
+const whatsapp = document.getElementById("whatsapp");
+const email = document.getElementById("email");
+const copyLink = document.getElementById("copyLink");
+const copyStatus = document.getElementById("copyStatus");
+
+function openShare(title,url){
+    shareTitle = title || "Phone";
+    shareUrl = new URL(url || location.href, location.href).href;
+
+    shareTitleEl.textContent = shareTitle;
+
+    facebook.href =
+        "https://www.facebook.com/sharer/sharer.php?u=" +
+        encodeURIComponent(shareUrl);
+
+    x.href =
+        "https://twitter.com/intent/tweet?text=" +
+        encodeURIComponent("Check out " + shareTitle) +
+        "&url=" + encodeURIComponent(shareUrl);
+
+    whatsapp.href =
+        "https://wa.me/?text=" +
+        encodeURIComponent("Check out " + shareTitle + " " + shareUrl);
+
+    email.href =
+        "mailto:?subject=" +
+        encodeURIComponent(shareTitle) +
+        "&body=" + encodeURIComponent(shareUrl);
+
+    copyStatus.textContent = "";
+    overlay.classList.add("open");
+}
+
+document.querySelectorAll(".share").forEach(btn => {
+    btn.addEventListener("click", async () => {
+        const title = btn.dataset.title;
+        const url = btn.dataset.url || location.href;
+
+        if(navigator.share){
+            try{
+                await navigator.share({
+                    title,
+                    text: "Check out " + title,
+                    url: new URL(url,location.href).href
+                });
+                return;
+            }catch(e){}
+        }
+
+        openShare(title,url);
+    });
+});
+
+function closeShareModal(){
+    overlay.classList.remove("open");
+}
+
+closeShare.addEventListener("click",closeShareModal);
+
+overlay.addEventListener("click",e => {
+    if(e.target === overlay) closeShareModal();
+});
+
+document.addEventListener("keydown",e => {
+    if(e.key === "Escape"){
+        closeShareModal();
+        mobileMenu.classList.remove("open");
+    }
+});
+
+copyLink.addEventListener("click", async () => {
+    try{
+        await navigator.clipboard.writeText(shareUrl);
+        copyStatus.textContent = "Link copied successfully!";
+    }catch(e){
+        const area = document.createElement("textarea");
+        area.value = shareUrl;
+        document.body.appendChild(area);
+        area.select();
+        document.execCommand("copy");
+        area.remove();
+        copyStatus.textContent = "Link copied successfully!";
+    }
+});
+
+function showToast(message){
+    const toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.classList.add("show");
+    clearTimeout(window.toastTimer);
+    window.toastTimer = setTimeout(() => toast.classList.remove("show"),1800);
+}
+
+document.querySelectorAll(".details").forEach(link => {
+    link.addEventListener("click", () => {
+        link.style.opacity = ".7";
+    });
+});
+
+apply();
+sortCards();
+
+})();
+</script>
+
+</body>
+</html>

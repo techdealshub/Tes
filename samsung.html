@@ -1,0 +1,3468 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Samsung Phones — Latest Galaxy Phones, Reviews & Updates | TechDealsHub</title><meta name="description" content="Explore the latest Samsung Galaxy phones, flagship devices, reviews, specifications, upcoming Galaxy phones, software updates, comparisons and Samsung news."><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><style>
+
+:root{
+    --bg:#070b12;
+    --bg-soft:#0b111c;
+    --card:#101827;
+    --card-2:#121c2c;
+
+    --border:rgba(255,255,255,.08);
+
+    --text:#f5f7fb;
+    --muted:#8f9bad;
+    --muted-2:#667286;
+
+    --blue:#3b82f6;
+    --blue-2:#60a5fa;
+
+    --green:#22c55e;
+    --yellow:#fbbf24;
+
+    --radius:18px;
+    --container:1240px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Inter",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+button{
+    font-family:inherit;
+}
+
+.container{
+    width:min(var(--container),calc(100% - 40px));
+    margin:auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(7,11,18,.88);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid var(--border);
+}
+
+.navbar{
+    min-height:74px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:25px;
+}
+
+.logo{
+    font-size:21px;
+    font-weight:900;
+    letter-spacing:-.7px;
+    white-space:nowrap;
+}
+
+.logo span{
+    color:var(--blue-2);
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:27px;
+}
+
+.nav-links a{
+    color:var(--muted);
+    font-size:13px;
+    font-weight:600;
+
+    transition:.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:#fff;
+}
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.icon-btn{
+    width:40px;
+    height:40px;
+
+    border:1px solid var(--border);
+    background:var(--card);
+    color:#dbe4f2;
+
+    border-radius:12px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.icon-btn:hover{
+    border-color:rgba(59,130,246,.45);
+    color:var(--blue-2);
+    transform:translateY(-2px);
+}
+
+.menu-btn{
+    display:none;
+}
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.breadcrumb-wrap{
+    border-bottom:1px solid var(--border);
+    background:rgba(255,255,255,.015);
+}
+
+.breadcrumb{
+    min-height:48px;
+
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    font-size:12px;
+    color:var(--muted);
+}
+
+.breadcrumb a:hover{
+    color:#fff;
+}
+
+.breadcrumb i{
+    font-size:9px;
+    color:var(--muted-2);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.brand-hero{
+    position:relative;
+    overflow:hidden;
+
+    padding:75px 0 70px;
+
+    border-bottom:1px solid var(--border);
+
+    background:
+        radial-gradient(
+            circle at 82% 35%,
+            rgba(59,130,246,.15),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(96,165,250,.06),
+            transparent 30%
+        );
+}
+
+.brand-hero::after{
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    border:1px solid rgba(255,255,255,.025);
+
+    border-radius:50%;
+
+    right:-170px;
+    top:-150px;
+}
+
+.hero-grid{
+    display:grid;
+
+    grid-template-columns:1.25fr .75fr;
+
+    align-items:center;
+
+    gap:55px;
+}
+
+.eyebrow{
+    display:inline-flex;
+
+    align-items:center;
+    gap:8px;
+
+    padding:7px 12px;
+
+    border:1px solid rgba(59,130,246,.22);
+
+    background:rgba(59,130,246,.08);
+
+    color:var(--blue-2);
+
+    border-radius:999px;
+
+    font-size:11px;
+    font-weight:800;
+
+    text-transform:uppercase;
+    letter-spacing:.7px;
+
+    margin-bottom:18px;
+}
+
+.hero-content h1{
+    font-size:clamp(40px,5vw,66px);
+
+    line-height:1.03;
+
+    letter-spacing:-2.8px;
+
+    margin-bottom:20px;
+}
+
+.hero-content h1 span{
+    color:var(--blue-2);
+}
+
+.hero-content p{
+    max-width:680px;
+
+    color:var(--muted);
+
+    font-size:15px;
+
+    line-height:1.85;
+}
+
+.hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+
+    margin-top:28px;
+}
+
+.primary-btn,
+.secondary-btn{
+    min-height:45px;
+
+    padding:0 18px;
+
+    border-radius:12px;
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:9px;
+
+    font-size:12px;
+    font-weight:800;
+
+    transition:.25s;
+}
+
+.primary-btn{
+    background:var(--blue);
+    color:#fff;
+}
+
+.primary-btn:hover{
+    background:#2563eb;
+    transform:translateY(-2px);
+}
+
+.secondary-btn{
+    border:1px solid var(--border);
+
+    background:var(--card);
+
+    color:#dbe4f2;
+}
+
+.secondary-btn:hover{
+    border-color:rgba(59,130,246,.4);
+
+    transform:translateY(-2px);
+}
+
+/* =========================================================
+   SAMSUNG VISUAL
+========================================================= */
+
+.brand-visual{
+    display:flex;
+    justify-content:center;
+}
+
+.samsung-orb{
+    width:245px;
+    height:245px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        radial-gradient(
+            circle at 35% 25%,
+            rgba(96,165,250,.16),
+            transparent 48%
+        ),
+        linear-gradient(
+            145deg,
+            #111827,
+            #080d15
+        );
+
+    border:1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+        0 0 90px rgba(59,130,246,.13),
+        inset 0 0 60px rgba(255,255,255,.025);
+}
+
+.samsung-word{
+    font-size:34px;
+    font-weight:900;
+
+    letter-spacing:-1.8px;
+
+    color:#f5f7fb;
+}
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:14px;
+
+    margin-top:35px;
+}
+
+.stat{
+    padding:18px;
+
+    border:1px solid var(--border);
+
+    background:rgba(16,24,39,.7);
+
+    border-radius:14px;
+}
+
+.stat strong{
+    display:block;
+
+    font-size:21px;
+    font-weight:900;
+}
+
+.stat span{
+    color:var(--muted);
+
+    font-size:11px;
+}
+
+/* =========================================================
+   BRAND NAV
+========================================================= */
+
+.brand-nav{
+    padding:18px 0;
+
+    border-bottom:1px solid var(--border);
+
+    background:#090e17;
+}
+
+.brand-nav-inner{
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    overflow-x:auto;
+
+    scrollbar-width:none;
+}
+
+.brand-nav-inner::-webkit-scrollbar{
+    display:none;
+}
+
+.brand-nav a{
+    flex:none;
+
+    padding:9px 14px;
+
+    border-radius:10px;
+
+    color:var(--muted);
+
+    font-size:12px;
+    font-weight:700;
+
+    border:1px solid transparent;
+
+    transition:.25s;
+}
+
+.brand-nav a:hover,
+.brand-nav a.active{
+    color:#fff;
+
+    background:var(--card);
+
+    border-color:var(--border);
+}
+
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
+
+.section{
+    padding:70px 0;
+}
+
+.section + .section{
+    border-top:1px solid rgba(255,255,255,.035);
+}
+
+.section-header{
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    margin-bottom:28px;
+}
+
+.section-heading{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:7px;
+}
+
+.section-tag{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    color:var(--blue-2);
+
+    font-size:10px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+}
+
+.section-heading h2{
+    font-size:27px;
+
+    line-height:1.15;
+
+    letter-spacing:-1px;
+}
+
+.section-description{
+    color:var(--muted);
+
+    font-size:13px;
+
+    max-width:650px;
+
+    margin-top:6px;
+}
+
+.view-all{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    color:var(--blue-2);
+
+    font-size:12px;
+
+    font-weight:800;
+
+    white-space:nowrap;
+}
+
+.view-all:hover{
+    color:#fff;
+}
+
+/* =========================================================
+   FEATURED SAMSUNG PHONE
+========================================================= */
+
+.featured-phone{
+    display:grid;
+
+    grid-template-columns:.9fr 1.1fr;
+
+    min-height:400px;
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(59,130,246,.09),
+            transparent 35%
+        ),
+        var(--card);
+}
+
+.featured-image{
+    min-height:400px;
+
+    padding:35px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(59,130,246,.08),
+            transparent 55%
+        ),
+        #0c131f;
+}
+
+.featured-image img{
+    width:100%;
+
+    max-width:490px;
+
+    object-fit:contain;
+
+    transition:.35s;
+}
+
+.featured-phone:hover .featured-image img{
+    transform:scale(1.035);
+}
+
+.featured-info{
+    padding:45px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+}
+
+.featured-label{
+    color:var(--blue-2);
+
+    font-size:10px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    margin-bottom:12px;
+}
+
+.featured-info h3{
+    font-size:36px;
+
+    letter-spacing:-1.5px;
+
+    margin-bottom:12px;
+}
+
+.featured-info p{
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.8;
+
+    max-width:580px;
+}
+
+.phone-rating{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin:20px 0;
+}
+
+.score{
+    min-width:48px;
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:13px;
+
+    background:rgba(34,197,94,.1);
+
+    border:1px solid rgba(34,197,94,.2);
+
+    color:var(--green);
+
+    font-size:18px;
+
+    font-weight:900;
+}
+
+.stars{
+    color:var(--yellow);
+
+    font-size:12px;
+
+    letter-spacing:1px;
+}
+
+.rating-text{
+    color:var(--muted);
+
+    font-size:11px;
+}
+
+.spec-pills{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin-bottom:23px;
+}
+
+.spec-pill{
+    padding:8px 11px;
+
+    border:1px solid var(--border);
+
+    border-radius:9px;
+
+    color:#bac5d5;
+
+    background:rgba(255,255,255,.02);
+
+    font-size:10px;
+
+    font-weight:700;
+}
+
+/* =========================================================
+   PHONE CARDS
+========================================================= */
+
+.phone-grid{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:16px;
+}
+
+.phone-card{
+    position:relative;
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+    border-radius:17px;
+
+    background:var(--card);
+
+    transition:.3s;
+}
+
+.phone-card:hover{
+    transform:translateY(-5px);
+
+    border-color:rgba(59,130,246,.28);
+
+    box-shadow:0 18px 45px rgba(0,0,0,.2);
+}
+
+.phone-image{
+    position:relative;
+
+    height:220px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(59,130,246,.07),
+            transparent 62%
+        ),
+        #0d1420;
+}
+
+.phone-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    transition:.3s;
+}
+
+.phone-card:hover .phone-image img{
+    transform:scale(1.045);
+}
+
+.phone-type{
+    position:absolute;
+
+    top:12px;
+    left:12px;
+
+    padding:5px 8px;
+
+    border-radius:7px;
+
+    background:rgba(7,11,18,.82);
+
+    border:1px solid var(--border);
+
+    color:#b9c4d4;
+
+    font-size:9px;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+}
+
+.card-score{
+    position:absolute;
+
+    top:12px;
+    right:12px;
+
+    width:37px;
+    height:37px;
+
+    border-radius:10px;
+
+    background:rgba(34,197,94,.12);
+
+    border:1px solid rgba(34,197,94,.22);
+
+    color:var(--green);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:12px;
+
+    font-weight:900;
+}
+
+.phone-content{
+    padding:18px;
+}
+
+.phone-content h3{
+    font-size:15px;
+
+    margin-bottom:5px;
+
+    letter-spacing:-.3px;
+}
+
+.phone-content p{
+    color:var(--muted);
+
+    font-size:10px;
+
+    margin-bottom:13px;
+}
+
+.mini-specs{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:6px;
+}
+
+.mini-spec{
+    padding:5px 7px;
+
+    background:rgba(255,255,255,.035);
+
+    border-radius:6px;
+
+    color:#aeb9ca;
+
+    font-size:9px;
+}
+
+/* =========================================================
+   REVIEW CARDS
+========================================================= */
+
+.review-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:16px;
+}
+
+.review-card{
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+    border-radius:17px;
+
+    background:var(--card);
+
+    transition:.3s;
+}
+
+.review-card:hover{
+    transform:translateY(-4px);
+
+    border-color:rgba(59,130,246,.3);
+}
+
+.review-image{
+    height:200px;
+
+    padding:20px;
+
+    background:#0d1420;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+}
+
+.review-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+}
+
+.review-body{
+    padding:19px;
+}
+
+.review-meta{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:9px;
+}
+
+.review-meta span{
+    color:var(--blue-2);
+
+    font-size:9px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+}
+
+.review-meta .review-date{
+    color:var(--muted-2);
+}
+
+.review-body h3{
+    font-size:16px;
+
+    margin-bottom:8px;
+}
+
+.review-body p{
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.7;
+}
+
+/* =========================================================
+   TWO COLUMNS
+========================================================= */
+
+.two-column{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:18px;
+}
+
+/* =========================================================
+   INFO LIST
+========================================================= */
+
+.info-list{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+}
+
+.info-item{
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    background:var(--card);
+
+    transition:.25s;
+}
+
+.info-item:hover{
+    border-color:rgba(59,130,246,.25);
+
+    transform:translateX(3px);
+}
+
+.info-icon{
+    width:43px;
+    height:43px;
+
+    flex:none;
+
+    border-radius:11px;
+
+    background:rgba(59,130,246,.09);
+
+    border:1px solid rgba(59,130,246,.15);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:var(--blue-2);
+}
+
+.info-text{
+    min-width:0;
+
+    flex:1;
+}
+
+.info-text h3{
+    font-size:13px;
+
+    margin-bottom:3px;
+}
+
+.info-text p{
+    color:var(--muted);
+
+    font-size:10px;
+}
+
+.status{
+    padding:5px 8px;
+
+    border-radius:7px;
+
+    font-size:9px;
+
+    font-weight:900;
+
+    white-space:nowrap;
+}
+
+.status.green{
+    color:#4ade80;
+
+    background:rgba(34,197,94,.1);
+}
+
+.status.blue{
+    color:var(--blue-2);
+
+    background:rgba(59,130,246,.1);
+}
+
+.status.yellow{
+    color:#facc15;
+
+    background:rgba(250,204,21,.1);
+}
+
+/* =========================================================
+   NEWS
+========================================================= */
+
+.news-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:16px;
+}
+
+.news-card{
+    padding:21px;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    background:var(--card);
+
+    transition:.25s;
+}
+
+.news-card:hover{
+    transform:translateY(-4px);
+
+    border-color:rgba(59,130,246,.25);
+}
+
+.news-icon{
+    width:40px;
+    height:40px;
+
+    border-radius:10px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:var(--blue-2);
+
+    background:rgba(59,130,246,.08);
+
+    margin-bottom:16px;
+}
+
+.news-card span{
+    color:var(--muted-2);
+
+    font-size:9px;
+
+    font-weight:700;
+}
+
+.news-card h3{
+    font-size:14px;
+
+    line-height:1.5;
+
+    margin-top:7px;
+}
+
+.news-card p{
+    color:var(--muted);
+
+    font-size:10px;
+
+    margin-top:8px;
+}
+
+/* =========================================================
+   COMPARISONS
+========================================================= */
+
+.compare-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:16px;
+}
+
+.compare-card{
+    position:relative;
+
+    padding:22px;
+
+    border:1px solid var(--border);
+
+    border-radius:17px;
+
+    background:var(--card);
+
+    overflow:hidden;
+
+    transition:.25s;
+}
+
+.compare-card:hover{
+    transform:translateY(-4px);
+
+    border-color:rgba(59,130,246,.25);
+}
+
+.compare-card::after{
+    content:"VS";
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:39px;
+    height:39px;
+
+    border-radius:50%;
+
+    background:#182235;
+
+    border:1px solid var(--border);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    color:#d7dfeb;
+}
+
+.compare-phones{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:35px;
+}
+
+.compare-phone{
+    text-align:center;
+}
+
+.compare-phone img{
+    height:125px;
+
+    width:100%;
+
+    object-fit:contain;
+}
+
+.compare-phone h3{
+    font-size:11px;
+
+    margin-top:10px;
+}
+
+.compare-label{
+    display:block;
+
+    color:var(--muted);
+
+    font-size:9px;
+
+    margin-top:3px;
+}
+
+/* =========================================================
+   SAMSUNG FEATURES
+========================================================= */
+
+.samsung-features{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:14px;
+}
+
+.feature-box{
+    padding:22px;
+
+    border:1px solid var(--border);
+
+    background:var(--card);
+
+    border-radius:16px;
+}
+
+.feature-box i{
+    color:var(--blue-2);
+
+    font-size:21px;
+
+    margin-bottom:15px;
+}
+
+.feature-box h3{
+    font-size:13px;
+
+    margin-bottom:6px;
+}
+
+.feature-box p{
+    color:var(--muted);
+
+    font-size:10px;
+
+    line-height:1.7;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.brand-cta{
+    padding:50px;
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(59,130,246,.13),
+            transparent 35%
+        ),
+        var(--card);
+
+    text-align:center;
+}
+
+.brand-cta h2{
+    font-size:28px;
+
+    letter-spacing:-1px;
+
+    margin-bottom:10px;
+}
+
+.brand-cta p{
+    max-width:650px;
+
+    margin:auto;
+
+    color:var(--muted);
+
+    font-size:12px;
+}
+
+.brand-cta .hero-actions{
+    justify-content:center;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    margin-top:20px;
+
+    border-top:1px solid var(--border);
+
+    background:#05080d;
+}
+
+.footer-main{
+    padding:55px 0 40px;
+
+    display:grid;
+
+    grid-template-columns:1.4fr repeat(3,1fr);
+
+    gap:35px;
+}
+
+.footer-brand p{
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.8;
+
+    max-width:320px;
+
+    margin-top:12px;
+}
+
+.footer-column h3{
+    font-size:11px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.7px;
+
+    margin-bottom:15px;
+}
+
+.footer-column a{
+    display:block;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    margin-bottom:9px;
+}
+
+.footer-column a:hover{
+    color:#fff;
+}
+
+.footer-bottom{
+    border-top:1px solid var(--border);
+
+    padding:18px 0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.footer-bottom p{
+    color:var(--muted-2);
+
+    font-size:10px;
+}
+
+.socials{
+    display:flex;
+
+    gap:8px;
+}
+
+.socials a{
+    width:34px;
+    height:34px;
+
+    border:1px solid var(--border);
+
+    border-radius:9px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:var(--muted);
+}
+
+.socials a:hover{
+    color:#fff;
+
+    border-color:rgba(59,130,246,.3);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1050px){
+
+    .nav-links{
+        gap:16px;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .brand-visual{
+        justify-content:flex-start;
+    }
+
+    .samsung-orb{
+        width:170px;
+        height:170px;
+    }
+
+    .samsung-word{
+        font-size:25px;
+    }
+
+    .phone-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .samsung-features{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-main{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:800px){
+
+    .container{
+        width:min(
+            var(--container),
+            calc(100% - 28px)
+        );
+    }
+
+    .nav-links{
+        display:none;
+
+        position:absolute;
+
+        left:14px;
+        right:14px;
+
+        top:68px;
+
+        padding:12px;
+
+        background:#0b111c;
+
+        border:1px solid var(--border);
+
+        border-radius:15px;
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:3px;
+
+        box-shadow:0 20px 50px rgba(0,0,0,.4);
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .nav-links a{
+        padding:11px;
+
+        border-radius:8px;
+    }
+
+    .nav-links a:hover{
+        background:rgba(255,255,255,.04);
+    }
+
+    .menu-btn{
+        display:flex;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .featured-phone{
+        grid-template-columns:1fr;
+    }
+
+    .featured-image{
+        min-height:300px;
+    }
+
+    .featured-info{
+        padding:30px;
+    }
+
+    .review-grid,
+    .news-grid,
+    .compare-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .two-column{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .brand-hero{
+        padding:50px 0;
+    }
+
+    .hero-content h1{
+        font-size:40px;
+
+        letter-spacing:-1.8px;
+    }
+
+    .section{
+        padding:52px 0;
+    }
+
+    .section-heading h2{
+        font-size:23px;
+    }
+
+    .section-header{
+        align-items:flex-start;
+    }
+
+    .phone-grid{
+        grid-template-columns:1fr 1fr;
+
+        gap:10px;
+    }
+
+    .phone-image{
+        height:180px;
+
+        padding:13px;
+    }
+
+    .phone-content{
+        padding:14px;
+    }
+
+    .phone-content h3{
+        font-size:13px;
+    }
+
+    .review-grid,
+    .news-grid,
+    .compare-grid{
+        grid-template-columns:1fr;
+    }
+
+    .samsung-features{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .brand-cta{
+        padding:35px 20px;
+    }
+
+    .footer-main{
+        grid-template-columns:1fr 1fr;
+
+        gap:25px;
+    }
+}
+
+@media(max-width:420px){
+
+    .nav-actions .search-btn{
+        display:none;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+
+        gap:8px;
+    }
+
+    .stat{
+        padding:14px;
+    }
+
+    .stat strong{
+        font-size:17px;
+    }
+
+    .phone-grid{
+        grid-template-columns:1fr;
+    }
+
+    .phone-image{
+        height:220px;
+    }
+
+    .samsung-features{
+        grid-template-columns:1fr;
+    }
+
+    .footer-main{
+        grid-template-columns:1fr;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+}
+
+</style></head><body><!-- =========================================================
+     HEADER
+========================================================= --><header class="site-header"><div class="container navbar">
+
+    <a href="index.html" class="logo">
+        Tech<span>DealsHub</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="reviews.html">
+            Reviews
+        </a>
+
+        <a href="upcoming.html">
+            Upcoming
+        </a>
+
+        <a href="brands.html" class="active">
+            Brands
+        </a>
+
+        <a href="editors-choice.html">
+            Editor's Choice
+        </a>
+
+        <a href="software-updates.html">
+            Updates
+        </a>
+
+    </nav>
+
+    <div class="nav-actions">
+
+        <button class="icon-btn search-btn"
+                aria-label="Search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+        </button>
+
+        <button class="icon-btn menu-btn"
+                id="menuBtn"
+                aria-label="Menu">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </div>
+
+</div>
+
+</header><!-- =========================================================
+     BREADCRUMB
+========================================================= --><div class="breadcrumb-wrap"><div class="container breadcrumb">
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <i class="fa-solid fa-chevron-right"></i>
+
+    <a href="brands.html">
+        Brands
+    </a>
+
+    <i class="fa-solid fa-chevron-right"></i>
+
+    <span>
+        Samsung
+    </span>
+
+</div>
+
+</div><!-- =========================================================
+     SAMSUNG HERO
+========================================================= --><section class="brand-hero"><div class="container hero-grid">
+
+    <div class="hero-content">
+
+        <span class="eyebrow">
+
+            <i class="fa-solid fa-mobile-screen-button"></i>
+
+            Samsung Brand
+
+        </span>
+
+        <h1>
+            Explore <span>Samsung</span>
+        </h1>
+
+        <p>
+            Discover the latest Samsung Galaxy smartphones,
+            flagship devices, detailed reviews, specifications,
+            upcoming Galaxy phones, One UI updates,
+            comparisons and the latest Samsung coverage.
+        </p>
+
+
+        <div class="hero-actions">
+
+            <a href="#latest-phones"
+               class="primary-btn">
+
+                <i class="fa-solid fa-mobile-screen"></i>
+
+                Latest Galaxy
+
+            </a>
+
+
+            <a href="#reviews"
+               class="secondary-btn">
+
+                <i class="fa-solid fa-star"></i>
+
+                Samsung Reviews
+
+            </a>
+
+        </div>
+
+
+        <div class="stats">
+
+            <div class="stat">
+
+                <strong>Galaxy</strong>
+
+                <span>
+                    Smartphone lineup
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>Ultra</strong>
+
+                <span>
+                    Premium flagship
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>One UI</strong>
+
+                <span>
+                    Software ecosystem
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>Galaxy AI</strong>
+
+                <span>
+                    Smart features
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="brand-visual">
+
+        <div class="samsung-orb">
+
+            <span class="samsung-word">
+                SAMSUNG
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section><!-- =========================================================
+     BRAND NAVIGATION
+========================================================= --><div class="brand-nav"><div class="container brand-nav-inner">
+
+    <a href="#latest-phones"
+       class="active">
+
+        Phones
+
+    </a>
+
+    <a href="#featured">
+
+        Featured
+
+    </a>
+
+    <a href="#reviews">
+
+        Reviews
+
+    </a>
+
+    <a href="#upcoming">
+
+        Upcoming
+
+    </a>
+
+    <a href="#updates">
+
+        One UI
+
+    </a>
+
+    <a href="#news">
+
+        News & Rumors
+
+    </a>
+
+    <a href="#comparisons">
+
+        Comparisons
+
+    </a>
+
+</div>
+
+</div><main><!-- =========================================================
+     FEATURED SAMSUNG PHONE
+========================================================= --><section class="section"
+         id="featured"><div class="container">
+
+    <div class="section-header">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+
+                <i class="fa-solid fa-award"></i>
+
+                Editor Pick
+
+            </span>
+
+            <h2>
+                Samsung's Featured Phone
+            </h2>
+
+        </div>
+
+
+        <a href="reviews.html"
+           class="view-all">
+
+            View Reviews
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+
+    <article class="featured-phone">
+
+
+        <div class="featured-image">
+
+            <img
+                src="Samsung/img/galaxys26ultra_16_9.png"
+                alt="Samsung Galaxy S26 Ultra">
+
+        </div>
+
+
+        <div class="featured-info">
+
+            <span class="featured-label">
+
+                Best Samsung Phone
+
+            </span>
+
+
+            <h3>
+                Galaxy S26 Ultra
+            </h3>
+
+
+            <p>
+                Samsung's premium Galaxy flagship delivers
+                a powerful combination of performance,
+                display technology, camera capabilities,
+                productivity features and Galaxy AI.
+            </p>
+
+
+            <div class="phone-rating">
+
+                <div class="score">
+                    9.4
+                </div>
+
+                <div>
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <div class="rating-text">
+                        Editor Rating
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="spec-pills">
+
+                <span class="spec-pill">
+                    Ultra Flagship
+                </span>
+
+                <span class="spec-pill">
+                    Galaxy AI
+                </span>
+
+                <span class="spec-pill">
+                    Advanced Camera
+                </span>
+
+                <span class="spec-pill">
+                    One UI
+                </span>
+
+            </div>
+
+
+            <div class="hero-actions">
+
+                <a href="samsung-galaxy-s26-ultra-review.html"
+                   class="primary-btn">
+
+                    Read Full Review
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+
+                <a href="samsung-galaxy-s26-ultra.html"
+                   class="secondary-btn">
+
+                    Specifications
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </article>
+
+</div>
+
+</section><!-- =========================================================
+     LATEST GALAXY PHONES
+========================================================= --><section class="section"
+         id="latest-phones"><div class="container">
+
+    <div class="section-header">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+
+                <i class="fa-solid fa-mobile-screen"></i>
+
+                Galaxy Lineup
+
+            </span>
+
+            <h2>
+                Latest Samsung Phones
+            </h2>
+
+            <p class="section-description">
+                Explore Samsung's latest Galaxy devices,
+                from premium Ultra models to mainstream
+                smartphones.
+            </p>
+
+        </div>
+
+
+        <a href="phones.html"
+           class="view-all">
+
+            View All Phones
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+
+    <div class="phone-grid">
+
+
+        <!-- Galaxy S26 Ultra -->
+
+        <a href="samsung-galaxy-s26-ultra.html"
+           class="phone-card">
+
+            <div class="phone-image">
+
+                <span class="phone-type">
+                    Ultra
+                </span>
+
+                <span class="card-score">
+                    9.4
+                </span>
+
+                <img
+                    src="Samsung/img/galaxys26ultra_16_9.png"
+                    alt="Samsung Galaxy S26 Ultra">
+
+            </div>
+
+
+            <div class="phone-content">
+
+                <h3>
+                    Galaxy S26 Ultra
+                </h3>
+
+                <p>
+                    Premium Galaxy flagship
+                </p>
+
+
+                <div class="mini-specs">
+
+                    <span class="mini-spec">
+                        Ultra
+                    </span>
+
+                    <span class="mini-spec">
+                        AMOLED
+                    </span>
+
+                    <span class="mini-spec">
+                        5G
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- Galaxy S26+ -->
+
+        <a href="samsung-galaxy-s26-plus.html"
+           class="phone-card">
+
+            <div class="phone-image">
+
+                <span class="phone-type">
+                    Flagship
+                </span>
+
+                <span class="card-score">
+                    9.2
+                </span>
+
+                <img
+                    src="Samsung/img/galaxys26ultra_16_9.png"
+                    alt="Samsung Galaxy S26+">
+
+            </div>
+
+
+            <div class="phone-content">
+
+                <h3>
+                    Galaxy S26+
+                </h3>
+
+                <p>
+                    Large premium Galaxy
+                </p>
+
+
+                <div class="mini-specs">
+
+                    <span class="mini-spec">
+                        AMOLED
+                    </span>
+
+                    <span class="mini-spec">
+                        5G
+                    </span>
+
+                    <span class="mini-spec">
+                        Galaxy AI
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- Galaxy S26 -->
+
+        <a href="samsung-galaxy-s26.html"
+           class="phone-card">
+
+            <div class="phone-image">
+
+                <span class="phone-type">
+                    Flagship
+                </span>
+
+                <span class="card-score">
+                    9.1
+                </span>
+
+                <img
+                    src="Samsung/img/galaxys26ultra_16_9.png"
+                    alt="Samsung Galaxy S26">
+
+            </div>
+
+
+            <div class="phone-content">
+
+                <h3>
+                    Galaxy S26
+                </h3>
+
+                <p>
+                    Compact Galaxy flagship
+                </p>
+
+
+                <div class="mini-specs">
+
+                    <span class="mini-spec">
+                        AMOLED
+                    </span>
+
+                    <span class="mini-spec">
+                        5G
+                    </span>
+
+                    <span class="mini-spec">
+                        One UI
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- Galaxy A Series -->
+
+        <a href="samsung-galaxy-a-series.html"
+           class="phone-card">
+
+            <div class="phone-image">
+
+                <span class="phone-type">
+                    Mid-Range
+                </span>
+
+                <span class="card-score">
+                    8.8
+                </span>
+
+                <img
+                    src="Samsung/img/galaxys26ultra_16_9.png"
+                    alt="Samsung Galaxy A Series">
+
+            </div>
+
+
+            <div class="phone-content">
+
+                <h3>
+                    Galaxy A Series
+                </h3>
+
+                <p>
+                    Value-focused Galaxy phones
+                </p>
+
+
+                <div class="mini-specs">
+
+                    <span class="mini-spec">
+                        AMOLED
+                    </span>
+
+                    <span class="mini-spec">
+                        5G
+                    </span>
+
+                    <span class="mini-spec">
+                        One UI
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</div>
+
+</section><!-- =========================================================
+     SAMSUNG REVIEWS
+========================================================= --><section class="section"
+         id="reviews"><div class="container">
+
+    <div class="section-header">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+
+                <i class="fa-solid fa-star"></i>
+
+                Expert Testing
+
+            </span>
+
+            <h2>
+                Latest Samsung Reviews
+            </h2>
+
+        </div>
+
+
+        <a href="reviews.html"
+           class="view-all">
+
+            All Reviews
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+
+    <div class="review-grid">
+
+
+        <a href="samsung-galaxy-s26-ultra-review.html"
+           class="review-card">
+
+            <div class="review-image">
+
+                <img
+                    src="Samsung/img/galaxys26ultra_16_9.png"
+                    alt="Galaxy S26 Ultra Review">
+
+            </div>
+
+
+            <div class="review-body">
+
+                <div class="review-meta">
+
+                    <span>
+                        Full Review
+                    </span>
+
+                    <span class="review-date">
+                        Samsung
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Galaxy S26 Ultra Review
+                </h3>
+
+
+                <p>
+                    Complete testing of performance,
+                    cameras, display, battery life,
+                    thermals and everyday use.
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <a href="samsung-galaxy-s26-plus-review.html"
+           class="review-card">
+
+            <div class="review-image">
+
+                <img
+                    src="Samsung/img/galaxys26ultra_16_9.png"
+                    alt="Galaxy S26 Plus Review">
+
+            </div>
+
+
+            <div class="review-body">
+
+                <div class="review-meta">
+
+                    <span>
+                        Performance
+                    </span>
+
+                    <span class="review-date">
+                        Samsung
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Galaxy S26+ Review
+                </h3>
+
+
+                <p>
+                    A closer look at Samsung's large
+                    flagship experience.
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <a href="samsung-galaxy-s26-review.html"
+           class="review-card">
+
+            <div class="review-image">
+
+                <img
+                    src="Samsung/img/galaxys26ultra_16_9.png"
+                    alt="Galaxy S26 Review">
+
+            </div>
+
+
+            <div class="review-body">
+
+                <div class="review-meta">
+
+                    <span>
+                        Daily Use
+                    </span>
+
+                    <span class="review-date">
+                        Samsung
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Galaxy S26 Review
+                </h3>
+
+
+                <p>
+                    Is Samsung's standard flagship the
+                    best Galaxy for most users?
+                </p>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</div>
+
+</section><!-- =========================================================
+     UPCOMING + ONE UI
+========================================================= --><section class="section"
+         id="upcoming"><div class="container">
+
+    <div class="two-column">
+
+
+        <!-- Upcoming Galaxy -->
+
+        <div>
+
+            <div class="section-header">
+
+                <div class="section-heading">
+
+                    <span class="section-tag">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        What's Next
+
+                    </span>
+
+                    <h2>
+                        Upcoming Galaxy Phones
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-list">
+
+
+                <a href="upcoming.html"
+                   class="info-item">
+
+                    <div class="info-icon">
+
+                        <i class="fa-solid fa-mobile-screen"></i>
+
+                    </div>
+
+
+                    <div class="info-text">
+
+                        <h3>
+                            Future Galaxy Flagships
+                        </h3>
+
+                        <p>
+                            Latest reports and expected
+                            Samsung flagship developments.
+                        </p>
+
+                    </div>
+
+
+                    <span class="status yellow">
+                        Rumored
+                    </span>
+
+                </a>
+
+
+                <a href="leaks-rumors.html"
+                   class="info-item">
+
+                    <div class="info-icon">
+
+                        <i class="fa-solid fa-bolt"></i>
+
+                    </div>
+
+
+                    <div class="info-text">
+
+                        <h3>
+                            Galaxy Leaks
+                        </h3>
+
+                        <p>
+                            Follow upcoming designs,
+                            cameras and hardware.
+                        </p>
+
+                    </div>
+
+
+                    <span class="status blue">
+                        Leaks
+                    </span>
+
+                </a>
+
+
+                <a href="upcoming.html"
+                   class="info-item">
+
+                    <div class="info-icon">
+
+                        <i class="fa-solid fa-calendar-days"></i>
+
+                    </div>
+
+
+                    <div class="info-text">
+
+                        <h3>
+                            Next Galaxy Launches
+                        </h3>
+
+                        <p>
+                            Track expected announcements
+                            and launch information.
+                        </p>
+
+                    </div>
+
+
+                    <span class="status yellow">
+                        Expected
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- One UI -->
+
+        <div id="updates">
+
+            <div class="section-header">
+
+                <div class="section-heading">
+
+                    <span class="section-tag">
+
+                        <i class="fa-solid fa-layer-group"></i>
+
+                        Software
+
+                    </span>
+
+                    <h2>
+                        One UI Updates
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-list">
+
+
+                <a href="software-updates.html"
+                   class="info-item">
+
+                    <div class="info-icon">
+
+                        <i class="fa-solid fa-rotate"></i>
+
+                    </div>
+
+
+                    <div class="info-text">
+
+                        <h3>
+                            Latest One UI Updates
+                        </h3>
+
+                        <p>
+                            New features, improvements
+                            and changes.
+                        </p>
+
+                    </div>
+
+
+                    <span class="status green">
+                        Latest
+                    </span>
+
+                </a>
+
+
+                <a href="software-updates.html"
+                   class="info-item">
+
+                    <div class="info-icon">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+
+                    <div class="info-text">
+
+                        <h3>
+                            Galaxy Security Updates
+                        </h3>
+
+                        <p>
+                            Important security patches
+                            and improvements.
+                        </p>
+
+                    </div>
+
+
+                    <span class="status blue">
+                        Updates
+                    </span>
+
+                </a>
+
+
+                <a href="software-updates.html"
+                   class="info-item">
+
+                    <div class="info-icon">
+
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+
+                    </div>
+
+
+                    <div class="info-text">
+
+                        <h3>
+                            Galaxy Update Tracker
+                        </h3>
+
+                        <p>
+                            Follow Samsung's software
+                            rollout across devices.
+                        </p>
+
+                    </div>
+
+
+                    <span class="status green">
+                        Tracking
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section><!-- =========================================================
+     SAMSUNG NEWS
+========================================================= --><section class="section"
+         id="news"><div class="container">
+
+    <div class="section-header">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+
+                <i class="fa-solid fa-newspaper"></i>
+
+                Samsung Coverage
+
+            </span>
+
+            <h2>
+                Samsung News & Rumors
+            </h2>
+
+        </div>
+
+
+        <a href="leaks-rumors.html"
+           class="view-all">
+
+            View All
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+
+    <div class="news-grid">
+
+
+        <a href="leaks-rumors.html"
+           class="news-card">
+
+            <div class="news-icon">
+
+                <i class="fa-solid fa-mobile-screen"></i>
+
+            </div>
+
+            <span>
+                Galaxy
+            </span>
+
+            <h3>
+                What's next for Samsung's Galaxy lineup?
+            </h3>
+
+            <p>
+                Follow the latest developments surrounding
+                upcoming Galaxy smartphones.
+            </p>
+
+        </a>
+
+
+        <a href="leaks-rumors.html"
+           class="news-card">
+
+            <div class="news-icon">
+
+                <i class="fa-solid fa-camera"></i>
+
+            </div>
+
+            <span>
+                Camera
+            </span>
+
+            <h3>
+                Samsung's next camera innovations
+            </h3>
+
+            <p>
+                Explore camera-related developments and
+                expected improvements.
+            </p>
+
+        </a>
+
+
+        <a href="leaks-rumors.html"
+           class="news-card">
+
+            <div class="news-icon">
+
+                <i class="fa-solid fa-microchip"></i>
+
+            </div>
+
+            <span>
+                Technology
+            </span>
+
+            <h3>
+                The future of Galaxy performance
+            </h3>
+
+            <p>
+                Track processor, AI and performance
+                developments across Galaxy devices.
+            </p>
+
+        </a>
+
+    </div>
+
+</div>
+
+</section><!-- =========================================================
+     POPULAR COMPARISONS
+========================================================= --><section class="section"
+         id="comparisons"><div class="container">
+
+    <div class="section-header">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+
+                <i class="fa-solid fa-scale-balanced"></i>
+
+                Compare
+
+            </span>
+
+            <h2>
+                Popular Samsung Comparisons
+            </h2>
+
+        </div>
+
+
+        <a href="comparisons.html"
+           class="view-all">
+
+            All Comparisons
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+
+    <div class="compare-grid">
+
+
+        <!-- S26 Ultra vs S26+ -->
+
+        <a href="samsung-galaxy-s26-ultra-vs-s26-plus.html"
+           class="compare-card">
+
+            <div class="compare-phones">
+
+
+                <div class="compare-phone">
+
+                    <img
+                        src="Samsung/img/galaxys26ultra_16_9.png"
+                        alt="Galaxy S26 Ultra">
+
+                    <h3>
+                        S26 Ultra
+                    </h3>
+
+                    <span class="compare-label">
+                        Ultra
+                    </span>
+
+                </div>
+
+
+                <div class="compare-phone">
+
+                    <img
+                        src="Samsung/img/galaxys26ultra_16_9.png"
+                        alt="Galaxy S26 Plus">
+
+                    <h3>
+                        S26+
+                    </h3>
+
+                    <span class="compare-label">
+                        Plus
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- S26 Ultra vs S26 -->
+
+        <a href="samsung-galaxy-s26-ultra-vs-s26.html"
+           class="compare-card">
+
+            <div class="compare-phones">
+
+
+                <div class="compare-phone">
+
+                    <img
+                        src="Samsung/img/galaxys26ultra_16_9.png"
+                        alt="Galaxy S26 Ultra">
+
+                    <h3>
+                        S26 Ultra
+                    </h3>
+
+                    <span class="compare-label">
+                        Ultra
+                    </span>
+
+                </div>
+
+
+                <div class="compare-phone">
+
+                    <img
+                        src="Samsung/img/galaxys26ultra_16_9.png"
+                        alt="Galaxy S26">
+
+                    <h3>
+                        S26
+                    </h3>
+
+                    <span class="compare-label">
+                        Standard
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- Samsung vs Apple -->
+
+        <a href="samsung-galaxy-s26-ultra-vs-iphone-17-pro-max.html"
+           class="compare-card">
+
+            <div class="compare-phones">
+
+
+                <div class="compare-phone">
+
+                    <img
+                        src="Samsung/img/galaxys26ultra_16_9.png"
+                        alt="Galaxy S26 Ultra">
+
+                    <h3>
+                        S26 Ultra
+                    </h3>
+
+                    <span class="compare-label">
+                        Samsung
+                    </span>
+
+                </div>
+
+
+                <div class="compare-phone">
+
+                    <img
+                        src="apple/img/iphone17promax_16_9.png"
+                        alt="iPhone 17 Pro Max">
+
+                    <h3>
+                        iPhone 17 Pro Max
+                    </h3>
+
+                    <span class="compare-label">
+                        Apple
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</div>
+
+</section><!-- =========================================================
+     WHY SAMSUNG
+========================================================= --><section class="section"><div class="container">
+
+    <div class="section-header">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                Galaxy Ecosystem
+
+            </span>
+
+            <h2>
+                Why Follow Samsung?
+            </h2>
+
+            <p class="section-description">
+                Everything you need to stay updated on
+                Samsung Galaxy smartphones and software.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="samsung-features">
+
+
+        <div class="feature-box">
+
+            <i class="fa-solid fa-mobile-screen-button"></i>
+
+            <h3>
+                Galaxy Coverage
+            </h3>
+
+            <p>
+                Follow Samsung's flagship, mid-range and
+                affordable Galaxy smartphones.
+            </p>
+
+        </div>
+
+
+        <div class="feature-box">
+
+            <i class="fa-solid fa-star"></i>
+
+            <h3>
+                Expert Reviews
+            </h3>
+
+            <p>
+                Detailed testing of performance, cameras,
+                battery, display and gaming.
+            </p>
+
+        </div>
+
+
+        <div class="feature-box">
+
+            <i class="fa-solid fa-layer-group"></i>
+
+            <h3>
+                One UI Updates
+            </h3>
+
+            <p>
+                Keep track of One UI features, Android
+                updates and Galaxy security patches.
+            </p>
+
+        </div>
+
+
+        <div class="feature-box">
+
+            <i class="fa-solid fa-scale-balanced"></i>
+
+            <h3>
+                Galaxy Comparisons
+            </h3>
+
+            <p>
+                Compare Galaxy phones against each other
+                and competing flagship smartphones.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section><!-- =========================================================
+     CTA
+========================================================= --><section class="section"><div class="container">
+
+    <div class="brand-cta">
+
+        <h2>
+            Stay Updated on Samsung
+        </h2>
+
+        <p>
+            Explore the latest Galaxy phones, reviews,
+            specifications, One UI updates, comparisons
+            and upcoming Samsung devices.
+        </p>
+
+
+        <div class="hero-actions">
+
+            <a href="reviews.html"
+               class="primary-btn">
+
+                Explore Reviews
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+            <a href="upcoming.html"
+               class="secondary-btn">
+
+                Upcoming Galaxy
+
+                <i class="fa-solid fa-clock"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section></main><!-- =========================================================
+     FOOTER
+========================================================= --><footer><div class="container">
+
+    <div class="footer-main">
+
+
+        <div class="footer-brand">
+
+            <a href="index.html"
+               class="logo">
+
+                Tech<span>DealsHub</span>
+
+            </a>
+
+            <p>
+                Smartphone reviews, specifications,
+                comparisons, upcoming devices and
+                technology updates.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="reviews.html">
+                Reviews
+            </a>
+
+            <a href="upcoming.html">
+                Upcoming Phones
+            </a>
+
+            <a href="brands.html">
+                Brands
+            </a>
+
+            <a href="comparisons.html">
+                Comparisons
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Samsung
+            </h3>
+
+            <a href="#latest-phones">
+                Galaxy Phones
+            </a>
+
+            <a href="#reviews">
+                Reviews
+            </a>
+
+            <a href="#upcoming">
+                Upcoming
+            </a>
+
+            <a href="#updates">
+                One UI Updates
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                More
+            </h3>
+
+            <a href="editors-choice.html">
+                Editor's Choice
+            </a>
+
+            <a href="software-updates.html">
+                Software Updates
+            </a>
+
+            <a href="leaks-rumors.html">
+                Leaks & Rumors
+            </a>
+
+            <a href="index.html">
+                Home
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 TechDealsHub. All rights reserved.
+        </p>
+
+
+        <div class="socials">
+
+            <a href="#"
+               aria-label="Facebook">
+
+                <i class="fa-brands fa-facebook-f"></i>
+
+            </a>
+
+
+            <a href="#"
+               aria-label="X">
+
+                <i class="fa-brands fa-x-twitter"></i>
+
+            </a>
+
+
+            <a href="#"
+               aria-label="YouTube">
+
+                <i class="fa-brands fa-youtube"></i>
+
+            </a>
+
+
+            <a href="#"
+               aria-label="Instagram">
+
+                <i class="fa-brands fa-instagram"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</footer><!-- =========================================================
+     JAVASCRIPT
+========================================================= --><script>
+
+const menuBtn =
+    document.getElementById("menuBtn");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+
+if(menuBtn){
+
+    menuBtn.addEventListener("click", () => {
+
+        navLinks.classList.toggle("show");
+
+        const icon =
+            menuBtn.querySelector("i");
+
+
+        if(navLinks.classList.contains("show")){
+
+            icon.classList.remove("fa-bars");
+
+            icon.classList.add("fa-xmark");
+
+        }else{
+
+            icon.classList.remove("fa-xmark");
+
+            icon.classList.add("fa-bars");
+
+        }
+
+    });
+
+}
+
+
+document.querySelectorAll(".nav-links a")
+.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.classList.remove("show");
+
+        const icon =
+            menuBtn?.querySelector("i");
+
+
+        if(icon){
+
+            icon.classList.remove("fa-xmark");
+
+            icon.classList.add("fa-bars");
+
+        }
+
+    });
+
+});
+
+
+document.querySelectorAll(".brand-nav a")
+.forEach(link => {
+
+    link.addEventListener("click", function(){
+
+        document
+            .querySelectorAll(".brand-nav a")
+            .forEach(item => {
+
+                item.classList.remove("active");
+
+            });
+
+        this.classList.add("active");
+
+    });
+
+});
+
+
+const searchBtn =
+    document.querySelector(".search-btn");
+
+
+if(searchBtn){
+
+    searchBtn.addEventListener("click", () => {
+
+        window.location.href =
+            "search.html";
+
+    });
+
+}
+
+</script></body>
+</html>

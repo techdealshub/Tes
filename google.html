@@ -1,0 +1,4817 @@
+<!DOCTYPE html><html lang="en">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Google Pixel Phones — TechDealsHub</title><meta name="description" content="Explore the latest Google Pixel phones, reviews, specifications, comparisons and news on TechDealsHub."><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"><link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+
+    --bg:#070c12;
+    --bg-soft:#0b1119;
+
+    --card:#101824;
+    --card-2:#131c29;
+
+    --border:rgba(255,255,255,.08);
+    --border-hover:rgba(66,133,244,.32);
+
+    --text:#f5f7fa;
+    --muted:#9aa6b5;
+    --muted-2:#6f7b8b;
+
+    --google:#4285f4;
+    --google-dark:#2f6fd6;
+    --google-soft:rgba(66,133,244,.11);
+    --google-border:rgba(66,133,244,.23);
+
+    --green:#35d07f;
+    --yellow:#ffc857;
+
+    --radius:20px;
+    --radius-lg:28px;
+
+    --container:1180px;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 50% -20%,
+            rgba(66,133,244,.055),
+            transparent 35%
+        ),
+        var(--bg);
+
+    color:var(--text);
+
+    line-height:1.6;
+
+    overflow-x:hidden;
+
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    font:inherit;
+}
+
+.container{
+
+    width:min(
+        calc(100% - 40px),
+        var(--container)
+    );
+
+    margin:auto;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header{
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(7,12,18,.90);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.header-inner{
+
+    min-height:74px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:25px;
+
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    font-size:19px;
+    font-weight:800;
+
+    white-space:nowrap;
+
+}
+
+.logo-mark{
+
+    width:36px;
+    height:36px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:11px;
+
+    background:var(--google);
+
+    color:#fff;
+
+    font-size:16px;
+
+    box-shadow:
+        0 8px 25px rgba(66,133,244,.20);
+
+}
+
+.logo span{
+    color:#fff;
+}
+
+.logo strong{
+    color:var(--google);
+}
+
+
+.main-nav{
+
+    display:flex;
+    align-items:center;
+
+    gap:5px;
+
+}
+
+.main-nav a{
+
+    padding:10px 13px;
+
+    color:var(--muted);
+
+    font-size:13px;
+    font-weight:600;
+
+    border-radius:10px;
+
+    transition:.25s ease;
+
+}
+
+.main-nav a:hover,
+.main-nav a.active{
+
+    color:#fff;
+
+    background:rgba(255,255,255,.055);
+
+}
+
+.main-nav a.active{
+    color:var(--google);
+}
+
+
+.header-actions{
+
+    display:flex;
+    align-items:center;
+
+    gap:9px;
+
+}
+
+.header-btn{
+
+    width:40px;
+    height:40px;
+
+    display:grid;
+    place-items:center;
+
+    border:1px solid var(--border);
+
+    background:rgba(255,255,255,.025);
+
+    color:var(--muted);
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+
+}
+
+.header-btn:hover{
+
+    color:#fff;
+
+    border-color:var(--border-hover);
+
+    background:var(--google-soft);
+
+}
+
+.mobile-menu-btn{
+    display:none;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.breadcrumb{
+
+    border-bottom:1px solid rgba(255,255,255,.045);
+
+}
+
+.breadcrumb-inner{
+
+    min-height:48px;
+
+    display:flex;
+    align-items:center;
+
+    gap:9px;
+
+    color:var(--muted-2);
+
+    font-size:12px;
+
+}
+
+.breadcrumb a:hover{
+    color:var(--google);
+}
+
+.breadcrumb i{
+    font-size:9px;
+}
+
+.breadcrumb .current{
+    color:var(--muted);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    padding:32px 0 22px;
+}
+
+.hero-card{
+
+    display:grid;
+
+    grid-template-columns:
+        1.08fr
+        .92fr;
+
+    min-height:390px;
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-lg);
+
+    background:
+
+        radial-gradient(
+            circle at 90% 40%,
+            rgba(66,133,244,.14),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #101824,
+            #0c131d
+        );
+
+}
+
+.hero-content{
+
+    padding:55px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    position:relative;
+    z-index:2;
+
+}
+
+.hero-brand{
+
+    display:inline-flex;
+    align-items:center;
+
+    gap:8px;
+
+    width:max-content;
+
+    margin-bottom:17px;
+
+    padding:7px 11px;
+
+    border-radius:999px;
+
+    background:var(--google-soft);
+
+    border:1px solid var(--google-border);
+
+    color:var(--google);
+
+    font-size:11px;
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    letter-spacing:.08em;
+
+}
+
+.hero-brand i{
+    font-size:9px;
+}
+
+.hero-title{
+
+    max-width:650px;
+
+    font-size:clamp(
+        34px,
+        4vw,
+        55px
+    );
+
+    line-height:1.05;
+
+    letter-spacing:-.045em;
+
+    margin-bottom:18px;
+
+}
+
+.hero-title span{
+    color:var(--google);
+}
+
+.hero-description{
+
+    max-width:620px;
+
+    color:var(--muted);
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    margin-bottom:28px;
+
+}
+
+.hero-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn{
+
+    min-height:44px;
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:9px;
+
+    padding:0 17px;
+
+    border-radius:12px;
+
+    font-size:12px;
+    font-weight:700;
+
+    border:1px solid transparent;
+
+    transition:.25s ease;
+
+}
+
+.btn-primary{
+
+    color:#fff;
+
+    background:var(--google);
+
+    box-shadow:
+        0 9px 25px rgba(66,133,244,.15);
+
+}
+
+.btn-primary:hover{
+
+    background:var(--google-dark);
+
+    transform:translateY(-1px);
+
+}
+
+.btn-secondary{
+
+    color:#dce2e8;
+
+    background:rgba(255,255,255,.035);
+
+    border-color:var(--border);
+
+}
+
+.btn-secondary:hover{
+
+    color:#fff;
+
+    background:rgba(255,255,255,.07);
+
+    border-color:rgba(255,255,255,.15);
+
+}
+
+.hero-visual{
+
+    min-height:390px;
+
+    display:grid;
+    place-items:center;
+
+    padding:30px;
+
+    position:relative;
+
+}
+
+.hero-visual::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:360px;
+    height:360px;
+
+    border-radius:50%;
+
+    background:rgba(66,133,244,.10);
+
+    filter:blur(30px);
+
+}
+
+.hero-visual img{
+
+    position:relative;
+
+    z-index:1;
+
+    width:min(100%,500px);
+
+    max-height:330px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 25px 40px rgba(0,0,0,.5)
+        );
+
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats{
+    padding:12px 0 28px;
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    background:var(--card);
+
+    overflow:hidden;
+
+}
+
+.stat{
+
+    padding:20px;
+
+    text-align:center;
+
+    border-right:1px solid var(--border);
+
+}
+
+.stat:last-child{
+    border-right:0;
+}
+
+.stat strong{
+
+    display:block;
+
+    font-size:23px;
+    font-weight:800;
+
+    margin-bottom:3px;
+
+}
+
+.stat span{
+
+    color:var(--muted-2);
+
+    font-size:11px;
+    font-weight:600;
+
+}
+
+
+/* =========================================================
+   SECTION COMMON
+========================================================= */
+
+.section{
+    padding:35px 0;
+}
+
+.section-header{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    margin-bottom:20px;
+
+}
+
+.section-heading{
+    min-width:0;
+}
+
+.section-tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    color:var(--google);
+
+    font-size:10px;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    letter-spacing:.10em;
+
+    margin-bottom:7px;
+
+}
+
+.section-tag i{
+    font-size:10px;
+}
+
+.section-heading h2{
+
+    font-size:26px;
+
+    letter-spacing:-.035em;
+
+    line-height:1.15;
+
+}
+
+.section-description{
+
+    margin-top:7px;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+}
+
+.view-all{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    font-weight:700;
+
+    white-space:nowrap;
+
+}
+
+.view-all:hover{
+    color:var(--google);
+}
+
+
+/* =========================================================
+   PHONE GRID
+========================================================= */
+
+.phone-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:17px;
+
+}
+
+.phone-card{
+
+    position:relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111a26,
+            #0d151f
+        );
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.28s ease;
+
+}
+
+.phone-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:var(--border-hover);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.20);
+
+}
+
+.phone-image{
+
+    height:265px;
+
+    display:grid;
+
+    place-items:center;
+
+    position:relative;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 55%,
+            rgba(66,133,244,.10),
+            transparent 48%
+        ),
+
+        #0b121b;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.phone-image img{
+
+    width:82%;
+    height:82%;
+
+    object-fit:contain;
+
+    transition:.3s ease;
+
+}
+
+.phone-card:hover .phone-image img{
+    transform:scale(1.035);
+}
+
+.phone-badge{
+
+    position:absolute;
+
+    top:13px;
+    left:13px;
+
+    padding:6px 9px;
+
+    border-radius:8px;
+
+    background:var(--google);
+
+    color:#fff;
+
+    font-size:9px;
+    font-weight:800;
+
+    text-transform:uppercase;
+
+}
+
+.phone-body{
+    padding:18px;
+}
+
+.phone-series{
+
+    color:var(--google);
+
+    font-size:10px;
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    letter-spacing:.07em;
+
+    margin-bottom:6px;
+
+}
+
+.phone-name{
+
+    font-size:18px;
+    font-weight:800;
+
+    letter-spacing:-.025em;
+
+    margin-bottom:7px;
+
+}
+
+.phone-description{
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    line-height:1.65;
+
+    min-height:40px;
+
+}
+
+.phone-rating{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:14px;
+
+}
+
+.stars{
+
+    color:var(--yellow);
+
+    font-size:11px;
+
+    letter-spacing:1px;
+
+}
+
+.rating-number{
+
+    color:#fff;
+
+    font-size:11px;
+    font-weight:800;
+
+}
+
+.rating-label{
+
+    color:var(--muted-2);
+
+    font-size:10px;
+
+}
+
+.phone-specs{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:8px;
+
+    margin-top:16px;
+
+}
+
+.phone-spec{
+
+    padding:9px;
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,.025);
+
+    border:1px solid rgba(255,255,255,.045);
+
+}
+
+.phone-spec span{
+
+    display:block;
+
+    color:var(--muted-2);
+
+    font-size:9px;
+
+    margin-bottom:2px;
+
+}
+
+.phone-spec strong{
+
+    font-size:10px;
+
+    font-weight:700;
+
+}
+
+.card-footer{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    margin-top:16px;
+
+}
+
+.card-link{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    color:#fff;
+
+    font-size:11px;
+
+    font-weight:700;
+
+}
+
+.card-link i{
+    color:var(--google);
+}
+
+.card-link:hover{
+    color:var(--google);
+}
+
+.compare-btn{
+
+    width:34px;
+    height:34px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:10px;
+
+    border:1px solid var(--border);
+
+    background:rgba(255,255,255,.025);
+
+    color:var(--muted);
+
+    cursor:pointer;
+
+    transition:.25s ease;
+
+}
+
+.compare-btn:hover{
+
+    color:var(--google);
+
+    border-color:var(--google-border);
+
+    background:var(--google-soft);
+
+}
+
+
+/* =========================================================
+   REVIEWS
+========================================================= */
+
+.review-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:17px;
+
+}
+
+.review-card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    transition:.25s ease;
+
+}
+
+.review-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:var(--border-hover);
+
+}
+
+.review-image{
+
+    height:185px;
+
+    background:#0b121b;
+
+    overflow:hidden;
+
+}
+
+.review-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.review-body{
+    padding:17px;
+}
+
+.review-meta{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    margin-bottom:9px;
+
+}
+
+.review-meta span{
+
+    color:var(--muted-2);
+
+    font-size:10px;
+    font-weight:600;
+
+}
+
+.review-score{
+
+    padding:5px 8px;
+
+    border-radius:7px;
+
+    background:rgba(53,208,127,.10);
+
+    color:var(--green);
+
+    font-size:10px;
+    font-weight:800;
+
+}
+
+.review-card h3{
+
+    font-size:16px;
+
+    line-height:1.35;
+
+    letter-spacing:-.02em;
+
+    margin-bottom:8px;
+
+}
+
+.review-card p{
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.65;
+
+}
+
+
+/* =========================================================
+   FEATURED GOOGLE PIXEL
+========================================================= */
+
+.featured-section{
+
+    padding-top:42px;
+    padding-bottom:42px;
+
+}
+
+.featured-wrapper{
+    position:relative;
+}
+
+.featured-card{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,.92fr)
+        minmax(0,1.08fr);
+
+    min-height:455px;
+
+    overflow:hidden;
+
+    border-radius:26px;
+
+    border:1px solid var(--google-border);
+
+    background:
+
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(66,133,244,.10),
+            transparent 34%
+        ),
+
+        linear-gradient(
+            135deg,
+            #111a26 0%,
+            #0c141f 100%
+        );
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.18);
+
+}
+
+
+/* IMAGE PANEL */
+
+.featured-image-panel{
+
+    position:relative;
+
+    min-height:455px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:35px;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(66,133,244,.14),
+            transparent 48%
+        ),
+
+        #0a111a;
+
+    border-right:
+        1px solid rgba(66,133,244,.12);
+
+    overflow:hidden;
+
+}
+
+.featured-image-panel::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:290px;
+    height:290px;
+
+    border-radius:50%;
+
+    border:
+        1px solid rgba(66,133,244,.09);
+
+}
+
+.featured-image-panel::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    border:
+        1px dashed rgba(66,133,244,.08);
+
+}
+
+.featured-image-panel img{
+
+    position:relative;
+
+    z-index:3;
+
+    width:88%;
+
+    max-width:460px;
+
+    height:390px;
+
+    object-fit:contain;
+
+    filter:
+
+        drop-shadow(
+            0 25px 35px rgba(0,0,0,.50)
+        )
+
+        drop-shadow(
+            0 0 30px rgba(66,133,244,.08)
+        );
+
+    transition:
+        transform .4s ease;
+
+}
+
+.featured-card:hover
+.featured-image-panel img{
+
+    transform:scale(1.035);
+
+}
+
+.featured-image-badge{
+
+    position:absolute;
+
+    top:20px;
+    left:20px;
+
+    z-index:5;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    padding:8px 11px;
+
+    border-radius:9px;
+
+    background:rgba(66,133,244,.12);
+
+    border:
+        1px solid rgba(66,133,244,.24);
+
+    color:var(--google);
+
+    font-size:9px;
+
+    font-weight:800;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+}
+
+.featured-image-badge i{
+    font-size:10px;
+}
+
+
+/* CONTENT */
+
+.featured-content{
+
+    min-width:0;
+
+    padding:43px 46px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.featured-label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:var(--google);
+
+    font-size:10px;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    letter-spacing:.10em;
+
+    margin-bottom:10px;
+
+}
+
+.featured-label::before{
+
+    content:"";
+
+    width:22px;
+    height:2px;
+
+    background:var(--google);
+
+    border-radius:2px;
+
+}
+
+.featured-content h3{
+
+    font-size:clamp(
+        27px,
+        3vw,
+        39px
+    );
+
+    line-height:1.08;
+
+    letter-spacing:-.04em;
+
+    margin-bottom:12px;
+
+}
+
+.featured-content > p{
+
+    max-width:620px;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.75;
+
+    margin-bottom:20px;
+
+}
+
+
+/* SCORE */
+
+.featured-score-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:22px;
+
+}
+
+.featured-score{
+
+    width:67px;
+    height:67px;
+
+    flex:0 0 67px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:16px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(66,133,244,.20),
+            rgba(66,133,244,.06)
+        );
+
+    border:
+        1px solid rgba(66,133,244,.25);
+
+}
+
+.featured-score strong{
+
+    display:block;
+
+    font-size:23px;
+
+    line-height:1;
+
+    font-weight:800;
+
+}
+
+.featured-score small{
+
+    display:block;
+
+    color:var(--google);
+
+    font-size:8px;
+
+    font-weight:800;
+
+    text-align:center;
+
+    margin-top:3px;
+
+}
+
+.featured-score-info strong{
+
+    display:block;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    margin-bottom:3px;
+
+}
+
+.featured-score-stars{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+}
+
+.featured-score-stars .stars{
+    font-size:10px;
+}
+
+.featured-score-stars span{
+
+    color:var(--muted-2);
+
+    font-size:10px;
+
+}
+
+
+/* FEATURED SPECS */
+
+.featured-specs{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:8px;
+
+    margin-bottom:23px;
+
+}
+
+.featured-spec{
+
+    min-width:0;
+
+    padding:11px 10px;
+
+    border-radius:11px;
+
+    background:rgba(255,255,255,.028);
+
+    border:
+        1px solid rgba(255,255,255,.055);
+
+}
+
+.featured-spec i{
+
+    display:block;
+
+    color:var(--google);
+
+    font-size:11px;
+
+    margin-bottom:7px;
+
+}
+
+.featured-spec span{
+
+    display:block;
+
+    color:var(--muted-2);
+
+    font-size:8px;
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+    letter-spacing:.04em;
+
+    margin-bottom:2px;
+
+}
+
+.featured-spec strong{
+
+    display:block;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+
+    color:#fff;
+
+    font-size:10px;
+
+    font-weight:700;
+
+}
+
+
+/* FEATURED ACTIONS */
+
+.featured-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+.featured-btn{
+
+    min-height:44px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+    padding:0 17px;
+
+    border-radius:11px;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    transition:.25s ease;
+
+}
+
+.featured-btn-primary{
+
+    color:#fff;
+
+    background:var(--google);
+
+    border:
+        1px solid var(--google);
+
+    box-shadow:
+        0 10px 24px rgba(66,133,244,.13);
+
+}
+
+.featured-btn-primary:hover{
+
+    background:var(--google-dark);
+
+    transform:translateY(-1px);
+
+}
+
+.featured-btn-secondary{
+
+    color:#dfe5eb;
+
+    background:rgba(255,255,255,.035);
+
+    border:1px solid var(--border);
+
+}
+
+.featured-btn-secondary:hover{
+
+    color:#fff;
+
+    background:rgba(255,255,255,.07);
+
+    border-color:rgba(255,255,255,.16);
+
+}
+
+.featured-btn i{
+    font-size:10px;
+}
+
+
+/* =========================================================
+   PIXEL SERIES
+========================================================= */
+
+.series-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+
+}
+
+.series-card{
+
+    min-height:145px;
+
+    padding:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    border:1px solid var(--border);
+
+    border-radius:17px;
+
+    background:var(--card);
+
+    transition:.25s ease;
+
+}
+
+.series-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:var(--border-hover);
+
+}
+
+.series-icon{
+
+    width:39px;
+    height:39px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:11px;
+
+    background:var(--google-soft);
+
+    color:var(--google);
+
+    font-size:15px;
+
+}
+
+.series-card h3{
+
+    font-size:15px;
+
+    margin-top:14px;
+
+}
+
+.series-card p{
+
+    color:var(--muted-2);
+
+    font-size:10px;
+
+    margin-top:3px;
+
+}
+
+.series-arrow{
+
+    color:var(--muted-2);
+
+    align-self:flex-end;
+
+}
+
+.series-card:hover .series-arrow{
+    color:var(--google);
+}
+
+
+/* =========================================================
+   COMPARISONS
+========================================================= */
+
+.comparison-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:17px;
+
+}
+
+.comparison-card{
+
+    padding:21px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    transition:.25s ease;
+
+}
+
+.comparison-card:hover{
+
+    border-color:var(--border-hover);
+
+    transform:translateY(-3px);
+
+}
+
+.comparison-phones{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 50px 1fr;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.comparison-phone{
+    text-align:center;
+}
+
+.comparison-phone-image{
+
+    height:155px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:14px;
+
+    background:#0b121b;
+
+    margin-bottom:10px;
+
+}
+
+.comparison-phone-image img{
+
+    width:78%;
+    height:85%;
+
+    object-fit:contain;
+
+}
+
+.comparison-phone-name{
+
+    font-size:11px;
+
+    font-weight:800;
+
+}
+
+.vs{
+
+    width:40px;
+    height:40px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    background:var(--google-soft);
+
+    border:1px solid var(--google-border);
+
+    color:var(--google);
+
+    font-size:10px;
+
+    font-weight:800;
+
+    margin:auto;
+
+}
+
+.comparison-info{
+
+    margin-top:17px;
+
+    padding-top:14px;
+
+    border-top:1px solid var(--border);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.comparison-info span{
+
+    color:var(--muted-2);
+
+    font-size:10px;
+
+}
+
+.comparison-info a{
+
+    color:var(--google);
+
+    font-size:10px;
+
+    font-weight:800;
+
+}
+
+
+/* =========================================================
+   NEWS
+========================================================= */
+
+.news-layout{
+
+    display:grid;
+
+    grid-template-columns:
+        1.1fr .9fr;
+
+    gap:17px;
+
+}
+
+.news-main{
+
+    overflow:hidden;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+}
+
+.news-main-image{
+
+    height:285px;
+
+    overflow:hidden;
+
+}
+
+.news-main-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.news-main-content{
+    padding:21px;
+}
+
+.news-category{
+
+    display:inline-flex;
+
+    color:var(--google);
+
+    font-size:9px;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    letter-spacing:.08em;
+
+    margin-bottom:8px;
+
+}
+
+.news-main h3{
+
+    font-size:21px;
+
+    line-height:1.3;
+
+    letter-spacing:-.025em;
+
+    margin-bottom:9px;
+
+}
+
+.news-main p{
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.7;
+
+}
+
+.news-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.news-item{
+
+    display:grid;
+
+    grid-template-columns:
+        105px 1fr;
+
+    gap:13px;
+
+    padding:11px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    transition:.25s ease;
+
+}
+
+.news-item:hover{
+
+    border-color:var(--border-hover);
+
+}
+
+.news-thumb{
+
+    width:105px;
+    height:82px;
+
+    overflow:hidden;
+
+    border-radius:10px;
+
+    background:#0b121b;
+
+}
+
+.news-thumb img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.news-item-content{
+    min-width:0;
+}
+
+.news-item-content h4{
+
+    font-size:12px;
+
+    line-height:1.45;
+
+    margin-bottom:6px;
+
+}
+
+.news-date{
+
+    color:var(--muted-2);
+
+    font-size:9px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer{
+
+    margin-top:45px;
+
+    padding:45px 0 22px;
+
+    border-top:1px solid var(--border);
+
+    background:#060b11;
+
+}
+
+.footer-inner{
+
+    display:grid;
+
+    grid-template-columns:
+        1.7fr
+        repeat(3,1fr);
+
+    gap:40px;
+
+}
+
+.footer-brand p{
+
+    max-width:330px;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.8;
+
+    margin-top:13px;
+
+}
+
+.footer-column h4{
+
+    font-size:11px;
+
+    margin-bottom:13px;
+
+}
+
+.footer-column a{
+
+    display:block;
+
+    width:max-content;
+
+    color:var(--muted-2);
+
+    font-size:10px;
+
+    margin-bottom:8px;
+
+    transition:.2s ease;
+
+}
+
+.footer-column a:hover{
+    color:var(--google);
+}
+
+.footer-bottom{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    padding-top:24px;
+
+    margin-top:30px;
+
+    border-top:1px solid var(--border);
+
+}
+
+.footer-bottom p{
+
+    color:var(--muted-2);
+
+    font-size:9px;
+
+}
+
+.footer-social{
+
+    display:flex;
+
+    gap:7px;
+
+}
+
+.footer-social a{
+
+    width:31px;
+    height:31px;
+
+    display:grid;
+
+    place-items:center;
+
+    border:1px solid var(--border);
+
+    border-radius:9px;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+}
+
+.footer-social a:hover{
+
+    color:var(--google);
+
+    border-color:var(--google-border);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE 1050
+========================================================= */
+
+@media(max-width:1050px){
+
+    .main-nav{
+
+        position:absolute;
+
+        top:74px;
+
+        left:20px;
+        right:20px;
+
+        display:none;
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        padding:10px;
+
+        border:1px solid var(--border);
+
+        border-radius:16px;
+
+        background:#0b121b;
+
+        box-shadow:
+            0 20px 50px rgba(0,0,0,.35);
+
+    }
+
+    .main-nav.open{
+        display:flex;
+    }
+
+    .main-nav a{
+        width:100%;
+    }
+
+    .mobile-menu-btn{
+        display:grid;
+    }
+
+    .hero-card{
+        grid-template-columns:1fr;
+    }
+
+    .hero-content{
+        padding:45px;
+    }
+
+    .hero-visual{
+
+        min-height:300px;
+
+        padding-top:0;
+
+    }
+
+    .hero-visual img{
+        max-height:280px;
+    }
+
+    .featured-card{
+        grid-template-columns:1fr;
+    }
+
+    .featured-image-panel{
+
+        min-height:360px;
+
+        border-right:0;
+
+        border-bottom:
+            1px solid rgba(66,133,244,.12);
+
+    }
+
+    .featured-image-panel img{
+        height:300px;
+    }
+
+    .featured-content{
+        padding:35px;
+    }
+
+    .featured-specs{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-inner{
+
+        grid-template-columns:
+            1.5fr
+            repeat(3,1fr);
+
+        gap:25px;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE 800
+========================================================= */
+
+@media(max-width:800px){
+
+    .container{
+
+        width:min(
+            calc(100% - 28px),
+            var(--container)
+        );
+
+    }
+
+    .phone-grid,
+    .review-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .series-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .comparison-grid{
+        grid-template-columns:1fr;
+    }
+
+    .news-layout{
+        grid-template-columns:1fr;
+    }
+
+    .footer-inner{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .footer-brand{
+        grid-column:1/-1;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE 600
+========================================================= */
+
+@media(max-width:600px){
+
+    .header-inner{
+        min-height:66px;
+    }
+
+    .main-nav{
+
+        top:66px;
+
+        left:14px;
+        right:14px;
+
+    }
+
+    .logo{
+        font-size:16px;
+    }
+
+    .logo-mark{
+
+        width:33px;
+        height:33px;
+
+    }
+
+    .header-actions
+    .header-btn:first-child{
+        display:none;
+    }
+
+    .hero{
+        padding-top:20px;
+    }
+
+    .hero-card{
+        border-radius:21px;
+    }
+
+    .hero-content{
+        padding:30px 23px;
+    }
+
+    .hero-title{
+        font-size:35px;
+    }
+
+    .hero-description{
+        font-size:12px;
+    }
+
+    .hero-visual{
+        min-height:245px;
+    }
+
+    .hero-visual img{
+        max-height:230px;
+    }
+
+    .stats-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .stat{
+
+        border-right:1px solid var(--border);
+
+        border-bottom:
+            1px solid var(--border);
+
+    }
+
+    .stat:nth-child(2){
+        border-right:0;
+    }
+
+    .stat:nth-child(3),
+    .stat:nth-child(4){
+        border-bottom:0;
+    }
+
+    .section{
+        padding:28px 0;
+    }
+
+    .section-header{
+        align-items:flex-start;
+    }
+
+    .section-heading h2{
+        font-size:22px;
+    }
+
+    .section-description{
+        font-size:11px;
+    }
+
+    .phone-grid,
+    .review-grid{
+        grid-template-columns:1fr;
+    }
+
+    .phone-image{
+        height:290px;
+    }
+
+    .series-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .featured-section{
+
+        padding-top:30px;
+        padding-bottom:30px;
+
+    }
+
+    .featured-card{
+        border-radius:21px;
+    }
+
+    .featured-image-panel{
+
+        min-height:315px;
+
+        padding:20px;
+
+    }
+
+    .featured-image-panel img{
+
+        height:265px;
+        width:92%;
+
+    }
+
+    .featured-image-badge{
+
+        top:14px;
+        left:14px;
+
+    }
+
+    .featured-content{
+
+        padding:
+            28px
+            21px
+            25px;
+
+    }
+
+    .featured-content h3{
+        font-size:28px;
+    }
+
+    .featured-content > p{
+
+        font-size:11px;
+
+        line-height:1.7;
+
+    }
+
+    .featured-score-box{
+        margin-bottom:18px;
+    }
+
+    .featured-score{
+
+        width:61px;
+        height:61px;
+
+        flex-basis:61px;
+
+    }
+
+    .featured-specs{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        margin-bottom:18px;
+
+    }
+
+    .featured-actions{
+
+        display:grid;
+
+        grid-template-columns:1fr;
+
+    }
+
+    .featured-btn{
+        width:100%;
+    }
+
+    .comparison-card{
+        padding:14px;
+    }
+
+    .comparison-phone-image{
+        height:135px;
+    }
+
+    .news-main-image{
+        height:220px;
+    }
+
+    .news-item{
+
+        grid-template-columns:
+            90px 1fr;
+
+    }
+
+    .news-thumb{
+
+        width:90px;
+        height:76px;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE 450
+========================================================= */
+
+@media(max-width:450px){
+
+    .container{
+        width:calc(100% - 22px);
+    }
+
+    .hero-title{
+        font-size:31px;
+    }
+
+    .hero-actions{
+
+        display:grid;
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hero-actions .btn{
+        width:100%;
+    }
+
+    .stats-grid{
+        border-radius:14px;
+    }
+
+    .stat{
+        padding:16px 10px;
+    }
+
+    .stat strong{
+        font-size:19px;
+    }
+
+    .featured-image-panel{
+        min-height:285px;
+    }
+
+    .featured-image-panel img{
+        height:235px;
+    }
+
+    .featured-content h3{
+        font-size:25px;
+    }
+
+    .featured-spec{
+        padding:10px 8px;
+    }
+
+    .featured-spec strong{
+        font-size:9px;
+    }
+
+    .series-card{
+
+        min-height:130px;
+
+        padding:15px;
+
+    }
+
+    .series-card h3{
+        font-size:13px;
+    }
+
+    .comparison-phones{
+
+        grid-template-columns:
+            1fr 40px 1fr;
+
+        gap:5px;
+
+    }
+
+    .comparison-phone-image{
+        height:115px;
+    }
+
+    .footer-inner{
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:24px 15px;
+
+    }
+
+    .footer-brand{
+        grid-column:1/-1;
+    }
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+:focus-visible{
+
+    outline:
+        2px solid var(--google);
+
+    outline-offset:3px;
+
+}
+
+</style></head><body><!-- =======================================================
+     HEADER
+======================================================= --><header class="site-header"><div class="container header-inner">
+
+
+    <a href="index.html" class="logo">
+
+        <span class="logo-mark">
+
+            <i class="fa-brands fa-google"></i>
+
+        </span>
+
+        <span>
+            TechDeals<strong>Hub</strong>
+        </span>
+
+    </a>
+
+
+    <nav class="main-nav" id="mainNav">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="phones.html">
+            Phones
+        </a>
+
+        <a href="reviews.html">
+            Reviews
+        </a>
+
+        <a href="compare.html">
+            Compare
+        </a>
+
+        <a href="news.html">
+            News
+        </a>
+
+        <a href="brands.html" class="active">
+            Brands
+        </a>
+
+    </nav>
+
+
+    <div class="header-actions">
+
+        <button
+            class="header-btn"
+            type="button"
+            aria-label="Search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+        </button>
+
+
+        <button
+            class="header-btn mobile-menu-btn"
+            id="mobileMenuBtn"
+            type="button"
+            aria-label="Open menu">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </div>
+
+</div>
+
+</header><!-- =======================================================
+     BREADCRUMB
+======================================================= --><div class="breadcrumb"><div class="container breadcrumb-inner">
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <i class="fa-solid fa-chevron-right"></i>
+
+    <a href="brands.html">
+        Brands
+    </a>
+
+    <i class="fa-solid fa-chevron-right"></i>
+
+    <span class="current">
+        Google
+    </span>
+
+</div>
+
+</div><main><!-- =======================================================
+     HERO
+======================================================= --><section class="hero"><div class="container">
+
+    <div class="hero-card">
+
+
+        <div class="hero-content">
+
+            <span class="hero-brand">
+
+                <i class="fa-brands fa-google"></i>
+
+                Google Pixel
+
+            </span>
+
+
+            <h1 class="hero-title">
+
+                Google
+                <span>Pixel</span>
+                Phones
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Discover the latest Google Pixel smartphones,
+                AI-powered features, camera technology, detailed
+                specifications, expert reviews and comparisons.
+
+            </p>
+
+
+            <div class="hero-actions">
+
+                <a
+                    href="#latest"
+                    class="btn btn-primary">
+
+                    Explore Phones
+
+                    <i class="fa-solid fa-arrow-down"></i>
+
+                </a>
+
+
+                <a
+                    href="#featured"
+                    class="btn btn-secondary">
+
+                    Featured Pixel
+
+                    <i class="fa-solid fa-star"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <img
+                src="google/img/Pixel10Pro_16_9.png"
+                alt="Google Pixel 10 Pro">
+
+        </div>
+
+    </div>
+
+</div>
+
+</section><!-- =======================================================
+     STATS
+======================================================= --><section class="stats"><div class="container">
+
+    <div class="stats-grid">
+
+
+        <div class="stat">
+
+            <strong>
+                18+
+            </strong>
+
+            <span>
+                Pixel Models
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                10
+            </strong>
+
+            <span>
+                Expert Reviews
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                9.4
+            </strong>
+
+            <span>
+                Top Editor Score
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                4
+            </strong>
+
+            <span>
+                Main Pixel Series
+            </span>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section><!-- =======================================================
+     LATEST PIXEL PHONES
+======================================================= --><section class="section" id="latest"><div class="container">
+
+
+    <div class="section-header">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+
+                <i class="fa-solid fa-mobile-screen-button"></i>
+
+                Google Collection
+
+            </span>
+
+
+            <h2>
+                Latest Google Pixel Phones
+            </h2>
+
+
+            <p class="section-description">
+
+                Explore the newest Pixel smartphones
+                and their key specifications.
+
+            </p>
+
+        </div>
+
+
+        <a
+            href="phones.html"
+            class="view-all">
+
+            View All
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+
+    <div class="phone-grid">
+
+
+        <!-- PIXEL 10 PRO XL -->
+
+        <article class="phone-card">
+
+
+            <div class="phone-image">
+
+                <span class="phone-badge">
+                    Flagship
+                </span>
+
+
+                <img
+                    src="google/img/pixel10proxl_1_1.png"
+                    alt="Google Pixel 10 Pro XL">
+
+            </div>
+
+
+            <div class="phone-body">
+
+                <div class="phone-series">
+                    Pixel 10 Series
+                </div>
+
+
+                <h3 class="phone-name">
+                    Pixel 10 Pro XL
+                </h3>
+
+
+                <p class="phone-description">
+
+                    Google's largest premium Pixel
+                    with advanced cameras and AI features.
+
+                </p>
+
+
+                <div class="phone-rating">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <span class="rating-number">
+                        9.4
+                    </span>
+
+                    <span class="rating-label">
+                        Editor Score
+                    </span>
+
+                </div>
+
+
+                <div class="phone-specs">
+
+
+                    <div class="phone-spec">
+
+                        <span>
+                            Display
+                        </span>
+
+                        <strong>
+                            6.8" OLED
+                        </strong>
+
+                    </div>
+
+
+                    <div class="phone-spec">
+
+                        <span>
+                            Chipset
+                        </span>
+
+                        <strong>
+                            Tensor G5
+                        </strong>
+
+                    </div>
+
+
+                    <div class="phone-spec">
+
+                        <span>
+                            Camera
+                        </span>
+
+                        <strong>
+                            50 MP
+                        </strong>
+
+                    </div>
+
+
+                    <div class="phone-spec">
+
+                        <span>
+                            Battery
+                        </span>
+
+                        <strong>
+                            5200 mAh
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="card-footer">
+
+                    <a
+                        href="google-pixel-10-pro-xl.html"
+                        class="card-link">
+
+                        View Phone
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+
+                    <button
+                        class="compare-btn"
+                        type="button"
+                        aria-label="Compare Pixel 10 Pro XL">
+
+                        <i class="fa-solid fa-scale-balanced"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PIXEL 10 PRO -->
+
+        <article class="phone-card">
+
+
+            <div class="phone-image">
+
+                <span class="phone-badge">
+                    Pro
+                </span>
+
+
+                <img
+                    src="google/img/pixel10pro_1_1.png"
+                    alt="Google Pixel 10 Pro">
+
+            </div>
+
+
+            <div class="phone-body">
+
+                <div class="phone-series">
+                    Pixel 10 Series
+                </div>
+
+
+                <h3 class="phone-name">
+                    Pixel 10 Pro
+                </h3>
+
+
+                <p class="phone-description">
+
+                    A premium Pixel focused on
+                    photography, AI and clean Android software.
+
+                </p>
+
+
+                <div class="phone-rating">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <span class="rating-number">
+                        9.3
+                    </span>
+
+                    <span class="rating-label">
+                        Editor Score
+                    </span>
+
+                </div>
+
+
+                <div class="phone-specs">
+
+
+                    <div class="phone-spec">
+
+                        <span>
+                            Display
+                        </span>
+
+                        <strong>
+                            6.3" OLED
+                        </strong>
+
+                    </div>
+
+
+                    <div class="phone-spec">
+
+                        <span>
+                            Chipset
+                        </span>
+
+                        <strong>
+                            Tensor G5
+                        </strong>
+
+                    </div>
+
+
+                    <div class="phone-spec">
+
+                        <span>
+                            Camera
+                        </span>
+
+                        <strong>
+                            50 MP
+                        </strong>
+
+                    </div>
+
+
+                    <div class="phone-spec">
+
+                        <span>
+                            Battery
+                        </span>
+
+                        <strong>
+                            4870 mAh
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="card-footer">
+
+                    <a
+                        href="google-pixel-10-pro.html"
+                        class="card-link">
+
+                        View Phone
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+
+                    <button
+                        class="compare-btn"
+                        type="button"
+                        aria-label="Compare Pixel 10 Pro">
+
+                        <i class="fa-solid fa-scale-balanced"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PIXEL 10 -->
+
+        <article class="phone-card">
+
+
+            <div class="phone-image">
+
+                <span class="phone-badge">
+                    New
+                </span>
+
+
+                <img
+                    src="google/img/pixel10_1_1.png"
+                    alt="Google Pixel 10">
+
+            </div>
+
+
+            <div class="phone-body">
+
+                <div class="phone-series">
+                    Pixel 10 Series
+                </div>
+
+
+                <h3 class="phone-name">
+                    Pixel 10
+                </h3>
+
+
+                <p class="phone-description">
+
+                    Google's standard flagship Pixel
+                    with strong AI and camera capabilities.
+
+                </p>
+
+
+                <div class="phone-rating">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <span class="rating-number">
+                        8.9
+                    </span>
+
+                    <span class="rating-label">
+                        Editor Score
+                    </span>
+
+                </div>
+
+
+                <div class="phone-specs">
+
+
+                    <div class="phone-spec">
+
+                        <span>
+                            Display
+                        </span>
+
+                        <strong>
+                            6.3" OLED
+                        </strong>
+
+                    </div>
+
+
+                    <div class="phone-spec">
+
+                        <span>
+                            Chipset
+                        </span>
+
+                        <strong>
+                            Tensor G5
+                        </strong>
+
+                    </div>
+
+
+                    <div class="phone-spec">
+
+                        <span>
+                            Camera
+                        </span>
+
+                        <strong>
+                            48 MP
+                        </strong>
+
+                    </div>
+
+
+                    <div class="phone-spec">
+
+                        <span>
+                            Battery
+                        </span>
+
+                        <strong>
+                            5000 mAh
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="card-footer">
+
+                    <a
+                        href="google-pixel-10.html"
+                        class="card-link">
+
+                        View Phone
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+
+                    <button
+                        class="compare-btn"
+                        type="button"
+                        aria-label="Compare Pixel 10">
+
+                        <i class="fa-solid fa-scale-balanced"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</div>
+
+</section><!-- =======================================================
+     LATEST REVIEWS
+======================================================= --><section class="section"><div class="container">
+
+
+    <div class="section-header">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+
+                <i class="fa-solid fa-pen-nib"></i>
+
+                Expert Reviews
+
+            </span>
+
+
+            <h2>
+                Latest Pixel Reviews
+            </h2>
+
+        </div>
+
+
+        <a
+            href="reviews.html"
+            class="view-all">
+
+            All Reviews
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+
+    <div class="review-grid">
+
+
+        <article class="review-card">
+
+            <div class="review-image">
+
+                <img
+                    src="google/img/Pixel10Pro_16_9.png"
+                    alt="Pixel 10 Pro review">
+
+            </div>
+
+
+            <div class="review-body">
+
+                <div class="review-meta">
+
+                    <span>
+                        Pixel 10 Pro
+                    </span>
+
+                    <span class="review-score">
+                        9.3/10
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Google Pixel 10 Pro Review
+                </h3>
+
+
+                <p>
+
+                    Our complete look at camera quality,
+                    AI features, performance, display and battery life.
+
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="review-card">
+
+            <div class="review-image">
+
+                <img
+                    src="google/img/pixel10proxl_1_1.png"
+                    alt="Pixel 10 Pro XL review">
+
+            </div>
+
+
+            <div class="review-body">
+
+                <div class="review-meta">
+
+                    <span>
+                        Pixel 10 Pro XL
+                    </span>
+
+                    <span class="review-score">
+                        9.4/10
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Pixel 10 Pro XL Review
+                </h3>
+
+
+                <p>
+
+                    A detailed review of Google's
+                    largest premium Pixel smartphone.
+
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="review-card">
+
+            <div class="review-image">
+
+                <img
+                    src="google/img/pixel10_1_1.png"
+                    alt="Pixel 10 review">
+
+            </div>
+
+
+            <div class="review-body">
+
+                <div class="review-meta">
+
+                    <span>
+                        Pixel 10
+                    </span>
+
+                    <span class="review-score">
+                        8.9/10
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Google Pixel 10 Review
+                </h3>
+
+
+                <p>
+
+                    Everything you need to know about
+                    Google's standard flagship smartphone.
+
+                </p>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</div>
+
+</section><!-- =======================================================
+     FEATURED PIXEL
+======================================================= --><section
+    class="section featured-section"
+    id="featured"><div class="container">
+
+
+    <div class="section-header">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+
+                <i class="fa-solid fa-crown"></i>
+
+                Editor's Choice
+
+            </span>
+
+
+            <h2>
+                Featured Google Pixel
+            </h2>
+
+
+            <p class="section-description">
+
+                Our current top Pixel recommendation.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="featured-wrapper">
+
+
+        <article class="featured-card">
+
+
+            <!-- FEATURED IMAGE -->
+
+            <div class="featured-image-panel">
+
+
+                <span class="featured-image-badge">
+
+                    <i class="fa-solid fa-crown"></i>
+
+                    Editor's Choice
+
+                </span>
+
+
+                <img
+                    src="google/img/Pixel10Pro_16_9.png"
+                    alt="Google Pixel 10 Pro">
+
+            </div>
+
+
+            <!-- FEATURED CONTENT -->
+
+            <div class="featured-content">
+
+
+                <div class="featured-label">
+                    Featured Google Pixel
+                </div>
+
+
+                <h3>
+                    Google Pixel 10 Pro
+                </h3>
+
+
+                <p>
+
+                    The Pixel 10 Pro combines Google's
+                    advanced computational photography,
+                    powerful AI features, premium OLED display
+                    and clean Android experience into one
+                    of the most refined Pixel smartphones.
+
+                </p>
+
+
+                <!-- SCORE -->
+
+                <div class="featured-score-box">
+
+
+                    <div class="featured-score">
+
+                        <div>
+
+                            <strong>
+                                9.3
+                            </strong>
+
+                            <small>
+                                /10
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="featured-score-info">
+
+                        <strong>
+                            Excellent
+                        </strong>
+
+
+                        <div class="featured-score-stars">
+
+                            <div class="stars">
+                                ★★★★★
+                            </div>
+
+                            <span>
+                                Editor Score
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SPECS -->
+
+                <div class="featured-specs">
+
+
+                    <div class="featured-spec">
+
+                        <i class="fa-solid fa-display"></i>
+
+                        <span>
+                            Display
+                        </span>
+
+                        <strong>
+                            6.3" OLED
+                        </strong>
+
+                    </div>
+
+
+                    <div class="featured-spec">
+
+                        <i class="fa-solid fa-microchip"></i>
+
+                        <span>
+                            Processor
+                        </span>
+
+                        <strong>
+                            Tensor G5
+                        </strong>
+
+                    </div>
+
+
+                    <div class="featured-spec">
+
+                        <i class="fa-solid fa-camera"></i>
+
+                        <span>
+                            Main Camera
+                        </span>
+
+                        <strong>
+                            50 MP
+                        </strong>
+
+                    </div>
+
+
+                    <div class="featured-spec">
+
+                        <i class="fa-solid fa-battery-full"></i>
+
+                        <span>
+                            Battery
+                        </span>
+
+                        <strong>
+                            4870 mAh
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- ACTIONS -->
+
+                <div class="featured-actions">
+
+
+                    <a
+                        href="google-pixel-10-pro-review.html"
+                        class="featured-btn featured-btn-primary">
+
+                        <i class="fa-solid fa-file-lines"></i>
+
+                        Read Full Review
+
+                    </a>
+
+
+                    <a
+                        href="google-pixel-10-pro.html"
+                        class="featured-btn featured-btn-secondary">
+
+                        <i class="fa-solid fa-list-check"></i>
+
+                        View Specifications
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</div>
+
+</section><!-- =======================================================
+     PIXEL SERIES
+======================================================= --><section class="section"><div class="container">
+
+
+    <div class="section-header">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                Explore Google
+
+            </span>
+
+
+            <h2>
+                Pixel Series
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="series-grid">
+
+
+        <a
+            href="phones.html"
+            class="series-card">
+
+            <div>
+
+                <div class="series-icon">
+
+                    <i class="fa-solid fa-mobile-screen"></i>
+
+                </div>
+
+
+                <h3>
+                    Pixel Series
+                </h3>
+
+
+                <p>
+                    Main Pixel lineup
+                </p>
+
+            </div>
+
+
+            <i
+                class="fa-solid fa-arrow-right series-arrow">
+            </i>
+
+        </a>
+
+
+        <a
+            href="phones.html"
+            class="series-card">
+
+            <div>
+
+                <div class="series-icon">
+
+                    <i class="fa-solid fa-crown"></i>
+
+                </div>
+
+
+                <h3>
+                    Pixel Pro
+                </h3>
+
+
+                <p>
+                    Premium flagship devices
+                </p>
+
+            </div>
+
+
+            <i
+                class="fa-solid fa-arrow-right series-arrow">
+            </i>
+
+        </a>
+
+
+        <a
+            href="phones.html"
+            class="series-card">
+
+            <div>
+
+                <div class="series-icon">
+
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                </div>
+
+
+                <h3>
+                    Pixel A Series
+                </h3>
+
+
+                <p>
+                    Affordable Pixel phones
+                </p>
+
+            </div>
+
+
+            <i
+                class="fa-solid fa-arrow-right series-arrow">
+            </i>
+
+        </a>
+
+
+        <a
+            href="phones.html"
+            class="series-card">
+
+            <div>
+
+                <div class="series-icon">
+
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+
+                </div>
+
+
+                <h3>
+                    Pixel Fold
+                </h3>
+
+
+                <p>
+                    Foldable Pixel devices
+                </p>
+
+            </div>
+
+
+            <i
+                class="fa-solid fa-arrow-right series-arrow">
+            </i>
+
+        </a>
+
+
+    </div>
+
+</div>
+
+</section><!-- =======================================================
+     COMPARISONS
+======================================================= --><section class="section"><div class="container">
+
+
+    <div class="section-header">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+
+                <i class="fa-solid fa-scale-balanced"></i>
+
+                Compare
+
+            </span>
+
+
+            <h2>
+                Popular Pixel Comparisons
+            </h2>
+
+        </div>
+
+
+        <a
+            href="compare.html"
+            class="view-all">
+
+            Compare More
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+
+    <div class="comparison-grid">
+
+
+        <!-- PIXEL VS SAMSUNG -->
+
+        <article class="comparison-card">
+
+
+            <div class="comparison-phones">
+
+
+                <div class="comparison-phone">
+
+                    <div class="comparison-phone-image">
+
+                        <img
+                            src="google/img/pixel10pro_1_1.png"
+                            alt="Google Pixel 10 Pro">
+
+                    </div>
+
+
+                    <div class="comparison-phone-name">
+                        Pixel 10 Pro
+                    </div>
+
+                </div>
+
+
+                <div class="vs">
+                    VS
+                </div>
+
+
+                <div class="comparison-phone">
+
+                    <div class="comparison-phone-image">
+
+                        <img
+                            src="Samsung/img/galaxys26ultra_1_1.png"
+                            alt="Samsung Galaxy S26 Ultra">
+
+                    </div>
+
+
+                    <div class="comparison-phone-name">
+                        Galaxy S26 Ultra
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="comparison-info">
+
+                <span>
+                    Flagship Battle
+                </span>
+
+
+                <a href="compare.html">
+
+                    Compare Now
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- PIXEL VS IPHONE -->
+
+        <article class="comparison-card">
+
+
+            <div class="comparison-phones">
+
+
+                <div class="comparison-phone">
+
+                    <div class="comparison-phone-image">
+
+                        <img
+                            src="google/img/pixel10pro_1_1.png"
+                            alt="Google Pixel 10 Pro">
+
+                    </div>
+
+
+                    <div class="comparison-phone-name">
+                        Pixel 10 Pro
+                    </div>
+
+                </div>
+
+
+                <div class="vs">
+                    VS
+                </div>
+
+
+                <div class="comparison-phone">
+
+                    <div class="comparison-phone-image">
+
+                        <img
+                            src="apple/img/iphone17promax_1_1.png"
+                            alt="iPhone 17 Pro Max">
+
+                    </div>
+
+
+                    <div class="comparison-phone-name">
+                        iPhone 17 Pro Max
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="comparison-info">
+
+                <span>
+                    Camera & AI
+                </span>
+
+
+                <a href="compare.html">
+
+                    Compare Now
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</div>
+
+</section><!-- =======================================================
+     GOOGLE NEWS
+======================================================= --><section class="section"><div class="container">
+
+
+    <div class="section-header">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+
+                <i class="fa-solid fa-newspaper"></i>
+
+                Google News
+
+            </span>
+
+
+            <h2>
+                Latest Google Pixel News
+            </h2>
+
+        </div>
+
+
+        <a
+            href="news.html"
+            class="view-all">
+
+            All News
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+
+    <div class="news-layout">
+
+
+        <!-- MAIN NEWS -->
+
+        <article class="news-main">
+
+
+            <div class="news-main-image">
+
+                <img
+                    src="google/img/Pixel10Pro_16_9.png"
+                    alt="Google Pixel news">
+
+            </div>
+
+
+            <div class="news-main-content">
+
+                <span class="news-category">
+                    Google Pixel
+                </span>
+
+
+                <h3>
+                    Google Pixel Continues to Push AI and Camera Innovation
+                </h3>
+
+
+                <p>
+
+                    Explore the latest developments in
+                    Google's Pixel smartphone lineup,
+                    including AI features, cameras,
+                    software updates and new hardware.
+
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- NEWS LIST -->
+
+        <div class="news-list">
+
+
+            <a
+                href="news.html"
+                class="news-item">
+
+
+                <div class="news-thumb">
+
+                    <img
+                        src="google/img/Pixel10Pro_16_9.png"
+                        alt="Pixel news">
+
+                </div>
+
+
+                <div class="news-item-content">
+
+                    <h4>
+                        Google expands its Pixel AI experience
+                    </h4>
+
+
+                    <span class="news-date">
+                        Google Pixel · Today
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="news.html"
+                class="news-item">
+
+
+                <div class="news-thumb">
+
+                    <img
+                        src="google/img/pixel10proxl_1_1.png"
+                        alt="Pixel phone">
+
+                </div>
+
+
+                <div class="news-item-content">
+
+                    <h4>
+                        Pixel Pro lineup targets premium smartphone buyers
+                    </h4>
+
+
+                    <span class="news-date">
+                        Pixel · 2 days ago
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="news.html"
+                class="news-item">
+
+
+                <div class="news-thumb">
+
+                    <img
+                        src="google/img/pixel10_1_1.png"
+                        alt="Pixel camera">
+
+                </div>
+
+
+                <div class="news-item-content">
+
+                    <h4>
+                        Google's computational photography keeps evolving
+                    </h4>
+
+
+                    <span class="news-date">
+                        Camera · 4 days ago
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="software-updates.html"
+                class="news-item">
+
+
+                <div class="news-thumb">
+
+                    <img
+                        src="google/img/Pixel10Pro_16_9.png"
+                        alt="Pixel software update">
+
+                </div>
+
+
+                <div class="news-item-content">
+
+                    <h4>
+                        Latest Pixel software and Android update news
+                    </h4>
+
+
+                    <span class="news-date">
+                        Software · 1 week ago
+                    </span>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+</section></main><!-- =======================================================
+     FOOTER
+======================================================= --><footer class="site-footer"><div class="container">
+
+
+    <div class="footer-inner">
+
+
+        <div class="footer-brand">
+
+
+            <a
+                href="index.html"
+                class="logo">
+
+                <span class="logo-mark">
+
+                    <i class="fa-brands fa-google"></i>
+
+                </span>
+
+
+                <span>
+                    TechDeals<strong>Hub</strong>
+                </span>
+
+            </a>
+
+
+            <p>
+
+                TechDealsHub helps you discover smartphones,
+                compare specifications, read expert reviews
+                and stay updated with the latest mobile technology.
+
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Phones
+            </h4>
+
+            <a href="phones.html">
+                All Phones
+            </a>
+
+            <a href="flagship-phones.html">
+                Flagship
+            </a>
+
+            <a href="budget-phones.html">
+                Budget
+            </a>
+
+            <a href="upcoming-phones.html">
+                Upcoming
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Google
+            </h4>
+
+            <a href="google.html">
+                Google Phones
+            </a>
+
+            <a href="google-pixel-10-pro.html">
+                Pixel 10 Pro
+            </a>
+
+            <a href="reviews.html">
+                Reviews
+            </a>
+
+            <a href="compare.html">
+                Comparisons
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Explore
+            </h4>
+
+            <a href="news.html">
+                News
+            </a>
+
+            <a href="brands.html">
+                Brands
+            </a>
+
+            <a href="software-updates.html">
+                Software Updates
+            </a>
+
+            <a href="about.html">
+                About Us
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+
+        <p>
+
+            ©
+            <span id="year"></span>
+            TechDealsHub.
+            All rights reserved.
+
+        </p>
+
+
+        <div class="footer-social">
+
+
+            <a
+                href="#"
+                aria-label="X">
+
+                <i class="fa-brands fa-x-twitter"></i>
+
+            </a>
+
+
+            <a
+                href="#"
+                aria-label="Facebook">
+
+                <i class="fa-brands fa-facebook-f"></i>
+
+            </a>
+
+
+            <a
+                href="#"
+                aria-label="Instagram">
+
+                <i class="fa-brands fa-instagram"></i>
+
+            </a>
+
+
+            <a
+                href="#"
+                aria-label="YouTube">
+
+                <i class="fa-brands fa-youtube"></i>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+</footer><!-- =======================================================
+     JAVASCRIPT
+======================================================= --><script>
+
+/* =========================================================
+   YEAR
+========================================================= */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const mobileMenuBtn =
+    document.getElementById("mobileMenuBtn");
+
+const mainNav =
+    document.getElementById("mainNav");
+
+
+if(mobileMenuBtn && mainNav){
+
+    mobileMenuBtn.addEventListener(
+        "click",
+        function(){
+
+            const opened =
+                mainNav.classList.toggle("open");
+
+
+            const icon =
+                mobileMenuBtn.querySelector("i");
+
+
+            if(opened){
+
+                icon.classList.remove(
+                    "fa-bars"
+                );
+
+                icon.classList.add(
+                    "fa-xmark"
+                );
+
+            }else{
+
+                icon.classList.remove(
+                    "fa-xmark"
+                );
+
+                icon.classList.add(
+                    "fa-bars"
+                );
+
+            }
+
+        }
+    );
+
+
+    mainNav
+        .querySelectorAll("a")
+        .forEach(function(link){
+
+            link.addEventListener(
+                "click",
+                function(){
+
+                    mainNav.classList.remove(
+                        "open"
+                    );
+
+
+                    const icon =
+                        mobileMenuBtn.querySelector("i");
+
+
+                    icon.classList.remove(
+                        "fa-xmark"
+                    );
+
+                    icon.classList.add(
+                        "fa-bars"
+                    );
+
+                }
+            );
+
+        });
+
+}
+
+
+/* =========================================================
+   COMPARE BUTTONS
+========================================================= */
+
+document
+    .querySelectorAll(".compare-btn")
+    .forEach(function(button){
+
+        button.addEventListener(
+            "click",
+            function(){
+
+                const icon =
+                    button.querySelector("i");
+
+
+                const active =
+                    button.classList.toggle(
+                        "selected"
+                    );
+
+
+                if(active){
+
+                    icon.classList.remove(
+                        "fa-scale-balanced"
+                    );
+
+                    icon.classList.add(
+                        "fa-check"
+                    );
+
+                    button.style.color =
+                        "var(--google)";
+
+                    button.style.borderColor =
+                        "var(--google-border)";
+
+                    button.style.background =
+                        "var(--google-soft)";
+
+                }else{
+
+                    icon.classList.remove(
+                        "fa-check"
+                    );
+
+                    icon.classList.add(
+                        "fa-scale-balanced"
+                    );
+
+                    button.style.color = "";
+
+                    button.style.borderColor = "";
+
+                    button.style.background = "";
+
+                }
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   CLOSE MENU OUTSIDE
+========================================================= */
+
+document.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            !mainNav ||
+            !mobileMenuBtn
+        ){
+
+            return;
+
+        }
+
+
+        const clickedInsideNav =
+            mainNav.contains(
+                event.target
+            );
+
+
+        const clickedButton =
+            mobileMenuBtn.contains(
+                event.target
+            );
+
+
+        if(
+            !clickedInsideNav &&
+            !clickedButton &&
+            mainNav.classList.contains("open")
+        ){
+
+            mainNav.classList.remove(
+                "open"
+            );
+
+
+            const icon =
+                mobileMenuBtn.querySelector("i");
+
+
+            icon.classList.remove(
+                "fa-xmark"
+            );
+
+            icon.classList.add(
+                "fa-bars"
+            );
+
+        }
+
+    }
+);
+
+</script></body>
+</html>
