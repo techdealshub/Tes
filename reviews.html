@@ -873,8 +873,7 @@ function render(){
    */
 
   grid.innerHTML=html;
-
-  grid.style.display=shown?'grid':'none';
+grid.style.display=shown ? 'grid' : 'none';
 }
 
 var params=new URLSearchParams(window.location.search);
@@ -890,12 +889,40 @@ if(urlCategory){
   activeCategory=urlCategory;
 }
 
-fetch(
-  'reviews-data.php?ts='+Date.now(),
-  {
-    cache:'no-store'
-  }
-)
+fetch('reviews-data.php?ts='+Date.now(),{cache:'no-store'})
+  .then(function(res){
+    console.log('PHP STATUS:', res.status);
+    return res.text();
+  })
+  .then(function(text){
+    console.log('PHP RESPONSE:', text);
+
+    var data = JSON.parse(text);
+    console.log('REVIEWS DATA:', data);
+    console.log('REVIEWS:', data.reviews);
+
+    reviews=Array.isArray(data.reviews)?data.reviews:[];
+
+    document.getElementById('loading').style.display='none';
+    document.getElementById('totalReviews').textContent=reviews.length;
+
+    document.getElementById('topScore').textContent=
+      reviews.length ? Number(reviews[0].score).toFixed(1) : '—';
+
+    document.getElementById('brandCount').textContent=
+      (data.brands||[]).length;
+
+    brandList=data.brands||[];
+
+    renderBrands(brandList);
+    renderBrandShowcase(brandList);
+    render();
+  })
+  .catch(function(err){
+    console.error('REVIEWS ERROR:', err);
+    document.getElementById('loading').textContent=
+      'ERROR: '+err.message;
+  });
 
 .then(function(res){
 
