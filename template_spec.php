@@ -470,7 +470,7 @@ content="width=device-width,initial-scale=1">
 <label>Related Phone Link 4</label>
 <input type="text" name="related_phone_link_4">
 <script> 
-    fetch("samsung-galaxy-s26-ultra-review.html")
+    fetch("samsung-galaxy-s26-ultra-review.htmll")
 .then(r => r.text())
 .then(html => {
 

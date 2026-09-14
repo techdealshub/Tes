@@ -4,7 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PhoneHub - Smartphone Reviews & Comparisons</title>
+  <meta name="description" content="PhoneHub provides detailed smartphone reviews, comparisons, specifications, camera tests, display analysis, battery life, performance, prices, and the latest phone deals.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNYG3R18BZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-ZNYG3R18BZ');
+</script>
+<!-- End Google Tag Manager -->
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
@@ -2365,9 +2375,9 @@ html,body{overflow-x:hidden!important}
             </div>
 
             <div class="submenu">
-                <a href="trending-comparisons.html">Trending Phones</a>
+                <a href="trending.html">Trending Phones</a>
                 <a href="latest-reviews.html">Popular Reviews</a>
-                <a href="trending-comparisons.html">Most Viewed</a>
+                <a href="most-viewed.html">Most Viewed</a>
             </div>
         </div>
 
@@ -2381,8 +2391,8 @@ html,body{overflow-x:hidden!important}
             </div>
 
             <div class="submenu">
-                <a href="news_phones.html">Latest News</a>
-                <a href="news_phones.html">Leaks & Rumors</a>
+                <a href="news1.html">Latest News</a>
+                <a href="leaks-rumors.html">Leaks & Rumors</a>
                 <a href="software-updates.html">Software Updates</a>
             </div>
         </div>
@@ -2397,8 +2407,8 @@ html,body{overflow-x:hidden!important}
             </div>
 
             <div class="submenu">
-                <a href="flagship-comparisons.html">Flagships</a>
-                <a href="mid-range-comparisons.html">Mid-Range</a>
+                <a href="flagship-phones.html">Flagships</a>
+                <a href="mid-range-phones.html">Mid-Range</a>
                 <a href="budget-phones.html">Budget Phones</a>
                 <a href="upcoming-phones.html">Upcoming Phones</a>
             </div>
@@ -2516,7 +2526,7 @@ and stay updated with the latest smartphone launches and news.
             Trending Worldwide
         </span>
     <div class="section-header">
-          <a href="trending-comparisons.html" class="view-all">
+          <a href="trending.html" class="view-all">
     View All
     <i class="fa-solid fa-arrow-right"></i>
     Trending 
@@ -2547,7 +2557,7 @@ and stay updated with the latest smartphone launches and news.
 
             <div class="trend-item search-card">
                 <span>#2</span>
-                <h4>Galaxy S26 Ultra</h4>
+                <h4>Samsung Galaxy S26 Ultra</h4>
             </div>
 
             <div class="trend-item search-card">
@@ -2617,7 +2627,7 @@ and stay updated with the latest smartphone launches and news.
 
     <div class="f-review-content">
 
-        <h3>Galaxy S26 Ultra Review</h3>
+        <h3>Samsung Galaxy S26 Ultra Review</h3>
 
         <p>Outstanding display, powerful zoom camera and advanced AI features.</p>
 
@@ -2727,7 +2737,7 @@ and stay updated with the latest smartphone launches and news.
                         <span class="date">5 days ago</span>
                     </div>
 
-                    <h3>Galaxy S26 Ultra Review</h3>
+                    <h3>Samsung Galaxy S26 Ultra Review</h3>
 
                     <p>
                         A powerful Android flagship featuring an excellent
@@ -2777,7 +2787,7 @@ and stay updated with the latest smartphone launches and news.
     <div class="review-content">
 
         <div class="review-top">
-            <span class="score">9.1</span>
+            <span class="score">9.6</span>
             <span class="date">3 days ago</span>
         </div>
 
@@ -2841,7 +2851,7 @@ and stay updated with the latest smartphone launches and news.
 
                 <div class="phone">
                     <img src="Samsung/img/galaxys26ultra_1_1.png" alt="">
-                    <span>Galaxy S26 Ultra</span>
+                    <span>Samsung Galaxy S26 Ultra</span>
                 </div>
 
             </div>
@@ -2880,7 +2890,7 @@ and stay updated with the latest smartphone launches and news.
                         src="Samsung/img/galaxys26ultra_1_1.png"
                         alt="Galaxy S26 Ultra"
                     >
-                    <span>Galaxy S26 Ultra</span>
+                    <span>Samsung Galaxy S26 Ultra</span>
                 </div>
 
             </div>
@@ -2919,7 +2929,7 @@ and stay updated with the latest smartphone launches and news.
                         src="Samsung/img/galaxys26ultra_1_1.png"
                         alt="Galaxy S26 Ultra"
                     >
-                    <span>Galaxy S26 Ultra</span>
+                    <span>Samsung Galaxy S26 Ultra</span>
                 </div>
 
             </div>
@@ -3066,7 +3076,7 @@ and stay updated with the latest smartphone launches and news.
 
         <div class="section-header">
 
-            <a href="news_phones.html" class="view-all">
+            <a href="news1.html" class="view-all">
 
                 View All
 
@@ -3516,66 +3526,163 @@ and stay updated with the latest smartphone launches and news.
 </footer>
 <script>
 
+/* =====================================================
+   MOBILE MENU
+===================================================== */
 
-const menuBtn = document.querySelector('.menu-btn');
-const sidebar = document.querySelector('.sidebar');
-const overlay = document.querySelector('.overlay');
-const sidebarClose = document.getElementById('sidebarClose');
+const menuBtn =
+    document.querySelector('.menu-btn');
+
+const sidebar =
+    document.querySelector('.sidebar');
+
+const overlay =
+    document.querySelector('.overlay');
+
+const sidebarClose =
+    document.getElementById('sidebarClose');
 
 
-if(menuBtn && sidebar && overlay){
+if(
+    menuBtn &&
+    sidebar &&
+    overlay
+){
 
     const closeMenu = () => {
+
         sidebar.classList.remove('active');
+
         overlay.classList.remove('active');
+
         menuBtn.classList.remove('is-open');
-        menuBtn.setAttribute('aria-label','Open menu');
-        menuBtn.setAttribute('aria-expanded','false');
-        const icon = menuBtn.querySelector('i');
-        if(icon) icon.className = 'fa-solid fa-bars';
+
+        menuBtn.setAttribute(
+            'aria-label',
+            'Open menu'
+        );
+
+        menuBtn.setAttribute(
+            'aria-expanded',
+            'false'
+        );
+
+        const icon =
+            menuBtn.querySelector('i');
+
+        if(icon){
+
+            icon.className =
+                'fa-solid fa-bars';
+
+        }
+
     };
 
-    menuBtn.addEventListener('click', () => {
-        const isOpen = sidebar.classList.toggle('active');
-        overlay.classList.toggle('active', isOpen);
-        menuBtn.classList.toggle('is-open', isOpen);
-        menuBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-        menuBtn.setAttribute('aria-expanded', String(isOpen));
-        const icon = menuBtn.querySelector('i');
-        if(icon) icon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
-    });
 
-    overlay.addEventListener('click', closeMenu);
+    menuBtn.addEventListener(
+        'click',
+        () => {
+
+            const isOpen =
+                sidebar.classList.toggle(
+                    'active'
+                );
+
+            overlay.classList.toggle(
+                'active',
+                isOpen
+            );
+
+            menuBtn.classList.toggle(
+                'is-open',
+                isOpen
+            );
+
+            menuBtn.setAttribute(
+                'aria-label',
+                isOpen
+                ? 'Close menu'
+                : 'Open menu'
+            );
+
+            menuBtn.setAttribute(
+                'aria-expanded',
+                String(isOpen)
+            );
+
+            const icon =
+                menuBtn.querySelector('i');
+
+            if(icon){
+
+                icon.className =
+                    isOpen
+                    ? 'fa-solid fa-xmark'
+                    : 'fa-solid fa-bars';
+
+            }
+
+        }
+    );
+
+
+    overlay.addEventListener(
+        'click',
+        closeMenu
+    );
 
 
     if(sidebarClose){
-        sidebarClose.addEventListener('click', closeMenu);
+
+        sidebarClose.addEventListener(
+            'click',
+            closeMenu
+        );
+
     }
 
 }
 
 
-document.querySelectorAll('.menu-link').forEach(link => {
+/* =====================================================
+   MENU LINKS
+===================================================== */
 
-    link.addEventListener('click', () => {
+document
+    .querySelectorAll('.menu-link')
+    .forEach(link => {
 
-        link.classList.toggle('active');
+        link.addEventListener(
+            'click',
+            () => {
 
-        const submenu =
-            link.nextElementSibling;
+                link.classList.toggle(
+                    'active'
+                );
 
-        if(submenu){
+                const submenu =
+                    link.nextElementSibling;
 
-            submenu.classList.toggle('active');
+                if(submenu){
 
-        }
+                    submenu.classList.toggle(
+                        'active'
+                    );
+
+                }
+
+            }
+        );
 
     });
 
-});
 
+/* =====================================================
+   FEATURED REVIEW CAROUSEL
+===================================================== */
 
-const cards =
+const carouselCards =
     document.querySelectorAll(
         ".featured-review-card"
     );
@@ -3589,21 +3696,113 @@ const prevBtn =
     document.getElementById("prev");
 
 
+if(nextBtn){
+
+    nextBtn.addEventListener(
+        "click",
+        () => {
+
+            if(
+                typeof current ===
+                "undefined"
+            ){
+
+                return;
+
+            }
+
+
+            current++;
+
+
+            if(
+                current >=
+                carouselCards.length
+            ){
+
+                current = 0;
+
+            }
+
+
+            if(
+                typeof updateCards ===
+                "function"
+            ){
+
+                updateCards();
+
+            }
+
+        }
+    );
+
+}
+
+
+if(prevBtn){
+
+    prevBtn.addEventListener(
+        "click",
+        () => {
+
+            if(
+                typeof current ===
+                "undefined"
+            ){
+
+                return;
+
+            }
+
+
+            current--;
+
+
+            if(current < 0){
+
+                current =
+                    carouselCards.length - 1;
+
+            }
+
+
+            if(
+                typeof updateCards ===
+                "function"
+            ){
+
+                updateCards();
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   SEARCH BUTTON
+===================================================== */
+
 const searchBtn =
-    document.getElementById("searchToggle");
+    document.querySelector(
+        '#searchToggle'
+    );
 
 
 const searchBox =
-    document.querySelector(".search-box");
+    document.querySelector(
+        '.search-box'
+    );
 
 
 const searchInput =
-    document.getElementById("searchInput");
+    document.getElementById(
+        'searchInput'
+    );
 
-
-// =====================================================
-// SEARCH BUTTON
-// =====================================================
 
 if(
     searchBtn &&
@@ -3611,20 +3810,20 @@ if(
 ){
 
     searchBtn.addEventListener(
-        "click",
+        'click',
         () => {
 
             searchBtn.style.background =
                 '#3b82f6';
 
             searchBox.classList.toggle(
-                "active"
+                'active'
             );
 
 
             if(
                 searchBox.classList.contains(
-                    "active"
+                    'active'
                 )
             ){
 
@@ -3647,14 +3846,14 @@ if(
 }
 
 
-// =====================================================
-// SEARCH INPUT
-// =====================================================
+/* =====================================================
+   SEARCH INPUT
+===================================================== */
 
 if(searchInput){
 
     searchInput.addEventListener(
-        "input",
+        'input',
         function(){
 
             const keyword =
@@ -3692,13 +3891,15 @@ if(searchInput){
                 )
                 .forEach(section => {
 
-                    const cards =
+                    const sectionCards =
                         section.querySelectorAll(
                             ".search-card"
                         );
 
 
-                    if(cards.length === 0){
+                    if(
+                        sectionCards.length === 0
+                    ){
 
                         section.style.display =
                             searching
@@ -3711,7 +3912,7 @@ if(searchInput){
 
 
                     const hasVisibleCard =
-                        [...cards].some(
+                        [...sectionCards].some(
                             card =>
                                 card.style.display !==
                                 "none"
@@ -3731,9 +3932,9 @@ if(searchInput){
 }
 
 
-// =====================================================
-// SEARCH CARD CLICK
-// =====================================================
+/* =====================================================
+   SEARCH CARD CLICK
+===================================================== */
 
 document
     .querySelectorAll(
@@ -3786,66 +3987,100 @@ document
     });
 
 
-// =====================================================
-// NEXT BUTTON
-// =====================================================
+/* =====================================================
+   FEATURED REVIEWS
+   SORT BY OVERALL SCORE
+   MAXIMUM 5 CARDS
+===================================================== */
 
-if(nextBtn){
-
-    nextBtn.addEventListener(
-        "click",
-        () => {
-
-            current++;
+const featuredSection =
+    document.getElementById(
+        "featured-reviews"
+    );
 
 
-            if(current >= cards.length){
+if(featuredSection){
 
-                current = 0;
+    const featuredContainer =
+        featuredSection.querySelector(
+            ".container"
+        );
+
+
+    if(featuredContainer){
+
+        const featuredCards =
+            [
+                ...featuredContainer.querySelectorAll(
+                    ".f-review-card.search-card"
+                )
+            ];
+
+
+        featuredCards.sort(
+            (a, b) => {
+
+                const scoreA =
+                    parseFloat(
+                        (
+                            a.querySelector(
+                                ".score"
+                            )?.textContent || "0"
+                        ).replace(
+                            /[^0-9.]/g,
+                            ""
+                        )
+                    ) || 0;
+
+
+                const scoreB =
+                    parseFloat(
+                        (
+                            b.querySelector(
+                                ".score"
+                            )?.textContent || "0"
+                        ).replace(
+                            /[^0-9.]/g,
+                            ""
+                        )
+                    ) || 0;
+
+
+                return scoreB - scoreA;
 
             }
+        );
 
 
-            updateCards();
+        featuredCards.forEach(
+            (card, index) => {
 
-        }
-    );
+                if(index < 5){
+
+                    card.style.display =
+                        "";
+
+                    featuredContainer.appendChild(
+                        card
+                    );
+
+                }else{
+
+                    card.remove();
+
+                }
+
+            }
+        );
+
+    }
 
 }
 
 
-// =====================================================
-// PREVIOUS BUTTON
-// =====================================================
-
-if(prevBtn){
-
-    prevBtn.addEventListener(
-        "click",
-        () => {
-
-            current--;
-
-
-            if(current < 0){
-
-                current =
-                    cards.length - 1;
-
-            }
-
-
-            updateCards();
-
-        }
-    );
-
-}
-
-
-// =====================================================
-// UPDATE CARDS
-// =====================================================
+/* =====================================================
+   UPDATE CARDS
+===================================================== */
 
 if(
     typeof updateCards ===
@@ -3856,27 +4091,112 @@ if(
 
 }
 
-
 </script>
+
+
 <script>
+
+
+/* =====================================================
+   FOOTER YEAR
+===================================================== */
+
 (function(){
-    const y=document.getElementById("tdhFooterYear");
-    if(y) y.textContent=new Date().getFullYear();
-    const form=document.getElementById("tdhHomeNewsletter");
-    if(form){
-        form.addEventListener("submit",function(e){
-            e.preventDefault();
-            const input=document.getElementById("tdhHomeEmail");
-            const button=form.querySelector("button");
-            if(!input || !input.value.trim()) return;
-            const original=button.innerHTML;
-            button.innerHTML='Subscribed <i class="fa-solid fa-check"></i>';
-            button.disabled=true;
-            input.value="";
-            setTimeout(function(){button.innerHTML=original;button.disabled=false;},2500);
-        });
+
+    const y =
+        document.getElementById(
+            "tdhYear"
+        );
+
+
+    if(y){
+
+        y.textContent =
+            new Date().getFullYear();
+
     }
+
+
+    /* =================================================
+       NEWSLETTER
+    ================================================= */
+
+    const form =
+        document.getElementById(
+            "tdhNewsletter"
+        );
+
+
+    if(form){
+
+        form.addEventListener(
+            "submit",
+            function(e){
+
+                e.preventDefault();
+
+
+                const input =
+                    form.querySelector(
+                        'input[type="email"]'
+                    );
+
+
+                const button =
+                    form.querySelector(
+                        "button"
+                    );
+
+
+                if(
+                    !input ||
+                    !input.value.trim() ||
+                    !button
+                ){
+
+                    return;
+
+                }
+
+
+                const original =
+                    button.innerHTML;
+
+
+                button.innerHTML =
+                    'Subscribed <i class="fa-solid fa-check"></i>';
+
+
+                button.disabled =
+                    true;
+
+
+                input.value =
+                    "";
+
+
+                setTimeout(
+                    function(){
+
+                        button.innerHTML =
+                            original;
+
+
+                        button.disabled =
+                            false;
+
+                    },
+                    2500
+                );
+
+            }
+        );
+
+    }
+
 })();
+
+
 </script>
 </body>
 </html>

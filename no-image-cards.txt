@@ -1,0 +1,2105 @@
+CLASS: news-card
+ID: [none]
+TEXT: iPhone What could be next for Apple's iPhone lineup? Follow the latest developments and rumors surrounding future iPhone models.
+
+HEADINGS:
+  h3: What could be next for Apple's iPhone lineup?
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 477
+
+========================================
+CLASS: news-card
+ID: [none]
+TEXT: Camera Apple's camera technology continues to evolve Explore the latest camera developments and expected improvements.
+
+HEADINGS:
+  h3: Apple's camera technology continues to evolve
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 460
+
+========================================
+CLASS: news-card
+ID: [none]
+TEXT: Performance Apple's next-generation chip strategy Follow performance-related developments across future Apple devices.
+
+HEADINGS:
+  h3: Apple's next-generation chip strategy
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 463
+
+========================================
+CLASS: editor-card
+ID: [none]
+TEXT: Galaxy S26 Ultra Best Camera Phone
+
+HEADINGS:
+  h3: Galaxy S26 Ultra
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 182
+
+========================================
+CLASS: editor-card
+ID: [none]
+TEXT: Honor Magic 8 Pro Best Battery Life
+
+HEADINGS:
+  h3: Honor Magic 8 Pro
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 189
+
+========================================
+CLASS: editor-card
+ID: [none]
+TEXT: RedMagic 11 Pro Best Performance
+
+HEADINGS:
+  h3: RedMagic 11 Pro
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 178
+
+========================================
+CLASS: editor-card
+ID: [none]
+TEXT: Xiaomi 16 Ultra Best Value
+
+HEADINGS:
+  h3: Xiaomi 16 Ultra
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 183
+
+========================================
+CLASS: hub-card review-card
+ID: [none]
+TEXT: iPhone Pro Max Apple Ecosystem 9.4 Unmatched cinematic video stability combined with lifetime performance predictability. ★★★★★
+
+HEADINGS:
+  h4: iPhone Pro Max
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 582
+
+========================================
+CLASS: hub-card review-card
+ID: [none]
+TEXT: Galaxy Ultra Samsung Hardware 9.2 The most versatile optical macro zoom configuration on earth built underneath an anti-reflective panel. ★★★★★
+
+HEADINGS:
+  h4: Galaxy Ultra
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 599
+
+========================================
+CLASS: hub-card review-card
+ID: [none]
+TEXT: Xiaomi Flagship Xiaomi Global 8.9 Blistering 120W charging times that change daily habits completely at a highly disruptive consumer tier.
+
+HEADINGS:
+  h4: Xiaomi Flagship
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 883
+
+========================================
+CLASS: trend-item search-card
+ID: [none]
+TEXT: #2 Galaxy S26 Ultra
+
+HEADINGS:
+  h4: Galaxy S26 Ultra
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 129
+
+========================================
+CLASS: trend-item search-card
+ID: [none]
+TEXT: #3 Xiaomi 16 Ultra
+
+HEADINGS:
+  h4: Xiaomi 16 Ultra
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 128
+
+========================================
+CLASS: trend-item search-card
+ID: [none]
+TEXT: #4 Google Pixel 11 Pro
+
+HEADINGS:
+  h4: Google Pixel 11 Pro
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 132
+
+========================================
+CLASS: trend-item search-card
+ID: [none]
+TEXT: #5 OnePlus 15
+
+HEADINGS:
+  h4: OnePlus 15
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 123
+
+========================================
+CLASS: trend-item search-card
+ID: [none]
+TEXT: #6 Honor Magic 9 Pro
+
+HEADINGS:
+  h4: Honor Magic 9 Pro
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 130
+
+========================================
+CLASS: trend-item search-card
+ID: [none]
+TEXT: #7 Samsung Z Fold 6
+
+HEADINGS:
+  h4: Samsung Z Fold 6
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 129
+
+========================================
+CLASS: brand-card search-card
+ID: [none]
+TEXT: Apple 125 Devices
+
+HEADINGS:
+  h3: Apple
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 187
+
+========================================
+CLASS: brand-card search-card
+ID: [none]
+TEXT: Samsung 210 Devices
+
+HEADINGS:
+  h3: Samsung
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 196
+
+========================================
+CLASS: brand-card search-card
+ID: [none]
+TEXT: Xiaomi 180 Devices
+
+HEADINGS:
+  h3: Xiaomi
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 186
+
+========================================
+CLASS: brand-card search-card
+ID: [none]
+TEXT: Google 42 Devices
+
+HEADINGS:
+  h3: Google
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 188
+
+========================================
+CLASS: brand-card search-card
+ID: [none]
+TEXT: Honor 88 Devices
+
+HEADINGS:
+  h3: Honor
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 185
+
+========================================
+CLASS: brand-card search-card
+ID: [none]
+TEXT: OnePlus 54 Devices
+
+HEADINGS:
+  h3: OnePlus
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 191
+
+========================================
+CLASS: brand-card search-card
+ID: [none]
+TEXT: Oppo 93 Devices
+
+HEADINGS:
+  h3: Oppo
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 185
+
+========================================
+CLASS: brand-card search-card
+ID: [none]
+TEXT: Vivo 76 Devices
+
+HEADINGS:
+  h3: Vivo
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 183
+
+========================================
+CLASS: trend-item search-card
+ID: [none]
+TEXT: #2 Galaxy S26 Ultra
+
+HEADINGS:
+  h4: Galaxy S26 Ultra
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 129
+
+========================================
+CLASS: trend-item search-card
+ID: [none]
+TEXT: #3 Xiaomi 16 Ultra
+
+HEADINGS:
+  h4: Xiaomi 16 Ultra
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 128
+
+========================================
+CLASS: trend-item search-card
+ID: [none]
+TEXT: #4 Google Pixel 11 Pro
+
+HEADINGS:
+  h4: Google Pixel 11 Pro
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 132
+
+========================================
+CLASS: trend-item search-card
+ID: [none]
+TEXT: #5 OnePlus 15
+
+HEADINGS:
+  h4: OnePlus 15
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 123
+
+========================================
+CLASS: trend-item search-card
+ID: [none]
+TEXT: #6 Honor Magic 9 Pro
+
+HEADINGS:
+  h4: Honor Magic 9 Pro
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 130
+
+========================================
+CLASS: trend-item search-card
+ID: [none]
+TEXT: #7 Samsung Z Fold 6
+
+HEADINGS:
+  h4: Samsung Z Fold 6
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 129
+
+========================================
+CLASS: brand-card search-card
+ID: [none]
+TEXT: Apple 125 Devices
+
+HEADINGS:
+  h3: Apple
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 187
+
+========================================
+CLASS: brand-card search-card
+ID: [none]
+TEXT: Samsung 210 Devices
+
+HEADINGS:
+  h3: Samsung
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 196
+
+========================================
+CLASS: brand-card search-card
+ID: [none]
+TEXT: Xiaomi 180 Devices
+
+HEADINGS:
+  h3: Xiaomi
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 186
+
+========================================
+CLASS: brand-card search-card
+ID: [none]
+TEXT: Google 42 Devices
+
+HEADINGS:
+  h3: Google
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 188
+
+========================================
+CLASS: brand-card search-card
+ID: [none]
+TEXT: Honor 88 Devices
+
+HEADINGS:
+  h3: Honor
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 185
+
+========================================
+CLASS: brand-card search-card
+ID: [none]
+TEXT: OnePlus 54 Devices
+
+HEADINGS:
+  h3: OnePlus
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 191
+
+========================================
+CLASS: brand-card search-card
+ID: [none]
+TEXT: Oppo 93 Devices
+
+HEADINGS:
+  h3: Oppo
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 185
+
+========================================
+CLASS: brand-card search-card
+ID: [none]
+TEXT: Vivo 76 Devices
+
+HEADINGS:
+  h3: Vivo
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 183
+
+========================================
+CLASS: spec-card
+ID: [none]
+TEXT: Panel LTPO AMOLED
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 134
+
+========================================
+CLASS: spec-card
+ID: [none]
+TEXT: Size 6.8 inches
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 132
+
+========================================
+CLASS: spec-card
+ID: [none]
+TEXT: Resolution 1440 × 3200 px
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 143
+
+========================================
+CLASS: spec-card
+ID: [none]
+TEXT: Refresh Rate 120Hz
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 135
+
+========================================
+CLASS: spec-card
+ID: [none]
+TEXT: Brightness 2600 nits
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 137
+
+========================================
+CLASS: review-card
+ID: [none]
+TEXT: Alex ★★★★★ Amazing performance and display. The camera quality is excellent and the phone feels very premium.
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 389
+
+========================================
+CLASS: review-card
+ID: [none]
+TEXT: Michael ★★★★☆ Great phone overall, but the price is a little high.
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 326
+
+========================================
+CLASS: review-card
+ID: [none]
+TEXT: Ahmed K. ★★★★★ The Galaxy S26 Ultra has an incredible camera and battery life. One of the best Android phones I've used.
+
+HEADINGS:
+  h3: Ahmed K.
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 324
+
+========================================
+CLASS: review-card
+ID: [none]
+TEXT: Sarah M. ★★★★★ The iPhone 17 Pro Max feels premium and delivers outstanding performance with excellent software support.
+
+HEADINGS:
+  h3: Sarah M.
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 324
+
+========================================
+CLASS: review-card
+ID: [none]
+TEXT: David R. ★★★★☆ Both phones are excellent. The choice mainly depends on whether you prefer Android or iOS.
+
+HEADINGS:
+  h3: David R.
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 309
+
+========================================
+TEXT: July 2026 Samsung Galaxy S26 Ultra Sets New Camera Benchmark Samsung's latest flagship continues to impress with advanced AI photography features and improved zoom performance. Read More
+
+HEADINGS:
+  h3: Samsung Galaxy S26 Ultra Sets New Camera Benchmark
+
+LINKS: 1
+  LINK #1 TEXT: Read More
+       HREF: #
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 506
+
+========================================
+TEXT: June 2026 iPhone 17 Pro Max Dominates Battery Endurance Tests Independent testing shows Apple's flagship delivering exceptional battery life under heavy daily usage. Read More
+
+HEADINGS:
+  h3: iPhone 17 Pro Max Dominates Battery Endurance Tests
+
+LINKS: 1
+  LINK #1 TEXT: Read More
+       HREF: #
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 495
+
+========================================
+TEXT: May 2026 Flagship Smartphone Market Becomes More Competitive Samsung, Apple, Google and OnePlus continue to push innovation in cameras, AI features and performance. Read More
+
+HEADINGS:
+  h3: Flagship Smartphone Market Becomes More Competitive
+
+LINKS: 1
+  LINK #1 TEXT: Read More
+       HREF: #
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 494
+
+========================================
+TEXT: iPhone 18 Pro Max Review Apple's most powerful smartphone yet. Read Review
+
+HEADINGS:
+  h4: iPhone 18 Pro Max Review
+
+LINKS: 1
+  LINK #1 TEXT: Read Review
+       HREF: #
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 209
+
+========================================
+TEXT: Google Pixel 11 Pro Review Exceptional photography and AI features. Read Review
+
+HEADINGS:
+  h4: Google Pixel 11 Pro Review
+
+LINKS: 1
+  LINK #1 TEXT: Read Review
+       HREF: #
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 214
+
+========================================
+TEXT: Xiaomi 17 Ultra Review Flagship specs at a competitive price. Read Review
+
+HEADINGS:
+  h4: Xiaomi 17 Ultra Review
+
+LINKS: 1
+  LINK #1 TEXT: Read Review
+       HREF: #
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 208
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: Apple #1 Worldwide
+
+HEADINGS:
+  h3: Apple
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 135
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: Samsung #2 Worldwide
+
+HEADINGS:
+  h3: Samsung
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 144
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: Xiaomi #3 Worldwide
+
+HEADINGS:
+  h3: Xiaomi
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 134
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: Google #4 Worldwide
+
+HEADINGS:
+  h3: Google
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 137
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: Honor #5 Worldwide
+
+HEADINGS:
+  h3: Honor
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 134
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: OnePlus #6 Worldwide
+
+HEADINGS:
+  h3: OnePlus
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 140
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: Apple 125 Devices
+
+HEADINGS:
+  h3: Apple
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 134
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: Samsung 210 Devices
+
+HEADINGS:
+  h3: Samsung
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 143
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: Xiaomi 180 Devices
+
+HEADINGS:
+  h3: Xiaomi
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 133
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: Google 42 Devices
+
+HEADINGS:
+  h3: Google
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 135
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: Honor 88 Devices
+
+HEADINGS:
+  h3: Honor
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 132
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: OnePlus 54 Devices
+
+HEADINGS:
+  h3: OnePlus
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 138
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: Oppo 93 Devices
+
+HEADINGS:
+  h3: Oppo
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 132
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: Vivo 76 Devices
+
+HEADINGS:
+  h3: Vivo
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 130
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: Nothing 12 Devices
+
+HEADINGS:
+  h3: Nothing
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 135
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: Motorola 68 Devices
+
+HEADINGS:
+  h3: Motorola
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 136
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: Huawei 140 Devices
+
+HEADINGS:
+  h3: Huawei
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 133
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: Realme 102 Devices
+
+HEADINGS:
+  h3: Realme
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 132
+
+========================================
+CLASS: phone-card
+ID: [none]
+TEXT: #1 iPhone 17 Pro Max Apple's most popular flagship with A19 Pro chip and advanced cameras. 9.8
+
+HEADINGS:
+  h3: iPhone 17 Pro Max
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 266
+
+========================================
+CLASS: phone-card
+ID: [none]
+TEXT: #2 Galaxy S26 Ultra Samsung's premium Android smartphone with Galaxy AI features. 9.6
+
+HEADINGS:
+  h3: Galaxy S26 Ultra
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 257
+
+========================================
+CLASS: phone-card
+ID: [none]
+TEXT: #3 Xiaomi 16 Ultra Flagship camera phone powered by the latest Snapdragon chipset. 9.4
+
+HEADINGS:
+  h3: Xiaomi 16 Ultra
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 258
+
+========================================
+CLASS: phone-card
+ID: [none]
+TEXT: #4 Google Pixel 10 Pro Excellent computational photography and clean Android experience. 9.2
+
+HEADINGS:
+  h3: Google Pixel 10 Pro
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 264
+
+========================================
+TEXT: Apple Apple Announces New AI Features For iPhone Apple expands on-device AI capabilities with smarter Siri, enhanced photo editing and productivity tools. 2 Hours Ago Read More
+
+HEADINGS:
+  h3: Apple Announces New AI Features For iPhone
+
+LINKS: 1
+  LINK #1 TEXT: Read More
+       HREF: #
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 422
+
+========================================
+TEXT: Samsung Galaxy AI Expands To More Devices Samsung brings advanced AI features to older Galaxy smartphones through a major software update. 5 Hours Ago Read More
+
+HEADINGS:
+  h3: Galaxy AI Expands To More Devices
+
+LINKS: 1
+  LINK #1 TEXT: Read More
+       HREF: #
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 406
+
+========================================
+TEXT: Google Pixel 10 Pro Camera Details Leaked New reports suggest major improvements in low-light photography and video stabilization. Yesterday Read More
+
+HEADINGS:
+  h3: Pixel 10 Pro Camera Details Leaked
+
+LINKS: 1
+  LINK #1 TEXT: Read More
+       HREF: #
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 396
+
+========================================
+CLASS: comparison-card
+ID: [none]
+TEXT: iPhone 17 Pro Max vs Galaxy S26 Ultra
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 153
+
+========================================
+CLASS: comparison-card
+ID: [none]
+TEXT: iPhone 17 Pro Max vs Xiaomi 16 Ultra
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 152
+
+========================================
+CLASS: comparison-card
+ID: [none]
+TEXT: iPhone 17 Pro Max vs Pixel 10 Pro XL
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 152
+
+========================================
+CLASS: comparison-card
+ID: [none]
+TEXT: iPhone 17 Pro Max vs OnePlus 15 Pro
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 151
+
+========================================
+CLASS: news-card
+ID: [none]
+TEXT: iPhone 17 Pro Max Officially Announced Apple unveils its latest flagship with the new A19 Pro chip and upgraded cameras. 2 days ago
+
+HEADINGS:
+  h3: iPhone 17 Pro Max Officially Announced
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 243
+
+========================================
+CLASS: news-card
+ID: [none]
+TEXT: Battery Life Test Results Released The iPhone 17 Pro Max delivers record-breaking endurance in early tests. 5 days ago
+
+HEADINGS:
+  h3: Battery Life Test Results Released
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 230
+
+========================================
+CLASS: news-card
+ID: [none]
+TEXT: Camera Comparison Against Galaxy S26 Ultra New comparison highlights improvements in low-light photography. 1 week ago
+
+HEADINGS:
+  h3: Camera Comparison Against Galaxy S26 Ultra
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 230
+
+========================================
+CLASS: review-card
+ID: [none]
+TEXT: John D. ★★★★★ Amazing battery life and camera quality.
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 278
+
+========================================
+CLASS: review-card
+ID: [none]
+TEXT: Michael R. ★★★★☆ Great performance but expensive.
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 273
+
+========================================
+CLASS: spec-card
+ID: [none]
+TEXT: Panel Dynamic AMOLED 2X LTPO
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 145
+
+========================================
+CLASS: spec-card
+ID: [none]
+TEXT: Size 6.9-inch
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 130
+
+========================================
+CLASS: spec-card
+ID: [none]
+TEXT: Resolution 3120 × 1440 (QHD+)
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 147
+
+========================================
+CLASS: spec-card
+ID: [none]
+TEXT: Refresh Rate 1Hz - 120Hz Adaptive
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 150
+
+========================================
+CLASS: spec-card
+ID: [none]
+TEXT: Brightness Up to 3000 nits Peak Brightness
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 159
+
+========================================
+CLASS: review-card
+ID: [none]
+TEXT: Michael R. 5 The Galaxy S26 Ultra is easily the best Android phone I have used. The camera quality is exceptional, battery life lasts all day, and Galaxy AI features are genuinely useful.
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 437
+
+========================================
+CLASS: review-card
+ID: [none]
+TEXT: Sarah T. 5 Amazing display, excellent performance, and fantastic zoom photography. The S Pen remains one of the most useful productivity features available on any smartphone.
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 424
+
+========================================
+CLASS: news-card
+ID: [none]
+TEXT: Galaxy What's next for Samsung's Galaxy lineup? Follow the latest developments surrounding upcoming Galaxy smartphones.
+
+HEADINGS:
+  h3: What's next for Samsung's Galaxy lineup?
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 470
+
+========================================
+CLASS: news-card
+ID: [none]
+TEXT: Camera Samsung's next camera innovations Explore camera-related developments and expected improvements.
+
+HEADINGS:
+  h3: Samsung's next camera innovations
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 447
+
+========================================
+CLASS: news-card
+ID: [none]
+TEXT: Technology The future of Galaxy performance Track processor, AI and performance developments across Galaxy devices.
+
+HEADINGS:
+  h3: The future of Galaxy performance
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 462
+
+========================================
+CLASS: comparison-card
+ID: [none]
+TEXT: {{COMPARISON_1}}
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 152
+
+========================================
+CLASS: comparison-card
+ID: [none]
+TEXT: {{COMPARISON_2}}
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 152
+
+========================================
+CLASS: comparison-card
+ID: [none]
+TEXT: {{COMPARISON_3}}
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 152
+
+========================================
+CLASS: comparison-card
+ID: [none]
+TEXT: {{COMPARISON_4}}
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 152
+
+========================================
+CLASS: news-card
+ID: [none]
+TEXT: {{NEWS_TITLE_1}} {{NEWS_DESCRIPTION_1}} {{NEWS_DATE_1}}
+
+HEADINGS:
+  h3: {{NEWS_TITLE_1}}
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 167
+
+========================================
+CLASS: news-card
+ID: [none]
+TEXT: {{NEWS_TITLE_2}} {{NEWS_DESCRIPTION_2}} {{NEWS_DATE_2}}
+
+HEADINGS:
+  h3: {{NEWS_TITLE_2}}
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 167
+
+========================================
+CLASS: news-card
+ID: [none]
+TEXT: {{NEWS_TITLE_3}} {{NEWS_DESCRIPTION_3}} {{NEWS_DATE_3}}
+
+HEADINGS:
+  h3: {{NEWS_TITLE_3}}
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 167
+
+========================================
+CLASS: review-card
+ID: [none]
+TEXT: {{REVIEWER_1}} {{REVIEW_STARS_1}} {{REVIEW_TEXT_1}}
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 235
+
+========================================
+CLASS: review-card
+ID: [none]
+TEXT: {{REVIEWER_2}} {{REVIEW_STARS_2}} {{REVIEW_TEXT_2}}
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 235
+
+========================================
+CLASS: spec-card
+ID: [none]
+TEXT: Panel {{DISPLAY_PANEL}}
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 140
+
+========================================
+CLASS: spec-card
+ID: [none]
+TEXT: Size {{DISPLAY_SIZE}}
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 138
+
+========================================
+CLASS: spec-card
+ID: [none]
+TEXT: Resolution {{DISPLAY_RESOLUTION}}
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 150
+
+========================================
+CLASS: spec-card
+ID: [none]
+TEXT: Refresh Rate {{DISPLAY_REFRESH_RATE}}
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 154
+
+========================================
+CLASS: spec-card
+ID: [none]
+TEXT: Brightness {{DISPLAY_BRIGHTNESS}}
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 150
+
+========================================
+CLASS: review-card
+ID: [none]
+TEXT: {{REVIEW_1_NAME}} {{REVIEW_1_STARS}} {{REVIEW_1_TEXT}}
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 304
+
+========================================
+CLASS: review-card
+ID: [none]
+TEXT: {{REVIEW_2_NAME}} {{REVIEW_2_STARS}} {{REVIEW_2_TEXT}}
+
+HEADINGS:
+  [none]
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 304
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: #1 Apple 145 Devices
+
+HEADINGS:
+  h3: Apple
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 200
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: #2 Samsung 228 Devices
+
+HEADINGS:
+  h3: Samsung
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 209
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: #3 Xiaomi 190 Devices
+
+HEADINGS:
+  h3: Xiaomi
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 201
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: #4 Google 42 Devices
+
+HEADINGS:
+  h3: Google
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 201
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: #5 OnePlus 58 Devices
+
+HEADINGS:
+  h3: OnePlus
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 199
+
+========================================
+CLASS: brand-card
+ID: [none]
+TEXT: #6 Honor 88 Devices
+
+HEADINGS:
+  h3: Honor
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 197
+
+========================================
+CLASS: news-card
+ID: [none]
+TEXT: Smartphones • Trending The flagship phones dominating the smartphone market A look at the devices generating the most attention this week.
+
+HEADINGS:
+  h3: The flagship phones dominating the smartphone market
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 568
+
+========================================
+CLASS: news-card
+ID: [none]
+TEXT: Camera • Technology Smartphone cameras are getting more powerful than ever Discover the latest advances in mobile photography.
+
+HEADINGS:
+  h3: Smartphone cameras are getting more powerful than ever
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 542
+
+========================================
+CLASS: news-card
+ID: [none]
+TEXT: Performance • AI Why flagship performance is changing in the AI era New processors and smarter software are reshaping smartphones.
+
+HEADINGS:
+  h3: Why flagship performance is changing in the AI era
+
+LINKS: 0
+
+IMAGES: 0
+  [NO IMAGE]
+
+DATA ATTRIBUTES: 0
+
+HTML LENGTH: 549
+
+========================================
+
+HTML LENGTH: 1568
+
+
+=========================================================
+FINAL SUMMARY
+=========================================================
+HTML PAGES : 72
+CARDS      : 296
+IMAGES     : 190
+NO IMAGE   : 123
+MODIFIED   : 0
+=========================================================
+========================================

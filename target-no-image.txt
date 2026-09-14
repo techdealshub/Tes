@@ -1,0 +1,402 @@
+174-TEXT: iPhone What could be next for Apple's iPhone lineup? Follow the latest developments and rumors surrounding future iPhone models.
+177-  h3: What could be next for Apple's iPhone lineup?
+191-CLASS: news-card
+193-TEXT: Camera Apple's camera technology continues to evolve Explore the latest camera developments and expected improvements.
+196-  h3: Apple's camera technology continues to evolve
+210-CLASS: news-card
+212-TEXT: Performance Apple's next-generation chip strategy Follow performance-related developments across future Apple devices.
+215-  h3: Apple's next-generation chip strategy
+229-FILE: apple/Designiphone.html
+238-FILE: apple/iphone17.html
+478-TEXT: Galaxy S26 Ultra Best Camera Phone
+481-  h3: Galaxy S26 Ultra
+495-CLASS: editor-card
+497-TEXT: Honor Magic 8 Pro Best Battery Life
+500-  h3: Honor Magic 8 Pro
+514-CLASS: editor-card
+516-TEXT: RedMagic 11 Pro Best Performance
+519-  h3: RedMagic 11 Pro
+533-CLASS: editor-card
+535-TEXT: Xiaomi 16 Ultra Best Value
+538-  h3: Xiaomi 16 Ultra
+552-FILE: editor-choice.html
+559-CLASS: editor-card
+561-TEXT: Best Camera Premium iPhone 17 Pro Max Exceptional photography, premium performance and excellent battery life. ★★★★★ Editor Rating 9.5
+700-TEXT: iPhone Pro Max Apple Ecosystem 9.4 Unmatched cinematic video stability combined with lifetime performance predictability. ★★★★★
+703-  h4: iPhone Pro Max
+717-CLASS: hub-card review-card
+719-TEXT: Galaxy Ultra Samsung Hardware 9.2 The most versatile optical macro zoom configuration on earth built underneath an anti-reflective panel. ★★★★★
+722-  h4: Galaxy Ultra
+736-CLASS: hub-card review-card
+738-TEXT: Xiaomi Flagship Xiaomi Global 8.9 Blistering 120W charging times that change daily habits completely at a highly disruptive consumer tier.
+741-  h4: Xiaomi Flagship
+755-FILE: featured-reviews.html
+762-CLASS: review-card main-review
+764-TEXT: Editor's Choice Samsung Galaxy S26 Ultra Review A premium flagship focused on powerful performance, advanced cameras and an excellent display. ★★★★★ 4.9 Read Review
+1820-TEXT: #2 Galaxy S26 Ultra
+1823-  h4: Galaxy S26 Ultra
+1837-CLASS: trend-item search-card
+1839-TEXT: #3 Xiaomi 16 Ultra
+1842-  h4: Xiaomi 16 Ultra
+1856-CLASS: trend-item search-card
+1858-TEXT: #4 Google Pixel 11 Pro
+1861-  h4: Google Pixel 11 Pro
+1875-CLASS: trend-item search-card
+1877-TEXT: #5 OnePlus 15
+1880-  h4: OnePlus 15
+1894-CLASS: trend-item search-card
+1896-TEXT: #6 Honor Magic 9 Pro
+1899-  h4: Honor Magic 9 Pro
+1913-CLASS: trend-item search-card
+1915-TEXT: #7 Samsung Z Fold 6
+1918-  h4: Samsung Z Fold 6
+1932-CLASS: f-review-card search-card
+1934-TEXT: iPhone 17 Pro Max Review Best camera, battery life and performance. ★★★★★ 9.6
+1937-  h3: iPhone 17 Pro Max Review
+2324-TEXT: Apple 125 Devices
+2327-  h3: Apple
+2341-CLASS: brand-card search-card
+2343-TEXT: Samsung 210 Devices
+2346-  h3: Samsung
+2360-CLASS: brand-card search-card
+2362-TEXT: Xiaomi 180 Devices
+2365-  h3: Xiaomi
+2379-CLASS: brand-card search-card
+2381-TEXT: Google 42 Devices
+2384-  h3: Google
+2398-CLASS: brand-card search-card
+2400-TEXT: Honor 88 Devices
+2403-  h3: Honor
+2417-CLASS: brand-card search-card
+2419-TEXT: OnePlus 54 Devices
+2422-  h3: OnePlus
+2436-CLASS: brand-card search-card
+2438-TEXT: Oppo 93 Devices
+2441-  h3: Oppo
+2455-CLASS: brand-card search-card
+2457-TEXT: Vivo 76 Devices
+2460-  h3: Vivo
+2474-FILE: index.html
+2481-CLASS: trend-item search-card
+2483-TEXT: #2 Galaxy S26 Ultra
+2486-  h4: Galaxy S26 Ultra
+2500-CLASS: trend-item search-card
+2502-TEXT: #3 Xiaomi 16 Ultra
+2505-  h4: Xiaomi 16 Ultra
+2519-CLASS: trend-item search-card
+2521-TEXT: #4 Google Pixel 11 Pro
+2524-  h4: Google Pixel 11 Pro
+2538-CLASS: trend-item search-card
+2540-TEXT: #5 OnePlus 15
+2543-  h4: OnePlus 15
+2557-CLASS: trend-item search-card
+2559-TEXT: #6 Honor Magic 9 Pro
+2562-  h4: Honor Magic 9 Pro
+2576-CLASS: trend-item search-card
+2578-TEXT: #7 Samsung Z Fold 6
+2581-  h4: Samsung Z Fold 6
+2595-CLASS: f-review-card search-card
+2597-TEXT: iPhone 17 Pro Max Review Best camera, battery life and performance. ★★★★★ 9.6
+2600-  h3: iPhone 17 Pro Max Review
+2987-TEXT: Apple 125 Devices
+2990-  h3: Apple
+3004-CLASS: brand-card search-card
+3006-TEXT: Samsung 210 Devices
+3009-  h3: Samsung
+3023-CLASS: brand-card search-card
+3025-TEXT: Xiaomi 180 Devices
+3028-  h3: Xiaomi
+3042-CLASS: brand-card search-card
+3044-TEXT: Google 42 Devices
+3047-  h3: Google
+3061-CLASS: brand-card search-card
+3063-TEXT: Honor 88 Devices
+3066-  h3: Honor
+3080-CLASS: brand-card search-card
+3082-TEXT: OnePlus 54 Devices
+3085-  h3: OnePlus
+3099-CLASS: brand-card search-card
+3101-TEXT: Oppo 93 Devices
+3104-  h3: Oppo
+3118-CLASS: brand-card search-card
+3120-TEXT: Vivo 76 Devices
+3123-  h3: Vivo
+3137-FILE: iphone-17-pro-max-review.html
+3143-TYPE: spec-card
+3144-CLASS: spec-card
+3146-TEXT: Panel LTPO AMOLED
+3162-TYPE: spec-card
+3163-CLASS: spec-card
+3165-TEXT: Size 6.8 inches
+3181-TYPE: spec-card
+3182-CLASS: spec-card
+3184-TEXT: Resolution 1440 × 3200 px
+3200-TYPE: spec-card
+3201-CLASS: spec-card
+3203-TEXT: Refresh Rate 120Hz
+3219-TYPE: spec-card
+3220-CLASS: spec-card
+3222-TEXT: Brightness 2600 nits
+3238-TYPE: phone-card
+3239-CLASS: phone-card
+3241-TEXT: Apple iPhone 17 Pro Premium flagship with powerful performance and camera. View Details →
+3244-  h3: iPhone 17 Pro
+3247-  LINK #1 TEXT: View Details →
+3313-TEXT: Alex ★★★★★ Amazing performance and display. The camera quality is excellent and the phone feels very premium.
+3330-CLASS: review-card
+3332-TEXT: Michael ★★★★☆ Great phone overall, but the price is a little high.
+3349-FILE: iphone-17-pro-max-vs-galaxy-s26-ultra.html
+3356-CLASS: review-card
+3358-TEXT: Ahmed K. ★★★★★ The Galaxy S26 Ultra has an incredible camera and battery life. One of the best Android phones I've used.
+3361-  h3: Ahmed K.
+3375-CLASS: review-card
+3377-TEXT: Sarah M. ★★★★★ The iPhone 17 Pro Max feels premium and delivers outstanding performance with excellent software support.
+3380-  h3: Sarah M.
+3394-CLASS: review-card
+3396-TEXT: David R. ★★★★☆ Both phones are excellent. The choice mainly depends on whether you prefer Android or iOS.
+3399-  h3: David R.
+3413-CLASS: news-card
+3415-TEXT: July 2026 Samsung Galaxy S26 Ultra Sets New Camera Benchmark Samsung's latest flagship continues to impress with advanced AI photography features and improved zoom performance. Read More
+3418-  h3: Samsung Galaxy S26 Ultra Sets New Camera Benchmark
+3421-  LINK #1 TEXT: Read More
+3434-CLASS: news-card
+3436-TEXT: June 2026 iPhone 17 Pro Max Dominates Battery Endurance Tests Independent testing shows Apple's flagship delivering exceptional battery life under heavy daily usage. Read More
+3439-  h3: iPhone 17 Pro Max Dominates Battery Endurance Tests
+3442-  LINK #1 TEXT: Read More
+3455-CLASS: news-card
+3457-TEXT: May 2026 Flagship Smartphone Market Becomes More Competitive Samsung, Apple, Google and OnePlus continue to push innovation in cameras, AI features and performance. Read More
+3460-  h3: Flagship Smartphone Market Becomes More Competitive
+3463-  LINK #1 TEXT: Read More
+3476-FILE: iphone17promax.html
+3485-FILE: latest-comparisons.html
+3506-  h4: iPhone 18 Pro Max Review
+3509-  LINK #1 TEXT: Read Review
+3521-TYPE: featured-card
+3522-CLASS: featured-card
+3524-TEXT: Google Pixel 11 Pro Review Exceptional photography and AI features. Read Review
+3527-  h4: Google Pixel 11 Pro Review
+3530-  LINK #1 TEXT: Read Review
+3542-TYPE: featured-card
+3543-CLASS: featured-card
+3545-TEXT: Xiaomi 17 Ultra Review Flagship specs at a competitive price. Read Review
+3548-  h4: Xiaomi 17 Ultra Review
+3551-  LINK #1 TEXT: Read Review
+3564-FILE: leaks-rumors.html
+3573-FILE: mid-range-phones.html
+4079-TEXT: Apple #1 Worldwide
+4082-  h3: Apple
+4096-CLASS: brand-card
+4098-TEXT: Samsung #2 Worldwide
+4101-  h3: Samsung
+4115-CLASS: brand-card
+4117-TEXT: Xiaomi #3 Worldwide
+4120-  h3: Xiaomi
+4134-CLASS: brand-card
+4136-TEXT: Google #4 Worldwide
+4139-  h3: Google
+4153-CLASS: brand-card
+4155-TEXT: Honor #5 Worldwide
+4158-  h3: Honor
+4172-CLASS: brand-card
+4174-TEXT: OnePlus #6 Worldwide
+4177-  h3: OnePlus
+4191-CLASS: brand-card
+4193-TEXT: Apple 125 Devices
+4196-  h3: Apple
+4210-CLASS: brand-card
+4212-TEXT: Samsung 210 Devices
+4215-  h3: Samsung
+4229-CLASS: brand-card
+4231-TEXT: Xiaomi 180 Devices
+4234-  h3: Xiaomi
+4248-CLASS: brand-card
+4250-TEXT: Google 42 Devices
+4253-  h3: Google
+4267-CLASS: brand-card
+4269-TEXT: Honor 88 Devices
+4272-  h3: Honor
+4286-CLASS: brand-card
+4288-TEXT: OnePlus 54 Devices
+4291-  h3: OnePlus
+4305-CLASS: brand-card
+4307-TEXT: Oppo 93 Devices
+4310-  h3: Oppo
+4324-CLASS: brand-card
+4326-TEXT: Vivo 76 Devices
+4329-  h3: Vivo
+4343-CLASS: brand-card
+4345-TEXT: Nothing 12 Devices
+4348-  h3: Nothing
+4362-CLASS: brand-card
+4364-TEXT: Motorola 68 Devices
+4367-  h3: Motorola
+4381-CLASS: brand-card
+4383-TEXT: Huawei 140 Devices
+4386-  h3: Huawei
+4400-CLASS: brand-card
+4402-TEXT: Realme 102 Devices
+4405-  h3: Realme
+4418-TYPE: phone-card
+4419-CLASS: phone-card
+4421-TEXT: #1 iPhone 17 Pro Max Apple's most popular flagship with A19 Pro chip and advanced cameras. 9.8
+4424-  h3: iPhone 17 Pro Max
+4437-TYPE: phone-card
+4438-CLASS: phone-card
+4440-TEXT: #2 Galaxy S26 Ultra Samsung's premium Android smartphone with Galaxy AI features. 9.6
+4443-  h3: Galaxy S26 Ultra
+4456-TYPE: phone-card
+4457-CLASS: phone-card
+4459-TEXT: #3 Xiaomi 16 Ultra Flagship camera phone powered by the latest Snapdragon chipset. 9.4
+4462-  h3: Xiaomi 16 Ultra
+4475-TYPE: phone-card
+4476-CLASS: phone-card
+4478-TEXT: #4 Google Pixel 10 Pro Excellent computational photography and clean Android experience. 9.2
+4481-  h3: Google Pixel 10 Pro
+4495-CLASS: news-card
+4497-TEXT: Apple Apple Announces New AI Features For iPhone Apple expands on-device AI capabilities with smarter Siri, enhanced photo editing and productivity tools. 2 Hours Ago Read More
+4500-  h3: Apple Announces New AI Features For iPhone
+4503-  LINK #1 TEXT: Read More
+4516-CLASS: news-card
+4518-TEXT: Samsung Galaxy AI Expands To More Devices Samsung brings advanced AI features to older Galaxy smartphones through a major software update. 5 Hours Ago Read More
+4521-  h3: Galaxy AI Expands To More Devices
+4524-  LINK #1 TEXT: Read More
+4537-CLASS: news-card
+4539-TEXT: Google Pixel 10 Pro Camera Details Leaked New reports suggest major improvements in low-light photography and video stabilization. Yesterday Read More
+4542-  h3: Pixel 10 Pro Camera Details Leaked
+4545-  LINK #1 TEXT: Read More
+4558-FILE: phones/iphone-17-pro-max.html
+4565-CLASS: comparison-card
+4567-TEXT: iPhone 17 Pro Max vs Galaxy S26 Ultra
+4584-CLASS: comparison-card
+4586-TEXT: iPhone 17 Pro Max vs Xiaomi 16 Ultra
+4603-CLASS: comparison-card
+4605-TEXT: iPhone 17 Pro Max vs Pixel 10 Pro XL
+4622-CLASS: comparison-card
+4624-TEXT: iPhone 17 Pro Max vs OnePlus 15 Pro
+4641-CLASS: news-card
+4643-TEXT: iPhone 17 Pro Max Officially Announced Apple unveils its latest flagship with the new A19 Pro chip and upgraded cameras. 2 days ago
+4646-  h3: iPhone 17 Pro Max Officially Announced
+4660-CLASS: news-card
+4662-TEXT: Battery Life Test Results Released The iPhone 17 Pro Max delivers record-breaking endurance in early tests. 5 days ago
+4665-  h3: Battery Life Test Results Released
+4679-CLASS: news-card
+4681-TEXT: Camera Comparison Against Galaxy S26 Ultra New comparison highlights improvements in low-light photography. 1 week ago
+4684-  h3: Camera Comparison Against Galaxy S26 Ultra
+4698-CLASS: review-card
+4700-TEXT: John D. ★★★★★ Amazing battery life and camera quality.
+4717-CLASS: review-card
+4719-TEXT: Michael R. ★★★★☆ Great performance but expensive.
+4735-TYPE: phone-card
+4736-CLASS: phone-card
+4738-TEXT: Galaxy S26 Ultra Samsung
+4741-  h3: Galaxy S26 Ultra
+5175-TEXT: Panel Dynamic AMOLED 2X LTPO
+5191-TYPE: spec-card
+5192-CLASS: spec-card
+5194-TEXT: Size 6.9-inch
+5210-TYPE: spec-card
+5211-CLASS: spec-card
+5213-TEXT: Resolution 3120 × 1440 (QHD+)
+5229-TYPE: spec-card
+5230-CLASS: spec-card
+5232-TEXT: Refresh Rate 1Hz - 120Hz Adaptive
+5248-TYPE: spec-card
+5249-CLASS: spec-card
+5251-TEXT: Brightness Up to 3000 nits Peak Brightness
+5267-TYPE: phone-card
+5268-CLASS: phone-card
+5270-TEXT: Apple iPhone 17 Pro Max Excellent video recording, premium build quality, powerful A19 Pro chipset, and long-term iOS support. View Details →
+5273-  h3: iPhone 17 Pro Max
+5276-  LINK #1 TEXT: View Details →
+5342-TEXT: Michael R. 5 The Galaxy S26 Ultra is easily the best Android phone I have used. The camera quality is exceptional, battery life lasts all day, and Galaxy AI features are genuinely useful.
+5359-CLASS: review-card
+5361-TEXT: Sarah T. 5 Amazing display, excellent performance, and fantastic zoom photography. The S Pen remains one of the most useful productivity features available on any smartphone.
+5378-FILE: samsung-galaxy-s26-ultra.reviews.html
+5387-FILE: samsung.html
+5550-TEXT: Galaxy What's next for Samsung's Galaxy lineup? Follow the latest developments surrounding upcoming Galaxy smartphones.
+5553-  h3: What's next for Samsung's Galaxy lineup?
+5567-CLASS: news-card
+5569-TEXT: Camera Samsung's next camera innovations Explore camera-related developments and expected improvements.
+5572-  h3: Samsung's next camera innovations
+5586-CLASS: news-card
+5588-TEXT: Technology The future of Galaxy performance Track processor, AI and performance developments across Galaxy devices.
+5591-  h3: The future of Galaxy performance
+5605-FILE: Samsung/samsunga54.html
+5614-FILE: Samsung/samsunga54buy.html
+5866-TEXT: {{COMPARISON_1}}
+5883-CLASS: comparison-card
+5885-TEXT: {{COMPARISON_2}}
+5902-CLASS: comparison-card
+5904-TEXT: {{COMPARISON_3}}
+5921-CLASS: comparison-card
+5923-TEXT: {{COMPARISON_4}}
+5940-CLASS: news-card
+5942-TEXT: {{NEWS_TITLE_1}} {{NEWS_DESCRIPTION_1}} {{NEWS_DATE_1}}
+5945-  h3: {{NEWS_TITLE_1}}
+5959-CLASS: news-card
+5961-TEXT: {{NEWS_TITLE_2}} {{NEWS_DESCRIPTION_2}} {{NEWS_DATE_2}}
+5964-  h3: {{NEWS_TITLE_2}}
+5978-CLASS: news-card
+5980-TEXT: {{NEWS_TITLE_3}} {{NEWS_DESCRIPTION_3}} {{NEWS_DATE_3}}
+5983-  h3: {{NEWS_TITLE_3}}
+5997-CLASS: review-card
+5999-TEXT: {{REVIEWER_1}} {{REVIEW_STARS_1}} {{REVIEW_TEXT_1}}
+6016-CLASS: review-card
+6018-TEXT: {{REVIEWER_2}} {{REVIEW_STARS_2}} {{REVIEW_TEXT_2}}
+6034-TYPE: phone-card
+6035-CLASS: phone-card
+6037-TEXT: {{RELATED_PHONE_NAME_1}} {{RELATED_PHONE_BRAND_1}}
+6040-  h3: {{RELATED_PHONE_NAME_1}}
+6132-TEXT: Panel {{DISPLAY_PANEL}}
+6148-TYPE: spec-card
+6149-CLASS: spec-card
+6151-TEXT: Size {{DISPLAY_SIZE}}
+6167-TYPE: spec-card
+6168-CLASS: spec-card
+6170-TEXT: Resolution {{DISPLAY_RESOLUTION}}
+6186-TYPE: spec-card
+6187-CLASS: spec-card
+6189-TEXT: Refresh Rate {{DISPLAY_REFRESH_RATE}}
+6205-TYPE: spec-card
+6206-CLASS: spec-card
+6208-TEXT: Brightness {{DISPLAY_BRIGHTNESS}}
+6224-TYPE: phone-card
+6225-CLASS: phone-card
+6227-TEXT: {{ALT1_BRAND}} {{ALT1_NAME}} {{ALT1_DESC}} View Details →
+6230-  h3: {{ALT1_NAME}}
+6233-  LINK #1 TEXT: View Details →
+6299-TEXT: {{REVIEW_1_NAME}} {{REVIEW_1_STARS}} {{REVIEW_1_TEXT}}
+6316-CLASS: review-card
+6318-TEXT: {{REVIEW_2_NAME}} {{REVIEW_2_STARS}} {{REVIEW_2_TEXT}}
+6335-FILE: trending-comparisons.html
+6344-FILE: trending.html
+6407-TEXT: #1 Apple 145 Devices
+6410-  h3: Apple
+6424-CLASS: brand-card
+6426-TEXT: #2 Samsung 228 Devices
+6429-  h3: Samsung
+6443-CLASS: brand-card
+6445-TEXT: #3 Xiaomi 190 Devices
+6448-  h3: Xiaomi
+6462-CLASS: brand-card
+6464-TEXT: #4 Google 42 Devices
+6467-  h3: Google
+6481-CLASS: brand-card
+6483-TEXT: #5 OnePlus 58 Devices
+6486-  h3: OnePlus
+6500-CLASS: brand-card
+6502-TEXT: #6 Honor 88 Devices
+6505-  h3: Honor
+6519-CLASS: news-card
+6521-TEXT: Trending 2 Hours Ago iPhone 17 Pro Max Battery Leak New details revealed about battery capacity and charging improvements. 125K Views 542 Comments
+6524-  h3: iPhone 17 Pro Max Battery Leak
+6638-TEXT: Smartphones • Trending The flagship phones dominating the smartphone market A look at the devices generating the most attention this week.
+6641-  h3: The flagship phones dominating the smartphone market
+6655-CLASS: news-card
+6657-TEXT: Camera • Technology Smartphone cameras are getting more powerful than ever Discover the latest advances in mobile photography.
+6660-  h3: Smartphone cameras are getting more powerful than ever
+6674-CLASS: news-card
+6676-TEXT: Performance • AI Why flagship performance is changing in the AI era New processors and smarter software are reshaping smartphones.
+6679-  h3: Why flagship performance is changing in the AI era
+6693-FILE: upcoming-phones.html
+6702-FILE: xiaomi.html

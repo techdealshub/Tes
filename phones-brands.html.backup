@@ -1,0 +1,1711 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Brands</title>
+</head>
+<style>
+  :root{
+    --bg:#071226;
+    --card:#111827;
+    --card-light:#172033;
+    --text:#ffffff;
+    --muted:#94a3b8;
+    --orange:#f48120;
+    --border:rgba(255,255,255,.08);
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:Arial,sans-serif;
+    margin:0;
+}
+.section-tabs{
+  position: fixed;
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    padding:10px;
+    background:#07162d;
+
+    scrollbar-width:none;
+}
+
+.section-tabs::-webkit-scrollbar{
+    display:none;
+}
+
+.section-tabs a{
+    flex-shrink:0;
+
+    padding:8px 10px;
+
+    border-radius:999px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:14px;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.section-tabs a.active{
+    background:#4f8cff;
+}
+section{
+    padding:80px 5%;
+}
+
+section h2{
+    font-size:18px;
+    margin-bottom:25px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+section h2::before{
+    content:"";
+    width:6px;
+    height:28px;
+    border-radius:10px;
+    background:var(--orange);
+}
+
+/* =========================
+   HERO
+========================= */
+
+#brands-hero{
+    min-height:500px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:
+    linear-gradient(
+    rgba(7,18,38,.8),
+    rgba(7,18,38,.95)),
+    url("hero.jpg") center/cover;
+}
+
+#brands-hero h1{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+#brands-hero p{
+    color:var(--muted);
+    max-width:700px;
+    margin:auto;
+}
+
+/* =========================
+   GRIDS
+========================= */
+
+#trending-brands,
+#all-brands,
+#featured-brands,
+#popular-phones,
+#brand-news,
+#brand-comparisons,
+#best-by-brand,
+#brand-stats,
+#community-favorites{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.brand-card,
+.phone-card,
+.news-card,
+.compare-card,
+.stat-card,
+.community-card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    padding:22px;
+
+    transition:.3s;
+
+    overflow:hidden;
+}
+
+.brand-card:hover,
+.phone-card:hover,
+.news-card:hover,
+.compare-card:hover,
+.stat-card:hover,
+.community-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--orange);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.35);
+}
+
+.brand-card i{
+    font-size:42px;
+    color:var(--orange);
+    margin-bottom:15px;
+}
+
+.brand-card h3{
+    margin:10px 0;
+}
+
+.brand-card span{
+    color:var(--muted);
+}
+
+/* =========================
+   RANKINGS
+========================= */
+
+#brand-rankings{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.rank-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:18px 22px;
+
+    background:var(--card);
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+}
+
+.rank-number{
+    font-size:22px;
+    font-weight:700;
+    color:var(--orange);
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stat-card{
+    text-align:center;
+}
+
+.stat-card h3{
+    font-size:38px;
+    color:var(--orange);
+    margin-bottom:10px;
+}
+
+.stat-card p{
+    color:var(--muted);
+}
+
+/* =========================
+   COMMUNITY
+========================= */
+
+.community-card p{
+    color:var(--muted);
+    line-height:1.6;
+}
+
+.community-card .user{
+    margin-top:15px;
+    color:var(--orange);
+    font-weight:600;
+}
+
+/* =========================
+   NEWS
+========================= */
+
+.news-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:15px;
+    margin-bottom:15px;
+}
+
+.news-card p{
+    color:var(--muted);
+}
+
+/* =========================
+   COMPARISONS
+========================= */
+
+.compare-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.compare-card .vs{
+    color:var(--orange);
+    font-weight:bold;
+    font-size:20px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    section{
+        padding:60px 20px;
+    }
+
+    #brands-hero h1{
+        font-size:38px;
+    }
+
+    section h2{
+        font-size:22px;
+    }
+
+}
+#brands-hero{
+    min-height:70vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:80px 20px;
+
+    background:
+    linear-gradient(
+    rgba(7,18,38,.85),
+    rgba(7,18,38,.95));
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:10px 18px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:999px;
+
+    color:#f48120;
+
+    font-size:.9rem;
+}
+
+.hero-content h1{
+    font-size:4rem;
+    margin:25px 0 15px;
+    line-height:1.1;
+}
+
+.hero-content h1 span{
+    color:#f48120;
+}
+
+.hero-content p{
+    color:#94a3b8;
+    font-size:1.1rem;
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
+
+.hero-buttons{
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn-primary,
+.btn-secondary{
+    padding:14px 28px;
+    border-radius:14px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.btn-primary{
+    background:#f48120;
+    color:white;
+}
+
+.btn-secondary{
+    background:#111827;
+    color:white;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+@media(max-width:768px){
+
+    .hero-content h1{
+        font-size:2.5rem;
+    }
+
+}
+#trending-brands{
+    padding:80px 5%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+#trending-brands h2{
+    grid-column:1/-1;
+}
+
+#trending-brands .brand-card{
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    transition:.3s;
+}
+
+#trending-brands .brand-card:hover{
+    transform:translateY(-5px);
+    border-color:#f48120;
+}
+
+#trending-brands .brand-card i{
+    font-size:42px;
+    color:#f48120;
+    margin-bottom:15px;
+}
+
+#trending-brands .brand-card h3{
+    margin:10px 0;
+}
+
+#trending-brands .brand-card span{
+    color:#94a3b8;
+}
+#all-brands{
+    padding:80px 5%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+#all-brands h2{
+    grid-column:1/-1;
+}
+
+#all-brands .brand-card{
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    padding:25px;
+    text-align:center;
+    transition:.3s;
+    cursor:pointer;
+}
+
+#all-brands .brand-card:hover{
+    transform:translateY(-8px);
+    border-color:#f48120;
+    box-shadow:0 20px 40px rgba(0,0,0,.3);
+}
+
+#all-brands .brand-card i{
+    font-size:42px;
+    color:#f48120;
+    margin-bottom:15px;
+}
+
+#all-brands .brand-card h3{
+    margin:10px 0;
+    color:#fff;
+}
+
+#all-brands .brand-card span{
+    color:#94a3b8;
+}
+#featured-brands{
+    padding:80px 5%;
+}
+
+#featured-brands h2{
+    margin-bottom:25px;
+}
+
+.featured-brand-card{
+    display:flex;
+    align-items:center;
+    gap:25px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:25px;
+
+    margin-bottom:20px;
+
+    transition:.3s;
+}
+
+.featured-brand-card:hover{
+    border-color:#f48120;
+    transform:translateY(-5px);
+}
+
+.brand-rank{
+    width:70px;
+    height:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#f48120;
+
+    color:#fff;
+
+    font-size:24px;
+    font-weight:700;
+
+    flex-shrink:0;
+}
+
+.brand-info h3{
+    margin-bottom:10px;
+    color:#fff;
+}
+
+.brand-info p{
+    color:#94a3b8;
+    line-height:1.7;
+}
+
+.brand-tags{
+    margin-top:15px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.brand-tags span{
+    padding:8px 14px;
+    border-radius:999px;
+
+    background:#172033;
+
+    color:#f48120;
+
+    font-size:.85rem;
+}
+
+@media(max-width:768px){
+
+    .featured-brand-card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
+#brand-rankings{
+    padding:80px 5%;
+}
+
+#brand-rankings h2{
+    margin-bottom:25px;
+}
+
+.rank-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px;
+
+    margin-bottom:15px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    transition:.3s;
+}
+
+.rank-item:hover{
+    transform:translateY(-4px);
+    border-color:#f48120;
+}
+
+.rank-left{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.rank-number{
+    width:55px;
+    height:55px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#f48120;
+
+    color:#fff;
+
+    font-weight:700;
+}
+
+.rank-left h3{
+    margin:0;
+    color:#fff;
+}
+
+.rank-left p{
+    margin-top:5px;
+    color:#94a3b8;
+    font-size:.9rem;
+}
+
+.rank-score{
+    font-size:22px;
+    font-weight:700;
+    color:#f48120;
+}
+
+.rank-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.rank-left{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+@media(max-width:768px){
+
+    .rank-item{
+        flex-direction:row;
+    }
+
+}
+#popular-phones{
+    padding:80px 5%;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+#popular-phones h2{
+    grid-column:1/-1;
+}
+
+.phone-card{
+    position:relative;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:25px;
+
+    transition:.3s;
+}
+
+.phone-card:hover{
+    transform:translateY(-6px);
+
+    border-color:#f48120;
+}
+
+.phone-rank{
+    position:absolute;
+    top:15px;
+    right:15px;
+
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#f48120;
+
+    color:#fff;
+
+    border-radius:50%;
+
+    font-weight:700;
+}
+
+.phone-card h3{
+    margin-top:15px;
+    color:#fff;
+}
+
+.phone-card p{
+    color:#94a3b8;
+    line-height:1.6;
+    margin:15px 0;
+}
+
+.phone-score{
+    display:inline-block;
+
+    padding:8px 14px;
+
+    background:#172033;
+
+    color:#f48120;
+
+    border-radius:999px;
+
+    font-weight:700;
+}
+#brand-news{
+    padding:80px 5%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:20px;
+}
+
+#brand-news h2{
+    grid-column:1/-1;
+}
+
+.news-card{
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    padding:24px;
+    transition:.3s;
+}
+
+.news-card:hover{
+    transform:translateY(-6px);
+    border-color:#f48120;
+}
+
+.news-tag{
+    display:inline-block;
+    padding:6px 12px;
+    background:#172033;
+    color:#f48120;
+    border-radius:999px;
+    font-size:.85rem;
+    font-weight:600;
+}
+
+.news-card h3{
+    margin:16px 0 12px;
+    color:#fff;
+    line-height:1.4;
+}
+
+.news-card p{
+    color:#94a3b8;
+    line-height:1.7;
+}
+
+.news-footer{
+    margin-top:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.news-footer span{
+    color:#94a3b8;
+    font-size:.9rem;
+}
+
+.news-footer a{
+    color:#f48120;
+    text-decoration:none;
+    font-weight:600;
+}
+#brand-comparisons{
+    padding:80px 5%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:20px;
+}
+
+#brand-comparisons h2{
+    grid-column:1/-1;
+}
+
+.compare-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:25px;
+
+    transition:.3s;
+}
+
+.compare-card:hover{
+    transform:translateY(-6px);
+    border-color:#f48120;
+}
+
+.compare-brand{
+    text-align:center;
+}
+
+.compare-brand h3{
+    color:#fff;
+    margin-bottom:8px;
+}
+
+.compare-brand span{
+    color:#94a3b8;
+    font-size:.9rem;
+}
+
+.vs-badge{
+    width:60px;
+    height:60px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#f48120,#ff9d42);
+
+    color:#fff;
+
+    font-weight:700;
+    font-size:18px;
+
+    flex-shrink:0;
+}
+
+@media(max-width:768px){
+
+    .compare-card{
+        padding:20px;
+    }
+
+    .vs-badge{
+        width:50px;
+        height:50px;
+        font-size:16px;
+    }
+
+}
+#best-by-brand{
+    padding:80px 5%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+#best-by-brand h2{
+    grid-column:1/-1;
+}
+
+.best-phone-card{
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    padding:25px;
+    transition:.3s;
+    position:relative;
+    overflow:hidden;
+}
+
+.best-phone-card:hover{
+    transform:translateY(-6px);
+    border-color:#f48120;
+}
+
+.brand-badge{
+    display:inline-block;
+    padding:8px 14px;
+    border-radius:999px;
+    background:#172033;
+    color:#f48120;
+    font-size:.85rem;
+    font-weight:600;
+    margin-bottom:18px;
+}
+
+.best-phone-card h3{
+    color:#fff;
+    margin-bottom:12px;
+}
+
+.best-phone-card p{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.rating{
+    display:inline-block;
+    padding:10px 16px;
+    border-radius:12px;
+    background:#f48120;
+    color:#fff;
+    font-weight:700;
+}
+#brand-stats{
+    padding:80px 5%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+#brand-stats h2{
+    grid-column:1/-1;
+}
+
+.stat-card{
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    padding:30px 20px;
+    text-align:center;
+    transition:.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-6px);
+    border-color:#f48120;
+}
+
+.stat-card i{
+    font-size:38px;
+    color:#f48120;
+    margin-bottom:15px;
+}
+
+.stat-card h3{
+    font-size:32px;
+    color:#fff;
+    margin-bottom:10px;
+}
+
+.stat-card p{
+    color:#94a3b8;
+}
+#community-favorites{
+    padding:80px 5%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+#community-favorites h2{
+    grid-column:1/-1;
+}
+
+.community-card{
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    padding:25px;
+    transition:.3s;
+}
+
+.community-card:hover{
+    transform:translateY(-6px);
+    border-color:#f48120;
+}
+
+.community-top{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.community-top i{
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#172033;
+    color:#f48120;
+}
+
+.community-top span{
+    color:#fff;
+    font-weight:600;
+}
+
+.community-card p{
+    color:#94a3b8;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.community-rating{
+    color:#f48120;
+    font-size:18px;
+    letter-spacing:2px;
+}
+</style>
+<body>
+  <div class="section-tabs" id="sectionTabs"></div>
+<section id="brands-hero">
+
+    <div class="hero-content">
+
+        <span class="hero-badge">
+            <i class="fa-solid fa-fire"></i>
+            Top Smartphone Brands
+        </span>
+
+        <h1>
+            Discover The World's
+            <span>Best Smartphone Brands</span>
+        </h1>
+
+        <p>
+            Explore Apple, Samsung, Xiaomi, Google, Honor, OnePlus and more.
+            Compare devices, read reviews, check rankings and stay updated with
+            the latest smartphone industry news.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#all-brands" class="btn-primary">
+                Explore Brands
+            </a>
+
+            <a href="#brand-rankings" class="btn-secondary">
+                View Rankings
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="trending-brands">
+
+    <h2>
+        <i class="fa-solid fa-fire"></i>
+        Trending Brands
+    </h2>
+
+    <div class="brand-card">
+        <i class="fa-brands fa-apple"></i>
+        <h3>Apple</h3>
+        <span>#1 Worldwide</span>
+    </div>
+
+    <div class="brand-card">
+        <i class="fa-solid fa-mobile-screen"></i>
+        <h3>Samsung</h3>
+        <span>#2 Worldwide</span>
+    </div>
+
+    <div class="brand-card">
+        <i class="fa-solid fa-bolt"></i>
+        <h3>Xiaomi</h3>
+        <span>#3 Worldwide</span>
+    </div>
+
+    <div class="brand-card">
+        <i class="fa-brands fa-google"></i>
+        <h3>Google</h3>
+        <span>#4 Worldwide</span>
+    </div>
+
+    <div class="brand-card">
+        <i class="fa-solid fa-crown"></i>
+        <h3>Honor</h3>
+        <span>#5 Worldwide</span>
+    </div>
+
+    <div class="brand-card">
+        <i class="fa-solid fa-microchip"></i>
+        <h3>OnePlus</h3>
+        <span>#6 Worldwide</span>
+    </div>
+
+</section>
+
+<section id="all-brands">
+
+    <h2>
+        <i class="fa-solid fa-building"></i>
+        All Smartphone Brands
+    </h2>
+
+    <div class="brand-card">
+        <i class="fa-brands fa-apple"></i>
+        <h3>Apple</h3>
+        <span>125 Devices</span>
+    </div>
+
+    <div class="brand-card">
+        <i class="fa-solid fa-mobile-screen"></i>
+        <h3>Samsung</h3>
+        <span>210 Devices</span>
+    </div>
+
+    <div class="brand-card">
+        <i class="fa-solid fa-bolt"></i>
+        <h3>Xiaomi</h3>
+        <span>180 Devices</span>
+    </div>
+
+    <div class="brand-card">
+        <i class="fa-brands fa-google"></i>
+        <h3>Google</h3>
+        <span>42 Devices</span>
+    </div>
+
+    <div class="brand-card">
+        <i class="fa-solid fa-crown"></i>
+        <h3>Honor</h3>
+        <span>88 Devices</span>
+    </div>
+
+    <div class="brand-card">
+        <i class="fa-solid fa-microchip"></i>
+        <h3>OnePlus</h3>
+        <span>54 Devices</span>
+    </div>
+
+    <div class="brand-card">
+        <i class="fa-solid fa-camera"></i>
+        <h3>Oppo</h3>
+        <span>93 Devices</span>
+    </div>
+
+    <div class="brand-card">
+        <i class="fa-solid fa-star"></i>
+        <h3>Vivo</h3>
+        <span>76 Devices</span>
+    </div>
+
+    <div class="brand-card">
+        <i class="fa-solid fa-mobile"></i>
+        <h3>Nothing</h3>
+        <span>12 Devices</span>
+    </div>
+
+    <div class="brand-card">
+        <i class="fa-solid fa-rocket"></i>
+        <h3>Motorola</h3>
+        <span>68 Devices</span>
+    </div>
+
+    <div class="brand-card">
+        <i class="fa-solid fa-wifi"></i>
+        <h3>Huawei</h3>
+        <span>140 Devices</span>
+    </div>
+
+    <div class="brand-card">
+        <i class="fa-solid fa-gem"></i>
+        <h3>Realme</h3>
+        <span>102 Devices</span>
+    </div>
+
+</section>
+
+<section id="featured-brands">
+
+    <h2>
+        <i class="fa-solid fa-award"></i>
+        Featured Brands
+    </h2>
+
+    <div class="featured-brand-card">
+
+        <div class="brand-rank">#1</div>
+
+        <div class="brand-info">
+            <h3>Apple</h3>
+            <p>
+                Industry-leading premium smartphones with powerful performance,
+                advanced cameras and a seamless ecosystem.
+            </p>
+
+            <div class="brand-tags">
+                <span>iPhone</span>
+                <span>iOS</span>
+                <span>A-Series</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="featured-brand-card">
+
+        <div class="brand-rank">#2</div>
+
+        <div class="brand-info">
+            <h3>Samsung</h3>
+            <p>
+                Global Android leader known for Galaxy smartphones,
+                foldables and innovative display technology.
+            </p>
+
+            <div class="brand-tags">
+                <span>Galaxy</span>
+                <span>Foldables</span>
+                <span>AI</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="featured-brand-card">
+
+        <div class="brand-rank">#3</div>
+
+        <div class="brand-info">
+            <h3>Xiaomi</h3>
+            <p>
+                Popular worldwide for flagship cameras,
+                fast charging and excellent value.
+            </p>
+
+            <div class="brand-tags">
+                <span>HyperOS</span>
+                <span>Leica</span>
+                <span>120W</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="brand-rankings">
+
+    <h2>
+        <i class="fa-solid fa-trophy"></i>
+        Brand Rankings
+    </h2>
+
+    <div class="rank-item">
+        <div class="rank-left">
+            <span class="rank-number">#1</span>
+            <div>
+                <h3>Apple</h3>
+                <p>Most Popular Worldwide</p>
+            </div>
+        </div>
+
+        <span class="rank-score">98%</span>
+    </div>
+
+    <div class="rank-item">
+        <div class="rank-left">
+            <span class="rank-number">#2</span>
+            <div>
+                <h3>Samsung</h3>
+                <p>Top Android Brand</p>
+            </div>
+        </div>
+
+        <span class="rank-score">95%</span>
+    </div>
+
+    <div class="rank-item">
+        <div class="rank-left">
+            <span class="rank-number">#3</span>
+            <div>
+                <h3>Xiaomi</h3>
+                <p>Fastest Growing Brand</p>
+            </div>
+        </div>
+
+        <span class="rank-score">92%</span>
+    </div>
+
+    <div class="rank-item">
+        <div class="rank-left">
+            <span class="rank-number">#4</span>
+            <div>
+                <h3>Google</h3>
+                <p>Best Software Experience</p>
+            </div>
+        </div>
+
+        <span class="rank-score">89%</span>
+    </div>
+
+    <div class="rank-item">
+        <div class="rank-left">
+            <span class="rank-number">#5</span>
+            <div>
+                <h3>Honor</h3>
+                <p>Emerging Premium Brand</p>
+            </div>
+        </div>
+
+        <span class="rank-score">85%</span>
+    </div>
+
+</section>
+
+<section id="popular-phones">
+
+    <h2>
+        <i class="fa-solid fa-mobile-screen"></i>
+        Popular Phones
+    </h2>
+
+    <div class="phone-card">
+        <div class="phone-rank">#1</div>
+
+        <h3>iPhone 17 Pro Max</h3>
+
+        <p>
+            Apple's most popular flagship with A19 Pro chip and advanced cameras.
+        </p>
+
+        <span class="phone-score">9.8</span>
+    </div>
+
+    <div class="phone-card">
+        <div class="phone-rank">#2</div>
+
+        <h3>Galaxy S26 Ultra</h3>
+
+        <p>
+            Samsung's premium Android smartphone with Galaxy AI features.
+        </p>
+
+        <span class="phone-score">9.6</span>
+    </div>
+
+    <div class="phone-card">
+        <div class="phone-rank">#3</div>
+
+        <h3>Xiaomi 16 Ultra</h3>
+
+        <p>
+            Flagship camera phone powered by the latest Snapdragon chipset.
+        </p>
+
+        <span class="phone-score">9.4</span>
+    </div>
+
+    <div class="phone-card">
+        <div class="phone-rank">#4</div>
+
+        <h3>Google Pixel 10 Pro</h3>
+
+        <p>
+            Excellent computational photography and clean Android experience.
+        </p>
+
+        <span class="phone-score">9.2</span>
+    </div>
+
+</section>
+
+<section id="brand-news">
+
+    <h2>
+        <i class="fa-solid fa-newspaper"></i>
+        Latest Brand News
+    </h2>
+
+    <div class="news-card">
+
+        <span class="news-tag">Apple</span>
+
+        <h3>Apple Announces New AI Features For iPhone</h3>
+
+        <p>
+            Apple expands on-device AI capabilities with smarter Siri,
+            enhanced photo editing and productivity tools.
+        </p>
+
+        <div class="news-footer">
+            <span>2 Hours Ago</span>
+            <a href="#">Read More</a>
+        </div>
+
+    </div>
+
+    <div class="news-card">
+
+        <span class="news-tag">Samsung</span>
+
+        <h3>Galaxy AI Expands To More Devices</h3>
+
+        <p>
+            Samsung brings advanced AI features to older Galaxy smartphones
+            through a major software update.
+        </p>
+
+        <div class="news-footer">
+            <span>5 Hours Ago</span>
+            <a href="#">Read More</a>
+        </div>
+
+    </div>
+
+    <div class="news-card">
+
+        <span class="news-tag">Google</span>
+
+        <h3>Pixel 10 Pro Camera Details Leaked</h3>
+
+        <p>
+            New reports suggest major improvements in low-light photography
+            and video stabilization.
+        </p>
+
+        <div class="news-footer">
+            <span>Yesterday</span>
+            <a href="#">Read More</a>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="brand-comparisons">
+
+    <h2>
+        <i class="fa-solid fa-scale-balanced"></i>
+        Brand Comparisons
+    </h2>
+
+    <div class="compare-card">
+
+        <div class="compare-brand">
+            <h3>Apple</h3>
+            <span>iPhone 17 Pro Max</span>
+        </div>
+
+        <div class="vs-badge">VS</div>
+
+        <div class="compare-brand">
+            <h3>Samsung</h3>
+            <span>Galaxy S26 Ultra</span>
+        </div>
+
+    </div>
+
+    <div class="compare-card">
+
+        <div class="compare-brand">
+            <h3>Google</h3>
+            <span>Pixel 10 Pro</span>
+        </div>
+
+        <div class="vs-badge">VS</div>
+
+        <div class="compare-brand">
+            <h3>Xiaomi</h3>
+            <span>Xiaomi 16 Ultra</span>
+        </div>
+
+    </div>
+
+    <div class="compare-card">
+
+        <div class="compare-brand">
+            <h3>Honor</h3>
+            <span>Magic 8 Pro</span>
+        </div>
+
+        <div class="vs-badge">VS</div>
+
+        <div class="compare-brand">
+            <h3>OnePlus</h3>
+            <span>OnePlus 15</span>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="best-by-brand">
+
+    <h2>
+        <i class="fa-solid fa-crown"></i>
+        Best Phones By Brand
+    </h2>
+
+    <div class="best-phone-card">
+
+        <div class="brand-badge">Apple</div>
+
+        <h3>iPhone 17 Pro Max</h3>
+
+        <p>
+            Best Apple smartphone with flagship performance,
+            premium cameras and excellent battery life.
+        </p>
+
+        <span class="rating">9.8/10</span>
+
+    </div>
+
+    <div class="best-phone-card">
+
+        <div class="brand-badge">Samsung</div>
+
+        <h3>Galaxy S26 Ultra</h3>
+
+        <p>
+            Samsung's ultimate flagship featuring Galaxy AI,
+            S Pen support and advanced cameras.
+        </p>
+
+        <span class="rating">9.7/10</span>
+
+    </div>
+
+    <div class="best-phone-card">
+
+        <div class="brand-badge">Google</div>
+
+        <h3>Pixel 10 Pro</h3>
+
+        <p>
+            Best Google phone with exceptional computational
+            photography and clean Android experience.
+        </p>
+
+        <span class="rating">9.5/10</span>
+
+    </div>
+
+    <div class="best-phone-card">
+
+        <div class="brand-badge">Xiaomi</div>
+
+        <h3>Xiaomi 16 Ultra</h3>
+
+        <p>
+            Premium Leica cameras, flagship chipset and ultra-fast charging.
+        </p>
+
+        <span class="rating">9.4/10</span>
+
+    </div>
+
+</section>
+
+<section id="brand-stats">
+
+    <h2>
+        <i class="fa-solid fa-chart-line"></i>
+        Brand Statistics
+    </h2>
+
+    <div class="stat-card">
+        <i class="fa-solid fa-mobile-screen"></i>
+        <h3>1,250+</h3>
+        <p>Smartphones Listed</p>
+    </div>
+
+    <div class="stat-card">
+        <i class="fa-solid fa-building"></i>
+        <h3>45+</h3>
+        <p>Brands Covered</p>
+    </div>
+
+    <div class="stat-card">
+        <i class="fa-solid fa-scale-balanced"></i>
+        <h3>850+</h3>
+        <p>Phone Comparisons</p>
+    </div>
+
+    <div class="stat-card">
+        <i class="fa-solid fa-newspaper"></i>
+        <h3>5,000+</h3>
+        <p>News Articles</p>
+    </div>
+
+    <div class="stat-card">
+        <i class="fa-solid fa-users"></i>
+        <h3>120K+</h3>
+        <p>Monthly Visitors</p>
+    </div>
+
+    <div class="stat-card">
+        <i class="fa-solid fa-star"></i>
+        <h3>50K+</h3>
+        <p>User Ratings</p>
+    </div>
+
+</section>
+
+<section id="community-favorites">
+
+    <h2>
+        <i class="fa-solid fa-users"></i>
+        Community Favorites
+    </h2>
+
+    <div class="community-card">
+
+        <div class="community-top">
+            <i class="fa-solid fa-user"></i>
+            <span>Ahmed</span>
+        </div>
+
+        <p>
+            The iPhone 17 Pro Max has the best smartphone camera I've ever used.
+        </p>
+
+        <div class="community-rating">
+            ★★★★★
+        </div>
+
+    </div>
+
+    <div class="community-card">
+
+        <div class="community-top">
+            <i class="fa-solid fa-user"></i>
+            <span>Youssef</span>
+        </div>
+
+        <p>
+            Galaxy S26 Ultra offers the most complete Android experience.
+        </p>
+
+        <div class="community-rating">
+            ★★★★★
+        </div>
+
+    </div>
+
+    <div class="community-card">
+
+        <div class="community-top">
+            <i class="fa-solid fa-user"></i>
+            <span>Karim</span>
+        </div>
+
+        <p>
+            Pixel 10 Pro is unbeatable for photography and software updates.
+        </p>
+
+        <div class="community-rating">
+            ★★★★☆
+        </div>
+
+    </div>
+
+    <div class="community-card">
+
+        <div class="community-top">
+            <i class="fa-solid fa-user"></i>
+            <span>Amine</span>
+        </div>
+
+        <p>
+            Xiaomi 16 Ultra delivers flagship performance at a better price.
+        </p>
+
+        <div class="community-rating">
+            ★★★★★
+        </div>
+
+    </div>
+
+</section>
+<script>
+  const tabsContainer = document.getElementById("sectionTabs");
+
+document.querySelectorAll("section").forEach(section => {
+
+    const title = section.querySelector("h2");
+
+    if(!title) return;
+
+    if(!section.id){
+        section.id = title.textContent
+            .trim()
+            .toLowerCase()
+            .replace(/\s+/g,"-");
+    }
+
+    const tab = document.createElement("a");
+
+    tab.href = "#" + section.id;
+
+    tab.textContent = title.textContent.trim();
+
+    tabsContainer.appendChild(tab);
+
+});
+</script>
+</body>
+</html>

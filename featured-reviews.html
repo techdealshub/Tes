@@ -582,11 +582,78 @@ img{
 
 }
 
+
+
+/* =========================================================
+   TECHDEALSHUB PREMIUM MODERN HEADER + SIDEBAR
+========================================================= */
+body{padding-top:78px;overflow-x:hidden}
+.tdh-header{position:fixed;top:0;left:0;right:0;height:78px;z-index:1000;background:rgba(7,11,22,.82);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.08)}
+.tdh-header-inner{height:100%;width:min(1250px,94%);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.tdh-logo{display:inline-flex;align-items:center;gap:11px;font-size:18px;font-weight:900;letter-spacing:-.6px}
+.tdh-logo-mark{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(135deg,#3182f6,#06b6d4);box-shadow:0 10px 28px rgba(49,130,246,.25)}
+.tdh-logo-mark i{font-size:18px}.tdh-logo span{color:#60a5fa}
+.tdh-actions{display:flex;align-items:center;gap:10px}.tdh-search-btn,.tdh-menu-btn{width:44px;height:44px;border:1px solid rgba(255,255,255,.09);border-radius:13px;background:#0f172a;color:#fff;display:grid;place-items:center;cursor:pointer;transition:.25s ease}.tdh-search-btn:hover,.tdh-menu-btn:hover{background:#172033;border-color:rgba(59,130,246,.45);transform:translateY(-1px)}
+.tdh-menu-btn.active{background:#3b82f6;border-color:#3b82f6}.tdh-search{position:fixed;top:88px;right:max(3%,calc((100vw - 1250px)/2));width:min(380px,calc(100vw - 28px));height:54px;padding:0 16px;display:flex;align-items:center;gap:10px;background:#0f172a;border:1px solid rgba(255,255,255,.1);border-radius:15px;box-shadow:0 25px 60px rgba(0,0,0,.45);opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s ease;z-index:1100}.tdh-search.active{opacity:1;visibility:visible;transform:none}.tdh-search input{flex:1;background:none;border:0;outline:0;color:#fff;font-size:14px}.tdh-search i{color:#64748b}
+.tdh-overlay{position:fixed;inset:0;background:rgba(0,0,0,.62);backdrop-filter:blur(3px);opacity:0;visibility:hidden;transition:.25s;z-index:1190}.tdh-overlay.active{opacity:1;visibility:visible}
+.tdh-sidebar{position:fixed;top:0;right:-390px;width:min(370px,92vw);height:100vh;z-index:1200;background:linear-gradient(180deg,#0b1222,#070b16);border-left:1px solid rgba(255,255,255,.08);box-shadow:-30px 0 80px rgba(0,0,0,.5);transition:right .32s cubic-bezier(.2,.8,.2,1);overflow-y:auto}.tdh-sidebar.active{right:0}.tdh-side-top{height:78px;padding:0 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.08)}.tdh-side-brand{display:flex;align-items:center;gap:10px;font-weight:900}.tdh-side-close{width:40px;height:40px;border:1px solid rgba(59,130,246,.35);border-radius:12px;background:rgba(59,130,246,.08);color:#60a5fa;cursor:pointer;font-size:16px}.tdh-nav{padding:18px}.tdh-nav-group{margin-bottom:8px}.tdh-nav-title{padding:12px 12px 8px;color:#64748b;text-transform:uppercase;font-size:10px;font-weight:800;letter-spacing:1.4px}.tdh-nav a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;border-radius:12px;color:#cbd5e1;font-size:14px;transition:.2s}.tdh-nav a:hover{background:rgba(59,130,246,.1);color:#fff;transform:translateX(-2px)}.tdh-nav a i:first-child{width:20px;color:#60a5fa}.tdh-nav .nav-left{display:flex;align-items:center;gap:11px}.tdh-social{display:flex;gap:9px;padding:14px 18px}.tdh-social a{width:40px;height:40px;padding:0;justify-content:center;background:#111827;border:1px solid rgba(255,255,255,.07)}.tdh-side-footer{margin:10px 18px 24px;padding-top:18px;border-top:1px solid rgba(255,255,255,.07);color:#64748b;font-size:11px;line-height:1.7}
+/* premium page polish */
+.page-brand{padding-top:28px}.page-brand .brand-name{color:#fff}.hero{position:relative;border-color:rgba(96,165,250,.14);box-shadow:0 35px 90px rgba(0,0,0,.32)}.hero:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,rgba(59,130,246,.07),transparent 45%,rgba(6,182,212,.05))}.hero-image{background:radial-gradient(circle at 50% 50%,rgba(59,130,246,.18),transparent 62%)}.section{border-color:rgba(255,255,255,.08);box-shadow:0 24px 70px rgba(0,0,0,.16)}.review-card,.category-card,.highlight-card,.score-item,.faq-item{box-shadow:0 18px 45px rgba(0,0,0,.18)}.review-card:hover,.category-card:hover,.highlight-card:hover,.score-item:hover{transform:translateY(-5px);border-color:rgba(96,165,250,.28);box-shadow:0 25px 60px rgba(0,0,0,.3)}.featured-cta{border:1px solid rgba(59,130,246,.2);box-shadow:0 25px 70px rgba(0,0,0,.25)}
+@media(max-width:600px){body{padding-top:68px}.tdh-header{height:68px}.tdh-header-inner{width:calc(100% - 28px)}.tdh-logo{font-size:16px}.tdh-logo-mark{width:38px;height:38px}.tdh-search-btn,.tdh-menu-btn{width:40px;height:40px}.tdh-side-top{height:68px}.page-brand{padding-top:22px}.tdh-sidebar{width:92vw}}
+
 </style>
 
 </head>
 
 <body>
+
+<header class="tdh-header">
+  <div class="tdh-header-inner">
+    <a class="tdh-logo" href="index.html">
+      <span class="tdh-logo-mark"><i class="fa-solid fa-mobile-screen-button"></i></span>
+      Tech<span>Deals</span>Hub
+    </a>
+    <div class="tdh-actions">
+      <button class="tdh-search-btn" id="tdhSearchBtn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <button class="tdh-menu-btn" id="tdhMenuBtn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+<div class="tdh-search" id="tdhSearch"><i class="fa-solid fa-magnifying-glass"></i><input id="tdhSearchInput" type="search" placeholder="Search reviews, phones, brands..."></div>
+<div class="tdh-overlay" id="tdhOverlay"></div>
+<aside class="tdh-sidebar" id="tdhSidebar">
+  <div class="tdh-side-top"><div class="tdh-side-brand"><span class="tdh-logo-mark"><i class="fa-solid fa-mobile-screen-button"></i></span>TechDealsHub</div><button class="tdh-side-close" id="tdhClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button></div>
+  <nav class="tdh-nav">
+    <div class="tdh-nav-group"><div class="tdh-nav-title">Discover</div>
+      <a href="index"><span class="nav-left"><i class="fa-solid fa-house"></i>Home</span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="latest-reviews"><span class="nav-left"><i class="fa-solid fa-star"></i>Latest Reviews</span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="featured-reviews"><span class="nav-left"><i class="fa-solid fa-award"></i>Featured Reviews</span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="news_phones"><span class="nav-left"><i class="fa-solid fa-newspaper"></i>Latest News</span><i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+    <div class="tdh-nav-group"><div class="tdh-nav-title">Comparisons</div>
+      <a href="latest-comparisons"><span class="nav-left"><i class="fa-solid fa-fire"></i>Latest Comparisons</span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="trending-comparisons"><span class="nav-left"><i class="fa-solid fa-chart-line"></i>Trending</span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="flagship-comparisons"><span class="nav-left"><i class="fa-solid fa-crown"></i>Flagship</span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="mid-range-comparisons"><span class="nav-left"><i class="fa-solid fa-layer-group"></i>Mid-Range</span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="phone-compare"><span class="nav-left"><i class="fa-solid fa-scale-balanced"></i>Phone Comparison</span><i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+    <div class="tdh-nav-group"><div class="tdh-nav-title">Brands</div>
+      <a href="apple"><span class="nav-left"><i class="fa-brands fa-apple"></i>Apple</span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="samsung"><span class="nav-left"><i class="fa-solid fa-mobile-screen"></i>Samsung</span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="xiaomi"><span class="nav-left"><i class="fa-solid fa-mobile-screen"></i>Xiaomi</span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="google"><span class="nav-left"><i class="fa-brands fa-google"></i>Google</span><i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+    <div class="tdh-nav-group"><div class="tdh-nav-title">Site</div>
+      <a href="buy-guides"><span class="nav-left"><i class="fa-solid fa-bag-shopping"></i>Best Deals</span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="phones-brands"><span class="nav-left"><i class="fa-solid fa-tags"></i>Phone Brands</span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="about"><span class="nav-left"><i class="fa-solid fa-circle-info"></i>About</span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="contact"><span class="nav-left"><i class="fa-solid fa-envelope"></i>Contact</span><i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+    <div class="tdh-nav-title">Follow Us</div><div class="tdh-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a><a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
+  </nav>
+  <div class="tdh-side-footer"><a href="privacy-policy">Privacy</a> · <a href="terms">Terms</a> · <a href="disclaimer">Disclaimer</a> · <a href="editorial-policy">Editorial Policy</a><br>© 2026 TechDealsHub. All rights reserved.</div>
+</aside>
+
 
 
 <div class="container">
@@ -705,7 +772,7 @@ img{
             <div class="hero-actions">
 
                 <a
-                    href="samsung-galaxy-s26-ultra-review.html"
+                    href="samsung-galaxy-s26-ultra-review"
                     class="primary-button"
                 >
 
@@ -1225,7 +1292,7 @@ img{
 
 
         <a
-            href="reviews.html"
+            href="reviews"
             class="see-all"
         >
 
@@ -1250,7 +1317,7 @@ img{
         ================================================== -->
 
         <a
-            href="samsung-galaxy-s26-ultra-review.html"
+            href="samsung-galaxy-s26-ultra-review"
             class="review-card main-review"
         >
 
@@ -1322,7 +1389,7 @@ img{
         ================================================== -->
 
         <a
-            href="iphone-18-pro-max-review.html"
+            href="iphone-18-pro-max-review"
             class="review-card"
         >
 
@@ -1398,7 +1465,7 @@ img{
         ================================================== -->
 
         <a
-            href="google-pixel-11-pro-review.html"
+            href="google-pixel-11-pro-review"
             class="review-card"
         >
 
@@ -1520,7 +1587,7 @@ img{
 
 
         <a
-            href="reviews.html"
+            href="reviews"
             class="see-all"
         >
 
@@ -1545,7 +1612,7 @@ img{
         ================================================== -->
 
         <a
-            href="xiaomi-17-ultra-review.html"
+            href="xiaomi-17-ultra-review"
             class="review-card"
         >
 
@@ -1626,7 +1693,7 @@ img{
         ================================================== -->
 
         <a
-            href="oneplus-15-review.html"
+            href="oneplus-15-review"
             class="review-card"
         >
 
@@ -1707,7 +1774,7 @@ img{
         ================================================== -->
 
         <a
-            href="nothing-phone-4-review.html"
+            href="nothing-phone-4-review"
             class="review-card"
         >
 
@@ -1783,7 +1850,7 @@ img{
         ================================================== -->
 
         <a
-            href="motorola-edge-70-ultra-review.html"
+            href="motorola-edge-70-ultra-review"
             class="review-card"
         >
 
@@ -1864,7 +1931,7 @@ img{
         ================================================== -->
 
         <a
-            href="poco-x8-pro-review.html"
+            href="poco-x8-pro-review"
             class="review-card"
         >
 
@@ -1945,7 +2012,7 @@ img{
         ================================================== -->
 
         <a
-            href="redmi-note-15-review.html"
+            href="redmi-note-15-review"
             class="review-card"
         >
 
@@ -2081,7 +2148,7 @@ img{
         ================================================== -->
 
         <a
-            href="samsung-galaxy-s26-ultra-review.html"
+            href="samsung-galaxy-s26-ultra-review"
             class="review-card"
         >
 
@@ -2164,7 +2231,7 @@ img{
         ================================================== -->
 
         <a
-            href="google-pixel-11-pro-review.html"
+            href="google-pixel-11-pro-review"
             class="review-card"
         >
 
@@ -2245,7 +2312,7 @@ img{
         ================================================== -->
 
         <a
-            href="poco-x8-pro-review.html"
+            href="poco-x8-pro-review"
             class="review-card"
         >
 
@@ -2380,7 +2447,7 @@ img{
         ================================================== -->
 
         <a
-            href="flagship-phones.html"
+            href="flagship-phones"
             class="category-card"
         >
 
@@ -2418,7 +2485,7 @@ img{
         ================================================== -->
 
         <a
-            href="camera-phones.html"
+            href="camera-phones"
             class="category-card"
         >
 
@@ -2466,7 +2533,7 @@ img{
         ================================================== -->
 
         <a
-            href="gaming-phones.html"
+            href="gaming-phones"
             class="category-card"
         >
 
@@ -2514,7 +2581,7 @@ img{
         ================================================== -->
 
         <a
-            href="value-phones.html"
+            href="value-phones"
             class="category-card"
         >
 
@@ -2610,7 +2677,7 @@ img{
 
 
         <a
-            href="comparisons.html"
+            href="comparisons"
             class="see-all"
         >
 
@@ -2635,7 +2702,7 @@ img{
         ================================================== -->
 
         <a
-            href="s26-ultra-vs-iphone-18-pro-max.html"
+            href="s26-ultra-vs-iphone-18-pro-max"
             class="comparison-card"
         >
 
@@ -2699,7 +2766,7 @@ img{
         ================================================== -->
 
         <a
-            href="pixel-11-pro-vs-xiaomi-17-ultra.html"
+            href="pixel-11-pro-vs-xiaomi-17-ultra"
             class="comparison-card"
         >
 
@@ -2763,7 +2830,7 @@ img{
         ================================================== -->
 
         <a
-            href="nothing-phone-4-vs-oneplus-15.html"
+            href="nothing-phone-4-vs-oneplus-15"
             class="comparison-card"
         >
 
@@ -3448,7 +3515,7 @@ span i{
         <!-- PHONE 1 -->
 
         <a
-            href="samsung-galaxy-s26-ultra-review.html"
+            href="samsung-galaxy-s26-ultra-review"
             class="score-item"
         >
 
@@ -3498,7 +3565,7 @@ span i{
         <!-- PHONE 2 -->
 
         <a
-            href="iphone-18-pro-max-review.html"
+            href="iphone-18-pro-max-review"
             class="score-item"
         >
 
@@ -3548,7 +3615,7 @@ span i{
         <!-- PHONE 3 -->
 
         <a
-            href="google-pixel-11-pro-review.html"
+            href="google-pixel-11-pro-review"
             class="score-item"
         >
 
@@ -3598,7 +3665,7 @@ span i{
         <!-- PHONE 4 -->
 
         <a
-            href="xiaomi-17-ultra-review.html"
+            href="xiaomi-17-ultra-review"
             class="score-item"
         >
 
@@ -3648,7 +3715,7 @@ span i{
         <!-- PHONE 5 -->
 
         <a
-            href="oneplus-15-review.html"
+            href="oneplus-15-review"
             class="score-item"
         >
 
@@ -4524,7 +4591,7 @@ span i{
 
 
     <a
-        href="reviews.html"
+        href="reviews"
         class="cta-button"
     >
 
@@ -4589,22 +4656,22 @@ span i{
             </h3>
 
 
-            <a href="samsung-galaxy-s26-ultra-review.html">
+            <a href="samsung-galaxy-s26-ultra-review">
                 Galaxy S26 Ultra
             </a>
 
 
-            <a href="iphone-18-pro-max-review.html">
+            <a href="iphone-18-pro-max-review">
                 iPhone 18 Pro Max
             </a>
 
 
-            <a href="google-pixel-11-pro-review.html">
+            <a href="google-pixel-11-pro-review">
                 Pixel 11 Pro
             </a>
 
 
-            <a href="xiaomi-17-ultra-review.html">
+            <a href="xiaomi-17-ultra-review">
                 Xiaomi 17 Ultra
             </a>
 
@@ -4622,22 +4689,22 @@ span i{
             </h3>
 
 
-            <a href="flagship-phones.html">
+            <a href="flagship-phones">
                 Flagship Phones
             </a>
 
 
-            <a href="camera-phones.html">
+            <a href="camera-phones">
                 Camera Phones
             </a>
 
 
-            <a href="gaming-phones.html">
+            <a href="gaming-phones">
                 Gaming Phones
             </a>
 
 
-            <a href="value-phones.html">
+            <a href="value-phones">
                 Best Value Phones
             </a>
 
@@ -5352,6 +5419,20 @@ summary i{
 <!-- =========================================================
      END OF FEATURED REVIEWS PAGE
 ========================================================= -->
+
+
+<script>
+(function(){
+ const menu=document.getElementById('tdhMenuBtn'), side=document.getElementById('tdhSidebar'), overlay=document.getElementById('tdhOverlay'), close=document.getElementById('tdhClose');
+ const searchBtn=document.getElementById('tdhSearchBtn'), search=document.getElementById('tdhSearch'), input=document.getElementById('tdhSearchInput');
+ function toggleMenu(open){side.classList.toggle('active',open);overlay.classList.toggle('active',open);menu.classList.toggle('active',open);menu.innerHTML=open?'<i class="fa-solid fa-xmark"></i>':'<i class="fa-solid fa-bars"></i>';}
+ menu.addEventListener('click',()=>toggleMenu(!side.classList.contains('active'))); close.addEventListener('click',()=>toggleMenu(false)); overlay.addEventListener('click',()=>{toggleMenu(false);search.classList.remove('active')});
+ document.querySelectorAll('.tdh-sidebar a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
+ searchBtn.addEventListener('click',()=>{search.classList.toggle('active');if(search.classList.contains('active'))input.focus()});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'){toggleMenu(false);search.classList.remove('active')}});
+ input.addEventListener('keydown',e=>{if(e.key==='Enter'){const q=input.value.trim();if(q) location.href='search?q='+encodeURIComponent(q)}});
+})();
+</script>
 
 </body>
 </html>

@@ -1221,7 +1221,50 @@ body{
 
 }
 
-</style></head><body><main class="news-page"><!-- =====================================================
+</style><style>
+
+/* ===== TechDealsHub Premium Global Header + Footer ===== */
+.tdh-site-header{position:sticky;top:0;z-index:9999;width:100%;background:rgba(6,9,18,.84);border-bottom:1px solid rgba(255,255,255,.07);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.tdh-header-inner{width:min(1450px,calc(100% - 40px));min-height:76px;margin:auto;display:flex;align-items:center;gap:28px}
+.tdh-logo{color:#fff;text-decoration:none;font-size:1.35rem;font-weight:900;letter-spacing:-.7px;white-space:nowrap}.tdh-logo span{color:#3b82f6}
+.tdh-main-nav{display:flex;align-items:center;justify-content:center;gap:5px;flex:1}
+.tdh-main-nav a{display:flex;align-items:center;gap:7px;padding:10px 12px;border-radius:10px;color:#91a0b7;text-decoration:none;font-size:12px;font-weight:800;transition:.25s}
+.tdh-main-nav a:hover,.tdh-main-nav a.active{color:#fff;background:rgba(59,130,246,.11)}.tdh-main-nav a.active{box-shadow:inset 0 -2px #3b82f6}
+.tdh-header-actions{display:flex;align-items:center;gap:8px}.tdh-header-icon,.tdh-menu-toggle{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.08);border-radius:11px;color:#aebbd0;background:#0b1220;text-decoration:none;transition:.25s}
+.tdh-header-icon:hover,.tdh-menu-toggle:hover{color:#fff;border-color:rgba(59,130,246,.4);transform:translateY(-1px)}.tdh-menu-toggle{display:none;cursor:pointer}
+.tdh-site-footer{position:relative;margin-top:65px;background:#080d18;border-top:1px solid rgba(255,255,255,.07);overflow:hidden}
+.tdh-footer-glow{position:absolute;width:500px;height:220px;top:-150px;left:50%;transform:translateX(-50%);background:rgba(37,99,235,.14);filter:blur(70px);pointer-events:none}
+.tdh-footer-inner{position:relative;width:min(1450px,calc(100% - 40px));margin:auto;padding:58px 0 45px;display:grid;grid-template-columns:1.8fr repeat(3,1fr);gap:45px}
+.tdh-footer-brand p{max-width:390px;color:#718198;font-size:13px;line-height:1.75;margin:16px 0 20px}.tdh-footer-socials{display:flex;gap:8px;flex-wrap:wrap}
+.tdh-footer-socials a{width:38px;height:38px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.08);border-radius:10px;color:#8b9bb3;background:#0c1322;text-decoration:none;transition:.25s}
+.tdh-footer-socials a:hover{color:#fff;background:#2563eb;border-color:#2563eb;transform:translateY(-3px)}
+.tdh-footer-column{display:flex;flex-direction:column;gap:11px}.tdh-footer-column h3{color:#fff;font-size:12px;text-transform:uppercase;letter-spacing:1.1px;margin:0 0 7px}
+.tdh-footer-column a{color:#74839a;text-decoration:none;font-size:12px;transition:.2s}.tdh-footer-column a:hover{color:#60a5fa;transform:translateX(3px)}
+.tdh-footer-bottom{position:relative;width:min(1450px,calc(100% - 40px));margin:auto;padding:20px 0;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;gap:20px;color:#596980;font-size:10.5px}.tdh-footer-bottom div{display:flex;gap:18px}.tdh-footer-bottom a{color:#68778e;text-decoration:none}.tdh-footer-bottom a:hover{color:#fff}
+@media(max-width:900px){.tdh-header-inner{min-height:68px;gap:12px}.tdh-menu-toggle{display:flex}.tdh-main-nav{position:absolute;top:calc(100% + 8px);left:12px;right:12px;display:none;flex-direction:column;align-items:stretch;padding:10px;background:rgba(8,13,24,.97);border:1px solid rgba(255,255,255,.08);border-radius:16px;box-shadow:0 20px 55px rgba(0,0,0,.4)}.tdh-main-nav.open{display:flex}.tdh-main-nav a{padding:12px 14px}.tdh-main-nav a.active{box-shadow:none;background:rgba(59,130,246,.14)}.tdh-footer-inner{grid-template-columns:repeat(2,1fr);gap:35px}}
+@media(max-width:520px){.tdh-header-inner,.tdh-footer-inner,.tdh-footer-bottom{width:min(100% - 24px,1450px)}.tdh-logo{font-size:1.15rem}.tdh-footer-inner{grid-template-columns:1fr;padding:45px 0 35px}.tdh-footer-bottom{flex-direction:column;gap:10px}}
+
+</style>
+</head><body>
+
+<header class="tdh-site-header">
+  <div class="tdh-header-inner">
+    <a href="index.html" class="tdh-logo">Tech<span>Deals</span>Hub</a>
+    <nav class="tdh-main-nav" aria-label="Main navigation">
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="reviews.html"><i class="fa-solid fa-star"></i> Reviews</a>
+      <a href="latest-comparisons.html"><i class="fa-solid fa-code-compare"></i> Comparisons</a>
+      <a href="news.html" class="active"><i class="fa-solid fa-newspaper"></i> News</a>
+      <a href="top-brands.html"><i class="fa-solid fa-layer-group"></i> Brands</a>
+      <a href="most-viewed.html"><i class="fa-solid fa-fire"></i> Most Viewed</a>
+    </nav>
+    <div class="tdh-header-actions">
+      <a href="search.html" class="tdh-header-icon" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <button class="tdh-menu-toggle" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+<main class="news-page"><!-- =====================================================
      HEADER
 ===================================================== --><section class="news-heading"><span class="eyebrow">
     <i class="fa-solid fa-bolt"></i>
@@ -2270,5 +2313,58 @@ paginationButtons.forEach(button => {
 
 });
 
-</script></body>
+</script>
+<footer class="tdh-site-footer">
+  <div class="tdh-footer-glow"></div>
+  <div class="tdh-footer-inner">
+    <div class="tdh-footer-brand">
+      <a href="index.html" class="tdh-logo">Tech<span>Deals</span>Hub</a>
+      <p>Your modern destination for smartphone news, reviews, comparisons, deals and technology insights.</p>
+      <div class="tdh-footer-socials">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="tdh-footer-column"><h3>Explore</h3>
+      <a href="news.html">Tech News</a><a href="featured-reviews.html">Featured Reviews</a>
+      <a href="most-viewed.html">Most Viewed</a><a href="latest-comparisons.html">Comparisons</a>
+    </div>
+    <div class="tdh-footer-column"><h3>Categories</h3>
+      <a href="news.html">Mobile</a><a href="news.html">Apple</a><a href="news.html">Samsung</a>
+      <a href="news.html">Android</a><a href="news.html">AI & Technology</a>
+    </div>
+    <div class="tdh-footer-column"><h3>Company</h3>
+      <a href="about.html">About Us</a><a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms & Conditions</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+  </div>
+  <div class="tdh-footer-bottom">
+    <span>© 2026 TechDealsHub. All rights reserved.</span>
+    <div><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></div>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  const toggle=document.querySelector(".tdh-menu-toggle"), nav=document.querySelector(".tdh-main-nav");
+  if(!toggle||!nav)return;
+  toggle.addEventListener("click",()=>{
+    const open=nav.classList.toggle("open");
+    toggle.setAttribute("aria-expanded",open?"true":"false");
+    toggle.innerHTML=open?'<i class="fa-solid fa-xmark"></i>':'<i class="fa-solid fa-bars"></i>';
+  });
+  nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
+    nav.classList.remove("open");toggle.setAttribute("aria-expanded","false");
+    toggle.innerHTML='<i class="fa-solid fa-bars"></i>';
+  }));
+})();
+</script>
+
+</body>
 </html>

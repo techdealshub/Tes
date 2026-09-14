@@ -196,73 +196,16 @@ button{
 
 
 /* =========================================================
-   HEADER
+   DESKTOP NAV ICONS
 ========================================================= */
 
-.site-header{
-
-    position:sticky;
-
-    top:0;
-
-    z-index:100;
-
-    background:rgba(7,11,19,.82);
-
-    backdrop-filter:blur(18px);
-
-    -webkit-backdrop-filter:blur(18px);
-
-    border-bottom:1px solid var(--border);
-
-}
-
-
-.navbar{
-
-    min-height:72px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:25px;
-
-}
-
-
-.logo{
-
-    font-size:21px;
-
-    font-weight:900;
-
-    letter-spacing:-.7px;
-
-}
-
-
-.logo span{
-
-    color:var(--blue);
-
-}
-
-
-.nav-links{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:25px;
-
-}
-
-
 .nav-links a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
 
     color:var(--muted);
 
@@ -274,6 +217,13 @@ button{
 
 }
 
+.nav-links a i{
+
+    font-size:11px;
+
+    opacity:.8;
+
+}
 
 .nav-links a:hover{
 
@@ -281,50 +231,493 @@ button{
 
 }
 
-
 .nav-links a.active{
 
     color:#fff;
 
 }
 
+.nav-links a.active i{
 
-.nav-links a.active::after{
-
-    content:"";
-
-    display:block;
-
-    height:2px;
-
-    width:18px;
-
-    margin:5px auto 0;
-
-    border-radius:5px;
-
-    background:var(--blue);
+    color:var(--blue);
 
 }
 
 
-.menu-button{
+/* =========================================================
+   MOBILE MENU - FIXED INDEPENDENT PANEL
+========================================================= */
 
-    display:none;
+.mobile-menu{
 
-    border:0;
+    position:fixed;
 
-    background:transparent;
+    top:0;
+    right:0;
+
+    width:min(390px, 88vw);
+
+    height:100dvh;
+
+    z-index:1000;
+
+    display:flex;
+
+    flex-direction:column;
+
+    background:#0b1220;
+
+    border-left:1px solid rgba(96,165,250,.18);
+
+    box-shadow:
+        -20px 0 60px rgba(0,0,0,.55);
+
+    transform:translateX(110%);
+
+    visibility:hidden;
+
+    opacity:0;
+
+    transition:
+        transform .35s cubic-bezier(.4,0,.2,1),
+        opacity .25s ease,
+        visibility .35s ease;
+
+}
+
+
+/* OPEN MENU */
+
+.mobile-menu.open{
+
+    transform:translateX(0);
+
+    visibility:visible;
+
+    opacity:1;
+
+}
+
+
+/* =========================================================
+   MENU HEADER
+========================================================= */
+
+.mobile-menu-header{
+
+    height:72px;
+
+    min-height:72px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 18px;
+
+    border-bottom:1px solid var(--border);
+
+    background:#0b1220;
+
+}
+
+
+.mobile-menu-title{
+
+    font-size:18px;
+
+    font-weight:900;
 
     color:#fff;
 
-    font-size:21px;
+}
+
+
+.mobile-close{
+
+    width:40px;
+
+    height:40px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:1px solid rgba(96,165,250,.25);
+
+    border-radius:11px;
+
+    background:rgba(37,99,235,.10);
+
+    color:#60a5fa;
+
+    font-size:20px;
 
     cursor:pointer;
 
 }
 
 
+.mobile-close:hover{
+
+    background:#2563eb;
+
+    color:#fff;
+
+}
+
+
+/* =========================================================
+   MOBILE LINKS
+========================================================= */
+
+.mobile-nav{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:14px;
+
+}
+
+
+.mobile-nav a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    width:100%;
+
+    min-height:64px;
+
+    margin-bottom:7px;
+
+    padding:9px 11px;
+
+    border:1px solid transparent;
+
+    border-radius:14px;
+
+    color:#e2e8f0;
+
+    background:transparent;
+
+    transition:.25s ease;
+
+}
+
+
+.mobile-nav a:hover{
+
+    background:rgba(255,255,255,.045);
+
+    border-color:var(--border);
+
+}
+
+
+.mobile-nav a.active{
+
+    background:rgba(37,99,235,.13);
+
+    border-color:rgba(96,165,250,.20);
+
+}
+
+
+/* ICON */
+
+.mobile-nav-icon{
+
+    width:42px;
+
+    height:42px;
+
+    min-width:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:11px;
+
+    color:#60a5fa;
+
+    background:rgba(59,130,246,.10);
+
+}
+
+
+.mobile-nav a.active .mobile-nav-icon{
+
+    color:#fff;
+
+    background:#2563eb;
+
+}
+
+
+/* TEXT */
+
+.mobile-nav a > span:nth-child(2){
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2px;
+
+    font-size:13px;
+
+    font-weight:800;
+
+}
+
+
+.mobile-nav small{
+
+    color:#64748b;
+
+    font-size:9px;
+
+    font-weight:500;
+
+}
+
+
+.mobile-nav .arrow{
+
+    color:#475569;
+
+    font-size:9px;
+
+}
+
+
+/* =========================================================
+   MENU FOOTER
+========================================================= */
+
+.mobile-menu-footer{
+
+    padding:18px;
+
+    border-top:1px solid var(--border);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:3px;
+
+}
+
+
+.mobile-menu-footer > span{
+
+    font-size:13px;
+
+    font-weight:900;
+
+}
+
+
+.mobile-menu-footer > span span{
+
+    color:#60a5fa;
+
+}
+
+
+.mobile-menu-footer small{
+
+    color:#64748b;
+
+    font-size:9px;
+
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.menu-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:999;
+
+    background:rgba(0,0,0,.65);
+
+    backdrop-filter:blur(3px);
+
+    -webkit-backdrop-filter:blur(3px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:
+        opacity .3s ease,
+        visibility .3s ease;
+
+}
+
+
+.menu-overlay.open{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+}
+
+
+/* =========================================================
+   MOBILE HEADER BUTTON
+========================================================= */
+
+@media(max-width:650px){
+
+    .menu-button{
+
+        position:relative;
+
+        z-index:1100;
+
+        width:42px;
+
+        height:42px;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+        border:1px solid rgba(96,165,250,.20);
+
+        border-radius:12px;
+
+        background:rgba(59,130,246,.08);
+
+        color:#60a5fa;
+
+        font-size:18px;
+
+        cursor:pointer;
+
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media(min-width:651px){
+
+    .mobile-menu,
+    .menu-overlay{
+
+        display:none !important;
+
+    }
+
+}
+
+
+
+
+/* =========================================================
+   MOBILE ONLY
+========================================================= */
+
+@media(max-width:650px){
+
+    .menu-button{
+
+        width:42px;
+
+        height:42px;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+        border:1px solid rgba(96,165,250,.16);
+
+        border-radius:12px;
+
+        background:rgba(59,130,246,.07);
+
+        color:var(--blue);
+
+        font-size:18px;
+
+        cursor:pointer;
+
+        transition:.25s ease;
+
+    }
+
+
+    .menu-button:hover{
+
+        background:var(--blue-strong);
+
+        color:#fff;
+
+    }
+
+
+    .menu-button.active{
+
+        background:var(--blue-strong);
+
+        color:#fff;
+
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP - HIDE MOBILE MENU
+========================================================= */
+
+@media(min-width:651px){
+
+    .mobile-menu,
+    .menu-overlay{
+
+        display:none;
+
+    }
+
+}
 /* =========================================================
    HERO
 ========================================================= */
@@ -344,6 +737,7 @@ button{
     text-align:center;
 
     overflow:hidden;
+  
 
 }
 
@@ -1484,6 +1878,7 @@ button{
     font-size:15px;
 
     font-weight:900;
+   
 
 }
 
@@ -1762,54 +2157,206 @@ button{
 
     <div class="container navbar">
 
-
-        <a
-            href="index.html"
-            class="logo"
-        >
-
+        <a href="index.html" class="logo">
             Tech<span>Deals</span>Hub
-
         </a>
 
+
+        <!-- DESKTOP NAVIGATION -->
 
         <nav class="nav-links">
 
             <a href="index.html">
+                <i class="fa-solid fa-house"></i>
                 Home
             </a>
 
             <a href="featured-reviews.html">
+                <i class="fa-solid fa-star"></i>
                 Reviews
             </a>
 
             <a href="upcoming.html">
+                <i class="fa-solid fa-clock"></i>
                 Upcoming
             </a>
 
-            <a
-                href="editors-choice.html"
-                class="active"
-            >
+            <a href="editors-choice.html" class="active">
+                <i class="fa-solid fa-award"></i>
                 Editor's Choice
             </a>
 
         </nav>
 
 
+        <!-- MOBILE MENU BUTTON -->
+
         <button
             class="menu-button"
+            id="menuButton"
             aria-label="Open menu"
+            aria-expanded="false"
+            type="button"
         >
-
             <i class="fa-solid fa-bars"></i>
-
         </button>
-
 
     </div>
 
+
+    <!-- ===================================================
+         MOBILE MENU
+    ==================================================== -->
+
+    <div class="mobile-menu" id="mobileMenu">
+
+        <div class="mobile-menu-header">
+
+            <span class="mobile-menu-title">
+                Menu
+            </span>
+
+            <button
+                class="mobile-close"
+                id="mobileClose"
+                aria-label="Close menu"
+                type="button"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <nav class="mobile-nav">
+
+            <a href="index.html">
+
+                <span class="mobile-nav-icon">
+                    <i class="fa-solid fa-house"></i>
+                </span>
+
+                <span>
+                    Home
+                    <small>Back to homepage</small>
+                </span>
+
+                <i class="fa-solid fa-chevron-right arrow"></i>
+
+            </a>
+
+
+            <a href="featured-reviews.html">
+
+                <span class="mobile-nav-icon">
+                    <i class="fa-solid fa-star"></i>
+                </span>
+
+                <span>
+                    Reviews
+                    <small>Read our latest reviews</small>
+                </span>
+
+                <i class="fa-solid fa-chevron-right arrow"></i>
+
+            </a>
+
+
+            <a href="upcoming.html">
+
+                <span class="mobile-nav-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </span>
+
+                <span>
+                    Upcoming
+                    <small>Upcoming smartphones</small>
+                </span>
+
+                <i class="fa-solid fa-chevron-right arrow"></i>
+
+            </a>
+
+
+            <a href="editors-choice.html" class="active">
+
+                <span class="mobile-nav-icon">
+                    <i class="fa-solid fa-award"></i>
+                </span>
+
+                <span>
+                    Editor's Choice
+                    <small>Our recommended phones</small>
+                </span>
+
+                <i class="fa-solid fa-chevron-right arrow"></i>
+
+            </a>
+
+
+            <a href="flagship-comparisons.html">
+
+                <span class="mobile-nav-icon">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </span>
+
+                <span>
+                    Comparisons
+                    <small>Compare smartphones</small>
+                </span>
+
+                <i class="fa-solid fa-chevron-right arrow"></i>
+
+            </a>
+
+
+            <a href="brands.html">
+
+                <span class="mobile-nav-icon">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                </span>
+
+                <span>
+                    Brands
+                    <small>Explore smartphone brands</small>
+                </span>
+
+                <i class="fa-solid fa-chevron-right arrow"></i>
+
+            </a>
+
+        </nav>
+
+
+        <div class="mobile-menu-footer">
+
+            <span>
+                Tech<span>Deals</span>Hub
+            </span>
+
+            <small>
+                Smart choices. Better deals.
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <!-- DARK OVERLAY -->
+
+    <div
+        class="menu-overlay"
+        id="menuOverlay"
+    ></div>
+
 </header>
+
+
+
+<!-- =======================================================
+     MOBILE MENU JAVASCRIPT
+======================================================= -->
 
 
 
@@ -2842,4 +3389,102 @@ button{
 
 
 </body>
+  <script>
+
+const menuButton = document.getElementById("menuButton");
+
+const mobileMenu = document.getElementById("mobileMenu");
+
+const mobileClose = document.getElementById("mobileClose");
+
+const menuOverlay = document.getElementById("menuOverlay");
+
+
+function openMenu(){
+
+    mobileMenu.classList.add("open");
+
+    menuOverlay.classList.add("open");
+
+    menuButton.classList.add("active");
+
+    menuButton.setAttribute(
+        "aria-expanded",
+        "true"
+    );
+
+    document.body.classList.add("menu-open");
+
+}
+
+
+function closeMenu(){
+
+    mobileMenu.classList.remove("open");
+
+    menuOverlay.classList.remove("open");
+
+    menuButton.classList.remove("active");
+
+    menuButton.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+    document.body.classList.remove("menu-open");
+
+}
+
+
+menuButton.addEventListener(
+    "click",
+    openMenu
+);
+
+
+mobileClose.addEventListener(
+    "click",
+    closeMenu
+);
+
+
+menuOverlay.addEventListener(
+    "click",
+    closeMenu
+);
+
+
+/* Close when clicking a menu link */
+
+document
+    .querySelectorAll(".mobile-nav a")
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            closeMenu
+        );
+
+    });
+
+
+/* Close with ESC */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if(
+            event.key === "Escape" &&
+            mobileMenu.classList.contains("open")
+        ){
+
+            closeMenu();
+
+        }
+
+    }
+);
+
+  </script>
 </html>
