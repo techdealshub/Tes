@@ -8,13 +8,20 @@ $data = array (
     array (
       'brand' => 'Apple',
       'title' => 'iPhone 17 Pro Max',
-      'score' => 9.6,
+      'score' => 9.5,
       'camera_score' => 9.7,
       'gaming_score' => 9.7,
-      'description' => 'The iPhone 17 Pro Max combines a premium design, exceptional display, powerful performance, advanced cameras, and excellent battery life.',
+      'description' => 'The iPhone 17 Pro Max is Apple\'s largest and most advanced iPhone 17 model, built around the A19 Pro chip, a 6.9-inch Super Retina XDR OLED display with ProMotion up to 120Hz, a 48MP Pro Fusion triple-camera system with up to 8x optical-quality zoom, an 18MP Center Stage front camera, and a large integrated lithium-ion battery. Its combination of flagship performance, advanced photography, professional video features, Apple Intelligence, long battery life, and premium aluminum unibody construction makes it one of Apple\'s most capable smartphones.',
       'category' => 'Flagship',
       'image' => 'https://techdealshub.online/apple/img/iphone17promax_hero_3_2.webp',
       'url' => 'reviews/iphone-17-pro-max-reviews.html',
+      'price' => '$1,199',
+      'reviews' => '214',
+      'display' => '6.9 inches Super Retina XDR OLED display',
+      'processor' => 'Apple A19 Pro',
+      'camera' => '48MP Fusion Main camera, 24mm, f/1.78, second-generation sensor-shift OIS',
+      'battery' => '4,823 mAh rated capacity',
+      'badge' => 'Best Performance',
     ),
     1 => 
     array (
