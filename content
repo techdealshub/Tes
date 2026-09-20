@@ -6,17 +6,6 @@
 
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNYG3R18BZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZNYG3R18BZ');
-</script>
-<!-- End Google Tag Manager -->
-
 
 <title>Featured Phone Reviews</title>
 
@@ -614,6 +603,260 @@ body{padding-top:78px;overflow-x:hidden}
 
 </style>
 
+
+<style id="premium-modern-overrides">
+/* =========================================================
+   TECHDEALSHUB — PREMIUM MODERN DARK VISUAL OVERRIDES
+   Design only: HTML / content / links / JS remain untouched.
+========================================================= */
+:root{
+  --bg:#050816;
+  --surface:#080f1e;
+  --surface-2:#0b1324;
+  --card:#0d1729;
+  --card-2:#101b30;
+  --border:rgba(148,163,184,.13);
+  --border-strong:rgba(96,165,250,.28);
+  --primary:#3b82f6;
+  --primary-2:#2563eb;
+  --cyan:#06b6d4;
+  --text:#f8fafc;
+  --muted:#94a3b8;
+  --muted-2:#64748b;
+  --gold:#facc15;
+  --green:#22c55e;
+  --purple:#8b5cf6;
+}
+
+html{background:var(--bg);}
+body{
+  background:
+    radial-gradient(700px 360px at 8% -5%,rgba(59,130,246,.13),transparent 68%),
+    radial-gradient(620px 340px at 94% 4%,rgba(6,182,212,.09),transparent 66%),
+    linear-gradient(180deg,#050816 0%,#070c18 48%,#050914 100%);
+  color:var(--text);
+  font-family:Inter,Arial,Helvetica,sans-serif;
+}
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(rgba(255,255,255,.012) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.01) 1px,transparent 1px);
+  background-size:48px 48px;
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.32),transparent 55%);
+  z-index:-1;
+}
+
+.container{width:min(1280px,92%);}
+
+/* HEADER */
+.tdh-header{
+  background:rgba(5,8,22,.92);
+  border-bottom:1px solid rgba(148,163,184,.10);
+  box-shadow:0 10px 35px rgba(0,0,0,.25);
+  backdrop-filter:blur(14px);
+}
+.tdh-header-inner{width:min(1280px,92%);height:72px;}
+.tdh-logo{font-weight:900;letter-spacing:-.5px;}
+.tdh-logo span:not(.tdh-logo-mark){color:#60a5fa;}
+.tdh-logo-mark{
+  background:linear-gradient(135deg,#3b82f6,#06b6d4);
+  box-shadow:0 8px 25px rgba(59,130,246,.25);
+  border:1px solid rgba(255,255,255,.10);
+}
+.tdh-search-btn,.tdh-menu-btn{
+  background:#0d1729!important;
+  border:1px solid rgba(148,163,184,.13)!important;
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
+  transition:.22s ease;
+}
+.tdh-search-btn:hover,.tdh-menu-btn:hover{
+  border-color:rgba(59,130,246,.45)!important;
+  background:#111d33!important;
+  transform:translateY(-1px);
+}
+
+/* SIDE MENU */
+.tdh-sidebar{background:#070d1b!important;border-left:1px solid rgba(148,163,184,.12)!important;box-shadow:-25px 0 70px rgba(0,0,0,.42)!important;}
+.tdh-side-top{border-bottom-color:rgba(148,163,184,.10)!important;}
+.tdh-nav-group a{border-radius:12px!important;transition:.2s ease!important;}
+.tdh-nav-group a:hover{background:#0d1729!important;color:#60a5fa!important;}
+
+/* PAGE BRAND */
+.page-brand{padding:34px 0 16px;}
+.brand-content{gap:14px;}
+.brand-icon{
+  width:50px;height:50px;border-radius:15px;
+  background:linear-gradient(135deg,#3b82f6,#06b6d4);
+  box-shadow:0 12px 32px rgba(59,130,246,.24);
+  border:1px solid rgba(255,255,255,.10);
+}
+.brand-name{font-size:23px;letter-spacing:-.3px;}
+.brand-subtitle{font-size:13px;color:#8ea0b7;}
+
+/* HERO */
+.hero{
+  margin-top:14px;
+  border-radius:26px;
+  border:1px solid rgba(96,165,250,.17);
+  background:
+    radial-gradient(circle at 12% 50%,rgba(59,130,246,.14),transparent 34%),
+    linear-gradient(135deg,rgba(14,25,48,.98),rgba(7,14,29,.98));
+  box-shadow:0 24px 70px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.025);
+  position:relative;
+}
+.hero:after{
+  content:"";position:absolute;left:8%;right:8%;bottom:-1px;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(59,130,246,.65),rgba(6,182,212,.55),transparent);
+}
+.hero-grid{min-height:500px;grid-template-columns:1.02fr .98fr;}
+.hero-image{
+  min-height:500px;padding:42px;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(59,130,246,.17),transparent 52%),
+    linear-gradient(180deg,rgba(10,22,43,.55),rgba(5,12,25,.2));
+}
+.hero-image:before{
+  content:"";position:absolute;width:330px;height:330px;border-radius:50%;
+  border:1px solid rgba(96,165,250,.08);box-shadow:0 0 0 28px rgba(59,130,246,.025),0 0 0 56px rgba(59,130,246,.018);
+}
+.hero-image img{height:410px;position:relative;z-index:1;filter:drop-shadow(0 28px 35px rgba(0,0,0,.55));}
+.hero-label{
+  top:25px;left:25px;padding:8px 13px;
+  background:linear-gradient(135deg,#2563eb,#0891b2);
+  box-shadow:0 8px 24px rgba(37,99,235,.24);
+}
+.hero-content{padding:58px 52px;}
+.hero-kicker{color:#60a5fa;letter-spacing:1.3px;font-size:12px;}
+.hero-content h1{font-size:clamp(32px,4vw,50px);letter-spacing:-1.5px;}
+.hero-description{font-size:15px;line-height:1.75;color:#9aa9bd;}
+.hero-meta{margin-top:25px;}
+.rating{background:#0b1528!important;border-color:rgba(148,163,184,.14)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.025);}
+.stars{color:#facc15!important;}
+
+/* BUTTONS */
+.primary-button,.cta-button{
+  background:linear-gradient(135deg,#3b82f6,#2563eb)!important;
+  border:1px solid rgba(147,197,253,.22)!important;
+  box-shadow:0 10px 26px rgba(37,99,235,.22);
+}
+.secondary-button{
+  background:#0c1629!important;
+  border:1px solid rgba(148,163,184,.16)!important;
+}
+.primary-button:hover,.secondary-button:hover,.cta-button:hover{transform:translateY(-2px);}
+
+/* SECTIONS */
+.section{
+  margin-top:24px;padding:28px;
+  border-radius:22px;
+  background:linear-gradient(180deg,rgba(12,21,39,.94),rgba(8,15,29,.94));
+  border:1px solid rgba(148,163,184,.11);
+  box-shadow:0 18px 50px rgba(0,0,0,.20),inset 0 1px 0 rgba(255,255,255,.018);
+}
+.section-heading{margin-bottom:20px;}
+.heading-left{gap:13px;}
+.heading-icon{
+  width:45px;height:45px;border-radius:13px;
+  background:linear-gradient(135deg,#3b82f6,#06b6d4);
+  box-shadow:0 9px 24px rgba(59,130,246,.20);
+}
+.section-heading h2{font-size:24px;letter-spacing:-.5px;}
+.section-heading p{color:#8292a8;}
+.see-all{color:#60a5fa;padding:8px 12px;border-radius:10px;border:1px solid transparent;transition:.2s ease;}
+.see-all:hover{background:rgba(59,130,246,.08);border-color:rgba(59,130,246,.18);text-decoration:none;}
+
+/* ALL CARD FAMILIES */
+.review-card,.category-card,.comparison-card,.highlight-card,.guide-card,.score-item,.faq-item{
+  background:linear-gradient(180deg,#0d1729,#0a1425)!important;
+  border:1px solid rgba(148,163,184,.11)!important;
+  box-shadow:0 10px 28px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.018);
+}
+.review-card:hover,.category-card:hover,.comparison-card:hover,.highlight-card:hover,.guide-card:hover,.score-item:hover,.faq-item:hover{
+  background:linear-gradient(180deg,#111d32,#0c172a)!important;
+  border-color:rgba(59,130,246,.34)!important;
+  box-shadow:0 16px 35px rgba(0,0,0,.24),0 0 0 1px rgba(59,130,246,.03);
+}
+.review-card-image,.phone-mini,.score-phone-image{background:#07111f!important;}
+.review-card-image{border-bottom:1px solid rgba(148,163,184,.07);}
+.review-card-image img{filter:drop-shadow(0 18px 24px rgba(0,0,0,.45));}
+.review-badge{background:linear-gradient(135deg,#2563eb,#0891b2);box-shadow:0 7px 20px rgba(37,99,235,.20);}
+.review-card h3,.category-card h3,.comparison-card h3,.guide-card h3,.highlight-card h3{letter-spacing:-.2px;}
+.review-card-description,.category-card p,.comparison-card p,.guide-card p,.highlight-content p{color:#8d9db2!important;}
+
+/* CATEGORY */
+.category-card{border-radius:18px!important;padding:20px!important;}
+.category-icon{background:linear-gradient(135deg,rgba(59,130,246,.18),rgba(6,182,212,.12))!important;border:1px solid rgba(96,165,250,.13);color:#60a5fa!important;}
+.category-card span{color:#60a5fa!important;}
+
+/* COMPARISONS */
+.comparison-card{border-radius:18px!important;padding:18px!important;}
+.compare-phones{gap:12px;}
+.phone-mini{border:1px solid rgba(148,163,184,.10)!important;}
+.vs{background:linear-gradient(135deg,#1d4ed8,#0891b2)!important;border:1px solid rgba(147,197,253,.2);box-shadow:0 8px 18px rgba(37,99,235,.18);}
+.compare-link{color:#60a5fa!important;}
+
+/* HIGHLIGHTS / SCORE */
+.highlight-icon{background:linear-gradient(135deg,#0891b2,#2563eb)!important;}
+.highlight-bar{background:#18253a!important;}
+.highlight-bar span{background:linear-gradient(90deg,#06b6d4,#3b82f6)!important;}
+.highlight-value strong,.score-number{color:#60a5fa!important;}
+.score-number{background:rgba(59,130,246,.10)!important;border:1px solid rgba(59,130,246,.12);}
+
+/* FAQ */
+.faq-item summary{background:transparent;}
+.faq-item summary i{color:#60a5fa!important;}
+.faq-answer{color:#8f9fb4!important;}
+
+/* CTA */
+.featured-cta{
+  background:
+    radial-gradient(circle at 0% 50%,rgba(59,130,246,.16),transparent 38%),
+    linear-gradient(135deg,#0c1930,#0a1425)!important;
+  border:1px solid rgba(59,130,246,.20)!important;
+  box-shadow:0 18px 45px rgba(0,0,0,.22);
+}
+.cta-icon{background:linear-gradient(135deg,#3b82f6,#06b6d4)!important;}
+
+/* FOOTER */
+.site-footer{background:#040812!important;border-top:1px solid rgba(148,163,184,.10)!important;}
+.footer-brand-icon{background:linear-gradient(135deg,#3b82f6,#06b6d4)!important;}
+.footer-box a{color:#8190a5!important;}
+.footer-box a:hover{color:#60a5fa!important;}
+.social-links a{background:#0b1527!important;border:1px solid rgba(148,163,184,.10);}
+.social-links a:hover{background:#2563eb!important;border-color:#3b82f6!important;}
+.footer-bottom{border-top-color:rgba(148,163,184,.09)!important;}
+
+/* MOBILE / TABLET */
+@media(max-width:950px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-image{min-height:400px;}
+  .hero-image img{height:340px;}
+  .hero-content{padding:38px 32px 42px;}
+}
+@media(max-width:600px){
+  .container{width:min(100% - 24px,1280px);}
+  .tdh-header-inner{width:calc(100% - 24px);height:66px;}
+  .page-brand{padding-top:22px;}
+  .hero{border-radius:20px;}
+  .hero-image{min-height:310px;padding:25px;}
+  .hero-image:before{width:220px;height:220px;}
+  .hero-image img{height:280px;}
+  .hero-label{top:15px;left:15px;font-size:10px;}
+  .hero-content{padding:28px 22px 30px;}
+  .hero-content h1{font-size:30px;letter-spacing:-.8px;}
+  .hero-description{font-size:13px;line-height:1.65;}
+  .section{padding:20px;border-radius:19px;}
+  .section-heading{align-items:flex-start;}
+  .section-heading h2{font-size:20px;}
+  .heading-icon{width:41px;height:41px;border-radius:12px;}
+  .see-all{font-size:11px;padding:7px 9px;}
+  .featured-cta{width:calc(100% - 24px);padding:20px;align-items:flex-start;flex-wrap:wrap;}
+  .cta-button{width:100%;justify-content:center;}
+}
+</style>
+
 </head>
 
 <body>
@@ -637,9 +880,9 @@ body{padding-top:78px;overflow-x:hidden}
   <nav class="tdh-nav">
     <div class="tdh-nav-group"><div class="tdh-nav-title">Discover</div>
       <a href="index"><span class="nav-left"><i class="fa-solid fa-house"></i>Home</span><i class="fa-solid fa-chevron-right"></i></a>
-      <a href="latest-reviews"><span class="nav-left"><i class="fa-solid fa-star"></i>Latest Reviews</span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="latest-reviews.html"><span class="nav-left"><i class="fa-solid fa-star"></i>Latest Reviews</span><i class="fa-solid fa-chevron-right"></i></a>
       <a href="featured-reviews"><span class="nav-left"><i class="fa-solid fa-award"></i>Featured Reviews</span><i class="fa-solid fa-chevron-right"></i></a>
-      <a href="news1.html"><span class="nav-left"><i class="fa-solid fa-newspaper"></i>Latest News</span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="news_phones"><span class="nav-left"><i class="fa-solid fa-newspaper"></i>Latest News</span><i class="fa-solid fa-chevron-right"></i></a>
     </div>
     <div class="tdh-nav-group"><div class="tdh-nav-title">Comparisons</div>
       <a href="latest-comparisons"><span class="nav-left"><i class="fa-solid fa-fire"></i>Latest Comparisons</span><i class="fa-solid fa-chevron-right"></i></a>
@@ -724,8 +967,8 @@ body{padding-top:78px;overflow-x:hidden}
 
 
             <img
-                src="https://techdealshub.online/apple/img/iphone17promax_hero_3_2.webp"
-                alt="iPhone 17 Pro Max"
+                src="Samsung/img/galaxys26ultra_display_1_1.png"
+                alt="Samsung Galaxy S26 Ultra"
             >
 
         </div>
@@ -742,10 +985,21 @@ body{padding-top:78px;overflow-x:hidden}
             </div>
 
 
-            <h1>iPhone 17 Pro Max</h1>
+            <h1>
+
+                Samsung Galaxy S26 Ultra
+
+            </h1>
 
 
-            <p class="hero-description">The iPhone 17 Pro Max combines a premium design, exceptional display, powerful performance, advanced cameras, and excellent battery life.</p>
+            <p class="hero-description">
+
+                Explore our featured review of Samsung's
+                premium flagship, with a focus on its
+                design, cameras, display and overall
+                smartphone experience.
+
+            </p>
 
 
             <div class="hero-meta">
@@ -756,7 +1010,9 @@ body{padding-top:78px;overflow-x:hidden}
                         ★★★★★
                     </span>
 
-                    <strong>4.8</strong>
+                    <strong>
+                        4.9
+                    </strong>
 
                     <span>
                         Featured Rating
@@ -770,7 +1026,7 @@ body{padding-top:78px;overflow-x:hidden}
             <div class="hero-actions">
 
                 <a
-                    href="reviews/iphone-17-pro-max-reviews.html"
+                    href="samsung-galaxy-s26-ultra-review"
                     class="primary-button"
                 >
 
@@ -782,7 +1038,7 @@ body{padding-top:78px;overflow-x:hidden}
 
 
                 <a
-                    href="#featured-reviews"
+                    href="#featured-reviews.html"
                     class="secondary-button"
                 >
 
@@ -1290,7 +1546,7 @@ img{
 
 
         <a
-            href="reviews"
+            href="reviews.html"
             class="see-all"
         >
 
@@ -1309,143 +1565,234 @@ img{
 
     <div class="featured-grid">
 
-<a
-            href="reviews/iphone-17-pro-max-reviews.html"
-            class="review-card"
-        >
 
-            <div class="review-card-image">
-
-                <span
-                    class="review-badge"
-                    style="
-                    background:#111827;
-                    "
-                ></span>
-
-
-                <img
-                    src="https://techdealshub.online/apple/img/iphone17promax_hero_3_2.webp"
-                    alt="iPhone 17 Pro Max"
-                >
-
-            </div>
-
-
-            <div class="review-card-content">
-
-                <h3>iPhone 17 Pro Max</h3>
-
-
-                <p class="review-card-description">The iPhone 17 Pro Max combines a premium design, exceptional display, powerful performance, advanced cameras, and excellent battery life.</p>
-
-
-                <div class="card-bottom">
-
-                    <div class="card-rating">
-
-                        <span class="stars">
-                            ★★★★★
-                        </span>
-
-                        <strong>4.8</strong>
-
-                    </div>
-
-
-                    <span class="read-link">
-
-                        Review
-
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </span>
-
-                </div>
-
-            </div>
-
-        </a>
-
-
-
-<a
-            href="reviews/google-pixel-10a-reviews.html"
-            class="review-card"
-        >
-
-            <div class="review-card-image">
-
-                <span
-                    class="review-badge"
-                    style="
-                    background:#111827;
-                    "
-                >Best Software</span>
-
-
-                <img
-                    src="https://techdealshub.online/google/img/pixel10a_hero_3_2.webp"
-                    alt="Google Pixel 10a"
-                >
-
-            </div>
-
-
-            <div class="review-card-content">
-
-                <h3>Google Pixel 10a</h3>
-
-
-                <p class="review-card-description">The Google Pixel 10a is a refined mid-range smartphone built around Google&#039;s Tensor G4 chip, a smooth 6.3-inch 120Hz pOLED display, dependable dual cameras, a 5,100mAh battery, wireless charging, and seven years of software and security updates. Its hardware changes over the Pixel 9a are modest, but the combination of clean Pixel software, strong computational photography, long-term support, and reliable everyday performance makes it a capable choice in the $500 class.</p>
-
-
-                <div class="card-bottom">
-
-                    <div class="card-rating">
-
-                        <span class="stars">
-                            ★★★★★
-                        </span>
-
-                        <strong>4.4</strong>
-
-                    </div>
-
-
-                    <span class="read-link">
-
-                        Review
-
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </span>
-
-                </div>
-
-            </div>
-
-        </a>
-
-<!-- =================================================
+        <!-- =================================================
              CARD 1 — MAIN
         ================================================== -->
 
-        
+        <a
+            href="samsung-galaxy-s26-ultra-review"
+            class="review-card main-review"
+        >
+
+            <div class="review-card-image">
+
+                <span class="review-badge">
+
+                    Editor's Choice
+
+                </span>
+
+
+                <img
+                    src="samsungs26uh.png"
+                    alt="Samsung Galaxy S26 Ultra"
+                >
+
+            </div>
+
+
+            <div class="review-card-content">
+
+                <h3>
+                    Samsung Galaxy S26 Ultra Review
+                </h3>
+
+
+                <p class="review-card-description">
+
+                    A premium flagship focused on powerful
+                    performance, advanced cameras and an
+                    excellent display.
+
+                </p>
+
+
+                <div class="card-bottom">
+
+                    <div class="card-rating">
+
+                        <span class="stars">
+                            ★★★★★
+                        </span>
+
+                        <strong>
+                            4.9
+                        </strong>
+
+                    </div>
+
+
+                    <span class="read-link">
+
+                        Read Review
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
 
 
         <!-- =================================================
              CARD 2
         ================================================== -->
 
-        
+        <a
+            href="iphone-18-pro-max-review"
+            class="review-card"
+        >
+
+            <div class="review-card-image">
+
+                <span
+                    class="review-badge"
+                    style="
+                    background:#111827;
+                    "
+                >
+
+                    Premium
+
+                </span>
+
+
+                <img
+                    src="iphone18promax.png"
+                    alt="iPhone 18 Pro Max"
+                >
+
+            </div>
+
+
+            <div class="review-card-content">
+
+                <h3>
+                    iPhone 18 Pro Max Review
+                </h3>
+
+
+                <p class="review-card-description">
+
+                    Apple's premium smartphone with powerful
+                    performance and an advanced camera system.
+
+                </p>
+
+
+                <div class="card-bottom">
+
+                    <div class="card-rating">
+
+                        <span class="stars">
+                            ★★★★★
+                        </span>
+
+                        <strong>
+                            4.8
+                        </strong>
+
+                    </div>
+
+
+                    <span class="read-link">
+
+                        Review
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
 
 
         <!-- =================================================
              CARD 3
         ================================================== -->
 
-        
+        <a
+            href="google-pixel-11-pro-review"
+            class="review-card"
+        >
+
+            <div class="review-card-image">
+
+                <span
+                    class="review-badge"
+                    style="
+                    background:
+                    linear-gradient(
+                        135deg,
+                        #8b5cf6,
+                        #6366f1
+                    );
+                    "
+                >
+
+                    Camera Pick
+
+                </span>
+
+
+                <img
+                    src="pixel11pro.png"
+                    alt="Google Pixel 11 Pro"
+                >
+
+            </div>
+
+
+            <div class="review-card-content">
+
+                <h3>
+                    Google Pixel 11 Pro Review
+                </h3>
+
+
+                <p class="review-card-description">
+
+                    A photography-focused flagship combining
+                    excellent cameras with smart software features.
+
+                </p>
+
+
+                <div class="card-bottom">
+
+                    <div class="card-rating">
+
+                        <span class="stars">
+                            ★★★★★
+                        </span>
+
+                        <strong>
+                            4.7
+                        </strong>
+
+                    </div>
+
+
+                    <span class="read-link">
+
+                        Review
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
 
 
     </div>
@@ -1494,7 +1841,7 @@ img{
 
 
         <a
-            href="reviews"
+            href="reviews.html"
             class="see-all"
         >
 
@@ -1511,46 +1858,488 @@ img{
          PHONE GRID
     ====================================================== -->
 
-    <div class="featured-grid"><!-- =================================================
+    <div class="featured-grid">
+
+
+        <!-- =================================================
              CARD 4 — XIAOMI
         ================================================== -->
 
-        
+        <a
+            href="xiaomi-17-ultra-review"
+            class="review-card"
+        >
+
+            <div class="review-card-image">
+
+                <span
+                    class="review-badge"
+                    style="
+                    background:
+                    linear-gradient(
+                        135deg,
+                        #f97316,
+                        #ef4444
+                    );
+                    "
+                >
+
+                    Flagship
+
+                </span>
+
+
+                <img
+                    src="xiaomi17ultra.png"
+                    alt="Xiaomi 17 Ultra"
+                >
+
+            </div>
+
+
+            <div class="review-card-content">
+
+                <h3>
+                    Xiaomi 17 Ultra Review
+                </h3>
+
+
+                <p class="review-card-description">
+
+                    A high-end smartphone focused on camera
+                    hardware, performance and premium design.
+
+                </p>
+
+
+                <div class="card-bottom">
+
+                    <div class="card-rating">
+
+                        <span class="stars">
+                            ★★★★★
+                        </span>
+
+                        <strong>
+                            4.7
+                        </strong>
+
+                    </div>
+
+
+                    <span class="read-link">
+
+                        Review
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
 
 
         <!-- =================================================
              CARD 5 — ONEPLUS
         ================================================== -->
 
-        
+        <a
+            href="oneplus-15-review"
+            class="review-card"
+        >
+
+            <div class="review-card-image">
+
+                <span
+                    class="review-badge"
+                    style="
+                    background:
+                    linear-gradient(
+                        135deg,
+                        #22c55e,
+                        #16a34a
+                    );
+                    "
+                >
+
+                    Performance
+
+                </span>
+
+
+                <img
+                    src="oneplus15.png"
+                    alt="OnePlus 15"
+                >
+
+            </div>
+
+
+            <div class="review-card-content">
+
+                <h3>
+                    OnePlus 15 Review
+                </h3>
+
+
+                <p class="review-card-description">
+
+                    Fast performance, smooth software and
+                    a strong battery experience.
+
+                </p>
+
+
+                <div class="card-bottom">
+
+                    <div class="card-rating">
+
+                        <span class="stars">
+                            ★★★★★
+                        </span>
+
+                        <strong>
+                            4.6
+                        </strong>
+
+                    </div>
+
+
+                    <span class="read-link">
+
+                        Review
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
 
 
         <!-- =================================================
              CARD 6 — NOTHING
         ================================================== -->
 
-        
+        <a
+            href="nothing-phone-4-review"
+            class="review-card"
+        >
+
+            <div class="review-card-image">
+
+                <span
+                    class="review-badge"
+                    style="
+                    background:#475569;
+                    "
+                >
+
+                    Design
+
+                </span>
+
+
+                <img
+                    src="nothingphone4.png"
+                    alt="Nothing Phone 4"
+                >
+
+            </div>
+
+
+            <div class="review-card-content">
+
+                <h3>
+                    Nothing Phone (4) Review
+                </h3>
+
+
+                <p class="review-card-description">
+
+                    A distinctive smartphone combining a
+                    unique design with a clean software experience.
+
+                </p>
+
+
+                <div class="card-bottom">
+
+                    <div class="card-rating">
+
+                        <span class="stars">
+                            ★★★★☆
+                        </span>
+
+                        <strong>
+                            4.5
+                        </strong>
+
+                    </div>
+
+
+                    <span class="read-link">
+
+                        Review
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
 
 
         <!-- =================================================
              CARD 7 — MOTOROLA
         ================================================== -->
 
-        
+        <a
+            href="motorola-edge-70-ultra-review"
+            class="review-card"
+        >
+
+            <div class="review-card-image">
+
+                <span
+                    class="review-badge"
+                    style="
+                    background:
+                    linear-gradient(
+                        135deg,
+                        #06b6d4,
+                        #0891b2
+                    );
+                    "
+                >
+
+                    New
+
+                </span>
+
+
+                <img
+                    src="motorolaedge70ultra.png"
+                    alt="Motorola Edge 70 Ultra"
+                >
+
+            </div>
+
+
+            <div class="review-card-content">
+
+                <h3>
+                    Motorola Edge 70 Ultra
+                </h3>
+
+
+                <p class="review-card-description">
+
+                    A premium Motorola smartphone offering
+                    strong cameras, performance and refined design.
+
+                </p>
+
+
+                <div class="card-bottom">
+
+                    <div class="card-rating">
+
+                        <span class="stars">
+                            ★★★★☆
+                        </span>
+
+                        <strong>
+                            4.4
+                        </strong>
+
+                    </div>
+
+
+                    <span class="read-link">
+
+                        Review
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
 
 
         <!-- =================================================
              CARD 8 — POCO
         ================================================== -->
 
-        
+        <a
+            href="poco-x8-pro-review"
+            class="review-card"
+        >
+
+            <div class="review-card-image">
+
+                <span
+                    class="review-badge"
+                    style="
+                    background:
+                    linear-gradient(
+                        135deg,
+                        #eab308,
+                        #f97316
+                    );
+                    "
+                >
+
+                    Best Value
+
+                </span>
+
+
+                <img
+                    src="pocox8pro.png"
+                    alt="POCO X8 Pro"
+                >
+
+            </div>
+
+
+            <div class="review-card-content">
+
+                <h3>
+                    POCO X8 Pro Review
+                </h3>
+
+
+                <p class="review-card-description">
+
+                    Powerful hardware and gaming performance
+                    at a more accessible price point.
+
+                </p>
+
+
+                <div class="card-bottom">
+
+                    <div class="card-rating">
+
+                        <span class="stars">
+                            ★★★★☆
+                        </span>
+
+                        <strong>
+                            4.5
+                        </strong>
+
+                    </div>
+
+
+                    <span class="read-link">
+
+                        Review
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
 
 
         <!-- =================================================
              CARD 9 — REDMI
         ================================================== -->
 
-        
+        <a
+            ="redmi-note-15-review"
+            class="review-card"
+        >
+
+            <div class="review-card-image">
+
+                <span
+                    class="review-badge"
+                    style="
+                    background:
+                    linear-gradient(
+                        135deg,
+                        #14b8a6,
+                        #0d9488
+                    );
+                    "
+                >
+
+                    Value
+
+                </span>
+
+
+                <img
+                    src="redminote15.png"
+                    alt="Redmi Note 15"
+                >
+
+            </div>
+
+
+            <div class="review-card-content">
+
+                <h3>
+                    Redmi Note 15 Review
+                </h3>
+
+
+                <p class="review-card-description">
+
+                    A value-focused smartphone with a large
+                    battery and smooth display.
+
+                </p>
+
+
+                <div class="card-bottom">
+
+                    <div class="card-rating">
+
+                        <span class="stars">
+                            ★★★★☆
+                        </span>
+
+                        <strong>
+                            4.3
+                        </strong>
+
+                    </div>
+
+
+                    <span class="read-link">
+
+                        Review
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
 
 
     </div>
@@ -1607,8 +2396,13 @@ img{
 
     <div class="featured-grid">
 
-<a
-            href="reviews/iphone-17-pro-max-reviews.html"
+
+        <!-- =================================================
+             EDITOR PICK 1
+        ================================================== -->
+
+        <a
+            ="samsung-galaxy-s26-ultra-review"
             class="review-card"
         >
 
@@ -1626,12 +2420,16 @@ img{
 
                     color:#111827;
                     "
-                ></span>
+                >
+
+                    Best Overall
+
+                </span>
 
 
                 <img
-                    src="https://techdealshub.online/apple/img/iphone17promax_hero_3_2.webp"
-                    alt="iPhone 17 Pro Max"
+                    src="samsungs26uh.png"
+                    alt="Samsung Galaxy S26 Ultra"
                 >
 
             </div>
@@ -1639,10 +2437,17 @@ img{
 
             <div class="review-card-content">
 
-                <h3>iPhone 17 Pro Max</h3>
+                <h3>
+                    Samsung Galaxy S26 Ultra
+                </h3>
 
 
-                <p class="review-card-description">The iPhone 17 Pro Max combines a premium design, exceptional display, powerful performance, advanced cameras, and excellent battery life.</p>
+                <p class="review-card-description">
+
+                    Our featured all-round flagship for a
+                    premium smartphone experience.
+
+                </p>
 
 
                 <div class="card-bottom">
@@ -1653,7 +2458,9 @@ img{
                             ★★★★★
                         </span>
 
-                        <strong>4.8</strong>
+                        <strong>
+                            4.9
+                        </strong>
 
                     </div>
 
@@ -1672,25 +2479,167 @@ img{
 
         </a>
 
-<!-- =================================================
-             EDITOR PICK 1
-        ================================================== -->
-
-        
-
 
         <!-- =================================================
              EDITOR PICK 2
         ================================================== -->
 
-        
+        <a
+            href="google-pixel-11-pro-review"
+            class="review-card"
+        >
+
+            <div class="review-card-image">
+
+                <span
+                    class="review-badge"
+                    style="
+                    background:
+                    linear-gradient(
+                        135deg,
+                        #8b5cf6,
+                        #6366f1
+                    );
+                    "
+                >
+
+                    Best Camera
+
+                </span>
+
+
+                <img
+                    src="pixel11pro.png"
+                    alt="Google Pixel 11 Pro"
+                >
+
+            </div>
+
+
+            <div class="review-card-content">
+
+                <h3>
+                    Google Pixel 11 Pro
+                </h3>
+
+
+                <p class="review-card-description">
+
+                    A strong choice for photography enthusiasts
+                    and camera-focused users.
+
+                </p>
+
+
+                <div class="card-bottom">
+
+                    <div class="card-rating">
+
+                        <span class="stars">
+                            ★★★★★
+                        </span>
+
+                        <strong>
+                            4.7
+                        </strong>
+
+                    </div>
+
+
+                    <span class="read-link">
+
+                        View Review
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
 
 
         <!-- =================================================
              EDITOR PICK 3
         ================================================== -->
 
-        
+        <a
+            href="poco-x8-pro-review"
+            class="review-card"
+        >
+
+            <div class="review-card-image">
+
+                <span
+                    class="review-badge"
+                    style="
+                    background:
+                    linear-gradient(
+                        135deg,
+                        #22c55e,
+                        #16a34a
+                    );
+                    "
+                >
+
+                    Best Value
+
+                </span>
+
+
+                <img
+                    src="pocox8pro.png"
+                    alt="POCO X8 Pro"
+                >
+
+            </div>
+
+
+            <div class="review-card-content">
+
+                <h3>
+                    POCO X8 Pro
+                </h3>
+
+
+                <p class="review-card-description">
+
+                    A performance-focused phone delivering
+                    impressive hardware for its category.
+
+                </p>
+
+
+                <div class="card-bottom">
+
+                    <div class="card-rating">
+
+                        <span class="stars">
+                            ★★★★☆
+                        </span>
+
+                        <strong>
+                            4.5
+                        </strong>
+
+                    </div>
+
+
+                    <span class="read-link">
+
+                        View Review
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
 
 
     </div>
@@ -2816,8 +3765,11 @@ span i{
 
     <div class="score-list">
 
-<a
-            href="reviews/iphone-17-pro-max-reviews.html"
+
+        <!-- PHONE 1 -->
+
+        <a
+            href="samsung-galaxy-s26-ultra-review"
             class="score-item"
         >
 
@@ -2826,17 +3778,21 @@ span i{
                 <div class="score-phone-image">
 
                     <img
-                        src="https://techdealshub.online/apple/img/iphone17promax_hero_3_2.webp"
-                        alt="iPhone 17 Pro Max"
+                        src="samsungs26uh.png"
+                        alt="Samsung Galaxy S26 Ultra"
                     >
 
                 </div>
 
                 <div>
 
-                    <h3>iPhone 17 Pro Max</h3>
+                    <h3>
+                        Samsung Galaxy S26 Ultra
+                    </h3>
 
-                    <p>Apple</p>
+                    <p>
+                        Flagship smartphone
+                    </p>
 
                 </div>
 
@@ -2845,7 +3801,9 @@ span i{
 
             <div class="score-details">
 
-                <div class="score-number">4.8</div>
+                <div class="score-number">
+                    4.9
+                </div>
 
                 <div class="score-stars">
                     ★★★★★
@@ -2858,9 +3816,10 @@ span i{
         </a>
 
 
+        <!-- PHONE 2 -->
 
-<a
-            href="reviews/google-pixel-10a-reviews.html"
+        <a
+            href="iphone-18-pro-max-review"
             class="score-item"
         >
 
@@ -2869,17 +3828,21 @@ span i{
                 <div class="score-phone-image">
 
                     <img
-                        src="https://techdealshub.online/google/img/pixel10a_hero_3_2.webp"
-                        alt="Google Pixel 10a"
+                        src="iphone18promax.png"
+                        alt="iPhone 18 Pro Max"
                     >
 
                 </div>
 
                 <div>
 
-                    <h3>Google Pixel 10a</h3>
+                    <h3>
+                        iPhone 18 Pro Max
+                    </h3>
 
-                    <p>Google</p>
+                    <p>
+                        Premium smartphone
+                    </p>
 
                 </div>
 
@@ -2888,7 +3851,9 @@ span i{
 
             <div class="score-details">
 
-                <div class="score-number">4.4</div>
+                <div class="score-number">
+                    4.8
+                </div>
 
                 <div class="score-stars">
                     ★★★★★
@@ -2900,7 +3865,158 @@ span i{
 
         </a>
 
-</div>
+
+        <!-- PHONE 3 -->
+
+        <a
+            href="google-pixel-11-pro-review"
+            class="score-item"
+        >
+
+            <div class="score-phone">
+
+                <div class="score-phone-image">
+
+                    <img
+                        src="pixel11pro.png"
+                        alt="Google Pixel 11 Pro"
+                    >
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Google Pixel 11 Pro
+                    </h3>
+
+                    <p>
+                        Camera-focused smartphone
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="score-details">
+
+                <div class="score-number">
+                    4.7
+                </div>
+
+                <div class="score-stars">
+                    ★★★★★
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+        </a>
+
+
+        <!-- PHONE 4 -->
+
+        <a
+            href="xiaomi-17-ultra-review"
+            class="score-item"
+        >
+
+            <div class="score-phone">
+
+                <div class="score-phone-image">
+
+                    <img
+                        src="xiaomi17ultra.png"
+                        alt="Xiaomi 17 Ultra"
+                    >
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Xiaomi 17 Ultra
+                    </h3>
+
+                    <p>
+                        Premium camera phone
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="score-details">
+
+                <div class="score-number">
+                    4.7
+                </div>
+
+                <div class="score-stars">
+                    ★★★★★
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+        </a>
+
+
+        <!-- PHONE 5 -->
+
+        <a
+            href="oneplus-15-review"
+            class="score-item"
+        >
+
+            <div class="score-phone">
+
+                <div class="score-phone-image">
+
+                    <img
+                        src="oneplus15.png"
+                        alt="OnePlus 15"
+                    >
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        OnePlus 15
+                    </h3>
+
+                    <p>
+                        Performance-focused smartphone
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="score-details">
+
+                <div class="score-number">
+                    4.6
+                </div>
+
+                <div class="score-stars">
+                    ★★★★★
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+        </a>
+
+
+    </div>
 
 </section>
 
@@ -3729,7 +4845,7 @@ span i{
 
 
     <a
-        href="reviews"
+        href="reviews.html"
         class="cta-button"
     >
 
@@ -4571,6 +5687,112 @@ summary i{
  input.addEventListener('keydown',e=>{if(e.key==='Enter'){const q=input.value.trim();if(q) location.href='search?q='+encodeURIComponent(q)}});
 })();
 </script>
+
+
+<style>
+/* ===== BLUE SECTION TITLES / VIEW ALL / ACTION BUTTONS ===== */
+:root{--chat-blue:#3b82f6;--chat-blue-hover:#60a5fa;}
+
+.section-heading{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  margin-bottom:22px;
+}
+
+.heading-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+}
+
+.heading-icon{
+  width:42px;
+  height:42px;
+  flex:0 0 42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  color:#fff;
+  background:#3b82f6;
+  box-shadow:0 6px 18px rgba(59,130,246,.22);
+}
+
+.section-heading h2{
+  color:#3b82f6;
+  font-size:23px;
+  font-weight:800;
+  line-height:1.2;
+  letter-spacing:-.35px;
+}
+
+.section-heading p{
+  color:#94a3b8;
+  margin-top:4px;
+}
+
+.see-all{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  flex-shrink:0;
+  color:#3b82f6 !important;
+  background:rgba(59,130,246,.07);
+  border:1px solid rgba(59,130,246,.22);
+  border-radius:10px;
+  padding:8px 12px;
+  font-size:12px;
+  font-weight:700;
+  text-decoration:none !important;
+  transition:.2s ease;
+}
+
+.see-all:hover{
+  color:#fff !important;
+  background:#3b82f6;
+  border-color:#3b82f6;
+  transform:translateY(-1px);
+  box-shadow:0 6px 16px rgba(59,130,246,.22);
+}
+
+.primary-button{
+  background:#3b82f6 !important;
+  border:1px solid #3b82f6 !important;
+  color:#fff !important;
+  box-shadow:0 6px 18px rgba(59,130,246,.18);
+}
+
+.primary-button:hover{
+  background:#2563eb !important;
+  border-color:#2563eb !important;
+  box-shadow:0 9px 22px rgba(59,130,246,.25);
+}
+
+.secondary-button{
+  color:#3b82f6 !important;
+  background:rgba(59,130,246,.06) !important;
+  border:1px solid rgba(59,130,246,.28) !important;
+}
+
+.secondary-button:hover{
+  color:#fff !important;
+  background:#3b82f6 !important;
+  border-color:#3b82f6 !important;
+}
+
+@media(max-width:600px){
+  .section-heading{gap:10px;margin-bottom:18px;}
+  .heading-left{gap:10px;}
+  .heading-icon{width:38px;height:38px;flex-basis:38px;border-radius:11px;}
+  .section-heading h2{font-size:19px;}
+  .section-heading p{font-size:11px;}
+  .see-all{padding:7px 9px;font-size:11px;}
+}
+</style>
 
 </body>
 </html>

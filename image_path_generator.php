@@ -9,45 +9,21 @@ ini_set('display_errors', '1');
 | IMAGE PATH GENERATOR
 |--------------------------------------------------------------------------
 |
-| المسار الأساسي:
+| المصدر:
 |
-| brand/img/phone/
+| brand/img/phone/subfolder/image
 |
-| ويمكن الآن وضع الصور داخل مجلد فرعي:
+| النتيجة:
 |
-| brand/img/phone/design/
-| brand/img/phone/display/
-| brand/img/phone/night_photo_sample/
-| brand/img/phone/portrait_sample/
-| brand/img/phone/camera_sample/
+| brand/img/phone_subfolder_ratio.extension
 |
 | مثال:
 |
-| apple/img/iphone17promax/design/photo.png
+| samsung/img/samsunggalaxys26ultra/camera_1/photo.png
 |
-| إذا كانت الصورة 16:9 تصبح:
+| إذا كانت الصورة 16:9:
 |
-| apple/img/iphone17promax_design_16_9.png
-|
-| وإذا كانت 1:1 تصبح:
-|
-| apple/img/iphone17promax_design_1_1.png
-|
-|--------------------------------------------------------------------------
-| IMPORTANT
-|--------------------------------------------------------------------------
-|
-| الصور الموجودة مباشرة داخل:
-|
-| brand/img/
-|
-| لا يتم فحصها.
-|
-| وكذلك الصور التي تم نقلها سابقًا إلى:
-|
-| brand/img/
-|
-| لن تتم معالجتها مرة أخرى.
+| samsung/img/samsunggalaxys26ultra_camera_1_16_9.png
 |
 |--------------------------------------------------------------------------
 */
@@ -89,6 +65,9 @@ $ratioTolerance = 0.025;
 $ratios = [
     '1_1'  => 1 / 1,
 
+    '1_2'  => 1 / 2,
+    '2_1'  => 2 / 1,
+
     '3_2'  => 3 / 2,
     '2_3'  => 2 / 3,
 
@@ -102,7 +81,7 @@ $ratios = [
 
 /*
 |--------------------------------------------------------------------------
-| المجلدات التي يمكن أن تكون Brands
+| Brands
 |--------------------------------------------------------------------------
 */
 
@@ -133,10 +112,6 @@ $allowedBrands = [
 |--------------------------------------------------------------------------
 */
 
-
-/*
- * lowercase آمن
- */
 function toLowerSafe(string $value): string
 {
     if (function_exists('mb_strtolower')) {
@@ -147,42 +122,14 @@ function toLowerSafe(string $value): string
 }
 
 
-/*
- * تنظيف اسم الهاتف أو اسم المجلد الفرعي.
- *
- * مثال:
- *
- * iPhone 17 Pro Max
- * يصبح:
- *
- * iphone17promax
- *
- * و:
- *
- * Camera Sample
- * يصبح:
- *
- * camerasample
- */
 function cleanPhoneName(string $name): string
 {
     $name = trim($name);
 
     $name = toLowerSafe($name);
 
-    /*
-     * إزالة المسافات.
-     */
     $name = preg_replace('/\s+/', '', $name) ?? $name;
 
-    /*
-     * نسمح فقط:
-     *
-     * a-z
-     * 0-9
-     * _
-     * -
-     */
     $name = preg_replace(
         '/[^a-z0-9_-]/',
         '',
@@ -193,9 +140,6 @@ function cleanPhoneName(string $name): string
 }
 
 
-/*
- * فحص امتداد الصورة.
- */
 function isImageExtension(
     string $filename,
     array $allowedExtensions
@@ -216,76 +160,14 @@ function isImageExtension(
 }
 
 
-/*
- * الحصول على اسم ملف غير مستخدم.
- *
- * مثال:
- *
- * iphone17promax_design_16_9.png
- *
- * إذا كان موجودًا:
- *
- * iphone17promax_design_16_9_2.png
- *
- * ثم:
- *
- * iphone17promax_design_16_9_3.png
- */
 function getUniqueFilename(
     string $directory,
     string $baseName,
     string $extension
 ): string {
-
     $extension = toLowerSafe($extension);
 
-    /*
-     * المحاولة الأولى.
-     */
-    $filename =
-        $baseName .
-        '.' .
-        $extension;
-
-    if (
-        !file_exists(
-            $directory .
-            DIRECTORY_SEPARATOR .
-            $filename
-        )
-    ) {
-        return $filename;
-    }
-
-
-    /*
-     * الاسم موجود.
-     *
-     * نبدأ من 2.
-     */
-    $number = 2;
-
-    while (true) {
-
-        $filename =
-            $baseName .
-            '_' .
-            $number .
-            '.' .
-            $extension;
-
-        if (
-            !file_exists(
-                $directory .
-                DIRECTORY_SEPARATOR .
-                $filename
-            )
-        ) {
-            return $filename;
-        }
-
-        $number++;
-    }
+    return $baseName . '.' . $extension;
 }
 
 
@@ -309,35 +191,25 @@ function detectAspectRatio(
         return null;
     }
 
-
-    /*
-     * النسبة الحقيقية للصورة.
-     */
     $actualRatio =
         $width /
         $height;
 
-
     $bestName = null;
     $bestRatio = 0.0;
     $bestDifference = PHP_FLOAT_MAX;
-
 
     foreach (
         $ratios
         as $name => $targetRatio
     ) {
 
-        /*
-         * الفرق النسبي.
-         */
         $difference =
             abs(
                 $actualRatio -
                 $targetRatio
             ) /
             $targetRatio;
-
 
         if (
             $difference <
@@ -355,18 +227,12 @@ function detectAspectRatio(
         }
     }
 
-
-    /*
-     * إذا كانت النسبة بعيدة جدًا
-     * لا نصنفها.
-     */
     if (
         $bestDifference >
         $tolerance
     ) {
         return null;
     }
-
 
     return [
         'name' => $bestName,
@@ -376,12 +242,6 @@ function detectAspectRatio(
     ];
 }
 
-
-/*
-|--------------------------------------------------------------------------
-| عرض النسبة الحقيقية
-|--------------------------------------------------------------------------
-*/
 
 function formatRatio(float $ratio): string
 {
@@ -412,24 +272,6 @@ $totalErrors = 0;
 |--------------------------------------------------------------------------
 | SCAN
 |--------------------------------------------------------------------------
-|
-| نبحث الآن داخل:
-|
-| brand/img/phone/
-|
-| ثم داخل:
-|
-| brand/img/phone/subfolder/
-|
-| فقط.
-|
-| ولا نبحث داخل:
-|
-| brand/img/
-|
-| مباشرة.
-|
-|--------------------------------------------------------------------------
 */
 
 foreach (
@@ -438,13 +280,12 @@ foreach (
 ) {
 
     /*
-     * مجلد Brand.
+     * brand/
      */
     $brandDir =
         $baseDir .
         DIRECTORY_SEPARATOR .
         $brand;
-
 
     if (
         !is_dir($brandDir)
@@ -454,13 +295,12 @@ foreach (
 
 
     /*
-     * مجلد img.
+     * brand/img/
      */
     $imgDir =
         $brandDir .
         DIRECTORY_SEPARATOR .
         'img';
-
 
     if (
         !is_dir($imgDir)
@@ -470,11 +310,10 @@ foreach (
 
 
     /*
-     * نأخذ فقط مجلدات الهواتف
-     * الموجودة داخل img.
+     * البحث عن مجلدات الهواتف
+     * داخل brand/img/
      */
     $entries = @scandir($imgDir);
-
 
     if (
         $entries === false
@@ -488,9 +327,6 @@ foreach (
         as $phoneFolder
     ) {
 
-        /*
-         * تجاهل . و ..
-         */
         if (
             $phoneFolder === '.' ||
             $phoneFolder === '..'
@@ -500,13 +336,12 @@ foreach (
 
 
         /*
-         * يجب أن يكون مجلد هاتف.
+         * brand/img/phone/
          */
         $phoneDir =
             $imgDir .
             DIRECTORY_SEPARATOR .
             $phoneFolder;
-
 
         if (
             !is_dir($phoneDir)
@@ -515,14 +350,10 @@ foreach (
         }
 
 
-        /*
-         * اسم الهاتف.
-         */
         $phoneName =
             cleanPhoneName(
                 $phoneFolder
             );
-
 
         if (
             $phoneName === ''
@@ -532,27 +363,10 @@ foreach (
 
 
         /*
-        |--------------------------------------------------------------------------
-        | STEP 1
-        |--------------------------------------------------------------------------
-        |
-        | البحث داخل مجلد الهاتف عن المجلدات الفرعية.
-        |
-        | مثال:
-        |
-        | iphone17promax/
-        | ├── design/
-        | ├── display/
-        | ├── camera_sample/
-        | ├── night_photo_sample/
-        | └── portrait_sample/
-        |
-        |--------------------------------------------------------------------------
-        */
-
+         * البحث عن المجلدات الفرعية.
+         */
         $subFolders =
             @scandir($phoneDir);
-
 
         if (
             $subFolders === false
@@ -566,9 +380,6 @@ foreach (
             as $subFolder
         ) {
 
-            /*
-             * تجاهل . و ..
-             */
             if (
                 $subFolder === '.' ||
                 $subFolder === '..'
@@ -578,17 +389,13 @@ foreach (
 
 
             /*
-             * المسار الكامل للمجلد الفرعي.
+             * brand/img/phone/subfolder/
              */
             $subFolderDir =
                 $phoneDir .
                 DIRECTORY_SEPARATOR .
                 $subFolder;
 
-
-            /*
-             * يجب أن يكون مجلدًا.
-             */
             if (
                 !is_dir($subFolderDir)
             ) {
@@ -596,22 +403,10 @@ foreach (
             }
 
 
-            /*
-             * تنظيف اسم المجلد الفرعي.
-             *
-             * مثال:
-             *
-             * Camera Sample
-             *
-             * يصبح:
-             *
-             * camerasample
-             */
             $subFolderName =
                 cleanPhoneName(
                     $subFolder
                 );
-
 
             if (
                 $subFolderName === ''
@@ -621,18 +416,10 @@ foreach (
 
 
             /*
-            |--------------------------------------------------------------------------
-            | STEP 2
-            |--------------------------------------------------------------------------
-            |
-            | قراءة الصور الموجودة داخل المجلد الفرعي.
-            |
-            |--------------------------------------------------------------------------
-            */
-
+             * قراءة الصور.
+             */
             $files =
                 @scandir($subFolderDir);
-
 
             if (
                 $files === false
@@ -660,9 +447,6 @@ foreach (
                     $file;
 
 
-                /*
-                 * تجاهل المجلدات.
-                 */
                 if (
                     !is_file($oldPath)
                 ) {
@@ -670,9 +454,6 @@ foreach (
                 }
 
 
-                /*
-                 * تجاهل أي شيء ليس صورة.
-                 */
                 if (
                     !isImageExtension(
                         $file,
@@ -687,11 +468,8 @@ foreach (
 
 
                 /*
-                 * =====================================================
-                 * قراءة الأبعاد الأصلية الحقيقية للصورة
-                 * =====================================================
+                 * قراءة أبعاد الصورة.
                  */
-
                 $imageInfo =
                     @getimagesize(
                         $oldPath
@@ -718,6 +496,7 @@ foreach (
                         'actual_ratio' => '-',
                         'detected' => '-',
                         'new' => '-',
+                        'path' => '-',
                         'status' => 'error',
                         'message' =>
                             'Could not read original image dimensions.',
@@ -727,9 +506,6 @@ foreach (
                 }
 
 
-                /*
-                 * الأبعاد الأصلية.
-                 */
                 $width =
                     (int)$imageInfo[0];
 
@@ -737,16 +513,13 @@ foreach (
                     (int)$imageInfo[1];
 
 
-                /*
-                 * النسبة الحقيقية.
-                 */
                 $actualRatio =
-                    $width / $height;
+                    $width /
+                    $height;
 
 
                 /*
-                 * تحديد أقرب نسبة ضمن
-                 * هامش 2.5%.
+                 * تحديد النسبة.
                  */
                 $detected =
                     detectAspectRatio(
@@ -757,11 +530,6 @@ foreach (
                     );
 
 
-                /*
-                 * إذا لم توجد نسبة مناسبة:
-                 *
-                 * لا نعيد تسمية الصورة.
-                 */
                 if (
                     $detected === null
                 ) {
@@ -779,6 +547,7 @@ foreach (
                             formatRatio($actualRatio),
                         'detected' => 'No match',
                         'new' => '-',
+                        'path' => '-',
                         'status' => 'skipped',
                         'message' =>
                             'Aspect ratio is not close enough to a supported ratio.',
@@ -788,16 +557,6 @@ foreach (
                 }
 
 
-                /*
-                 * النسبة المختارة.
-                 *
-                 * مثال:
-                 *
-                 * 1_1
-                 * 3_2
-                 * 4_3
-                 * 16_9
-                 */
                 $ratioName =
                     $detected['name'];
 
@@ -816,24 +575,18 @@ foreach (
 
 
                 /*
-                |--------------------------------------------------------------------------
-                | الاسم الأساسي النهائي
-                |--------------------------------------------------------------------------
-                |
-                | مثال:
-                |
-                | iphone17promax
-                | +
-                | design
-                | +
-                | 16_9
-                |
-                | =
-                |
-                | iphone17promax_design_16_9
-                |
-                |--------------------------------------------------------------------------
-                */
+                 |--------------------------------------------------------------------------
+                 | الاسم النهائي
+                 |--------------------------------------------------------------------------
+                 |
+                 | phone + subfolder + ratio
+                 |
+                 | مثال:
+                 |
+                 | samsunggalaxys26ultra_camera_1_16_9.png
+                 |
+                 |--------------------------------------------------------------------------
+                 */
 
                 $baseName =
                     $phoneName .
@@ -844,7 +597,7 @@ foreach (
 
 
                 /*
-                 * اسم فريد.
+                 * الحصول على اسم غير موجود.
                  */
                 $newFilename =
                     getUniqueFilename(
@@ -855,12 +608,20 @@ foreach (
 
 
                 /*
-                 * المسار الجديد.
-                 *
-                 * مهم:
-                 *
-                 * الصورة تنتقل إلى img مباشرة.
+                 |--------------------------------------------------------------------------
+                 | المسار النهائي
+                 |--------------------------------------------------------------------------
+                 |
+                 | brand/img/
+                 |
+                 | مثال:
+                 |
+                 | samsung/img/
+                 | samsunggalaxys26ultra_camera_1_16_9.png
+                 |
+                 |--------------------------------------------------------------------------
                  */
+
                 $newPath =
                     $imgDir .
                     DIRECTORY_SEPARATOR .
@@ -892,6 +653,10 @@ foreach (
                             formatRatio($actualRatio),
                         'detected' => $ratioName,
                         'new' => $newFilename,
+                        'path' =>
+                            $brand .
+                            '/img/' .
+                            $newFilename,
                         'status' => 'already',
                         'message' =>
                             'Already organized.',
@@ -902,13 +667,7 @@ foreach (
 
 
                 /*
-                 * =====================================================
-                 * MOVE + RENAME
-                 * =====================================================
-                 *
-                 * الصورة لا يتم تعديلها.
-                 *
-                 * فقط يتم نقلها وإعادة تسميتها.
+                 * النقل وإعادة التسمية.
                  */
                 $success =
                     @rename(
@@ -932,6 +691,10 @@ foreach (
                             formatRatio($actualRatio),
                         'detected' => $ratioName,
                         'new' => $newFilename,
+                        'path' =>
+                            $brand .
+                            '/img/' .
+                            $newFilename,
                         'status' => 'renamed',
                         'message' =>
                             'Moved and renamed successfully.',
@@ -952,6 +715,10 @@ foreach (
                             formatRatio($actualRatio),
                         'detected' => $ratioName,
                         'new' => $newFilename,
+                        'path' =>
+                            $brand .
+                            '/img/' .
+                            $newFilename,
                         'status' => 'error',
                         'message' =>
                             'Could not move/rename image. Check permissions.',
@@ -1101,7 +868,7 @@ body {
 table {
     width: 100%;
 
-    min-width: 1150px;
+    min-width: 1250px;
 
     border-collapse: collapse;
 }
@@ -1146,6 +913,20 @@ td {
     color: #4ade80;
 
     font-weight: 700;
+
+    word-break: break-all;
+}
+
+.final-path {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #60a5fa;
+
+    font-size: 12px;
+
+    font-weight: 500;
 
     word-break: break-all;
 }
@@ -1490,36 +1271,18 @@ td {
 
 
                         <td class="filename final">
-
-                            <?php if (
-                                $item['new'] !== '-'
-                            ): ?>
-
-                                <?= htmlspecialchars(
-                                    $item['new'],
-                                    ENT_QUOTES,
-                                    'UTF-8'
-                                ) ?>
-
-                                <div class="real-ratio">
-
-                                    <?= htmlspecialchars(
-                                        $item['brand']
-                                        . '/img/'
-                                        . $item['new'],
-                                        ENT_QUOTES,
-                                        'UTF-8'
-                                    ) ?>
-
-                                </div>
-
-                            <?php else: ?>
-
-                                -
-
-                            <?php endif; ?>
-
-                        </td>
+    <?php if ($item['new'] !== '-'): ?>
+        <span class="final-path">
+            <?= htmlspecialchars(
+                'https://techdealshub.online/' . $item['path'],
+                ENT_QUOTES,
+                'UTF-8'
+            ) ?>
+        </span>
+    <?php else: ?>
+        -
+    <?php endif; ?>
+</td>
 
 
                         <td>
@@ -1587,7 +1350,7 @@ td {
         For example:
 
         <code>
-            apple/img/iphone17promax/design/photo.png
+            samsung/img/samsunggalaxys26ultra/camera_1/photo.png
         </code>
 
         <br><br>
@@ -1595,7 +1358,7 @@ td {
         If the image is 16:9, it becomes:
 
         <code>
-            apple/img/iphone17promax_design_16_9.png
+            samsung/img/samsunggalaxys26ultra_camera_1_16_9.png
         </code>
 
         <br><br>
@@ -1604,7 +1367,7 @@ td {
         a unique number is added automatically:
 
         <code>
-            iphone17promax_design_16_9_2.png
+            samsunggalaxys26ultra_camera_1_16_9_2.png
         </code>
 
         <br><br>
@@ -1614,9 +1377,6 @@ td {
         <code>
             brand/img/
         </code>
-
-        Therefore, refreshing this page does not process
-        the already organized images again.
 
     </div>
 

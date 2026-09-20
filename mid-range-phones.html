@@ -6,6 +6,17 @@
 
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNYG3R18BZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNYG3R18BZ');
+</script>
+<!-- End Google Tag Manager -->
+
 
 <meta name="description"
       content="Discover the best mid-range phones with detailed specifications, ratings, prices and expert reviews.">
@@ -1189,7 +1200,9 @@ img{
 
 .phone-description{
 
-    min-height:43px;
+    min-height:59.4px;
+
+    max-height:59.4px;
 
     color:var(--muted);
 
@@ -1198,6 +1211,20 @@ img{
     line-height:1.65;
 
     margin-bottom:13px;
+
+    display:-webkit-box;
+
+    -webkit-box-orient:vertical;
+
+    -webkit-line-clamp:3;
+
+    line-clamp:3;
+
+    overflow:hidden;
+
+    word-break:normal;
+
+    overflow-wrap:anywhere;
 
 }
 
@@ -1330,6 +1357,8 @@ img{
 
     min-width:0;
 
+    flex:1;
+
 }
 
 .spec-label{
@@ -1348,17 +1377,23 @@ img{
 
     display:block;
 
-    overflow:hidden;
-
-    text-overflow:ellipsis;
-
-    white-space:nowrap;
-
     color:#334155;
 
     font-size:10px;
 
     font-weight:700;
+
+    line-height:1.35;
+
+    white-space:normal;
+
+    overflow:visible;
+
+    text-overflow:clip;
+
+    overflow-wrap:anywhere;
+
+    word-break:normal;
 
 }
 
@@ -2851,202 +2886,7 @@ img{
 
             </article>
 
-
-            <!-- =============================================
-                 XIAOMI
-            ============================================== -->
-
-            <article
-                class="phone-card"
-                data-brand="Xiaomi"
-                data-name="Xiaomi Redmi Note 15 Pro+"
-                data-rating="4.7"
-                data-price="399">
-
-
-                <div class="phone-image">
-
-                    <span class="phone-badge value">
-                        Best Value
-                    </span>
-
-
-                    <button
-                        class="favorite-btn"
-                        aria-label="Add to favorites">
-
-                        <i class="fa-regular fa-heart"></i>
-
-                    </button>
-
-
-                    <img
-                        src="images/redmi-note-15-pro-plus.webp"
-                        alt="Xiaomi Redmi Note 15 Pro Plus"
-                        loading="lazy">
-
-                </div>
-
-
-                <div class="phone-content">
-
-                    <div class="phone-brand">
-                        Xiaomi
-                    </div>
-
-                    <h3>
-                        Redmi Note 15 Pro+
-                    </h3>
-
-                    <p class="phone-description">
-
-                        Excellent value with a high-quality
-                        AMOLED display, capable cameras
-                        and fast everyday performance.
-
-                    </p>
-
-
-                    <div class="rating-row">
-
-                        <div class="rating">
-
-                            <span class="stars">
-                                ★★★★★
-                            </span>
-
-                            <span class="rating-number">
-                                4.7
-                            </span>
-
-                        </div>
-
-                        <span class="rating-count">
-                            214 reviews
-                        </span>
-
-                    </div>
-
-
-                    <div class="specs">
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-display"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Display
-                                </span>
-
-                                <span class="spec-value">
-                                    6.8" AMOLED
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-microchip"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Chip
-                                </span>
-
-                                <span class="spec-value">
-                                    Snapdragon
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-camera"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Camera
-                                </span>
-
-                                <span class="spec-value">
-                                    200MP
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-battery-full"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Battery
-                                </span>
-
-                                <span class="spec-value">
-                                    5500mAh
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="card-footer">
-
-                        <div class="price">
-
-                            <strong>
-                                $399
-                            </strong>
-
-                            <span>
-                                Starting price
-                            </span>
-
-                        </div>
-
-
-                        <a
-                            href="phones/redminote15proplus.html"
-                            class="details-btn">
-
-                            Review
-
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- =============================================
-                 GOOGLE
-            ============================================== -->
-
-            <article
+<article data-tdh-generated="1" data-tdh-review-url="reviews/google-pixel-10a-reviews.html"
                 class="phone-card"
                 data-brand="Google"
                 data-name="Google Pixel 10a"
@@ -3056,9 +2896,7 @@ img{
 
                 <div class="phone-image">
 
-                    <span class="phone-badge">
-                        Camera Pick
-                    </span>
+                    <span class="phone-badge best">Best Software</span>
 
 
                     <button
@@ -3071,7 +2909,7 @@ img{
 
 
                     <img
-                        src="images/google-pixel-10a.webp"
+                        src="https://techdealshub.online/google/img/pixel10a_hero_3_2.webp"
                         alt="Google Pixel 10a"
                         loading="lazy">
 
@@ -3080,21 +2918,11 @@ img{
 
                 <div class="phone-content">
 
-                    <div class="phone-brand">
-                        Google
-                    </div>
+                    <div class="phone-brand">Google</div>
 
-                    <h3>
-                        Pixel 10a
-                    </h3>
+                    <h3>Google Pixel 10a</h3>
 
-                    <p class="phone-description">
-
-                        Clean Android software, impressive
-                        computational photography and
-                        long-term software support.
-
-                    </p>
+                    <p class="phone-description">The Google Pixel 10a is a refined mid-range smartphone built around Google&#039;s Tensor G4 chip, a smooth 6.3-inch 120Hz pOLED display, dependable dual cameras, a 5,100mAh battery, wireless charging, and seven years of software and security updates. Its hardware changes over the Pixel 9a are modest, but the combination of clean Pixel software, strong computational photography, long-term support, and reliable everyday performance makes it a capable choice in the 0 class.</p>
 
 
                     <div class="rating-row">
@@ -3105,15 +2933,11 @@ img{
                                 ★★★★★
                             </span>
 
-                            <span class="rating-number">
-                                4.6
-                            </span>
+                            <span class="rating-number">4.6</span>
 
                         </div>
 
-                        <span class="rating-count">
-                            176 reviews
-                        </span>
+                        <span class="rating-count">128 reviews</span>
 
                     </div>
 
@@ -3131,9 +2955,7 @@ img{
                                     Display
                                 </span>
 
-                                <span class="spec-value">
-                                    6.3" OLED
-                                </span>
+                                <span class="spec-value">6.3 inches pOLED Actua display</span>
 
                             </div>
 
@@ -3150,9 +2972,7 @@ img{
                                     Chip
                                 </span>
 
-                                <span class="spec-value">
-                                    Tensor
-                                </span>
+                                <span class="spec-value">Google Tensor G4</span>
 
                             </div>
 
@@ -3169,9 +2989,7 @@ img{
                                     Camera
                                 </span>
 
-                                <span class="spec-value">
-                                    48MP
-                                </span>
+                                <span class="spec-value">48MP Quad PD Dual Pixel, f/1.7</span>
 
                             </div>
 
@@ -3188,9 +3006,7 @@ img{
                                     Battery
                                 </span>
 
-                                <span class="spec-value">
-                                    5000mAh
-                                </span>
+                                <span class="spec-value">5,100 mAh</span>
 
                             </div>
 
@@ -3204,9 +3020,7 @@ img{
 
                         <div class="price">
 
-                            <strong>
-                                $499
-                            </strong>
+                            <strong>$499</strong>
 
                             <span>
                                 Starting price
@@ -3216,7 +3030,7 @@ img{
 
 
                         <a
-                            href="phones/pixel10a.html"
+                            href="reviews/google-pixel-10a-reviews.html"
                             class="details-btn">
 
                             Review
@@ -3230,1149 +3044,7 @@ img{
                 </div>
 
             </article>
-
-
-            <!-- =============================================
-                 ONEPLUS
-            ============================================== -->
-
-            <article
-                class="phone-card"
-                data-brand="OnePlus"
-                data-name="OnePlus Nord 6"
-                data-rating="4.5"
-                data-price="449">
-
-
-                <div class="phone-image">
-
-                    <span class="phone-badge">
-                        Performance
-                    </span>
-
-
-                    <button
-                        class="favorite-btn"
-                        aria-label="Add to favorites">
-
-                        <i class="fa-regular fa-heart"></i>
-
-                    </button>
-
-
-                    <img
-                        src="images/oneplus-nord-6.webp"
-                        alt="OnePlus Nord 6"
-                        loading="lazy">
-
-                </div>
-
-
-                <div class="phone-content">
-
-                    <div class="phone-brand">
-                        OnePlus
-                    </div>
-
-                    <h3>
-                        OnePlus Nord 6
-                    </h3>
-
-                    <p class="phone-description">
-
-                        Fast performance, smooth software
-                        and a large battery make this a
-                        strong choice for power users.
-
-                    </p>
-
-
-                    <div class="rating-row">
-
-                        <div class="rating">
-
-                            <span class="stars">
-                                ★★★★★
-                            </span>
-
-                            <span class="rating-number">
-                                4.5
-                            </span>
-
-                        </div>
-
-                        <span class="rating-count">
-                            143 reviews
-                        </span>
-
-                    </div>
-
-
-                    <div class="specs">
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-display"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Display
-                                </span>
-
-                                <span class="spec-value">
-                                    6.74" AMOLED
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-microchip"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Chip
-                                </span>
-
-                                <span class="spec-value">
-                                    Snapdragon
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-camera"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Camera
-                                </span>
-
-                                <span class="spec-value">
-                                    50MP
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-battery-full"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Battery
-                                </span>
-
-                                <span class="spec-value">
-                                    6000mAh
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="card-footer">
-
-                        <div class="price">
-
-                            <strong>
-                                $449
-                            </strong>
-
-                            <span>
-                                Starting price
-                            </span>
-
-                        </div>
-
-
-                        <a
-                            href="phones/oneplusnord6.html"
-                            class="details-btn">
-
-                            Review
-
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- =============================================
-                 NOTHING
-            ============================================== -->
-
-            <article
-                class="phone-card"
-                data-brand="Nothing"
-                data-name="Nothing Phone 4a Pro"
-                data-rating="4.5"
-                data-price="429">
-
-
-                <div class="phone-image">
-
-                    <span class="phone-badge">
-                        Design Pick
-                    </span>
-
-
-                    <button
-                        class="favorite-btn"
-                        aria-label="Add to favorites">
-
-                        <i class="fa-regular fa-heart"></i>
-
-                    </button>
-
-
-                    <img
-                        src="images/nothing-phone-4a-pro.webp"
-                        alt="Nothing Phone 4a Pro"
-                        loading="lazy">
-
-                </div>
-
-
-                <div class="phone-content">
-
-                    <div class="phone-brand">
-                        Nothing
-                    </div>
-
-                    <h3>
-                        Nothing Phone 4a Pro
-                    </h3>
-
-                    <p class="phone-description">
-
-                        A distinctive smartphone with
-                        clean software, a unique design
-                        and excellent everyday usability.
-
-                    </p>
-
-
-                    <div class="rating-row">
-
-                        <div class="rating">
-
-                            <span class="stars">
-                                ★★★★★
-                            </span>
-
-                            <span class="rating-number">
-                                4.5
-                            </span>
-
-                        </div>
-
-                        <span class="rating-count">
-                            97 reviews
-                        </span>
-
-                    </div>
-
-
-                    <div class="specs">
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-display"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Display
-                                </span>
-
-                                <span class="spec-value">
-                                    6.7" OLED
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-microchip"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Chip
-                                </span>
-
-                                <span class="spec-value">
-                                    Snapdragon
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-camera"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Camera
-                                </span>
-
-                                <span class="spec-value">
-                                    50MP
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-battery-full"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Battery
-                                </span>
-
-                                <span class="spec-value">
-                                    5000mAh
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="card-footer">
-
-                        <div class="price">
-
-                            <strong>
-                                $429
-                            </strong>
-
-                            <span>
-                                Starting price
-                            </span>
-
-                        </div>
-
-
-                        <a
-                            href="phones/nothingphone4apro.html"
-                            class="details-btn">
-
-                            Review
-
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- =============================================
-                 MOTOROLA
-            ============================================== -->
-
-            <article
-                class="phone-card"
-                data-brand="Motorola"
-                data-name="Motorola Edge 70"
-                data-rating="4.4"
-                data-price="399">
-
-
-                <div class="phone-image">
-
-                    <span class="phone-badge value">
-                        Great Value
-                    </span>
-
-
-                    <button
-                        class="favorite-btn"
-                        aria-label="Add to favorites">
-
-                        <i class="fa-regular fa-heart"></i>
-
-                    </button>
-
-
-                    <img
-                        src="images/motorola-edge-70.webp"
-                        alt="Motorola Edge 70"
-                        loading="lazy">
-
-                </div>
-
-
-                <div class="phone-content">
-
-                    <div class="phone-brand">
-                        Motorola
-                    </div>
-
-                    <h3>
-                        Edge 70
-                    </h3>
-
-                    <p class="phone-description">
-
-                        Slim design, smooth display and
-                        a clean Android experience at
-                        a competitive price.
-
-                    </p>
-
-
-                    <div class="rating-row">
-
-                        <div class="rating">
-
-                            <span class="stars">
-                                ★★★★★
-                            </span>
-
-                            <span class="rating-number">
-                                4.4
-                            </span>
-
-                        </div>
-
-                        <span class="rating-count">
-                            86 reviews
-                        </span>
-
-                    </div>
-
-
-                    <div class="specs">
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-display"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Display
-                                </span>
-
-                                <span class="spec-value">
-                                    6.6" pOLED
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-microchip"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Chip
-                                </span>
-
-                                <span class="spec-value">
-                                    Snapdragon
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-camera"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Camera
-                                </span>
-
-                                <span class="spec-value">
-                                    50MP
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-battery-full"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Battery
-                                </span>
-
-                                <span class="spec-value">
-                                    5200mAh
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="card-footer">
-
-                        <div class="price">
-
-                            <strong>
-                                $399
-                            </strong>
-
-                            <span>
-                                Starting price
-                            </span>
-
-                        </div>
-
-
-                        <a
-                            href="phones/motorolaedge70.html"
-                            class="details-btn">
-
-                            Review
-
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- =============================================
-                 REALME
-            ============================================== -->
-
-            <article
-                class="phone-card"
-                data-brand="Realme"
-                data-name="Realme GT 8"
-                data-rating="4.5"
-                data-price="379">
-
-
-                <div class="phone-image">
-
-                    <span class="phone-badge">
-                        Performance
-                    </span>
-
-
-                    <button
-                        class="favorite-btn"
-                        aria-label="Add to favorites">
-
-                        <i class="fa-regular fa-heart"></i>
-
-                    </button>
-
-
-                    <img
-                        src="images/realme-gt-8.webp"
-                        alt="Realme GT 8"
-                        loading="lazy">
-
-                </div>
-
-
-                <div class="phone-content">
-
-                    <div class="phone-brand">
-                        Realme
-                    </div>
-
-                    <h3>
-                        Realme GT 8
-                    </h3>
-
-                    <p class="phone-description">
-
-                        Performance-focused hardware,
-                        fast charging and a smooth display
-                        for gaming and daily use.
-
-                    </p>
-
-
-                    <div class="rating-row">
-
-                        <div class="rating">
-
-                            <span class="stars">
-                                ★★★★★
-                            </span>
-
-                            <span class="rating-number">
-                                4.5
-                            </span>
-
-                        </div>
-
-                        <span class="rating-count">
-                            119 reviews
-                        </span>
-
-                    </div>
-
-
-                    <div class="specs">
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-display"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Display
-                                </span>
-
-                                <span class="spec-value">
-                                    6.78" AMOLED
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-microchip"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Chip
-                                </span>
-
-                                <span class="spec-value">
-                                    Snapdragon
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-camera"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Camera
-                                </span>
-
-                                <span class="spec-value">
-                                    50MP
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-battery-full"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Battery
-                                </span>
-
-                                <span class="spec-value">
-                                    5500mAh
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="card-footer">
-
-                        <div class="price">
-
-                            <strong>
-                                $379
-                            </strong>
-
-                            <span>
-                                Starting price
-                            </span>
-
-                        </div>
-
-
-                        <a
-                            href="phones/realmegt8.html"
-                            class="details-btn">
-
-                            Review
-
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- =============================================
-                 SAMSUNG A37
-            ============================================== -->
-
-            <article
-                class="phone-card"
-                data-brand="Samsung"
-                data-name="Samsung Galaxy A37"
-                data-rating="4.3"
-                data-price="349">
-
-
-                <div class="phone-image">
-
-                    <span class="phone-badge">
-                        Everyday Pick
-                    </span>
-
-
-                    <button
-                        class="favorite-btn"
-                        aria-label="Add to favorites">
-
-                        <i class="fa-regular fa-heart"></i>
-
-                    </button>
-
-
-                    <img
-                        src="images/samsung-galaxy-a37.webp"
-                        alt="Samsung Galaxy A37"
-                        loading="lazy">
-
-                </div>
-
-
-                <div class="phone-content">
-
-                    <div class="phone-brand">
-                        Samsung
-                    </div>
-
-                    <h3>
-                        Galaxy A37
-                    </h3>
-
-                    <p class="phone-description">
-
-                        A dependable everyday smartphone
-                        with a bright AMOLED display,
-                        capable cameras and long battery life.
-
-                    </p>
-
-
-                    <div class="rating-row">
-
-                        <div class="rating">
-
-                            <span class="stars">
-                                ★★★★★
-                            </span>
-
-                            <span class="rating-number">
-                                4.3
-                            </span>
-
-                        </div>
-
-                        <span class="rating-count">
-                            104 reviews
-                        </span>
-
-                    </div>
-
-
-                    <div class="specs">
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-display"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Display
-                                </span>
-
-                                <span class="spec-value">
-                                    6.6" AMOLED
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-microchip"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Chip
-                                </span>
-
-                                <span class="spec-value">
-                                    Exynos
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-camera"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Camera
-                                </span>
-
-                                <span class="spec-value">
-                                    50MP
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-battery-full"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Battery
-                                </span>
-
-                                <span class="spec-value">
-                                    5000mAh
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="card-footer">
-
-                        <div class="price">
-
-                            <strong>
-                                $349
-                            </strong>
-
-                            <span>
-                                Starting price
-                            </span>
-
-                        </div>
-
-
-                        <a
-                            href="phones/samsunggalaxya37.html"
-                            class="details-btn">
-
-                            Review
-
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- =============================================
-                 XIAOMI POCO
-            ============================================== -->
-
-            <article
-                class="phone-card"
-                data-brand="Xiaomi"
-                data-name="POCO F8 Pro"
-                data-rating="4.4"
-                data-price="429">
-
-
-                <div class="phone-image">
-
-                    <span class="phone-badge best">
-                        Gaming Pick
-                    </span>
-
-
-                    <button
-                        class="favorite-btn"
-                        aria-label="Add to favorites">
-
-                        <i class="fa-regular fa-heart"></i>
-
-                    </button>
-
-
-                    <img
-                        src="images/poco-f8-pro.webp"
-                        alt="POCO F8 Pro"
-                        loading="lazy">
-
-                </div>
-
-
-                <div class="phone-content">
-
-                    <div class="phone-brand">
-                        Xiaomi
-                    </div>
-
-                    <h3>
-                        POCO F8 Pro
-                    </h3>
-
-                    <p class="phone-description">
-
-                        A performance-oriented phone
-                        built for demanding apps, gaming
-                        and fast everyday multitasking.
-
-                    </p>
-
-
-                    <div class="rating-row">
-
-                        <div class="rating">
-
-                            <span class="stars">
-                                ★★★★★
-                            </span>
-
-                            <span class="rating-number">
-                                4.4
-                            </span>
-
-                        </div>
-
-                        <span class="rating-count">
-                            91 reviews
-                        </span>
-
-                    </div>
-
-
-                    <div class="specs">
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-display"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Display
-                                </span>
-
-                                <span class="spec-value">
-                                    6.67" AMOLED
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-microchip"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Chip
-                                </span>
-
-                                <span class="spec-value">
-                                    Snapdragon
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-camera"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Camera
-                                </span>
-
-                                <span class="spec-value">
-                                    50MP
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <i class="fa-solid fa-battery-full"></i>
-
-                            <div class="spec-text">
-
-                                <span class="spec-label">
-                                    Battery
-                                </span>
-
-                                <span class="spec-value">
-                                    5500mAh
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="card-footer">
-
-                        <div class="price">
-
-                            <strong>
-                                $429
-                            </strong>
-
-                            <span>
-                                Starting price
-                            </span>
-
-                        </div>
-
-
-                        <a
-                            href="phones/pocof8pro.html"
-                            class="details-btn">
-
-                            Review
-
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-        </div>
+</div>
 
 
         <!-- EMPTY -->
@@ -4664,7 +3336,177 @@ let activeBrand = "all";
 /* =========================================================
    FILTER + SEARCH + SORT
 ========================================================= */
+function updateDashboard() {
 
+    const cards = Array.from(
+        document.querySelectorAll(".phone-card")
+    );
+
+    const uniquePhones = new Map();
+
+    cards.forEach(card => {
+
+        const name =
+            (card.dataset.name || "").trim();
+
+        if (!name) return;
+
+        /*
+         * نفس الهاتف = نفس الاسم
+         * وبالتالي لا نحسب الكارد المكرر مرتين.
+         */
+        if (!uniquePhones.has(name)) {
+
+            const ratingValue = parseFloat(
+                card.dataset.rating || ""
+            );
+
+            const priceValue = parseFloat(
+                card.dataset.price || ""
+            );
+
+            uniquePhones.set(name, {
+                rating:
+                    Number.isFinite(ratingValue)
+                        ? ratingValue
+                        : null,
+
+                price:
+                    Number.isFinite(priceValue)
+                        ? priceValue
+                        : null
+            });
+        }
+    });
+
+    const phones =
+        Array.from(uniquePhones.values());
+
+    /*
+     * PHONES REVIEWED
+     */
+    const phoneCount =
+        phones.length;
+
+    /*
+     * AVERAGE RATING
+     */
+    const ratings =
+        phones
+            .map(phone => phone.rating)
+            .filter(
+                rating =>
+                    Number.isFinite(rating)
+            );
+
+    const averageRating =
+        ratings.length
+            ? (
+                ratings.reduce(
+                    (sum, rating) =>
+                        sum + rating,
+                    0
+                ) / ratings.length
+            ).toFixed(1)
+            : "0.0";
+
+    /*
+     * STARTING PRICE
+     */
+    const prices =
+        phones
+            .map(phone => phone.price)
+            .filter(
+                price =>
+                    Number.isFinite(price) &&
+                    price > 0
+            );
+
+    const startingPrice =
+        prices.length
+            ? Math.min(...prices)
+            : 0;
+
+    /*
+     * DASHBOARD ELEMENTS
+     */
+    const heroStats =
+        document.querySelectorAll(".hero-stat");
+
+    if (heroStats.length >= 4) {
+
+        heroStats[0]
+            .querySelector("strong")
+            .textContent =
+                phoneCount + "+";
+
+        heroStats[0]
+            .querySelector("span")
+            .textContent =
+                "Phones Reviewed";
+
+        heroStats[1]
+            .querySelector("strong")
+            .textContent =
+                averageRating;
+
+        heroStats[1]
+            .querySelector("span")
+            .textContent =
+                "Average Rating";
+
+        heroStats[2]
+            .querySelector("strong")
+            .textContent =
+                "$" + startingPrice + "+";
+
+        heroStats[2]
+            .querySelector("span")
+            .textContent =
+                "Starting Price";
+
+        heroStats[3]
+            .querySelector("strong")
+            .textContent =
+                new Date().getFullYear();
+
+        heroStats[3]
+            .querySelector("span")
+            .textContent =
+                "Updated Picks";
+    }
+}
+function sortPhonesByRating() {
+
+    const grid =
+        document.querySelector(".phone-grid");
+
+    if (!grid) return;
+
+    const cards =
+        Array.from(
+            grid.querySelectorAll(".phone-card")
+        );
+
+    cards.sort((a, b) => {
+
+        const ratingA =
+            parseFloat(
+                a.dataset.rating || "0"
+            );
+
+        const ratingB =
+            parseFloat(
+                b.dataset.rating || "0"
+            );
+
+        return ratingB - ratingA;
+    });
+
+    cards.forEach(card => {
+        grid.appendChild(card);
+    });
+      }
 function updatePhones(){
 
     const searchValue =
@@ -5036,11 +3878,15 @@ document
 
     });
 
+  
+
 
 /* =========================================================
    INITIALIZE
 ========================================================= */
 
+updateDashboard();
+sortPhonesByRating();
 updatePhones();
 
 

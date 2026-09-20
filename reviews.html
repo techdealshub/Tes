@@ -3,373 +3,2461 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNYG3R18BZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNYG3R18BZ');
+</script>
+<!-- End Google Tag Manager -->
+
+
 <title>Phone Reviews | TechDealsHub</title>
+
 <meta name="description" content="All smartphone reviews on TechDealsHub, ranked by overall rating with search and brand filters.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
-:root{--bg:#050816;--bg2:#080d1d;--card:#0b1324;--card2:#101a2d;--border:#1d2a40;--primary:#3b82f6;--purple:#8b5cf6;--cyan:#22d3ee;--text:#e8eef8;--muted:#8fa1b8;--yellow:#fbbf24;--green:#22c55e}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:radial-gradient(circle at 15% 0%,rgba(37,99,235,.13),transparent 30%),radial-gradient(circle at 90% 15%,rgba(139,92,246,.09),transparent 28%),var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.6;min-height:100vh;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
-a{text-decoration:none;color:inherit}
-button,input{font:inherit}
-.container{width:min(1240px,calc(100% - 40px));margin:auto}
 
-.header{position:sticky;top:0;z-index:1000;height:76px;border-bottom:1px solid rgba(255,255,255,.06);background:rgba(5,8,22,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
-.header-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.logo{display:flex;align-items:center;gap:11px;font-size:21px;font-weight:800;white-space:nowrap}
-.logo-mark{width:40px;height:40px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,#3b82f6,#2563eb);box-shadow:0 8px 25px rgba(37,99,235,.35)}
-.logo-mark i{color:#fff}
-.logo em{font-style:normal;color:#3b82f6}
-.nav{display:flex;align-items:center;gap:5px}
-.nav a{display:flex;align-items:center;gap:8px;padding:10px 13px;border-radius:11px;color:#8fa1b8;font-size:13px;font-weight:700}
-.nav a:hover,.nav a.active{background:rgba(59,130,246,.1);color:#fff}
-.actions{display:flex;align-items:center;gap:8px}
-.icon-btn,.mobile-toggle{width:40px;height:40px;border:1px solid var(--border);border-radius:12px;background:#0a1221;color:#b9c7da;display:grid;place-items:center;cursor:pointer}
-.mobile-toggle{display:none}
+/* =========================================================
+   TECHDEALSHUB REVIEWS — PREMIUM COMPLETE CSS
+   ========================================================= */
 
-.tdh-mobile-nav{position:fixed;inset:0;z-index:2000;visibility:hidden;pointer-events:none}
-.tdh-mobile-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.62);opacity:0;transition:.28s}
-.tdh-mobile-panel{position:absolute;top:0;right:0;width:min(340px,88vw);height:100%;padding:22px;background:linear-gradient(180deg,#091225,#050916);border-left:1px solid var(--border);box-shadow:-25px 0 70px rgba(0,0,0,.45);transform:translateX(105%);transition:.32s cubic-bezier(.22,.8,.25,1);overflow-y:auto}
-.tdh-mobile-nav.tdh-open{visibility:visible;pointer-events:auto}
-.tdh-mobile-nav.tdh-open .tdh-mobile-backdrop{opacity:1}
-.tdh-mobile-nav.tdh-open .tdh-mobile-panel{transform:translateX(0)}
-body.tdh-menu-open{overflow:hidden}
-.tdh-mobile-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:20px;border-bottom:1px solid var(--border)}
-.tdh-logo{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:800}
-.tdh-logo-icon{width:38px;height:38px;display:grid;place-items:center;border-radius:11px;background:linear-gradient(135deg,#3b82f6,#2563eb);color:#fff}
-.tdh-logo-text span{color:#3b82f6}
-.tdh-mobile-close{width:40px;height:40px;display:grid;place-items:center;border:1px solid var(--border);border-radius:10px;background:rgba(255,255,255,.05);color:#fff;cursor:pointer}
-.tdh-mobile-links{padding:20px 0;display:grid;gap:8px}
-.tdh-mobile-link{display:flex;align-items:center;gap:13px;width:100%;padding:15px;border:1px solid transparent;border-radius:13px;color:#a2b1c5;font-size:14px;font-weight:700;transition:.2s}
-.tdh-mobile-link i{width:20px;text-align:center;color:#71839a}
-.tdh-mobile-link:hover,.tdh-mobile-link.tdh-active{color:#fff;background:rgba(59,130,246,.12);border-color:rgba(59,130,246,.14)}
-.tdh-mobile-link.tdh-active i{color:#5b9cff}
+:root{
+  --bg:#050816;
+  --bg-soft:#080d1d;
+  --surface:#0a1221;
+  --surface-2:#0d1729;
+  --surface-3:#111c30;
 
-.hero{padding:74px 0 38px}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border:1px solid rgba(59,130,246,.22);border-radius:999px;background:rgba(59,130,246,.07);color:#8db8ff;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
-.hero h1{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-2.5px;margin:17px 0 14px}
-.hero h1 span{color:#6ea5ff}
-.hero p{max-width:700px;color:var(--muted);font-size:15px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
-.stat{padding:18px;border:1px solid var(--border);border-radius:17px;background:rgba(11,19,36,.7)}
-.stat strong{display:block;font-size:25px}
-.stat span{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+  --border:#1d2a40;
+  --border-soft:rgba(255,255,255,.07);
 
-.toolbar{position:sticky;top:76px;z-index:50;padding:14px 0;background:rgba(5,8,22,.82);backdrop-filter:blur(14px)}
-.toolbar-inner{display:flex;gap:12px;align-items:center}
-.search{flex:1;position:relative}
-.search i{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:#667b95}
-.search input{width:100%;height:50px;border:1px solid var(--border);border-radius:15px;background:#0a1221;color:#fff;padding:0 18px 0 45px;outline:none}
-.search-close{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:30px;height:30px;border:0;border-radius:8px;background:rgba(255,255,255,.06);color:#8fa1b8;display:none;place-items:center;cursor:pointer}
-.search-close:hover{background:rgba(255,255,255,.1);color:#fff}
-.search.searching .search-close{display:grid}
-.search input:focus{border-color:rgba(59,130,246,.6);box-shadow:0 0 0 4px rgba(59,130,246,.08)}
-.count{white-space:nowrap;color:var(--muted);font-size:12px}
-.filter-label{width:100%;color:#657890;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;margin:4px 0 0}
-.filters{display:flex;gap:8px;flex-wrap:wrap;padding:14px 0 25px}
-.brands{display:flex;gap:8px;flex-wrap:wrap;padding:14px 0 25px}
-.brand-btn{border:1px solid var(--border);background:#0a1221;color:#8fa1b8;padding:9px 13px;border-radius:999px;font-size:11px;font-weight:800;cursor:pointer}
-.brand-btn:hover,.brand-btn.active{background:rgba(59,130,246,.13);border-color:rgba(59,130,246,.45);color:#fff}
+  --primary:#3b82f6;
+  --primary-dark:#2563eb;
+  --primary-light:#6ea5ff;
 
-.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:18px}
-.section-head h2{font-size:23px;letter-spacing:-.7px}
-.section-head p{color:var(--muted);font-size:12px}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding-bottom:80px}
-.review-category-section{margin-bottom:8px}
-.review-category-section .section-head{margin-bottom:18px}
-.review-category-section .grid{padding-bottom:38px}
+  --text:#edf3fb;
+  --text-soft:#c5d0df;
+  --muted:#8fa1b8;
+  --muted-2:#667890;
 
-.review-card{position:relative;overflow:hidden;border:1px solid var(--border);border-radius:21px;background:linear-gradient(145deg,rgba(15,25,44,.96),rgba(8,14,28,.96));transition:.3s;box-shadow:0 18px 50px rgba(0,0,0,.2)}
-.review-card:hover{transform:translateY(-5px);border-color:rgba(59,130,246,.35);box-shadow:0 25px 70px rgba(0,0,0,.35)}
-.card-top{display:flex;align-items:center;justify-content:space-between;padding:15px 16px 0}
-.brand{color:#78a9ff;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em}
-.rank{font-size:10px;color:#64748b}
-.phone-image{height:245px;display:grid;place-items:center;padding:18px}
-.phone-image img{width:190px;height:215px;object-fit:contain;filter:drop-shadow(0 22px 25px rgba(0,0,0,.5));transition:.35s}
-.review-card:hover .phone-image img{transform:translateY(-6px) scale(1.025)}
-.no-image{width:150px;height:190px;border:1px dashed #2a3b53;border-radius:22px;display:grid;place-items:center;color:#526780}
-.card-body{padding:0 18px 18px}
-.title-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
-.title-row h3{font-size:18px;line-height:1.25}
-.score{flex:0 0 auto;display:flex;align-items:center;gap:5px;padding:6px 9px;border-radius:10px;background:rgba(251,191,36,.08);color:var(--yellow);font-weight:900;font-size:14px}
-.description{color:#91a2b9;font-size:12px;line-height:1.7;margin:10px 0 15px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.card-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.read{display:inline-flex;align-items:center;gap:8px;color:#fff;background:linear-gradient(135deg,#2563eb,#3b82f6);padding:10px 13px;border-radius:11px;font-size:11px;font-weight:800}
-.category{color:#64758b;font-size:10px}
+  --yellow:#fbbf24;
+  --green:#22c55e;
+  --red:#ef4444;
 
-.demo-card{border-color:rgba(59,130,246,.22)}
-.brand-demo-grid{padding-bottom:45px}
-.brand-demo-grid .phone-image{height:220px}
-.brand-demo-grid .phone-image img{width:165px;height:195px}
-.brand-demo-card{cursor:pointer}
-.brand-demo-card .demo-label{color:#64758b;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+  --radius-sm:10px;
+  --radius-md:14px;
+  --radius-lg:20px;
+  --radius-xl:24px;
 
-.empty{display:none;text-align:center;padding:60px 20px;border:1px dashed #24364e;border-radius:20px;color:var(--muted);margin-bottom:80px}
-.empty i{font-size:35px;margin-bottom:12px;color:#4b6a91}
-.loading{text-align:center;color:var(--muted);padding:45px}
-
-.tdh-footer{width:100%;border-top:1px solid rgba(255,255,255,.08);background:#05080d;margin-top:20px}
-.tdh-footer-main{padding:60px 0 45px}
-.tdh-footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:38px}
-.tdh-footer-brand{max-width:310px}
-.tdh-footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:17px}
-.tdh-footer-logo-icon{width:39px;height:39px;display:grid;place-items:center;border-radius:11px;background:linear-gradient(135deg,#3182f6,#1554b8);box-shadow:0 8px 25px rgba(49,130,246,.28);color:#fff}
-.tdh-footer-logo strong{font-size:19px;font-weight:900;letter-spacing:-.6px}
-.tdh-footer-logo strong span{color:#5a9bff}
-.tdh-footer-description{color:#707b8c;font-size:12px;line-height:1.8;margin:0 0 18px}
-.tdh-footer-socials{display:flex;gap:8px}
-.tdh-social{width:35px;height:35px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.08);border-radius:10px;color:#8b98aa;background:rgba(255,255,255,.02);transition:.2s}
-.tdh-social:hover{color:#fff;border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.05)}
-.tdh-footer-heading{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#f4f7fb;font-weight:900;margin:3px 0 15px}
-.tdh-footer-links{display:grid;gap:10px}
-.tdh-footer-link{display:flex;align-items:center;gap:8px;color:#707b8c;font-size:12px;transition:.2s}
-.tdh-footer-link i{font-size:8px;color:#4f6279}
-.tdh-footer-link:hover{color:#fff}
-.tdh-footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid rgba(255,255,255,.08);padding-top:20px;margin-top:42px;color:#657890;font-size:11px}
-
-.footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 0 30px;color:#657890;font-size:11px;margin-top:20px}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:35px}
-.footer-brand h3{font-size:20px;color:#fff;margin-bottom:10px}
-.footer-brand h3 em{font-style:normal;color:#3b82f6}
-.footer-brand p{max-width:330px;line-height:1.8;color:#71839a}
-.footer-title{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#fff;font-weight:900;margin-bottom:13px}
-.footer-links{display:grid;gap:8px}
-.footer-links a{color:#71839a}
-.footer-links a:hover{color:#fff}
-.socials{display:flex;gap:8px}
-.socials a{width:34px;height:34px;border:1px solid var(--border);border-radius:10px;display:grid;place-items:center;color:#71839a}
-.socials a:hover{color:#fff;border-color:#3b82f6}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.06);margin-top:35px;padding-top:20px;display:flex;justify-content:space-between;gap:20px}
-.mobile-nav{display:none}
-
-.search-group{display:flex;flex:1;min-width:0;gap:0}
-.search-group .search{min-width:0}
-.brand-select{width:180px;height:50px;border:1px solid var(--border);border-left:0;border-radius:0 15px 15px 0;background:#0a1221;color:#dbe7f5;padding:0 14px;font-size:12px;font-weight:800;outline:none;cursor:pointer}
-.search-group .search input{border-radius:15px 0 0 15px}
-.brand-select:focus{border-color:rgba(59,130,246,.6);box-shadow:0 0 0 4px rgba(59,130,246,.08)}
-
-.brand-demo-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-.brand-demo-card{cursor:pointer}
-.brand-demo-card .phone-image{height:230px}
-.brand-demo-card .phone-image img{width:150px;height:205px}
-.brand-demo-card .card-body{text-align:center}
-.brand-demo-card .title-row{display:block}
-.brand-demo-card .title-row h3{font-size:17px}
-.brand-demo-card .score{display:inline-flex;margin-top:10px}
-.brand-demo-card .description{margin-bottom:12px}
-.brand-demo-card .card-bottom{justify-content:center}
-.brand-demo-card .category{display:none}
-.brand-demo-card .read{width:100%;justify-content:center}
-.brand-demo-card.active-brand{border-color:rgba(59,130,246,.65);box-shadow:0 0 0 2px rgba(59,130,246,.12),0 25px 70px rgba(0,0,0,.35)}
-
-.footer-main{display:grid;grid-template-columns:1.7fr repeat(3,1fr);gap:50px;align-items:start}
-.footer-logo{display:inline-block;font-size:22px;font-weight:900;color:#fff;letter-spacing:-.5px;margin-bottom:12px}
-.footer-logo span{color:#3b82f6}
-.footer-brand p{max-width:340px;line-height:1.8;color:#71839a;margin:0 0 18px}
-.footer-column{min-width:0}
-.footer-bottom a{color:#71839a}
-.footer-bottom a:hover{color:#fff}
-.footer-bottom>div{display:flex;gap:9px}
-.footer-logo{display:flex;align-items:center;gap:10px}
-.footer-logo-mark{width:38px;height:38px;display:grid;place-items:center;border-radius:11px;background:linear-gradient(135deg,#3b82f6,#2563eb);color:#fff;font-size:14px}
-.footer-main{padding-bottom:8px}
-.footer-brand{padding-right:15px}
-.footer-title{margin-bottom:15px}
-.footer-links{gap:10px}
-.footer-links a{transition:.2s}
-.socials{margin-top:4px}
-.footer-bottom{align-items:center}
-.footer-bottom span{line-height:1.7}
-
-@media(max-width:900px){
-.tdh-footer-grid{grid-template-columns:1.5fr 1fr 1fr}
-.tdh-footer-grid>div:last-child{grid-column:2}
-.tdh-footer-bottom{flex-direction:column;align-items:flex-start}
+  --shadow-sm:0 8px 25px rgba(0,0,0,.16);
+  --shadow-md:0 16px 40px rgba(0,0,0,.22);
+  --shadow-lg:0 25px 65px rgba(0,0,0,.32);
 }
 
-@media(max-width:600px){
-.tdh-footer-main{padding:45px 0 30px}
-.tdh-footer-grid{grid-template-columns:1fr 1fr;gap:30px 22px}
-.tdh-footer-brand{grid-column:1/-1}
-.tdh-footer-grid>div:last-child{grid-column:auto}
-.tdh-footer-bottom{margin-top:30px;gap:10px}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-.footer-main{padding-bottom:8px}
-.footer-brand{padding-right:15px}
-.footer-title{margin-bottom:15px}
-.footer-links{gap:10px}
-.footer-links a{transition:.2s}
-.socials{margin-top:4px}
-.footer-bottom{align-items:center}
-.footer-bottom span{line-height:1.7}
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(37,99,235,.14),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 92% 8%,
+      rgba(139,92,246,.10),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #050816 0%,
+      #060a17 50%,
+      #050816 100%
+    );
+
+  color:var(--text);
+  font-family:Inter,Arial,sans-serif;
+  line-height:1.6;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.10;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.035) 1px,
+      transparent 1px
+    );
+
+  background-size:55px 55px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 90%
+    );
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button,
+input,
+select{
+  font:inherit;
+}
+
+button{
+  -webkit-tap-highlight-color:transparent;
+}
+
+.container{
+  width:min(1240px,calc(100% - 48px));
+  margin:0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  height:72px;
+
+  background:rgba(5,8,22,.88);
+  border-bottom:1px solid rgba(255,255,255,.07);
+
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+}
+
+.header-inner{
+  height:72px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:24px;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:11px;
+
+  font-size:20px;
+  font-weight:800;
+
+  white-space:nowrap;
+}
+
+.logo-mark{
+  width:39px;
+  height:39px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:12px;
+
+  color:#fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--primary-dark)
+    );
+
+  box-shadow:
+    0 8px 25px rgba(37,99,235,.28);
+}
+
+.logo em{
+  color:var(--primary-light);
+  font-style:normal;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+
+.nav a{
+  display:flex;
+  align-items:center;
+  gap:7px;
+
+  padding:10px 13px;
+
+  border-radius:10px;
+
+  color:#91a2b8;
+
+  font-size:12px;
+  font-weight:700;
+
+  transition:
+    color .2s ease,
+    background .2s ease;
+}
+
+.nav a:hover,
+.nav a.active{
+  color:#fff;
+  background:rgba(59,130,246,.11);
+}
+
+.actions{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.icon-btn,
+.mobile-toggle{
+  width:39px;
+  height:39px;
+
+  display:grid;
+  place-items:center;
+
+  border:1px solid var(--border);
+  border-radius:11px;
+
+  background:#0a1221;
+  color:#91a2b8;
+
+  cursor:pointer;
+
+  transition:
+    color .2s ease,
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.icon-btn:hover,
+.mobile-toggle:hover{
+  color:#fff;
+  border-color:rgba(59,130,246,.45);
+  background:#0d1729;
+}
+
+.mobile-toggle{
+  display:none;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+.tdh-mobile-nav{
+  position:fixed;
+  inset:0;
+  z-index:2000;
+
+  visibility:hidden;
+  pointer-events:none;
+}
+
+.tdh-mobile-backdrop{
+  position:absolute;
+  inset:0;
+
+  background:rgba(0,0,0,.68);
+
+  opacity:0;
+
+  transition:.28s ease;
+}
+
+.tdh-mobile-panel{
+  position:absolute;
+  top:0;
+  right:0;
+
+  width:min(350px,88vw);
+  height:100%;
+
+  padding:24px;
+
+  overflow-y:auto;
+
+  background:
+    linear-gradient(
+      180deg,
+      #091225,
+      #050916
+    );
+
+  border-left:1px solid var(--border);
+
+  box-shadow:
+    -25px 0 70px rgba(0,0,0,.50);
+
+  transform:translateX(105%);
+
+  transition:.32s ease;
+}
+
+.tdh-mobile-nav.tdh-open{
+  visibility:visible;
+  pointer-events:auto;
+}
+
+.tdh-mobile-nav.tdh-open .tdh-mobile-backdrop{
+  opacity:1;
+}
+
+.tdh-mobile-nav.tdh-open .tdh-mobile-panel{
+  transform:translateX(0);
+}
+
+body.tdh-menu-open{
+  overflow:hidden;
+}
+
+.tdh-mobile-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding-bottom:20px;
+
+  border-bottom:1px solid var(--border);
+}
+
+.tdh-logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  font-size:18px;
+  font-weight:800;
+}
+
+.tdh-logo-icon{
+  width:37px;
+  height:37px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--primary-dark)
+    );
+
+  color:#fff;
+}
+
+.tdh-logo-text span{
+  color:var(--primary-light);
+}
+
+.tdh-mobile-close{
+  width:39px;
+  height:39px;
+
+  display:grid;
+  place-items:center;
+
+  border:1px solid var(--border);
+  border-radius:11px;
+
+  background:rgba(255,255,255,.05);
+  color:#fff;
+
+  cursor:pointer;
+}
+
+.tdh-mobile-links{
+  display:grid;
+  gap:8px;
+
+  padding:22px 0;
+}
+
+.tdh-mobile-link{
+  display:flex;
+  align-items:center;
+  gap:13px;
+
+  width:100%;
+
+  padding:14px;
+
+  border:1px solid transparent;
+  border-radius:12px;
+
+  color:#a2b1c5;
+
+  font-size:13px;
+  font-weight:700;
+
+  transition:.2s ease;
+}
+
+.tdh-mobile-link i{
+  width:20px;
+  text-align:center;
+  color:#71839a;
+}
+
+.tdh-mobile-link:hover,
+.tdh-mobile-link.tdh-active{
+  color:#fff;
+
+  background:rgba(59,130,246,.12);
+  border-color:rgba(59,130,246,.16);
+}
+
+.tdh-mobile-link.tdh-active i{
+  color:#5b9cff;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+  padding:64px 0 42px;
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  padding:8px 13px;
+
+  border:1px solid rgba(59,130,246,.22);
+  border-radius:999px;
+
+  background:rgba(59,130,246,.08);
+
+  color:#8db8ff;
+
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  margin:18px 0 13px;
+
+  font-size:clamp(40px,5vw,58px);
+  line-height:1.04;
+
+  letter-spacing:-2px;
+}
+
+.hero h1 span{
+  color:var(--primary-light);
+}
+
+.hero p{
+  max-width:720px;
+
+  color:var(--muted);
+
+  font-size:13px;
+  line-height:1.8;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  gap:14px;
+
+  margin-top:28px;
+}
+
+.stat{
+  min-height:91px;
+
+  padding:18px 20px;
+
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15,25,44,.82),
+      rgba(8,14,28,.72)
+    );
+
+  box-shadow:var(--shadow-sm);
+}
+
+.stat strong{
+  display:block;
+
+  font-size:25px;
+  line-height:1.2;
+}
+
+.stat span{
+  display:block;
+
+  margin-top:5px;
+
+  color:var(--muted);
+
+  font-size:10px;
+  font-weight:600;
+
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   TOOLBAR
+   ========================================================= */
+
+.toolbar{
+  padding:16px 0;
+
+  background:rgba(8,13,29,.80);
+
+  border-top:1px solid rgba(255,255,255,.045);
+  border-bottom:1px solid rgba(255,255,255,.07);
+
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+}
+
+.toolbar-inner{
+  min-height:58px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:24px;
+}
+
+.toolbar-left{
+  min-width:0;
+
+  display:flex;
+  align-items:center;
+
+  gap:28px;
+}
+
+.toolbar-label{
+  display:flex;
+  align-items:center;
+  gap:11px;
+
+  flex-shrink:0;
+}
+
+.toolbar-icon{
+  width:39px;
+  height:39px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid rgba(59,130,246,.20);
+  border-radius:11px;
+
+  background:rgba(59,130,246,.09);
+
+  color:#5b9cff;
+  font-size:13px;
+}
+
+.toolbar-label strong{
+  display:block;
+
+  color:#fff;
+
+  font-size:12px;
+  line-height:1.3;
+}
+
+.toolbar-label span:not(.toolbar-icon){
+  display:block;
+
+  margin-top:4px;
+
+  color:#718198;
+
+  font-size:9px;
+}
+
+.search-group{
+  display:flex;
+  align-items:center;
+
+  gap:10px;
+}
+
+.search{
+  position:relative;
+
+  width:300px;
+  height:44px;
+
+  display:flex;
+  align-items:center;
+
+  border:1px solid #1b2940;
+  border-radius:12px;
+
+  background:#0a1221;
+
+  transition:.2s ease;
+}
+
+.search:focus-within{
+  border-color:rgba(59,130,246,.60);
+
+  background:#0d1728;
+
+  box-shadow:
+    0 0 0 3px rgba(59,130,246,.07);
+}
+
+.search-icon{
+  margin-left:14px;
+
+  color:#60738c;
+
+  font-size:12px;
+
+  pointer-events:none;
+}
+
+.search input{
+  width:100%;
+  height:100%;
+
+  padding:0 42px 0 11px;
+
+  border:0;
+  outline:0;
+
+  background:transparent;
+
+  color:#fff;
+
+  font-size:11px;
+}
+
+.search input::placeholder{
+  color:#617187;
+}
+
+.search-close{
+  position:absolute;
+  right:6px;
+
+  width:30px;
+  height:30px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:0;
+  border-radius:8px;
+
+  background:transparent;
+  color:#66778d;
+
+  cursor:pointer;
+}
+
+.search-close:hover{
+  color:#fff;
+  background:rgba(255,255,255,.07);
+}
+
+.select-wrap{
+  position:relative;
+
+  width:180px;
+  height:44px;
+
+  display:flex;
+  align-items:center;
+
+  border:1px solid #1b2940;
+  border-radius:12px;
+
+  background:#0a1221;
+}
+
+.select-wrap > i:first-child{
+  margin-left:13px;
+
+  color:#5b9cff;
+
+  font-size:11px;
+
+  pointer-events:none;
+}
+
+.brand-select{
+  width:100%;
+  height:100%;
+
+  padding:0 32px 0 10px;
+
+  border:0;
+  outline:0;
+
+  appearance:none;
+  -webkit-appearance:none;
+
+  background:transparent;
+
+  color:#c2cedd;
+
+  font-size:11px;
+
+  cursor:pointer;
+}
+
+.brand-select option{
+  background:#111a2b;
+  color:#fff;
+}
+
+.select-arrow{
+  position:absolute;
+  right:12px;
+
+  color:#66778d !important;
+  font-size:9px !important;
+
+  pointer-events:none;
+}
+
+.toolbar-result{
+  min-height:38px;
+
+  padding:0 14px;
+
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  flex-shrink:0;
+
+  border:1px solid #1b2940;
+  border-radius:11px;
+
+  background:rgba(11,19,36,.75);
+
+  color:#8191a7;
+
+  font-size:10px;
+  font-weight:600;
+
+  white-space:nowrap;
+}
+
+.result-dot{
+  width:7px;
+  height:7px;
+
+  flex-shrink:0;
+
+  border-radius:50%;
+
+  background:var(--primary);
+
+  box-shadow:
+    0 0 10px rgba(59,130,246,.55);
+}
+
+
+/* =========================================================
+   CATEGORIES
+   ========================================================= */
+
+#categories,
+.filter-label{
+  display:flex;
+  align-items:center;
+
+  width:max-content;
+  min-width:118px;
+  min-height:40px;
+
+  margin:28px 0 12px;
+  padding:0 16px;
+
+  border:1px solid var(--border);
+  border-radius:11px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0d1729,
+      #091120
+    );
+
+  color:#f1f5fb;
+
+  font-size:12px;
+  font-weight:800;
+
+  line-height:1;
+
+  box-shadow:
+    0 7px 22px rgba(0,0,0,.14);
+}
+
+.filters{
+  display:block;
+  width:100%;
+  white-space:normal;
+  overflow:visible;
+}
+
+.filters .brand-btn{
+  display:inline-flex;
+  vertical-align:middle;
+  margin:0 6px 8px 0;
+}
+
+.brand-btn{
+  appearance:none;
+
+  min-height:40px;
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:0 18px;
+
+  border:1px solid var(--border);
+  border-radius:10px;
+
+  background:#0a1221;
+
+  color:#91a2b8;
+
+  font-size:11px;
+  font-weight:700;
+
+  line-height:1;
+
+  white-space:nowrap;
+
+  cursor:pointer;
+
+  transition:
+    color .2s ease,
+    background .2s ease,
+    border-color .2s ease,
+    transform .2s ease;
+}
+
+.brand-btn:hover{
+  color:#fff;
+
+  border-color:rgba(59,130,246,.34);
+
+  background:#0d182a;
+
+  transform:translateY(-1px);
+}
+
+.brand-btn.active{
+  color:#fff;
+
+  border-color:transparent;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary-dark),
+      var(--primary)
+    );
+
+  box-shadow:
+    0 7px 20px rgba(37,99,235,.22);
+}
+
+
+/* =========================================================
+   BRAND SHOWCASE
+   ========================================================= */
+
+.brand-showcase-head{
+  margin:0 0 14px;
+}
+
+.brand-showcase-head h2{
+  font-size:18px;
+  line-height:1.3;
+
+  letter-spacing:-.35px;
+}
+
+.brand-showcase-head p{
+  margin-top:4px;
+
+  color:#718198;
+
+  font-size:10px;
+}
+
+.brand-demo-grid{
+  width:100%;
+
+  display:grid;
+  grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+  gap:10px;
+
+  margin:0 0 34px;
+}
+
+.brand-item{
+  min-height:72px;
+
+  display:flex;
+  align-items:center;
+
+  gap:13px;
+
+  padding:12px 14px;
+
+  border:1px solid var(--border);
+  border-radius:14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15,25,44,.95),
+      rgba(8,14,28,.95)
+    );
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.14);
+
+  transition:
+    transform .22s ease,
+    border-color .22s ease,
+    background .22s ease;
+}
+
+.brand-item:hover{
+  transform:translateY(-2px);
+
+  border-color:rgba(59,130,246,.34);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(17,31,55,.98),
+      rgba(9,16,31,.98)
+    );
+}
+
+.brand-logo{
+  min-width:43px;
+  height:43px;
+
+  display:grid;
+  place-items:center;
+
+  padding:0 8px;
+
+  border:1px solid rgba(59,130,246,.20);
+  border-radius:11px;
+
+  background:rgba(59,130,246,.09);
+
+  color:#73a8ff;
+
+  font-size:9px;
+  font-weight:900;
+
+  text-align:center;
+
+  overflow:hidden;
+}
+
+.brand-item > div:last-child{
+  min-width:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  flex:1;
+
+  gap:10px;
+}
+
+.brand-item strong{
+  min-width:0;
+
+  color:#e8eef8;
+
+  font-size:11px;
+  font-weight:700;
+  line-height:1.4;
+
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+
+  overflow:hidden;
+}
+
+.brand-item span{
+  flex-shrink:0;
+
+  padding:5px 7px;
+
+  border-radius:7px;
+
+  background:rgba(251,191,36,.08);
+
+  color:var(--yellow);
+
+  font-size:10px;
+  font-weight:900;
+}
+
+
+/* =========================================================
+   SECTION HEAD
+   ========================================================= */
+
+.section-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+
+  gap:20px;
+
+  margin-bottom:18px;
+}
+
+.section-head h2{
+  font-size:22px;
+  line-height:1.3;
+
+  letter-spacing:-.55px;
+}
+
+.section-head p{
+  color:var(--muted);
+
+  font-size:10px;
+}
+
+.section-head .count{
+  flex-shrink:0;
+
+  padding:6px 10px;
+
+  border:1px solid var(--border);
+  border-radius:8px;
+
+  background:#0a1221;
+
+  color:#718198;
+
+  font-size:9px;
+  font-weight:700;
+}
+
+
+/* =========================================================
+   REVIEW SECTIONS
+   ========================================================= */
+
+.review-category-section{
+  margin-bottom:30px;
+}
+
+.review-category-section .grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,minmax(0,1fr));
+
+  gap:22px;
+
+  padding-bottom:4px;
+
+  align-items:stretch;
+}
+
+/* =========================================================
+   REVIEW CARD — PREMIUM PHONE CARD
+   ========================================================= */
+
+.review-card{
+  position:relative;
+  min-height:100%;
+
+  display:flex;
+  flex-direction:column;
+
+  overflow:hidden;
+
+  border:1px solid rgba(255,255,255,.075);
+  border-radius:22px;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(59,130,246,.09),
+      transparent 42%
+    ),
+    linear-gradient(
+      145deg,
+      #101a2d 0%,
+      #0a1221 48%,
+      #070d19 100%
+    );
+
+  box-shadow:
+    0 14px 38px rgba(0,0,0,.28),
+    inset 0 1px 0 rgba(255,255,255,.035);
+
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+.review-card::before{
+  content:"";
+
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+
+  height:1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(96,165,250,.65),
+      transparent
+    );
+
+  opacity:.65;
+
+  pointer-events:none;
+}
+
+.review-card:hover{
+  transform:translateY(-7px);
+
+  border-color:rgba(59,130,246,.42);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,.40),
+    0 0 0 1px rgba(59,130,246,.05),
+    0 12px 35px rgba(37,99,235,.10);
+}
+
+.review-card>a{
+  width:100%;
+  min-height:100%;
+
+  display:flex;
+  flex-direction:column;
+
+  flex:1;
+}
+
+
+/* =========================================================
+   CARD TOP
+   ========================================================= */
+
+.card-top{
+  min-height:48px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:12px;
+
+  padding:16px 17px 0;
+}
+
+.brand{
+  display:inline-flex;
+  align-items:center;
+
+  min-height:25px;
+
+  padding:5px 9px;
+
+  border:1px solid rgba(59,130,246,.18);
+  border-radius:7px;
+
+  background:rgba(59,130,246,.075);
+
+  color:#79adff;
+
+  font-size:8px;
+  font-weight:900;
+
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.rank{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  min-width:29px;
+  height:25px;
+
+  padding:0 7px;
+
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:7px;
+
+  background:rgba(255,255,255,.035);
+
+  color:#687b94;
+
+  font-size:8px;
+  font-weight:800;
+}
+
+
+/* =========================================================
+   PHONE IMAGE AREA
+   ========================================================= */
+
+.phone-image{
+  position:relative;
+
+  height:250px;
+  min-height:250px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:18px 20px 10px;
+
+  overflow:hidden;
+}
+
+.phone-image::before{
+  content:"";
+
+  position:absolute;
+
+  width:190px;
+  height:190px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(59,130,246,.14),
+      rgba(59,130,246,.035) 45%,
+      transparent 70%
+    );
+
+  filter:blur(4px);
+
+  pointer-events:none;
+}
+
+.phone-image::after{
+  content:"";
+
+  position:absolute;
+  left:20%;
+  right:20%;
+  bottom:12px;
+
+  height:1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.08),
+      transparent
+    );
+
+  pointer-events:none;
+}
+
+.phone-image img{
+  position:relative;
+  z-index:1;
+
+  width:180px;
+  height:215px;
+
+  object-fit:contain;
+
+  filter:
+    drop-shadow(
+      0 25px 25px rgba(0,0,0,.58)
+    );
+
+  transition:
+    transform .4s cubic-bezier(.2,.7,.2,1),
+    filter .4s ease;
+}
+
+.review-card:hover .phone-image img{
+  transform:
+    translateY(-8px)
+    scale(1.035);
+
+  filter:
+    drop-shadow(
+      0 30px 32px rgba(0,0,0,.62)
+    );
+}
+
+.no-image{
+  position:relative;
+  z-index:1;
+
+  width:145px;
+  height:180px;
+
+  display:grid;
+  place-items:center;
+
+  border:1px dashed #2a3b53;
+  border-radius:18px;
+
+  background:rgba(255,255,255,.015);
+
+  color:#526780;
+}
+
+
+/* =========================================================
+   CARD BODY
+   ========================================================= */
+
+.card-body{
+  min-height:0;
+
+  flex:1;
+
+  display:flex;
+  flex-direction:column;
+
+  padding:2px 18px 19px;
+}
+
+.title-row{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+
+  gap:12px;
+}
+
+.title-row h3{
+  min-width:0;
+
+  color:#f4f7fc;
+
+  font-size:16px;
+  font-weight:800;
+  line-height:1.4;
+
+  letter-spacing:-.25px;
+
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+
+  overflow:hidden;
+
+  transition:color .2s ease;
+}
+
+.review-card:hover .title-row h3{
+  color:#fff;
+}
+
+
+/* =========================================================
+   SCORE
+   ========================================================= */
+
+.score{
+  flex:0 0 auto;
+
+  display:flex;
+  align-items:center;
+  gap:5px;
+
+  min-height:31px;
+
+  padding:6px 9px;
+
+  border:1px solid rgba(251,191,36,.16);
+  border-radius:9px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(251,191,36,.12),
+      rgba(251,191,36,.045)
+    );
+
+  color:#fbbf24;
+
+  font-size:12px;
+  font-weight:900;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.025);
+}
+
+.score i{
+  font-size:10px;
+
+  filter:
+    drop-shadow(
+      0 0 5px rgba(251,191,36,.25)
+    );
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.description{
+  margin:11px 0 18px;
+
+  color:#8fa1b8;
+
+  font-size:11px;
+  line-height:1.72;
+
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+
+  overflow:hidden;
+}
+
+
+/* =========================================================
+   CARD BOTTOM
+   ========================================================= */
+
+.card-bottom{
+  min-height:40px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:10px;
+
+  margin-top:auto;
+
+  padding-top:3px;
+}
+
+.category{
+  min-width:0;
+
+  max-width:48%;
+
+  color:#6f829a;
+
+  font-size:9px;
+  font-weight:700;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.read{
+  min-height:39px;
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:8px;
+
+  padding:9px 13px;
+
+  border:1px solid rgba(96,165,250,.12);
+  border-radius:10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #3b82f6
+    );
+
+  color:#fff;
+
+  font-size:9px;
+  font-weight:800;
+
+  white-space:nowrap;
+
+  box-shadow:
+    0 8px 20px rgba(37,99,235,.20);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    background .2s ease;
+}
+
+.review-card:hover .read{
+  transform:translateX(2px);
+
+  background:
+    linear-gradient(
+      135deg,
+      #3474f2,
+      #60a5fa
+    );
+
+  box-shadow:
+    0 10px 25px rgba(37,99,235,.28);
+}
+
+.read i{
+  font-size:8px;
+
+  transition:
+    transform .2s ease;
+}
+
+.review-card:hover .read i{
+  transform:translateX(3px);
+}
+
+/* =========================================================
+   LOADING / EMPTY
+   ========================================================= */
+
+.loading{
+  padding:48px 20px;
+
+  color:var(--muted);
+
+  text-align:center;
+
+  font-size:11px;
+}
+
+.empty{
+  display:none;
+
+  margin:0 0 60px;
+
+  padding:60px 20px;
+
+  border:1px dashed #24364e;
+  border-radius:20px;
+
+  background:rgba(10,18,33,.45);
+
+  color:var(--muted);
+
+  text-align:center;
+}
+
+.empty i{
+  display:block;
+
+  margin-bottom:12px;
+
+  color:#4b6a91;
+
+  font-size:34px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.tdh-footer{
+  width:100%;
+
+  margin-top:40px;
+
+  border-top:1px solid rgba(255,255,255,.08);
+
+  background:#05080d;
+}
+
+.tdh-footer-main{
+  padding:58px 0 0;
+}
+
+.tdh-footer-grid{
+  display:grid;
+
+  grid-template-columns:
+    1.5fr 1fr 1fr 1fr 1.15fr;
+
+  gap:38px;
+
+  padding-bottom:45px;
+}
+
+.tdh-footer-brand{
+  max-width:320px;
+}
+
+.tdh-footer-logo{
+  display:flex;
+  align-items:center;
+
+  gap:10px;
+
+  margin-bottom:16px;
+}
+
+.tdh-footer-logo-icon{
+  width:39px;
+  height:39px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3182f6,
+      #1554b8
+    );
+
+  color:#fff;
+
+  box-shadow:
+    0 7px 22px rgba(49,130,246,.24);
+}
+
+.tdh-footer-logo strong{
+  font-size:18px;
+  font-weight:900;
+}
+
+.tdh-footer-logo strong span{
+  color:#5a9bff;
+}
+
+.tdh-footer-description{
+  color:#7f8da1;
+
+  font-size:11px;
+  line-height:1.9;
+}
+
+.tdh-footer-socials{
+  display:flex;
+  gap:8px;
+
+  margin-top:19px;
+}
+
+.tdh-social{
+  width:34px;
+  height:34px;
+
+  display:grid;
+  place-items:center;
+
+  border:1px solid var(--border);
+  border-radius:9px;
+
+  background:rgba(255,255,255,.025);
+
+  color:#8fa1b8;
+
+  font-size:11px;
+
+  transition:.2s ease;
+}
+
+.tdh-social:hover{
+  color:#fff;
+
+  border-color:rgba(49,130,246,.35);
+
+  background:rgba(49,130,246,.12);
+}
+
+.tdh-footer-heading{
+  margin-bottom:16px;
+
+  color:#fff;
+
+  font-size:11px;
+  font-weight:800;
+
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.tdh-footer-links{
+  display:grid;
+  gap:10px;
+}
+
+.tdh-footer-link{
+  display:flex;
+  align-items:center;
+
+  gap:8px;
+
+  color:#7f8da1;
+
+  font-size:11px;
+
+  transition:.2s ease;
+}
+
+.tdh-footer-link i{
+  color:#4d6c92;
+  font-size:7px;
+}
+
+.tdh-footer-link:hover{
+  color:#fff;
+}
+
+.tdh-footer-link:hover i{
+  color:#5a9bff;
+}
+
+.tdh-footer-bottom{
+  min-height:62px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:15px;
+
+  border-top:1px solid rgba(255,255,255,.06);
+
+  color:#64748b;
+
+  font-size:9px;
+}
+
+.tdh-footer-bottom span:last-child{
+  text-align:right;
+}
+
+
+/* =========================================================
+   MOBILE BOTTOM NAV
+   ========================================================= */
+
+.mobile-nav{
+  display:none;
+}
+
+
+/* =========================================================
+   1100px
+   ========================================================= */
+
+@media(max-width:1100px){
+
+  .nav{
+    display:none;
+  }
+
+  .mobile-toggle{
+    display:grid;
+  }
+
+  .review-category-section .grid{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+  }
+
+  .tdh-footer-grid{
+    grid-template-columns:
+      1.4fr 1fr 1fr;
+  }
+
+  .tdh-footer-brand{
+    grid-column:1/-1;
+    max-width:600px;
+  }
+}
+
+
+/* =========================================================
+   950px
+   ========================================================= */
+
+@media(max-width:950px){
+
+  .toolbar-inner{
+    flex-direction:column;
+    align-items:stretch;
+
+    gap:14px;
+  }
+
+  .toolbar-left{
+    width:100%;
+
+    justify-content:space-between;
+  }
+
+  .toolbar-result{
+    align-self:flex-start;
+  }
+}
+
+
+/* =========================================================
+   700px
+   ========================================================= */
 
 @media(max-width:700px){
-.footer{padding:40px 0 24px}
-.footer-main{grid-template-columns:1fr 1fr;gap:30px 22px}
-.footer-brand{grid-column:1/-1}
-.footer-column:last-child{grid-column:auto}
-.footer-bottom{flex-direction:column;align-items:flex-start;gap:8px;margin-top:28px}
-.search-group{width:100%}
-.brand-select{width:145px}
-.toolbar-inner{flex-wrap:wrap}
-.count{width:100%}
+
+  .container{
+    width:min(100% - 28px,620px);
+  }
+
+  .header,
+  .header-inner{
+    height:66px;
+  }
+
+  .hero{
+    padding:42px 0 30px;
+  }
+
+  .eyebrow{
+    padding:7px 11px;
+    font-size:9px;
+  }
+
+  .hero h1{
+    margin:14px 0 10px;
+
+    font-size:35px;
+
+    letter-spacing:-1.5px;
+  }
+
+  .hero p{
+    font-size:12px;
+    line-height:1.75;
+  }
+
+  .stats{
+    gap:10px;
+    margin-top:21px;
+  }
+
+  .stat{
+    min-height:82px;
+    padding:15px;
+  }
+
+  .stat strong{
+    font-size:20px;
+  }
+
+
+  /* TOOLBAR */
+
+  .toolbar{
+    padding:12px 0;
+  }
+
+  .toolbar-inner{
+    display:block;
+  }
+
+  .toolbar-left{
+    display:block;
+  }
+
+  .toolbar-label{
+    display:none;
+  }
+
+  .search-group{
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:
+      minmax(0,1fr) 135px;
+
+    gap:8px;
+  }
+
+  .search{
+    width:100%;
+    height:42px;
+  }
+
+  .select-wrap{
+    width:135px;
+    height:42px;
+  }
+
+  .toolbar-result{
+    width:max-content;
+
+    min-height:34px;
+
+    margin-top:9px;
+  }
+
+
+  /* CATEGORIES */
+
+  #categories,
+  .filter-label{
+    min-width:120px;
+    min-height:40px;
+
+    margin-top:22px;
+    margin-bottom:11px;
+
+    padding:0 16px;
+
+    font-size:11px;
+  }
+
+  .filters{
+    flex-wrap:nowrap;
+
+    overflow-x:auto;
+
+    padding-bottom:5px;
+
+    margin-bottom:27px;
+
+    scrollbar-width:none;
+  }
+
+  .filters::-webkit-scrollbar{
+    display:none;
+  }
+
+  .filters .brand-btn{
+    flex:0 0 auto;
+  }
+
+  .brand-btn{
+    min-height:40px;
+
+    padding:0 17px;
+
+    font-size:10px;
+  }
+
+
+  /* BRAND SHOWCASE */
+
+  .brand-showcase-head{
+    margin-bottom:12px;
+  }
+
+  .brand-showcase-head h2{
+    font-size:17px;
+  }
+
+  .brand-demo-grid{
+    display:flex;
+
+    width:100%;
+
+    overflow-x:auto;
+
+    padding-bottom:3px;
+
+    margin-bottom:28px;
+
+    scrollbar-width:none;
+  }
+
+  .brand-demo-grid::-webkit-scrollbar{
+    display:none;
+  }
+
+  .brand-item{
+    min-width:235px;
+    min-height:70px;
+  }
+
+
+  /* REVIEW */
+
+  .section-head{
+    align-items:flex-start;
+
+    margin-bottom:14px;
+  }
+
+  .section-head h2{
+    font-size:19px;
+  }
+
+  .section-head .count{
+    font-size:8px;
+  }
+
+  .review-category-section{
+    margin-bottom:22px;
+  }
+
+  .review-category-section .grid{
+    grid-template-columns:1fr;
+
+    gap:15px;
+  }
+
+  .phone-image{
+    height:220px;
+    min-height:220px;
+  }
+
+  .phone-image img{
+    width:165px;
+    height:185px;
+  }
+
+  .card-body{
+    padding:0 17px 18px;
+  }
+
+
+  /* FOOTER */
+
+  .tdh-footer-main{
+    padding-top:46px;
+  }
+
+  .tdh-footer-grid{
+    grid-template-columns:1fr 1fr;
+
+    gap:28px 20px;
+  }
+
+  .tdh-footer-brand{
+    grid-column:1/-1;
+  }
+
+  .tdh-footer-bottom{
+    min-height:0;
+
+    padding:17px 0;
+
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .tdh-footer-bottom span:last-child{
+    text-align:left;
+  }
+
+
+  /* MOBILE NAV */
+
+  .mobile-nav{
+    position:fixed;
+
+    left:10px;
+    right:10px;
+    bottom:10px;
+
+    z-index:900;
+
+    display:grid;
+
+    grid-template-columns:
+      repeat(5,1fr);
+
+    padding:6px;
+
+    border:1px solid #1d2c42;
+    border-radius:17px;
+
+    background:rgba(7,14,27,.95);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    box-shadow:
+      0 15px 50px rgba(0,0,0,.48);
+  }
+
+  .mobile-nav a{
+    display:grid;
+    place-items:center;
+
+    gap:3px;
+
+    padding:7px 2px;
+
+    color:#72859d;
+
+    font-size:9px;
+  }
+
+  .mobile-nav a.active{
+    color:#fff;
+  }
+
+  .mobile-nav i{
+    font-size:15px;
+  }
+
+  .mobile-nav span{
+    font-size:9px;
+  }
 }
 
-@media(max-width:1000px){
-.brand-demo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-.footer-main{grid-template-columns:1.4fr 1fr 1fr}
-.footer-column:last-child{grid-column:2}
-}
 
-.footer-logo{display:flex;align-items:center;gap:10px}
-.footer-logo-mark{width:38px;height:38px;display:grid;place-items:center;border-radius:11px;background:linear-gradient(135deg,#3b82f6,#2563eb);color:#fff;font-size:14px}
-.footer-main{padding-bottom:8px}
-.footer-brand{padding-right:15px}
-.footer-title{margin-bottom:15px}
-.footer-links{gap:10px}
-.footer-links a{transition:.2s}
-.socials{margin-top:4px}
-.footer-bottom{align-items:center}
-.footer-bottom span{line-height:1.7}
-
-@media(max-width:700px){
-.footer{padding:40px 0 24px}
-.footer-main{grid-template-columns:1fr 1fr;gap:30px 22px}
-.footer-brand{grid-column:1/-1}
-.footer-column:last-child{grid-column:auto}
-.footer-bottom{flex-direction:column;align-items:flex-start;gap:8px;margin-top:28px}
-.search-group{width:100%}
-.brand-select{width:145px}
-.toolbar-inner{flex-wrap:wrap}
-.count{width:100%}
-}
-
-@media(max-width:1000px){
-.nav{display:none}
-.mobile-toggle{display:grid}
-.grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-
-@media(max-width:650px){
-.search-group{display:grid;grid-template-columns:1fr 125px}
-.brand-select{width:100%;border-left:0;border-radius:0 15px 15px 0;padding:0 8px}
-.container{width:min(100% - 28px,600px)}
-.header,.header-inner{height:66px}
-.hero{padding:50px 0 30px}
-.hero h1{font-size:40px;letter-spacing:-1.8px}
-.stats{grid-template-columns:1fr 1fr}
-.stats .stat:last-child{grid-column:1/-1}
-.toolbar{top:66px}
-.toolbar-inner{display:block}
-.count{display:block;margin-top:8px}
-.grid{grid-template-columns:1fr}
-.phone-image{height:230px}
-.footer-grid{grid-template-columns:1fr 1fr}
-.footer-bottom{flex-direction:column}
-.footer-inner{flex-direction:column}
-.mobile-nav{position:fixed;display:grid;grid-template-columns:repeat(5,1fr);left:10px;right:10px;bottom:10px;z-index:900;padding:6px;border:1px solid #1d2c42;border-radius:17px;background:rgba(7,14,27,.94);backdrop-filter:blur(18px);box-shadow:0 15px 50px rgba(0,0,0,.45)}
-.mobile-nav a{display:grid;place-items:center;gap:2px;color:#72859d;font-size:9px;padding:7px 2px}
-.mobile-nav a.active{color:#fff}
-.mobile-nav i{font-size:15px}
-.mobile-nav span{font-size:9px}
-}
-
-/* Reviews footer — matched to the main TechDealsHub footer system */
-.tdh-footer{border-top:1px solid rgba(255,255,255,.08);background:#05080d;margin-top:20px}
-.tdh-footer-main{padding:60px 0 0}
-.tdh-footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1.15fr;gap:38px;padding-bottom:45px}
-.tdh-footer-brand{max-width:300px}
-.tdh-footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:17px}
-.tdh-footer-logo-icon{width:39px;height:39px;display:grid;place-items:center;border-radius:11px;background:linear-gradient(135deg,#3182f6,#1554b8);font-size:16px}
-.tdh-footer-logo strong{font-size:18px;font-weight:900}
-.tdh-footer-logo strong span{color:#5a9bff}
-.tdh-footer-description{color:#7f8da1;font-size:12px;line-height:1.8}
-.tdh-footer-socials{display:flex;gap:8px;margin-top:20px}
-.tdh-social{width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--border);border-radius:9px;background:rgba(255,255,255,.025);color:#8fa1b8;font-size:12px;transition:.2s}
-.tdh-social:hover{color:#fff;background:rgba(49,130,246,.12);border-color:rgba(49,130,246,.35)}
-.tdh-footer-heading{font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:17px;color:#fff}
-.tdh-footer-links{display:grid;gap:10px}
-.tdh-footer-link{display:flex;align-items:center;gap:8px;color:#7f8da1;font-size:12px;transition:.2s}
-.tdh-footer-link i{font-size:8px;color:#4d6c92}
-.tdh-footer-link:hover{color:#fff}
-.tdh-footer-link:hover i{color:#5a9bff}
-.tdh-footer-bottom{min-height:64px;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;gap:15px;color:#64748b;font-size:10px}
-.tdh-footer-bottom span:last-child{text-align:right}
-
-@media(max-width:900px){
-.tdh-footer-grid{grid-template-columns:1.4fr 1fr 1fr}
-.tdh-footer-brand{grid-column:1/-1;max-width:560px}
-}
+/* =========================================================
+   600px
+   ========================================================= */
 
 @media(max-width:600px){
-.tdh-footer-main{padding-top:45px}
-.tdh-footer-grid{grid-template-columns:1fr 1fr;gap:28px 20px}
-.tdh-footer-brand{grid-column:1/-1}
-.tdh-footer-bottom{padding:18px 0;min-height:0;flex-direction:column;align-items:flex-start}
-.tdh-footer-bottom span:last-child{text-align:left}
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  .stats{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+  }
+
+  .stats .stat:last-child{
+    grid-column:1/-1;
+  }
+
+  .tdh-footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
 }
-</style>
+
+
+/* =========================================================
+   420px
+   ========================================================= */
+
+@media(max-width:420px){
+
+  .container{
+    width:calc(100% - 22px);
+  }
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .search-group{
+    grid-template-columns:
+      minmax(0,1fr) 118px;
+  }
+
+  .select-wrap{
+    width:118px;
+  }
+
+  .brand-select{
+    font-size:10px;
+  }
+
+  .phone-image{
+    height:205px;
+    min-height:205px;
+  }
+
+  .phone-image img{
+    width:155px;
+    height:175px;
+  }
+
+  .title-row h3{
+    font-size:14px;
+  }
+
+  .score{
+    padding:5px 7px;
+    font-size:11px;
+  }
+
+  .read{
+    padding:8px 10px;
+    font-size:9px;
+  }
+}
+
+
+/* =========================================================
+   360px
+   ========================================================= */
+
+@media(max-width:360px){
+
+  .hero h1{
+    font-size:28px;
+  }
+
+  .search-group{
+    grid-template-columns:
+      minmax(0,1fr) 108px;
+  }
+
+  .select-wrap{
+    width:108px;
+  }
+
+  .brand-btn{
+    padding:0 14px;
+    font-size:9px;
+  }
+
+  .brand-item{
+    min-width:220px;
+  }
+}</style>
 </head>
 
 <body>
 
 <header class="header" id="header">
+
 <div class="container header-inner">
+
 <a class="logo" href="index.html">
-<span class="logo-mark"><i class="fa-solid fa-mobile-screen"></i></span>
+<span class="logo-mark">
+<i class="fa-solid fa-mobile-screen"></i>
+</span>
 <span>TechDeals<em>Hub</em></span>
 </a>
 
 <nav class="nav" id="nav">
-<a href="index.html"><i class="fa-solid fa-house"></i>Home</a>
-<a href="phones.html"><i class="fa-solid fa-mobile-screen"></i>Phones</a>
-<a class="active" href="reviews.html"><i class="fa-solid fa-star"></i>Reviews</a>
-<a href="latest-comparisons.html"><i class="fa-solid fa-code-compare"></i>Compare</a>
-<a href="news.html"><i class="fa-regular fa-newspaper"></i>News</a>
-<a href="brands.html"><i class="fa-solid fa-tags"></i>Brands</a>
+
+<a href="index.html">
+<i class="fa-solid fa-house"></i>
+Home
+</a>
+
+<a href="phones.html">
+<i class="fa-solid fa-mobile-screen"></i>
+Phones
+</a>
+
+<a class="active" href="reviews.html">
+<i class="fa-solid fa-star"></i>
+Reviews
+</a>
+
+<a href="latest-comparisons.html">
+<i class="fa-solid fa-code-compare"></i>
+Compare
+</a>
+
+<a href="news.html">
+<i class="fa-regular fa-newspaper"></i>
+News
+</a>
+
+<a href="brands.html">
+<i class="fa-solid fa-tags"></i>
+Brands
+</a>
+
 </nav>
 
 <div class="actions">
-<button class="icon-btn" id="searchFocus" aria-label="Focus review search">
+
+<button
+class="icon-btn"
+id="searchFocus"
+aria-label="Focus review search"
+>
 <i class="fa-solid fa-magnifying-glass"></i>
 </button>
-<button class="mobile-toggle" id="mobileToggle" aria-label="Open menu">
+
+<button
+class="mobile-toggle"
+id="mobileToggle"
+aria-label="Open menu"
+>
 <i class="fa-solid fa-bars"></i>
 </button>
+
 </div>
+
 </div>
 </header>
 
+<!-- MOBILE MENU -->
+
 <div class="tdh-mobile-nav" id="tdhMobileNav">
-<div class="tdh-mobile-backdrop" id="tdhMobileBackdrop"></div>
+
+<div
+class="tdh-mobile-backdrop"
+id="tdhMobileBackdrop">
+</div>
 
 <div class="tdh-mobile-panel">
+
 <div class="tdh-mobile-head">
+
 <a href="index.html" class="tdh-logo">
-<div class="tdh-logo-icon"><i class="fa-solid fa-mobile-screen"></i></div>
-<div class="tdh-logo-text">TechDeals<span>Hub</span></div>
+
+<div class="tdh-logo-icon">
+<i class="fa-solid fa-mobile-screen"></i>
+</div>
+
+<div class="tdh-logo-text">
+TechDeals<span>Hub</span>
+</div>
+
 </a>
 
-<button class="tdh-mobile-close" id="tdhMenuClose" aria-label="Close menu">
+<button
+class="tdh-mobile-close"
+id="tdhMenuClose"
+aria-label="Close menu"
+>
 <i class="fa-solid fa-xmark"></i>
 </button>
+
 </div>
 
 <div class="tdh-mobile-links">
-<a href="index.html" class="tdh-mobile-link"><i class="fa-solid fa-house"></i>Home</a>
-<a href="phones.html" class="tdh-mobile-link"><i class="fa-solid fa-mobile-screen-button"></i>Phones</a>
-<a href="reviews.html" class="tdh-mobile-link tdh-active"><i class="fa-solid fa-star"></i>Reviews</a>
-<a href="latest-comparisons.html" class="tdh-mobile-link"><i class="fa-solid fa-scale-balanced"></i>Compare</a>
-<a href="news.html" class="tdh-mobile-link"><i class="fa-solid fa-newspaper"></i>News</a>
-<a href="brands.html" class="tdh-mobile-link"><i class="fa-solid fa-layer-group"></i>Brands</a>
-<a href="software-updates.html" class="tdh-mobile-link"><i class="fa-solid fa-rotate"></i>Software Updates</a>
+
+<a href="index.html" class="tdh-mobile-link">
+<i class="fa-solid fa-house"></i>
+Home
+</a>
+
+<a href="phones.html" class="tdh-mobile-link">
+<i class="fa-solid fa-mobile-screen-button"></i>
+Phones
+</a>
+
+<a href="reviews.html" class="tdh-mobile-link tdh-active">
+<i class="fa-solid fa-star"></i>
+Reviews
+</a>
+
+<a href="latest-comparisons.html" class="tdh-mobile-link">
+<i class="fa-solid fa-scale-balanced"></i>
+Compare
+</a>
+
+<a href="news.html" class="tdh-mobile-link">
+<i class="fa-solid fa-newspaper"></i>
+News
+</a>
+
+<a href="phones-brands.html" class="tdh-mobile-link">
+<i class="fa-solid fa-layer-group"></i>
+Brands
+</a>
+
+<a href="software-updates.html" class="tdh-mobile-link">
+<i class="fa-solid fa-rotate"></i>
+Software Updates
+</a>
+
 </div>
 </div>
 </div>
@@ -377,19 +2465,24 @@ body.tdh-menu-open{overflow:hidden}
 <main>
 
 <section class="hero">
+
 <div class="container">
 
 <span class="eyebrow">
-<i class="fa-solid fa-star"></i> All Reviews
+<i class="fa-solid fa-star"></i>
+All Reviews
 </span>
 
-<h1>Phone <span>Reviews</span></h1>
+<h1>
+Phone <span>Reviews</span>
+</h1>
 
 <p>
 Every smartphone review published on TechDealsHub in one place — automatically ranked by overall rating, with search and brand filters.
 </p>
 
 <div class="stats">
+
 <div class="stat">
 <strong id="totalReviews">—</strong>
 <span>Total Reviews</span>
@@ -404,104 +2497,216 @@ Every smartphone review published on TechDealsHub in one place — automatically
 <strong id="brandCount">—</strong>
 <span>Brands Covered</span>
 </div>
+
 </div>
 
 </div>
 </section>
 
 <section class="toolbar">
-<div class="container">
-<div class="toolbar-inner">
 
-<div class="search-group">
+  <div class="container">
 
-<div class="search" id="searchBox">
-<i class="fa-solid fa-magnifying-glass"></i>
+    <div class="toolbar-inner">
 
-<input
-id="searchInput"
-type="search"
-placeholder="Search phone name..."
-autocomplete="off"
->
+      <div class="toolbar-left">
 
-<button
-type="button"
-class="search-close"
-id="searchClose"
-aria-label="Close search"
->
-<i class="fa-solid fa-xmark"></i>
-</button>
-</div>
+        <div class="toolbar-label">
+          <span class="toolbar-icon">
+            <i class="fa-solid fa-sliders"></i>
+          </span>
 
-<select id="brandSelect" class="brand-select" aria-label="Filter by brand">
-<option value="All">All Brands</option>
-</select>
+          <div>
+            <strong>Browse Reviews</strong>
+            <span>Find the right phone faster</span>
+          </div>
+        </div>
 
-</div>
+        <div class="search-group">
 
-<span class="count" id="resultCount">
-Loading reviews...
-</span>
+          <div class="search" id="searchBox">
 
-</div>
-</div>
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search phone name..."
+              autocomplete="off"
+              aria-label="Search phone reviews"
+            >
+
+            <button
+              type="button"
+              class="search-close"
+              id="searchClose"
+              aria-label="Clear search"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+
+          </div>
+
+          <div class="select-wrap">
+
+            <i class="fa-solid fa-mobile-screen-button"></i>
+
+            <select
+              id="brandSelect"
+              class="brand-select"
+              aria-label="Filter by brand"
+            >
+              <option value="All">
+                All Brands
+              </option>
+            </select>
+
+            <i class="fa-solid fa-chevron-down select-arrow"></i>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="toolbar-result">
+
+        <span class="result-dot"></span>
+
+        <span id="resultCount">
+          Loading reviews...
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
 <section>
+
 <div class="container">
 
-<div class="filter-label" id="categories">
+<div
+class="filter-label"
+id="categories"
+>
 Categories
 </div>
 
 <div class="filters">
-<button class="brand-btn active" data-category="All">All</button>
-<button class="brand-btn" data-category="Flagship">Flagships</button>
-<button class="brand-btn" data-category="Mid-Range">Mid-Range</button>
-<button class="brand-btn" data-category="Budget">Budget</button>
-<button class="brand-btn" data-category="Gaming">Gaming</button>
-<button class="brand-btn" data-category="Camera">Camera Phones</button>
+
+<button
+class="brand-btn active"
+data-category="All"
+>
+All
+</button>
+
+<button
+class="brand-btn"
+data-category="Flagship"
+>
+Flagships
+</button>
+
+<button
+class="brand-btn"
+data-category="Mid-Range"
+>
+Mid-Range
+</button>
+
+<button
+class="brand-btn"
+data-category="Budget"
+>
+Budget
+</button>
+
+<button
+class="brand-btn"
+data-category="Gaming"
+>
+Gaming
+</button>
+
+<button
+class="brand-btn"
+data-category="Camera"
+>
+Camera Phones
+</button>
+
 </div>
 
 <div class="section-head brand-showcase-head">
+
 <div>
-<h2>Browse by Brand</h2>
-<p>Choose a brand to show only its phone reviews</p>
-</div>
+
+<h2>
+Browse by Brand
+</h2>
+
+<p>
+Choose a brand to show only its phone reviews
+</p>
+
 </div>
 
-<div class="grid brand-demo-grid" id="brandShowcase"></div>
+</div>
+
+<div
+class="brand-demo-grid"
+id="brandShowcase">
+</div>
 
 <div class="section-head">
+
 <div>
-<h2>All Reviews</h2>
-<p>Highest overall rating first</p>
-</div>
+
+<h2>
+All Reviews
+</h2>
+
+<p>
+Highest overall rating first
+</p>
+
 </div>
 
-<div id="loading" class="loading">
+</div>
+
+<div
+id="loading"
+class="loading"
+>
 Loading all reviews...
 </div>
 
-<div id="reviewGrid" class="grid"></div>
+<div
+id="reviewGrid">
+</div>
 
-<div id="empty" class="empty">
+<div
+id="empty"
+class="empty"
+>
+
 <i class="fa-regular fa-face-frown"></i>
-<div>No reviews match your search.</div>
+
+<div>
+No reviews match your search.
+</div>
+
 </div>
 
 </div>
 </section>
 
 </main>
-
-<footer class="footer">
-
-<div class="container footer-main">
-
-<div class="tdh-footer-grid">
 
 <footer class="tdh-footer">
 
@@ -511,11 +2716,19 @@ Loading all reviews...
 
 <div class="tdh-footer-brand">
 
-<a href="index.html" class="tdh-footer-logo">
+<a
+href="index.html"
+class="tdh-footer-logo"
+>
+
 <div class="tdh-footer-logo-icon">
 <i class="fa-solid fa-microchip"></i>
 </div>
-<strong>TechDeals<span>Hub</span></strong>
+
+<strong>
+TechDeals<span>Hub</span>
+</strong>
+
 </a>
 
 <p class="tdh-footer-description">
@@ -523,295 +2736,603 @@ TechDealsHub helps you discover the latest smartphones, compare devices, read de
 </p>
 
 <div class="tdh-footer-socials">
-<a href="#" class="tdh-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-<a href="#" class="tdh-social" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-<a href="#" class="tdh-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-<a href="#" class="tdh-social" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-<a href="#" class="tdh-social" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
-</div>
+
+<a href="#" class="tdh-social" aria-label="Facebook">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+
+<a href="#" class="tdh-social" aria-label="X">
+<i class="fa-brands fa-x-twitter"></i>
+</a>
+
+<a href="#" class="tdh-social" aria-label="Instagram">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="#" class="tdh-social" aria-label="YouTube">
+<i class="fa-brands fa-youtube"></i>
+</a>
+
+<a href="#" class="tdh-social" aria-label="Telegram">
+<i class="fa-brands fa-telegram"></i>
+</a>
 
 </div>
 
-<div>
-<h3 class="tdh-footer-heading">Explore</h3>
-<div class="tdh-footer-links">
-<a href="index.html" class="tdh-footer-link"><i class="fa-solid fa-chevron-right"></i>Home</a>
-<a href="phones.html" class="tdh-footer-link"><i class="fa-solid fa-chevron-right"></i>Phones</a>
-<a href="reviews.html" class="tdh-footer-link"><i class="fa-solid fa-chevron-right"></i>Reviews</a>
-<a href="latest-comparisons.html" class="tdh-footer-link"><i class="fa-solid fa-chevron-right"></i>Comparisons</a>
-<a href="news.html" class="tdh-footer-link"><i class="fa-solid fa-chevron-right"></i>News</a>
-<a href="software-updates.html" class="tdh-footer-link"><i class="fa-solid fa-chevron-right"></i>Software Updates</a>
-</div>
-</div>
-
-<div>
-<h3 class="tdh-footer-heading">Popular Brands</h3>
-<div class="tdh-footer-links">
-<a href="reviews.html?brand=Samsung" class="tdh-footer-link"><i class="fa-solid fa-chevron-right"></i>Samsung</a>
-<a href="reviews.html?brand=Apple" class="tdh-footer-link"><i class="fa-solid fa-chevron-right"></i>Apple / iPhone</a>
-<a href="reviews.html?brand=Xiaomi" class="tdh-footer-link"><i class="fa-solid fa-chevron-right"></i>Xiaomi</a>
-<a href="reviews.html?brand=Google" class="tdh-footer-link"><i class="fa-solid fa-chevron-right"></i>Google</a>
-<a href="brands.html" class="tdh-footer-link"><i class="fa-solid fa-chevron-right"></i>All Brands</a>
-</div>
 </div>
 
 <div>
-<h3 class="tdh-footer-heading">Reviews</h3>
+
+<h3 class="tdh-footer-heading">
+Explore
+</h3>
+
 <div class="tdh-footer-links">
-<a href="reviews.html?category=Flagship" class="tdh-footer-link"><i class="fa-solid fa-chevron-right"></i>Flagships</a>
-<a href="reviews.html?category=Mid-Range" class="tdh-footer-link"><i class="fa-solid fa-chevron-right"></i>Mid-Range</a>
-<a href="reviews.html?category=Budget" class="tdh-footer-link"><i class="fa-solid fa-chevron-right"></i>Budget</a>
-<a href="reviews.html?category=Gaming" class="tdh-footer-link"><i class="fa-solid fa-chevron-right"></i>Gaming Phones</a>
-<a href="reviews.html?category=Camera" class="tdh-footer-link"><i class="fa-solid fa-chevron-right"></i>Camera Phones</a>
+
+<a href="index.html" class="tdh-footer-link">
+<i class="fa-solid fa-chevron-right"></i>
+Home
+</a>
+
+<a href="phones.html" class="tdh-footer-link">
+<i class="fa-solid fa-chevron-right"></i>
+Phones
+</a>
+
+<a href="reviews.html" class="tdh-footer-link">
+<i class="fa-solid fa-chevron-right"></i>
+Reviews
+</a>
+
+<a href="latest-comparisons.html" class="tdh-footer-link">
+<i class="fa-solid fa-chevron-right"></i>
+Comparisons
+</a>
+
+<a href="news.html" class="tdh-footer-link">
+<i class="fa-solid fa-chevron-right"></i>
+News
+</a>
+
+<a href="software-updates.html" class="tdh-footer-link">
+<i class="fa-solid fa-chevron-right"></i>
+Software Updates
+</a>
+
 </div>
 </div>
 
 <div>
-<h3 class="tdh-footer-heading">Information</h3>
+
+<h3 class="tdh-footer-heading">
+Popular Brands
+</h3>
+
 <div class="tdh-footer-links">
-<a href="about.html" class="tdh-footer-link"><i class="fa-solid fa-chevron-right"></i>About Us</a>
-<a href="contact.html" class="tdh-footer-link"><i class="fa-solid fa-chevron-right"></i>Contact</a>
-<a href="privacy-policy.html" class="tdh-footer-link"><i class="fa-solid fa-chevron-right"></i>Privacy Policy</a>
-<a href="terms.html" class="tdh-footer-link"><i class="fa-solid fa-chevron-right"></i>Terms of Use</a>
+
+<a href="reviews.html?brand=Samsung" class="tdh-footer-link">
+<i class="fa-solid fa-chevron-right"></i>
+Samsung
+</a>
+
+<a href="reviews.html?brand=Apple" class="tdh-footer-link">
+<i class="fa-solid fa-chevron-right"></i>
+Apple / iPhone
+</a>
+
+<a href="reviews.html?brand=Xiaomi" class="tdh-footer-link">
+<i class="fa-solid fa-chevron-right"></i>
+Xiaomi
+</a>
+
+<a href="reviews.html?brand=Google" class="tdh-footer-link">
+<i class="fa-solid fa-chevron-right"></i>
+Google
+</a>
+
+<a href="brands.html" class="tdh-footer-link">
+<i class="fa-solid fa-chevron-right"></i>
+All Brands
+</a>
+
+</div>
+</div>
+
+<div>
+
+<h3 class="tdh-footer-heading">
+Reviews
+</h3>
+
+<div class="tdh-footer-links">
+
+<a href="reviews.html?category=Flagship" class="tdh-footer-link">
+<i class="fa-solid fa-chevron-right"></i>
+Flagships
+</a>
+
+<a href="reviews.html?category=Mid-Range" class="tdh-footer-link">
+<i class="fa-solid fa-chevron-right"></i>
+Mid-Range
+</a>
+
+<a href="reviews.html?category=Budget" class="tdh-footer-link">
+<i class="fa-solid fa-chevron-right"></i>
+Budget
+</a>
+
+<a href="reviews.html?category=Gaming" class="tdh-footer-link">
+<i class="fa-solid fa-chevron-right"></i>
+Gaming Phones
+</a>
+
+<a href="reviews.html?category=Camera" class="tdh-footer-link">
+<i class="fa-solid fa-chevron-right"></i>
+Camera Phones
+</a>
+
+</div>
+</div>
+
+<div>
+
+<h3 class="tdh-footer-heading">
+Information
+</h3>
+
+<div class="tdh-footer-links">
+
+<a href="about.html" class="tdh-footer-link">
+<i class="fa-solid fa-chevron-right"></i>
+About Us
+</a>
+
+<a href="contact.html" class="tdh-footer-link">
+<i class="fa-solid fa-chevron-right"></i>
+Contact
+</a>
+
+<a href="privacy-policy.html" class="tdh-footer-link">
+<i class="fa-solid fa-chevron-right"></i>
+Privacy Policy
+</a>
+
+<a href="terms.html" class="tdh-footer-link">
+<i class="fa-solid fa-chevron-right"></i>
+Terms of Use
+</a>
+
 </div>
 </div>
 
 </div>
 
 <div class="tdh-footer-bottom">
-<span>© 2026 TechDealsHub. All rights reserved.</span>
-<span>Built for smartphone enthusiasts.</span>
+
+<span>
+© 2026 TechDealsHub. All rights reserved.
+</span>
+
+<span>
+Built for smartphone enthusiasts.
+</span>
+
 </div>
 
 </div>
 </footer>
 
-</div>
-</div>
-
 <nav class="mobile-nav">
-<a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
-<a href="phones.html"><i class="fa-solid fa-mobile-screen"></i><span>Phones</span></a>
-<a class="active" href="reviews.html"><i class="fa-solid fa-star"></i><span>Reviews</span></a>
-<a href="latest-comparisons.html"><i class="fa-solid fa-code-compare"></i><span>Compare</span></a>
-<a href="brands.html"><i class="fa-solid fa-tags"></i><span>Brands</span></a>
+
+<a href="index.html">
+<i class="fa-solid fa-house"></i>
+<span>Home</span>
+</a>
+
+<a href="phones.html">
+<i class="fa-solid fa-mobile-screen"></i>
+<span>Phones</span>
+</a>
+
+<a class="active" href="reviews.html">
+<i class="fa-solid fa-star"></i>
+<span>Reviews</span>
+</a>
+
+<a href="latest-comparisons.html">
+<i class="fa-solid fa-code-compare"></i>
+<span>Compare</span>
+</a>
+
+<a href="brands.html">
+<i class="fa-solid fa-tags"></i>
+<span>Brands</span>
+</a>
+
 </nav>
 
 <script>
 (function(){
+
 'use strict';
 
-var reviews=[];
-var brandList=[];
+var reviews = [{"brand":"Apple","title":"iPhone 17 Pro Max","score":9.6,"camera_score":9.7,"gaming_score":9.7,"description":"The iPhone 17 Pro Max combines a premium design, exceptional display, powerful performance, advanced cameras, and excellent battery life.","category":"Flagship","image":"https://techdealshub.online/apple/img/iphone17promax_hero_9_16.webp","url":"reviews/iphone-17-pro-max-reviews.html"},{"brand":"Google","title":"Google Pixel 10a","score":8.8,"camera_score":9,"gaming_score":8,"description":"The Google Pixel 10a is a refined mid-range smartphone built around Google\u0027s Tensor G4 chip, a smooth 6.3-inch 120Hz pOLED display, dependable dual cameras, a 5,100mAh battery, wireless charging, and seven years of software and security updates. Its hardware changes over the Pixel 9a are modest, but the combination of clean Pixel software, strong computational photography, long-term support, and reliable everyday performance makes it a capable choice in the 0 class.","category":"Mid-Range","image":"https://techdealshub.online/google/img/pixel10a_hero_9_16.webp","url":"reviews/google-pixel-10a-reviews.html","price":"9","reviews":"128","display":"6.3 inches pOLED Actua display","processor":"Google Tensor G4","camera":"48MP Quad PD Dual Pixel, f/1.7","battery":"5,100 mAh","badge":"Best Software"}];
+
+var brandList = ["Apple","Google"];
+
 var activeBrand='All';
 var activeCategory='All';
 
 var grid=document.getElementById('reviewGrid');
-var brandsEl=document.getElementById('brands');
 var search=document.getElementById('searchInput');
 var searchBox=document.getElementById('searchBox');
 var searchClose=document.getElementById('searchClose');
 
+
 function esc(s){
-  return String(s==null?'':s).replace(/[&<>'"]/g,function(c){
-    return {
-      '&':'&amp;',
-      '<':'&lt;',
-      '>':'&gt;',
-      "'":'&#39;',
-      '"':'&quot;'
-    }[c];
-  });
+  return String(s==null?'':s).replace(
+    /[&<>'"]/g,
+    function(c){
+      return {
+        '&':'&amp;',
+        '<':'&lt;',
+        '>':'&gt;',
+        "'":'&#39;',
+        '"':'&quot;'
+      }[c];
+    }
+  );
 }
+
+
+function matchesCategory(r){
+
+  var score=Number(r.score)||0;
+
+  var category=
+    String(r.category||'')
+      .toLowerCase()
+      .trim();
+
+  if(activeCategory==='All'){
+    return true;
+  }
+
+  if(activeCategory==='Flagship'){
+    return score>9;
+  }
+
+  if(activeCategory==='Mid-Range'){
+    return score>=7 && score<=9;
+  }
+
+  if(activeCategory==='Budget'){
+    return score<7;
+  }
+
+  if(activeCategory==='Gaming'){
+    var gamingScore =
+      Number(r.gaming_score) || 0;
+
+    return gamingScore >= 8.5;
+  }
+
+  if(activeCategory==='Camera'){
+    var cameraScore =
+      Number(r.camera_score) || 0;
+
+    return cameraScore >= 8.5;
+  }
+
+  return false;
+}
+
 
 function renderBrands(list){
 
   var select=document.getElementById('brandSelect');
 
-  if(!select)return;
+  if(!select){
+    return;
+  }
 
-  select.innerHTML=
-    '<option value="All">All Brands</option>'+
-    list.map(function(b){
-      return '<option value="'+esc(b)+'">'+esc(b)+'</option>';
-    }).join('');
+  select.innerHTML='';
+
+  var allOption=document.createElement('option');
+
+  allOption.value='All';
+  allOption.textContent='All Brands';
+
+  select.appendChild(allOption);
+
+  list.forEach(function(brand){
+
+    if(!brand){
+      return;
+    }
+
+    var option=document.createElement('option');
+
+    option.value=brand;
+    option.textContent=brand;
+
+    select.appendChild(option);
+  });
 
   select.value=activeBrand;
 
   select.onchange=function(){
-    activeBrand=select.value;
-    renderBrandShowcase(list);
+
+    activeBrand=this.value;
+
+    renderBrandShowcase(reviews);
     render();
   };
 }
 
+
 function renderBrandShowcase(list){
 
-  var showcase=document.getElementById('brandShowcase');
+  var showcase=
+    document.getElementById('brandShowcase');
 
-  if(!showcase)return;
+  if(!showcase){
+    return;
+  }
 
-  var html='';
+  showcase.innerHTML='';
 
-  list.forEach(function(b){
+  brandList.forEach(function(brand){
 
-    var matches=reviews.filter(function(r){
-      return String(r.brand||'').trim()===b;
-    }).sort(function(a,c){
-      return Number(c.score)-Number(a.score);
-    });
+    var brandReviews=
+      list.filter(function(r){
 
-    if(!matches.length)return;
-
-    var r=matches[0];
-
-    var image=r.image
-      ?'<img src="'+esc(r.image)+'" alt="'+esc(b)+' phone" loading="lazy" onerror="this.parentNode.innerHTML=\'<div class="no-image"><i class="fa-solid fa-image"></i></div>\'">'
-      :'<div class="no-image"><i class="fa-solid fa-image"></i></div>';
-
-    html+=
-      '<article class="review-card demo-card brand-demo-card '+
-      (activeBrand===b?'active-brand':'')+
-      '" data-showcase-brand="'+esc(b)+'">'+
-
-      '<div class="card-top">'+
-      '<span class="brand">'+esc(b)+'</span>'+
-      '<span class="demo-label">'+matches.length+' phones</span>'+
-      '</div>'+
-
-      '<div class="phone-image">'+image+'</div>'+
-
-      '<div class="card-body">'+
-
-      '<div class="title-row">'+
-      '<h3>'+esc(b)+'</h3>'+
-      '<span class="score"><i class="fa-solid fa-star"></i>'+
-      esc(Number(r.score).toFixed(1))+
-      '</span>'+
-      '</div>'+
-
-      '<p class="description">Browse all '+esc(b)+' phone reviews</p>'+
-
-      '<div class="card-bottom">'+
-      '<span class="read">View '+esc(b)+' Phones <i class="fa-solid fa-arrow-right"></i></span>'+
-      '</div>'+
-
-      '</div>'+
-      '</article>';
-  });
-
-  showcase.innerHTML=html;
-
-  Array.prototype.forEach.call(
-    showcase.querySelectorAll('[data-showcase-brand]'),
-    function(card){
-
-      card.addEventListener('click',function(){
-
-        activeBrand=card.getAttribute('data-showcase-brand');
-
-        var select=document.getElementById('brandSelect');
-
-        if(select){
-          select.value=activeBrand;
-        }
-
-        renderBrandShowcase(list);
-        render();
-
-        var target=document.getElementById('reviewGrid');
-
-        if(target){
-          target.scrollIntoView({
-            behavior:'smooth',
-            block:'start'
-          });
-        }
+        return String(r.brand||'').trim()===brand;
 
       });
 
+    brandReviews.sort(function(a,b){
+
+      return Number(b.score||0)-
+             Number(a.score||0);
+
+    });
+
+    if(!brandReviews.length){
+      return;
     }
-  );
+
+    var top=brandReviews[0];
+
+    var item=
+      document.createElement('div');
+
+    item.className='brand-item';
+
+    item.innerHTML=
+      '<div class="brand-logo">'+
+      esc(brand)+
+      '</div>'+
+      '<div>'+
+      '<strong>'+
+      esc(top.title||'')+
+      '</strong>'+
+      '<span>'+
+      Number(top.score||0).toFixed(1)+
+      '</span>'+
+      '</div>';
+
+    showcase.appendChild(item);
+
+  });
 }
+
+
+var loading = document.getElementById('loading');
+
+
+function showLoading(){
+
+  if(loading){
+    loading.style.display = 'block';
+  }
+
+}
+
+
+function hideLoading(){
+
+  if(loading){
+    loading.style.display = 'none';
+  }
+
+}
+
 
 function render(){
 
-  var q=(search.value||'').toLowerCase().trim();
+  showLoading();
 
-  var filtered=reviews.filter(function(r){
+  var q=
+    (search ? search.value : '')
+      .toLowerCase()
+      .trim();
 
-    return (
-      (activeBrand==='All' ||
-       String(r.brand||'').trim()===activeBrand)
-      &&
-      (activeCategory==='All' ||
-       String(r.category||'').toLowerCase().indexOf(
-         activeCategory.toLowerCase()
-       )!==-1)
-      &&
-      String(r.title||'').toLowerCase().indexOf(q)!==-1
-    );
 
-  });
+  var filtered=
+    reviews.filter(function(r){
+
+      if(
+        !String(r.brand||'').trim() &&
+        !String(r.title||'').trim()
+      ){
+        return false;
+      }
+
+      return (
+
+        (
+          activeBrand==='All' ||
+          String(r.brand||'').trim()===activeBrand
+        )
+
+        &&
+
+        matchesCategory(r)
+
+        &&
+
+        (
+          String(r.title||'')
+            .toLowerCase()
+            .indexOf(q)!==-1
+        )
+
+      );
+
+    });
+
+
+  /*
+   * ==========================================================
+   * MAIN SORT
+   * Highest rating first
+   * ==========================================================
+   */
 
   filtered.sort(function(a,b){
-    return Number(b.score)-Number(a.score);
+
+    return Number(b.score||0)-
+           Number(a.score||0);
+
   });
 
+
   var categories={};
+
 
   filtered.forEach(function(r){
 
     var c=
-      String(r.category||'Phone Review').trim()
-      ||'Phone Review';
+      String(
+        r.category||'Phone Review'
+      ).trim() ||
+      'Phone Review';
 
     if(!categories[c]){
       categories[c]=[];
     }
 
     categories[c].push(r);
+
   });
 
-  var categoryNames=Object.keys(categories).sort();
+
+  /*
+   * ==========================================================
+   * CATEGORY ORDER
+   * Highest-rated category first
+   * ==========================================================
+   */
+
+  var categoryNames=
+    Object.keys(categories).sort(function(a,b){
+
+      return Number(
+        categories[b][0].score||0
+      ) -
+      Number(
+        categories[a][0].score||0
+      );
+
+    });
+
 
   var html='';
   var shown=0;
+
 
   categoryNames.forEach(function(category){
 
     var cards=categories[category];
 
+
+    /*
+     * Make sure cards inside each category
+     * are also sorted by rating.
+     */
+
+    cards.sort(function(a,b){
+
+      return Number(b.score||0)-
+             Number(a.score||0);
+
+    });
+
+
     html+=
       '<div class="review-category-section">'+
 
       '<div class="section-head">'+
+
       '<div>'+
-      '<h2>'+esc(category)+'</h2>'+
+
+      '<h2>'+
+      esc(category)+
+      '</h2>'+
+
       '<p>All matching reviews</p>'+
+
       '</div>'+
-      '<span class="count">'+cards.length+' reviews</span>'+
+
+      '<span class="count">'+
+      cards.length+
+      ' reviews'+
+      '</span>'+
+
       '</div>'+
 
       '<div class="grid">';
+
 
     cards.forEach(function(r){
 
       shown++;
 
-      var image=r.image
-        ?'<img src="'+esc(r.image)+'" alt="'+esc(r.title)+'" loading="lazy" onerror="this.parentNode.innerHTML=\'<div class="no-image"><i class="fa-solid fa-image"></i></div>\'">'
-        :'<div class="no-image"><i class="fa-solid fa-image"></i></div>';
+
+      var image=
+        r.image
+        ?
+        '<img src="'+
+        esc(r.image)+
+        '" alt="'+
+        esc(r.title)+
+        '" loading="lazy" onerror="this.parentNode.innerHTML=\'<div class=&quot;no-image&quot;><i class=&quot;fa-solid fa-image&quot;></i></div>\'">'
+        :
+        '<div class="no-image">'+
+        '<i class="fa-solid fa-image"></i>'+
+        '</div>';
+
 
       html+=
+
         '<article class="review-card">'+
 
-        '<div class="card-top">'+
-        '<span class="brand">'+esc(r.brand||'Other')+'</span>'+
-        '<span class="rank">#'+shown+'</span>'+
-        '</div>'+
+        '<a href="'+
+        esc(r.url||'#')+
+        '">'+
 
-        '<a href="'+esc(r.url||'#')+'">'+
+        '<div class="card-top">'+
+
+        '<span class="brand">'+
+        esc(r.brand||'Other')+
+        '</span>'+
+
+        '<span class="rank">#'+
+        shown+
+        '</span>'+
+
+        '</div>'+
 
         '<div class="phone-image">'+
         image+
@@ -821,28 +3342,48 @@ function render(){
 
         '<div class="title-row">'+
 
-        '<h3>'+esc(r.title)+'</h3>'+
+        '<h3>'+
+        esc(r.title)+
+        '</h3>'+
 
         '<span class="score">'+
+
         '<i class="fa-solid fa-star"></i>'+
-        esc(Number(r.score).toFixed(1))+
+
+        esc(
+          Number(r.score||0).toFixed(1)
+        )+
+
         '</span>'+
 
         '</div>'+
 
         '<p class="description">'+
-        esc(r.description||'Full editorial review and testing.')+
+
+        esc(
+          r.description ||
+          'Full editorial review and testing.'
+        )+
+
         '</p>'+
 
         '<div class="card-bottom">'+
 
         '<span class="category">'+
-        esc(r.category||'Phone Review')+
+
+        esc(
+          r.category ||
+          'Phone Review'
+        )+
+
         '</span>'+
 
         '<span class="read">'+
+
         'Read Full Review '+
+
         '<i class="fa-solid fa-arrow-right"></i>'+
+
         '</span>'+
 
         '</div>'+
@@ -855,354 +3396,382 @@ function render(){
 
     });
 
-    html+='</div></div>';
+
+    html+=
+      '</div>'+
+      '</div>';
 
   });
 
-  document.getElementById('resultCount').textContent=
-    shown+' reviews shown';
 
-  document.getElementById('empty').style.display=
-    shown?'none':'block';
+  var resultCount=
+    document.getElementById('resultCount');
 
-  /*
-   * IMPORTANT FIX:
-   * Render directly into #reviewGrid.
-   * Do NOT create reviewSections.
-   * Do NOT hide #reviewGrid.
-   */
+  if(resultCount){
 
-  grid.innerHTML=html;
-grid.style.display=shown ? 'grid' : 'none';
-}
-
-var params=new URLSearchParams(window.location.search);
-
-var urlBrand=params.get('brand');
-var urlCategory=params.get('category');
-
-if(urlBrand){
-  activeBrand=urlBrand;
-}
-
-if(urlCategory){
-  activeCategory=urlCategory;
-}
-
-fetch('reviews-data.php?ts='+Date.now(),{cache:'no-store'})
-  .then(function(res){
-    console.log('PHP STATUS:', res.status);
-    return res.text();
-  })
-  .then(function(text){
-    console.log('PHP RESPONSE:', text);
-
-    var data = JSON.parse(text);
-    console.log('REVIEWS DATA:', data);
-    console.log('REVIEWS:', data.reviews);
-
-    reviews=Array.isArray(data.reviews)?data.reviews:[];
-
-    document.getElementById('loading').style.display='none';
-    document.getElementById('totalReviews').textContent=reviews.length;
-
-    document.getElementById('topScore').textContent=
-      reviews.length ? Number(reviews[0].score).toFixed(1) : '—';
-
-    document.getElementById('brandCount').textContent=
-      (data.brands||[]).length;
-
-    brandList=data.brands||[];
-
-    renderBrands(brandList);
-    renderBrandShowcase(brandList);
-    render();
-  })
-  .catch(function(err){
-    console.error('REVIEWS ERROR:', err);
-    document.getElementById('loading').textContent=
-      'ERROR: '+err.message;
-  });
-
-.then(function(res){
-
-  if(!res.ok){
-    throw new Error(
-      'HTTP '+res.status+' '+res.statusText
-    );
-  }
-
-  return res.json();
-
-})
-
-.then(function(data){
-
-  console.log('Reviews data loaded:',data);
-
-  reviews=
-    Array.isArray(data.reviews)
-      ?data.reviews
-      :[];
-
-  document.getElementById('loading').style.display='none';
-
-  document.getElementById('totalReviews').textContent=
-    reviews.length;
-
-  document.getElementById('topScore').textContent=
-    reviews.length
-      ?Number(reviews[0].score).toFixed(1)
-      :'—';
-
-  document.getElementById('brandCount').textContent=
-    Array.isArray(data.brands)
-      ?data.brands.length
-      :0;
-
-  brandList=
-    Array.isArray(data.brands)
-      ?data.brands
-      :[];
-
-  /*
-   * If brands[] is missing from PHP data,
-   * build it from the reviews themselves.
-   */
-  if(!brandList.length){
-
-    brandList=
-      Array.from(
-        new Set(
-          reviews
-            .map(function(r){
-              return String(r.brand||'').trim();
-            })
-            .filter(function(b){
-              return b!=='';
-            })
-        )
-      );
+    resultCount.textContent=
+      shown+' reviews shown';
 
   }
 
-  console.log('Reviews count:',reviews.length);
-  console.log('Brands:',brandList);
 
-  renderBrands(brandList);
+  var empty=
+    document.getElementById('empty');
 
-  document.getElementById('brandSelect').value=
-    activeBrand;
+  if(empty){
 
-  Array.prototype.forEach.call(
-    document.querySelectorAll('[data-category]'),
-    function(x){
+    empty.style.display=
+      shown?'none':'block';
 
-      x.classList.toggle(
-        'active',
-        x.getAttribute('data-category')===activeCategory
-      );
+  }
 
-    }
-  );
 
-  renderBrandShowcase(brandList);
+  if(grid){
 
-  render();
+    grid.innerHTML=html;
 
-})
+    grid.style.display=
+      shown?'block':'none';
 
-.catch(function(err){
+  }
 
-  console.error(
-    'Reviews load error:',
-    err
-  );
+  hideLoading();
 
-  document.getElementById('loading').textContent=
-    'Unable to load reviews. Make sure reviews-data.php is in the same folder as reviews.html.';
+}
 
-  document.getElementById('resultCount').textContent=
-    'Failed to load reviews';
 
-});
+/*
+ * ============================================================
+ * SEARCH
+ * ============================================================
+ */
 
-Array.prototype.forEach.call(
-  document.querySelectorAll('[data-category]'),
-  function(btn){
+if(search){
 
-    btn.addEventListener('click',function(){
-
-      activeCategory=
-        btn.getAttribute('data-category');
-
-      Array.prototype.forEach.call(
-        document.querySelectorAll('[data-category]'),
-        function(x){
-
-          x.classList.toggle(
-            'active',
-            x===btn
-          );
-
-        }
-      );
+  search.addEventListener(
+    'input',
+    function(){
 
       render();
 
-    });
-
-  }
-);
-
-search.addEventListener('input',function(){
-
-  searchBox.classList.toggle(
-    'searching',
-    !!search.value.trim()
+    }
   );
 
-  render();
+}
 
-});
 
-searchClose.addEventListener('click',function(){
+/*
+ * ============================================================
+ * SEARCH OPEN / CLOSE
+ * ============================================================
+ */
 
-  search.value='';
+var searchOpen =
+  document.getElementById('searchFocus');
 
-  searchBox.classList.remove('searching');
+if(searchOpen){
 
-  activeBrand='All';
-  activeCategory='All';
+  searchOpen.addEventListener(
+    'click',
+    function(){
 
-  document.getElementById('brandSelect').value='All';
+      if(searchBox){
 
-  Array.prototype.forEach.call(
-    document.querySelectorAll('[data-category]'),
-    function(x){
+        searchBox.classList.add('active');
 
-      x.classList.toggle(
-        'active',
-        x.getAttribute('data-category')==='All'
-      );
+      }
+
+      if(search){
+
+        search.focus();
+
+      }
 
     }
   );
 
-  renderBrandShowcase(brandList);
-  render();
+}
 
-  search.blur();
+
+if(searchClose){
+
+  searchClose.addEventListener(
+    'click',
+    function(){
+
+      if(search){
+
+        search.value='';
+
+      }
+
+      if(searchBox){
+
+        searchBox.classList.remove('active');
+
+      }
+
+      render();
+
+    }
+  );
+
+}
+
+
+/*
+ * ============================================================
+ * CATEGORY BUTTONS
+ * ============================================================
+ */
+
+document
+  .querySelectorAll('[data-category]')
+  .forEach(function(button){
+
+    button.addEventListener(
+      'click',
+      function(){
+
+        document
+          .querySelectorAll('[data-category]')
+          .forEach(function(btn){
+
+            btn.classList.remove('active');
+
+          });
+
+        this.classList.add('active');
+
+        activeCategory=
+          this.getAttribute('data-category') ||
+          'All';
+
+        render();
+
+      }
+    );
+
+  });
+
+
+/*
+ * ============================================================
+ * URL PARAMETERS
+ * ============================================================
+ */
+
+var params=
+  new URLSearchParams(
+    window.location.search
+  );
+
+var urlBrand=
+  params.get('brand');
+
+var urlCategory=
+  params.get('category');
+
+
+if(urlBrand){
+
+  activeBrand=urlBrand;
+
+}
+
+
+if(urlCategory){
 
   if(
-    window.history &&
-    window.history.replaceState
+    [
+      'All',
+      'Flagship',
+      'Mid-Range',
+      'Budget',
+      'Gaming',
+      'Camera'
+    ].indexOf(urlCategory)!==-1
   ){
 
-    window.history.replaceState(
-      {},
-      '',
-      window.location.pathname
-    );
+    activeCategory=urlCategory;
 
   }
 
+}
+
+
+/*
+ * ============================================================
+ * LOAD REVIEWS DATA
+ * ============================================================
+ */
+
+renderBrands(brandList);
+renderBrandShowcase(reviews);
+
+var totalReviews =
+    reviews.length;
+
+var topScore = 0;
+
+reviews.forEach(function(r){
+
+    var score =
+        Number(r.score) || 0;
+
+    if(score > topScore){
+
+        topScore = score;
+
+    }
+
 });
 
-document.getElementById('searchFocus')
-.addEventListener('click',function(){
 
-  search.focus();
+var totalReviewsElement =
+    document.getElementById(
+        'totalReviews'
+    );
 
-  window.scrollTo({
-    top:
-      document.querySelector('.toolbar').offsetTop-76,
-    behavior:'smooth'
-  });
+if(totalReviewsElement){
 
-});
+    totalReviewsElement.textContent =
+        totalReviews;
 
-var tdhMobileNav=
-  document.getElementById('tdhMobileNav');
+}
 
-var tdhMenuOpen=
+
+var brandCountElement =
+    document.getElementById(
+        'brandCount'
+    );
+
+if(brandCountElement){
+
+    brandCountElement.textContent =
+        brandList.length;
+
+}
+
+
+var topScoreElement =
+    document.getElementById(
+        'topScore'
+    );
+
+if(topScoreElement){
+
+    topScoreElement.textContent =
+        topScore.toFixed(1);
+
+}
+
+
+render();
+
+
+})();
+
+
+/*
+ * ============================================================
+ * MOBILE MENU
+ * ============================================================
+ */
+
+var mobileToggle =
   document.getElementById('mobileToggle');
 
-var tdhMenuClose=
+var mobileNav =
+  document.getElementById('tdhMobileNav');
+
+var menuClose =
   document.getElementById('tdhMenuClose');
 
-var tdhMobileBackdrop=
+var menuBackdrop =
   document.getElementById('tdhMobileBackdrop');
 
-function tdhOpenMenu(){
 
-  tdhMobileNav.classList.add('tdh-open');
+function openMobileMenu(){
+
+  if(mobileNav){
+
+    mobileNav.classList.add('tdh-open');
+
+  }
 
   document.body.classList.add('tdh-menu-open');
 
 }
 
-function tdhCloseMenu(){
 
-  tdhMobileNav.classList.remove('tdh-open');
+function closeMobileMenu(){
+
+  if(mobileNav){
+
+    mobileNav.classList.remove('tdh-open');
+
+  }
 
   document.body.classList.remove('tdh-menu-open');
 
 }
 
-tdhMenuOpen.addEventListener(
-  'click',
-  tdhOpenMenu
-);
 
-tdhMenuClose.addEventListener(
-  'click',
-  tdhCloseMenu
-);
+if(mobileToggle){
 
-tdhMobileBackdrop.addEventListener(
-  'click',
-  tdhCloseMenu
-);
+  mobileToggle.addEventListener(
+    'click',
+    openMobileMenu
+  );
 
-Array.prototype.forEach.call(
-  document.querySelectorAll('.tdh-mobile-link'),
-  function(link){
+}
+
+
+if(menuClose){
+
+  menuClose.addEventListener(
+    'click',
+    closeMobileMenu
+  );
+
+}
+
+
+if(menuBackdrop){
+
+  menuBackdrop.addEventListener(
+    'click',
+    closeMobileMenu
+  );
+
+}
+
+
+document
+  .querySelectorAll('.tdh-mobile-link')
+  .forEach(function(link){
 
     link.addEventListener(
       'click',
-      tdhCloseMenu
+      closeMobileMenu
     );
 
-  }
-);
+  });
+
 
 document.addEventListener(
   'keydown',
-  function(e){
+  function(event){
 
-    if(e.key==='Escape'){
-      tdhCloseMenu();
+    if(event.key==='Escape'){
+
+      closeMobileMenu();
+
     }
 
   }
 );
-
-window.addEventListener(
-  'scroll',
-  function(){
-
-    document
-      .getElementById('header')
-      .classList.toggle(
-        'scrolled',
-        window.scrollY>10
-      );
-
-  }
-);
-
-})();
 </script>
 
 </body>
