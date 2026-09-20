@@ -1,0 +1,5 @@
+Sitemap: https://techdealshub.online/sitemap.xml
+User-agent: *
+Allow: /
+
+Sitemap: https://techdealshub.online/sitemap.xml
