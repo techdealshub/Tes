@@ -80,6 +80,25 @@ $data = array (
       'battery' => '8,050 mAh',
       'badge' => 'Best Performance',
     ),
+    4 => 
+    array (
+      'brand' => 'Apple',
+      'title' => 'iPhone 18 Pro Max',
+      'score' => 9.5,
+      'camera_score' => 9.7,
+      'gaming_score' => 9.7,
+      'description' => 'The iPhone 18 Pro Max is Apple\'s largest Pro smartphone, built around the A20 Pro chip, a 6.9-inch Super Retina XDR OLED display, and a 48MP Pro Fusion camera system with variable-aperture main photography and an advanced tetraprism telephoto camera. It combines flagship performance, high-end photography, long battery life, Apple Intelligence, and iOS 27 in a large premium aluminum design.',
+      'category' => 'Flagship',
+      'image' => 'https://techdealshub.online/apple/img/iphone18promax_hero_3_2.webp',
+      'url' => 'reviews/iphone-18-pro-max-reviews.html',
+      'price' => '$1,299',
+      'reviews' => '214',
+      'display' => '6.9 inches Super Retina XDR OLED',
+      'processor' => 'Apple A20 Pro',
+      'camera' => '48MP Fusion Main, variable aperture f/1.48-f/4.0, 24mm, second-generation sensor-shift OIS',
+      'battery' => 'Not officially specified by Apple',
+      'badge' => 'Best Performance',
+    ),
   ),
   'brands' => 
   array (
