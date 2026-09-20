@@ -3054,10 +3054,10 @@ JS;
  * IMAGE RULE:
  *
  *     Card #1:
- *     https://techdealshub.online/{brand}/img/{phone}_1_1.webp
+ *     {brand}/img/{phone}_1_1.webp
  *
  *     Cards #2 and onward:
- *     https://techdealshub.online/{brand}/img/{phone}_hero_3_2.webp
+ *     {brand}/img/{phone}_hero_3_2.webp
  *
  * The 12 existing review cards are processed in their
  * existing order.
