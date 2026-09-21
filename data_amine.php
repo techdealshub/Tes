@@ -638,7 +638,87 @@ function findBrandDirectory(
 
 /*
  * ============================================================
- * GENERATE IMAGE URL
+ * CREATE PHONE IMAGE DIRECTORIES
+ * ============================================================
+ */
+
+function ensurePhoneImageDirectories(
+    string $brand,
+    string $title
+): bool {
+
+    $brandDirectory =
+        findBrandDirectory(
+            $brand
+        );
+
+    if (
+        $brandDirectory === ''
+    ) {
+        return false;
+    }
+
+    $phoneName =
+        normalizePhoneFileName(
+            $title,
+            $brand
+        );
+
+    if (
+        $phoneName === ''
+    ) {
+        return false;
+    }
+
+    $phoneDirectory =
+        __DIR__ .
+        '/' .
+        $brandDirectory .
+        '/img/' .
+        $phoneName;
+
+    $imageDirectories = [
+        'hero',
+        'design',
+        'display',
+        'camera_1',
+        'camera_2',
+        'camera_3'
+    ];
+
+    foreach (
+        $imageDirectories
+        as $imageDirectory
+    ) {
+
+        $directory =
+            $phoneDirectory .
+            '/' .
+            $imageDirectory;
+
+        if (
+            !is_dir(
+                $directory
+            )
+        ) {
+
+            if (
+                !mkdir(
+                    $directory,
+                    0755,
+                    true
+                )
+            ) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+/*
+ * ============================================================
+ * GENERATE REVIEW IMAGE PATH
  * ============================================================
  */
 
@@ -650,39 +730,69 @@ function findActualImagePath(
 ): string {
 
     /*
-     * IMPORTANT:
-     * Do NOT invent a fallback directory.
-     * If the brand directory does not exist,
-     * return an empty value instead of creating:
+     * Find the real brand directory
      *
-     * https://techdealshub.online//img/...
+     * Example:
+     * apple/img
+     * samsung/img
      */
-
     $brandDirectory =
         findBrandDirectory(
             $brand
         );
 
-    if ($brandDirectory === '') {
+    if (
+        $brandDirectory === ''
+    ) {
         return '';
     }
 
+    /*
+     * Convert phone title to the standard
+     * phone folder/file name.
+     *
+     * Example:
+     * iPhone 17 Pro Max
+     * ->
+     * iphone17promax
+     */
     $phoneName =
         normalizePhoneFileName(
             $title,
             $brand
         );
 
+    /*
+     * Get image folder type.
+     *
+     * HERO_IMAGE       -> hero
+     * DESIGN_IMAGE     -> design
+     * DISPLAY_IMAGE    -> display
+     * CAMERA_SAMPLE_1  -> camera_1
+     * CAMERA_SAMPLE_2  -> camera_2
+     * CAMERA_SAMPLE_3  -> camera_3
+     */
     $imageType =
         getImageType(
             $field
         );
 
+    /*
+     * Get image ratio.
+     *
+     * HERO_IMAGE       -> 3_2
+     * DESIGN_IMAGE     -> 1_1
+     * DISPLAY_IMAGE    -> 1_1
+     * CAMERA_SAMPLE_*  -> 16_9
+     */
     $imageRatio =
         getImageRatio(
             $field
         );
 
+    /*
+     * Validate required values.
+     */
     if (
         $phoneName === '' ||
         $imageType === '' ||
@@ -691,14 +801,37 @@ function findActualImagePath(
         return '';
     }
 
+    /*
+     * REVIEW PAGES ARE INSIDE:
+     *
+     * /reviews/
+     *
+     * Therefore the image path must start with:
+     *
+     * ../
+     *
+     * Example:
+     *
+     * ../apple/img/iphone17promax/hero/
+     * iphone17promax_hero_3_2.webp
+     */
+
     return
-        'https://techdealshub.online/' .
+        '../' .
         rawurlencode(
             strtolower(
                 $brandDirectory
             )
         ) .
         '/img/' .
+        rawurlencode(
+            $phoneName
+        ) .
+        '/' .
+        rawurlencode(
+            $imageType
+        ) .
+        '/' .
         rawurlencode(
             $phoneName
         ) .
@@ -3054,10 +3187,10 @@ JS;
  * IMAGE RULE:
  *
  *     Card #1:
- *     {brand}/img/{phone}_1_1.webp
+ *     https://techdealshub.online/{brand}/img/{phone}_1_1.webp
  *
  *     Cards #2 and onward:
- *     {brand}/img/{phone}_hero_3_2.webp
+ *     https://techdealshub.online/{brand}/img/{phone}_hero_3_2.webp
  *
  * The 12 existing review cards are processed in their
  * existing order.
