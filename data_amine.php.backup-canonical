@@ -5541,7 +5541,7 @@ if (
     $output =
         $template;
 
-        foreach (
+    foreach (
         $allPlaceholders
         as $index => $field
     ) {
@@ -5549,45 +5549,12 @@ if (
         $fieldNumber =
             $index + 1;
 
-        if (
-            strcasecmp(
-                trim($field),
-                'CANONICAL_URL'
-            ) === 0
-        ) {
-
-            $canonicalSlug =
-                strtolower(
-                    trim($firstTitleValue)
-                );
-
-            $canonicalSlug =
-                preg_replace(
-                    '/[^a-z0-9]+/i',
-                    '-',
-                    $canonicalSlug
-                );
-
-            $canonicalSlug =
-                trim(
-                    (string) $canonicalSlug,
-                    '-'
-                );
-
-            $value =
-                'https://techdealshub.online/reviews/' .
-                $canonicalSlug .
-                '-reviews.html';
-
-        } else {
-
-            $value =
-                (string) (
-                    $data[
-                        $fieldNumber
-                    ] ?? ''
-                );
-        }
+        $value =
+            (string) (
+                $data[
+                    $fieldNumber
+                ] ?? ''
+            );
 
         $pattern =
             '/\{\{\s*' .
