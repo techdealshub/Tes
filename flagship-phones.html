@@ -1186,6 +1186,11 @@ img{
     font-size:11px;
 
     line-height:1.65;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
 
 }
 
@@ -1242,72 +1247,47 @@ img{
    SPECS
 ========================================================= */
 
-.specs{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap:7px;
-
-    margin-top:15px;
-
+.specs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 15px;
+    width: 100%;
 }
 
-
-.spec{
-
-    min-height:53px;
-
-    padding:9px;
-
-    border:1px solid #edf0f4;
-
-    border-radius:10px;
-
-    background:#fafbfc;
-
+.spec {
+    min-width: 0;
+    min-height: 53px;
+    padding: 9px;
+    border: 1px solid #edf0f4;
+    border-radius: 10px;
+    background: #fafbfc;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-
-.spec-label{
-
-    display:block;
-
-    color:#94a3b8;
-
-    font-size:8px;
-
-    font-weight:800;
-
-    text-transform:uppercase;
-
-    letter-spacing:.05em;
-
+.spec-label {
+    display: block;
+    min-width: 0;
+    color: #94a3b8;
+    font-size: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .05em;
 }
 
-
-.spec-value{
-
-    display:block;
-
-    margin-top:2px;
-
-    color:#334155;
-
-    font-size:10px;
-
-    font-weight:800;
-
-    white-space:nowrap;
-
-    overflow:hidden;
-
-    text-overflow:ellipsis;
-
+.spec-value {
+    display: block;
+    min-width: 0;
+    max-width: 100%;
+    margin-top: 2px;
+    color: #334155;
+    font-size: 10px;
+    font-weight: 800;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-
 
 /* =========================================================
    CARD FOOTER
@@ -2442,7 +2422,7 @@ img{
         </button>
 
         <img
-            src="samsung/img/galaxys26ultra_hero_3_2.webp"
+            src="https://techdealshub.online/samsung/img/galaxys26ultra_hero_3_2.webp"
             alt="Samsung Galaxy S26 Ultra"
             loading="lazy"
         >
@@ -2545,7 +2525,7 @@ img{
         </button>
 
         <img
-            src="xiaomi/img/pocof9ultra_hero_3_2.webp"
+            src="https://techdealshub.online/xiaomi/img/pocof9ultra_hero_3_2.webp"
             alt="POCO F9 Ultra"
             loading="lazy"
         >
@@ -2648,7 +2628,7 @@ img{
         </button>
 
         <img
-            src="apple/img/iphone17promax_hero_3_2.webp"
+            src="https://techdealshub.online/apple/img/iphone17promax_hero_3_2.webp"
             alt="iPhone 17 Pro Max"
             loading="lazy"
         >
