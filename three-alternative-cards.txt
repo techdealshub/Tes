@@ -1,0 +1,35 @@
+<article class="phone-card">
+<img alt="Apple iPhone 17 Pro Max" src="../apple/img/appleiphone17promax_hero_3_2.webp"/>
+<div class="phone-info">
+<span>Apple</span>
+<h3>Apple iPhone 17 Pro Max</h3>
+<p>The iPhone 17 Pro Max is a premium iOS flagship focused on high-end performance, advanced cameras, long-term software support, and deep integration with Apple's hardware and services ecosystem.</p>
+<a href="https://techdealshub.online//reviews/iphone-17-pro-max-reviews.html">
+         View Details →
+        </a>
+</div>
+</article>
+
+<article class="phone-card">
+<img alt="Google Pixel 10 Pro XL" src="../google/img/googlepixel10proxl_hero_3_2.webp"/>
+<div class="phone-info">
+<span>Google</span>
+<h3>Google Pixel 10 Pro XL</h3>
+<p>The Pixel 10 Pro XL is a camera and AI-focused flagship that combines Google's Pixel software experience, advanced computational photography, Gemini features, and long-term Android support.</p>
+<a href="https://techdealshub.online//reviews/google-pixel-10-pro-xl-reviews.html">
+         View Details →
+        </a>
+</div>
+</article>
+
+<article class="phone-card">
+<img alt="OnePlus 14" src=""/>
+<div class="phone-info">
+<span>OnePlus</span>
+<h3>OnePlus 14</h3>
+<p>The OnePlus 14 targets users who prioritize flagship performance, fast charging, a smooth high-refresh-rate display, and a performance-oriented Android experience.</p>
+<a href="https://techdealshub.online//reviews/oneplus-14-reviews.html">
+         View Details →
+        </a>
+</div>
+</article>
