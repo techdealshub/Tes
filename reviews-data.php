@@ -99,6 +99,25 @@ $data = array (
       'battery' => 'Not officially specified by Apple',
       'badge' => 'Best Performance',
     ),
+    5 => 
+    array (
+      'brand' => 'Apple',
+      'title' => 'iPhone 18 Pro',
+      'score' => 9.6,
+      'camera_score' => 9.8,
+      'gaming_score' => 9.5,
+      'description' => 'The iPhone 18 Pro is Apple\'s latest professional smartphone, powered by the A20 Pro chip and featuring a 6.3-inch Super Retina XDR OLED display with ProMotion up to 120Hz, a new 48MP Fusion camera system with variable aperture, a 48MP Fusion Ultra Wide camera, a 48MP Fusion Telephoto camera with 4x optical zoom and 8x optical-quality zoom, and advanced Apple Intelligence features. Its combination of performance, camera versatility, video capabilities, battery life, and iOS 27 makes it a premium flagship for demanding users and creators.',
+      'category' => 'Flagship',
+      'image' => '../apple/img/iphone18pro/hero/iphone18pro_hero_3_2.webp',
+      'url' => 'reviews/iphone-18-pro-reviews.html',
+      'price' => '$1,199',
+      'reviews' => '214',
+      'display' => '6.3 inches Super Retina XDR OLED',
+      'processor' => 'Apple A20 Pro',
+      'camera' => '48MP Fusion Main, f/1.48-f/4.0 variable aperture, 24mm, second-generation sensor-shift OIS',
+      'battery' => 'Built-in rechargeable lithium-ion battery',
+      'badge' => 'Best Performance',
+    ),
   ),
   'brands' => 
   array (
