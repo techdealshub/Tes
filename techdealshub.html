@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Football Hub — Football Shopping</title>
+<meta name="description" content="Discover football jerseys, boots, equipment, accessories and ticket opportunities from trusted retailers and partners with Football Hub.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://techdealshub.online/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Football Hub">
+<meta property="og:title" content="Football Hub — Football Shopping">
+<meta property="og:description" content="Discover football jerseys, boots, equipment, accessories and ticket opportunities from trusted retailers and partners.">
+<meta property="og:url" content="https://techdealshub.online/">
+<meta property="og:image" content="https://techdealshub.online/techdealshub.png">
+<meta property="og:image:alt" content="Football Hub">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Football Hub — Football Shopping">
+<meta name="twitter:description" content="Discover football jerseys, boots, equipment, accessories and ticket opportunities from trusted retailers and partners.">
+<meta name="twitter:image" content="https://techdealshub.online/techdealshub.png">
+
+<!-- Google Analytics: replace G-XXXXXXXXXX with your real GA4 ID.
+     Analytics is not loaded until a real ID is configured. -->
+<script>
+const GA4_ID = "";
+if (/^G-[A-Z0-9]+$/.test(GA4_ID)) {
+    const gaScript = document.createElement("script");
+    gaScript.async = true;
+    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA4_ID);
+    document.head.appendChild(gaScript);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag("js", new Date());
+    gtag("config", GA4_ID);
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"Football Hub",
+  "url":"https://techdealshub.online/",
+  "description":"Football shopping and discovery platform featuring football jerseys, boots, equipment, accessories and ticket opportunities."
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:Inter,Arial,sans-serif;background:#fff;color:#111;overflow-x:hidden}
+button,input{font:inherit}
+button{border:0;background:none;cursor:pointer}
+a{color:inherit;text-decoration:none}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #6cabdd;outline-offset:3px}
+
+/* HEADER */
+.site-header{position:sticky;top:0;z-index:1000;height:76px;background:rgba(255,255,255,.96);border-bottom:1px solid #e8e8e8;backdrop-filter:blur(14px)}
+.header-inner{max-width:1500px;height:100%;margin:auto;padding:0 28px;display:flex;align-items:center;gap:28px}
+.logo{font-size:21px;font-weight:900;letter-spacing:-1px;white-space:nowrap}
+.logo span{color:#6cabdd}
+.main-nav{display:flex;align-items:center;gap:25px;flex:1}
+.main-nav button{font-size:13px;font-weight:600;color:#222;white-space:nowrap}
+.main-nav button:hover{color:#6cabdd}
+.header-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-size:18px}
+.icon-btn:hover{background:#f2f2f2}
+.menu-btn{display:none}
+
+/* SEARCH */
+.search-panel{position:fixed;inset:76px 0 auto 0;z-index:999;background:#fff;border-bottom:1px solid #ddd;padding:28px;display:none}
+.search-panel.active{display:block}
+.search-inner{max-width:900px;margin:auto}
+.search-box{display:flex;align-items:center;border-bottom:2px solid #111}
+.search-box input{width:100%;border:0;outline:0;font-size:30px;font-weight:600;padding:14px 0}
+.search-close{font-size:24px}
+.search-results-label{margin-top:16px;color:#777;font-size:13px}
+
+/* CATEGORY MENU */
+.category-overlay{position:fixed;inset:76px 0 0;z-index:998;background:rgba(0,0,0,.28);display:none;overflow-y:auto}
+.category-overlay.active{display:block}
+.category-menu{background:#fff;padding:35px 30px 42px;box-shadow:0 20px 50px rgba(0,0,0,.12)}
+.category-menu-inner{max-width:1500px;margin:auto}
+.category-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+.category-title{font-size:28px;font-weight:800;letter-spacing:-1px}
+.category-close{font-size:25px}
+.category-columns{display:grid;grid-template-columns:repeat(5,1fr);gap:30px}
+.category-group h3{font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;color:#777}
+.category-group button{display:block;width:100%;text-align:left;padding:6px 0;font-size:14px;font-weight:600}
+.category-group button:hover{color:#6cabdd}
+
+/* AFFILIATE NOTICE */
+.affiliate-note{text-align:center;background:#f7f7f7;padding:9px 15px;color:#666;font-size:11px}
+
+/* HERO */
+.hero{position:relative;height:calc(100vh - 108px);min-height:560px;max-height:850px;overflow:hidden;background:#111}
+.hero-track{height:100%;display:flex;transition:transform .7s cubic-bezier(.22,.61,.36,1)}
+.hero-slide{position:relative;min-width:100%;height:100%;overflow:hidden;display:block;cursor:pointer}
+.hero-slide img{width:100%;height:100%;object-fit:cover}
+.hero-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.35) 40%,rgba(0,0,0,.05) 75%);pointer-events:none}
+.hero-content{position:absolute;z-index:2;left:7%;bottom:13%;color:#fff;max-width:650px;pointer-events:none}
+.hero-eyebrow{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
+.hero-title{font-size:clamp(42px,6vw,86px);line-height:.95;letter-spacing:-4px;font-weight:900;margin-bottom:20px}
+.hero-text{font-size:16px;line-height:1.6;max-width:500px;color:rgba(255,255,255,.85);margin-bottom:25px}
+.hero-cta{display:inline-flex;padding:14px 25px;background:#fff;color:#111;font-size:12px;font-weight:800;letter-spacing:.4px;pointer-events:none}
+.hero-slide:hover .hero-cta{background:#6cabdd;color:#fff}
+.hero-arrow{position:absolute;z-index:4;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;font-size:20px}
+.hero-arrow:hover{background:#6cabdd;color:#fff}
+.hero-prev{left:25px}.hero-next{right:25px}
+.hero-dots{position:absolute;z-index:5;bottom:28px;left:50%;transform:translateX(-50%);display:flex;gap:8px}
+.hero-dot{width:32px;height:3px;background:rgba(255,255,255,.45)}
+.hero-dot.active{background:#fff}
+
+/* MAIN */
+main{max-width:1500px;margin:auto;padding:75px 28px}
+.section{margin-bottom:90px}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:22px;gap:15px}
+.section-title{font-size:34px;font-weight:800;letter-spacing:-1.5px}
+.section-link{font-size:12px;font-weight:700;border-bottom:1px solid #111;padding-bottom:4px;white-space:nowrap}
+
+/* FEATURED */
+.featured-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.feature-card{position:relative;min-height:560px;overflow:hidden;background:#eee}
+.feature-card img{width:100%;height:100%;min-height:560px;object-fit:cover;transition:transform .5s}
+.feature-card:hover img{transform:scale(1.035)}
+.feature-card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.7),transparent 55%);pointer-events:none}
+.feature-info{position:absolute;z-index:2;bottom:35px;left:35px;color:#fff}
+.feature-info h3{font-size:32px;margin-bottom:9px}
+.feature-info p{font-size:13px;margin-bottom:18px}
+.feature-info a,.feature-info button{display:inline-block;background:#fff;color:#111;padding:12px 18px;font-size:11px;font-weight:800}
+.feature-info a:hover,.feature-info button:hover{background:#6cabdd;color:#fff}
+
+/* PRODUCTS */
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.product-card{position:relative;min-width:0}
+.product-image{position:relative;aspect-ratio:1/1.12;background:#f5f5f5;overflow:hidden}
+.product-image img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.product-card:hover .product-image img{transform:scale(1.035)}
+.save-btn{position:absolute;top:12px;right:12px;z-index:3;width:36px;height:36px;border-radius:50%;background:#fff;font-size:17px}
+.save-btn.saved{color:#6cabdd}
+.product-info{padding:13px 2px 0}
+.product-category{font-size:10px;text-transform:uppercase;color:#888;letter-spacing:.8px;margin-bottom:5px}
+.product-name{font-size:14px;font-weight:700;line-height:1.35}
+.product-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px}
+.product-price{font-size:14px;font-weight:800}
+.product-merchant{font-size:10px;color:#777}
+.product-link{display:block;margin-top:11px;border:1px solid #111;padding:10px;text-align:center;font-size:10px;font-weight:800}
+.product-link:hover{background:#111;color:#fff}
+.empty-results{grid-column:1/-1;padding:50px 10px;text-align:center;color:#777;line-height:1.7}
+.empty-results a{display:inline-block;margin-top:15px;padding:12px 18px;background:#111;color:#fff;font-size:11px;font-weight:800}
+
+/* TICKETS */
+.ticket-section{background:#f5f5f5;padding:40px}
+.ticket-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ticket-card{background:#fff;padding:25px}
+.ticket-league{color:#777;font-size:10px;text-transform:uppercase;letter-spacing:1px}
+.ticket-match{font-size:21px;font-weight:800;margin:10px 0}
+.ticket-date{color:#666;font-size:12px}
+.ticket-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:25px}
+.ticket-price{font-size:13px;font-weight:700}
+.ticket-btn{background:#111;color:#fff;padding:11px 15px;font-size:10px;font-weight:800;white-space:nowrap}
+.ticket-btn:hover{background:#6cabdd}
+
+/* FILTER RESULT */
+.filter-status{display:none;margin-bottom:30px;padding:18px 20px;background:#f5f5f5;align-items:center;justify-content:space-between}
+.filter-status.active{display:flex}
+.clear-filter{font-size:11px;font-weight:800;text-decoration:underline}
+
+/* INFORMATION PAGES */
+.info-pages{border-top:1px solid #eee;padding:0 28px}
+.info-page{max-width:1200px;margin:0 auto;padding:45px 0;border-bottom:1px solid #eee;scroll-margin-top:90px}
+.info-page h2{font-size:25px;letter-spacing:-.6px;margin-bottom:16px}
+.info-page h3{font-size:16px;margin:20px 0 8px}
+.info-page p,.info-page li{font-size:13px;line-height:1.9;color:#666}
+.info-page p+p{margin-top:10px}
+.info-page ul{padding-left:20px;margin-top:8px}
+.info-page a{text-decoration:underline;color:#222}
+
+/* FOOTER */
+footer{border-top:1px solid #e5e5e5;padding:55px 28px 35px}
+.footer-inner{max-width:1500px;margin:auto}
+.footer-top{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:40px}
+.footer-brand h2{font-size:22px;margin-bottom:12px}
+.footer-brand p{max-width:360px;color:#777;font-size:12px;line-height:1.7}
+.footer-col h4{font-size:11px;text-transform:uppercase;margin-bottom:15px}
+.footer-col a{display:block;font-size:12px;color:#666;margin-bottom:9px}
+.footer-col a:hover{color:#6cabdd}
+.footer-bottom{border-top:1px solid #eee;margin-top:45px;padding-top:20px;display:flex;justify-content:space-between;gap:12px;color:#888;font-size:10px}
+
+/* MOBILE */
+@media(max-width:1000px){
+    .main-nav{display:none}
+    .menu-btn{display:grid}
+    .header-inner{padding:0 16px;justify-content:space-between}
+    .header-actions{margin-left:auto}
+    .hero{height:72vh;min-height:540px}
+    .hero-content{left:6%;right:6%;bottom:12%}
+    .hero-title{letter-spacing:-2px}
+    main{padding:55px 16px}
+    .product-grid{grid-template-columns:repeat(2,1fr)}
+    .featured-grid{grid-template-columns:1fr}
+    .feature-card,.feature-card img{min-height:470px}
+    .category-columns{grid-template-columns:repeat(2,1fr);gap:25px}
+    .ticket-grid{grid-template-columns:1fr}
+    .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+    .site-header{height:64px}
+    .affiliate-note{font-size:9px}
+    .search-panel{inset:64px 0 auto 0;padding:20px 16px}
+    .search-box input{font-size:22px}
+    .category-overlay{inset:64px 0 0}
+    .category-menu{padding:25px 18px 30px;max-height:calc(100vh - 64px);overflow-y:auto}
+    .category-columns{grid-template-columns:1fr 1fr;gap:22px 18px}
+    .category-title{font-size:23px}
+    .hero{height:72vh;min-height:500px}
+    .hero-title{font-size:43px}
+    .hero-text{font-size:13px}
+    .hero-arrow{width:40px;height:40px}
+    .hero-prev{left:12px}.hero-next{right:12px}
+    .section{margin-bottom:60px}
+    .section-title{font-size:26px}
+    .featured-grid{gap:10px}
+    .feature-card,.feature-card img{min-height:410px}
+    .feature-info{left:22px;bottom:25px}
+    .feature-info h3{font-size:25px}
+    .product-grid{gap:12px 8px}
+    .product-name{font-size:12px}
+    .product-price{font-size:12px}
+    .product-merchant{display:none}
+    .product-link{padding:9px 5px}
+    .ticket-section{padding:25px 16px;margin-left:-16px;margin-right:-16px}
+    .footer-top{grid-template-columns:1fr 1fr;gap:25px 15px}
+    .footer-brand{grid-column:1/-1}
+    .footer-bottom{flex-direction:column;gap:8px}
+    .info-pages{padding:0 16px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a href="/" class="logo">FOOTBALL <span>HUB</span></a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <button data-filter="all">New</button>
+            <button data-filter="deals">Deals</button>
+            <button data-filter="jerseys">Jerseys</button>
+            <button data-filter="boots">Boots</button>
+            <button data-filter="equipment">Equipment</button>
+            <button id="desktopCategories">Categories</button>
+        </nav>
+
+        <div class="header-actions">
+            <button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button>
+            <button class="icon-btn" id="savedBtn" aria-label="Show saved products">♡</button>
+            <button class="icon-btn menu-btn" id="mobileMenuBtn" aria-label="Open categories">☰</button>
+        </div>
+    </div>
+</header>
+
+<!-- SEARCH: display:none until .active is added -->
+<div class="search-panel" id="searchPanel">
+    <div class="search-inner">
+        <div class="search-box">
+            <input id="searchInput" type="search" placeholder="Search football products..." autocomplete="off">
+            <button class="search-close" id="searchClose" aria-label="Close search">×</button>
+        </div>
+        <div class="search-results-label" id="searchResultsLabel">
+            Search jerseys, boots, equipment and accessories...
+        </div>
+    </div>
+</div>
+
+<!-- CATEGORY MENU: display:none until .active is added -->
+<div class="category-overlay" id="categoryOverlay">
+    <div class="category-menu">
+        <div class="category-menu-inner">
+            <div class="category-top">
+                <div class="category-title">Football Categories</div>
+                <button class="category-close" id="categoryClose" aria-label="Close categories">×</button>
+            </div>
+
+            <div class="category-columns">
+                <div class="category-group">
+                    <h3>Football Clothing</h3>
+                    <button data-filter="jerseys">Jerseys</button>
+                    <button data-filter="shorts">Football Shorts</button>
+                    <button data-filter="socks">Football Socks</button>
+                    <button data-filter="training">Training Wear</button>
+                    <button data-filter="tracksuits">Tracksuits</button>
+                    <button data-filter="jackets">Football Jackets</button>
+                </div>
+
+                <div class="category-group">
+                    <h3>Football Boots</h3>
+                    <button data-filter="boots">All Football Boots</button>
+                    <button data-filter="firm-ground">Firm Ground</button>
+                    <button data-filter="artificial-ground">Artificial Ground</button>
+                    <button data-filter="indoor">Indoor</button>
+                    <button data-filter="turf">Turf</button>
+                    <button data-filter="kids-boots">Kids Boots</button>
+                </div>
+
+                <div class="category-group">
+                    <h3>Equipment</h3>
+                    <button data-filter="footballs">Footballs</button>
+                    <button data-filter="goalkeeper">Goalkeeper</button>
+                    <button data-filter="shin-guards">Shin Guards</button>
+                    <button data-filter="training-equipment">Training Equipment</button>
+                    <button data-filter="cones">Cones</button>
+                    <button data-filter="goals">Goals</button>
+                </div>
+
+                <div class="category-group">
+                    <h3>Accessories</h3>
+                    <button data-filter="bags">Football Bags</button>
+                    <button data-filter="backpacks">Backpacks</button>
+                    <button data-filter="caps">Caps</button>
+                    <button data-filter="scarves">Scarves</button>
+                    <button data-filter="gifts">Football Gifts</button>
+                    <button data-filter="accessories">Accessories</button>
+                </div>
+
+                <div class="category-group">
+                    <h3>Tickets & Fans</h3>
+                    <button data-filter="tickets">Match Tickets</button>
+                    <button data-filter="premier-league">Premier League</button>
+                    <button data-filter="champions-league">Champions League</button>
+                    <button data-filter="la-liga">La Liga</button>
+                    <button data-filter="serie-a">Serie A</button>
+                    <button data-filter="ligue-1">Ligue 1</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="affiliate-note">
+    Some links may be affiliate links. Football Hub may earn a commission from qualifying purchases at no extra cost to you.
+</div>
+
+<!-- HERO: original images and destinations preserved -->
+<section class="hero" id="hero">
+    <div class="hero-track" id="heroTrack">
+
+        <a href="https://link.amazon/B0aOAGhxw" class="hero-slide" target="_blank" rel="nofollow sponsored noopener" onclick="trackOutboundClick('Amazon','deals','Football Deals')">
+            <img src="/images/hero/jersyes.webp" alt="Football jerseys and deals">
+            <div class="hero-content">
+                <div class="hero-eyebrow">Football Hub</div>
+                <h1 class="hero-title">THE GAME<br>STARTS HERE.</h1>
+                <p class="hero-text">Discover football gear, jerseys, boots and the latest offers from trusted retailers.</p>
+                <span class="hero-cta">EXPLORE DEALS</span>
+            </div>
+        </a>
+
+        <a href="https://link.amazon/B002tkacf" class="hero-slide" target="_blank" rel="nofollow sponsored noopener" onclick="trackOutboundClick('Amazon','boots','Football Boots')">
+            <img src="/images/hero/shoes.webp" alt="Football boots">
+            <div class="hero-content">
+                <div class="hero-eyebrow">Football Boots</div>
+                <h2 class="hero-title">BUILT FOR<br>SPEED.</h2>
+                <p class="hero-text">Explore football boots for firm ground, artificial ground, indoor and turf surfaces.</p>
+                <span class="hero-cta">VIEW BOOTS</span>
+            </div>
+        </a>
+
+        <a href="https://link.amazon/B0duv93P0" class="hero-slide" target="_blank" rel="nofollow sponsored noopener" onclick="trackOutboundClick('Amazon','jerseys','Football Jerseys')">
+            <img src="/images/hero/t-shirts.webp" alt="Football jerseys">
+            <div class="hero-content">
+                <div class="hero-eyebrow">Jerseys</div>
+                <h2 class="hero-title">WEAR<br>THE GAME.</h2>
+                <p class="hero-text">Find club, national team and training jerseys from leading football retailers.</p>
+                <span class="hero-cta">VIEW JERSEYS</span>
+            </div>
+        </a>
+
+        <a href="https://link.amazon/B0iCy9l5M" class="hero-slide" target="_blank" rel="nofollow sponsored noopener" onclick="trackOutboundClick('Amazon','equipment','Football Equipment')">
+            <img src="/images/hero/goalkeeper.webp" alt="Football equipment">
+            <div class="hero-content">
+                <div class="hero-eyebrow">Equipment</div>
+                <h2 class="hero-title">READY<br>TO PLAY.</h2>
+                <p class="hero-text">Balls, goalkeeper equipment, training gear and football accessories.</p>
+                <span class="hero-cta">VIEW EQUIPMENT</span>
+            </div>
+        </a>
+
+        <a href="https://www.footballticketnet.com/" class="hero-slide" target="_blank" rel="nofollow noopener" onclick="trackOutboundClick('Football Ticket Net','tickets','Match Tickets')">
+            <img src="/images/hero/tickets.webp" alt="Football stadium fans">
+            <div class="hero-content">
+                <div class="hero-eyebrow">Match Tickets</div>
+                <h2 class="hero-title">BE THERE<br>LIVE.</h2>
+                <p class="hero-text">Discover football ticket offers and experiences through ticket partners.</p>
+                <span class="hero-cta">VIEW TICKETS</span>
+            </div>
+        </a>
+
+    </div>
+
+    <button class="hero-arrow hero-prev" id="heroPrev" aria-label="Previous slide">‹</button>
+    <button class="hero-arrow hero-next" id="heroNext" aria-label="Next slide">›</button>
+    <div class="hero-dots" id="heroDots"></div>
+</section>
+
+<main>
+    <div class="filter-status" id="filterStatus">
+        <span id="filterText">Showing products</span>
+        <button class="clear-filter" id="clearFilter">CLEAR FILTER</button>
+    </div>
+
+    <section class="section">
+        <div class="section-head">
+            <h2 class="section-title">Featured</h2>
+            <button class="section-link" data-filter="all">VIEW ALL</button>
+        </div>
+
+        <div class="featured-grid">
+            <article class="feature-card">
+                <img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=1500&q=85" alt="Football boots" loading="lazy">
+                <div class="feature-info">
+                    <h3>Football Boots</h3>
+                    <p>Performance footwear for every pitch.</p>
+                    <button data-filter="boots">EXPLORE BOOTS →</button>
+                </div>
+            </article>
+
+            <article class="feature-card">
+                <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1500&q=85" alt="Football gear" loading="lazy">
+                <div class="feature-info">
+                    <h3>Football Gear</h3>
+                    <p>Equipment and accessories for players.</p>
+                    <button data-filter="equipment">EXPLORE GEAR →</button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="section" id="products">
+        <div class="section-head">
+            <h2 class="section-title" id="productsTitle">Today's Football Deals</h2>
+            <button class="section-link" data-filter="all">VIEW ALL</button>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="section ticket-section" id="ticketsSection">
+        <div class="section-head">
+            <h2 class="section-title">Football Tickets</h2>
+            <a class="section-link" href="https://www.footballticketnet.com/" target="_blank" rel="nofollow noopener">VIEW TICKETS</a>
+        </div>
+
+        <div class="ticket-grid">
+            <article class="ticket-card">
+                <div class="ticket-league">Premier League</div>
+                <div class="ticket-match">Match Tickets</div>
+                <div class="ticket-date">Upcoming fixtures · Multiple venues</div>
+                <div class="ticket-bottom">
+                    <div class="ticket-price">Check availability</div>
+                    <a class="ticket-btn" href="https://www.footballticketnet.com/" target="_blank" rel="nofollow noopener" onclick="trackOutboundClick('Football Ticket Net','premier-league','Match Tickets')">VIEW TICKETS →</a>
+                </div>
+            </article>
+
+            <article class="ticket-card">
+                <div class="ticket-league">Champions League</div>
+                <div class="ticket-match">European Match Tickets</div>
+                <div class="ticket-date">Upcoming fixtures · Multiple venues</div>
+                <div class="ticket-bottom">
+                    <div class="ticket-price">Check availability</div>
+                    <a class="ticket-btn" href="https://www.footballticketnet.com/" target="_blank" rel="nofollow noopener" onclick="trackOutboundClick('Football Ticket Net','champions-league','European Match Tickets')">VIEW TICKETS →</a>
+                </div>
+            </article>
+
+            <article class="ticket-card">
+                <div class="ticket-league">International</div>
+                <div class="ticket-match">International Matches</div>
+                <div class="ticket-date">Upcoming fixtures · Multiple venues</div>
+                <div class="ticket-bottom">
+                    <div class="ticket-price">Check availability</div>
+                    <a class="ticket-btn" href="https://www.footballticketnet.com/" target="_blank" rel="nofollow noopener" onclick="trackOutboundClick('Football Ticket Net','international','International Matches')">VIEW TICKETS →</a>
+                </div>
+            </article>
+        </div>
+    </section>
+</main>
+
+<!-- REAL IN-PAGE DESTINATIONS FOR FOOTER LINKS -->
+<div class="info-pages">
+
+    <section class="info-page" id="about">
+        <h2>About Us</h2>
+        <p>Football Hub is an independent football shopping and discovery website. We help football fans explore jerseys, boots, training clothing, equipment, accessories and ticket opportunities from external retailers.</p>
+        <p>Football Hub does not sell products or issue match tickets directly. Product information, prices, availability, delivery terms and ticket conditions are determined by the relevant retailer or ticket provider. Please confirm all details on the provider's website before purchasing.</p>
+    </section>
+
+    <section class="info-page" id="affiliate-disclosure">
+        <h2>Affiliate Disclosure</h2>
+        <p>Some links on Football Hub may be affiliate links. If you follow a qualifying affiliate link and make a purchase, Football Hub may receive a commission at no additional cost to you.</p>
+        <p>Not every link on this website is necessarily an affiliate link. Some links lead to ordinary product searches or external websites. The presence of a link does not guarantee that Football Hub receives a commission.</p>
+        <p>Retailers are responsible for their own products, prices, availability, delivery, returns and customer service. Please review the retailer's terms before completing an order.</p>
+    </section>
+
+    <section class="info-page" id="privacy">
+        <h2>Privacy Policy</h2>
+        <p>Football Hub aims to collect as little personal information as reasonably necessary to operate this website. The site's product search and category filters run in your browser.</p>
+        <h3>Saved products</h3>
+        <p>If you save a product, the saved product identifiers may be stored in your browser's local storage so they can remain available on your device. You can remove saved products using the saved-products button or clear this website's local storage in your browser settings.</p>
+        <h3>Cookies and analytics</h3>
+        <p>Google Analytics is not activated in this file until the website owner adds a valid GA4 Measurement ID. If analytics or other third-party services are enabled later, those services may process information according to their own policies and the site's applicable consent requirements.</p>
+        <h3>External websites</h3>
+        <p>When you follow a link to a retailer or ticket provider, you leave Football Hub. The external provider's privacy policy and terms then apply. We recommend reviewing those policies before sharing personal information or making a purchase.</p>
+        <h3>Policy updates</h3>
+        <p>This policy may be updated as the website changes. Please revisit this section for the latest version.</p>
+    </section>
+
+    <section class="info-page" id="contact">
+        <h2>Contact</h2>
+        <p>For product questions, order status, ticket delivery, refunds or returns, please contact the retailer or ticket provider from which you are purchasing. Football Hub does not process orders or issue tickets.</p>
+        <p>Website owner contact details have not yet been published here. No email address is provided because a verified contact address has not been supplied.</p>
+    </section>
+
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h2>FOOTBALL HUB</h2>
+                <p>Discover football products, deals, equipment, jerseys, boots and ticket opportunities from retailers and partners.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <a href="#products" data-filter="jerseys">Jerseys</a>
+                <a href="#products" data-filter="boots">Football Boots</a>
+                <a href="#products" data-filter="equipment">Equipment</a>
+                <a href="#ticketsSection" data-filter="tickets">Tickets</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Football</h4>
+                <a href="#products" data-filter="footballs">Footballs</a>
+                <a href="#products" data-filter="goalkeeper">Goalkeeper</a>
+                <a href="#products" data-filter="training">Training</a>
+                <a href="#products" data-filter="bags">Bags</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Football Hub</h4>
+                <a href="#about">About Us</a>
+                <a href="#affiliate-disclosure">Affiliate Disclosure</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© <span id="copyrightYear">2026</span> Football Hub</span>
+            <span>Independent football shopping &amp; discovery platform</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+"use strict";
+
+/* =========================================================
+   PRODUCT DATA
+   Existing Nike destinations are preserved.
+   Other destinations are real Amazon search pages, not
+   claimed affiliate links. Prices are not fabricated.
+========================================================= */
+
+const products = [
+    {
+        id:"barcelona-jersey",
+        name:"FC Barcelona 2026/27 Away Jersey",
+        category:"jerseys",
+        price:"Check price",
+        merchant:"Nike",
+        image:"https://static.nike.com/a/images/t_web_pdp_936_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a619a01c-1eeb-4b8b-9184-dc025dd8da19/NIK+26%2F27+M+STADIUM+REPLICA+JS.png",
+        url:"https://www.nike.com/t/fc-barcelona-2026-27-stadium-away-mens-kobe-dri-fit-soccer-replica-jersey-yT3tF8r4/II1912-505"
+    },
+    {
+        id:"nike-tiempo-maestro",
+        name:"Nike Tiempo Maestro Club",
+        category:"boots",
+        price:"Check price",
+        merchant:"Nike",
+        image:"https://static.nike.com/a/images/t_web_pdp_936_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b26d578d-8ed6-404f-93a4-9bac2be1a5a5/TIEMPO+MAESTRO+CLUB+FG%2FMG+T.png",
+        url:"https://www.nike.com/t/tiempo-maestro-club-multi-ground-low-top-soccer-cleats-kMDFqFVQ/IQ2328-901"
+    },
+    {
+        id:"training-top",
+        name:"Football Training Top",
+        category:"training",
+        price:"Check price",
+        merchant:"Amazon search",
+        image:"https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=85",
+        url:"https://www.amazon.com/s?k=football+training+top"
+    },
+    {
+        id:"football-shorts",
+        name:"Football Shorts",
+        category:"shorts",
+        price:"Check price",
+        merchant:"Amazon search",
+        image:"https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=1000&q=85",
+        url:"https://www.amazon.com/s?k=football+shorts"
+    },
+    {
+        id:"elite-boots",
+        name:"Football Boots",
+        category:"boots",
+        price:"Check price",
+        merchant:"Amazon search",
+        image:"https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1000&q=85",
+        url:"https://www.amazon.com/s?k=football+boots"
+    },
+    {
+        id:"firm-ground-boots",
+        name:"Firm Ground Football Boots",
+        category:"firm-ground",
+        price:"Check price",
+        merchant:"Amazon search",
+        image:"https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=1000&q=85",
+        url:"https://www.amazon.com/s?k=firm+ground+football+boots"
+    },
+    {
+        id:"artificial-ground-boots",
+        name:"Artificial Ground Football Boots",
+        category:"artificial-ground",
+        price:"Check price",
+        merchant:"Amazon search",
+        image:"https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=85",
+        url:"https://www.amazon.com/s?k=artificial+ground+football+boots"
+    },
+    {
+        id:"kids-boots",
+        name:"Kids Football Boots",
+        category:"kids-boots",
+        price:"Check price",
+        merchant:"Amazon search",
+        image:"https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1000&q=85",
+        url:"https://www.amazon.com/s?k=kids+football+boots"
+    },
+    {
+        id:"football",
+        name:"Professional Football",
+        category:"footballs",
+        price:"Check price",
+        merchant:"Amazon search",
+        image:"https://images.unsplash.com/photo-1552318965-6e6be7484ada?auto=format&fit=crop&w=1000&q=85",
+        url:"https://www.amazon.com/s?k=professional+football+soccer+ball"
+    },
+    {
+        id:"goalkeeper-gloves",
+        name:"Goalkeeper Gloves",
+        category:"goalkeeper",
+        price:"Check price",
+        merchant:"Amazon search",
+        image:"https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1000&q=85",
+        url:"https://www.amazon.com/s?k=goalkeeper+gloves"
+    },
+    {
+        id:"training-equipment",
+        name:"Football Training Equipment",
+        category:"training-equipment",
+        price:"Check price",
+        merchant:"Amazon search",
+        image:"https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1000&q=85",
+        url:"https://www.amazon.com/s?k=football+training+equipment"
+    },
+    {
+        id:"football-bag",
+        name:"Football Bag",
+        category:"bags",
+        price:"Check price",
+        merchant:"Amazon search",
+        image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85",
+        url:"https://www.amazon.com/s?k=football+bag"
+    },
+    {
+        id:"football-scarf",
+        name:"Football Scarf",
+        category:"scarves",
+        price:"Check price",
+        merchant:"Amazon search",
+        image:"https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1000&q=85",
+        url:"https://www.amazon.com/s?k=football+scarf"
+    },
+    {
+        id:"football-cap",
+        name:"Football Cap",
+        category:"caps",
+        price:"Check price",
+        merchant:"Amazon search",
+        image:"https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=1000&q=85",
+        url:"https://www.amazon.com/s?k=football+cap"
+    },
+    {
+        id:"football-accessories",
+        name:"Football Accessories",
+        category:"accessories",
+        price:"Check price",
+        merchant:"Amazon search",
+        image:"https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1000&q=85",
+        url:"https://www.amazon.com/s?k=football+accessories"
+    },
+    {
+        id:"football-gift",
+        name:"Football Gifts",
+        category:"gifts",
+        price:"Check price",
+        merchant:"Amazon search",
+        image:"https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=85",
+        url:"https://www.amazon.com/s?k=football+gifts"
+    }
+];
+
+/* Categories missing from the product list still get a useful
+   Amazon search destination instead of a broken empty result. */
+const categorySearches = {
+    socks:["Football Socks","https://www.amazon.com/s?k=football+socks"],
+    tracksuits:["Football Tracksuits","https://www.amazon.com/s?k=football+tracksuit"],
+    jackets:["Football Jackets","https://www.amazon.com/s?k=football+jacket"],
+    indoor:["Indoor Football Shoes","https://www.amazon.com/s?k=indoor+football+shoes"],
+    turf:["Turf Football Shoes","https://www.amazon.com/s?k=turf+football+shoes"],
+    "shin-guards":["Football Shin Guards","https://www.amazon.com/s?k=football+shin+guards"],
+    cones:["Football Training Cones","https://www.amazon.com/s?k=football+training+cones"],
+    goals:["Football Goals","https://www.amazon.com/s?k=football+goals"],
+    backpacks:["Football Backpacks","https://www.amazon.com/s?k=football+backpack"]
+};
+
+/* =========================================================
+   ANALYTICS
+========================================================= */
+
+function trackOutboundClick(merchant, category, itemName) {
+    if (typeof window.gtag !== "function") return;
+    window.gtag("event", "outbound_click", {
+        merchant:merchant,
+        category:category,
+        item_name:itemName
+    });
+}
+
+/* =========================================================
+   SAVED PRODUCTS
+========================================================= */
+
+const SAVED_KEY = "footballHubSavedProducts";
+
+function getSavedProducts() {
+    try {
+        const saved = JSON.parse(localStorage.getItem(SAVED_KEY) || "[]");
+        return Array.isArray(saved) ? saved.filter(id => typeof id === "string") : [];
+    } catch (error) {
+        return [];
+    }
+}
+
+function saveProducts(ids) {
+    try {
+        localStorage.setItem(SAVED_KEY, JSON.stringify(ids));
+        return true;
+    } catch (error) {
+        return false;
+    }
+}
+
+let savedOnly = false;
+let currentFilter = "all";
+let currentSearch = "";
+
+const productGrid = document.getElementById("productGrid");
+const productsTitle = document.getElementById("productsTitle");
+const filterStatus = document.getElementById("filterStatus");
+const filterText = document.getElementById("filterText");
+const searchInput = document.getElementById("searchInput");
+const searchResultsLabel = document.getElementById("searchResultsLabel");
+
+function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, char => ({
+        "&":"&amp;",
+        "<":"&lt;",
+        ">":"&gt;",
+        '"':"&quot;",
+        "'":"&#39;"
+    })[char]);
+}
+
+function categoryLabel(category) {
+    return String(category)
+        .replaceAll("-", " ")
+        .replace(/\b\w/g, char => char.toUpperCase());
+}
+
+function updateSavedButton() {
+    const button = document.getElementById("savedBtn");
+    const count = getSavedProducts().length;
+    button.textContent = count ? "♥" : "♡";
+    button.setAttribute("aria-label", count ? `Saved products (${count})` : "Show saved products");
+    button.title = count ? `Saved products (${count})` : "Saved products";
+}
+
+function makeProductCard(product) {
+    const saved = getSavedProducts().includes(product.id);
+    const card = document.createElement("article");
+    card.className = "product-card";
+
+    card.innerHTML = `
+        <div class="product-image">
+            <img src="${escapeHTML(product.image)}"
+                 alt="${escapeHTML(product.name)}"
+                 loading="lazy">
+            <button class="save-btn ${saved ? "saved" : ""}"
+                    type="button"
+                    data-save="${escapeHTML(product.id)}"
+                    aria-label="${saved ? "Remove saved product" : "Save product"}"
+                    aria-pressed="${saved ? "true" : "false"}">${saved ? "♥" : "♡"}</button>
+        </div>
+        <div class="product-info">
+            <div class="product-category">${escapeHTML(categoryLabel(product.category))}</div>
+            <div class="product-name">${escapeHTML(product.name)}</div>
+            <div class="product-meta">
+                <div class="product-price">${escapeHTML(product.price)}</div>
+                <div class="product-merchant">${escapeHTML(product.merchant)}</div>
+            </div>
+            <a class="product-link"
+               href="${escapeHTML(product.url)}"
+               target="_blank"
+               rel="nofollow noopener"
+               data-outbound="true">VIEW PRODUCT →</a>
+        </div>`;
+
+    return card;
+}
+
+function renderProducts() {
+    const savedIds = getSavedProducts();
+
+    let result = products.filter(product => {
+        const matchesFilter =
+            currentFilter === "all" ||
+            currentFilter === "deals" ||
+            product.category === currentFilter ||
+            (currentFilter === "equipment" &&
+                ["footballs","goalkeeper","training-equipment"].includes(product.category));
+
+        const searchable = `${product.name} ${product.category} ${product.merchant}`.toLowerCase();
+        const matchesSearch = !currentSearch || searchable.includes(currentSearch.toLowerCase());
+        const matchesSaved = !savedOnly || savedIds.includes(product.id);
+
+        return matchesFilter && matchesSearch && matchesSaved;
+    });
+
+    productGrid.replaceChildren();
+
+    if (!result.length) {
+        const empty = document.createElement("div");
+        empty.className = "empty-results";
+
+        const fallback = !savedOnly && !currentSearch ? categorySearches[currentFilter] : null;
+
+        if (fallback) {
+            empty.innerHTML = `
+                No products are listed in this category yet.
+                <br>Search available products on Amazon.
+                <br><a href="${escapeHTML(fallback[1])}" target="_blank" rel="nofollow noopener">SEARCH ${escapeHTML(fallback[0].toUpperCase())} →</a>`;
+        } else if (savedOnly) {
+            empty.textContent = "You have no saved products yet. Press the heart on a product to save it.";
+        } else {
+            empty.textContent = "No products found. Try another search or category.";
+        }
+
+        productGrid.appendChild(empty);
+    } else {
+        result.forEach(product => productGrid.appendChild(makeProductCard(product)));
+    }
+
+    updateSavedButton();
+
+    if (searchResultsLabel) {
+        searchResultsLabel.textContent = currentSearch
+            ? `${result.length} matching product(s)`
+            : "Search jerseys, boots, equipment and accessories...";
+    }
+}
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+function setFilter(filter) {
+    if (["tickets","premier-league","champions-league","la-liga","serie-a","ligue-1"].includes(filter)) {
+        savedOnly = false;
+        currentSearch = "";
+        currentFilter = "all";
+        searchInput.value = "";
+        renderProducts();
+        closeCategories();
+
+        const tickets = document.getElementById("ticketsSection");
+        tickets.scrollIntoView({behavior:"smooth", block:"start"});
+        return;
+    }
+
+    savedOnly = false;
+    currentFilter = filter;
+    currentSearch = "";
+    searchInput.value = "";
+
+    productsTitle.textContent = filter === "all"
+        ? "Today's Football Deals"
+        : filter === "deals"
+            ? "Football Deals"
+            : categoryLabel(filter);
+
+    if (filter === "all") {
+        filterStatus.classList.remove("active");
+    } else {
+        filterText.textContent = "Showing: " + categoryLabel(filter);
+        filterStatus.classList.add("active");
+    }
+
+    renderProducts();
+    closeCategories();
+
+    document.getElementById("products").scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+    });
+}
+
+document.addEventListener("click", event => {
+    const filterButton = event.target.closest("[data-filter]");
+    if (!filterButton) return;
+
+    event.preventDefault();
+    setFilter(filterButton.dataset.filter);
+});
+
+document.getElementById("clearFilter").addEventListener("click", () => {
+    setFilter("all");
+});
+
+/* =========================================================
+   SAVED BUTTONS
+========================================================= */
+
+productGrid.addEventListener("click", event => {
+    const saveButton = event.target.closest("[data-save]");
+    if (!saveButton) return;
+
+    const id = saveButton.dataset.save;
+    let saved = getSavedProducts();
+
+    if (saved.includes(id)) {
+        saved = saved.filter(savedId => savedId !== id);
+    } else {
+        saved.push(id);
+    }
+
+    saveProducts(saved);
+    renderProducts();
+});
+
+document.getElementById("savedBtn").addEventListener("click", () => {
+    savedOnly = !savedOnly;
+    currentFilter = "all";
+    currentSearch = "";
+    searchInput.value = "";
+
+    productsTitle.textContent = savedOnly ? "Saved Products" : "Today's Football Deals";
+    filterText.textContent = savedOnly ? "Showing your saved products" : "Showing products";
+    filterStatus.classList.toggle("active", savedOnly);
+
+    renderProducts();
+
+    document.getElementById("products").scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+    });
+});
+
+/* =========================================================
+   SEARCH PANEL
+========================================================= */
+
+const searchBtn = document.getElementById("searchBtn");
+const searchPanel = document.getElementById("searchPanel");
+const searchClose = document.getElementById("searchClose");
+
+searchBtn.addEventListener("click", () => {
+    const opening = !searchPanel.classList.contains("active");
+    searchPanel.classList.toggle("active", opening);
+
+    if (opening) {
+        closeCategories();
+        setTimeout(() => searchInput.focus(), 50);
+    }
+});
+
+searchClose.addEventListener("click", () => {
+    searchPanel.classList.remove("active");
+});
+
+searchInput.addEventListener("input", () => {
+    currentSearch = searchInput.value.trim();
+    currentFilter = "all";
+    savedOnly = false;
+
+    productsTitle.textContent = currentSearch ? "Search Results" : "Today's Football Deals";
+
+    if (currentSearch) {
+        filterText.textContent = `Search: ${currentSearch}`;
+        filterStatus.classList.add("active");
+
+        if (typeof window.gtag === "function") {
+            window.gtag("event", "search", {search_term:currentSearch});
+        }
+    } else {
+        filterStatus.classList.remove("active");
+    }
+
+    renderProducts();
+});
+
+/* =========================================================
+   CATEGORY MENU
+========================================================= */
+
+const categoryOverlay = document.getElementById("categoryOverlay");
+const desktopCategories = document.getElementById("desktopCategories");
+const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+const categoryClose = document.getElementById("categoryClose");
+
+function openCategories() {
+    categoryOverlay.classList.add("active");
+    searchPanel.classList.remove("active");
+}
+
+function closeCategories() {
+    categoryOverlay.classList.remove("active");
+}
+
+desktopCategories.addEventListener("click", openCategories);
+mobileMenuBtn.addEventListener("click", openCategories);
+categoryClose.addEventListener("click", closeCategories);
+
+categoryOverlay.addEventListener("click", event => {
+    if (event.target === categoryOverlay) closeCategories();
+});
+
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        closeCategories();
+        searchPanel.classList.remove("active");
+    }
+});
+
+/* =========================================================
+   HERO SLIDER
+========================================================= */
+
+const heroTrack = document.getElementById("heroTrack");
+const heroSlides = Array.from(document.querySelectorAll(".hero-slide"));
+const heroDots = document.getElementById("heroDots");
+const hero = document.getElementById("hero");
+
+let heroIndex = 0;
+let heroTimer = null;
+let heroPaused = false;
+
+heroSlides.forEach((slide, index) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "hero-dot" + (index === 0 ? " active" : "");
+    dot.setAttribute("aria-label", `Go to slide ${index + 1}`);
+
+    dot.addEventListener("click", () => {
+        goToHero(index);
+        restartHero();
+    });
+
+    heroDots.appendChild(dot);
+});
+
+function goToHero(index) {
+    heroIndex = (index + heroSlides.length) % heroSlides.length;
+    heroTrack.style.transform = `translateX(-${heroIndex * 100}%)`;
+
+    heroDots.querySelectorAll(".hero-dot").forEach((dot, i) => {
+        dot.classList.toggle("active", i === heroIndex);
+    });
+}
+
+function nextHero() {
+    goToHero(heroIndex + 1);
+}
+
+function previousHero() {
+    goToHero(heroIndex - 1);
+}
+
+function stopHero() {
+    if (heroTimer) clearInterval(heroTimer);
+    heroTimer = null;
+}
+
+function startHero() {
+    stopHero();
+    if (!heroPaused) {
+        heroTimer = setInterval(nextHero, 5000);
+    }
+}
+
+function restartHero() {
+    startHero();
+}
+
+document.getElementById("heroNext").addEventListener("click", nextHero);
+document.getElementById("heroPrev").addEventListener("click", previousHero);
+
+hero.addEventListener("mouseenter", () => {
+    heroPaused = true;
+    stopHero();
+});
+
+hero.addEventListener("mouseleave", () => {
+    heroPaused = false;
+    startHero();
+});
+
+hero.addEventListener("focusin", stopHero);
+hero.addEventListener("focusout", () => {
+    heroPaused = false;
+    startHero();
+});
+
+let touchStartX = 0;
+
+hero.addEventListener("touchstart", event => {
+    touchStartX = event.changedTouches[0].screenX;
+}, {passive:true});
+
+hero.addEventListener("touchend", event => {
+    const touchEndX = event.changedTouches[0].screenX;
+    const difference = touchStartX - touchEndX;
+
+    if (Math.abs(difference) < 50) return;
+
+    if (difference > 0) nextHero();
+    else previousHero();
+
+    restartHero();
+}, {passive:true});
+
+/* =========================================================
+   FOOTER LINKS, YEAR, INITIAL LOAD
+========================================================= */
+
+document.getElementById("copyrightYear").textContent = new Date().getFullYear();
+
+/* Footer category links scroll to the product area and apply
+   the filter through the same shared filter handler. */
+document.querySelectorAll('a[href="#products"][data-filter]').forEach(link => {
+    link.addEventListener("click", () => {
+        closeCategories();
+    });
+});
+
+renderProducts();
+startHero();
+</script>
+
+</body>
+</html>
