@@ -1,0 +1,3405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Football Hub — Football Gear, Clothing & Equipment</title>
+<meta name="description" content="Discover football clothing, football boots, training equipment, goalkeeper gear, accessories and offers from trusted retailers with Football Hub.">
+<meta name="robots" content="index,follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#101114;
+  --muted:#74777d;
+  --line:#e8e9eb;
+  --paper:#ffffff;
+  --soft:#f5f6f7;
+  --accent:#4389f5;
+  --accent-dark:#2467d2;
+  --dark:#111318;
+  --radius:5px;
+  --page:1500px;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:110px;
+}
+
+body{
+  font-family:Inter,Arial,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  overflow-x:hidden;
+}
+
+body.menu-open,
+body.search-open{
+  overflow:hidden;
+}
+
+button,input{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible{
+  outline:3px solid rgba(67,137,245,.65);
+  outline-offset:3px;
+}
+
+.container{
+  width:min(var(--page),100%);
+  margin-inline:auto;
+  padding-inline:30px;
+}
+
+.announcement{
+  min-height:32px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:7px 14px;
+  background:#111318;
+  color:#fff;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.45px;
+  text-align:center;
+}
+
+/* HEADER */
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.98);
+  border-bottom:1px solid var(--line);
+}
+
+.header-main{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  gap:30px;
+}
+
+.brand-logo{
+  flex-shrink:0;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-size:19px;
+  font-weight:900;
+  letter-spacing:-1px;
+}
+
+.logo-mark{
+  width:38px;
+  height:38px;
+  display:grid;
+  place-items:center;
+  background:var(--ink);
+  color:#fff;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:-.5px;
+}
+
+.brand-logo span:last-child{
+  color:var(--accent);
+}
+
+.desktop-nav{
+  display:flex;
+  align-items:center;
+  gap:23px;
+  flex:1;
+}
+
+.nav-item{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  font-size:11px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.35px;
+  white-space:nowrap;
+  background:none;
+  border:0;
+  color:#25262a;
+}
+
+.nav-item::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:20px;
+  height:2px;
+  background:var(--accent);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .2s;
+}
+
+.nav-item:hover::after,
+.nav-item:focus-visible::after{
+  transform:scaleX(1);
+}
+
+.nav-item.sale{
+  color:#d63838;
+}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+
+.icon-button{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  position:relative;
+  border:0;
+  border-radius:50%;
+  background:transparent;
+  color:var(--ink);
+  font-size:21px;
+}
+
+.icon-button:hover{
+  background:var(--soft);
+}
+
+.saved-count{
+  position:absolute;
+  top:2px;
+  right:1px;
+  min-width:16px;
+  height:16px;
+  display:none;
+  place-items:center;
+  border-radius:20px;
+  padding:0 4px;
+  background:var(--accent);
+  color:#fff;
+  font-size:9px;
+  font-weight:800;
+}
+
+.saved-count.active{
+  display:grid;
+}
+
+.mobile-menu-button{
+  display:none;
+}
+
+.secondary-nav{
+  border-top:1px solid #f0f0f0;
+  background:#fff;
+}
+
+.secondary-nav-inner{
+  min-height:42px;
+  display:flex;
+  align-items:center;
+  gap:25px;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+
+.secondary-nav-inner::-webkit-scrollbar{
+  display:none;
+}
+
+.secondary-nav a,
+.secondary-nav button{
+  flex-shrink:0;
+  border:0;
+  background:none;
+  color:#5d6066;
+  font-size:10px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.secondary-nav a:hover,
+.secondary-nav button:hover{
+  color:var(--accent);
+}
+
+/* SEARCH */
+
+.search-panel{
+  position:fixed;
+  z-index:1200;
+  inset:0;
+  display:none;
+  background:rgba(12,14,18,.58);
+  padding:100px 20px 20px;
+}
+
+.search-panel.active{
+  display:block;
+}
+
+.search-window{
+  max-width:780px;
+  margin:0 auto;
+  padding:24px;
+  background:#fff;
+  box-shadow:0 20px 70px rgba(0,0,0,.18);
+}
+
+.search-heading{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  margin-bottom:18px;
+}
+
+.search-heading strong{
+  font-size:18px;
+  font-weight:800;
+}
+
+.search-input-wrap{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  border-bottom:2px solid var(--ink);
+}
+
+.search-input-wrap input{
+  min-width:0;
+  flex:1;
+  padding:15px 0;
+  border:0;
+  outline:0;
+  background:transparent;
+  color:var(--ink);
+  font-size:19px;
+}
+
+.search-hint{
+  padding-top:14px;
+  color:var(--muted);
+  font-size:11px;
+}
+
+/* MOBILE MENU */
+
+.mobile-menu{
+  position:fixed;
+  z-index:1150;
+  inset:0;
+  display:none;
+  overflow-y:auto;
+  background:#fff;
+}
+
+.mobile-menu.active{
+  display:block;
+}
+
+.mobile-menu-top{
+  min-height:70px;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid var(--line);
+}
+
+.mobile-menu-content{
+  padding:12px 20px 35px;
+}
+
+.mobile-menu-label{
+  margin:22px 0 10px;
+  color:var(--muted);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1.3px;
+  text-transform:uppercase;
+}
+
+.mobile-menu-link{
+  width:100%;
+  min-height:50px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid #eee;
+  background:#fff;
+  text-align:left;
+  font-size:14px;
+  font-weight:750;
+}
+
+.mobile-menu-link span:last-child{
+  color:#999;
+  font-size:18px;
+}
+
+.mobile-menu-feature{
+  margin-top:22px;
+  padding:20px;
+  background:var(--soft);
+}
+
+.mobile-menu-feature strong{
+  display:block;
+  margin-bottom:7px;
+  font-size:16px;
+}
+
+.mobile-menu-feature p{
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.7;
+}
+
+/* HERO */
+
+.hero{
+  position:relative;
+  width:100%;
+  height:clamp(480px,48vw,690px);
+  overflow:hidden;
+  background:#15171c;
+  color:#fff;
+}
+
+.hero-track{
+  display:flex;
+  height:100%;
+  transition:transform .55s cubic-bezier(.2,.7,.2,1);
+  will-change:transform;
+}
+
+.hero-slide{
+  position:relative;
+  min-width:100%;
+  height:100%;
+  overflow:hidden;
+  background:#17191e;
+}
+
+.hero-slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  opacity:.9;
+}
+
+.hero-slide::before{
+  content:"";
+  position:absolute;
+  z-index:1;
+  inset:0;
+  background:linear-gradient(
+    90deg,
+    rgba(0,0,0,.78) 0%,
+    rgba(0,0,0,.55) 38%,
+    rgba(0,0,0,.13) 76%,
+    rgba(0,0,0,.05) 100%
+  );
+}
+
+.hero-content{
+  position:absolute;
+  z-index:2;
+  left:max(6%,calc((100% - 1380px)/2));
+  top:50%;
+  transform:translateY(-47%);
+  width:min(620px,72%);
+}
+
+.hero-kicker{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:20px;
+  color:#fff;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.hero-kicker::before{
+  content:"";
+  width:26px;
+  height:2px;
+  background:#73a9ff;
+}
+
+.hero-title{
+  max-width:650px;
+  margin-bottom:18px;
+  font-size:clamp(42px,6.3vw,86px);
+  line-height:.96;
+  font-weight:900;
+  letter-spacing:-4px;
+  text-transform:uppercase;
+}
+
+.hero-description{
+  max-width:470px;
+  margin-bottom:28px;
+  color:rgba(255,255,255,.84);
+  font-size:14px;
+  line-height:1.85;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:12px;
+}
+
+.primary-button,
+.outline-button{
+  min-height:47px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  padding:0 21px;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  transition:background .2s,color .2s,border-color .2s;
+}
+
+.primary-button{
+  border:1px solid #fff;
+  background:#fff;
+  color:#111;
+}
+
+.primary-button:hover{
+  border-color:var(--accent);
+  background:var(--accent);
+  color:#fff;
+}
+
+.outline-button{
+  border:1px solid rgba(255,255,255,.55);
+  background:transparent;
+  color:#fff;
+}
+
+.outline-button:hover{
+  background:#fff;
+  color:#111;
+}
+
+.hero-arrow{
+  position:absolute;
+  z-index:5;
+  top:50%;
+  transform:translateY(-50%);
+  width:45px;
+  height:45px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.45);
+  border-radius:50%;
+  background:rgba(0,0,0,.2);
+  color:#fff;
+  font-size:27px;
+  line-height:1;
+  transition:background .2s,color .2s;
+}
+
+.hero-arrow:hover{
+  background:#fff;
+  color:#111;
+}
+
+.hero-prev{
+  left:22px;
+}
+
+.hero-next{
+  right:22px;
+}
+
+.hero-bottom{
+  position:absolute;
+  z-index:6;
+  right:6%;
+  bottom:28px;
+  left:6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.hero-counter{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  font-size:11px;
+  font-weight:800;
+}
+
+.hero-counter span:last-child{
+  color:rgba(255,255,255,.55);
+}
+
+.hero-dots{
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+
+.hero-dot{
+  width:24px;
+  height:3px;
+  border:0;
+  background:rgba(255,255,255,.4);
+  transition:width .2s,background .2s;
+}
+
+.hero-dot.active{
+  width:40px;
+  background:#fff;
+}
+
+/* DISCLOSURE */
+
+.affiliate-note{
+  padding:12px 18px;
+  background:#f6f7f8;
+  color:#6b6e74;
+  font-size:10px;
+  line-height:1.7;
+  text-align:center;
+}
+
+/* SECTION BASICS */
+
+main{
+  padding-top:58px;
+  padding-bottom:35px;
+}
+
+.section{
+  margin-bottom:82px;
+}
+
+.section-heading{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:24px;
+}
+
+.section-eyebrow{
+  margin-bottom:8px;
+  color:var(--accent-dark);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+}
+
+.section-title{
+  font-size:clamp(25px,3vw,36px);
+  line-height:1.1;
+  font-weight:850;
+  letter-spacing:-1.5px;
+}
+
+.section-description{
+  max-width:570px;
+  margin-top:9px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.8;
+}
+
+.text-link{
+  flex-shrink:0;
+  padding-bottom:5px;
+  border:0;
+  border-bottom:1px solid var(--ink);
+  background:transparent;
+  font-size:10px;
+  font-weight:850;
+  letter-spacing:.3px;
+  text-transform:uppercase;
+}
+
+.text-link:hover{
+  color:var(--accent-dark);
+  border-color:var(--accent-dark);
+}
+
+/* CATEGORY GRID */
+
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:13px;
+}
+
+.category-card{
+  position:relative;
+  min-width:0;
+  min-height:240px;
+  overflow:hidden;
+  background:#e9eaec;
+  color:#fff;
+}
+
+.category-card img{
+  width:100%;
+  height:100%;
+  min-height:240px;
+  position:absolute;
+  inset:0;
+  object-fit:cover;
+  transition:transform .4s;
+}
+
+.category-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(0deg,rgba(0,0,0,.78),rgba(0,0,0,.02) 75%);
+}
+
+.category-card:hover img{
+  transform:scale(1.05);
+}
+
+.category-card-info{
+  position:absolute;
+  z-index:2;
+  right:18px;
+  bottom:18px;
+  left:18px;
+}
+
+.category-card-info span{
+  display:block;
+  margin-bottom:6px;
+  color:rgba(255,255,255,.75);
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.category-card-info h3{
+  font-size:20px;
+  line-height:1.2;
+  font-weight:850;
+  letter-spacing:-.5px;
+}
+
+.category-card-info p{
+  margin-top:8px;
+  font-size:10px;
+  font-weight:750;
+}
+
+/* FEATURE STRIP */
+
+.feature-strip{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.feature-tile{
+  position:relative;
+  min-height:300px;
+  overflow:hidden;
+  background:#e9eaec;
+  color:#fff;
+}
+
+.feature-tile img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .4s;
+}
+
+.feature-tile::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.08));
+}
+
+.feature-tile:hover img{
+  transform:scale(1.04);
+}
+
+.feature-tile-content{
+  position:absolute;
+  z-index:2;
+  top:50%;
+  left:28px;
+  width:65%;
+  transform:translateY(-50%);
+}
+
+.feature-tile-content span{
+  display:block;
+  margin-bottom:12px;
+  color:#d6e5ff;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+}
+
+.feature-tile-content h3{
+  margin-bottom:12px;
+  font-size:clamp(23px,3vw,36px);
+  line-height:1.08;
+  font-weight:900;
+  letter-spacing:-1.2px;
+}
+
+.feature-tile-content p{
+  max-width:320px;
+  margin-bottom:20px;
+  color:rgba(255,255,255,.82);
+  font-size:11px;
+  line-height:1.7;
+}
+
+/* BRAND LOGOS */
+
+.brand-grid{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  border-top:1px solid var(--line);
+  border-left:1px solid var(--line);
+}
+
+.brand-card{
+  min-height:120px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  border:0;
+  border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:#fff;
+  transition:background .2s;
+}
+
+.brand-card:hover{
+  background:#f6f7f9;
+}
+
+.brand-card img{
+  width:100%;
+  max-width:105px;
+  height:44px;
+  object-fit:contain;
+}
+
+.brand-fallback{
+  display:none;
+  font-size:16px;
+  font-weight:900;
+  letter-spacing:-.5px;
+  text-align:center;
+}
+
+/* FILTER BAR */
+
+.filter-toolbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  margin-bottom:22px;
+  padding:12px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.filter-left{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.filter-chip{
+  min-height:32px;
+  padding:0 12px;
+  border:1px solid #dedfe2;
+  border-radius:2px;
+  background:#fff;
+  color:#55585e;
+  font-size:10px;
+  font-weight:750;
+  white-space:nowrap;
+}
+
+.filter-chip:hover,
+.filter-chip.active{
+  border-color:var(--ink);
+  background:var(--ink);
+  color:#fff;
+}
+
+.result-count{
+  color:var(--muted);
+  font-size:10px;
+  white-space:nowrap;
+}
+
+.clear-filters{
+  display:none;
+  border:0;
+  background:none;
+  color:var(--accent-dark);
+  font-size:10px;
+  font-weight:800;
+  text-decoration:underline;
+}
+
+.clear-filters.active{
+  display:block;
+}
+
+/* PRODUCT GRID */
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:32px 14px;
+}
+
+.product-card{
+  position:relative;
+  min-width:0;
+}
+
+.product-image{
+  position:relative;
+  aspect-ratio:4/4.5;
+  overflow:hidden;
+  background:#f1f2f3;
+}
+
+.product-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .4s;
+}
+
+.product-card:hover .product-image img{
+  transform:scale(1.04);
+}
+
+.product-tag{
+  position:absolute;
+  top:10px;
+  left:10px;
+  z-index:2;
+  padding:7px 9px;
+  background:#fff;
+  color:#17181b;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+}
+
+.product-tag.sale{
+  background:#e63946;
+  color:#fff;
+}
+
+.save-button{
+  position:absolute;
+  z-index:3;
+  top:9px;
+  right:9px;
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  border:0;
+  border-radius:50%;
+  background:#fff;
+  color:#25262a;
+  font-size:19px;
+}
+
+.save-button.saved{
+  color:#e03a4e;
+}
+
+.product-info{
+  padding-top:12px;
+}
+
+.product-brand{
+  margin-bottom:6px;
+  color:#777b81;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+}
+
+.product-name{
+  min-height:38px;
+  font-size:12px;
+  font-weight:750;
+  line-height:1.55;
+}
+
+.product-detail{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  margin-top:8px;
+}
+
+.product-price{
+  font-size:12px;
+  font-weight:850;
+}
+
+.product-price.unknown{
+  color:#74777d;
+  font-size:10px;
+  font-weight:650;
+}
+
+.product-merchant{
+  overflow:hidden;
+  color:#85878c;
+  font-size:9px;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.product-link{
+  width:100%;
+  min-height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  margin-top:12px;
+  border:1px solid #17181b;
+  background:#fff;
+  color:#17181b;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.35px;
+  text-transform:uppercase;
+  transition:background .2s,color .2s;
+}
+
+.product-link:hover{
+  background:#17181b;
+  color:#fff;
+}
+
+.empty-state{
+  grid-column:1/-1;
+  padding:65px 15px;
+  text-align:center;
+}
+
+.empty-state strong{
+  display:block;
+  margin-bottom:8px;
+  font-size:17px;
+}
+
+.empty-state p{
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* TICKETS */
+
+.ticket-section{
+  padding:35px;
+  background:#f4f5f6;
+}
+
+.ticket-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:13px;
+}
+
+.ticket-card{
+  padding:23px;
+  background:#fff;
+}
+
+.ticket-label{
+  color:var(--accent-dark);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.ticket-card h3{
+  margin:12px 0 9px;
+  font-size:19px;
+  font-weight:850;
+  letter-spacing:-.5px;
+}
+
+.ticket-card p{
+  min-height:38px;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.7;
+}
+
+.ticket-link{
+  min-height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:20px;
+  padding:0 12px;
+  background:#111318;
+  color:#fff;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.4px;
+}
+
+.ticket-link:hover{
+  background:var(--accent);
+}
+
+/* NEWSLETTER */
+
+.newsletter{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:35px;
+  align-items:center;
+  padding:35px;
+  background:#111318;
+  color:#fff;
+}
+
+.newsletter h2{
+  margin-bottom:10px;
+  font-size:clamp(24px,3vw,34px);
+  line-height:1.1;
+  font-weight:900;
+  letter-spacing:-1px;
+}
+
+.newsletter p{
+  max-width:520px;
+  color:#c2c4c9;
+  font-size:11px;
+  line-height:1.8;
+}
+
+.newsletter-form{
+  display:flex;
+  gap:8px;
+}
+
+.newsletter-form input{
+  min-width:0;
+  flex:1;
+  height:45px;
+  padding:0 12px;
+  border:1px solid #44474e;
+  border-radius:0;
+  background:#1a1c22;
+  color:#fff;
+  font-size:11px;
+}
+
+.newsletter-form button{
+  flex-shrink:0;
+  padding:0 16px;
+  background:#fff;
+  color:#111;
+  font-size:9px;
+  font-weight:900;
+}
+
+.newsletter-message{
+  grid-column:1/-1;
+  color:#d9e6ff;
+  font-size:11px;
+}
+
+/* FOOTER */
+
+.site-footer{
+  margin-top:35px;
+  border-top:1px solid var(--line);
+}
+
+.footer-main{
+  display:grid;
+  grid-template-columns:1.7fr repeat(3,1fr);
+  gap:40px;
+  padding-top:55px;
+  padding-bottom:45px;
+}
+
+.footer-about p{
+  max-width:350px;
+  margin-top:15px;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.9;
+}
+
+.footer-column h3{
+  margin-bottom:17px;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+}
+
+.footer-column a,
+.footer-column button{
+  display:block;
+  margin-bottom:12px;
+  border:0;
+  background:none;
+  color:#696c72;
+  font-size:11px;
+  text-align:left;
+}
+
+.footer-column a:hover,
+.footer-column button:hover{
+  color:var(--accent-dark);
+}
+
+.footer-disclosure{
+  padding:18px 0;
+  border-top:1px solid var(--line);
+  color:#767980;
+  font-size:10px;
+  line-height:1.8;
+}
+
+.footer-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding-top:18px;
+  padding-bottom:22px;
+  border-top:1px solid var(--line);
+  color:#85878c;
+  font-size:9px;
+}
+
+/* BACK TO TOP */
+
+.back-to-top{
+  position:fixed;
+  z-index:800;
+  right:20px;
+  bottom:20px;
+  width:42px;
+  height:42px;
+  display:none;
+  place-items:center;
+  border:0;
+  background:#111318;
+  color:#fff;
+  font-size:20px;
+  box-shadow:0 4px 18px rgba(0,0,0,.16);
+}
+
+.back-to-top.active{
+  display:grid;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+  .container{
+    padding-inline:22px;
+  }
+
+  .header-main{
+    gap:18px;
+  }
+
+  .desktop-nav{
+    gap:15px;
+  }
+
+  .nav-item{
+    font-size:10px;
+  }
+
+  .brand-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+
+  .product-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+
+  .category-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .category-card,
+  .category-card img{
+    min-height:260px;
+  }
+}
+
+@media(max-width:800px){
+  .announcement{
+    font-size:9px;
+  }
+
+  .header-main{
+    min-height:66px;
+  }
+
+  .desktop-nav{
+    display:none;
+  }
+
+  .mobile-menu-button{
+    display:grid;
+  }
+
+  .brand-logo{
+    font-size:17px;
+  }
+
+  .logo-mark{
+    width:35px;
+    height:35px;
+  }
+
+  .secondary-nav-inner{
+    min-height:39px;
+    gap:20px;
+  }
+
+  .hero{
+    height:600px;
+    max-height:75svh;
+    min-height:500px;
+  }
+
+  .hero-content{
+    left:7%;
+    width:80%;
+  }
+
+  .hero-title{
+    font-size:clamp(42px,8vw,65px);
+    letter-spacing:-2.5px;
+  }
+
+  .hero-description{
+    max-width:400px;
+    font-size:12px;
+  }
+
+  .hero-prev{
+    left:12px;
+  }
+
+  .hero-next{
+    right:12px;
+  }
+
+  .hero-arrow{
+    width:38px;
+    height:38px;
+    font-size:23px;
+  }
+
+  .container{
+    padding-inline:17px;
+  }
+
+  main{
+    padding-top:42px;
+  }
+
+  .section{
+    margin-bottom:60px;
+  }
+
+  .product-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:27px 11px;
+  }
+
+  .product-name{
+    font-size:12px;
+  }
+
+  .feature-strip{
+    grid-template-columns:1fr;
+  }
+
+  .feature-tile{
+    min-height:280px;
+  }
+
+  .ticket-grid{
+    grid-template-columns:1fr;
+  }
+
+  .ticket-section{
+    padding:25px 18px;
+  }
+
+  .newsletter{
+    grid-template-columns:1fr;
+    gap:22px;
+    padding:26px 20px;
+  }
+
+  .footer-main{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:30px 20px;
+  }
+
+  .footer-about{
+    grid-column:1/-1;
+  }
+}
+
+@media(max-width:480px){
+  .container{
+    padding-inline:13px;
+  }
+
+  .announcement{
+    padding-inline:9px;
+    font-size:8px;
+    letter-spacing:0;
+  }
+
+  .header-main{
+    gap:6px;
+  }
+
+  .brand-logo{
+    gap:7px;
+    font-size:15px;
+  }
+
+  .logo-mark{
+    width:31px;
+    height:31px;
+    font-size:11px;
+  }
+
+  .header-actions{
+    gap:0;
+  }
+
+  .icon-button{
+    width:36px;
+    height:36px;
+    font-size:19px;
+  }
+
+  .secondary-nav-inner{
+    gap:17px;
+  }
+
+  .secondary-nav a,
+  .secondary-nav button{
+    font-size:9px;
+  }
+
+  .hero{
+    height:570px;
+    min-height:490px;
+  }
+
+  .hero-slide img{
+    object-position:58% center;
+  }
+
+  .hero-slide::before{
+    background:linear-gradient(
+      90deg,
+      rgba(0,0,0,.77),
+      rgba(0,0,0,.42) 75%,
+      rgba(0,0,0,.15)
+    );
+  }
+
+  .hero-content{
+    left:7%;
+    width:84%;
+    top:47%;
+  }
+
+  .hero-kicker{
+    margin-bottom:16px;
+    font-size:9px;
+  }
+
+  .hero-title{
+    margin-bottom:16px;
+    font-size:43px;
+    line-height:.99;
+    letter-spacing:-2px;
+  }
+
+  .hero-description{
+    margin-bottom:22px;
+    font-size:11px;
+    line-height:1.8;
+  }
+
+  .primary-button,
+  .outline-button{
+    min-height:42px;
+    padding:0 13px;
+    font-size:9px;
+  }
+
+  .hero-bottom{
+    right:7%;
+    bottom:20px;
+    left:7%;
+  }
+
+  .hero-dot{
+    width:17px;
+  }
+
+  .hero-dot.active{
+    width:29px;
+  }
+
+  .section-heading{
+    align-items:flex-start;
+    margin-bottom:19px;
+  }
+
+  .section-title{
+    font-size:26px;
+    letter-spacing:-1px;
+  }
+
+  .section-description{
+    font-size:11px;
+  }
+
+  .section-heading .text-link{
+    margin-top:5px;
+    font-size:9px;
+  }
+
+  .category-grid{
+    gap:9px;
+  }
+
+  .category-card,
+  .category-card img{
+    min-height:190px;
+  }
+
+  .category-card-info{
+    right:11px;
+    bottom:13px;
+    left:11px;
+  }
+
+  .category-card-info h3{
+    font-size:15px;
+  }
+
+  .category-card-info span{
+    font-size:8px;
+  }
+
+  .category-card-info p{
+    font-size:9px;
+  }
+
+  .feature-tile{
+    min-height:240px;
+  }
+
+  .feature-tile-content{
+    left:20px;
+    width:76%;
+  }
+
+  .brand-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+
+  .brand-card{
+    min-height:88px;
+    padding:12px;
+  }
+
+  .brand-card img{
+    max-width:80px;
+    height:35px;
+  }
+
+  .filter-toolbar{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .filter-left{
+    gap:6px;
+  }
+
+  .filter-chip{
+    min-height:30px;
+    padding-inline:9px;
+    font-size:9px;
+  }
+
+  .product-grid{
+    gap:24px 9px;
+  }
+
+  .product-image{
+    aspect-ratio:4/4.7;
+  }
+
+  .product-tag{
+    top:7px;
+    left:7px;
+    padding:6px 7px;
+    font-size:7px;
+  }
+
+  .save-button{
+    top:6px;
+    right:6px;
+    width:30px;
+    height:30px;
+    font-size:17px;
+  }
+
+  .product-info{
+    padding-top:10px;
+  }
+
+  .product-brand{
+    font-size:8px;
+  }
+
+  .product-name{
+    min-height:36px;
+    font-size:11px;
+  }
+
+  .product-merchant{
+    display:none;
+  }
+
+  .product-price{
+    font-size:11px;
+  }
+
+  .product-link{
+    min-height:36px;
+    margin-top:10px;
+    font-size:8px;
+  }
+
+  .ticket-card{
+    padding:20px;
+  }
+
+  .newsletter-form{
+    flex-direction:column;
+  }
+
+  .newsletter-form button{
+    min-height:42px;
+  }
+
+  .footer-main{
+    gap:28px 14px;
+  }
+
+  .footer-bottom{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .search-panel{
+    padding:75px 10px 10px;
+  }
+
+  .search-window{
+    padding:18px;
+  }
+
+  .search-input-wrap input{
+    font-size:16px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,
+  *::before,
+  *::after{
+    scroll-behavior:auto!important;
+    animation-duration:.01ms!important;
+    transition-duration:.01ms!important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="announcement">
+  FOOTBALL GEAR, CLOTHING & EQUIPMENT — DISCOVER YOUR NEXT PICK
+</div>
+
+<header class="site-header">
+  <div class="container header-main">
+
+    <a href="#home" class="brand-logo" aria-label="Football Hub home">
+      <span class="logo-mark">FH</span>
+      <span>FOOTBALL <span>HUB</span></span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <button class="nav-item" data-filter="all">New In</button>
+      <button class="nav-item" data-filter="clothing">Clothing</button>
+      <button class="nav-item" data-filter="boots">Boots</button>
+      <button class="nav-item" data-filter="equipment">Equipment</button>
+      <button class="nav-item" data-filter="goalkeeper">Goalkeeper</button>
+      <button class="nav-item" data-filter="accessories">Accessories</button>
+      <button class="nav-item sale" data-filter="deals">Deals</button>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-button" id="searchButton" aria-label="Search products" title="Search">
+        ⌕
+      </button>
+
+      <button class="icon-button" id="savedButton" aria-label="View saved products" title="Saved products">
+        ♡
+        <span class="saved-count" id="savedCount">0</span>
+      </button>
+
+      <button class="icon-button mobile-menu-button" id="mobileMenuButton" aria-label="Open menu" aria-expanded="false">
+        ☰
+      </button>
+    </div>
+
+  </div>
+
+  <div class="secondary-nav">
+    <div class="container secondary-nav-inner">
+      <a href="#shop-categories">Shop All Categories</a>
+      <a href="#products">Latest Products</a>
+      <a href="#brands">Shop by Brand</a>
+      <a href="#football-boots">Football Boots</a>
+      <a href="#equipment">Training Equipment</a>
+      <a href="#tickets">Football Tickets</a>
+      <a href="#deals">Latest Deals</a>
+    </div>
+  </div>
+</header>
+
+<!-- SEARCH OVERLAY -->
+
+<div class="search-panel" id="searchPanel" aria-hidden="true">
+  <div class="search-window">
+    <div class="search-heading">
+      <strong>Search Football Hub</strong>
+      <button class="icon-button" id="closeSearchButton" aria-label="Close search">×</button>
+    </div>
+
+    <div class="search-input-wrap">
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="Search jerseys, boots, gloves, balls..."
+        autocomplete="off"
+        aria-label="Search football products"
+      >
+      <button class="icon-button" id="clearSearchButton" aria-label="Clear search">×</button>
+    </div>
+
+    <p class="search-hint" id="searchHint">
+      Search by product, category, brand or equipment type.
+    </p>
+  </div>
+</div>
+
+<!-- MOBILE MENU -->
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-top">
+    <a href="#home" class="brand-logo">
+      <span class="logo-mark">FH</span>
+      <span>FOOTBALL <span>HUB</span></span>
+    </a>
+    <button class="icon-button" id="closeMobileMenu" aria-label="Close menu">×</button>
+  </div>
+
+  <div class="mobile-menu-content">
+    <p class="mobile-menu-label">Explore Products</p>
+
+    <button class="mobile-menu-link" data-filter="all">
+      <span>New Arrivals</span><span>›</span>
+    </button>
+    <button class="mobile-menu-link" data-filter="clothing">
+      <span>Football Clothing</span><span>›</span>
+    </button>
+    <button class="mobile-menu-link" data-filter="boots">
+      <span>Football Boots</span><span>›</span>
+    </button>
+    <button class="mobile-menu-link" data-filter="equipment">
+      <span>Equipment & Training</span><span>›</span>
+    </button>
+    <button class="mobile-menu-link" data-filter="goalkeeper">
+      <span>Goalkeeper</span><span>›</span>
+    </button>
+    <button class="mobile-menu-link" data-filter="accessories">
+      <span>Accessories</span><span>›</span>
+    </button>
+    <button class="mobile-menu-link" data-filter="fans">
+      <span>Fans & Supporters</span><span>›</span>
+    </button>
+    <button class="mobile-menu-link" data-filter="deals">
+      <span>Latest Deals</span><span>›</span>
+    </button>
+
+    <p class="mobile-menu-label">Discover</p>
+
+    <a class="mobile-menu-link" href="#brands">
+      <span>Shop by Brand</span><span>›</span>
+    </a>
+    <a class="mobile-menu-link" href="#tickets">
+      <span>Football Tickets</span><span>›</span>
+    </a>
+
+    <div class="mobile-menu-feature">
+      <strong>Everything for the game.</strong>
+      <p>Discover football clothing, boots, equipment and accessories from third-party retailers.</p>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+
+<section class="hero" id="home" aria-label="Featured football categories">
+  <div class="hero-track" id="heroTrack">
+
+    <article class="hero-slide">
+      <img
+        src="/images/hero/jersyes.webp"
+        alt="Football clothing and jerseys"
+        fetchpriority="high"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=2000&q=85';"
+      >
+
+      <div class="hero-content">
+        <div class="hero-kicker">Football Clothing</div>
+        <h1 class="hero-title">WEAR<br>THE GAME.</h1>
+        <p class="hero-description">
+          Discover football jerseys, training wear, shorts and everyday football-inspired clothing from trusted retailers.
+        </p>
+        <div class="hero-actions">
+          <button class="primary-button" data-filter="clothing">Explore Clothing <span>→</span></button>
+          <button class="outline-button" data-filter="fans">Fan Wear <span>↗</span></button>
+        </div>
+      </div>
+    </article>
+
+    <article class="hero-slide">
+      <img
+        src="/images/hero/shoes.webp"
+        alt="Football boots for different playing surfaces"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=2000&q=85';"
+      >
+
+      <div class="hero-content">
+        <div class="hero-kicker">Football Boots</div>
+        <h2 class="hero-title">MADE FOR<br>YOUR GAME.</h2>
+        <p class="hero-description">
+          Explore boots for firm ground, artificial grass, turf and indoor football, with options for different playing styles.
+        </p>
+        <div class="hero-actions">
+          <button class="primary-button" data-filter="boots">Explore Boots <span>→</span></button>
+          <button class="outline-button" data-filter="kids-boots">Kids Boots <span>↗</span></button>
+        </div>
+      </div>
+    </article>
+
+    <article class="hero-slide">
+      <img
+        src="/images/hero/goalkeeper.webp"
+        alt="Football goalkeeper equipment"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=2000&q=85';"
+      >
+
+      <div class="hero-content">
+        <div class="hero-kicker">Equipment & Performance</div>
+        <h2 class="hero-title">READY<br>TO PLAY.</h2>
+        <p class="hero-description">
+          Find footballs, goalkeeper gloves, training accessories and equipment for practice and match day.
+        </p>
+        <div class="hero-actions">
+          <button class="primary-button" data-filter="equipment">Explore Equipment <span>→</span></button>
+          <button class="outline-button" data-filter="goalkeeper">Goalkeeper Gear <span>↗</span></button>
+        </div>
+      </div>
+    </article>
+
+    <article class="hero-slide">
+      <img
+        src="/images/hero/t-shirts.webp"
+        alt="Football fan clothing and accessories"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=2000&q=85';"
+      >
+
+      <div class="hero-content">
+        <div class="hero-kicker">Football Lifestyle</div>
+        <h2 class="hero-title">LIVE<br>THE GAME.</h2>
+        <p class="hero-description">
+          Discover fan wear, football bags, scarves, caps and accessories for supporters on and off the pitch.
+        </p>
+        <div class="hero-actions">
+          <button class="primary-button" data-filter="fans">Explore Fan Wear <span>→</span></button>
+          <button class="outline-button" data-filter="accessories">Accessories <span>↗</span></button>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <button class="hero-arrow hero-prev" id="heroPrev" aria-label="Previous hero slide">‹</button>
+  <button class="hero-arrow hero-next" id="heroNext" aria-label="Next hero slide">›</button>
+
+  <div class="hero-bottom">
+    <div class="hero-counter" aria-live="polite">
+      <span id="heroCurrent">01</span>
+      <span>/</span>
+      <span id="heroTotal">04</span>
+    </div>
+    <div class="hero-dots" id="heroDots" aria-label="Choose hero slide"></div>
+  </div>
+</section>
+
+<div class="affiliate-note">
+  Football Hub is an independent football discovery platform. Products are offered and sold by third-party retailers. We may earn a commission from qualifying purchases.
+</div>
+
+<main class="container">
+
+  <!-- SHOP BY CATEGORY -->
+
+  <section class="section" id="shop-categories">
+    <div class="section-heading">
+      <div>
+        <div class="section-eyebrow">Find your essentials</div>
+        <h2 class="section-title">Shop Football</h2>
+        <p class="section-description">
+          From match-day clothing to training essentials, explore football products by category.
+        </p>
+      </div>
+      <button class="text-link" data-filter="all">Explore All</button>
+    </div>
+
+    <div class="category-grid">
+
+      <a href="#products" class="category-card" data-filter="clothing">
+        <img
+          src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=85"
+          alt="Football clothing"
+          loading="lazy"
+        >
+        <div class="category-card-info">
+          <span>Match day & training</span>
+          <h3>Clothing</h3>
+          <p>Explore clothing →</p>
+        </div>
+      </a>
+
+      <a href="#products" class="category-card" data-filter="boots">
+        <img
+          src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=900&q=85"
+          alt="Football footwear"
+          loading="lazy"
+        >
+        <div class="category-card-info">
+          <span>Find your fit</span>
+          <h3>Football Boots</h3>
+          <p>Explore boots →</p>
+        </div>
+      </a>
+
+      <a href="#products" class="category-card" data-filter="equipment">
+        <img
+          src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=85"
+          alt="Football training equipment"
+          loading="lazy"
+        >
+        <div class="category-card-info">
+          <span>Training essentials</span>
+          <h3>Equipment</h3>
+          <p>Explore equipment →</p>
+        </div>
+      </a>
+
+      <a href="#products" class="category-card" data-filter="goalkeeper">
+        <img
+          src="/images/hero/goalkeeper.webp"
+          alt="Goalkeeper equipment"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=900&q=85';"
+        >
+        <div class="category-card-info">
+          <span>Protection & control</span>
+          <h3>Goalkeeper</h3>
+          <p>Explore goalkeeper gear →</p>
+        </div>
+      </a>
+
+      <a href="#products" class="category-card" data-filter="accessories">
+        <img
+          src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85"
+          alt="Sports accessories"
+          loading="lazy"
+        >
+        <div class="category-card-info">
+          <span>Useful extras</span>
+          <h3>Accessories</h3>
+          <p>Explore accessories →</p>
+        </div>
+      </a>
+
+      <a href="#products" class="category-card" data-filter="fans">
+        <img
+          src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=900&q=85"
+          alt="Football supporters and fan wear"
+          loading="lazy"
+        >
+        <div class="category-card-info">
+          <span>Support your game</span>
+          <h3>Fans & Supporters</h3>
+          <p>Explore fan wear →</p>
+        </div>
+      </a>
+
+      <a href="#products" class="category-card" data-filter="training">
+        <img
+          src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=900&q=85"
+          alt="Football training session"
+          loading="lazy"
+        >
+        <div class="category-card-info">
+          <span>Improve your game</span>
+          <h3>Training</h3>
+          <p>Explore training gear →</p>
+        </div>
+      </a>
+
+      <a href="#deals" class="category-card" data-filter="deals">
+        <img
+          src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=85"
+          alt="Football products and gear"
+          loading="lazy"
+        >
+        <div class="category-card-info">
+          <span>Discover more</span>
+          <h3>Latest Deals</h3>
+          <p>Explore deals →</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FEATURED CATEGORIES -->
+
+  <section class="section" id="football-boots">
+    <div class="section-heading">
+      <div>
+        <div class="section-eyebrow">Performance starts here</div>
+        <h2 class="section-title">Made for the Pitch</h2>
+        <p class="section-description">
+          Discover footwear and training essentials for your playing surface and routine.
+        </p>
+      </div>
+    </div>
+
+    <div class="feature-strip">
+
+      <article class="feature-tile">
+        <img
+          src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=1400&q=85"
+          alt="Football boots"
+          loading="lazy"
+        >
+        <div class="feature-tile-content">
+          <span>Find your playing surface</span>
+          <h3>Football Boots<br>for Every Pitch</h3>
+          <p>Explore FG, AG, MG, turf and indoor options from football footwear brands.</p>
+          <button class="primary-button" data-filter="boots">Explore Boots →</button>
+        </div>
+      </article>
+
+      <article class="feature-tile" id="equipment">
+        <img
+          src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1400&q=85"
+          alt="Football training"
+          loading="lazy"
+        >
+        <div class="feature-tile-content">
+          <span>Train with purpose</span>
+          <h3>Equipment for<br>Your Next Session</h3>
+          <p>Discover balls, cones, training accessories and gear for individual or team practice.</p>
+          <button class="primary-button" data-filter="equipment">Explore Equipment →</button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- BRANDS -->
+
+  <section class="section" id="brands">
+    <div class="section-heading">
+      <div>
+        <div class="section-eyebrow">Discover the names behind the game</div>
+        <h2 class="section-title">Shop by Brand</h2>
+        <p class="section-description">
+          Explore football clothing, boots and equipment from leading sports brands.
+        </p>
+      </div>
+      <button class="text-link" data-filter="all">View Products</button>
+    </div>
+
+    <div class="brand-grid">
+
+      <button class="brand-card" data-brand="Nike" aria-label="Explore Nike products">
+        <img src="/images/brands/nike.svg" alt="Nike logo"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="brand-fallback">NIKE</span>
+      </button>
+
+      <button class="brand-card" data-brand="adidas" aria-label="Explore adidas products">
+        <img src="/images/brands/adidas.svg" alt="adidas logo"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="brand-fallback">adidas</span>
+      </button>
+
+      <button class="brand-card" data-brand="PUMA" aria-label="Explore PUMA products">
+        <img src="/images/brands/puma.svg" alt="PUMA logo"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="brand-fallback">PUMA</span>
+      </button>
+
+      <button class="brand-card" data-brand="New Balance" aria-label="Explore New Balance products">
+        <img src="/images/brands/new-balance.svg" alt="New Balance logo"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="brand-fallback">NEW BALANCE</span>
+      </button>
+
+      <button class="brand-card" data-brand="Castore" aria-label="Explore Castore products">
+        <img src="/images/brands/castore.svg" alt="Castore logo"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="brand-fallback">CASTORE</span>
+      </button>
+
+      <button class="brand-card" data-brand="KIPSTA" aria-label="Explore KIPSTA products">
+        <img src="/images/brands/kipsta.svg" alt="KIPSTA logo"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="brand-fallback">KIPSTA</span>
+      </button>
+
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+
+  <section class="section" id="products">
+    <div class="section-heading">
+      <div>
+        <div class="section-eyebrow">Explore football essentials</div>
+        <h2 class="section-title" id="productsTitle">Latest Football Products</h2>
+        <p class="section-description" id="productsDescription">
+          Browse a selection of football clothing, boots, equipment and accessories. Product prices and availability should be confirmed with the retailer.
+        </p>
+      </div>
+    </div>
+
+    <div class="filter-toolbar">
+      <div class="filter-left" aria-label="Filter products">
+        <button class="filter-chip active" data-filter="all">All Products</button>
+        <button class="filter-chip" data-filter="clothing">Clothing</button>
+        <button class="filter-chip" data-filter="boots">Boots</button>
+        <button class="filter-chip" data-filter="equipment">Equipment</button>
+        <button class="filter-chip" data-filter="goalkeeper">Goalkeeper</button>
+        <button class="filter-chip" data-filter="accessories">Accessories</button>
+        <button class="filter-chip" data-filter="fans">Fan Wear</button>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span class="result-count" id="resultCount" aria-live="polite">Products</span>
+        <button class="clear-filters" id="clearFilters">Clear</button>
+      </div>
+    </div>
+
+    <div class="product-grid" id="productGrid"></div>
+  </section>
+
+  <!-- DEALS -->
+
+  <section class="section" id="deals">
+    <div class="section-heading">
+      <div>
+        <div class="section-eyebrow">Worth a closer look</div>
+        <h2 class="section-title">Latest Deals</h2>
+        <p class="section-description">
+          Browse selected football product categories and follow through to retailer offers. Availability and prices can change.
+        </p>
+      </div>
+      <button class="text-link" data-filter="deals">Explore Deals</button>
+    </div>
+
+    <div class="feature-strip">
+      <article class="feature-tile">
+        <img
+          src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1300&q=85"
+          alt="Football jerseys and clothing"
+          loading="lazy"
+        >
+        <div class="feature-tile-content">
+          <span>Football clothing</span>
+          <h3>Find Your<br>Next Football Shirt</h3>
+          <p>Explore jerseys, training tops and football-inspired clothing.</p>
+          <button class="primary-button" data-filter="clothing">Explore Clothing →</button>
+        </div>
+      </article>
+
+      <article class="feature-tile">
+        <img
+          src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1300&q=85"
+          alt="Sports accessories"
+          loading="lazy"
+        >
+        <div class="feature-tile-content">
+          <span>Accessories & essentials</span>
+          <h3>Gear Up for<br>Your Next Match</h3>
+          <p>Discover bags, accessories and practical football essentials.</p>
+          <button class="primary-button" data-filter="accessories">Explore Accessories →</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- TICKETS -->
+
+  <section class="section ticket-section" id="tickets">
+    <div class="section-heading">
+      <div>
+        <div class="section-eyebrow">Experience football live</div>
+        <h2 class="section-title">Football Tickets</h2>
+        <p class="section-description">
+          Explore ticket opportunities through third-party ticket providers. Always review the provider, match details and terms before purchasing.
+        </p>
+      </div>
+    </div>
+
+    <div class="ticket-grid">
+      <article class="ticket-card">
+        <div class="ticket-label">Club Football</div>
+        <h3>League Match Tickets</h3>
+        <p>Explore ticket availability for domestic league fixtures through ticket partners.</p>
+        <a class="ticket-link" href="#tickets" data-ticket="League Match Tickets">EXPLORE TICKET OPTIONS →</a>
+      </article>
+
+      <article class="ticket-card">
+        <div class="ticket-label">European Football</div>
+        <h3>European Match Tickets</h3>
+        <p>Discover ticket options for European football competitions and selected fixtures.</p>
+        <a class="ticket-link" href="#tickets" data-ticket="European Match Tickets">EXPLORE TICKET OPTIONS →</a>
+      </article>
+
+      <article class="ticket-card">
+        <div class="ticket-label">International Football</div>
+        <h3>International Matches</h3>
+        <p>Look for ticket opportunities for national team matches and international events.</p>
+        <a class="ticket-link" href="#tickets" data-ticket="International Matches">EXPLORE TICKET OPTIONS →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+
+  <section class="section newsletter" id="newsletter">
+    <div>
+      <div class="section-eyebrow">Stay in the game</div>
+      <h2>Football Finds.<br>Delivered Occasionally.</h2>
+      <p>
+        A place for new football gear, product discoveries and selected offers. Newsletter signup is a front-end demonstration until connected to an email service.
+      </p>
+    </div>
+
+    <form class="newsletter-form" id="newsletterForm">
+      <input type="email" id="newsletterEmail" placeholder="Your email address" aria-label="Your email address" required>
+      <button type="submit">SIGN UP →</button>
+    </form>
+
+    <p class="newsletter-message" id="newsletterMessage" role="status"></p>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+  <div class="container footer-main">
+
+    <div class="footer-about">
+      <a href="#home" class="brand-logo">
+        <span class="logo-mark">FH</span>
+        <span>FOOTBALL <span>HUB</span></span>
+      </a>
+
+      <p>
+        Football Hub helps fans and players discover football clothing, footwear, equipment and accessories from third-party retailers and partners.
+      </p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Shop Categories</h3>
+      <button data-filter="clothing">Football Clothing</button>
+      <button data-filter="boots">Football Boots</button>
+      <button data-filter="equipment">Equipment</button>
+      <button data-filter="goalkeeper">Goalkeeper</button>
+      <button data-filter="accessories">Accessories</button>
+      <button data-filter="fans">Fan Wear</button>
+    </div>
+
+    <div class="footer-column">
+      <h3>Discover</h3>
+      <a href="#brands">Football Brands</a>
+      <a href="#products">Latest Products</a>
+      <a href="#deals">Latest Deals</a>
+      <a href="#tickets">Football Tickets</a>
+      <button id="footerSavedButton">Saved Products</button>
+    </div>
+
+    <div class="footer-column">
+      <h3>Football Hub</h3>
+      <a href="#about">About Football Hub</a>
+      <a href="#disclosure">Affiliate Disclosure</a>
+      <a href="#privacy">Privacy Information</a>
+      <a href="mailto:contact@example.com">Contact</a>
+    </div>
+
+  </div>
+
+  <div class="container footer-disclosure" id="disclosure">
+    <strong>Affiliate disclosure:</strong>
+    Football Hub is an independent product discovery platform and does not directly sell or fulfil the products shown. Links to third-party retailers may be affiliate links, which means Football Hub may earn a commission from qualifying purchases at no additional cost to the customer. Product details, prices, availability, shipping, returns and warranties are controlled by the relevant retailer.
+  </div>
+
+  <div class="container footer-disclosure" id="about">
+    <strong>About Football Hub:</strong>
+    Our goal is to help football fans and players discover products across clothing, boots, equipment and accessories. Brand names and logos belong to their respective owners.
+  </div>
+
+  <div class="container footer-disclosure" id="privacy">
+    <strong>Privacy information:</strong>
+    This front-end stores saved product IDs locally in your browser. If analytics, newsletter tools or other third-party services are enabled, update this notice to explain their data practices before publishing.
+  </div>
+
+  <div class="container footer-bottom">
+    <span>© <span id="currentYear">2026</span> Football Hub</span>
+    <span>Independent football product discovery platform</span>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<script>
+"use strict";
+
+/* =====================================================
+   FOOTBALL HUB
+   Product discovery front end.
+   Products are listed for discovery; the retailer sells
+   and fulfils the products.
+===================================================== */
+
+/*
+  IMPORTANT:
+  Add your real affiliate URLs to retailerUrl.
+  Until a real URL is added, product buttons take visitors
+  to the product/category section instead of a fake link.
+*/
+
+const products = [
+  {
+    id:"shirt-club",
+    name:"Football Club Jersey",
+    brand:"Multiple Brands",
+    category:"clothing",
+    tags:["jerseys","shirts","fan wear","fans"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"Jerseys"
+  },
+  {
+    id:"shirt-national",
+    name:"National Team Jersey",
+    brand:"Multiple Brands",
+    category:"clothing",
+    tags:["jerseys","national team","shirts","fans"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"Fan Wear"
+  },
+  {
+    id:"training-top",
+    name:"Football Training Top",
+    brand:"Multiple Brands",
+    category:"clothing",
+    tags:["training","training wear","tops"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"Training"
+  },
+  {
+    id:"football-shorts",
+    name:"Football Shorts",
+    brand:"Multiple Brands",
+    category:"clothing",
+    tags:["shorts","training","clothing"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"Clothing"
+  },
+  {
+    id:"football-socks",
+    name:"Football Socks",
+    brand:"Multiple Brands",
+    category:"clothing",
+    tags:["socks","clothing","training"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"Essentials"
+  },
+  {
+    id:"tracksuit",
+    name:"Football Tracksuit",
+    brand:"Multiple Brands",
+    category:"clothing",
+    tags:["tracksuit","tracksuits","training wear"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"Training"
+  },
+  {
+    id:"boots-elite",
+    name:"Performance Football Boots",
+    brand:"Multiple Brands",
+    category:"boots",
+    tags:["football boots","fg","firm ground","performance"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"Boots"
+  },
+  {
+    id:"boots-artificial",
+    name:"Artificial Ground Boots",
+    brand:"Multiple Brands",
+    category:"boots",
+    tags:["ag","artificial ground","football boots"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"AG"
+  },
+  {
+    id:"boots-turf",
+    name:"Turf Football Boots",
+    brand:"Multiple Brands",
+    category:"boots",
+    tags:["tf","turf","football boots"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"Turf"
+  },
+  {
+    id:"boots-indoor",
+    name:"Indoor Football Shoes",
+    brand:"Multiple Brands",
+    category:"boots",
+    tags:["indoor","futsal","football shoes"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"Indoor"
+  },
+  {
+    id:"boots-kids",
+    name:"Kids Football Boots",
+    brand:"Multiple Brands",
+    category:"boots",
+    tags:["kids","children","junior boots"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"Kids"
+  },
+  {
+    id:"football",
+    name:"Football",
+    brand:"Multiple Brands",
+    category:"equipment",
+    tags:["ball","footballs","match ball","training"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1552318965-6e6be7484ada?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"Equipment"
+  },
+  {
+    id:"training-cones",
+    name:"Training Cones & Markers",
+    brand:"Multiple Brands",
+    category:"equipment",
+    tags:["cones","markers","training","practice"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"Training"
+  },
+  {
+    id:"training-bibs",
+    name:"Training Bibs",
+    brand:"Multiple Brands",
+    category:"equipment",
+    tags:["bibs","training","team practice"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"Training"
+  },
+  {
+    id:"goalkeeper-gloves",
+    name:"Goalkeeper Gloves",
+    brand:"Multiple Brands",
+    category:"goalkeeper",
+    tags:["gloves","goalkeeper","keeper"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"/images/hero/goalkeeper.webp",
+    retailerUrl:"",
+    badge:"Goalkeeper"
+  },
+  {
+    id:"goalkeeper-kit",
+    name:"Goalkeeper Clothing",
+    brand:"Multiple Brands",
+    category:"goalkeeper",
+    tags:["goalkeeper jersey","keeper shorts","goalkeeper clothing"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"Goalkeeper"
+  },
+  {
+    id:"shin-guards",
+    name:"Football Shin Guards",
+    brand:"Multiple Brands",
+    category:"accessories",
+    tags:["shin guards","protection","accessories"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"Protection"
+  },
+  {
+    id:"football-bag",
+    name:"Football Kit Bag",
+    brand:"Multiple Brands",
+    category:"accessories",
+    tags:["bag","bags","backpack","accessories"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"Accessories"
+  },
+  {
+    id:"football-scarf",
+    name:"Football Supporter Scarf",
+    brand:"Multiple Brands",
+    category:"fans",
+    tags:["scarf","scarves","supporters","fan wear"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"Fan Wear"
+  },
+  {
+    id:"football-cap",
+    name:"Football Cap",
+    brand:"Multiple Brands",
+    category:"fans",
+    tags:["cap","caps","hat","supporters"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"Fan Wear"
+  },
+  {
+    id:"sports-bottle",
+    name:"Sports Water Bottle",
+    brand:"Multiple Brands",
+    category:"accessories",
+    tags:["bottle","water bottle","accessories"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"Accessories"
+  },
+  {
+    id:"training-jacket",
+    name:"Football Training Jacket",
+    brand:"Multiple Brands",
+    category:"clothing",
+    tags:["jacket","jackets","training","outerwear"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"Clothing"
+  },
+  {
+    id:"football-backpack",
+    name:"Sports Backpack",
+    brand:"Multiple Brands",
+    category:"accessories",
+    tags:["backpack","bags","accessories"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"Accessories"
+  },
+  {
+    id:"football-gift",
+    name:"Football Gift & Accessories",
+    brand:"Multiple Brands",
+    category:"fans",
+    tags:["gift","gifts","fan accessories"],
+    price:"",
+    merchant:"Retailer availability varies",
+    image:"https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=900&q=85",
+    retailerUrl:"",
+    badge:"Gift Ideas"
+  }
+];
+
+/* DOM REFERENCES */
+
+const productGrid = document.getElementById("productGrid");
+const productsTitle = document.getElementById("productsTitle");
+const productsDescription = document.getElementById("productsDescription");
+const resultCount = document.getElementById("resultCount");
+const clearFiltersButton = document.getElementById("clearFilters");
+
+const searchPanel = document.getElementById("searchPanel");
+const searchInput = document.getElementById("searchInput");
+const searchHint = document.getElementById("searchHint");
+
+const mobileMenu = document.getElementById("mobileMenu");
+const mobileMenuButton = document.getElementById("mobileMenuButton");
+
+let currentFilter = "all";
+let currentSearch = "";
+let currentBrand = "";
+let savedOnly = false;
+
+/* SAVED PRODUCTS */
+
+const STORAGE_KEY = "footballHubSavedProducts";
+
+function readSavedProducts(){
+  try{
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+    return Array.isArray(saved) ? saved : [];
+  }catch(error){
+    return [];
+  }
+}
+
+let savedProducts = readSavedProducts();
+
+function saveSavedProducts(){
+  try{
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(savedProducts));
+  }catch(error){
+    /* The page remains usable if browser storage is unavailable. */
+  }
+}
+
+function updateSavedCount(){
+  const count = document.getElementById("savedCount");
+  count.textContent = String(savedProducts.length);
+  count.classList.toggle("active", savedProducts.length > 0);
+}
+
+function toggleSaved(productId){
+  if(savedProducts.includes(productId)){
+    savedProducts = savedProducts.filter(id => id !== productId);
+  }else{
+    savedProducts.push(productId);
+  }
+
+  saveSavedProducts();
+  updateSavedCount();
+  renderProducts();
+}
+
+/* CATEGORY MATCHING */
+
+const categoryAliases = {
+  all:["all"],
+  clothing:["clothing"],
+  jerseys:["clothing"],
+  shirts:["clothing"],
+  boots:["boots"],
+  "firm-ground":["boots"],
+  "artificial-ground":["boots"],
+  "multi-ground":["boots"],
+  turf:["boots"],
+  indoor:["boots"],
+  "kids-boots":["boots"],
+  equipment:["equipment"],
+  footballs:["equipment"],
+  cones:["equipment"],
+  goals:["equipment"],
+  training:["equipment","clothing"],
+  "training-equipment":["equipment"],
+  goalkeeper:["goalkeeper"],
+  accessories:["accessories"],
+  bags:["accessories"],
+  backpacks:["accessories"],
+  "shin-guards":["accessories"],
+  fans:["fans"],
+  "fan-wear":["fans"],
+  scarves:["fans"],
+  caps:["fans"],
+  gifts:["fans"],
+  deals:["all"]
+};
+
+const filterTitles = {
+  all:"Latest Football Products",
+  clothing:"Football Clothing",
+  jerseys:"Football Jerseys",
+  boots:"Football Boots",
+  "firm-ground":"Firm Ground Boots",
+  "artificial-ground":"Artificial Ground Boots",
+  "multi-ground":"Multi-Ground Boots",
+  turf:"Turf Football Boots",
+  indoor:"Indoor Football Shoes",
+  "kids-boots":"Kids Football Boots",
+  equipment:"Football Equipment",
+  footballs:"Footballs",
+  cones:"Training Cones & Markers",
+  goals:"Football Goals",
+  training:"Training Products",
+  "training-equipment":"Training Equipment",
+  goalkeeper:"Goalkeeper Equipment",
+  accessories:"Football Accessories",
+  bags:"Football Bags",
+  backpacks:"Sports Backpacks",
+  "shin-guards":"Shin Guards",
+  fans:"Fans & Supporters",
+  "fan-wear":"Football Fan Wear",
+  scarves:"Football Scarves",
+  caps:"Football Caps",
+  gifts:"Football Gifts",
+  deals:"Football Deals"
+};
+
+function normalize(value){
+  return String(value || "").toLowerCase().trim();
+}
+
+function productMatchesCategory(product, filter){
+  if(filter === "all" || filter === "deals"){
+    return true;
+  }
+
+  const wanted = categoryAliases[filter] || [filter];
+
+  if(wanted.includes(product.category)){
+    return true;
+  }
+
+  const searchTerms = [
+    product.name,
+    product.brand,
+    product.category,
+    ...(product.tags || [])
+  ].map(normalize).join(" ");
+
+  return searchTerms.includes(normalize(filter).replaceAll("-"," "));
+}
+
+function getFilteredProducts(){
+  return products.filter(product => {
+    const matchesCategory = productMatchesCategory(product,currentFilter);
+
+    const searchText = normalize([
+      product.name,
+      product.brand,
+      product.category,
+      ...(product.tags || [])
+    ].join(" "));
+
+    const matchesSearch = !currentSearch ||
+      searchText.includes(normalize(currentSearch));
+
+    const matchesBrand = !currentBrand ||
+      normalize(product.brand).includes(normalize(currentBrand)) ||
+      normalize(product.name).includes(normalize(currentBrand));
+
+    const matchesSaved = !savedOnly ||
+      savedProducts.includes(product.id);
+
+    return matchesCategory && matchesSearch && matchesBrand && matchesSaved;
+  });
+}
+
+/* PRODUCT RENDERING */
+
+function renderProducts(){
+  const filteredProducts = getFilteredProducts();
+
+  productGrid.innerHTML = "";
+
+  resultCount.textContent =
+    filteredProducts.length + (filteredProducts.length === 1 ? " product" : " products");
+
+  document.querySelectorAll("[data-filter].filter-chip").forEach(button => {
+    button.classList.toggle("active", button.dataset.filter === currentFilter);
+  });
+
+  clearFiltersButton.classList.toggle(
+    "active",
+    currentFilter !== "all" || currentSearch !== "" || currentBrand !== "" || savedOnly
+  );
+
+  if(!filteredProducts.length){
+    const empty = document.createElement("div");
+    empty.className = "empty-state";
+    empty.innerHTML = `
+      <strong>No products found</strong>
+      <p>Try another category or search term.</p>
+    `;
+    productGrid.appendChild(empty);
+    return;
+  }
+
+  filteredProducts.forEach(product => {
+    const card = document.createElement("article");
+    card.className = "product-card";
+
+    const isSaved = savedProducts.includes(product.id);
+    const imageAlt = product.name + " — " + product.brand;
+
+    const image = document.createElement("img");
+    image.src = product.image;
+    image.alt = imageAlt;
+    image.loading = "lazy";
+    image.onerror = function(){
+      this.onerror = null;
+      this.src = "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=900&q=80";
+    };
+
+    const imageBox = document.createElement("div");
+    imageBox.className = "product-image";
+
+    const badge = document.createElement("span");
+    badge.className = "product-tag";
+    badge.textContent = product.badge || "Football Gear";
+    imageBox.appendChild(image);
+    imageBox.appendChild(badge);
+
+    const saveButton = document.createElement("button");
+    saveButton.className = "save-button" + (isSaved ? " saved" : "");
+    saveButton.type = "button";
+    saveButton.textContent = isSaved ? "♥" : "♡";
+    saveButton.setAttribute(
+      "aria-label",
+      isSaved ? "Remove from saved products" : "Save product"
+    );
+    saveButton.setAttribute("aria-pressed", String(isSaved));
+    saveButton.addEventListener("click", () => toggleSaved(product.id));
+
+    imageBox.appendChild(saveButton);
+
+    const info = document.createElement("div");
+    info.className = "product-info";
+
+    const brand = document.createElement("div");
+    brand.className = "product-brand";
+    brand.textContent = product.brand;
+
+    const name = document.createElement("div");
+    name.className = "product-name";
+    name.textContent = product.name;
+
+    const detail = document.createElement("div");
+    detail.className = "product-detail";
+
+    const price = document.createElement("div");
+    price.className = "product-price" + (product.price ? "" : " unknown");
+    price.textContent = product.price || "Check retailer";
+
+    const merchant = document.createElement("div");
+    merchant.className = "product-merchant";
+    merchant.textContent = product.merchant;
+
+    detail.appendChild(price);
+    detail.appendChild(merchant);
+
+    const link = document.createElement("a");
+    link.className = "product-link";
+    link.href = product.retailerUrl || "#products";
+    link.textContent = product.retailerUrl
+      ? "View at Retailer →"
+      : "Explore Options →";
+
+    if(product.retailerUrl){
+      link.target = "_blank";
+      link.rel = "nofollow sponsored noopener";
+    }else{
+      link.addEventListener("click",event => {
+        event.preventDefault();
+        setFilter(product.category,false);
+      });
+    }
+
+    link.addEventListener("click",() => {
+      if(typeof gtag === "function" && product.retailerUrl){
+        gtag("event","affiliate_click",{
+          product_name:product.name,
+          product_category:product.category,
+          retailer:product.merchant
+        });
+      }
+    });
+
+    info.appendChild(brand);
+    info.appendChild(name);
+    info.appendChild(detail);
+    info.appendChild(link);
+
+    card.appendChild(imageBox);
+    card.appendChild(info);
+
+    productGrid.appendChild(card);
+  });
+}
+
+/* FILTERS */
+
+function setFilter(filter, scrollToProducts = true){
+  currentFilter = filter || "all";
+  currentSearch = "";
+  currentBrand = "";
+  savedOnly = false;
+
+  searchInput.value = "";
+
+  productsTitle.textContent =
+    filterTitles[currentFilter] || "Football Products";
+
+  if(currentFilter === "deals"){
+    productsDescription.textContent =
+      "Explore football product categories and discover retailer offers. Prices and availability should be confirmed with the retailer.";
+  }else{
+    productsDescription.textContent =
+      "Browse football products by category. Product prices and availability should be confirmed with the retailer.";
+  }
+
+  renderProducts();
+  closeMobileMenu();
+  closeSearch();
+
+  if(scrollToProducts){
+    document.getElementById("products").scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+  }
+}
+
+document.addEventListener("click",event => {
+  const button = event.target.closest("[data-filter]");
+
+  if(!button){
+    return;
+  }
+
+  event.preventDefault();
+  setFilter(button.dataset.filter);
+});
+
+/* SEARCH */
+
+function openSearch(){
+  searchPanel.classList.add("active");
+  searchPanel.setAttribute("aria-hidden","false");
+  document.body.classList.add("search-open");
+  setTimeout(() => searchInput.focus(),50);
+}
+
+function closeSearch(){
+  searchPanel.classList.remove("active");
+  searchPanel.setAttribute("aria-hidden","true");
+  document.body.classList.remove("search-open");
+}
+
+document.getElementById("searchButton").addEventListener("click",openSearch);
+document.getElementById("closeSearchButton").addEventListener("click",closeSearch);
+
+searchPanel.addEventListener("click",event => {
+  if(event.target === searchPanel){
+    closeSearch();
+  }
+});
+
+searchInput.addEventListener("input",() => {
+  currentSearch = searchInput.value.trim();
+  currentFilter = "all";
+  currentBrand = "";
+  savedOnly = false;
+
+  productsTitle.textContent = currentSearch
+    ? "Search Results"
+    : "Latest Football Products";
+
+  searchHint.textContent = currentSearch
+    ? "Showing products matching: " + currentSearch
+    : "Search by product, category, brand or equipment type.";
+
+  renderProducts();
+});
+
+document.getElementById("clearSearchButton").addEventListener("click",() => {
+  searchInput.value = "";
+  currentSearch = "";
+  searchInput.focus();
+  renderProducts();
+});
+
+/* SAVED PRODUCTS VIEW */
+
+function showSavedProducts(){
+  savedOnly = true;
+  currentFilter = "all";
+  currentSearch = "";
+  currentBrand = "";
+
+  searchInput.value = "";
+  productsTitle.textContent = "Saved Products";
+  productsDescription.textContent =
+    "Your saved products are stored locally in this browser.";
+
+  renderProducts();
+  closeSearch();
+  closeMobileMenu();
+
+  document.getElementById("products").scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+}
+
+document.getElementById("savedButton").addEventListener("click",showSavedProducts);
+document.getElementById("footerSavedButton").addEventListener("click",showSavedProducts);
+
+/* CLEAR FILTERS */
+
+clearFiltersButton.addEventListener("click",() => {
+  currentFilter = "all";
+  currentSearch = "";
+  currentBrand = "";
+  savedOnly = false;
+  searchInput.value = "";
+
+  productsTitle.textContent = "Latest Football Products";
+  productsDescription.textContent =
+    "Browse a selection of football clothing, boots, equipment and accessories.";
+
+  renderProducts();
+});
+
+/* BRAND FILTERS */
+
+document.querySelectorAll("[data-brand]").forEach(button => {
+  button.addEventListener("click",() => {
+    currentBrand = button.dataset.brand;
+    currentFilter = "all";
+    currentSearch = "";
+    savedOnly = false;
+    searchInput.value = "";
+
+    productsTitle.textContent = currentBrand + " Products";
+    productsDescription.textContent =
+      "Explore products associated with " + currentBrand +
+      ". Retailer availability varies.";
+
+    renderProducts();
+
+    document.getElementById("products").scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+  });
+});
+
+/* MOBILE MENU */
+
+function openMobileMenu(){
+  mobileMenu.classList.add("active");
+  mobileMenu.setAttribute("aria-hidden","false");
+  mobileMenuButton.setAttribute("aria-expanded","true");
+  document.body.classList.add("menu-open");
+}
+
+function closeMobileMenu(){
+  mobileMenu.classList.remove("active");
+  mobileMenu.setAttribute("aria-hidden","true");
+  mobileMenuButton.setAttribute("aria-expanded","false");
+  document.body.classList.remove("menu-open");
+}
+
+mobileMenuButton.addEventListener("click",openMobileMenu);
+document.getElementById("closeMobileMenu").addEventListener("click",closeMobileMenu);
+
+/* HERO SLIDER
+   The next arrow moves one slide forward.
+   At the final slide it returns to the first slide.
+   Previous behaves in the opposite direction.
+*/
+
+const heroTrack = document.getElementById("heroTrack");
+const heroSlides = Array.from(document.querySelectorAll(".hero-slide"));
+const heroDots = document.getElementById("heroDots");
+const heroCurrent = document.getElementById("heroCurrent");
+const heroTotal = document.getElementById("heroTotal");
+const hero = document.querySelector(".hero");
+
+let heroIndex = 0;
+let heroTimer = null;
+let touchStartX = 0;
+
+heroTotal.textContent = String(heroSlides.length).padStart(2,"0");
+
+heroSlides.forEach((slide,index) => {
+  const dot = document.createElement("button");
+
+  dot.type = "button";
+  dot.className = "hero-dot" + (index === 0 ? " active" : "");
+  dot.setAttribute("aria-label","Go to slide " + (index + 1));
+  dot.setAttribute("aria-current",index === 0 ? "true" : "false");
+
+  dot.addEventListener("click",() => {
+    goToHero(index);
+    restartHero();
+  });
+
+  heroDots.appendChild(dot);
+});
+
+function goToHero(index){
+  if(!heroSlides.length){
+    return;
+  }
+
+  heroIndex = (index + heroSlides.length) % heroSlides.length;
+
+  heroTrack.style.transform = "translateX(-" + (heroIndex * 100) + "%)";
+
+  heroCurrent.textContent = String(heroIndex + 1).padStart(2,"0");
+
+  document.querySelectorAll(".hero-dot").forEach((dot,dotIndex) => {
+    const active = dotIndex === heroIndex;
+    dot.classList.toggle("active",active);
+    dot.setAttribute("aria-current",active ? "true" : "false");
+  });
+}
+
+function nextHero(){
+  goToHero(heroIndex + 1);
+}
+
+function previousHero(){
+  goToHero(heroIndex - 1);
+}
+
+function stopHero(){
+  if(heroTimer){
+    clearInterval(heroTimer);
+    heroTimer = null;
+  }
+}
+
+function startHero(){
+  stopHero();
+
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+    return;
+  }
+
+  heroTimer = setInterval(nextHero,6000);
+}
+
+function restartHero(){
+  startHero();
+}
+
+document.getElementById("heroNext").addEventListener("click",() => {
+  nextHero();
+  restartHero();
+});
+
+document.getElementById("heroPrev").addEventListener("click",() => {
+  previousHero();
+  restartHero();
+});
+
+hero.addEventListener("mouseenter",stopHero);
+hero.addEventListener("mouseleave",startHero);
+
+hero.addEventListener("focusin",stopHero);
+hero.addEventListener("focusout",startHero);
+
+hero.addEventListener("touchstart",event => {
+  touchStartX = event.changedTouches[0].screenX;
+},{passive:true});
+
+hero.addEventListener("touchend",event => {
+  const touchEndX = event.changedTouches[0].screenX;
+  const difference = touchStartX - touchEndX;
+
+  if(Math.abs(difference) < 45){
+    return;
+  }
+
+  if(difference > 0){
+    nextHero();
+  }else{
+    previousHero();
+  }
+
+  restartHero();
+},{passive:true});
+
+/* KEYBOARD SUPPORT */
+
+document.addEventListener("keydown",event => {
+  if(event.key === "Escape"){
+    closeSearch();
+    closeMobileMenu();
+  }
+
+  if(searchPanel.classList.contains("active")){
+    return;
+  }
+
+  if(event.key === "ArrowRight" && document.activeElement.closest(".hero")){
+    nextHero();
+    restartHero();
+  }
+
+  if(event.key === "ArrowLeft" && document.activeElement.closest(".hero")){
+    previousHero();
+    restartHero();
+  }
+});
+
+/* TICKETS
+   Configure real ticket affiliate URLs in this section
+   before using the ticket links commercially.
+*/
+
+document.querySelectorAll("[data-ticket]").forEach(link => {
+  link.addEventListener("click",event => {
+    event.preventDefault();
+
+    const ticketName = link.dataset.ticket;
+
+    if(typeof gtag === "function"){
+      gtag("event","ticket_options_click",{
+        ticket_category:ticketName
+      });
+    }
+
+    alert(
+      "Ticket partner link not configured yet. Add your real affiliate URL for: " +
+      ticketName
+    );
+  });
+});
+
+/* NEWSLETTER DEMO */
+
+document.getElementById("newsletterForm").addEventListener("submit",event => {
+  event.preventDefault();
+
+  const emailInput = document.getElementById("newsletterEmail");
+  const message = document.getElementById("newsletterMessage");
+
+  if(!emailInput.checkValidity()){
+    emailInput.reportValidity();
+    return;
+  }
+
+  message.textContent =
+    "The form design is ready, but newsletter signup needs to be connected to an email service.";
+
+  emailInput.value = "";
+});
+
+/* BACK TO TOP */
+
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll",() => {
+  backToTop.classList.toggle("active",window.scrollY > 500);
+},{passive:true});
+
+backToTop.addEventListener("click",() => {
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+});
+
+/* YEAR + INITIAL RENDER */
+
+document.getElementById("currentYear").textContent = String(new Date().getFullYear());
+
+updateSavedCount();
+renderProducts();
+goToHero(0);
+startHero();
+</script>
+
+</body>
+</html>
